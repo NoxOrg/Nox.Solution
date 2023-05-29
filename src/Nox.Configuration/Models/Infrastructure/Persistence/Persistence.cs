@@ -7,6 +7,11 @@ namespace Nox
     {
         [Required]
         public DatabaseServer? DatabaseServer { get; set; }
+        
+        public CacheServer? CacheServer { get; set; }
 
+        public SearchServer? SearchServer { get; set; }
+
+        public EventSourceServer? EventSourceServer { get; set; }
     }
 }

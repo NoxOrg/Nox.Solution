@@ -12,7 +12,7 @@ description: Microservice for maintaining and finding places to work
 overview: https://regusit.atlassian.net/wiki/spaces/heimdall/pages/2616393814/Workplace+Services
 
 variables:
-  DATABASE_PROVIDER: slqServer
+  DATABASE_PROVIDER: sqlServer
   DATABASE_SERVER: localhost
   DATABASE_USER: sa
   DATABASE_PASSWORD: Developer*123
@@ -337,11 +337,24 @@ infrastructure:
       #provider: mySql
 
     cacheServer:
-
+      name: SampleCurrencyCache
+      server: redisCacheName.redis.cache.windows.net
+      provider: azureRedis
+      user: CacheUser
+      password: CachePassword
+      
     searchServer:
+      name: SampleCurrencySearch
+      server: SampleSearch.com
+      provider: elasticSearch
+      user: searchUser
+      password: searchPwd
 
     eventSourceServer:
-
+      name: SampleEventSource
+      server: currencyEventSource
+      provider: eventStoreDb
+      
   messaging:
     
     domainEventServer:

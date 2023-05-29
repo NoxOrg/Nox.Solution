@@ -55,14 +55,6 @@
             "type": "boolean",
             "title": "Whether this environment is a production environment (true) or not (false).",
             "description": "Specifies which environment(s) are used for production or not. Affects how devops processes and the NOX runtime is configured."
-          },
-          "variables": {
-            "type": "object",
-            "additionalProperties": {
-              "type": "string"
-            },
-            "title": "The variables and values for this environment.",
-            "description": "A key/value pair of environment variables used in this environment and their defaults."
           }
         },
         "required": [
@@ -9003,6 +8995,120 @@
                 "name",
                 "provider"
               ]
+            },
+            "cacheServer": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "pattern": "^[^\\s]*$"
+                },
+                "server": {
+                  "type": "string"
+                },
+                "port": {
+                  "type": [
+                    "integer",
+                    "null"
+                  ]
+                },
+                "user": {
+                  "type": "string"
+                },
+                "password": {
+                  "type": "string"
+                },
+                "options": {
+                  "type": "string"
+                },
+                "provider": {
+                  "enum": [
+                    "amazonElasticache",
+                    "azureRedis",
+                    "memcached",
+                    "redis"
+                  ]
+                }
+              },
+              "required": [
+                "name",
+                "provider"
+              ],
+              "additionalProperties": false
+            },
+            "searchServer": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "pattern": "^[^\\s]*$"
+                },
+                "server": {
+                  "type": "string"
+                },
+                "port": {
+                  "type": [
+                    "integer",
+                    "null"
+                  ]
+                },
+                "user": {
+                  "type": "string"
+                },
+                "password": {
+                  "type": "string"
+                },
+                "options": {
+                  "type": "string"
+                },
+                "provider": {
+                  "enum": [
+                    "elasticSearch"
+                  ]
+                }
+              },
+              "required": [
+                "name",
+                "provider"
+              ],
+              "additionalProperties": false
+            },
+            "eventSourceServer": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "pattern": "^[^\\s]*$"
+                },
+                "server": {
+                  "type": "string"
+                },
+                "port": {
+                  "type": [
+                    "integer",
+                    "null"
+                  ]
+                },
+                "user": {
+                  "type": "string"
+                },
+                "password": {
+                  "type": "string"
+                },
+                "options": {
+                  "type": "string"
+                },
+                "provider": {
+                  "enum": [
+                    "eventStoreDb"
+                  ]
+                }
+              },
+              "required": [
+                "name",
+                "provider"
+              ],
+              "additionalProperties": false
             }
           },
           "required": [

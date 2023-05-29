@@ -1,0 +1,52 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "$ref": {
+      "type": "string",
+      "format": "uri"
+    },
+    "name": {
+      "type": "string",
+      "title": "The name and surname of the team member.",
+      "description": "The name and surname of the member in the team."
+    },
+    "userName": {
+      "type": "string",
+      "title": "The version control and organizational user name for the user.",
+      "description": "The user name/email for the user on Github, Azure Devops or another source versioning platform",
+      "pattern": "^[^\\s]*$"
+    },
+    "roles": {
+      "type": "array",
+      "items": {
+        "enum": [
+          "Administrator",
+          "Owner",
+          "Manager",
+          "Developer",
+          "QualityAssurer",
+          "Architect",
+          "Tester",
+          "RequirementAnalyst",
+          "EndUser",
+          "UserExperienceDesigner",
+          "DevOpsEngineer",
+          "SupportEngineer",
+          "TechnicalWriter",
+          "DatabaseAdministrator",
+          "ReleaseEngineer",
+          "ProjectManager"
+        ],
+        "additionalProperties": false
+      },
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "userName"
+  ],
+  "title": "Information about the team working on this solution.",
+  "description": "Specify the members of the team working on the solution including their respective roles.",
+  "additionalProperties": false
+}

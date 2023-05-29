@@ -1,0 +1,32 @@
+﻿using Json.Schema.Generation;
+using System.Collections.Generic;
+
+namespace Nox
+{
+
+    [Title("A definition for a run-time environments.")]
+    [Description("A definition for the name, variables and other pertinent information pertaining to a run-time environment.")]
+    [AdditionalProperties(false)]
+    public class Environment : DefinitionBase
+    {
+
+        [Required]
+        [Title("A short name for the environment. Contains no spaces.")]
+        [Description("The name of the run-time environment. Each environment name should be unique within a solution.")]
+        [Pattern(@"^[^\s]*$")]
+        public string Name { get; set; } = "dev";
+
+        [Title("A short description of the run-time environment.")]
+        [Description("The description of the run-time environment. Try to include the purpose or use of the environment.")]
+        public string? Description { get; set; }
+
+        [Title("Whether this environment is a production environment (true) or not (false).")]
+        [Description("Specifies which environment(s) are used for production or not. Affects how devops processes and the NOX runtime is configured.")]
+        public bool IsProduction { get; set; } = false;
+
+        [Title("The variables and values for this environment.")]
+        [Description("A key/value pair of environment variables used in this environment and their defaults.")]
+        public Dictionary<string, string>? Variables { get; set; }
+
+    }
+}

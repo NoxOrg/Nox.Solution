@@ -24,9 +24,9 @@ namespace Nox
         [Description("Specifies which environment(s) are used for production or not. Affects how devops processes and the NOX runtime is configured.")]
         public bool IsProduction { get; set; } = false;
 
-        [Title("The variables and values for this environment.")]
-        [Description("A key/value pair of environment variables used in this environment and their defaults.")]
-        public Dictionary<string, string>? Variables { get; set; }
+        // [Title("The variables and values for this environment.")]
+        // [Description("A key/value pair of environment variables used in this environment and their defaults.")]
+        // public Dictionary<string, string>? Variables { get; set; }
 
     }
 }

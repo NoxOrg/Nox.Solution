@@ -8,20 +8,19 @@ namespace Nox
     [AdditionalProperties(false)]
     public class Infrastructure : DefinitionBase
     {
-
-        [Required]
-        [AdditionalProperties(false)]
-        public Messaging? Messaging { get; set; }
-
-
         [Required]
         [AdditionalProperties(false)]
         public Persistence? Persistence { get; set; }
+        
+        [Required]
+        [AdditionalProperties(false)]
+        public Messaging? Messaging { get; set; }
+        
 
         [AdditionalProperties(false)]
         public Services? Services { get; set; }
 
         [AdditionalProperties(false)]
-        public Dependencies? Type { get; set; }
+        public Dependencies? Dependencies { get; set; }
     }
 }

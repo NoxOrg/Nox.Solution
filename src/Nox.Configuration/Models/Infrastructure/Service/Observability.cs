@@ -1,6 +1,6 @@
 namespace Nox
 {
-    public class Observability
+    public class Observability: ServiceBase
     {
         
     }

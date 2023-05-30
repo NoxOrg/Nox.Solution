@@ -1,6 +1,6 @@
 namespace Nox
 {
-    public class TranslationService
+    public class TranslationService: ServiceBase
     {
         
     }

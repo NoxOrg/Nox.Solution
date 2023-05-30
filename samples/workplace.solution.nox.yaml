@@ -386,6 +386,7 @@ infrastructure:
   dependencies:
     
     notificationServices:
+    
       emailServer:
         name: SampleEmailServer
         provider: sendGrid

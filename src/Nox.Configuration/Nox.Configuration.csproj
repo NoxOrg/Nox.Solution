@@ -24,6 +24,7 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="JsonSchema.Net.Generation" Version="3.2.0" />
+    <PackageReference Include="Nox.Types" Version="1.0.0" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="..\..\images\nox.png">

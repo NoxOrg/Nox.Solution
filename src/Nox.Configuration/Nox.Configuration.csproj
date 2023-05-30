@@ -5,6 +5,7 @@
     <LangVersion>10.0</LangVersion>
     <ImplicitUsings>disable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <RootNamespace>Nox</RootNamespace>
   </PropertyGroup>
   <PropertyGroup>
     <PackageId>Nox.Configuration</PackageId>
@@ -33,5 +34,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\images\nox.png" Pack="true" PackagePath="" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Models\Infrastructure\Dependencies\Security\" />
+    <Folder Include="Models\Infrastructure\Security\Authentication\" />
   </ItemGroup>
 </Project>

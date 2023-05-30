@@ -315,6 +315,27 @@ domain:
           decimalDigits: 4
         isRequired: false
 
+application:
+  etl:
+    - name: SampleEtl
+      description: a Sample Etl
+      source:
+        name: SampleEtlDataSource
+        description: Sources Country data from a json file
+        dataSource: CountryJsonDatabaseSource
+        schedule:
+          start: every day at 2am
+          retry:
+            limit: 5
+            delaySeconds: 5
+            doubleDelayLimit: 10
+          runOnStartup: true
+        watermark:
+          dateColumns:
+            - "CreateDate"
+            - "EditDate"
+          sequentialKeyColumn: CountryId
+
 infrastructure: 
 
   persistence:
@@ -323,12 +344,11 @@ infrastructure:
       name: SampleCurrencyDb
 
       # Sql Server
-      server: ${{ env.DATABASE_SERVER }}
-      provider: ${{ env.DATABASE_PROVIDER }}
-      port: ${{ env.DATABASE_PORT }}
-      user: ${{ env.DATABASE_USER }}  
-      password: ${{ env.DATABASE_PASSWORD }}
-      options: ${{ env.DATABASE_OPTIONS }}
+      server: sqlserver.iwgplc.com
+      provider: sqlServer
+      port: 1433
+      user: sqluser
+      password: sqlpassword
 
       ### Postgres
       #provider: postgres
@@ -370,5 +390,52 @@ infrastructure:
       user: guest
       password: guest
 
+  services:
+    
+    apiServer:
+      name: SampleApiServer
+      server: workplace.iwgplc.com
+      httpPort: 8080
+      httpsPort: 8443
 
+    bffServer:
+      name: SampleBffServer
+      server: SampleBff.iwgplc.com
+      httpPort: 8080
+      httpsPort: 8443
+
+  dependencies:
+    notificationServices:
+      emailServer:
+        name: SampleEmailServer
+        provider: sendGrid
+        server: sendgrid.igwplc.com
+        user: ElasticUser
+        password: ElasticPassword
+
+    observability:
+      name: SampleObservabiity
+      server: localhost
+      httpPort: 8200
+
+    translationService:
+      name: SampleTranslationService
+      server: translator.iwgplc.com
+      httpsPort: 443
+
+    security:
+      secrets:
+        secretsServer:
+          name: SampleSecretServer
+          provider: azureKeyVault
+          server: kv.iwgplc.com
+          user: secrets@iwgplc.com
+          password: SecretPassword
+        validFor:
+          minutes: 10
+
+    dataConnections:
+      - name: CountryJsonDatabaseSource
+        provider: jsonFile
+        server: file:///C:/countries.json
 

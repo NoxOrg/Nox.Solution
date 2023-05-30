@@ -1,6 +1,7 @@
 ﻿using Json.Schema.Generation;
 using System;
 using System.Collections.Generic;
+using System.Net.Mime;
 
 namespace Nox
 {
@@ -46,6 +47,9 @@ namespace Nox
 
         [AdditionalProperties(false)]
         public Infrastructure? Infrastructure { get; set; }
+        
+        [AdditionalProperties(false)]
+        public Application? Application { get; set; }
 
     }
 }

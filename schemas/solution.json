@@ -264,10 +264,16 @@
                     "type": "object",
                     "properties": {
                       "isEnabled": {
-                        "type": "boolean"
+                        "type": [
+                          "boolean",
+                          "null"
+                        ]
                       },
                       "raiseEvents": {
-                        "type": "boolean"
+                        "type": [
+                          "boolean",
+                          "null"
+                        ]
                       }
                     }
                   },
@@ -275,7 +281,10 @@
                     "type": "object",
                     "properties": {
                       "isEnabled": {
-                        "type": "boolean"
+                        "type": [
+                          "boolean",
+                          "null"
+                        ]
                       }
                     }
                   },
@@ -283,10 +292,16 @@
                     "type": "object",
                     "properties": {
                       "isEnabled": {
-                        "type": "boolean"
+                        "type": [
+                          "boolean",
+                          "null"
+                        ]
                       },
                       "raiseEvents": {
-                        "type": "boolean"
+                        "type": [
+                          "boolean",
+                          "null"
+                        ]
                       }
                     }
                   },
@@ -294,13 +309,22 @@
                     "type": "object",
                     "properties": {
                       "isEnabled": {
-                        "type": "boolean"
+                        "type": [
+                          "boolean",
+                          "null"
+                        ]
                       },
                       "raiseEvents": {
-                        "type": "boolean"
+                        "type": [
+                          "boolean",
+                          "null"
+                        ]
                       },
                       "useSoftDelete": {
-                        "type": "boolean"
+                        "type": [
+                          "boolean",
+                          "null"
+                        ]
                       }
                     }
                   }
@@ -472,7 +496,7 @@
                               "entity",
                               "file",
                               "formula",
-                              "giud",
+                              "guid",
                               "hashedText",
                               "html",
                               "image",
@@ -485,6 +509,7 @@
                               "jwtToken",
                               "language",
                               "latlong",
+                              "length",
                               "macAddress",
                               "markdown",
                               "money",
@@ -514,7 +539,10 @@
                                 "format": "uri"
                               },
                               "isUnicode": {
-                                "type": "boolean"
+                                "type": [
+                                  "boolean",
+                                  "null"
+                                ]
                               },
                               "minLength": {
                                 "type": [
@@ -777,7 +805,10 @@
                             ]
                           },
                           "isRequired": {
-                            "type": "boolean"
+                            "type": [
+                              "boolean",
+                              "null"
+                            ]
                           },
                           "userInterface": {
                             "type": "object",
@@ -886,7 +917,7 @@
                                         "entity",
                                         "file",
                                         "formula",
-                                        "giud",
+                                        "guid",
                                         "hashedText",
                                         "html",
                                         "image",
@@ -899,6 +930,7 @@
                                         "jwtToken",
                                         "language",
                                         "latlong",
+                                        "length",
                                         "macAddress",
                                         "markdown",
                                         "money",
@@ -928,7 +960,10 @@
                                           "format": "uri"
                                         },
                                         "isUnicode": {
-                                          "type": "boolean"
+                                          "type": [
+                                            "boolean",
+                                            "null"
+                                          ]
                                         },
                                         "minLength": {
                                           "type": [
@@ -1191,7 +1226,10 @@
                                       ]
                                     },
                                     "isRequired": {
-                                      "type": "boolean"
+                                      "type": [
+                                        "boolean",
+                                        "null"
+                                      ]
                                     },
                                     "userInterface": {
                                       "type": "object",
@@ -1303,7 +1341,7 @@
                                   "entity",
                                   "file",
                                   "formula",
-                                  "giud",
+                                  "guid",
                                   "hashedText",
                                   "html",
                                   "image",
@@ -1316,6 +1354,7 @@
                                   "jwtToken",
                                   "language",
                                   "latlong",
+                                  "length",
                                   "macAddress",
                                   "markdown",
                                   "money",
@@ -1345,7 +1384,10 @@
                                     "format": "uri"
                                   },
                                   "isUnicode": {
-                                    "type": "boolean"
+                                    "type": [
+                                      "boolean",
+                                      "null"
+                                    ]
                                   },
                                   "minLength": {
                                     "type": [
@@ -1608,7 +1650,10 @@
                                 ]
                               },
                               "isRequired": {
-                                "type": "boolean"
+                                "type": [
+                                  "boolean",
+                                  "null"
+                                ]
                               },
                               "userInterface": {
                                 "type": "object",
@@ -1717,7 +1762,7 @@
                                             "entity",
                                             "file",
                                             "formula",
-                                            "giud",
+                                            "guid",
                                             "hashedText",
                                             "html",
                                             "image",
@@ -1730,6 +1775,7 @@
                                             "jwtToken",
                                             "language",
                                             "latlong",
+                                            "length",
                                             "macAddress",
                                             "markdown",
                                             "money",
@@ -1759,7 +1805,10 @@
                                               "format": "uri"
                                             },
                                             "isUnicode": {
-                                              "type": "boolean"
+                                              "type": [
+                                                "boolean",
+                                                "null"
+                                              ]
                                             },
                                             "minLength": {
                                               "type": [
@@ -2022,7 +2071,10 @@
                                           ]
                                         },
                                         "isRequired": {
-                                          "type": "boolean"
+                                          "type": [
+                                            "boolean",
+                                            "null"
+                                          ]
                                         },
                                         "userInterface": {
                                           "type": "object",
@@ -2143,7 +2195,7 @@
                                   "entity",
                                   "file",
                                   "formula",
-                                  "giud",
+                                  "guid",
                                   "hashedText",
                                   "html",
                                   "image",
@@ -2156,6 +2208,7 @@
                                   "jwtToken",
                                   "language",
                                   "latlong",
+                                  "length",
                                   "macAddress",
                                   "markdown",
                                   "money",
@@ -2185,7 +2238,10 @@
                                     "format": "uri"
                                   },
                                   "isUnicode": {
-                                    "type": "boolean"
+                                    "type": [
+                                      "boolean",
+                                      "null"
+                                    ]
                                   },
                                   "minLength": {
                                     "type": [
@@ -2448,7 +2504,10 @@
                                 ]
                               },
                               "isRequired": {
-                                "type": "boolean"
+                                "type": [
+                                  "boolean",
+                                  "null"
+                                ]
                               },
                               "userInterface": {
                                 "type": "object",
@@ -2557,7 +2616,7 @@
                                             "entity",
                                             "file",
                                             "formula",
-                                            "giud",
+                                            "guid",
                                             "hashedText",
                                             "html",
                                             "image",
@@ -2570,6 +2629,7 @@
                                             "jwtToken",
                                             "language",
                                             "latlong",
+                                            "length",
                                             "macAddress",
                                             "markdown",
                                             "money",
@@ -2599,7 +2659,10 @@
                                               "format": "uri"
                                             },
                                             "isUnicode": {
-                                              "type": "boolean"
+                                              "type": [
+                                                "boolean",
+                                                "null"
+                                              ]
                                             },
                                             "minLength": {
                                               "type": [
@@ -2862,7 +2925,10 @@
                                           ]
                                         },
                                         "isRequired": {
-                                          "type": "boolean"
+                                          "type": [
+                                            "boolean",
+                                            "null"
+                                          ]
                                         },
                                         "userInterface": {
                                           "type": "object",
@@ -2992,7 +3058,7 @@
                             "entity",
                             "file",
                             "formula",
-                            "giud",
+                            "guid",
                             "hashedText",
                             "html",
                             "image",
@@ -3005,6 +3071,7 @@
                             "jwtToken",
                             "language",
                             "latlong",
+                            "length",
                             "macAddress",
                             "markdown",
                             "money",
@@ -3034,7 +3101,10 @@
                               "format": "uri"
                             },
                             "isUnicode": {
-                              "type": "boolean"
+                              "type": [
+                                "boolean",
+                                "null"
+                              ]
                             },
                             "minLength": {
                               "type": [
@@ -3297,7 +3367,10 @@
                           ]
                         },
                         "isRequired": {
-                          "type": "boolean"
+                          "type": [
+                            "boolean",
+                            "null"
+                          ]
                         },
                         "userInterface": {
                           "type": "object",
@@ -3406,7 +3479,7 @@
                                       "entity",
                                       "file",
                                       "formula",
-                                      "giud",
+                                      "guid",
                                       "hashedText",
                                       "html",
                                       "image",
@@ -3419,6 +3492,7 @@
                                       "jwtToken",
                                       "language",
                                       "latlong",
+                                      "length",
                                       "macAddress",
                                       "markdown",
                                       "money",
@@ -3448,7 +3522,10 @@
                                         "format": "uri"
                                       },
                                       "isUnicode": {
-                                        "type": "boolean"
+                                        "type": [
+                                          "boolean",
+                                          "null"
+                                        ]
                                       },
                                       "minLength": {
                                         "type": [
@@ -3711,7 +3788,10 @@
                                     ]
                                   },
                                   "isRequired": {
-                                    "type": "boolean"
+                                    "type": [
+                                      "boolean",
+                                      "null"
+                                    ]
                                   },
                                   "userInterface": {
                                     "type": "object",
@@ -3823,7 +3903,7 @@
                                 "entity",
                                 "file",
                                 "formula",
-                                "giud",
+                                "guid",
                                 "hashedText",
                                 "html",
                                 "image",
@@ -3836,6 +3916,7 @@
                                 "jwtToken",
                                 "language",
                                 "latlong",
+                                "length",
                                 "macAddress",
                                 "markdown",
                                 "money",
@@ -3865,7 +3946,10 @@
                                   "format": "uri"
                                 },
                                 "isUnicode": {
-                                  "type": "boolean"
+                                  "type": [
+                                    "boolean",
+                                    "null"
+                                  ]
                                 },
                                 "minLength": {
                                   "type": [
@@ -4128,7 +4212,10 @@
                               ]
                             },
                             "isRequired": {
-                              "type": "boolean"
+                              "type": [
+                                "boolean",
+                                "null"
+                              ]
                             },
                             "userInterface": {
                               "type": "object",
@@ -4237,7 +4324,7 @@
                                           "entity",
                                           "file",
                                           "formula",
-                                          "giud",
+                                          "guid",
                                           "hashedText",
                                           "html",
                                           "image",
@@ -4250,6 +4337,7 @@
                                           "jwtToken",
                                           "language",
                                           "latlong",
+                                          "length",
                                           "macAddress",
                                           "markdown",
                                           "money",
@@ -4279,7 +4367,10 @@
                                             "format": "uri"
                                           },
                                           "isUnicode": {
-                                            "type": "boolean"
+                                            "type": [
+                                              "boolean",
+                                              "null"
+                                            ]
                                           },
                                           "minLength": {
                                             "type": [
@@ -4542,7 +4633,10 @@
                                         ]
                                       },
                                       "isRequired": {
-                                        "type": "boolean"
+                                        "type": [
+                                          "boolean",
+                                          "null"
+                                        ]
                                       },
                                       "userInterface": {
                                         "type": "object",
@@ -4663,7 +4757,7 @@
                                 "entity",
                                 "file",
                                 "formula",
-                                "giud",
+                                "guid",
                                 "hashedText",
                                 "html",
                                 "image",
@@ -4676,6 +4770,7 @@
                                 "jwtToken",
                                 "language",
                                 "latlong",
+                                "length",
                                 "macAddress",
                                 "markdown",
                                 "money",
@@ -4705,7 +4800,10 @@
                                   "format": "uri"
                                 },
                                 "isUnicode": {
-                                  "type": "boolean"
+                                  "type": [
+                                    "boolean",
+                                    "null"
+                                  ]
                                 },
                                 "minLength": {
                                   "type": [
@@ -4968,7 +5066,10 @@
                               ]
                             },
                             "isRequired": {
-                              "type": "boolean"
+                              "type": [
+                                "boolean",
+                                "null"
+                              ]
                             },
                             "userInterface": {
                               "type": "object",
@@ -5077,7 +5178,7 @@
                                           "entity",
                                           "file",
                                           "formula",
-                                          "giud",
+                                          "guid",
                                           "hashedText",
                                           "html",
                                           "image",
@@ -5090,6 +5191,7 @@
                                           "jwtToken",
                                           "language",
                                           "latlong",
+                                          "length",
                                           "macAddress",
                                           "markdown",
                                           "money",
@@ -5119,7 +5221,10 @@
                                             "format": "uri"
                                           },
                                           "isUnicode": {
-                                            "type": "boolean"
+                                            "type": [
+                                              "boolean",
+                                              "null"
+                                            ]
                                           },
                                           "minLength": {
                                             "type": [
@@ -5382,7 +5487,10 @@
                                         ]
                                       },
                                       "isRequired": {
-                                        "type": "boolean"
+                                        "type": [
+                                          "boolean",
+                                          "null"
+                                        ]
                                       },
                                       "userInterface": {
                                         "type": "object",
@@ -5524,7 +5632,7 @@
                         "entity",
                         "file",
                         "formula",
-                        "giud",
+                        "guid",
                         "hashedText",
                         "html",
                         "image",
@@ -5537,6 +5645,7 @@
                         "jwtToken",
                         "language",
                         "latlong",
+                        "length",
                         "macAddress",
                         "markdown",
                         "money",
@@ -5566,7 +5675,10 @@
                           "format": "uri"
                         },
                         "isUnicode": {
-                          "type": "boolean"
+                          "type": [
+                            "boolean",
+                            "null"
+                          ]
                         },
                         "minLength": {
                           "type": [
@@ -5829,7 +5941,10 @@
                       ]
                     },
                     "isRequired": {
-                      "type": "boolean"
+                      "type": [
+                        "boolean",
+                        "null"
+                      ]
                     },
                     "userInterface": {
                       "type": "object",
@@ -5938,7 +6053,7 @@
                                   "entity",
                                   "file",
                                   "formula",
-                                  "giud",
+                                  "guid",
                                   "hashedText",
                                   "html",
                                   "image",
@@ -5951,6 +6066,7 @@
                                   "jwtToken",
                                   "language",
                                   "latlong",
+                                  "length",
                                   "macAddress",
                                   "markdown",
                                   "money",
@@ -5980,7 +6096,10 @@
                                     "format": "uri"
                                   },
                                   "isUnicode": {
-                                    "type": "boolean"
+                                    "type": [
+                                      "boolean",
+                                      "null"
+                                    ]
                                   },
                                   "minLength": {
                                     "type": [
@@ -6243,7 +6362,10 @@
                                 ]
                               },
                               "isRequired": {
-                                "type": "boolean"
+                                "type": [
+                                  "boolean",
+                                  "null"
+                                ]
                               },
                               "userInterface": {
                                 "type": "object",
@@ -6355,7 +6477,7 @@
                             "entity",
                             "file",
                             "formula",
-                            "giud",
+                            "guid",
                             "hashedText",
                             "html",
                             "image",
@@ -6368,6 +6490,7 @@
                             "jwtToken",
                             "language",
                             "latlong",
+                            "length",
                             "macAddress",
                             "markdown",
                             "money",
@@ -6397,7 +6520,10 @@
                               "format": "uri"
                             },
                             "isUnicode": {
-                              "type": "boolean"
+                              "type": [
+                                "boolean",
+                                "null"
+                              ]
                             },
                             "minLength": {
                               "type": [
@@ -6660,7 +6786,10 @@
                           ]
                         },
                         "isRequired": {
-                          "type": "boolean"
+                          "type": [
+                            "boolean",
+                            "null"
+                          ]
                         },
                         "userInterface": {
                           "type": "object",
@@ -6769,7 +6898,7 @@
                                       "entity",
                                       "file",
                                       "formula",
-                                      "giud",
+                                      "guid",
                                       "hashedText",
                                       "html",
                                       "image",
@@ -6782,6 +6911,7 @@
                                       "jwtToken",
                                       "language",
                                       "latlong",
+                                      "length",
                                       "macAddress",
                                       "markdown",
                                       "money",
@@ -6811,7 +6941,10 @@
                                         "format": "uri"
                                       },
                                       "isUnicode": {
-                                        "type": "boolean"
+                                        "type": [
+                                          "boolean",
+                                          "null"
+                                        ]
                                       },
                                       "minLength": {
                                         "type": [
@@ -7074,7 +7207,10 @@
                                     ]
                                   },
                                   "isRequired": {
-                                    "type": "boolean"
+                                    "type": [
+                                      "boolean",
+                                      "null"
+                                    ]
                                   },
                                   "userInterface": {
                                     "type": "object",
@@ -7195,7 +7331,7 @@
                             "entity",
                             "file",
                             "formula",
-                            "giud",
+                            "guid",
                             "hashedText",
                             "html",
                             "image",
@@ -7208,6 +7344,7 @@
                             "jwtToken",
                             "language",
                             "latlong",
+                            "length",
                             "macAddress",
                             "markdown",
                             "money",
@@ -7237,7 +7374,10 @@
                               "format": "uri"
                             },
                             "isUnicode": {
-                              "type": "boolean"
+                              "type": [
+                                "boolean",
+                                "null"
+                              ]
                             },
                             "minLength": {
                               "type": [
@@ -7500,7 +7640,10 @@
                           ]
                         },
                         "isRequired": {
-                          "type": "boolean"
+                          "type": [
+                            "boolean",
+                            "null"
+                          ]
                         },
                         "userInterface": {
                           "type": "object",
@@ -7609,7 +7752,7 @@
                                       "entity",
                                       "file",
                                       "formula",
-                                      "giud",
+                                      "guid",
                                       "hashedText",
                                       "html",
                                       "image",
@@ -7622,6 +7765,7 @@
                                       "jwtToken",
                                       "language",
                                       "latlong",
+                                      "length",
                                       "macAddress",
                                       "markdown",
                                       "money",
@@ -7651,7 +7795,10 @@
                                         "format": "uri"
                                       },
                                       "isUnicode": {
-                                        "type": "boolean"
+                                        "type": [
+                                          "boolean",
+                                          "null"
+                                        ]
                                       },
                                       "minLength": {
                                         "type": [
@@ -7914,7 +8061,10 @@
                                     ]
                                   },
                                   "isRequired": {
-                                    "type": "boolean"
+                                    "type": [
+                                      "boolean",
+                                      "null"
+                                    ]
                                   },
                                   "userInterface": {
                                     "type": "object",
@@ -8056,7 +8206,7 @@
                         "entity",
                         "file",
                         "formula",
-                        "giud",
+                        "guid",
                         "hashedText",
                         "html",
                         "image",
@@ -8069,6 +8219,7 @@
                         "jwtToken",
                         "language",
                         "latlong",
+                        "length",
                         "macAddress",
                         "markdown",
                         "money",
@@ -8098,7 +8249,10 @@
                           "format": "uri"
                         },
                         "isUnicode": {
-                          "type": "boolean"
+                          "type": [
+                            "boolean",
+                            "null"
+                          ]
                         },
                         "minLength": {
                           "type": [
@@ -8361,7 +8515,10 @@
                       ]
                     },
                     "isRequired": {
-                      "type": "boolean"
+                      "type": [
+                        "boolean",
+                        "null"
+                      ]
                     },
                     "userInterface": {
                       "type": "object",
@@ -8472,7 +8629,7 @@
                         "entity",
                         "file",
                         "formula",
-                        "giud",
+                        "guid",
                         "hashedText",
                         "html",
                         "image",
@@ -8485,6 +8642,7 @@
                         "jwtToken",
                         "language",
                         "latlong",
+                        "length",
                         "macAddress",
                         "markdown",
                         "money",
@@ -8514,7 +8672,10 @@
                           "format": "uri"
                         },
                         "isUnicode": {
-                          "type": "boolean"
+                          "type": [
+                            "boolean",
+                            "null"
+                          ]
                         },
                         "minLength": {
                           "type": [
@@ -8777,7 +8938,10 @@
                       ]
                     },
                     "isRequired": {
-                      "type": "boolean"
+                      "type": [
+                        "boolean",
+                        "null"
+                      ]
                     },
                     "userInterface": {
                       "type": "object",
@@ -8922,7 +9086,8 @@
               "required": [
                 "name",
                 "provider"
-              ]
+              ],
+              "additionalProperties": false
             },
             "cacheServer": {
               "type": "object",
@@ -8967,7 +9132,8 @@
                     "azureRedis",
                     "memcached",
                     "redis"
-                  ]
+                  ],
+                  "additionalProperties": false
                 }
               },
               "required": [
@@ -9126,13 +9292,15 @@
                     "rabbitMQ",
                     "azureServiceBus",
                     "amazonSQS"
-                  ]
+                  ],
+                  "additionalProperties": false
                 }
               },
               "required": [
                 "name",
                 "provider"
-              ]
+              ],
+              "additionalProperties": false
             },
             "integrationEventServer": {
               "type": "object",
@@ -9177,13 +9345,15 @@
                     "rabbitMQ",
                     "azureServiceBus",
                     "amazonSQS"
-                  ]
+                  ],
+                  "additionalProperties": false
                 }
               },
               "required": [
                 "name",
                 "provider"
-              ]
+              ],
+              "additionalProperties": false
             }
           },
           "required": [
@@ -9309,6 +9479,69 @@
               ],
               "additionalProperties": false
             },
+            "dataConnections": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "pattern": "^[^\\s]*$",
+                    "title": "The unique name of this server component in the solution.",
+                    "description": "The name of this server component in the solution. The name must be unique in the solution configuration"
+                  },
+                  "server": {
+                    "type": "string",
+                    "title": "Hostname, IP address or URL.",
+                    "description": "The name, address or IP of the server to connect to."
+                  },
+                  "port": {
+                    "type": [
+                      "integer",
+                      "null"
+                    ],
+                    "title": "Server port",
+                    "description": "The port to connect to."
+                  },
+                  "user": {
+                    "type": "string",
+                    "title": "Username.",
+                    "description": "The username to use when connecting to this server."
+                  },
+                  "password": {
+                    "type": "string",
+                    "title": "Password.",
+                    "description": "The password to use when connecting to this server."
+                  },
+                  "options": {
+                    "type": "string",
+                    "title": "Additional options.",
+                    "description": "A list of additional options to set when connecting to this server."
+                  },
+                  "provider": {
+                    "enum": [
+                      "amazonSqs",
+                      "azureServiceBus",
+                      "csvFile",
+                      "excelFile",
+                      "jsonFile",
+                      "mySql",
+                      "parquetFile",
+                      "postgres",
+                      "rabbitMq",
+                      "sqlServer",
+                      "webApi",
+                      "xmlFile"
+                    ]
+                  }
+                },
+                "required": [
+                  "name"
+                ],
+                "additionalProperties": false
+              },
+              "additionalProperties": false
+            },
             "notificationServices": {
               "type": "object",
               "properties": {
@@ -9353,7 +9586,8 @@
                       "enum": [
                         "sendGrid",
                         "mailchimp"
-                      ]
+                      ],
+                      "additionalProperties": false
                     }
                   },
                   "required": [
@@ -9403,7 +9637,8 @@
                       "enum": [
                         "twilio",
                         "clickSend"
-                      ]
+                      ],
+                      "additionalProperties": false
                     }
                   },
                   "required": [
@@ -9452,7 +9687,8 @@
                       "enum": [
                         "whatsApp",
                         "telegram"
-                      ]
+                      ],
+                      "additionalProperties": false
                     }
                   },
                   "required": [
@@ -9460,7 +9696,8 @@
                   ],
                   "additionalProperties": false
                 }
-              }
+              },
+              "additionalProperties": false
             },
             "observability": {
               "type": "object",
@@ -9497,6 +9734,98 @@
                 "name"
               ],
               "additionalProperties": false
+            },
+            "security": {
+              "type": "object",
+              "properties": {
+                "secrets": {
+                  "type": "object",
+                  "properties": {
+                    "secretsServer": {
+                      "type": "object",
+                      "properties": {
+                        "name": {
+                          "type": "string",
+                          "pattern": "^[^\\s]*$",
+                          "title": "The unique name of this server component in the solution.",
+                          "description": "The name of this server component in the solution. The name must be unique in the solution configuration"
+                        },
+                        "server": {
+                          "type": "string",
+                          "title": "Hostname, IP address or URL.",
+                          "description": "The name, address or IP of the server to connect to."
+                        },
+                        "port": {
+                          "type": [
+                            "integer",
+                            "null"
+                          ],
+                          "title": "Server port",
+                          "description": "The port to connect to."
+                        },
+                        "user": {
+                          "type": "string",
+                          "title": "Username.",
+                          "description": "The username to use when connecting to this server."
+                        },
+                        "password": {
+                          "type": "string",
+                          "title": "Password.",
+                          "description": "The password to use when connecting to this server."
+                        },
+                        "options": {
+                          "type": "string",
+                          "title": "Additional options.",
+                          "description": "A list of additional options to set when connecting to this server."
+                        },
+                        "provider": {
+                          "enum": [
+                            "awsKeyManagementService",
+                            "azureKeyVault",
+                            "hashiCorpVault"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "name"
+                      ],
+                      "additionalProperties": false
+                    },
+                    "validFor": {
+                      "type": "object",
+                      "properties": {
+                        "days": {
+                          "type": [
+                            "integer",
+                            "null"
+                          ]
+                        },
+                        "hours": {
+                          "type": [
+                            "integer",
+                            "null"
+                          ]
+                        },
+                        "minutes": {
+                          "type": [
+                            "integer",
+                            "null"
+                          ]
+                        },
+                        "seconds": {
+                          "type": [
+                            "integer",
+                            "null"
+                          ]
+                        }
+                      },
+                      "additionalProperties": false
+                    }
+                  },
+                  "additionalProperties": false
+                }
+              },
+              "additionalProperties": false
             }
           },
           "additionalProperties": false
@@ -9506,8 +9835,718 @@
         "persistence",
         "messaging"
       ],
-      "title": "A definition for infrastructure components used in a solution.",
-      "description": "A definition for the persistence, messaging and other pertinent components pertaining to solution infrastructure.",
+      "additionalProperties": false
+    },
+    "application": {
+      "type": "object",
+      "properties": {
+        "etl": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "title": "The name of the etl. Contains no spaces.",
+                "description": "The name of the etl. It should be a commonly used singular noun and be unique within a solution.",
+                "pattern": "^[^\\s]*$"
+              },
+              "description": {
+                "type": "string",
+                "title": "A phrase describing the etl.",
+                "description": "A description of the etl."
+              },
+              "source": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "title": "The name of the etl source. Contains no spaces.",
+                    "description": "The name of the etl source. It should be a commonly used singular noun and be unique within a solution.",
+                    "pattern": "^[^\\s]*$"
+                  },
+                  "description": {
+                    "type": "string",
+                    "title": "A phrase describing the etl source.",
+                    "description": "A description of the etl source."
+                  },
+                  "schedule": {
+                    "type": "object",
+                    "properties": {
+                      "start": {
+                        "type": "string"
+                      },
+                      "retry": {
+                        "type": "object",
+                        "properties": {
+                          "limit": {
+                            "type": [
+                              "integer",
+                              "null"
+                            ]
+                          },
+                          "delaySeconds": {
+                            "type": [
+                              "integer",
+                              "null"
+                            ]
+                          },
+                          "doubleDelayLimit": {
+                            "type": [
+                              "integer",
+                              "null"
+                            ]
+                          }
+                        },
+                        "additionalProperties": false
+                      },
+                      "runOnStartup": {
+                        "type": [
+                          "boolean",
+                          "null"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "start"
+                    ],
+                    "additionalProperties": false
+                  },
+                  "dataSource": {
+                    "type": "string",
+                    "additionalProperties": false
+                  },
+                  "watermark": {
+                    "type": "object",
+                    "properties": {
+                      "dateColumns": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        }
+                      },
+                      "sequentialKeyColumn": {
+                        "type": "string"
+                      }
+                    },
+                    "additionalProperties": false
+                  }
+                },
+                "required": [
+                  "name",
+                  "dataSource"
+                ],
+                "additionalProperties": false
+              },
+              "transform": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "map": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "sourceColumn": {
+                            "type": "string"
+                          },
+                          "converter": {
+                            "type": "string"
+                          },
+                          "targetAttribute": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "sourceColumn",
+                          "targetAttribute"
+                        ],
+                        "additionalProperties": false
+                      },
+                      "additionalProperties": false
+                    },
+                    "lookup": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "sourceColumn": {
+                            "type": "string"
+                          },
+                          "match": {
+                            "type": "object",
+                            "properties": {
+                              "table": {
+                                "type": "string"
+                              },
+                              "lookupColumn": {
+                                "type": "string"
+                              },
+                              "returnColumn": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "table",
+                              "lookupColumn",
+                              "returnColumn"
+                            ],
+                            "additionalProperties": false
+                          },
+                          "targetAttribute": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "sourceColumn",
+                          "targetAttribute"
+                        ],
+                        "additionalProperties": false
+                      },
+                      "additionalProperties": false
+                    }
+                  },
+                  "additionalProperties": false
+                },
+                "additionalProperties": false
+              },
+              "target": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "title": "The name of the etl target. Contains no spaces.",
+                    "description": "The name of the etl target. It should be a commonly used singular noun and be unique within a solution.",
+                    "pattern": "^[^\\s]*$"
+                  },
+                  "description": {
+                    "type": "string",
+                    "title": "A phrase describing the etl target.",
+                    "description": "A description of the etl target."
+                  },
+                  "dataConnection": {
+                    "type": "object",
+                    "properties": {
+                      "name": {
+                        "type": "string",
+                        "pattern": "^[^\\s]*$",
+                        "title": "The unique name of this server component in the solution.",
+                        "description": "The name of this server component in the solution. The name must be unique in the solution configuration"
+                      },
+                      "server": {
+                        "type": "string",
+                        "title": "Hostname, IP address or URL.",
+                        "description": "The name, address or IP of the server to connect to."
+                      },
+                      "port": {
+                        "type": [
+                          "integer",
+                          "null"
+                        ],
+                        "title": "Server port",
+                        "description": "The port to connect to."
+                      },
+                      "user": {
+                        "type": "string",
+                        "title": "Username.",
+                        "description": "The username to use when connecting to this server."
+                      },
+                      "password": {
+                        "type": "string",
+                        "title": "Password.",
+                        "description": "The password to use when connecting to this server."
+                      },
+                      "options": {
+                        "type": "string",
+                        "title": "Additional options.",
+                        "description": "A list of additional options to set when connecting to this server."
+                      },
+                      "provider": {
+                        "enum": [
+                          "amazonSqs",
+                          "azureServiceBus",
+                          "csvFile",
+                          "excelFile",
+                          "jsonFile",
+                          "mySql",
+                          "parquetFile",
+                          "postgres",
+                          "rabbitMq",
+                          "sqlServer",
+                          "webApi",
+                          "xmlFile"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "name"
+                    ],
+                    "additionalProperties": false
+                  }
+                },
+                "required": [
+                  "name",
+                  "dataConnection"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "name"
+            ],
+            "additionalProperties": false
+          },
+          "additionalProperties": false
+        },
+        "dataTransferObjects": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "title": "The name of the dto. Contains no spaces.",
+                "description": "The name of the dto. It should be a commonly used singular noun and be unique within a solution.",
+                "pattern": "^[^\\s]*$"
+              },
+              "description": {
+                "type": "string",
+                "title": "A phrase describing the dto.",
+                "description": "A description of the dto and what it represents in the real world."
+              },
+              "attributes": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "$ref": {
+                      "type": "string",
+                      "format": "uri"
+                    },
+                    "name": {
+                      "type": "string",
+                      "pattern": "^[^\\s]*$"
+                    },
+                    "description": {
+                      "type": "string"
+                    },
+                    "type": {
+                      "enum": [
+                        "array",
+                        "collection",
+                        "object",
+                        "area",
+                        "autoNumber",
+                        "boolean",
+                        "color",
+                        "colour",
+                        "countryCode2",
+                        "countryCode3",
+                        "countryNumber",
+                        "culture",
+                        "currencyCode",
+                        "currencyNumber",
+                        "date",
+                        "dateTime",
+                        "dateTimeDuration",
+                        "dateTimeRange",
+                        "dateTimeSchedule",
+                        "distance",
+                        "email",
+                        "encryptedText",
+                        "entity",
+                        "file",
+                        "formula",
+                        "guid",
+                        "hashedText",
+                        "html",
+                        "image",
+                        "imageJpg",
+                        "imagePng",
+                        "imageSvg",
+                        "internetDomain",
+                        "ipAddress",
+                        "json",
+                        "jwtToken",
+                        "language",
+                        "latlong",
+                        "length",
+                        "macAddress",
+                        "markdown",
+                        "money",
+                        "nuid",
+                        "number",
+                        "password",
+                        "percentage",
+                        "phoneNumber",
+                        "streetAddress",
+                        "temperature",
+                        "text",
+                        "time",
+                        "translatedText",
+                        "uri",
+                        "url",
+                        "user",
+                        "volume",
+                        "weight",
+                        "yaml"
+                      ]
+                    },
+                    "textTypeOptions": {
+                      "type": "object",
+                      "properties": {
+                        "$ref": {
+                          "type": "string",
+                          "format": "uri"
+                        },
+                        "isUnicode": {
+                          "type": [
+                            "boolean",
+                            "null"
+                          ]
+                        },
+                        "minLength": {
+                          "type": [
+                            "integer",
+                            "null"
+                          ]
+                        },
+                        "maxLength": {
+                          "type": [
+                            "integer",
+                            "null"
+                          ]
+                        },
+                        "characterCasing": {
+                          "enum": [
+                            "normal",
+                            "lower",
+                            "upper"
+                          ]
+                        }
+                      },
+                      "additionalProperties": false
+                    },
+                    "numberTypeOptions": {
+                      "type": "object",
+                      "properties": {
+                        "$ref": {
+                          "type": "string",
+                          "format": "uri"
+                        },
+                        "decimalDigits": {
+                          "type": [
+                            "integer",
+                            "null"
+                          ]
+                        },
+                        "integerDigits": {
+                          "type": [
+                            "integer",
+                            "null"
+                          ]
+                        },
+                        "minValue": {
+                          "type": "number"
+                        },
+                        "maxValue": {
+                          "type": "number"
+                        }
+                      },
+                      "additionalProperties": false
+                    },
+                    "moneyTypeOptions": {
+                      "type": "object",
+                      "properties": {
+                        "$ref": {
+                          "type": "string",
+                          "format": "uri"
+                        },
+                        "decimalDigits": {
+                          "type": [
+                            "integer",
+                            "null"
+                          ]
+                        },
+                        "integerDigits": {
+                          "type": [
+                            "integer",
+                            "null"
+                          ]
+                        },
+                        "minValue": {
+                          "type": "number"
+                        },
+                        "maxValue": {
+                          "type": "number"
+                        },
+                        "defaultCurrency": {
+                          "enum": [
+                            "AED",
+                            "AFN",
+                            "ALL",
+                            "AMD",
+                            "ANG",
+                            "AOA",
+                            "ARS",
+                            "AUD",
+                            "AWG",
+                            "AZN",
+                            "BAM",
+                            "BBD",
+                            "BDT",
+                            "BGN",
+                            "BHD",
+                            "BIF",
+                            "BMD",
+                            "BND",
+                            "BOB",
+                            "BRL",
+                            "BSD",
+                            "BTC",
+                            "BTN",
+                            "BWP",
+                            "BYR",
+                            "BYN",
+                            "BZD",
+                            "CAD",
+                            "CDF",
+                            "CHF",
+                            "CLP",
+                            "CNY",
+                            "COP",
+                            "CRC",
+                            "CUC",
+                            "CUP",
+                            "CVE",
+                            "CZK",
+                            "DJF",
+                            "DKK",
+                            "DOP",
+                            "DZD",
+                            "EGP",
+                            "ERN",
+                            "ETB",
+                            "EUR",
+                            "FJD",
+                            "FKP",
+                            "GBP",
+                            "GEL",
+                            "GHS",
+                            "GIP",
+                            "GMD",
+                            "GNF",
+                            "GTQ",
+                            "GYD",
+                            "HKD",
+                            "HNL",
+                            "HRK",
+                            "HTG",
+                            "HUF",
+                            "IDR",
+                            "ILS",
+                            "INR",
+                            "IQD",
+                            "IRR",
+                            "ISK",
+                            "JMD",
+                            "JOD",
+                            "JPY",
+                            "KES",
+                            "KGS",
+                            "KHR",
+                            "KMF",
+                            "KPW",
+                            "KRW",
+                            "KWD",
+                            "KYD",
+                            "KZT",
+                            "LAK",
+                            "LBP",
+                            "LKR",
+                            "LRD",
+                            "LSL",
+                            "LYD",
+                            "MAD",
+                            "MDL",
+                            "MGA",
+                            "MKD",
+                            "MMK",
+                            "MNT",
+                            "MOP",
+                            "MRO",
+                            "MTL",
+                            "MUR",
+                            "MVR",
+                            "MWK",
+                            "MXN",
+                            "MYR",
+                            "MZN",
+                            "NAD",
+                            "NGN",
+                            "NIO",
+                            "NOK",
+                            "NPR",
+                            "NZD",
+                            "OMR",
+                            "PAB",
+                            "PEN",
+                            "PGK",
+                            "PHP",
+                            "PKR",
+                            "PLN",
+                            "PYG",
+                            "QAR",
+                            "RON",
+                            "RSD",
+                            "RUB",
+                            "RWF",
+                            "SAR",
+                            "SBD",
+                            "SCR",
+                            "SDD",
+                            "SDG",
+                            "SEK",
+                            "SGD",
+                            "SHP",
+                            "SLL",
+                            "SOS",
+                            "SRD",
+                            "STD",
+                            "SVC",
+                            "SYP",
+                            "SZL",
+                            "THB",
+                            "TJS",
+                            "TMT",
+                            "TND",
+                            "TOP",
+                            "TRY",
+                            "TTD",
+                            "TVD",
+                            "TWD",
+                            "TZS",
+                            "UAH",
+                            "UGX",
+                            "USD",
+                            "UYU",
+                            "UZS",
+                            "VEB",
+                            "VEF",
+                            "VND",
+                            "VUV",
+                            "WST",
+                            "XAF",
+                            "XCD",
+                            "XBT",
+                            "XOF",
+                            "XPF",
+                            "YER",
+                            "ZAR",
+                            "ZMW",
+                            "WON"
+                          ]
+                        }
+                      },
+                      "additionalProperties": false
+                    },
+                    "entityTypeOptions": {
+                      "type": "object",
+                      "properties": {
+                        "$ref": {
+                          "type": "string",
+                          "format": "uri"
+                        },
+                        "entity": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "entity"
+                      ]
+                    },
+                    "isRequired": {
+                      "type": [
+                        "boolean",
+                        "null"
+                      ]
+                    },
+                    "userInterface": {
+                      "type": "object",
+                      "properties": {
+                        "$ref": {
+                          "type": "string",
+                          "format": "uri"
+                        },
+                        "label": {
+                          "type": "string"
+                        },
+                        "translationId": {
+                          "type": "string"
+                        },
+                        "widget": {
+                          "enum": [
+                            "textInput",
+                            "textArea",
+                            "numberInput",
+                            "numberSlider",
+                            "fileUpload",
+                            "datePicker",
+                            "dateRangePicker",
+                            "timePicker",
+                            "timeRangePicker",
+                            "radio",
+                            "select",
+                            "checkbox",
+                            "switch"
+                          ]
+                        },
+                        "icon": {
+                          "type": "string"
+                        },
+                        "inputMask": {
+                          "type": "string"
+                        },
+                        "outputMask": {
+                          "type": "string"
+                        },
+                        "regex": {
+                          "type": "string"
+                        },
+                        "pageGroup": {
+                          "type": "string"
+                        },
+                        "fieldGroup": {
+                          "type": "string"
+                        },
+                        "inputOrder": {
+                          "type": [
+                            "integer",
+                            "null"
+                          ]
+                        }
+                      },
+                      "additionalProperties": false
+                    }
+                  },
+                  "required": [
+                    "name",
+                    "type"
+                  ],
+                  "additionalProperties": false
+                },
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "name"
+            ],
+            "additionalProperties": false
+          },
+          "additionalProperties": false
+        }
+      },
       "additionalProperties": false
     }
   },

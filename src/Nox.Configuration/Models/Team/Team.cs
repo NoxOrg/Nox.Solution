@@ -3,27 +3,6 @@ using System.Collections.Generic;
 
 namespace Nox
 {
-
-    public enum TeamRole
-    {
-        Administrator,
-        Owner,
-        Manager,
-        Developer,
-        QualityAssurer,
-        Architect,
-        Tester,
-        RequirementAnalyst,
-        EndUser,
-        UserExperienceDesigner,
-        DevOpsEngineer,
-        SupportEngineer,
-        TechnicalWriter,
-        DatabaseAdministrator,
-        ReleaseEngineer,
-        ProjectManager
-    }
-
     [Title("Information about the team working on this solution.")]
     [Description("Specify the members of the team working on the solution including their respective roles.")]
     [AdditionalProperties(false)]
@@ -40,6 +19,8 @@ namespace Nox
         [Pattern(@"^[^\s]*$")]
         public string? UserName { get; set; }
 
+        [Title("Roles that a team member fulfills for this solution.")]
+        [Description("The list of one or more roles that the user fulfills for this solution. At least one role is required")]
         [AdditionalProperties(false)]
         public List<TeamRole>? Roles { get; set; }
     }

@@ -3,6 +3,8 @@
 namespace Nox
 {
 
+    [Title("A definition for infrastructure components used in a solution.")]
+    [Description("A definition for the persistence, messaging and other pertinent components pertaining to solution infrastructure.")]
     [AdditionalProperties(false)]
     public class Infrastructure : DefinitionBase
     {
@@ -15,5 +17,11 @@ namespace Nox
         [Required]
         [AdditionalProperties(false)]
         public Persistence? Persistence { get; set; }
+
+        [AdditionalProperties(false)]
+        public Services? Services { get; set; }
+
+        [AdditionalProperties(false)]
+        public Dependencies? Type { get; set; }
     }
 }

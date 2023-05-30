@@ -3,6 +3,7 @@ using Json.Schema.Generation;
 
 namespace Nox
 {
+    
     public class Messaging
     {
         [Required]

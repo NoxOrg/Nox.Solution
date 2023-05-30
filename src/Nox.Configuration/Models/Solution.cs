@@ -33,7 +33,6 @@ namespace Nox
         [Title("Definitions for run-time environments.")]
         [Description("Definitions for the name, variables and other pertinent information pertaining to run-time environments.")]
         [AdditionalProperties(false)]
-
         public List<Environment>? Environments { get; set; }
 
         [AdditionalProperties(false)]

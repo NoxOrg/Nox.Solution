@@ -74,7 +74,7 @@ namespace Nox
                 throw new NoxConfigurationException("Unable to locate the root folder of your solution. Have you created a git repo for your solution?");
             }
 
-            var designFolder = FindNoxDesignFolder(solutionRoot);
+            var designFolder = FindNoxDesignFolder(solutionRoot!);
             if (string.IsNullOrEmpty(designFolder))
             {
                 throw new NoxConfigurationException($"Unable to locate a .nox/design folder in your solution folder ({solutionRoot}). Best practice is to create a '.nox' folder in your solution folder and in there a 'design' folder which contains your <solution-name>.solution.nox.yaml and supporting files.");

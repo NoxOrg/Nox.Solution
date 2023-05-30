@@ -30,7 +30,7 @@
         entity,
         file,
         formula,
-        giud,
+        guid,
         hashedText,
         html,
         image,

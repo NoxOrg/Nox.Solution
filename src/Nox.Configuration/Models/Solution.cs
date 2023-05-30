@@ -44,6 +44,7 @@ namespace Nox
         [AdditionalProperties(false)]
         public Domain? Domain { get; set; }
 
+        [AdditionalProperties(false)]
         public Infrastructure? Infrastructure { get; set; }
 
     }

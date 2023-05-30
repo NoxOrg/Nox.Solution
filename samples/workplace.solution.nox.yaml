@@ -369,5 +369,58 @@ infrastructure:
       user: guest
       password: guest
 
+  services:
+    
+    apiServer:
+      name: SampleApiService
+      server: localhost
+      httpPort: 8080
+      httpsPort: 4433
+
+    bffServer:
+      name: SampleBffService
+      server: localhost
+      httpPort: 8081
+      httpsPort: 4431
+
+  dependencies:
+    
+    notificationServices:
+      emailServer:
+        name: SampleEmailServer
+        provider: sendGrid
+        server: sendgrid.com
+        user: SampleCurrencyUser
+        port: 1234
+        password: MyPassword
+
+      smsServer:
+        name: SampleSmsServer
+        server: twilio.com
+        provider: twilio
+        user: SampleCurrencyUser
+        password: MyPassword
+
+      imServer:
+        name: SampleImServer
+        server: whatsapp.com
+        provider: whatsApp
+        user: whatsappuser
+        password: whatsapppassword
+
+    observability:
+      name: SampleObservability
+      server: localhost
+      httpPort: 8200
+
+    translationService:
+      name: SampleTranslationService
+      server: translator.iwgplc.com
+      httpsPort: 443
+
+  
+  
+
+
 
 

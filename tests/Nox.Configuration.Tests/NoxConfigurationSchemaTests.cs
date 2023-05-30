@@ -47,7 +47,7 @@ public class NoxConfigurationSchemaTests
             .Build();
 
         File.WriteAllText(Path.Combine(path, "environment.json"),
-            JsonSerializer.Serialize(solutionSchema, jsonConfig)
+            JsonSerializer.Serialize(environmentSchema, jsonConfig)
         );
 
         var versionControlSchema = new JsonSchemaBuilder()
@@ -75,7 +75,34 @@ public class NoxConfigurationSchemaTests
             .Build();
 
         File.WriteAllText(Path.Combine(path, "infrastructure.json"),
-            JsonSerializer.Serialize(teamSchema, jsonConfig)
+            JsonSerializer.Serialize(infrastructureSchema, jsonConfig)
+        );
+        
+        var domainSchema = new JsonSchemaBuilder()
+            .Schema(MetaSchemas.Draft7Id)
+            .FromType<Domain>(schemaConfig)
+            .Build();
+
+        File.WriteAllText(Path.Combine(path, "domain.json"),
+            JsonSerializer.Serialize(domainSchema, jsonConfig)
+        );
+        
+        var entitySchema = new JsonSchemaBuilder()
+            .Schema(MetaSchemas.Draft7Id)
+            .FromType<Entity>(schemaConfig)
+            .Build();
+
+        File.WriteAllText(Path.Combine(path, "entity.json"),
+            JsonSerializer.Serialize(entitySchema, jsonConfig)
+        );
+        
+        var applicationSchema = new JsonSchemaBuilder()
+            .Schema(MetaSchemas.Draft7Id)
+            .FromType<Application>(schemaConfig)
+            .Build();
+
+        File.WriteAllText(Path.Combine(path, "application.json"),
+            JsonSerializer.Serialize(applicationSchema, jsonConfig)
         );
 
     }

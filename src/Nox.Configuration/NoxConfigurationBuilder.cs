@@ -38,7 +38,6 @@ namespace Nox
         private string? FindSolutionRoot()
         {
             var path = new DirectoryInfo( Directory.GetCurrentDirectory() );
-            var targetFolder = string.Empty;
 
             while (path != null)
             {

@@ -27,4 +27,10 @@
     <ProjectReference Include="..\..\src\Nox.Configuration\Nox.Configuration.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="files\minimal.solution.nox.yaml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

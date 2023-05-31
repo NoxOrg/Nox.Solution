@@ -69,15 +69,6 @@ public class NoxConfigurationSchemaTests
             JsonSerializer.Serialize(teamSchema, jsonConfig)
         );
         
-        var infrastructureSchema = new JsonSchemaBuilder()
-            .Schema(MetaSchemas.Draft7Id)
-            .FromType<Infrastructure>(schemaConfig)
-            .Build();
-
-        File.WriteAllText(Path.Combine(path, "infrastructure.json"),
-            JsonSerializer.Serialize(infrastructureSchema, jsonConfig)
-        );
-        
         var domainSchema = new JsonSchemaBuilder()
             .Schema(MetaSchemas.Draft7Id)
             .FromType<Domain>(schemaConfig)
@@ -103,6 +94,15 @@ public class NoxConfigurationSchemaTests
 
         File.WriteAllText(Path.Combine(path, "application.json"),
             JsonSerializer.Serialize(applicationSchema, jsonConfig)
+        );
+        
+        var infrastructureSchema = new JsonSchemaBuilder()
+            .Schema(MetaSchemas.Draft7Id)
+            .FromType<Infrastructure>(schemaConfig)
+            .Build();
+
+        File.WriteAllText(Path.Combine(path, "infrastructure.json"),
+            JsonSerializer.Serialize(infrastructureSchema, jsonConfig)
         );
 
     }

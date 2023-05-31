@@ -438,4 +438,3 @@ infrastructure:
       - name: CountryJsonDatabaseSource
         provider: jsonFile
         server: file:///C:/countries.json
-

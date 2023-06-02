@@ -1,9 +1,11 @@
 using Json.Schema.Generation;
 
-namespace Nox;
-
-[AdditionalProperties(false)]
-public class DataConnection: ServerBase
+namespace Nox
 {
-    public DataConnectionProvider? Provider { get; set; }
+
+    [AdditionalProperties(false)]
+    public class DataConnection : ServerBase
+    {
+        public DataConnectionProvider? Provider { get; set; }
+    }
 }

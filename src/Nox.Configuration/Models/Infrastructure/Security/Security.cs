@@ -1,6 +1,8 @@
-namespace Nox;
-
-public class Security
+namespace Nox
 {
-    public Secrets? Secrets { get; set; }
+
+    public class Security
+    {
+        public Secrets? Secrets { get; set; }
+    }
 }

@@ -1,7 +1,8 @@
-namespace Nox;
-
-public enum EtlMappingConverter
+namespace Nox
 {
-    upperCase,
-    lowerCase
+    public enum EtlMappingConverter
+    {
+        upperCase,
+        lowerCase
+    }
 }

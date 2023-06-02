@@ -1,9 +1,11 @@
-namespace Nox;
-
-public enum SecretsProvider
+namespace Nox
 {
-    awsKeyManagementService,
-    azureKeyVault,
-    hashiCorpVault
-    
+
+    public enum SecretsProvider
+    {
+        awsKeyManagementService,
+        azureKeyVault,
+        hashiCorpVault
+
+    }
 }

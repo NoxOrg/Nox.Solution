@@ -1,9 +1,11 @@
 using Json.Schema.Generation;
 
-namespace Nox;
-
-[AdditionalProperties(false)]
-public class SecretsServer: ServerBase
+namespace Nox
 {
-    public SecretsProvider? Provider { get; set; }
+
+    [AdditionalProperties(false)]
+    public class SecretsServer : ServerBase
+    {
+        public SecretsProvider? Provider { get; set; }
+    }
 }

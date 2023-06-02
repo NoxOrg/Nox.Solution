@@ -1,42 +1,19 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
-    <LangVersion>10.0</LangVersion>
+    <TargetFramework>netstandard2.1</TargetFramework>
     <ImplicitUsings>disable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <RootNamespace>Nox</RootNamespace>
   </PropertyGroup>
-  <PropertyGroup>
-    <PackageId>Nox.Configuration</PackageId>
-    <Authors>Andre Sharpe,Jan Schutte</Authors>
-    <Description>Nox Configuration library</Description>
-    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
-    <Copyright>Copyright (c) Andre Sharpe 2022</Copyright>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <AssemblyVersion>1.0.0.0</AssemblyVersion>
-    <FileVersion>1.0.0.0</FileVersion>
-    <PackageVersion>1.0.0</PackageVersion>
-    <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <PackageProjectUrl>https://github.com/NoxOrg/Nox</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/NoxOrg/Nox.Configuration.git</RepositoryUrl>
-    <RepositoryType>git</RepositoryType>
-    <PackageIcon>nox.png</PackageIcon>
-  </PropertyGroup>
+
   <ItemGroup>
     <PackageReference Include="JsonSchema.Net.Generation" Version="3.2.0" />
     <PackageReference Include="Nox.Types" Version="1.0.0" />
   </ItemGroup>
+
   <ItemGroup>
-    <Content Include="..\..\images\nox.png">
-      <Link>nox.png</Link>
-    </Content>
+    <Folder Include="Models\Application\" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="..\..\images\nox.png" Pack="true" PackagePath="" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Models\Infrastructure\Dependencies\Security\" />
-    <Folder Include="Models\Infrastructure\Security\Authentication\" />
-  </ItemGroup>
+
 </Project>

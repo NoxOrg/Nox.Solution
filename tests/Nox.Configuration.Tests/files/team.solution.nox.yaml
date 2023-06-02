@@ -1,0 +1,20 @@
+#
+# minimal.solution.nox.yaml
+#
+# yaml-language-server: $schema=../../../schemas/solution.json
+#
+
+
+name: TestService
+
+description: Yaml file for testing variables
+
+team:
+
+  - name: Andre Sharpe
+    userName: andre.sharpe@iwgplc.com
+    roles: [Architect, Owner, Administrator, Developer, Manager]
+
+  - name: Jan Schutte
+    userName: jan.schutte@iwgplc.com
+    roles: [Architect, Administrator, Developer, DevOpsEngineer]

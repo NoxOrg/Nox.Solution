@@ -1,6 +1,7 @@
 ﻿using Json.Schema.Generation;
 using System;
 using System.Collections.Generic;
+using System.Net.Mime;
 
 namespace Nox
 {
@@ -33,7 +34,6 @@ namespace Nox
         [Title("Definitions for run-time environments.")]
         [Description("Definitions for the name, variables and other pertinent information pertaining to run-time environments.")]
         [AdditionalProperties(false)]
-
         public List<Environment>? Environments { get; set; }
 
         [AdditionalProperties(false)]
@@ -45,7 +45,11 @@ namespace Nox
         [AdditionalProperties(false)]
         public Domain? Domain { get; set; }
 
+        [AdditionalProperties(false)]
         public Infrastructure? Infrastructure { get; set; }
+        
+        [AdditionalProperties(false)]
+        public Application? Application { get; set; }
 
     }
 }

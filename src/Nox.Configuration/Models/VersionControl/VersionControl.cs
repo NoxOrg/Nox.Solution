@@ -3,7 +3,7 @@ using System;
 
 namespace Nox
 {
-
+    [AdditionalProperties(false)]
     public enum VersionControlProvider
     {
         AzureDevops

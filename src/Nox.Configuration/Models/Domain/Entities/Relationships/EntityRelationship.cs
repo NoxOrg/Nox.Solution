@@ -2,14 +2,6 @@
 
 namespace Nox
 {
-    public enum EntityRelationshipType
-    {
-        ZeroOrOne,
-        ExactlyOne,
-        ZeroOrMany,
-        OneOrMany
-    }
-
     [Title("Defines a one way relationship to another entity.")]
     [Description("Defines a one way relationship to another entity. It is required to define the reverse relationship on the target entity.")]
     [AdditionalProperties(false)]

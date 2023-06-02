@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Text.Json.Serialization;
+using JetBrains.Annotations;
 
 namespace Nox
 {
@@ -7,7 +8,7 @@ namespace Nox
     public abstract class DefinitionBase
     {
 
-        [JsonPropertyName("$ref")]
+        [JsonPropertyName("$ref")] 
         public Uri? Ref { get; set; }
 
     }

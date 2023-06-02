@@ -1,97 +1,42 @@
-using Json.More;
-using Json.Schema;
-using Json.Schema.Generation;
-using System.Text.Json;
-
+using Nox.Exceptions;
 
 namespace Nox.Configuration.Tests;
 
 public class NoxConfigurationBuilderTests
 {
     [Fact]
-    public void Test1()
+    public void Can_create_configuration_from_set_yaml_file()
     {
-
-        /*
-         * TODO: $ref support for arraus/lists
-         * 
-         * TODO: make enum type strings too
-         * 
-         */
-
-        var path = FindOrCreateFolderInProjectRoot("schemas");
-
-        var schemaConfig = new SchemaGeneratorConfiguration()
-        {
-            PropertyNamingMethod = PropertyNamingMethods.CamelCase,
-            Nullability = Nullability.AllowForNullableValueTypes,
-            Optimize = false,
-        };
-
-        var jsonConfig = new JsonSerializerOptions()
-        {
-            WriteIndented = true,
-        };
-
-        var solutionSchema = new JsonSchemaBuilder()
-            .Schema(MetaSchemas.Draft7Id)
-            .FromType<Solution>(schemaConfig)
+        var noxConfig = new NoxConfigurationBuilder()
+            .WithYamlFile("./files/minimal.solution.nox.yaml")
             .Build();
-
-        File.WriteAllText(Path.Combine(path, "solution.json"),
-            JsonSerializer.Serialize(solutionSchema, jsonConfig)
-        );
-
-        var environmentSchema = new JsonSchemaBuilder()
-            .Schema(MetaSchemas.Draft7Id)
-            .FromType<Environment>(schemaConfig)
-            .Build();
-
-        File.WriteAllText(Path.Combine(path, "solution.json"),
-            JsonSerializer.Serialize(solutionSchema, jsonConfig)
-        );
-
-        var versionControlSchema = new JsonSchemaBuilder()
-            .Schema(MetaSchemas.Draft7Id)
-            .FromType<VersionControl>(schemaConfig)
-            .Build();
-
-
-        File.WriteAllText(Path.Combine(path, "versionControl.json"),
-            JsonSerializer.Serialize(versionControlSchema, jsonConfig)
-        );
-
-        var teamSchema = new JsonSchemaBuilder()
-            .Schema(MetaSchemas.Draft7Id)
-            .FromType<Team>(schemaConfig)
-            .Build();
-
-        File.WriteAllText(Path.Combine(path, "team.json"),
-            JsonSerializer.Serialize(teamSchema, jsonConfig)
-        );
-
+        Assert.False(noxConfig == null);
     }
 
-    private static string FindOrCreateFolderInProjectRoot(string folderName)
+    [Fact]
+    public void Error_if_set_yaml_file_does_not_exist()
     {
-        var path = new DirectoryInfo( Directory.GetCurrentDirectory() );
-        var targetFolder = string.Empty;
-
-        while (path != null) 
-        {
-            if (path.GetDirectories(".git").Any())
-            {
-                targetFolder = Path.Combine(path.FullName, folderName);
-                if (!Path.Exists(targetFolder))
-                {
-                    Directory.CreateDirectory(targetFolder);
-                }
-                break;
-            }
-            
-            path = path.Parent;
-        }
-
-        return targetFolder;
+        var noxConfigBuilder = new NoxConfigurationBuilder()
+            .WithYamlFile("./files/missing.solution.nox.yaml");
+        Assert.Throws<NoxConfigurationException>(() => noxConfigBuilder.Build());
     }
+
+    [Fact]
+    public void Can_create_configuration_from_nox_design_folder()
+    {
+        var noxConfig = new NoxConfigurationBuilder()
+            .Build();
+        Assert.False(noxConfig == null);
+    }
+
+    [Fact]
+    public void Error_if_configuration_not_found_in_nox_folder()
+    {
+        TestHelpers.RenameFilesInFolder("../../../../../.nox/design", "*.nox.yaml", "zaml");
+        var noxConfigBuilder = new NoxConfigurationBuilder();
+        Assert.Throws<NoxConfigurationException>(() => noxConfigBuilder.Build());
+        TestHelpers.RenameFilesInFolder("../../../../../.nox/design", "*.nox.zaml", "yaml");
+    }
+    
+    
 }

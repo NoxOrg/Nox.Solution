@@ -10,7 +10,7 @@ public static class TestHelpers
             var fullPath = Path.GetFullPath(file);
             var directory = Path.GetDirectoryName(fullPath);
             var name = Path.GetFileNameWithoutExtension(fullPath);
-            File.Move(fullPath, Path.Combine(directory, $"{name}.{targetExtension}"));
+            File.Move(fullPath, Path.Combine(directory!, $"{name}.{targetExtension}"));
         }
     }
 }

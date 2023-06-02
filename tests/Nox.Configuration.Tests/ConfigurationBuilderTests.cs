@@ -2,7 +2,7 @@ using Nox.Exceptions;
 
 namespace Nox.Configuration.Tests;
 
-public class NoxConfigurationBuilderTests
+public class ConfigurationBuilderTests
 {
     [Fact]
     public void Can_create_configuration_from_set_yaml_file()

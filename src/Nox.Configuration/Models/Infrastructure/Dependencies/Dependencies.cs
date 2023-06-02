@@ -7,16 +7,16 @@ namespace Nox
     public class Dependencies
     {
         [AdditionalProperties(false)]
-        public TranslationService? TranslationService { get; set; }
+        public Translations? Translations { get; set; }
         
         [AdditionalProperties(false)]
         public List<DataConnection>? DataConnections { get; set; }
         
         [AdditionalProperties(false)]
-        public NotificationServices? NotificationServices { get; set; }
+        public Notifications? Notifications { get; set; }
         
         [AdditionalProperties(false)]
-        public Observability? Observability { get; set; }
+        public Monitoring? Monitoring { get; set; }
         
         [AdditionalProperties(false)]
         public Security? Security { get; set; }

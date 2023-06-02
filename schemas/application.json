@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "type": "object",
   "properties": {
-    "etl": {
+    "integration": {
       "type": "array",
       "items": {
         "type": "object",
@@ -74,7 +74,7 @@
                 ],
                 "additionalProperties": false
               },
-              "dataSource": {
+              "dataConnection": {
                 "type": "string",
                 "additionalProperties": false
               },
@@ -96,80 +96,79 @@
             },
             "required": [
               "name",
-              "dataSource"
+              "dataConnection"
             ],
             "additionalProperties": false
           },
           "transform": {
-            "type": "array",
-            "items": {
-              "type": "object",
-              "properties": {
-                "map": {
-                  "type": "array",
-                  "items": {
-                    "type": "object",
-                    "properties": {
-                      "sourceColumn": {
-                        "type": "string"
-                      },
-                      "converter": {
-                        "type": "string"
-                      },
-                      "targetAttribute": {
-                        "type": "string"
-                      }
+            "type": "object",
+            "properties": {
+              "map": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "sourceColumn": {
+                      "type": "string"
                     },
-                    "required": [
-                      "sourceColumn",
-                      "targetAttribute"
-                    ],
-                    "additionalProperties": false
+                    "converter": {
+                      "enum": [
+                        "upperCase",
+                        "lowerCase"
+                      ]
+                    },
+                    "targetAttribute": {
+                      "type": "string"
+                    }
                   },
+                  "required": [
+                    "sourceColumn",
+                    "targetAttribute"
+                  ],
                   "additionalProperties": false
                 },
-                "lookup": {
-                  "type": "array",
-                  "items": {
-                    "type": "object",
-                    "properties": {
-                      "sourceColumn": {
-                        "type": "string"
-                      },
-                      "match": {
-                        "type": "object",
-                        "properties": {
-                          "table": {
-                            "type": "string"
-                          },
-                          "lookupColumn": {
-                            "type": "string"
-                          },
-                          "returnColumn": {
-                            "type": "string"
-                          }
-                        },
-                        "required": [
-                          "table",
-                          "lookupColumn",
-                          "returnColumn"
-                        ],
-                        "additionalProperties": false
-                      },
-                      "targetAttribute": {
-                        "type": "string"
-                      }
-                    },
-                    "required": [
-                      "sourceColumn",
-                      "targetAttribute"
-                    ],
-                    "additionalProperties": false
-                  },
-                  "additionalProperties": false
-                }
+                "additionalProperties": false
               },
-              "additionalProperties": false
+              "lookup": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "sourceColumn": {
+                      "type": "string"
+                    },
+                    "match": {
+                      "type": "object",
+                      "properties": {
+                        "table": {
+                          "type": "string"
+                        },
+                        "lookupColumn": {
+                          "type": "string"
+                        },
+                        "returnColumn": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "table",
+                        "lookupColumn",
+                        "returnColumn"
+                      ],
+                      "additionalProperties": false
+                    },
+                    "targetAttribute": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "sourceColumn",
+                    "targetAttribute"
+                  ],
+                  "additionalProperties": false
+                },
+                "additionalProperties": false
+              }
             },
             "additionalProperties": false
           },
@@ -196,10 +195,10 @@
                     "title": "The unique name of this server component in the solution.",
                     "description": "The name of this server component in the solution. The name must be unique in the solution configuration"
                   },
-                  "server": {
+                  "serverUri": {
                     "type": "string",
-                    "title": "Hostname, IP address or URL.",
-                    "description": "The name, address or IP of the server to connect to."
+                    "title": "Hostname, IP address or URI.",
+                    "description": "The name, address, URI or IP of the server to connect to."
                   },
                   "port": {
                     "type": [

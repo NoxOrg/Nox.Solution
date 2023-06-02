@@ -3,7 +3,7 @@ using Json.Schema.Generation;
 namespace Nox
 {
     [AdditionalProperties(false)]
-    public class ApiServer: ServiceBase
+    public class Translations: ServerBase
     {
         
     }

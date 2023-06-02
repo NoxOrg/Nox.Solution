@@ -9046,10 +9046,10 @@
                   "title": "The unique name of this server component in the solution.",
                   "description": "The name of this server component in the solution. The name must be unique in the solution configuration"
                 },
-                "server": {
+                "serverUri": {
                   "type": "string",
-                  "title": "Hostname, IP address or URL.",
-                  "description": "The name, address or IP of the server to connect to."
+                  "title": "Hostname, IP address or URI.",
+                  "description": "The name, address, URI or IP of the server to connect to."
                 },
                 "port": {
                   "type": [
@@ -9098,10 +9098,10 @@
                   "title": "The unique name of this server component in the solution.",
                   "description": "The name of this server component in the solution. The name must be unique in the solution configuration"
                 },
-                "server": {
+                "serverUri": {
                   "type": "string",
-                  "title": "Hostname, IP address or URL.",
-                  "description": "The name, address or IP of the server to connect to."
+                  "title": "Hostname, IP address or URI.",
+                  "description": "The name, address, URI or IP of the server to connect to."
                 },
                 "port": {
                   "type": [
@@ -9151,10 +9151,10 @@
                   "title": "The unique name of this server component in the solution.",
                   "description": "The name of this server component in the solution. The name must be unique in the solution configuration"
                 },
-                "server": {
+                "serverUri": {
                   "type": "string",
-                  "title": "Hostname, IP address or URL.",
-                  "description": "The name, address or IP of the server to connect to."
+                  "title": "Hostname, IP address or URI.",
+                  "description": "The name, address, URI or IP of the server to connect to."
                 },
                 "port": {
                   "type": [
@@ -9200,10 +9200,10 @@
                   "title": "The unique name of this server component in the solution.",
                   "description": "The name of this server component in the solution. The name must be unique in the solution configuration"
                 },
-                "server": {
+                "serverUri": {
                   "type": "string",
-                  "title": "Hostname, IP address or URL.",
-                  "description": "The name, address or IP of the server to connect to."
+                  "title": "Hostname, IP address or URI.",
+                  "description": "The name, address, URI or IP of the server to connect to."
                 },
                 "port": {
                   "type": [
@@ -9258,10 +9258,10 @@
                   "title": "The unique name of this server component in the solution.",
                   "description": "The name of this server component in the solution. The name must be unique in the solution configuration"
                 },
-                "server": {
+                "serverUri": {
                   "type": "string",
-                  "title": "Hostname, IP address or URL.",
-                  "description": "The name, address or IP of the server to connect to."
+                  "title": "Hostname, IP address or URI.",
+                  "description": "The name, address, URI or IP of the server to connect to."
                 },
                 "port": {
                   "type": [
@@ -9311,10 +9311,10 @@
                   "title": "The unique name of this server component in the solution.",
                   "description": "The name of this server component in the solution. The name must be unique in the solution configuration"
                 },
-                "server": {
+                "serverUri": {
                   "type": "string",
-                  "title": "Hostname, IP address or URL.",
-                  "description": "The name, address or IP of the server to connect to."
+                  "title": "Hostname, IP address or URI.",
+                  "description": "The name, address, URI or IP of the server to connect to."
                 },
                 "port": {
                   "type": [
@@ -9362,7 +9362,7 @@
           ],
           "additionalProperties": false
         },
-        "services": {
+        "endpoints": {
           "type": "object",
           "properties": {
             "apiServer": {
@@ -9371,29 +9371,36 @@
                 "name": {
                   "type": "string",
                   "pattern": "^[^\\s]*$",
-                  "title": "The unique name of this service component in the solution.",
-                  "description": "The name of this service component in the solution. The name must be unique in the solution configuration"
+                  "title": "The unique name of this server component in the solution.",
+                  "description": "The name of this server component in the solution. The name must be unique in the solution configuration"
                 },
-                "server": {
+                "serverUri": {
                   "type": "string",
-                  "title": "Hostname, IP address or URL.",
-                  "description": "The name, address or IP of the server to connect to."
+                  "title": "Hostname, IP address or URI.",
+                  "description": "The name, address, URI or IP of the server to connect to."
                 },
-                "httpPort": {
+                "port": {
                   "type": [
                     "integer",
                     "null"
                   ],
-                  "title": "Http port number",
-                  "description": "The port number to use when establishing an HTTP connection to this server."
+                  "title": "Server port",
+                  "description": "The port to connect to."
                 },
-                "httpsPort": {
-                  "type": [
-                    "integer",
-                    "null"
-                  ],
-                  "title": "Https port number",
-                  "description": "The port number to use when establishing an HTTPS connection to this server."
+                "user": {
+                  "type": "string",
+                  "title": "Username.",
+                  "description": "The username to use when connecting to this server."
+                },
+                "password": {
+                  "type": "string",
+                  "title": "Password.",
+                  "description": "The password to use when connecting to this server."
+                },
+                "options": {
+                  "type": "string",
+                  "title": "Additional options.",
+                  "description": "A list of additional options to set when connecting to this server."
                 }
               },
               "required": [
@@ -9407,29 +9414,36 @@
                 "name": {
                   "type": "string",
                   "pattern": "^[^\\s]*$",
-                  "title": "The unique name of this service component in the solution.",
-                  "description": "The name of this service component in the solution. The name must be unique in the solution configuration"
+                  "title": "The unique name of this server component in the solution.",
+                  "description": "The name of this server component in the solution. The name must be unique in the solution configuration"
                 },
-                "server": {
+                "serverUri": {
                   "type": "string",
-                  "title": "Hostname, IP address or URL.",
-                  "description": "The name, address or IP of the server to connect to."
+                  "title": "Hostname, IP address or URI.",
+                  "description": "The name, address, URI or IP of the server to connect to."
                 },
-                "httpPort": {
+                "port": {
                   "type": [
                     "integer",
                     "null"
                   ],
-                  "title": "Http port number",
-                  "description": "The port number to use when establishing an HTTP connection to this server."
+                  "title": "Server port",
+                  "description": "The port to connect to."
                 },
-                "httpsPort": {
-                  "type": [
-                    "integer",
-                    "null"
-                  ],
-                  "title": "Https port number",
-                  "description": "The port number to use when establishing an HTTPS connection to this server."
+                "user": {
+                  "type": "string",
+                  "title": "Username.",
+                  "description": "The username to use when connecting to this server."
+                },
+                "password": {
+                  "type": "string",
+                  "title": "Password.",
+                  "description": "The password to use when connecting to this server."
+                },
+                "options": {
+                  "type": "string",
+                  "title": "Additional options.",
+                  "description": "A list of additional options to set when connecting to this server."
                 }
               },
               "required": [
@@ -9443,35 +9457,42 @@
         "dependencies": {
           "type": "object",
           "properties": {
-            "translationService": {
+            "translations": {
               "type": "object",
               "properties": {
                 "name": {
                   "type": "string",
                   "pattern": "^[^\\s]*$",
-                  "title": "The unique name of this service component in the solution.",
-                  "description": "The name of this service component in the solution. The name must be unique in the solution configuration"
+                  "title": "The unique name of this server component in the solution.",
+                  "description": "The name of this server component in the solution. The name must be unique in the solution configuration"
                 },
-                "server": {
+                "serverUri": {
                   "type": "string",
-                  "title": "Hostname, IP address or URL.",
-                  "description": "The name, address or IP of the server to connect to."
+                  "title": "Hostname, IP address or URI.",
+                  "description": "The name, address, URI or IP of the server to connect to."
                 },
-                "httpPort": {
+                "port": {
                   "type": [
                     "integer",
                     "null"
                   ],
-                  "title": "Http port number",
-                  "description": "The port number to use when establishing an HTTP connection to this server."
+                  "title": "Server port",
+                  "description": "The port to connect to."
                 },
-                "httpsPort": {
-                  "type": [
-                    "integer",
-                    "null"
-                  ],
-                  "title": "Https port number",
-                  "description": "The port number to use when establishing an HTTPS connection to this server."
+                "user": {
+                  "type": "string",
+                  "title": "Username.",
+                  "description": "The username to use when connecting to this server."
+                },
+                "password": {
+                  "type": "string",
+                  "title": "Password.",
+                  "description": "The password to use when connecting to this server."
+                },
+                "options": {
+                  "type": "string",
+                  "title": "Additional options.",
+                  "description": "A list of additional options to set when connecting to this server."
                 }
               },
               "required": [
@@ -9490,10 +9511,10 @@
                     "title": "The unique name of this server component in the solution.",
                     "description": "The name of this server component in the solution. The name must be unique in the solution configuration"
                   },
-                  "server": {
+                  "serverUri": {
                     "type": "string",
-                    "title": "Hostname, IP address or URL.",
-                    "description": "The name, address or IP of the server to connect to."
+                    "title": "Hostname, IP address or URI.",
+                    "description": "The name, address, URI or IP of the server to connect to."
                   },
                   "port": {
                     "type": [
@@ -9542,7 +9563,7 @@
               },
               "additionalProperties": false
             },
-            "notificationServices": {
+            "notifications": {
               "type": "object",
               "properties": {
                 "emailServer": {
@@ -9554,10 +9575,10 @@
                       "title": "The unique name of this server component in the solution.",
                       "description": "The name of this server component in the solution. The name must be unique in the solution configuration"
                     },
-                    "server": {
+                    "serverUri": {
                       "type": "string",
-                      "title": "Hostname, IP address or URL.",
-                      "description": "The name, address or IP of the server to connect to."
+                      "title": "Hostname, IP address or URI.",
+                      "description": "The name, address, URI or IP of the server to connect to."
                     },
                     "port": {
                       "type": [
@@ -9605,10 +9626,10 @@
                       "title": "The unique name of this server component in the solution.",
                       "description": "The name of this server component in the solution. The name must be unique in the solution configuration"
                     },
-                    "server": {
+                    "serverUri": {
                       "type": "string",
-                      "title": "Hostname, IP address or URL.",
-                      "description": "The name, address or IP of the server to connect to."
+                      "title": "Hostname, IP address or URI.",
+                      "description": "The name, address, URI or IP of the server to connect to."
                     },
                     "port": {
                       "type": [
@@ -9655,10 +9676,10 @@
                       "title": "The unique name of this server component in the solution.",
                       "description": "The name of this server component in the solution. The name must be unique in the solution configuration"
                     },
-                    "server": {
+                    "serverUri": {
                       "type": "string",
-                      "title": "Hostname, IP address or URL.",
-                      "description": "The name, address or IP of the server to connect to."
+                      "title": "Hostname, IP address or URI.",
+                      "description": "The name, address, URI or IP of the server to connect to."
                     },
                     "port": {
                       "type": [
@@ -9699,35 +9720,42 @@
               },
               "additionalProperties": false
             },
-            "observability": {
+            "monitoring": {
               "type": "object",
               "properties": {
                 "name": {
                   "type": "string",
                   "pattern": "^[^\\s]*$",
-                  "title": "The unique name of this service component in the solution.",
-                  "description": "The name of this service component in the solution. The name must be unique in the solution configuration"
+                  "title": "The unique name of this server component in the solution.",
+                  "description": "The name of this server component in the solution. The name must be unique in the solution configuration"
                 },
-                "server": {
+                "serverUri": {
                   "type": "string",
-                  "title": "Hostname, IP address or URL.",
-                  "description": "The name, address or IP of the server to connect to."
+                  "title": "Hostname, IP address or URI.",
+                  "description": "The name, address, URI or IP of the server to connect to."
                 },
-                "httpPort": {
+                "port": {
                   "type": [
                     "integer",
                     "null"
                   ],
-                  "title": "Http port number",
-                  "description": "The port number to use when establishing an HTTP connection to this server."
+                  "title": "Server port",
+                  "description": "The port to connect to."
                 },
-                "httpsPort": {
-                  "type": [
-                    "integer",
-                    "null"
-                  ],
-                  "title": "Https port number",
-                  "description": "The port number to use when establishing an HTTPS connection to this server."
+                "user": {
+                  "type": "string",
+                  "title": "Username.",
+                  "description": "The username to use when connecting to this server."
+                },
+                "password": {
+                  "type": "string",
+                  "title": "Password.",
+                  "description": "The password to use when connecting to this server."
+                },
+                "options": {
+                  "type": "string",
+                  "title": "Additional options.",
+                  "description": "A list of additional options to set when connecting to this server."
                 }
               },
               "required": [
@@ -9750,10 +9778,10 @@
                           "title": "The unique name of this server component in the solution.",
                           "description": "The name of this server component in the solution. The name must be unique in the solution configuration"
                         },
-                        "server": {
+                        "serverUri": {
                           "type": "string",
-                          "title": "Hostname, IP address or URL.",
-                          "description": "The name, address or IP of the server to connect to."
+                          "title": "Hostname, IP address or URI.",
+                          "description": "The name, address, URI or IP of the server to connect to."
                         },
                         "port": {
                           "type": [
@@ -9840,7 +9868,7 @@
     "application": {
       "type": "object",
       "properties": {
-        "etl": {
+        "integration": {
           "type": "array",
           "items": {
             "type": "object",
@@ -9912,7 +9940,7 @@
                     ],
                     "additionalProperties": false
                   },
-                  "dataSource": {
+                  "dataConnection": {
                     "type": "string",
                     "additionalProperties": false
                   },
@@ -9934,80 +9962,79 @@
                 },
                 "required": [
                   "name",
-                  "dataSource"
+                  "dataConnection"
                 ],
                 "additionalProperties": false
               },
               "transform": {
-                "type": "array",
-                "items": {
-                  "type": "object",
-                  "properties": {
-                    "map": {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "properties": {
-                          "sourceColumn": {
-                            "type": "string"
-                          },
-                          "converter": {
-                            "type": "string"
-                          },
-                          "targetAttribute": {
-                            "type": "string"
-                          }
+                "type": "object",
+                "properties": {
+                  "map": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "sourceColumn": {
+                          "type": "string"
                         },
-                        "required": [
-                          "sourceColumn",
-                          "targetAttribute"
-                        ],
-                        "additionalProperties": false
+                        "converter": {
+                          "enum": [
+                            "upperCase",
+                            "lowerCase"
+                          ]
+                        },
+                        "targetAttribute": {
+                          "type": "string"
+                        }
                       },
+                      "required": [
+                        "sourceColumn",
+                        "targetAttribute"
+                      ],
                       "additionalProperties": false
                     },
-                    "lookup": {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "properties": {
-                          "sourceColumn": {
-                            "type": "string"
-                          },
-                          "match": {
-                            "type": "object",
-                            "properties": {
-                              "table": {
-                                "type": "string"
-                              },
-                              "lookupColumn": {
-                                "type": "string"
-                              },
-                              "returnColumn": {
-                                "type": "string"
-                              }
-                            },
-                            "required": [
-                              "table",
-                              "lookupColumn",
-                              "returnColumn"
-                            ],
-                            "additionalProperties": false
-                          },
-                          "targetAttribute": {
-                            "type": "string"
-                          }
-                        },
-                        "required": [
-                          "sourceColumn",
-                          "targetAttribute"
-                        ],
-                        "additionalProperties": false
-                      },
-                      "additionalProperties": false
-                    }
+                    "additionalProperties": false
                   },
-                  "additionalProperties": false
+                  "lookup": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "sourceColumn": {
+                          "type": "string"
+                        },
+                        "match": {
+                          "type": "object",
+                          "properties": {
+                            "table": {
+                              "type": "string"
+                            },
+                            "lookupColumn": {
+                              "type": "string"
+                            },
+                            "returnColumn": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "table",
+                            "lookupColumn",
+                            "returnColumn"
+                          ],
+                          "additionalProperties": false
+                        },
+                        "targetAttribute": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "sourceColumn",
+                        "targetAttribute"
+                      ],
+                      "additionalProperties": false
+                    },
+                    "additionalProperties": false
+                  }
                 },
                 "additionalProperties": false
               },
@@ -10034,10 +10061,10 @@
                         "title": "The unique name of this server component in the solution.",
                         "description": "The name of this server component in the solution. The name must be unique in the solution configuration"
                       },
-                      "server": {
+                      "serverUri": {
                         "type": "string",
-                        "title": "Hostname, IP address or URL.",
-                        "description": "The name, address or IP of the server to connect to."
+                        "title": "Hostname, IP address or URI.",
+                        "description": "The name, address, URI or IP of the server to connect to."
                       },
                       "port": {
                         "type": [

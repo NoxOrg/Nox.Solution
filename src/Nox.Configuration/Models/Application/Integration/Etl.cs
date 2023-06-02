@@ -21,7 +21,7 @@ public class Etl
     public EtlSource? Source { get; set; }
 
     [AdditionalProperties(false)]
-    public List<EtlTransform>? Transform { get; set; }
+    public EtlTransform? Transform { get; set; }
 
     [AdditionalProperties(false)]
     public EtlTarget? Target { get; set; }

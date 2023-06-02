@@ -3,7 +3,7 @@ using Json.Schema.Generation;
 namespace Nox
 {
     [AdditionalProperties(false)]
-    public class NotificationServices
+    public class Notifications
     {
         [AdditionalProperties(false)]
         public EmailServer? EmailServer { get; set; }

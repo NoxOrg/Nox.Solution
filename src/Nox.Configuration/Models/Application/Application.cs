@@ -7,7 +7,7 @@ namespace Nox;
 public class Application
 {
     [AdditionalProperties(false)]
-    public List<Etl>? Etl { get; set; }
+    public List<Etl>? Integration { get; set; }
 
     [AdditionalProperties(false)]
     public List<DataTransferObject>? DataTransferObjects { get; set; }

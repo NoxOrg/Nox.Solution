@@ -32,6 +32,7 @@ namespace Nox
                 }    
             }
             
+            //
             return new NoxConfiguration(_yamlFilePath);
         }
         

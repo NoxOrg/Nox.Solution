@@ -18,7 +18,7 @@ namespace Nox
         
 
         [AdditionalProperties(false)]
-        public Services? Services { get; set; }
+        public Endpoints? Endpoints { get; set; }
 
         [AdditionalProperties(false)]
         public Dependencies? Dependencies { get; set; }

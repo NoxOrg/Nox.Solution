@@ -21,7 +21,7 @@ public class EtlSource
 
     [Required]
     [AdditionalProperties(false)]
-    public string? DataSource { get; set; }
+    public string? DataConnection { get; set; }
 
     [AdditionalProperties(false)]
     public DatabaseWatermark? Watermark { get; set; }

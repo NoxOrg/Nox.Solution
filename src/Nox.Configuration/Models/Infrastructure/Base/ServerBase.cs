@@ -13,9 +13,9 @@ namespace Nox
         [Description("The name of this server component in the solution. The name must be unique in the solution configuration")]
         public string? Name { get; set; }
 
-        [Title("Hostname, IP address or URL.")]
-        [Description("The name, address or IP of the server to connect to.")]
-        public string? Server { get; set; }
+        [Title("Hostname, IP address or URI.")]
+        [Description("The name, address, URI or IP of the server to connect to.")]
+        public string? ServerUri { get; set; }
         
         [Title("Server port")]
         [Description("The port to connect to.")]

@@ -37,7 +37,7 @@
     <None Update="files\environments.solution.nox.yaml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="files\versionControl.solution.nox.yaml">
+    <None Update="files\version-control.solution.nox.yaml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="files\team.solution.nox.yaml">
@@ -50,6 +50,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="files\infrastructure.solution.nox.yaml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="files\duplicate-environment-name.solution.nox.yaml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>

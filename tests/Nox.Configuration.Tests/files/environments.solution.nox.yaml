@@ -1,5 +1,5 @@
 #
-# minimal.solution.nox.yaml
+# environments.solution.nox.yaml
 #
 # yaml-language-server: $schema=../../../schemas/solution.json
 #
@@ -7,7 +7,7 @@
 
 name: TestService
 
-description: Yaml file for testing variables
+description: Yaml file for testing environments
 
 environments:
   - name: dev

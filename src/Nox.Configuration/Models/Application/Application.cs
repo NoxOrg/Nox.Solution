@@ -5,7 +5,7 @@ namespace Nox
 {
 
     [AdditionalProperties(false)]
-    public class Application
+    public class Application: DefinitionBase
     {
         [AdditionalProperties(false)] public List<Integration>? Integration { get; set; }
 

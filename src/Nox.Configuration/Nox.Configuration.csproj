@@ -4,10 +4,10 @@
     <TargetFramework>netstandard2.1</TargetFramework>
     <ImplicitUsings>disable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <RootNamespace>Nox</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="FluentValidation" Version="11.5.2" />
     <PackageReference Include="JsonSchema.Net.Generation" Version="3.2.0" />
     <PackageReference Include="Nox.Types" Version="1.0.0" />
     <PackageReference Include="Nox.Utilities" Version="1.0.5" />
@@ -15,7 +15,22 @@
 
   <ItemGroup>
     <Folder Include="Models\Application\" />
-    <Folder Include="Validation\" />
+    <Folder Include="Validation\Infrastructure\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="ValidationResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ValidationResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="ValidationResources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ValidationResources.resx</DependentUpon>
+    </Compile>
   </ItemGroup>
 
 </Project>

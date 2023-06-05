@@ -48,4 +48,10 @@
     <data name="DomainEntitiesEmpty" xml:space="preserve">
         <value>a Nox domain must containe at least one entity in {0}</value>
     </data>
+    <data name="EntityNameEmpty" xml:space="preserve">
+        <value>a Name must be specified for an entity in {0}. All Nox entities in a Nox domain must have a unique name.</value>
+    </data>
+    <data name="EntityNameDuplicate" xml:space="preserve">
+        <value>The entity name: {0} is duplicated in {1}. Entity names must be unique in a solution.</value>
+    </data>
 </root>

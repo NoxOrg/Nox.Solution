@@ -17,7 +17,7 @@ namespace Nox.Configuration.Validation
                 .SetValidator(new VersionControlValidator());
 
             RuleForEach(sln => sln.Team)
-                .SetValidator(new TeamValidator());
+                .SetValidator(sln => new TeamValidator(sln.Team));
         }
     }
 }

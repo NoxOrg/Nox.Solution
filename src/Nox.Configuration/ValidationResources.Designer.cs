@@ -104,5 +104,17 @@ namespace Nox {
                 return ResourceManager.GetString("DomainEntitiesEmpty", resourceCulture);
             }
         }
+        
+        internal static string EntityNameEmpty {
+            get {
+                return ResourceManager.GetString("EntityNameEmpty", resourceCulture);
+            }
+        }
+        
+        internal static string EntityNameDuplicate {
+            get {
+                return ResourceManager.GetString("EntityNameDuplicate", resourceCulture);
+            }
+        }
     }
 }

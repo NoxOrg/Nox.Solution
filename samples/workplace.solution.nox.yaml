@@ -404,6 +404,7 @@ infrastructure:
       
     eventSourceServer:
       name: SampleEvtSrc
+      serverUri: SampleEvt.iwgplc.com
       provider: eventStoreDb
       user: EvtUser
       password: EvtPassword

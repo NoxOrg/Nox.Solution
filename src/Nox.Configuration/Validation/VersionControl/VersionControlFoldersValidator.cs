@@ -8,11 +8,11 @@ namespace Nox.Configuration.Validation
         {
             RuleFor(f => f.SourceCode)
                 .NotEmpty()
-                .WithMessage(f => string.Format(ValidationResources.VersionControlSourceFolderEmpty, f.Ref));
+                .WithMessage(f => string.Format(ValidationResources.VersionControlSourceFolderEmpty));
             
             RuleFor(f => f.Containers)
                 .NotEmpty()
-                .WithMessage(f => string.Format(ValidationResources.VersionControlContainersFolderEmpty, f.Ref));
+                .WithMessage(f => string.Format(ValidationResources.VersionControlContainersFolderEmpty));
         }
     }
 }

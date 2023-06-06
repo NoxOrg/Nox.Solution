@@ -16,10 +16,10 @@ namespace Nox.Configuration.Validation
             
             RuleFor(env => env.Name)
                 .NotEmpty()
-                .WithMessage(env => string.Format(ValidationResources.EnvironmentNameEmpty, env.Ref));
+                .WithMessage(env => string.Format(ValidationResources.EnvironmentNameEmpty));
 
             RuleFor(env => env.Name).Must(HaveUniqueName)
-                .WithMessage(env => string.Format(ValidationResources.EnvironmentNameDuplicate, env.Name, env.Ref));
+                .WithMessage(env => string.Format(ValidationResources.EnvironmentNameDuplicate, env.Name));
 
         }
 

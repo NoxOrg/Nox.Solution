@@ -116,5 +116,179 @@ namespace Nox {
                 return ResourceManager.GetString("EntityNameDuplicate", resourceCulture);
             }
         }
+        
+        internal static string TeamUserNameDuplicate {
+            get {
+                return ResourceManager.GetString("TeamUserNameDuplicate", resourceCulture);
+            }
+        }
+        
+        internal static string EntityRelationshipNameEmpty {
+            get {
+                return ResourceManager.GetString("EntityRelationshipNameEmpty", resourceCulture);
+            }
+        }
+        
+        internal static string EntityRelationshipNameDuplicate {
+            get {
+                return ResourceManager.GetString("EntityRelationshipNameDuplicate", resourceCulture);
+            }
+        }
+        
+        internal static string EntityRelationshipDescriptionEmpty {
+            get {
+                return ResourceManager.GetString("EntityRelationshipDescriptionEmpty", resourceCulture);
+            }
+        }
+        
+        internal static string EntityRelationshipRelationshipEmpty {
+            get {
+                return ResourceManager.GetString("EntityRelationshipRelationshipEmpty", resourceCulture);
+            }
+        }
+        
+        internal static string EntityRelationshipEntityEmpty {
+            get {
+                return ResourceManager.GetString("EntityRelationshipEntityEmpty", resourceCulture);
+            }
+        }
+        
+        internal static string EntityRelationshipEntityMissing {
+            get {
+                return ResourceManager.GetString("EntityRelationshipEntityMissing", resourceCulture);
+            }
+        }
+        
+        internal static string EntityOwnedRelationshipNameEmpty {
+            get {
+                return ResourceManager.GetString("EntityOwnedRelationshipNameEmpty", resourceCulture);
+            }
+        }
+        
+        internal static string EntityOwnedRelationshipNameDuplicate {
+            get {
+                return ResourceManager.GetString("EntityOwnedRelationshipNameDuplicate", resourceCulture);
+            }
+        }
+        
+        internal static string EntityOwnedRelationshipDescriptionEmpty {
+            get {
+                return ResourceManager.GetString("EntityOwnedRelationshipDescriptionEmpty", resourceCulture);
+            }
+        }
+        
+        internal static string EntityOwnedRelationshipRelationshipEmpty {
+            get {
+                return ResourceManager.GetString("EntityOwnedRelationshipRelationshipEmpty", resourceCulture);
+            }
+        }
+        
+        internal static string EntityOwnedRelationshipEntityEmpty {
+            get {
+                return ResourceManager.GetString("EntityOwnedRelationshipEntityEmpty", resourceCulture);
+            }
+        }
+        
+        internal static string EntityOwnedRelationshipEntityMissing {
+            get {
+                return ResourceManager.GetString("EntityOwnedRelationshipEntityMissing", resourceCulture);
+            }
+        }
+        
+        internal static string DomainQueryNameEmpty {
+            get {
+                return ResourceManager.GetString("DomainQueryNameEmpty", resourceCulture);
+            }
+        }
+        
+        internal static string DomainQueryResponseOutputEmpty {
+            get {
+                return ResourceManager.GetString("DomainQueryResponseOutputEmpty", resourceCulture);
+            }
+        }
+        
+        internal static string DomainQueryRequestNameEmpty {
+            get {
+                return ResourceManager.GetString("DomainQueryRequestNameEmpty", resourceCulture);
+            }
+        }
+        
+        internal static string DomainQueryRequestTypeEmpty {
+            get {
+                return ResourceManager.GetString("DomainQueryRequestTypeEmpty", resourceCulture);
+            }
+        }
+        
+        internal static string DomainQueryNameDuplicate {
+            get {
+                return ResourceManager.GetString("DomainQueryNameDuplicate", resourceCulture);
+            }
+        }
+        
+        internal static string DomainQueryResponseNameEmpty {
+            get {
+                return ResourceManager.GetString("DomainQueryResponseNameEmpty", resourceCulture);
+            }
+        }
+        
+        internal static string DomainQueryResponseTypeEmpty {
+            get {
+                return ResourceManager.GetString("DomainQueryResponseTypeEmpty", resourceCulture);
+            }
+        }
+        
+        internal static string CollectionTypeOptionsNameEmpty {
+            get {
+                return ResourceManager.GetString("CollectionTypeOptionsNameEmpty", resourceCulture);
+            }
+        }
+        
+        internal static string CollectionTypeOptionsTypeEmpty {
+            get {
+                return ResourceManager.GetString("CollectionTypeOptionsTypeEmpty", resourceCulture);
+            }
+        }
+        
+        internal static string ObjectTypeOptionsAttributesEmpty {
+            get {
+                return ResourceManager.GetString("ObjectTypeOptionsAttributesEmpty", resourceCulture);
+            }
+        }
+        
+        internal static string DomainCommandNameEmpty {
+            get {
+                return ResourceManager.GetString("DomainCommandNameEmpty", resourceCulture);
+            }
+        }
+        
+        internal static string DomainCommandNameDuplicate {
+            get {
+                return ResourceManager.GetString("DomainCommandNameDuplicate", resourceCulture);
+            }
+        }
+        
+        internal static string DomainCommandTypeEmpty {
+            get {
+                return ResourceManager.GetString("DomainCommandTypeEmpty", resourceCulture);
+            }
+        }
+        
+        internal static string SimpleTypeNameEmpty {
+            get {
+                return ResourceManager.GetString("SimpleTypeNameEmpty", resourceCulture);
+            }
+        }
+        
+        internal static string SimpleTypeTypeEmpty {
+            get {
+                return ResourceManager.GetString("SimpleTypeTypeEmpty", resourceCulture);
+            }
+        }
+        
+        internal static string EntityAttributesEmpty {
+            get {
+                return ResourceManager.GetString("EntityAttributesEmpty", resourceCulture);
+            }
+        }
     }
 }

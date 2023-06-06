@@ -19,39 +19,126 @@
         <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
     </resheader>
     <data name="SolutionNameEmpty" xml:space="preserve">
-        <value>a Name must be specified for the solution in {0}</value>
+        <value>Solution name missing. a Name must be specified for the solution.</value>
     </data>
     <data name="EnvironmentNameEmpty" xml:space="preserve">
-        <value>a Name must be specified for the environment in {0}</value>
+        <value>an Environment is missing a name. a Name must be specified for each environment.</value>
     </data>
     <data name="EnvironmentNameDuplicate" xml:space="preserve">
-        <value>The environment name: {0} is duplicated in {1}. Environment names must be unique in a solution.</value>
+        <value>The environment name '{0}'. Environment names must be unique in a solution.</value>
     </data>
     <data name="VersionControlProviderEmpty" xml:space="preserve">
-        <value>a Version Control Provider must be specified in {0}</value>
+        <value>Version Control provider missing. a Version Control Provider must be specified in a solution.</value>
     </data>
     <data name="VersionControlHostEmpty" xml:space="preserve">
-        <value>a Host must be specified for Version Control in {0}</value>
+        <value>Version Control host missing. a Host must be specified for Version Control.</value>
     </data>
     <data name="VersionControlSourceFolderEmpty" xml:space="preserve">
-        <value>a Source Code folder must be specified under versionControl::folder in {0}</value>
+        <value> Source code folder missing. a Source Code folder must be specified under versionControl::folders.</value>
     </data>
     <data name="VersionControlContainersFolderEmpty" xml:space="preserve">
-        <value>a Containers folder must be specified under versionControl::folder in {0}</value>
+        <value>Containers folder missing. a Containers folder must be specified under versionControl::folders.</value>
     </data>
     <data name="TeamUserNameEmpty" xml:space="preserve">
-        <value>a UserName must be specified for all team members in {0}</value>
+        <value>a Team member is missing a username. a UserName must be specified for all team members.</value>
     </data>
     <data name="TeamRolesEmpty" xml:space="preserve">
-        <value>Each member in the solution team must have at least one role in {0}.</value>
+        <value>Team Member '{0}' has no roles defined. Each member in the solution team must have at least one role.</value>
     </data>
     <data name="DomainEntitiesEmpty" xml:space="preserve">
-        <value>a Nox domain must containe at least one entity in {0}</value>
+        <value>No entities found in domain definition. a Nox domain must contain at least one entity.</value>
     </data>
     <data name="EntityNameEmpty" xml:space="preserve">
-        <value>a Name must be specified for an entity in {0}. All Nox entities in a Nox domain must have a unique name.</value>
+        <value>an Entity has been specified without a name. All Nox entities in a Nox domain must have a unique name.</value>
     </data>
     <data name="EntityNameDuplicate" xml:space="preserve">
-        <value>The entity name: {0} is duplicated in {1}. Entity names must be unique in a solution.</value>
+        <value>The entity name: {0} is duplicated. Entity names must be unique in a solution.</value>
+    </data>
+    <data name="TeamUserNameDuplicate" xml:space="preserve">
+        <value>The team member user name '{0}' is duplicated. Team user names must be unique in a solution.</value>
+    </data>
+    <data name="EntityRelationshipNameEmpty" xml:space="preserve">
+        <value>an Entity relationship for entity '{0}' does not have a name. All entity relationships must have a unique name.</value>
+    </data>
+    <data name="EntityRelationshipNameDuplicate" xml:space="preserve">
+        <value>The Entity relationship '{0}' is duplicated. Entity relationships must be unique in a domain definition.</value>
+    </data>
+    <data name="EntityRelationshipDescriptionEmpty" xml:space="preserve">
+        <value>The Relationship '{0}' for entity '{1}' does not have a description. All entity relationships must have a description.</value>
+    </data>
+    <data name="EntityRelationshipRelationshipEmpty" xml:space="preserve">
+        <value>The Relationship '{0}' for entity '{1}' does not have a relationship specified. All entity relationships must have a relationship ({2}).</value>
+    </data>
+    <data name="EntityRelationshipEntityEmpty" xml:space="preserve">
+        <value>The Relationship '{0}' for entity '{1}' does not have an entity it refers to. All entity relationships must refer to an existing entity in the domain definition.</value>
+    </data>
+    <data name="EntityRelationshipEntityMissing" xml:space="preserve">
+        <value>The Relationship '{0}' for entity '{1}' refers to an entity '{2}' that does not exist in the domain definition. Entity relationships must refer to entities that exist in the domain definition.</value>
+    </data>
+    <data name="EntityOwnedRelationshipNameEmpty" xml:space="preserve">
+        <value>an Owned relationship for entity '{0}' does not have a name. All owned relationships must have a unique name.</value>
+    </data>
+    <data name="EntityOwnedRelationshipNameDuplicate" xml:space="preserve">
+        <value>The owned relationship '{0}' is duplicated. Owned relationships must be unique in a domain definition.</value>
+    </data>
+    <data name="EntityOwnedRelationshipDescriptionEmpty" xml:space="preserve">
+        <value>The owned relationship '{0}' for entity '{1}' does not have a description. All owned relationships must have a description.</value>
+    </data>
+    <data name="EntityOwnedRelationshipRelationshipEmpty" xml:space="preserve">
+        <value>The owned relationship '{0}' for entity '{1}' does not have a relationship specified. All owned relationships must have a relationship ({2}).</value>
+    </data>
+    <data name="EntityOwnedRelationshipEntityEmpty" xml:space="preserve">
+        <value>The onwed relationship '{0}' for entity '{1}' does not have an entity it refers to. All owned relationships must refer to an existing entity in the domain definition.</value>
+    </data>
+    <data name="EntityOwnedRelationshipEntityMissing" xml:space="preserve">
+        <value>The owned relationship '{0}' for entity '{1}' refers to an entity '{2}' that does not exist in the domain definition. Owned relationships must refer to entities that exist in the domain definition.</value>
+    </data>
+    <data name="DomainQueryNameEmpty" xml:space="preserve">
+        <value>a Domain query for entity '{0}' is missing a name. All domain queries must have a unique name.</value>
+    </data>
+    <data name="DomainQueryResponseOutputEmpty" xml:space="preserve">
+        <value>Domain query '{0}' for entity '{1}' is missing a Response Output. All domain queries must have a response output.</value>
+    </data>
+    <data name="DomainQueryRequestNameEmpty" xml:space="preserve">
+        <value>a Request Input for domain query '{0}' is missing a name. Domain query request inputs must all have a unique name.</value>
+    </data>
+    <data name="DomainQueryRequestTypeEmpty" xml:space="preserve">
+        <value>a Request Input for domain query '{0}' is missing a type. Domain query request inputs must all have a type specified.</value>
+    </data>
+    <data name="DomainQueryNameDuplicate" xml:space="preserve">
+        <value>Domain query '{0}' for entity '{1}' has a duplicate name. Domain query names must be unique in the solution.</value>
+    </data>
+    <data name="DomainQueryResponseNameEmpty" xml:space="preserve">
+        <value>a Response Output for domain query '{0}' is missing a name. Domain query response outputs must all have a unique name.</value>
+    </data>
+    <data name="DomainQueryResponseTypeEmpty" xml:space="preserve">
+        <value>a Response Output for domain query '{0}' is missing a type. Domain query response outputs must all have a type specified.</value>
+    </data>
+    <data name="CollectionTypeOptionsNameEmpty" xml:space="preserve">
+        <value>Collection type options for {0} does not have a name specified.</value>
+    </data>
+    <data name="CollectionTypeOptionsTypeEmpty" xml:space="preserve">
+        <value>Collection type options for {0} does not have a type specified.</value>
+    </data>
+    <data name="ObjectTypeOptionsAttributesEmpty" xml:space="preserve">
+        <value>The object type options attributes for {0} are missing. Object type options must have at least one attribute specified.</value>
+    </data>
+    <data name="DomainCommandNameEmpty" xml:space="preserve">
+        <value>a Domain command for entity '{0}' does not have a name specified. All domain commands must have a unique name.</value>
+    </data>
+    <data name="DomainCommandNameDuplicate" xml:space="preserve">
+        <value>Domain command '{0}' for entity '{1}' has a duplicate name. Domain command names must be unique in the solution.</value>
+    </data>
+    <data name="DomainCommandTypeEmpty" xml:space="preserve">
+        <value>Domain command '{0}' for entity '{1}' is missing a type. Domain commands must all have a type specified.</value>
+    </data>
+    <data name="SimpleTypeNameEmpty" xml:space="preserve">
+        <value>{0} is missing a name. All {1} must have a name specified.</value>
+    </data>
+    <data name="SimpleTypeTypeEmpty" xml:space="preserve">
+        <value>{0} is missing a type. All {1} must have a type specified.</value>
+    </data>
+    <data name="EntityAttributesEmpty" xml:space="preserve">
+        <value>The entity '{0}' does not have any attributes. a Nox entity must have at least one attribute.</value>
     </data>
 </root>

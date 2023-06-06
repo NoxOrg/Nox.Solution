@@ -16,14 +16,14 @@ namespace Nox.Configuration.Validation
             
             RuleFor(t => t.UserName)
                 .NotEmpty()
-                .WithMessage(t => string.Format(ValidationResources.TeamUserNameEmpty, t.Ref));
+                .WithMessage(t => string.Format(ValidationResources.TeamUserNameEmpty));
 
             RuleFor(t => t.Roles)
                 .NotEmpty()
-                .WithMessage(t => string.Format(ValidationResources.TeamRolesEmpty, t.Ref));
+                .WithMessage(t => string.Format(ValidationResources.TeamRolesEmpty, t.UserName));
             
             RuleFor(t => t.UserName).Must(MustHaveUniqueUserName)
-                .WithMessage(env => string.Format(ValidationResources.EnvironmentNameDuplicate, env.Name, env.Ref));
+                .WithMessage(t => string.Format(ValidationResources.TeamUserNameDuplicate, t.UserName));
         }
         
         private bool MustHaveUniqueUserName(Team toEvaluate, string userName)

@@ -8,11 +8,11 @@ namespace Nox.Configuration.Validation
         {
             RuleFor(vc => vc.Provider)
                 .NotEmpty()
-                .WithMessage(vc => string.Format(ValidationResources.VersionControlProviderEmpty, vc.Ref));
+                .WithMessage(vc => string.Format(ValidationResources.VersionControlProviderEmpty));
 
             RuleFor(vc => vc.Host)
                 .NotEmpty()
-                .WithMessage(vc => string.Format(ValidationResources.VersionControlHostEmpty, vc.Ref));
+                .WithMessage(vc => string.Format(ValidationResources.VersionControlHostEmpty));
 
             RuleFor(vc => vc.Folders!)
                 .SetValidator(vc => new VersionControlFoldersValidator());

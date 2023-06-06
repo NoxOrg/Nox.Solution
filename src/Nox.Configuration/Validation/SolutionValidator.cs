@@ -8,7 +8,7 @@ namespace Nox.Configuration.Validation
         {
             RuleFor(solution => solution.Name)
                 .NotEmpty()
-                .WithMessage(solution => string.Format(ValidationResources.SolutionNameEmpty, solution.Ref));
+                .WithMessage(solution => string.Format(ValidationResources.SolutionNameEmpty));
             
             RuleForEach(sln => sln.Environments)
                 .SetValidator(sln => new EnvironmentValidator(sln.Environments));
@@ -18,6 +18,9 @@ namespace Nox.Configuration.Validation
 
             RuleForEach(sln => sln.Team)
                 .SetValidator(sln => new TeamValidator(sln.Team));
+
+            RuleFor(sln => sln.Domain!)
+                .SetValidator(new DomainValidator());
         }
     }
 }

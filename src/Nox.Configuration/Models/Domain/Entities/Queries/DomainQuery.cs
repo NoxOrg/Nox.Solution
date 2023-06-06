@@ -14,14 +14,15 @@ namespace Nox
         [Pattern(@"^[^\s]*$")]
         public string Name { get; set; } = string.Empty;
 
-        [Title("A phrase describing the realtionship with the target entity.")]
+        [Title("A phrase describing the relationship with the target entity.")]
         [Description("A phrase that describes the relationship of the form <entity> <phrase> <targetEntity>. Eg. \"has capital\" like in <Country> <has capital> <City>.")]
         public string? Description { get; set; }
 
         [AdditionalProperties(false)]
-        public List<DomainQueryRequestInput>? requestInput { get; set; }
+        public List<DomainQueryRequestInput>? RequestInput { get; set; }
 
+        [Required]
         [AdditionalProperties(false)]
-        public DomainQueryResponseOutput? responseOutput { get; set; }
+        public DomainQueryResponseOutput? ResponseOutput { get; set; }
     }
 }

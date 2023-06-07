@@ -5,10 +5,10 @@ namespace Nox
 {
     public enum CacheServerProvider
     {
-        amazonElasticache,
-        azureRedis,
-        memcached,
-        redis
+        AmazonElasticCache,
+        AzureRedis,
+        Memcached,
+        Redis
     }
     
     public static class CacheServerProviderHelpers

@@ -113,6 +113,9 @@
                   "lower",
                   "upper"
                 ]
+              },
+              "isMultiline": {
+                "type": "boolean"
               }
             },
             "additionalProperties": false
@@ -379,6 +382,12 @@
               "icon": {
                 "type": "string"
               },
+              "iconPosition": {
+                "enum": [
+                  "begin",
+                  "end"
+                ]
+              },
               "inputMask": {
                 "type": "string"
               },
@@ -396,9 +405,18 @@
               },
               "inputOrder": {
                 "type": "integer"
+              },
+              "helpHint": {
+                "type": "string"
+              },
+              "errorMessage": {
+                "type": "string"
               }
             },
             "additionalProperties": false
+          },
+          "isReadonly": {
+            "type": "boolean"
           }
         },
         "required": [
@@ -411,7 +429,8 @@
     }
   },
   "required": [
-    "name"
+    "name",
+    "attributes"
   ],
   "additionalProperties": false
 }

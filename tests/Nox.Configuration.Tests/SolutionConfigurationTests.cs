@@ -1,6 +1,8 @@
+using Microsoft.Extensions.DependencyInjection;
+
 namespace Nox.Configuration.Tests;
 
-public class SolutionTests
+public class SolutionConfigurationTests
 {
     [Fact]
     public void Variables_section_is_deserialized()
@@ -40,7 +42,7 @@ public class SolutionTests
     public void VersionControl_section_is_deserialized()
     {
         var noxConfig = new NoxConfigurationBuilder()
-            .WithYamlFile("./files/versionControl.solution.nox.yaml")
+            .WithYamlFile("./files/version-control.solution.nox.yaml")
             .Build();
         Assert.NotNull(noxConfig);
         Assert.NotNull(noxConfig.Solution);
@@ -259,7 +261,7 @@ public class SolutionTests
         Assert.NotNull(noxConfig.Solution!.Infrastructure.Persistence.CacheServer);
         Assert.Equal("SampleCache", noxConfig.Solution!.Infrastructure.Persistence.CacheServer.Name);
         Assert.Equal("redis.iwgplc.com", noxConfig.Solution!.Infrastructure.Persistence.CacheServer.ServerUri);
-        Assert.Equal(CacheServerProvider.azureRedis, noxConfig.Solution!.Infrastructure.Persistence.CacheServer.Provider);
+        Assert.Equal(CacheServerProvider.AzureRedis, noxConfig.Solution!.Infrastructure.Persistence.CacheServer.Provider);
         Assert.Equal("RedisUser", noxConfig.Solution!.Infrastructure.Persistence.CacheServer.User);
         Assert.Equal("RedisPassword", noxConfig.Solution!.Infrastructure.Persistence.CacheServer.Password);
         
@@ -356,5 +358,28 @@ public class SolutionTests
         Assert.Equal(DataConnectionProvider.jsonFile, noxConfig.Solution!.Infrastructure.Dependencies.DataConnections[0].Provider);
         Assert.Equal("file:///C:/my-data-files", noxConfig.Solution!.Infrastructure.Dependencies.DataConnections[0].ServerUri);
         Assert.Equal("Source=File;Filename=country-data.json;", noxConfig.Solution!.Infrastructure.Dependencies.DataConnections[0].Options);
+    }
+
+    [Fact]
+    public void Can_create_a_full_configuration()
+    {
+        var noxConfig = new NoxConfigurationBuilder()
+            .WithYamlFile("./files/sample.solution.nox.yaml")
+            .Build();
+        Assert.NotNull(noxConfig);
+        
+    }
+    
+    [Fact]
+    public void Can_a_full_configuration_from_di()
+    {
+        var services = new ServiceCollection();
+        new NoxConfigurationBuilder()
+            .WithYamlFile("./files/sample.solution.nox.yaml")
+            .WithDependencyInjection(services)
+            .Build();
+        var provider = services.BuildServiceProvider();
+        var config = provider.GetRequiredService<NoxConfiguration>();
+        Assert.NotNull(config);
     }
 }

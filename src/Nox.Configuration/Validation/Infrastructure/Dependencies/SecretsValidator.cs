@@ -20,7 +20,12 @@ namespace Nox.Configuration.Validation
         private bool HaveValidTimespan(SecretsValidFor toEvaluate)
         {
             if (toEvaluate.Days == null && toEvaluate.Hours == null && toEvaluate.Minutes == null && toEvaluate.Seconds == null) return false;
-            if (toEvaluate.Days!.Value == 0 && toEvaluate.Days!.Value == 0 && toEvaluate.Minutes!.Value == 0 && toEvaluate.Seconds!.Value == 0) return false;
+            var tally = 0;
+            if (toEvaluate.Days.HasValue) tally += toEvaluate.Days.Value;
+            if (toEvaluate.Hours.HasValue) tally += toEvaluate.Hours.Value;
+            if (toEvaluate.Minutes.HasValue) tally += toEvaluate.Minutes.Value;
+            if (toEvaluate.Seconds.HasValue) tally += toEvaluate.Seconds.Value;
+            if (tally == 0) return false;
             return true;
         }
     }

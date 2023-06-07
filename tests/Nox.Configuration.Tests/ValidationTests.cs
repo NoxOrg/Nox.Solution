@@ -19,6 +19,6 @@ public class ValidationTests
         Assert.True(result.IsValid);
         result = validator.Validate(noxConfig.Solution.Environments[1]);
         Assert.False(result.IsValid);
-        Assert.Equal("the environment name: test is duplicated in . Environment names must be unique in a solution.", result.Errors[0].ErrorMessage);
+        Assert.Equal("The environment name 'test' is duplicated. Environment names must be unique in a solution.", result.Errors[0].ErrorMessage);
     }
 }

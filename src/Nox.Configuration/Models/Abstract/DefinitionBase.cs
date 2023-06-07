@@ -10,6 +10,6 @@ namespace Nox
 
         [JsonPropertyName("$ref")] 
         public Uri? Ref { get; set; }
-
+        
     }
 }

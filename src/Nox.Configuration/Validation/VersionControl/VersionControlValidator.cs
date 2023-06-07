@@ -7,7 +7,7 @@ namespace Nox.Configuration.Validation
         public VersionControlValidator()
         {
             RuleFor(vc => vc.Provider)
-                .NotEmpty()
+                .NotNull()
                 .WithMessage(vc => string.Format(ValidationResources.VersionControlProviderEmpty));
 
             RuleFor(vc => vc.Host)

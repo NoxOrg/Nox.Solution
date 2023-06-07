@@ -1,3 +1,5 @@
+using FluentValidation;
+using Nox.Configuration.Validation;
 using Nox.Utilities.Yaml;
 using YamlDotNet.Serialization;
 using YamlDotNet.Serialization.NamingConventions;
@@ -20,6 +22,12 @@ namespace Nox
                 .WithNamingConvention(CamelCaseNamingConvention.Instance)
                 .Build();
             _solution = deserializer.Deserialize<Solution>(yaml);
+        }
+
+        internal void Validate()
+        {
+            var validator = new SolutionValidator();
+            validator.ValidateAndThrow<Solution>(_solution!);
         }
     }
 }

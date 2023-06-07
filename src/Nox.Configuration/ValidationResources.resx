@@ -25,7 +25,7 @@
         <value>an Environment is missing a name. a Name must be specified for each environment.</value>
     </data>
     <data name="EnvironmentNameDuplicate" xml:space="preserve">
-        <value>The environment name '{0}'. Environment names must be unique in a solution.</value>
+        <value>The environment name '{0}' is duplicated. Environment names must be unique in a solution.</value>
     </data>
     <data name="VersionControlProviderEmpty" xml:space="preserve">
         <value>Version Control provider missing. a Version Control Provider must be specified in a solution.</value>
@@ -239,5 +239,14 @@
     </data>
     <data name="SecretsServerProviderEmpty" xml:space="preserve">
         <value>The infrastructure, dependencies, security, secrets, secrets server '{0}' must have a valid provider specified. Valid providers are one of {1}</value>
+    </data>
+    <data name="EntityDefaultsFalse" xml:space="preserve">
+        <value>Unable to apply defaults for entity '{0}'.</value>
+    </data>
+    <data name="EntityPersistenceDefaultsFalse" xml:space="preserve">
+        <value>Unable to apply persistence defaults for entity '{0}'.</value>
+    </data>
+    <data name="EntityPersistenceTableNameEmpty" xml:space="preserve">
+        <value>The table name for persistence of entity '{0}' is not specified. All Nox entities must persist to a table.</value>
     </data>
 </root>

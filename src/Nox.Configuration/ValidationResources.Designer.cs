@@ -488,5 +488,23 @@ namespace Nox {
                 return ResourceManager.GetString("SecretsServerProviderEmpty", resourceCulture);
             }
         }
+        
+        internal static string EntityDefaultsFalse {
+            get {
+                return ResourceManager.GetString("EntityDefaultsFalse", resourceCulture);
+            }
+        }
+        
+        internal static string EntityPersistenceDefaultsFalse {
+            get {
+                return ResourceManager.GetString("EntityPersistenceDefaultsFalse", resourceCulture);
+            }
+        }
+        
+        internal static string EntityPersistenceTableNameEmpty {
+            get {
+                return ResourceManager.GetString("EntityPersistenceTableNameEmpty", resourceCulture);
+            }
+        }
     }
 }

@@ -1,13 +1,32 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.1</TargetFramework>
+    <TargetFrameworks>netstandard2.0;net7.0</TargetFrameworks>
+    <LangVersion>10.0</LangVersion>
     <ImplicitUsings>disable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <PropertyGroup>
+    <PackageId>Nox.Configuration</PackageId>
+    <Authors>Andre Sharpe,Jan Schutte</Authors>
+    <Description>Nox configuration library</Description>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <Copyright>Copyright (c) Andre Sharpe 2022</Copyright>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <AssemblyVersion>1.0.1.0</AssemblyVersion>
+    <FileVersion>1.0.1.0</FileVersion>
+    <PackageVersion>1.0.1-Beta2</PackageVersion>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/NoxOrg/Nox</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/NoxOrg/Nox.Configuration.git</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageIcon>nox.png</PackageIcon>
+  </PropertyGroup>
+  
   <ItemGroup>
     <PackageReference Include="FluentValidation" Version="11.5.2" />
+    <PackageReference Include="Humanizer.Core" Version="2.14.1" />
     <PackageReference Include="JsonSchema.Net.Generation" Version="3.2.0" />
     <PackageReference Include="Nox.Types" Version="1.0.1" />
     <PackageReference Include="Nox.Utilities" Version="1.0.5" />
@@ -30,6 +49,10 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>ValidationResources.resx</DependentUpon>
     </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\images\nox.png" Pack="true" PackagePath="" />
   </ItemGroup>
 
 </Project>

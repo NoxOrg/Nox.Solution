@@ -1,5 +1,6 @@
 ﻿using Json.Schema.Generation;
 using System.Collections.Generic;
+using Humanizer;
 
 namespace Nox
 {
@@ -57,5 +58,11 @@ namespace Nox
         
         [AdditionalProperties(false)]
         public List<NoxSimpleTypeDefinition>? Attributes { get; set; }
+
+        internal bool ApplyDefaults()
+        {
+            if (string.IsNullOrWhiteSpace(PluralName)) PluralName = Name.Pluralize();
+            return true;
+        }
     }
 }

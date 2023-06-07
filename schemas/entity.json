@@ -225,7 +225,7 @@
           },
           "description": {
             "type": "string",
-            "title": "A phrase describing the realtionship with the target entity.",
+            "title": "A phrase describing the relationship with the target entity.",
             "description": "A phrase that describes the relationship of the form \u003Centity\u003E \u003Cphrase\u003E \u003CtargetEntity\u003E. Eg. \u0022has capital\u0022 like in \u003CCountry\u003E \u003Chas capital\u003E \u003CCity\u003E."
           },
           "requestInput": {
@@ -328,6 +328,9 @@
                         "lower",
                         "upper"
                       ]
+                    },
+                    "isMultiline": {
+                      "type": "boolean"
                     }
                   },
                   "additionalProperties": false
@@ -594,6 +597,12 @@
                     "icon": {
                       "type": "string"
                     },
+                    "iconPosition": {
+                      "enum": [
+                        "begin",
+                        "end"
+                      ]
+                    },
                     "inputMask": {
                       "type": "string"
                     },
@@ -611,17 +620,22 @@
                     },
                     "inputOrder": {
                       "type": "integer"
+                    },
+                    "helpHint": {
+                      "type": "string"
+                    },
+                    "errorMessage": {
+                      "type": "string"
                     }
                   },
                   "additionalProperties": false
                 },
+                "isReadonly": {
+                  "type": "boolean"
+                },
                 "objectTypeOptions": {
                   "type": "object",
                   "properties": {
-                    "$ref": {
-                      "type": "string",
-                      "format": "uri"
-                    },
                     "attributes": {
                       "type": "array",
                       "items": {
@@ -722,6 +736,9 @@
                                   "lower",
                                   "upper"
                                 ]
+                              },
+                              "isMultiline": {
+                                "type": "boolean"
                               }
                             },
                             "additionalProperties": false
@@ -988,6 +1005,12 @@
                               "icon": {
                                 "type": "string"
                               },
+                              "iconPosition": {
+                                "enum": [
+                                  "begin",
+                                  "end"
+                                ]
+                              },
                               "inputMask": {
                                 "type": "string"
                               },
@@ -1005,9 +1028,18 @@
                               },
                               "inputOrder": {
                                 "type": "integer"
+                              },
+                              "helpHint": {
+                                "type": "string"
+                              },
+                              "errorMessage": {
+                                "type": "string"
                               }
                             },
                             "additionalProperties": false
+                          },
+                          "isReadonly": {
+                            "type": "boolean"
                           }
                         },
                         "required": [
@@ -1015,6 +1047,10 @@
                           "type"
                         ]
                       }
+                    },
+                    "$ref": {
+                      "type": "string",
+                      "format": "uri"
                     }
                   },
                   "required": [
@@ -1119,6 +1155,9 @@
                             "lower",
                             "upper"
                           ]
+                        },
+                        "isMultiline": {
+                          "type": "boolean"
                         }
                       },
                       "additionalProperties": false
@@ -1385,6 +1424,12 @@
                         "icon": {
                           "type": "string"
                         },
+                        "iconPosition": {
+                          "enum": [
+                            "begin",
+                            "end"
+                          ]
+                        },
                         "inputMask": {
                           "type": "string"
                         },
@@ -1402,17 +1447,22 @@
                         },
                         "inputOrder": {
                           "type": "integer"
+                        },
+                        "helpHint": {
+                          "type": "string"
+                        },
+                        "errorMessage": {
+                          "type": "string"
                         }
                       },
                       "additionalProperties": false
                     },
+                    "isReadonly": {
+                      "type": "boolean"
+                    },
                     "objectTypeOptions": {
                       "type": "object",
                       "properties": {
-                        "$ref": {
-                          "type": "string",
-                          "format": "uri"
-                        },
                         "attributes": {
                           "type": "array",
                           "items": {
@@ -1513,6 +1563,9 @@
                                       "lower",
                                       "upper"
                                     ]
+                                  },
+                                  "isMultiline": {
+                                    "type": "boolean"
                                   }
                                 },
                                 "additionalProperties": false
@@ -1779,6 +1832,12 @@
                                   "icon": {
                                     "type": "string"
                                   },
+                                  "iconPosition": {
+                                    "enum": [
+                                      "begin",
+                                      "end"
+                                    ]
+                                  },
                                   "inputMask": {
                                     "type": "string"
                                   },
@@ -1796,9 +1855,18 @@
                                   },
                                   "inputOrder": {
                                     "type": "integer"
+                                  },
+                                  "helpHint": {
+                                    "type": "string"
+                                  },
+                                  "errorMessage": {
+                                    "type": "string"
                                   }
                                 },
                                 "additionalProperties": false
+                              },
+                              "isReadonly": {
+                                "type": "boolean"
                               }
                             },
                             "required": [
@@ -1806,6 +1874,10 @@
                               "type"
                             ]
                           }
+                        },
+                        "$ref": {
+                          "type": "string",
+                          "format": "uri"
                         }
                       },
                       "required": [
@@ -1919,6 +1991,9 @@
                             "lower",
                             "upper"
                           ]
+                        },
+                        "isMultiline": {
+                          "type": "boolean"
                         }
                       },
                       "additionalProperties": false
@@ -2185,6 +2260,12 @@
                         "icon": {
                           "type": "string"
                         },
+                        "iconPosition": {
+                          "enum": [
+                            "begin",
+                            "end"
+                          ]
+                        },
                         "inputMask": {
                           "type": "string"
                         },
@@ -2202,17 +2283,22 @@
                         },
                         "inputOrder": {
                           "type": "integer"
+                        },
+                        "helpHint": {
+                          "type": "string"
+                        },
+                        "errorMessage": {
+                          "type": "string"
                         }
                       },
                       "additionalProperties": false
                     },
+                    "isReadonly": {
+                      "type": "boolean"
+                    },
                     "objectTypeOptions": {
                       "type": "object",
                       "properties": {
-                        "$ref": {
-                          "type": "string",
-                          "format": "uri"
-                        },
                         "attributes": {
                           "type": "array",
                           "items": {
@@ -2313,6 +2399,9 @@
                                       "lower",
                                       "upper"
                                     ]
+                                  },
+                                  "isMultiline": {
+                                    "type": "boolean"
                                   }
                                 },
                                 "additionalProperties": false
@@ -2579,6 +2668,12 @@
                                   "icon": {
                                     "type": "string"
                                   },
+                                  "iconPosition": {
+                                    "enum": [
+                                      "begin",
+                                      "end"
+                                    ]
+                                  },
                                   "inputMask": {
                                     "type": "string"
                                   },
@@ -2596,9 +2691,18 @@
                                   },
                                   "inputOrder": {
                                     "type": "integer"
+                                  },
+                                  "helpHint": {
+                                    "type": "string"
+                                  },
+                                  "errorMessage": {
+                                    "type": "string"
                                   }
                                 },
                                 "additionalProperties": false
+                              },
+                              "isReadonly": {
+                                "type": "boolean"
                               }
                             },
                             "required": [
@@ -2606,6 +2710,10 @@
                               "type"
                             ]
                           }
+                        },
+                        "$ref": {
+                          "type": "string",
+                          "format": "uri"
                         }
                       },
                       "required": [
@@ -2728,6 +2836,9 @@
                       "lower",
                       "upper"
                     ]
+                  },
+                  "isMultiline": {
+                    "type": "boolean"
                   }
                 },
                 "additionalProperties": false
@@ -2994,6 +3105,12 @@
                   "icon": {
                     "type": "string"
                   },
+                  "iconPosition": {
+                    "enum": [
+                      "begin",
+                      "end"
+                    ]
+                  },
                   "inputMask": {
                     "type": "string"
                   },
@@ -3011,17 +3128,22 @@
                   },
                   "inputOrder": {
                     "type": "integer"
+                  },
+                  "helpHint": {
+                    "type": "string"
+                  },
+                  "errorMessage": {
+                    "type": "string"
                   }
                 },
                 "additionalProperties": false
               },
+              "isReadonly": {
+                "type": "boolean"
+              },
               "objectTypeOptions": {
                 "type": "object",
                 "properties": {
-                  "$ref": {
-                    "type": "string",
-                    "format": "uri"
-                  },
                   "attributes": {
                     "type": "array",
                     "items": {
@@ -3122,6 +3244,9 @@
                                 "lower",
                                 "upper"
                               ]
+                            },
+                            "isMultiline": {
+                              "type": "boolean"
                             }
                           },
                           "additionalProperties": false
@@ -3388,6 +3513,12 @@
                             "icon": {
                               "type": "string"
                             },
+                            "iconPosition": {
+                              "enum": [
+                                "begin",
+                                "end"
+                              ]
+                            },
                             "inputMask": {
                               "type": "string"
                             },
@@ -3405,9 +3536,18 @@
                             },
                             "inputOrder": {
                               "type": "integer"
+                            },
+                            "helpHint": {
+                              "type": "string"
+                            },
+                            "errorMessage": {
+                              "type": "string"
                             }
                           },
                           "additionalProperties": false
+                        },
+                        "isReadonly": {
+                          "type": "boolean"
                         }
                       },
                       "required": [
@@ -3415,6 +3555,10 @@
                         "type"
                       ]
                     }
+                  },
+                  "$ref": {
+                    "type": "string",
+                    "format": "uri"
                   }
                 },
                 "required": [
@@ -3519,6 +3663,9 @@
                           "lower",
                           "upper"
                         ]
+                      },
+                      "isMultiline": {
+                        "type": "boolean"
                       }
                     },
                     "additionalProperties": false
@@ -3785,6 +3932,12 @@
                       "icon": {
                         "type": "string"
                       },
+                      "iconPosition": {
+                        "enum": [
+                          "begin",
+                          "end"
+                        ]
+                      },
                       "inputMask": {
                         "type": "string"
                       },
@@ -3802,17 +3955,22 @@
                       },
                       "inputOrder": {
                         "type": "integer"
+                      },
+                      "helpHint": {
+                        "type": "string"
+                      },
+                      "errorMessage": {
+                        "type": "string"
                       }
                     },
                     "additionalProperties": false
                   },
+                  "isReadonly": {
+                    "type": "boolean"
+                  },
                   "objectTypeOptions": {
                     "type": "object",
                     "properties": {
-                      "$ref": {
-                        "type": "string",
-                        "format": "uri"
-                      },
                       "attributes": {
                         "type": "array",
                         "items": {
@@ -3913,6 +4071,9 @@
                                     "lower",
                                     "upper"
                                   ]
+                                },
+                                "isMultiline": {
+                                  "type": "boolean"
                                 }
                               },
                               "additionalProperties": false
@@ -4179,6 +4340,12 @@
                                 "icon": {
                                   "type": "string"
                                 },
+                                "iconPosition": {
+                                  "enum": [
+                                    "begin",
+                                    "end"
+                                  ]
+                                },
                                 "inputMask": {
                                   "type": "string"
                                 },
@@ -4196,9 +4363,18 @@
                                 },
                                 "inputOrder": {
                                   "type": "integer"
+                                },
+                                "helpHint": {
+                                  "type": "string"
+                                },
+                                "errorMessage": {
+                                  "type": "string"
                                 }
                               },
                               "additionalProperties": false
+                            },
+                            "isReadonly": {
+                              "type": "boolean"
                             }
                           },
                           "required": [
@@ -4206,6 +4382,10 @@
                             "type"
                           ]
                         }
+                      },
+                      "$ref": {
+                        "type": "string",
+                        "format": "uri"
                       }
                     },
                     "required": [
@@ -4319,6 +4499,9 @@
                           "lower",
                           "upper"
                         ]
+                      },
+                      "isMultiline": {
+                        "type": "boolean"
                       }
                     },
                     "additionalProperties": false
@@ -4585,6 +4768,12 @@
                       "icon": {
                         "type": "string"
                       },
+                      "iconPosition": {
+                        "enum": [
+                          "begin",
+                          "end"
+                        ]
+                      },
                       "inputMask": {
                         "type": "string"
                       },
@@ -4602,17 +4791,22 @@
                       },
                       "inputOrder": {
                         "type": "integer"
+                      },
+                      "helpHint": {
+                        "type": "string"
+                      },
+                      "errorMessage": {
+                        "type": "string"
                       }
                     },
                     "additionalProperties": false
                   },
+                  "isReadonly": {
+                    "type": "boolean"
+                  },
                   "objectTypeOptions": {
                     "type": "object",
                     "properties": {
-                      "$ref": {
-                        "type": "string",
-                        "format": "uri"
-                      },
                       "attributes": {
                         "type": "array",
                         "items": {
@@ -4713,6 +4907,9 @@
                                     "lower",
                                     "upper"
                                   ]
+                                },
+                                "isMultiline": {
+                                  "type": "boolean"
                                 }
                               },
                               "additionalProperties": false
@@ -4979,6 +5176,12 @@
                                 "icon": {
                                   "type": "string"
                                 },
+                                "iconPosition": {
+                                  "enum": [
+                                    "begin",
+                                    "end"
+                                  ]
+                                },
                                 "inputMask": {
                                   "type": "string"
                                 },
@@ -4996,9 +5199,18 @@
                                 },
                                 "inputOrder": {
                                   "type": "integer"
+                                },
+                                "helpHint": {
+                                  "type": "string"
+                                },
+                                "errorMessage": {
+                                  "type": "string"
                                 }
                               },
                               "additionalProperties": false
+                            },
+                            "isReadonly": {
+                              "type": "boolean"
                             }
                           },
                           "required": [
@@ -5006,6 +5218,10 @@
                             "type"
                           ]
                         }
+                      },
+                      "$ref": {
+                        "type": "string",
+                        "format": "uri"
                       }
                     },
                     "required": [
@@ -5030,7 +5246,8 @@
           }
         },
         "required": [
-          "name"
+          "name",
+          "responseOutput"
         ],
         "title": "Defines queries for the domain.",
         "description": "Defines queries for the domain that operates on this entity. Queries should have no side effects and not mutate the domain state.",
@@ -5140,6 +5357,9 @@
                   "lower",
                   "upper"
                 ]
+              },
+              "isMultiline": {
+                "type": "boolean"
               }
             },
             "additionalProperties": false
@@ -5406,6 +5626,12 @@
               "icon": {
                 "type": "string"
               },
+              "iconPosition": {
+                "enum": [
+                  "begin",
+                  "end"
+                ]
+              },
               "inputMask": {
                 "type": "string"
               },
@@ -5423,17 +5649,22 @@
               },
               "inputOrder": {
                 "type": "integer"
+              },
+              "helpHint": {
+                "type": "string"
+              },
+              "errorMessage": {
+                "type": "string"
               }
             },
             "additionalProperties": false
           },
+          "isReadonly": {
+            "type": "boolean"
+          },
           "objectTypeOptions": {
             "type": "object",
             "properties": {
-              "$ref": {
-                "type": "string",
-                "format": "uri"
-              },
               "attributes": {
                 "type": "array",
                 "items": {
@@ -5534,6 +5765,9 @@
                             "lower",
                             "upper"
                           ]
+                        },
+                        "isMultiline": {
+                          "type": "boolean"
                         }
                       },
                       "additionalProperties": false
@@ -5800,6 +6034,12 @@
                         "icon": {
                           "type": "string"
                         },
+                        "iconPosition": {
+                          "enum": [
+                            "begin",
+                            "end"
+                          ]
+                        },
                         "inputMask": {
                           "type": "string"
                         },
@@ -5817,9 +6057,18 @@
                         },
                         "inputOrder": {
                           "type": "integer"
+                        },
+                        "helpHint": {
+                          "type": "string"
+                        },
+                        "errorMessage": {
+                          "type": "string"
                         }
                       },
                       "additionalProperties": false
+                    },
+                    "isReadonly": {
+                      "type": "boolean"
                     }
                   },
                   "required": [
@@ -5827,6 +6076,10 @@
                     "type"
                   ]
                 }
+              },
+              "$ref": {
+                "type": "string",
+                "format": "uri"
               }
             },
             "required": [
@@ -5931,6 +6184,9 @@
                       "lower",
                       "upper"
                     ]
+                  },
+                  "isMultiline": {
+                    "type": "boolean"
                   }
                 },
                 "additionalProperties": false
@@ -6197,6 +6453,12 @@
                   "icon": {
                     "type": "string"
                   },
+                  "iconPosition": {
+                    "enum": [
+                      "begin",
+                      "end"
+                    ]
+                  },
                   "inputMask": {
                     "type": "string"
                   },
@@ -6214,17 +6476,22 @@
                   },
                   "inputOrder": {
                     "type": "integer"
+                  },
+                  "helpHint": {
+                    "type": "string"
+                  },
+                  "errorMessage": {
+                    "type": "string"
                   }
                 },
                 "additionalProperties": false
               },
+              "isReadonly": {
+                "type": "boolean"
+              },
               "objectTypeOptions": {
                 "type": "object",
                 "properties": {
-                  "$ref": {
-                    "type": "string",
-                    "format": "uri"
-                  },
                   "attributes": {
                     "type": "array",
                     "items": {
@@ -6325,6 +6592,9 @@
                                 "lower",
                                 "upper"
                               ]
+                            },
+                            "isMultiline": {
+                              "type": "boolean"
                             }
                           },
                           "additionalProperties": false
@@ -6591,6 +6861,12 @@
                             "icon": {
                               "type": "string"
                             },
+                            "iconPosition": {
+                              "enum": [
+                                "begin",
+                                "end"
+                              ]
+                            },
                             "inputMask": {
                               "type": "string"
                             },
@@ -6608,9 +6884,18 @@
                             },
                             "inputOrder": {
                               "type": "integer"
+                            },
+                            "helpHint": {
+                              "type": "string"
+                            },
+                            "errorMessage": {
+                              "type": "string"
                             }
                           },
                           "additionalProperties": false
+                        },
+                        "isReadonly": {
+                          "type": "boolean"
                         }
                       },
                       "required": [
@@ -6618,6 +6903,10 @@
                         "type"
                       ]
                     }
+                  },
+                  "$ref": {
+                    "type": "string",
+                    "format": "uri"
                   }
                 },
                 "required": [
@@ -6731,6 +7020,9 @@
                       "lower",
                       "upper"
                     ]
+                  },
+                  "isMultiline": {
+                    "type": "boolean"
                   }
                 },
                 "additionalProperties": false
@@ -6997,6 +7289,12 @@
                   "icon": {
                     "type": "string"
                   },
+                  "iconPosition": {
+                    "enum": [
+                      "begin",
+                      "end"
+                    ]
+                  },
                   "inputMask": {
                     "type": "string"
                   },
@@ -7014,17 +7312,22 @@
                   },
                   "inputOrder": {
                     "type": "integer"
+                  },
+                  "helpHint": {
+                    "type": "string"
+                  },
+                  "errorMessage": {
+                    "type": "string"
                   }
                 },
                 "additionalProperties": false
               },
+              "isReadonly": {
+                "type": "boolean"
+              },
               "objectTypeOptions": {
                 "type": "object",
                 "properties": {
-                  "$ref": {
-                    "type": "string",
-                    "format": "uri"
-                  },
                   "attributes": {
                     "type": "array",
                     "items": {
@@ -7125,6 +7428,9 @@
                                 "lower",
                                 "upper"
                               ]
+                            },
+                            "isMultiline": {
+                              "type": "boolean"
                             }
                           },
                           "additionalProperties": false
@@ -7391,6 +7697,12 @@
                             "icon": {
                               "type": "string"
                             },
+                            "iconPosition": {
+                              "enum": [
+                                "begin",
+                                "end"
+                              ]
+                            },
                             "inputMask": {
                               "type": "string"
                             },
@@ -7408,9 +7720,18 @@
                             },
                             "inputOrder": {
                               "type": "integer"
+                            },
+                            "helpHint": {
+                              "type": "string"
+                            },
+                            "errorMessage": {
+                              "type": "string"
                             }
                           },
                           "additionalProperties": false
+                        },
+                        "isReadonly": {
+                          "type": "boolean"
                         }
                       },
                       "required": [
@@ -7418,6 +7739,10 @@
                         "type"
                       ]
                     }
+                  },
+                  "$ref": {
+                    "type": "string",
+                    "format": "uri"
                   }
                 },
                 "required": [
@@ -7552,6 +7877,9 @@
                   "lower",
                   "upper"
                 ]
+              },
+              "isMultiline": {
+                "type": "boolean"
               }
             },
             "additionalProperties": false
@@ -7818,6 +8146,12 @@
               "icon": {
                 "type": "string"
               },
+              "iconPosition": {
+                "enum": [
+                  "begin",
+                  "end"
+                ]
+              },
               "inputMask": {
                 "type": "string"
               },
@@ -7835,9 +8169,18 @@
               },
               "inputOrder": {
                 "type": "integer"
+              },
+              "helpHint": {
+                "type": "string"
+              },
+              "errorMessage": {
+                "type": "string"
               }
             },
             "additionalProperties": false
+          },
+          "isReadonly": {
+            "type": "boolean"
           }
         },
         "required": [
@@ -7948,6 +8291,9 @@
                   "lower",
                   "upper"
                 ]
+              },
+              "isMultiline": {
+                "type": "boolean"
               }
             },
             "additionalProperties": false
@@ -8214,6 +8560,12 @@
               "icon": {
                 "type": "string"
               },
+              "iconPosition": {
+                "enum": [
+                  "begin",
+                  "end"
+                ]
+              },
               "inputMask": {
                 "type": "string"
               },
@@ -8231,9 +8583,18 @@
               },
               "inputOrder": {
                 "type": "integer"
+              },
+              "helpHint": {
+                "type": "string"
+              },
+              "errorMessage": {
+                "type": "string"
               }
             },
             "additionalProperties": false
+          },
+          "isReadonly": {
+            "type": "boolean"
           }
         },
         "required": [

@@ -5,11 +5,9 @@
 #
 
 
-name: WorkplaceService
+name: SampleService
 
-description: Microservice for maintaining and finding places to work
-
-overview: https://regusit.atlassian.net/wiki/spaces/heimdall/pages/2616393814/Workplace+Services
+description: Sample Nox solution yaml configuration
 
 variables:
   DATABASE_PROVIDER: slqServer
@@ -483,5 +481,11 @@ infrastructure:
         provider: jsonFile
         serverUri: file:///C:/my-data-files
         options: Source=File;Filename=country-data.json;
+        
+      - name: Nox
+        provider: sqlServer
+        serverUri: localhost
+        user: sa
+        password: Developer*123
 
 

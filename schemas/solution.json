@@ -450,7 +450,7 @@
                     },
                     "description": {
                       "type": "string",
-                      "title": "A phrase describing the realtionship with the target entity.",
+                      "title": "A phrase describing the relationship with the target entity.",
                       "description": "A phrase that describes the relationship of the form \u003Centity\u003E \u003Cphrase\u003E \u003CtargetEntity\u003E. Eg. \u0022has capital\u0022 like in \u003CCountry\u003E \u003Chas capital\u003E \u003CCity\u003E."
                     },
                     "requestInput": {
@@ -561,6 +561,12 @@
                                   "normal",
                                   "lower",
                                   "upper"
+                                ]
+                              },
+                              "isMultiline": {
+                                "type": [
+                                  "boolean",
+                                  "null"
                                 ]
                               }
                             },
@@ -843,6 +849,12 @@
                               "icon": {
                                 "type": "string"
                               },
+                              "iconPosition": {
+                                "enum": [
+                                  "begin",
+                                  "end"
+                                ]
+                              },
                               "inputMask": {
                                 "type": "string"
                               },
@@ -863,17 +875,25 @@
                                   "integer",
                                   "null"
                                 ]
+                              },
+                              "helpHint": {
+                                "type": "string"
+                              },
+                              "errorMessage": {
+                                "type": "string"
                               }
                             },
                             "additionalProperties": false
                           },
+                          "isReadonly": {
+                            "type": [
+                              "boolean",
+                              "null"
+                            ]
+                          },
                           "objectTypeOptions": {
                             "type": "object",
                             "properties": {
-                              "$ref": {
-                                "type": "string",
-                                "format": "uri"
-                              },
                               "attributes": {
                                 "type": "array",
                                 "items": {
@@ -982,6 +1002,12 @@
                                             "normal",
                                             "lower",
                                             "upper"
+                                          ]
+                                        },
+                                        "isMultiline": {
+                                          "type": [
+                                            "boolean",
+                                            "null"
                                           ]
                                         }
                                       },
@@ -1264,6 +1290,12 @@
                                         "icon": {
                                           "type": "string"
                                         },
+                                        "iconPosition": {
+                                          "enum": [
+                                            "begin",
+                                            "end"
+                                          ]
+                                        },
                                         "inputMask": {
                                           "type": "string"
                                         },
@@ -1284,9 +1316,21 @@
                                             "integer",
                                             "null"
                                           ]
+                                        },
+                                        "helpHint": {
+                                          "type": "string"
+                                        },
+                                        "errorMessage": {
+                                          "type": "string"
                                         }
                                       },
                                       "additionalProperties": false
+                                    },
+                                    "isReadonly": {
+                                      "type": [
+                                        "boolean",
+                                        "null"
+                                      ]
                                     }
                                   },
                                   "required": [
@@ -1294,6 +1338,10 @@
                                     "type"
                                   ]
                                 }
+                              },
+                              "$ref": {
+                                "type": "string",
+                                "format": "uri"
                               }
                             },
                             "required": [
@@ -1406,6 +1454,12 @@
                                       "normal",
                                       "lower",
                                       "upper"
+                                    ]
+                                  },
+                                  "isMultiline": {
+                                    "type": [
+                                      "boolean",
+                                      "null"
                                     ]
                                   }
                                 },
@@ -1688,6 +1742,12 @@
                                   "icon": {
                                     "type": "string"
                                   },
+                                  "iconPosition": {
+                                    "enum": [
+                                      "begin",
+                                      "end"
+                                    ]
+                                  },
                                   "inputMask": {
                                     "type": "string"
                                   },
@@ -1708,17 +1768,25 @@
                                       "integer",
                                       "null"
                                     ]
+                                  },
+                                  "helpHint": {
+                                    "type": "string"
+                                  },
+                                  "errorMessage": {
+                                    "type": "string"
                                   }
                                 },
                                 "additionalProperties": false
                               },
+                              "isReadonly": {
+                                "type": [
+                                  "boolean",
+                                  "null"
+                                ]
+                              },
                               "objectTypeOptions": {
                                 "type": "object",
                                 "properties": {
-                                  "$ref": {
-                                    "type": "string",
-                                    "format": "uri"
-                                  },
                                   "attributes": {
                                     "type": "array",
                                     "items": {
@@ -1827,6 +1895,12 @@
                                                 "normal",
                                                 "lower",
                                                 "upper"
+                                              ]
+                                            },
+                                            "isMultiline": {
+                                              "type": [
+                                                "boolean",
+                                                "null"
                                               ]
                                             }
                                           },
@@ -2109,6 +2183,12 @@
                                             "icon": {
                                               "type": "string"
                                             },
+                                            "iconPosition": {
+                                              "enum": [
+                                                "begin",
+                                                "end"
+                                              ]
+                                            },
                                             "inputMask": {
                                               "type": "string"
                                             },
@@ -2129,9 +2209,21 @@
                                                 "integer",
                                                 "null"
                                               ]
+                                            },
+                                            "helpHint": {
+                                              "type": "string"
+                                            },
+                                            "errorMessage": {
+                                              "type": "string"
                                             }
                                           },
                                           "additionalProperties": false
+                                        },
+                                        "isReadonly": {
+                                          "type": [
+                                            "boolean",
+                                            "null"
+                                          ]
                                         }
                                       },
                                       "required": [
@@ -2139,6 +2231,10 @@
                                         "type"
                                       ]
                                     }
+                                  },
+                                  "$ref": {
+                                    "type": "string",
+                                    "format": "uri"
                                   }
                                 },
                                 "required": [
@@ -2261,6 +2357,12 @@
                                       "lower",
                                       "upper"
                                     ]
+                                  },
+                                  "isMultiline": {
+                                    "type": [
+                                      "boolean",
+                                      "null"
+                                    ]
                                   }
                                 },
                                 "additionalProperties": false
@@ -2542,6 +2644,12 @@
                                   "icon": {
                                     "type": "string"
                                   },
+                                  "iconPosition": {
+                                    "enum": [
+                                      "begin",
+                                      "end"
+                                    ]
+                                  },
                                   "inputMask": {
                                     "type": "string"
                                   },
@@ -2562,17 +2670,25 @@
                                       "integer",
                                       "null"
                                     ]
+                                  },
+                                  "helpHint": {
+                                    "type": "string"
+                                  },
+                                  "errorMessage": {
+                                    "type": "string"
                                   }
                                 },
                                 "additionalProperties": false
                               },
+                              "isReadonly": {
+                                "type": [
+                                  "boolean",
+                                  "null"
+                                ]
+                              },
                               "objectTypeOptions": {
                                 "type": "object",
                                 "properties": {
-                                  "$ref": {
-                                    "type": "string",
-                                    "format": "uri"
-                                  },
                                   "attributes": {
                                     "type": "array",
                                     "items": {
@@ -2681,6 +2797,12 @@
                                                 "normal",
                                                 "lower",
                                                 "upper"
+                                              ]
+                                            },
+                                            "isMultiline": {
+                                              "type": [
+                                                "boolean",
+                                                "null"
                                               ]
                                             }
                                           },
@@ -2963,6 +3085,12 @@
                                             "icon": {
                                               "type": "string"
                                             },
+                                            "iconPosition": {
+                                              "enum": [
+                                                "begin",
+                                                "end"
+                                              ]
+                                            },
                                             "inputMask": {
                                               "type": "string"
                                             },
@@ -2983,9 +3111,21 @@
                                                 "integer",
                                                 "null"
                                               ]
+                                            },
+                                            "helpHint": {
+                                              "type": "string"
+                                            },
+                                            "errorMessage": {
+                                              "type": "string"
                                             }
                                           },
                                           "additionalProperties": false
+                                        },
+                                        "isReadonly": {
+                                          "type": [
+                                            "boolean",
+                                            "null"
+                                          ]
                                         }
                                       },
                                       "required": [
@@ -2993,6 +3133,10 @@
                                         "type"
                                       ]
                                     }
+                                  },
+                                  "$ref": {
+                                    "type": "string",
+                                    "format": "uri"
                                   }
                                 },
                                 "required": [
@@ -3123,6 +3267,12 @@
                                 "normal",
                                 "lower",
                                 "upper"
+                              ]
+                            },
+                            "isMultiline": {
+                              "type": [
+                                "boolean",
+                                "null"
                               ]
                             }
                           },
@@ -3405,6 +3555,12 @@
                             "icon": {
                               "type": "string"
                             },
+                            "iconPosition": {
+                              "enum": [
+                                "begin",
+                                "end"
+                              ]
+                            },
                             "inputMask": {
                               "type": "string"
                             },
@@ -3425,17 +3581,25 @@
                                 "integer",
                                 "null"
                               ]
+                            },
+                            "helpHint": {
+                              "type": "string"
+                            },
+                            "errorMessage": {
+                              "type": "string"
                             }
                           },
                           "additionalProperties": false
                         },
+                        "isReadonly": {
+                          "type": [
+                            "boolean",
+                            "null"
+                          ]
+                        },
                         "objectTypeOptions": {
                           "type": "object",
                           "properties": {
-                            "$ref": {
-                              "type": "string",
-                              "format": "uri"
-                            },
                             "attributes": {
                               "type": "array",
                               "items": {
@@ -3544,6 +3708,12 @@
                                           "normal",
                                           "lower",
                                           "upper"
+                                        ]
+                                      },
+                                      "isMultiline": {
+                                        "type": [
+                                          "boolean",
+                                          "null"
                                         ]
                                       }
                                     },
@@ -3826,6 +3996,12 @@
                                       "icon": {
                                         "type": "string"
                                       },
+                                      "iconPosition": {
+                                        "enum": [
+                                          "begin",
+                                          "end"
+                                        ]
+                                      },
                                       "inputMask": {
                                         "type": "string"
                                       },
@@ -3846,9 +4022,21 @@
                                           "integer",
                                           "null"
                                         ]
+                                      },
+                                      "helpHint": {
+                                        "type": "string"
+                                      },
+                                      "errorMessage": {
+                                        "type": "string"
                                       }
                                     },
                                     "additionalProperties": false
+                                  },
+                                  "isReadonly": {
+                                    "type": [
+                                      "boolean",
+                                      "null"
+                                    ]
                                   }
                                 },
                                 "required": [
@@ -3856,6 +4044,10 @@
                                   "type"
                                 ]
                               }
+                            },
+                            "$ref": {
+                              "type": "string",
+                              "format": "uri"
                             }
                           },
                           "required": [
@@ -3968,6 +4160,12 @@
                                     "normal",
                                     "lower",
                                     "upper"
+                                  ]
+                                },
+                                "isMultiline": {
+                                  "type": [
+                                    "boolean",
+                                    "null"
                                   ]
                                 }
                               },
@@ -4250,6 +4448,12 @@
                                 "icon": {
                                   "type": "string"
                                 },
+                                "iconPosition": {
+                                  "enum": [
+                                    "begin",
+                                    "end"
+                                  ]
+                                },
                                 "inputMask": {
                                   "type": "string"
                                 },
@@ -4270,17 +4474,25 @@
                                     "integer",
                                     "null"
                                   ]
+                                },
+                                "helpHint": {
+                                  "type": "string"
+                                },
+                                "errorMessage": {
+                                  "type": "string"
                                 }
                               },
                               "additionalProperties": false
                             },
+                            "isReadonly": {
+                              "type": [
+                                "boolean",
+                                "null"
+                              ]
+                            },
                             "objectTypeOptions": {
                               "type": "object",
                               "properties": {
-                                "$ref": {
-                                  "type": "string",
-                                  "format": "uri"
-                                },
                                 "attributes": {
                                   "type": "array",
                                   "items": {
@@ -4389,6 +4601,12 @@
                                               "normal",
                                               "lower",
                                               "upper"
+                                            ]
+                                          },
+                                          "isMultiline": {
+                                            "type": [
+                                              "boolean",
+                                              "null"
                                             ]
                                           }
                                         },
@@ -4671,6 +4889,12 @@
                                           "icon": {
                                             "type": "string"
                                           },
+                                          "iconPosition": {
+                                            "enum": [
+                                              "begin",
+                                              "end"
+                                            ]
+                                          },
                                           "inputMask": {
                                             "type": "string"
                                           },
@@ -4691,9 +4915,21 @@
                                               "integer",
                                               "null"
                                             ]
+                                          },
+                                          "helpHint": {
+                                            "type": "string"
+                                          },
+                                          "errorMessage": {
+                                            "type": "string"
                                           }
                                         },
                                         "additionalProperties": false
+                                      },
+                                      "isReadonly": {
+                                        "type": [
+                                          "boolean",
+                                          "null"
+                                        ]
                                       }
                                     },
                                     "required": [
@@ -4701,6 +4937,10 @@
                                       "type"
                                     ]
                                   }
+                                },
+                                "$ref": {
+                                  "type": "string",
+                                  "format": "uri"
                                 }
                               },
                               "required": [
@@ -4823,6 +5063,12 @@
                                     "lower",
                                     "upper"
                                   ]
+                                },
+                                "isMultiline": {
+                                  "type": [
+                                    "boolean",
+                                    "null"
+                                  ]
                                 }
                               },
                               "additionalProperties": false
@@ -5104,6 +5350,12 @@
                                 "icon": {
                                   "type": "string"
                                 },
+                                "iconPosition": {
+                                  "enum": [
+                                    "begin",
+                                    "end"
+                                  ]
+                                },
                                 "inputMask": {
                                   "type": "string"
                                 },
@@ -5124,17 +5376,25 @@
                                     "integer",
                                     "null"
                                   ]
+                                },
+                                "helpHint": {
+                                  "type": "string"
+                                },
+                                "errorMessage": {
+                                  "type": "string"
                                 }
                               },
                               "additionalProperties": false
                             },
+                            "isReadonly": {
+                              "type": [
+                                "boolean",
+                                "null"
+                              ]
+                            },
                             "objectTypeOptions": {
                               "type": "object",
                               "properties": {
-                                "$ref": {
-                                  "type": "string",
-                                  "format": "uri"
-                                },
                                 "attributes": {
                                   "type": "array",
                                   "items": {
@@ -5243,6 +5503,12 @@
                                               "normal",
                                               "lower",
                                               "upper"
+                                            ]
+                                          },
+                                          "isMultiline": {
+                                            "type": [
+                                              "boolean",
+                                              "null"
                                             ]
                                           }
                                         },
@@ -5525,6 +5791,12 @@
                                           "icon": {
                                             "type": "string"
                                           },
+                                          "iconPosition": {
+                                            "enum": [
+                                              "begin",
+                                              "end"
+                                            ]
+                                          },
                                           "inputMask": {
                                             "type": "string"
                                           },
@@ -5545,9 +5817,21 @@
                                               "integer",
                                               "null"
                                             ]
+                                          },
+                                          "helpHint": {
+                                            "type": "string"
+                                          },
+                                          "errorMessage": {
+                                            "type": "string"
                                           }
                                         },
                                         "additionalProperties": false
+                                      },
+                                      "isReadonly": {
+                                        "type": [
+                                          "boolean",
+                                          "null"
+                                        ]
                                       }
                                     },
                                     "required": [
@@ -5555,6 +5839,10 @@
                                       "type"
                                     ]
                                   }
+                                },
+                                "$ref": {
+                                  "type": "string",
+                                  "format": "uri"
                                 }
                               },
                               "required": [
@@ -5579,7 +5867,8 @@
                     }
                   },
                   "required": [
-                    "name"
+                    "name",
+                    "responseOutput"
                   ],
                   "title": "Defines queries for the domain.",
                   "description": "Defines queries for the domain that operates on this entity. Queries should have no side effects and not mutate the domain state.",
@@ -5697,6 +5986,12 @@
                             "normal",
                             "lower",
                             "upper"
+                          ]
+                        },
+                        "isMultiline": {
+                          "type": [
+                            "boolean",
+                            "null"
                           ]
                         }
                       },
@@ -5979,6 +6274,12 @@
                         "icon": {
                           "type": "string"
                         },
+                        "iconPosition": {
+                          "enum": [
+                            "begin",
+                            "end"
+                          ]
+                        },
                         "inputMask": {
                           "type": "string"
                         },
@@ -5999,17 +6300,25 @@
                             "integer",
                             "null"
                           ]
+                        },
+                        "helpHint": {
+                          "type": "string"
+                        },
+                        "errorMessage": {
+                          "type": "string"
                         }
                       },
                       "additionalProperties": false
                     },
+                    "isReadonly": {
+                      "type": [
+                        "boolean",
+                        "null"
+                      ]
+                    },
                     "objectTypeOptions": {
                       "type": "object",
                       "properties": {
-                        "$ref": {
-                          "type": "string",
-                          "format": "uri"
-                        },
                         "attributes": {
                           "type": "array",
                           "items": {
@@ -6118,6 +6427,12 @@
                                       "normal",
                                       "lower",
                                       "upper"
+                                    ]
+                                  },
+                                  "isMultiline": {
+                                    "type": [
+                                      "boolean",
+                                      "null"
                                     ]
                                   }
                                 },
@@ -6400,6 +6715,12 @@
                                   "icon": {
                                     "type": "string"
                                   },
+                                  "iconPosition": {
+                                    "enum": [
+                                      "begin",
+                                      "end"
+                                    ]
+                                  },
                                   "inputMask": {
                                     "type": "string"
                                   },
@@ -6420,9 +6741,21 @@
                                       "integer",
                                       "null"
                                     ]
+                                  },
+                                  "helpHint": {
+                                    "type": "string"
+                                  },
+                                  "errorMessage": {
+                                    "type": "string"
                                   }
                                 },
                                 "additionalProperties": false
+                              },
+                              "isReadonly": {
+                                "type": [
+                                  "boolean",
+                                  "null"
+                                ]
                               }
                             },
                             "required": [
@@ -6430,6 +6763,10 @@
                               "type"
                             ]
                           }
+                        },
+                        "$ref": {
+                          "type": "string",
+                          "format": "uri"
                         }
                       },
                       "required": [
@@ -6542,6 +6879,12 @@
                                 "normal",
                                 "lower",
                                 "upper"
+                              ]
+                            },
+                            "isMultiline": {
+                              "type": [
+                                "boolean",
+                                "null"
                               ]
                             }
                           },
@@ -6824,6 +7167,12 @@
                             "icon": {
                               "type": "string"
                             },
+                            "iconPosition": {
+                              "enum": [
+                                "begin",
+                                "end"
+                              ]
+                            },
                             "inputMask": {
                               "type": "string"
                             },
@@ -6844,17 +7193,25 @@
                                 "integer",
                                 "null"
                               ]
+                            },
+                            "helpHint": {
+                              "type": "string"
+                            },
+                            "errorMessage": {
+                              "type": "string"
                             }
                           },
                           "additionalProperties": false
                         },
+                        "isReadonly": {
+                          "type": [
+                            "boolean",
+                            "null"
+                          ]
+                        },
                         "objectTypeOptions": {
                           "type": "object",
                           "properties": {
-                            "$ref": {
-                              "type": "string",
-                              "format": "uri"
-                            },
                             "attributes": {
                               "type": "array",
                               "items": {
@@ -6963,6 +7320,12 @@
                                           "normal",
                                           "lower",
                                           "upper"
+                                        ]
+                                      },
+                                      "isMultiline": {
+                                        "type": [
+                                          "boolean",
+                                          "null"
                                         ]
                                       }
                                     },
@@ -7245,6 +7608,12 @@
                                       "icon": {
                                         "type": "string"
                                       },
+                                      "iconPosition": {
+                                        "enum": [
+                                          "begin",
+                                          "end"
+                                        ]
+                                      },
                                       "inputMask": {
                                         "type": "string"
                                       },
@@ -7265,9 +7634,21 @@
                                           "integer",
                                           "null"
                                         ]
+                                      },
+                                      "helpHint": {
+                                        "type": "string"
+                                      },
+                                      "errorMessage": {
+                                        "type": "string"
                                       }
                                     },
                                     "additionalProperties": false
+                                  },
+                                  "isReadonly": {
+                                    "type": [
+                                      "boolean",
+                                      "null"
+                                    ]
                                   }
                                 },
                                 "required": [
@@ -7275,6 +7656,10 @@
                                   "type"
                                 ]
                               }
+                            },
+                            "$ref": {
+                              "type": "string",
+                              "format": "uri"
                             }
                           },
                           "required": [
@@ -7397,6 +7782,12 @@
                                 "lower",
                                 "upper"
                               ]
+                            },
+                            "isMultiline": {
+                              "type": [
+                                "boolean",
+                                "null"
+                              ]
                             }
                           },
                           "additionalProperties": false
@@ -7678,6 +8069,12 @@
                             "icon": {
                               "type": "string"
                             },
+                            "iconPosition": {
+                              "enum": [
+                                "begin",
+                                "end"
+                              ]
+                            },
                             "inputMask": {
                               "type": "string"
                             },
@@ -7698,17 +8095,25 @@
                                 "integer",
                                 "null"
                               ]
+                            },
+                            "helpHint": {
+                              "type": "string"
+                            },
+                            "errorMessage": {
+                              "type": "string"
                             }
                           },
                           "additionalProperties": false
                         },
+                        "isReadonly": {
+                          "type": [
+                            "boolean",
+                            "null"
+                          ]
+                        },
                         "objectTypeOptions": {
                           "type": "object",
                           "properties": {
-                            "$ref": {
-                              "type": "string",
-                              "format": "uri"
-                            },
                             "attributes": {
                               "type": "array",
                               "items": {
@@ -7817,6 +8222,12 @@
                                           "normal",
                                           "lower",
                                           "upper"
+                                        ]
+                                      },
+                                      "isMultiline": {
+                                        "type": [
+                                          "boolean",
+                                          "null"
                                         ]
                                       }
                                     },
@@ -8099,6 +8510,12 @@
                                       "icon": {
                                         "type": "string"
                                       },
+                                      "iconPosition": {
+                                        "enum": [
+                                          "begin",
+                                          "end"
+                                        ]
+                                      },
                                       "inputMask": {
                                         "type": "string"
                                       },
@@ -8119,9 +8536,21 @@
                                           "integer",
                                           "null"
                                         ]
+                                      },
+                                      "helpHint": {
+                                        "type": "string"
+                                      },
+                                      "errorMessage": {
+                                        "type": "string"
                                       }
                                     },
                                     "additionalProperties": false
+                                  },
+                                  "isReadonly": {
+                                    "type": [
+                                      "boolean",
+                                      "null"
+                                    ]
                                   }
                                 },
                                 "required": [
@@ -8129,6 +8558,10 @@
                                   "type"
                                 ]
                               }
+                            },
+                            "$ref": {
+                              "type": "string",
+                              "format": "uri"
                             }
                           },
                           "required": [
@@ -8272,6 +8705,12 @@
                             "lower",
                             "upper"
                           ]
+                        },
+                        "isMultiline": {
+                          "type": [
+                            "boolean",
+                            "null"
+                          ]
                         }
                       },
                       "additionalProperties": false
@@ -8553,6 +8992,12 @@
                         "icon": {
                           "type": "string"
                         },
+                        "iconPosition": {
+                          "enum": [
+                            "begin",
+                            "end"
+                          ]
+                        },
                         "inputMask": {
                           "type": "string"
                         },
@@ -8573,9 +9018,21 @@
                             "integer",
                             "null"
                           ]
+                        },
+                        "helpHint": {
+                          "type": "string"
+                        },
+                        "errorMessage": {
+                          "type": "string"
                         }
                       },
                       "additionalProperties": false
+                    },
+                    "isReadonly": {
+                      "type": [
+                        "boolean",
+                        "null"
+                      ]
                     }
                   },
                   "required": [
@@ -8695,6 +9152,12 @@
                             "lower",
                             "upper"
                           ]
+                        },
+                        "isMultiline": {
+                          "type": [
+                            "boolean",
+                            "null"
+                          ]
                         }
                       },
                       "additionalProperties": false
@@ -8976,6 +9439,12 @@
                         "icon": {
                           "type": "string"
                         },
+                        "iconPosition": {
+                          "enum": [
+                            "begin",
+                            "end"
+                          ]
+                        },
                         "inputMask": {
                           "type": "string"
                         },
@@ -8996,9 +9465,21 @@
                             "integer",
                             "null"
                           ]
+                        },
+                        "helpHint": {
+                          "type": "string"
+                        },
+                        "errorMessage": {
+                          "type": "string"
                         }
                       },
                       "additionalProperties": false
+                    },
+                    "isReadonly": {
+                      "type": [
+                        "boolean",
+                        "null"
+                      ]
                     }
                   },
                   "required": [
@@ -9868,6 +10349,10 @@
     "application": {
       "type": "object",
       "properties": {
+        "$ref": {
+          "type": "string",
+          "format": "uri"
+        },
         "integration": {
           "type": "array",
           "items": {
@@ -10029,6 +10514,7 @@
                       },
                       "required": [
                         "sourceColumn",
+                        "match",
                         "targetAttribute"
                       ],
                       "additionalProperties": false
@@ -10053,62 +10539,7 @@
                     "description": "A description of the etl target."
                   },
                   "dataConnection": {
-                    "type": "object",
-                    "properties": {
-                      "name": {
-                        "type": "string",
-                        "pattern": "^[^\\s]*$",
-                        "title": "The unique name of this server component in the solution.",
-                        "description": "The name of this server component in the solution. The name must be unique in the solution configuration"
-                      },
-                      "serverUri": {
-                        "type": "string",
-                        "title": "Hostname, IP address or URI.",
-                        "description": "The name, address, URI or IP of the server to connect to."
-                      },
-                      "port": {
-                        "type": [
-                          "integer",
-                          "null"
-                        ],
-                        "title": "Server port",
-                        "description": "The port to connect to."
-                      },
-                      "user": {
-                        "type": "string",
-                        "title": "Username.",
-                        "description": "The username to use when connecting to this server."
-                      },
-                      "password": {
-                        "type": "string",
-                        "title": "Password.",
-                        "description": "The password to use when connecting to this server."
-                      },
-                      "options": {
-                        "type": "string",
-                        "title": "Additional options.",
-                        "description": "A list of additional options to set when connecting to this server."
-                      },
-                      "provider": {
-                        "enum": [
-                          "amazonSqs",
-                          "azureServiceBus",
-                          "csvFile",
-                          "excelFile",
-                          "jsonFile",
-                          "mySql",
-                          "parquetFile",
-                          "postgres",
-                          "rabbitMq",
-                          "sqlServer",
-                          "webApi",
-                          "xmlFile"
-                        ]
-                      }
-                    },
-                    "required": [
-                      "name"
-                    ],
+                    "type": "string",
                     "additionalProperties": false
                   }
                 },
@@ -10250,6 +10681,12 @@
                             "normal",
                             "lower",
                             "upper"
+                          ]
+                        },
+                        "isMultiline": {
+                          "type": [
+                            "boolean",
+                            "null"
                           ]
                         }
                       },
@@ -10532,6 +10969,12 @@
                         "icon": {
                           "type": "string"
                         },
+                        "iconPosition": {
+                          "enum": [
+                            "begin",
+                            "end"
+                          ]
+                        },
                         "inputMask": {
                           "type": "string"
                         },
@@ -10552,9 +10995,21 @@
                             "integer",
                             "null"
                           ]
+                        },
+                        "helpHint": {
+                          "type": "string"
+                        },
+                        "errorMessage": {
+                          "type": "string"
                         }
                       },
                       "additionalProperties": false
+                    },
+                    "isReadonly": {
+                      "type": [
+                        "boolean",
+                        "null"
+                      ]
                     }
                   },
                   "required": [
@@ -10567,7 +11022,8 @@
               }
             },
             "required": [
-              "name"
+              "name",
+              "attributes"
             ],
             "additionalProperties": false
           },

@@ -18,6 +18,10 @@ namespace Nox.Configuration.Validation
                 .NotEmpty()
                 .WithMessage(t => string.Format(ValidationResources.EntityNameEmpty));
             
+            RuleFor(e => e.ApplyDefaults())
+                .NotEqual(false)
+                .WithMessage(e => string.Format(ValidationResources.EntityDefaultsFalse, e.Name));
+            
             RuleFor(e => e.Name).Must(MustHaveUniqueName)
                 .WithMessage(e => string.Format(ValidationResources.EntityNameDuplicate, e.Name));
 
@@ -38,6 +42,7 @@ namespace Nox.Configuration.Validation
 
             RuleForEach(p => p.Attributes)
                 .SetValidator(v => new SimpleTypeValidator($"an Attribute of entity '{v.Name}'", "entity attributes"));
+
         }
         
         private bool MustHaveUniqueName(Entity toEvaluate, string name)

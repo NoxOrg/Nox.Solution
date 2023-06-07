@@ -22,6 +22,13 @@ namespace Nox
         public EntityReadSettings Read { get; set; } = new EntityReadSettings();
         public EntityUpdateSettings Update { get; set; } = new EntityUpdateSettings();
         public EntityDeleteSettings Delete { get; set; } = new EntityDeleteSettings();
+        
+        internal bool ApplyDefaults(string entityName)
+        {
+            if (string.IsNullOrWhiteSpace(TableName)) TableName = entityName;
+            if (string.IsNullOrWhiteSpace(Schema)) Schema = "dbo";
+            return true;
+        }
     }
 
     public class EntityCreateSettings
@@ -47,4 +54,6 @@ namespace Nox
         public bool RaiseEvents { get; set; } = true;
         public bool UseSoftDelete { get; set; } = true;
     }
+   
+
 }

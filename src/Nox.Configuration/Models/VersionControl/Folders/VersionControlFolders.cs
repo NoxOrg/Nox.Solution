@@ -13,16 +13,16 @@ namespace Nox
         [Required]
         [Title("The path or relative path to the source code root.")]
         [Description("The path or relative path that contains your source code. Allows auto-configuration of build pipelines.")]
-        public string? SourceCode { get; set; }
+        public string? SourceCode { get; set; } = "/src";
 
         [Title("The path or relative path to the solution tests.")]
         [Description("The path or relative path that contains your solution tests. Allows auto-configuration of build pipelines.")]
-        public string? Tests { get; set; }
+        public string? Tests { get; set; } = "/tests";
 
         [Required]
         [Title("The path or relative path to the docker containers.")]
         [Description("The path or relative path that contains your solution docker containers.")]
-        public string? Containers { get; set; }
+        public string? Containers { get; set; } = "/Dockerfile";
 
         [Title("The path or relative path to the samples folder.")]
         [Description("The path or relative path that contains your solution samples.")]

@@ -6,10 +6,14 @@ namespace Nox
     [AdditionalProperties(false)]
     public class EtlLookup
     {
-        [Required] public string? SourceColumn { get; set; }
+        [Required] 
+        public string? SourceColumn { get; set; }
 
-        [AdditionalProperties(false)] public EtlMatch? Match { get; set; }
+        [Required]
+        [AdditionalProperties(false)] 
+        public EtlMatch? Match { get; set; }
 
-        [Required] public string? TargetAttribute { get; set; }
+        [Required] 
+        public string? TargetAttribute { get; set; }
     }
 }

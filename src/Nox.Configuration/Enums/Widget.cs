@@ -1,4 +1,7 @@
-﻿namespace Nox
+﻿using System;
+using System.Linq;
+
+namespace Nox
 {
     public enum Widget
     {
@@ -15,5 +18,16 @@
         select,
         checkbox,
         @switch,
+    }
+    
+    public static class WidgetHelpers
+    {
+        public static string NameList()
+        {
+            var list = Enum.GetValues(typeof(Widget))
+                .Cast<Widget>()
+                .ToList();
+            return string.Join(", ", list);
+        }
     }
 }

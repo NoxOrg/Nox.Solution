@@ -5,6 +5,6 @@ namespace Nox
     [AdditionalProperties(false)]
     public class ApiServer: ServerBase
     {
-        
+
     }
 }

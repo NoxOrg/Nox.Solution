@@ -17,6 +17,8 @@ namespace Nox
         [Description("A description of the dto and what it represents in the real world.")]
         public string? Description { get; set; }
 
-        [AdditionalProperties(false)] public List<NoxSimpleTypeDefinition>? Attributes { get; set; }
+        [Required]
+        [AdditionalProperties(false)] 
+        public List<NoxSimpleTypeDefinition>? Attributes { get; set; }
     }
 }

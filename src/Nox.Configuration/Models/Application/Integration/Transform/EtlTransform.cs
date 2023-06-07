@@ -7,8 +7,10 @@ namespace Nox
     [AdditionalProperties(false)]
     public class EtlTransform
     {
-        [AdditionalProperties(false)] public List<EtlMapping>? Map { get; set; }
+        [AdditionalProperties(false)] 
+        public List<EtlMapping>? Map { get; set; }
 
-        [AdditionalProperties(false)] public List<EtlLookup>? Lookup { get; set; }
+        [AdditionalProperties(false)] 
+        public List<EtlLookup>? Lookup { get; set; }
     }
 }

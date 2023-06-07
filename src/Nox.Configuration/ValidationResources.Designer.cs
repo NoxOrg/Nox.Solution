@@ -290,5 +290,203 @@ namespace Nox {
                 return ResourceManager.GetString("EntityAttributesEmpty", resourceCulture);
             }
         }
+        
+        internal static string DtoNameEmpty {
+            get {
+                return ResourceManager.GetString("DtoNameEmpty", resourceCulture);
+            }
+        }
+        
+        internal static string DtoAttributesEmpty {
+            get {
+                return ResourceManager.GetString("DtoAttributesEmpty", resourceCulture);
+            }
+        }
+        
+        internal static string DtoNameDuplicate {
+            get {
+                return ResourceManager.GetString("DtoNameDuplicate", resourceCulture);
+            }
+        }
+        
+        internal static string EtlNameEmpty {
+            get {
+                return ResourceManager.GetString("EtlNameEmpty", resourceCulture);
+            }
+        }
+        
+        internal static string EtlNameDuplicate {
+            get {
+                return ResourceManager.GetString("EtlNameDuplicate", resourceCulture);
+            }
+        }
+        
+        internal static string EtlSourceMissing {
+            get {
+                return ResourceManager.GetString("EtlSourceMissing", resourceCulture);
+            }
+        }
+        
+        internal static string EtlTargetMissing {
+            get {
+                return ResourceManager.GetString("EtlTargetMissing", resourceCulture);
+            }
+        }
+        
+        internal static string EtlSourceNameEmpty {
+            get {
+                return ResourceManager.GetString("EtlSourceNameEmpty", resourceCulture);
+            }
+        }
+        
+        internal static string EtlSourceDataConnectionEmpty {
+            get {
+                return ResourceManager.GetString("EtlSourceDataConnectionEmpty", resourceCulture);
+            }
+        }
+        
+        internal static string EtlScheduleStartEmpty {
+            get {
+                return ResourceManager.GetString("EtlScheduleStartEmpty", resourceCulture);
+            }
+        }
+        
+        internal static string EtlSourceDataConnectionMissing {
+            get {
+                return ResourceManager.GetString("EtlSourceDataConnectionMissing", resourceCulture);
+            }
+        }
+        
+        internal static string EtlTargetNameEmpty {
+            get {
+                return ResourceManager.GetString("EtlTargetNameEmpty", resourceCulture);
+            }
+        }
+        
+        internal static string EtlTargetDataConnectionEmpty {
+            get {
+                return ResourceManager.GetString("EtlTargetDataConnectionEmpty", resourceCulture);
+            }
+        }
+        
+        internal static string EtlTargetDataConnectionMissing {
+            get {
+                return ResourceManager.GetString("EtlTargetDataConnectionMissing", resourceCulture);
+            }
+        }
+        
+        internal static string EtlMappingSourceColumnMissing {
+            get {
+                return ResourceManager.GetString("EtlMappingSourceColumnMissing", resourceCulture);
+            }
+        }
+        
+        internal static string EtlMappingTargetAttributeMissing {
+            get {
+                return ResourceManager.GetString("EtlMappingTargetAttributeMissing", resourceCulture);
+            }
+        }
+        
+        internal static string EtlMatchTableEmpty {
+            get {
+                return ResourceManager.GetString("EtlMatchTableEmpty", resourceCulture);
+            }
+        }
+        
+        internal static string EtlMatchLookupColumnEmpty {
+            get {
+                return ResourceManager.GetString("EtlMatchLookupColumnEmpty", resourceCulture);
+            }
+        }
+        
+        internal static string EtlMatchReturnColumnEmpty {
+            get {
+                return ResourceManager.GetString("EtlMatchReturnColumnEmpty", resourceCulture);
+            }
+        }
+        
+        internal static string EtlLookupSourceColumnEmpty {
+            get {
+                return ResourceManager.GetString("EtlLookupSourceColumnEmpty", resourceCulture);
+            }
+        }
+        
+        internal static string EtlLookupMatchEmpty {
+            get {
+                return ResourceManager.GetString("EtlLookupMatchEmpty", resourceCulture);
+            }
+        }
+        
+        internal static string EtlLookupTargetAttributeEmpty {
+            get {
+                return ResourceManager.GetString("EtlLookupTargetAttributeEmpty", resourceCulture);
+            }
+        }
+        
+        internal static string InfrastructurePersistenceEmpty {
+            get {
+                return ResourceManager.GetString("InfrastructurePersistenceEmpty", resourceCulture);
+            }
+        }
+        
+        internal static string InfrastructureMessagingEmpty {
+            get {
+                return ResourceManager.GetString("InfrastructureMessagingEmpty", resourceCulture);
+            }
+        }
+        
+        internal static string ServerNameEmpty {
+            get {
+                return ResourceManager.GetString("ServerNameEmpty", resourceCulture);
+            }
+        }
+        
+        internal static string ServerNameDuplicate {
+            get {
+                return ResourceManager.GetString("ServerNameDuplicate", resourceCulture);
+            }
+        }
+        
+        internal static string PersistenceDatabaseServerEmpty {
+            get {
+                return ResourceManager.GetString("PersistenceDatabaseServerEmpty", resourceCulture);
+            }
+        }
+        
+        internal static string SecretsValidForInvalidTimespan {
+            get {
+                return ResourceManager.GetString("SecretsValidForInvalidTimespan", resourceCulture);
+            }
+        }
+        
+        internal static string DataConnectionProviderEmpty {
+            get {
+                return ResourceManager.GetString("DataConnectionProviderEmpty", resourceCulture);
+            }
+        }
+        
+        internal static string EmailServerProviderEmpty {
+            get {
+                return ResourceManager.GetString("EmailServerProviderEmpty", resourceCulture);
+            }
+        }
+        
+        internal static string SmsServerProviderEmpty {
+            get {
+                return ResourceManager.GetString("SmsServerProviderEmpty", resourceCulture);
+            }
+        }
+        
+        internal static string ImServerProviderEmpty {
+            get {
+                return ResourceManager.GetString("ImServerProviderEmpty", resourceCulture);
+            }
+        }
+        
+        internal static string SecretsServerProviderEmpty {
+            get {
+                return ResourceManager.GetString("SecretsServerProviderEmpty", resourceCulture);
+            }
+        }
     }
 }

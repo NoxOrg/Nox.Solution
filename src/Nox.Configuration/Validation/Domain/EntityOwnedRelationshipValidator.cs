@@ -15,6 +15,7 @@ namespace Nox.Configuration.Validation
             if (relationships == null) return;
             if (entities == null) return;
             _entities = entities;
+            _relationships = relationships;
             
             RuleFor(er => er.Name)
                 .NotEmpty()

@@ -234,7 +234,7 @@ public class SolutionTests
         Assert.NotNull(noxConfig.Solution!.Application.Integration[0].Target);
         Assert.Equal("???", noxConfig.Solution!.Application.Integration[0].Target!.Name);
         Assert.NotNull(noxConfig.Solution!.Application.Integration[0].Target!.DataConnection);
-        Assert.Equal("Nox", noxConfig.Solution!.Application.Integration[0].Target!.DataConnection!.Name);
+        Assert.Equal("Nox", noxConfig.Solution!.Application.Integration[0].Target!.DataConnection);
     }
 
     [Fact]
@@ -341,7 +341,7 @@ public class SolutionTests
         Assert.NotNull(noxConfig.Solution!.Infrastructure.Dependencies.Security.Secrets);
         Assert.NotNull(noxConfig.Solution!.Infrastructure.Dependencies.Security.Secrets!.SecretsServer);
         Assert.Equal("SampleSecretServer", noxConfig.Solution!.Infrastructure.Dependencies.Security.Secrets!.SecretsServer!.Name);
-        Assert.Equal(SecretsProvider.azureKeyVault, noxConfig.Solution!.Infrastructure.Dependencies.Security.Secrets!.SecretsServer!.Provider);
+        Assert.Equal(SecretsServerProvider.azureKeyVault, noxConfig.Solution!.Infrastructure.Dependencies.Security.Secrets!.SecretsServer!.Provider);
         Assert.Equal("kv.iwgplc.com", noxConfig.Solution!.Infrastructure.Dependencies.Security.Secrets!.SecretsServer!.ServerUri);
         Assert.Equal("secrets@iwgplc.com", noxConfig.Solution!.Infrastructure.Dependencies.Security.Secrets!.SecretsServer!.User);
         Assert.Equal("SecretPassword", noxConfig.Solution!.Infrastructure.Dependencies.Security.Secrets!.SecretsServer!.Password);

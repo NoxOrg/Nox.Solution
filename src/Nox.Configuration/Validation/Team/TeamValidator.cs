@@ -22,11 +22,11 @@ namespace Nox.Configuration.Validation
                 .NotEmpty()
                 .WithMessage(t => string.Format(ValidationResources.TeamRolesEmpty, t.UserName));
             
-            RuleFor(t => t.UserName).Must(MustHaveUniqueUserName)
+            RuleFor(t => t.UserName).Must(HaveUniqueUserName)
                 .WithMessage(t => string.Format(ValidationResources.TeamUserNameDuplicate, t.UserName));
         }
         
-        private bool MustHaveUniqueUserName(Team toEvaluate, string userName)
+        private bool HaveUniqueUserName(Team toEvaluate, string userName)
         {
             return _members!.All(member => member.Equals(toEvaluate) || member.UserName != userName);
         }

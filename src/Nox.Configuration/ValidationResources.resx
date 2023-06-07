@@ -141,4 +141,103 @@
     <data name="EntityAttributesEmpty" xml:space="preserve">
         <value>The entity '{0}' does not have any attributes. a Nox entity must have at least one attribute.</value>
     </data>
+    <data name="DtoNameEmpty" xml:space="preserve">
+        <value>a Dto in the application does not have a name specified. All dtos must have a unique name specified.</value>
+    </data>
+    <data name="DtoAttributesEmpty" xml:space="preserve">
+        <value>The dto '{0}' does not have any attributes defined. All dto's must have at least one attribute.</value>
+    </data>
+    <data name="DtoNameDuplicate" xml:space="preserve">
+        <value>a Data transfer object '{0}' has a duplicate name. All dtos must have a unique name in the solution.</value>
+    </data>
+    <data name="EtlNameEmpty" xml:space="preserve">
+        <value>an Integration in the application definition is missing a name. All integrations must have a unique name.</value>
+    </data>
+    <data name="EtlNameDuplicate" xml:space="preserve">
+        <value>The integration '{0}' has a duplicate name. Integration names must be unique in the solution.</value>
+    </data>
+    <data name="EtlSourceMissing" xml:space="preserve">
+        <value>The integration '{0}' does not have a source specified. All integrations must have a source and target specified.</value>
+    </data>
+    <data name="EtlTargetMissing" xml:space="preserve">
+        <value>The integration '{0}' does not have a target specified. All integrations must have a source and target specified.</value>
+    </data>
+    <data name="EtlSourceNameEmpty" xml:space="preserve">
+        <value>The source for integration '{0}' does not have a name specified. All integration sources must have a name specified.</value>
+    </data>
+    <data name="EtlSourceDataConnectionEmpty" xml:space="preserve">
+        <value>The source '{0}' for integration '{1}' does not have a data connection specified. All integration sources must have a data connection specified in the Infrastructure section of your yaml definition..</value>
+    </data>
+    <data name="EtlScheduleStartEmpty" xml:space="preserve">
+        <value>The source '{0}' for integration '{1}' does not have a start specified for its schedule. All scheduled integrations must have a start defined.</value>
+    </data>
+    <data name="EtlSourceDataConnectionMissing" xml:space="preserve">
+        <value>The source '{0}' for integration '{1}' refers to a data connection '{2}' that is not defined. All data connections must be defined in the Infrastructure section of your yaml definition.</value>
+    </data>
+    <data name="EtlTargetNameEmpty" xml:space="preserve">
+        <value>The target of integration '{0}' does not have a name specified. All integration targets must have a name.</value>
+    </data>
+    <data name="EtlTargetDataConnectionEmpty" xml:space="preserve">
+        <value>The target '{0}' of integration '{1}' does not have a data connection specified. All integration targets must have a data connection specified in the Infrastructure section of your yaml definition.</value>
+    </data>
+    <data name="EtlTargetDataConnectionMissing" xml:space="preserve">
+        <value>The target '{0}' for integration '{1}' refers to a data connection '{2}' that is not defined. All data connections must be defined in the Infrastructure section of your yaml definition.</value>
+    </data>
+    <data name="EtlMappingSourceColumnMissing" xml:space="preserve">
+        <value>a Mapping for integration '{0}' does not have a source column specified. All integration mappings must have a source column.</value>
+    </data>
+    <data name="EtlMappingTargetAttributeMissing" xml:space="preserve">
+        <value>a Mapping for integration '{0}' does not have a target attribute specified. All integration mappings must have a target attribute.</value>
+    </data>
+    <data name="EtlMatchTableEmpty" xml:space="preserve">
+        <value>a Lookup for integration '{0}' does not have a table specified. All integration lookups must have a table.</value>
+    </data>
+    <data name="EtlMatchLookupColumnEmpty" xml:space="preserve">
+        <value>a Lookup for integration '{0}' does not have a lookup column specified. All integration lookups must have a source column.</value>
+    </data>
+    <data name="EtlMatchReturnColumnEmpty" xml:space="preserve">
+        <value>a Lookup for integration '{0}' does not have a return column specified. All integration lookups must have a return column.</value>
+    </data>
+    <data name="EtlLookupSourceColumnEmpty" xml:space="preserve">
+        <value>a Lookup for integration '{0}' does not have a source column specified. All integration lookups must have a source column.</value>
+    </data>
+    <data name="EtlLookupMatchEmpty" xml:space="preserve">
+        <value>a Lookup for integration '{0}' does not have a match section specified. All integration lookups must have a match.</value>
+    </data>
+    <data name="EtlLookupTargetAttributeEmpty" xml:space="preserve">
+        <value>a Lookup for integration '{0}' does not have a target attribute specified. All integration lookups must have a target attribute.</value>
+    </data>
+    <data name="InfrastructurePersistenceEmpty" xml:space="preserve">
+        <value>The persistence section of the infrastructure definition is missing. Infrastructure persistence is required in a Nox solution defnition.</value>
+    </data>
+    <data name="InfrastructureMessagingEmpty" xml:space="preserve">
+        <value>The messaging section of the infrastructure definition is missing. Infrastructure messaging is required in a Nox solution defnition.</value>
+    </data>
+    <data name="ServerNameEmpty" xml:space="preserve">
+        <value>The server definition for {0} is missing a name. All server definitions must have a unique name in a Nox solution.</value>
+    </data>
+    <data name="ServerNameDuplicate" xml:space="preserve">
+        <value>The name '{0}' of the server definition for '{1}' is duplicated elsewhere in the solution definition. Server names must be unique in a Nox solution definition.</value>
+    </data>
+    <data name="PersistenceDatabaseServerEmpty" xml:space="preserve">
+        <value>The database server for infrastructure persistence has not been specified. a Nox solution must always have a database definition.</value>
+    </data>
+    <data name="SecretsValidForInvalidTimespan" xml:space="preserve">
+        <value>The secrets valid for in {0} must have a valid time span specified.</value>
+    </data>
+    <data name="DataConnectionProviderEmpty" xml:space="preserve">
+        <value>The data connection '{0}' must have a valid provider specified. Valid providers are one of {1}</value>
+    </data>
+    <data name="EmailServerProviderEmpty" xml:space="preserve">
+        <value>The infrastructure, dependencies, notifications, email server '{0}' must have a valid provider specified. Valid providers are one of {1}</value>
+    </data>
+    <data name="SmsServerProviderEmpty" xml:space="preserve">
+        <value>The infrastructure, dependencies, notifications, sms server '{0}' must have a valid provider specified. Valid providers are one of {1}</value>
+    </data>
+    <data name="ImServerProviderEmpty" xml:space="preserve">
+        <value>The infrastructure, dependencies, notifications, im server '{0}' must have a valid provider specified. Valid providers are one of {1}</value>
+    </data>
+    <data name="SecretsServerProviderEmpty" xml:space="preserve">
+        <value>The infrastructure, dependencies, security, secrets, secrets server '{0}' must have a valid provider specified. Valid providers are one of {1}</value>
+    </data>
 </root>

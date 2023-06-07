@@ -21,6 +21,9 @@ namespace Nox.Configuration.Validation
 
             RuleFor(sln => sln.Domain!)
                 .SetValidator(new DomainValidator());
+
+            RuleFor(sln => sln.Application!)
+                .SetValidator(sln => new ApplicationValidator(sln.Infrastructure?.Dependencies?.DataConnections));
         }
     }
 }

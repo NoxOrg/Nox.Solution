@@ -30,5 +30,7 @@ namespace Nox
 
         public TypeUserInterface? UserInterface { get; set; }
 
+        public bool IsReadonly { get; set; } = false;
+
     }
 }

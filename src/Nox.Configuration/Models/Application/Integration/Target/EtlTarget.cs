@@ -18,7 +18,7 @@ namespace Nox
 
         [Required]
         [AdditionalProperties(false)]
-        public DataConnection? DataConnection { get; set; }
+        public string? DataConnection { get; set; }
 
     }
 }

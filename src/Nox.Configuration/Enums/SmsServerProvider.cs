@@ -5,8 +5,8 @@ namespace Nox
 {
     public enum SmsServerProvider
     {
-        twilio,
-        clickSend
+        Twilio,
+        ClickSend
     }
     
     public static class SmsServerProviderHelpers

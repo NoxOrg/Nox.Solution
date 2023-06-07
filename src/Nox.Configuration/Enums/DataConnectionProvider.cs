@@ -5,18 +5,18 @@ namespace Nox
 {
     public enum DataConnectionProvider
     {
-        amazonSqs,
-        azureServiceBus,
-        csvFile,
-        excelFile,
-        jsonFile,
-        mySql,
-        parquetFile,
-        postgres,
-        rabbitMq,
-        sqlServer,
-        webApi,
-        xmlFile
+        AmazonSqs,
+        AzureServiceBus,
+        CsvFile,
+        ExcelFile,
+        JsonFile,
+        MySql,
+        ParquetFile,
+        Postgres,
+        RabbitMq,
+        SqlServer,
+        WebApi,
+        XmlFile
     }
     
     public static class DataConnectionProviderHelpers

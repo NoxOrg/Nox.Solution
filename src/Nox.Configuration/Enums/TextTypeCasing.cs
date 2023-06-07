@@ -5,9 +5,9 @@ namespace Nox
 {
     public enum TextTypeCasing
     {
-        normal,
-        lower,
-        upper
+        Normal,
+        Lower,
+        Upper
     }
     
     public static class TextTypeCasingHelpers

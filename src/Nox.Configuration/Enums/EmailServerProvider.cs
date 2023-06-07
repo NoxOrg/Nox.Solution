@@ -5,8 +5,8 @@ namespace Nox
 {
     public enum EmailServerProvider
     {
-        sendGrid,
-        mailchimp
+        SendGrid,
+        Mailchimp
     }
     
     public static class EmailServerProviderHelpers

@@ -8,7 +8,7 @@ namespace Nox
         // apacheSoir,
         // amazonCloudSearch,
         // algolia,
-        elasticSearch
+        ElasticSearch
     }
     
     public static class SearchServerProviderHelpers

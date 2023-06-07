@@ -5,7 +5,7 @@ namespace Nox
 {
     public enum EventSourceServerProvider
     {
-        eventStoreDb
+        EventStoreDb
     }
     
     public static class EventSourceServerProviderHelpers

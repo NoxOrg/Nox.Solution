@@ -5,8 +5,8 @@ namespace Nox
 {
     public enum EtlMappingConverter
     {
-        upperCase,
-        lowerCase
+        UpperCase,
+        LowerCase
     }
     
     public static class EtlMappingConverterHelpers

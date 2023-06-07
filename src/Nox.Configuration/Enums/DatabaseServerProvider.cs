@@ -5,10 +5,10 @@ namespace Nox
 {
     public enum DatabaseServerProvider
     {
-        sqlServer,
-        postgres,
-        mySql,
-        sqlLite,
+        SqlServer,
+        Postgres,
+        MySql,
+        SqlLite,
     }
     
     public static class DatabaseServerProviderHelpers

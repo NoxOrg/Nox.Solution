@@ -6,9 +6,9 @@ namespace Nox
 
     public enum SecretsServerProvider
     {
-        awsKeyManagementService,
-        azureKeyVault,
-        hashiCorpVault
+        AwsKeyManagementService,
+        AzureKeyVault,
+        HashicorpVault
 
     }
     

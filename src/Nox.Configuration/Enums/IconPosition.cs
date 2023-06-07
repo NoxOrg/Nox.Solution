@@ -5,8 +5,8 @@ namespace Nox
 {
     public enum IconPosition
     {
-        begin,
-        end
+        Begin,
+        End
     }
     
     public static class IconPositionHelpers

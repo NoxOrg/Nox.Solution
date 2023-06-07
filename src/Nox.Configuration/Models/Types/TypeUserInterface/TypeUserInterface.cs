@@ -10,7 +10,7 @@ namespace Nox
         public string? TranslationId { get; set; }
         public Widget? Widget { get; set; }
         public string? Icon { get; set; }
-        public IconPosition? IconPosition { get; set; } = global::Nox.IconPosition.begin;
+        public IconPosition? IconPosition { get; set; } = global::Nox.IconPosition.Begin;
         public string? InputMask { get; set; }
         public string? OutputMask { get; set; }
         public string? Regex { get; set; }

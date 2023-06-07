@@ -5,10 +5,10 @@ namespace Nox
 {
     public enum MessagingServerProvider
     {
-        mediatR,
-        rabbitMQ,
-        azureServiceBus,
-        amazonSQS,
+        MediatR,
+        RabbitMq,
+        AzureServiceBus,
+        AmazonSqs,
     }
     
     public static class MessagingServerProviderHelpers

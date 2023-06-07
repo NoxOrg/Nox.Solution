@@ -12,7 +12,7 @@ namespace Nox
 
         public int MaxLength { get; set; } = 511;
 
-        public TextTypeCasing CharacterCasing { get; set; } = TextTypeCasing.normal;
+        public TextTypeCasing CharacterCasing { get; set; } = TextTypeCasing.Normal;
 
         public bool IsMultiline { get; set; } = false;
     }

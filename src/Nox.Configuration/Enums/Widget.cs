@@ -5,19 +5,19 @@ namespace Nox
 {
     public enum Widget
     {
-        textInput,
-        textArea,
-        numberInput,
-        numberSlider,
-        fileUpload,
-        datePicker,
-        dateRangePicker,
-        timePicker,
-        timeRangePicker,
-        radio,
-        select,
-        checkbox,
-        @switch,
+        TextInput,
+        TextArea,
+        NumberInput,
+        NumberSlider,
+        FileUpload,
+        DatePicker,
+        DateRangePicker,
+        TimePicker,
+        TimeRangePicker,
+        Radio,
+        Select,
+        Checkbox,
+        @Switch,
     }
     
     public static class WidgetHelpers

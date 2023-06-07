@@ -5,8 +5,8 @@ namespace Nox
 {
     public enum ImServerProvider
     {
-        whatsApp,
-        telegram
+        WhatsApp,
+        Telegram
     }
     
     public static class ImServerProviderHelpers

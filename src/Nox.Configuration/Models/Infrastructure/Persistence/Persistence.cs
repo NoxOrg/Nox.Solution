@@ -8,15 +8,15 @@ namespace Nox
     {
         [Required]
         [AdditionalProperties(false)]
-        public DatabaseServer? DatabaseServer { get; set; }
+        public DatabaseServer? DatabaseServer { get; internal set; }
         
         [AdditionalProperties(false)]
-        public CacheServer? CacheServer { get; set; }
+        public CacheServer? CacheServer { get; internal set; }
 
         [AdditionalProperties(false)]
-        public SearchServer? SearchServer { get; set; }
+        public SearchServer? SearchServer { get; internal set; }
 
         [AdditionalProperties(false)]
-        public EventSourceServer? EventSourceServer { get; set; }
+        public EventSourceServer? EventSourceServer { get; internal set; }
     }
 }

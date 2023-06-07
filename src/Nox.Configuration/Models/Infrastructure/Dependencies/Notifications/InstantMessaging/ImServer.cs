@@ -6,6 +6,6 @@ namespace Nox
     public class ImServer: ServerBase
     {
         [AdditionalProperties(false)]
-        public ImServerProvider? Provider { get; set; }
+        public ImServerProvider? Provider { get; internal set; }
     }
 }

@@ -6,6 +6,6 @@ namespace Nox
     [AdditionalProperties(false)]
     public class DataConnection : ServerBase
     {
-        public DataConnectionProvider? Provider { get; set; }
+        public DataConnectionProvider? Provider { get; internal set; }
     }
 }

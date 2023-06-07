@@ -8,7 +8,7 @@ public class SolutionConfigurationTests
     public void Variables_section_is_deserialized()
     {
         var noxConfig = new NoxConfigurationBuilder()
-            .WithYamlFile("./files/variables.solution.nox.yaml")
+            .UseYamlFile("./files/variables.solution.nox.yaml")
             .Build();
         Assert.NotNull(noxConfig);
         Assert.NotNull(noxConfig.Solution);
@@ -22,7 +22,7 @@ public class SolutionConfigurationTests
     public void Environments_section_is_deserialized()
     {
         var noxConfig = new NoxConfigurationBuilder()
-            .WithYamlFile("./files/environments.solution.nox.yaml")
+            .UseYamlFile("./files/environments.solution.nox.yaml")
             .Build();
         Assert.NotNull(noxConfig);
         Assert.NotNull(noxConfig.Solution);
@@ -42,7 +42,7 @@ public class SolutionConfigurationTests
     public void VersionControl_section_is_deserialized()
     {
         var noxConfig = new NoxConfigurationBuilder()
-            .WithYamlFile("./files/version-control.solution.nox.yaml")
+            .UseYamlFile("./files/version-control.solution.nox.yaml")
             .Build();
         Assert.NotNull(noxConfig);
         Assert.NotNull(noxConfig.Solution);
@@ -58,7 +58,7 @@ public class SolutionConfigurationTests
     public void Team_section_is_deserialized()
     {
         var noxConfig = new NoxConfigurationBuilder()
-            .WithYamlFile("./files/team.solution.nox.yaml")
+            .UseYamlFile("./files/team.solution.nox.yaml")
             .Build();
         Assert.NotNull(noxConfig);
         Assert.NotNull(noxConfig.Solution);
@@ -76,7 +76,7 @@ public class SolutionConfigurationTests
     public void Domain_section_is_deserialized()
     {
         var noxConfig = new NoxConfigurationBuilder()
-            .WithYamlFile("./files/domain.solution.nox.yaml")
+            .UseYamlFile("./files/domain.solution.nox.yaml")
             .Build();
         Assert.NotNull(noxConfig);
         Assert.NotNull(noxConfig.Solution);
@@ -169,7 +169,7 @@ public class SolutionConfigurationTests
     public void Application_section_is_deserialized()
     {
         var noxConfig = new NoxConfigurationBuilder()
-            .WithYamlFile("./files/application.solution.nox.yaml")
+            .UseYamlFile("./files/application.solution.nox.yaml")
             .Build();
         
         Assert.NotNull(noxConfig);
@@ -243,7 +243,7 @@ public class SolutionConfigurationTests
     public void Infrastructure_section_is_deserialized()
     {
         var noxConfig = new NoxConfigurationBuilder()
-            .WithYamlFile("./files/infrastructure.solution.nox.yaml")
+            .UseYamlFile("./files/infrastructure.solution.nox.yaml")
             .Build();
         Assert.NotNull(noxConfig);
         Assert.NotNull(noxConfig.Solution);
@@ -364,7 +364,7 @@ public class SolutionConfigurationTests
     public void Can_create_a_full_configuration()
     {
         var noxConfig = new NoxConfigurationBuilder()
-            .WithYamlFile("./files/sample.solution.nox.yaml")
+            .UseYamlFile("./files/sample.solution.nox.yaml")
             .Build();
         Assert.NotNull(noxConfig);
         
@@ -375,8 +375,8 @@ public class SolutionConfigurationTests
     {
         var services = new ServiceCollection();
         new NoxConfigurationBuilder()
-            .WithYamlFile("./files/sample.solution.nox.yaml")
-            .WithDependencyInjection(services)
+            .UseYamlFile("./files/sample.solution.nox.yaml")
+            .UseDependencyInjection(services)
             .Build();
         var provider = services.BuildServiceProvider();
         var config = provider.GetRequiredService<NoxConfiguration>();

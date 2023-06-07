@@ -14,7 +14,7 @@ namespace Nox
         [Title("The entities that describes the domain.")]
         [Description("The collection of entitties and their relationships with each other.")]
         [AdditionalProperties(false)]
-        public List<Entity>? Entities { get; set; }
+        public List<Entity>? Entities { get; internal set; }
 
     }
 }

@@ -10,18 +10,18 @@ namespace Nox
         [Title("The name of the etl source. Contains no spaces.")]
         [Description("The name of the etl source. It should be a commonly used singular noun and be unique within a solution.")]
         [Pattern(@"^[^\s]*$")]
-        public string Name { get; set; } = string.Empty;
+        public string Name { get; internal set; } = string.Empty;
 
         [Title("A phrase describing the etl source.")]
         [Description("A description of the etl source.")]
-        public string? Description { get; set; }
+        public string? Description { get; internal set; }
 
-        [AdditionalProperties(false)] public EtlSchedule? Schedule { get; set; }
+        [AdditionalProperties(false)] public EtlSchedule? Schedule { get; internal set; }
 
         [Required]
         [AdditionalProperties(false)]
-        public string? DataConnection { get; set; }
+        public string? DataConnection { get; internal set; }
 
-        [AdditionalProperties(false)] public DatabaseWatermark? Watermark { get; set; }
+        [AdditionalProperties(false)] public DatabaseWatermark? Watermark { get; internal set; }
     }
 }

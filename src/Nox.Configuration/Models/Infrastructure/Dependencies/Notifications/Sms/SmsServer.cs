@@ -6,6 +6,6 @@ namespace Nox
     public class SmsServer: ServerBase
     {
         [AdditionalProperties(false)]
-        public SmsServerProvider? Provider { get; set; }
+        public SmsServerProvider? Provider { get; internal set; }
     }
 }

@@ -11,22 +11,22 @@ namespace Nox
         [Title("The name of the relationship. Contains no spaces.")]
         [Description("The name of the relationship, usually in the format EntityRelationshipTargetEntity. Eg \"CountryHasCapitalCity\".")]
         [Pattern(@"^[^\s]*$")]
-        public string Name { get; set; } = string.Empty;
+        public string Name { get; internal set; } = string.Empty;
 
         [Required]
         [Title("A phrase describing the relationship with the target entity.")]
         [Description("A phrase that describes the relationship of the form <entity> <phrase> <targetEntity>. Eg. \"has capital\" like in <Country> <has capital> <City>")]
-        public string? Description { get; set; }
+        public string? Description { get; internal set; }
 
         [Required]
         [Title("The type/cardinality of the relationship.")]
         [Description("The cardinality (type) of relationship with the target entity.")]
-        public EntityRelationshipType? Relationship { get; set; }
+        public EntityRelationshipType? Relationship { get; internal set; }
 
         [Required]
         [Title("The target entity that relates to this entity.")]
         [Description("The name of the target entity that this entity relates to.")]
-        public string? Entity { get; set; }
+        public string? Entity { get; internal set; }
 
     }
 }

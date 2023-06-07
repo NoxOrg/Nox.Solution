@@ -16,13 +16,13 @@ namespace Nox
         private bool _mustInject = false;
         private IServiceCollection? _services;
 
-        public NoxConfigurationBuilder WithYamlFile(string yamlFilePath)
+        public NoxConfigurationBuilder UseYamlFile(string yamlFilePath)
         {
             _yamlFilePath = Path.GetFullPath(yamlFilePath);
             return this;
         }
 
-        public NoxConfigurationBuilder WithDependencyInjection(IServiceCollection services)
+        public NoxConfigurationBuilder UseDependencyInjection(IServiceCollection services)
         {
             _mustInject = true;
             _services = services;

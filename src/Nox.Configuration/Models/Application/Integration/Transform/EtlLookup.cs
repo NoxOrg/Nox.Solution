@@ -7,13 +7,13 @@ namespace Nox
     public class EtlLookup
     {
         [Required] 
-        public string? SourceColumn { get; set; }
+        public string? SourceColumn { get; internal set; }
 
         [Required]
         [AdditionalProperties(false)] 
-        public EtlMatch? Match { get; set; }
+        public EtlMatch? Match { get; internal set; }
 
         [Required] 
-        public string? TargetAttribute { get; set; }
+        public string? TargetAttribute { get; internal set; }
     }
 }

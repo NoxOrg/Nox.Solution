@@ -12,7 +12,7 @@ namespace Nox
         [Title("An icon that distinctly and visually represents the entity")]
         [Description("An optional icon that represents the entity as a key or in SVG format. It can be a URI that points to a resource countaining the SVG data.")]
         [Pattern(@"^[^\s]*$")]
-        public string Icon { get; set; } = string.Empty;
+        public string Icon { get; internal set; } = string.Empty;
 
     }
 }

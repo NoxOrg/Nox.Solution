@@ -6,8 +6,8 @@ namespace Nox
     [AdditionalProperties(false)]
     public class ScheduleRetryPolicy
     {
-        public int? Limit { get; set; }
-        public int? DelaySeconds { get; set; }
-        public int? DoubleDelayLimit { get; set; }
+        public int? Limit { get; internal set; }
+        public int? DelaySeconds { get; internal set; }
+        public int? DoubleDelayLimit { get; internal set; }
     }
 }

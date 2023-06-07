@@ -7,6 +7,6 @@ namespace Nox
     {
         [Required]
         [AdditionalProperties(false)]
-        public MessagingServerProvider? Provider { get; set; }
+        public MessagingServerProvider? Provider { get; internal set; }
     }
 }

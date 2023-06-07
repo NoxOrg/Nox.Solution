@@ -7,9 +7,9 @@ namespace Nox
     [AdditionalProperties(false)]
     public class NoxComplexTypeDefinition : NoxSimpleTypeDefinition
     {
-        public ObjectTypeOptions? ObjectTypeOptions { get; set; }
-        public ArrayTypeOptions? CollectionTypeOptions { get; set; }
-        public ArrayTypeOptions? ArrayTypeOptions { get; set; }
+        public ObjectTypeOptions? ObjectTypeOptions { get; internal set; }
+        public ArrayTypeOptions? CollectionTypeOptions { get; internal set; }
+        public ArrayTypeOptions? ArrayTypeOptions { get; internal set; }
 
     }
 }

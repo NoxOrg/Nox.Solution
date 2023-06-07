@@ -7,6 +7,6 @@ namespace Nox
     public class DatabaseServer : ServerBase
     {
         [Required]
-        public DatabaseServerProvider? Provider { get; set; }
+        public DatabaseServerProvider? Provider { get; internal set; }
     }
 }

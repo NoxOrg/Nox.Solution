@@ -8,7 +8,7 @@ public class ValidationTests
     public void Environment_names_are_unique()
     {
         var noxConfig = new NoxConfigurationBuilder()
-            .WithYamlFile("./files/duplicate-environment-name.solution.nox.yaml")
+            .UseYamlFile("./files/duplicate-environment-name.solution.nox.yaml")
             .Build();
         Assert.NotNull(noxConfig);
         Assert.NotNull(noxConfig.Solution);

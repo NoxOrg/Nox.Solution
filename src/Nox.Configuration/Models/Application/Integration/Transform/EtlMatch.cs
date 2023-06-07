@@ -6,12 +6,12 @@ namespace Nox
     public class EtlMatch
     {
         [Required] 
-        public string? Table { get; set; }
+        public string? Table { get; internal set; }
 
         [Required] 
-        public string? LookupColumn { get; set; }
+        public string? LookupColumn { get; internal set; }
 
         [Required] 
-        public string? ReturnColumn { get; set; }
+        public string? ReturnColumn { get; internal set; }
     }
 }

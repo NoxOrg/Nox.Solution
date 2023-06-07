@@ -11,27 +11,27 @@ namespace Nox
         [Pattern(@"^[^\s]*$")]
         [Title("The unique name of this server component in the solution.")]
         [Description("The name of this server component in the solution. The name must be unique in the solution configuration")]
-        public string? Name { get; set; }
+        public string? Name { get; internal set; }
 
         [Title("Hostname, IP address or URI.")]
         [Description("The name, address, URI or IP of the server to connect to.")]
-        public string? ServerUri { get; set; }
+        public string? ServerUri { get; internal set; }
         
         [Title("Server port")]
         [Description("The port to connect to.")]
-        public int? Port { get; set; }
+        public int? Port { get; internal set; }
         
         [Title("Username.")]
         [Description("The username to use when connecting to this server.")]
-        public string? User { get; set; }
+        public string? User { get; internal set; }
         
         [Title("Password.")]
         [Description("The password to use when connecting to this server.")]
-        public string? Password { get; set; }
+        public string? Password { get; internal set; }
         
         [Title("Additional options.")]
         [Description("A list of additional options to set when connecting to this server.")]
-        public string? Options { get; set; }
+        public string? Options { get; internal set; }
 
     }
 }

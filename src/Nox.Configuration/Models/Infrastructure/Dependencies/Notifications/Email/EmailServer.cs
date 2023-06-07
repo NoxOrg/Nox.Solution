@@ -7,6 +7,6 @@ namespace Nox
     {
         [Required]
         [AdditionalProperties(false)]
-        public EmailServerProvider? Provider { get; set; }
+        public EmailServerProvider? Provider { get; internal set; }
     }
 }

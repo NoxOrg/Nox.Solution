@@ -20,36 +20,36 @@ namespace Nox
 
         [Title("A short description of the NOX solution.")]
         [Description("A brief description of the solution with what it's purpose or goals are.")]
-        public string? Description { get; set; }
+        public string? Description { get; internal set; }
 
         [Title("URL to the documentation or specification of the solution.")]
         [Description("A URL which contains the requirements, documentation or specification for this solution.")]
         [Pattern(@"^[^\s]*$")]
-        public Uri? Overview { get; set; }
+        public Uri? Overview { get; internal set; }
 
         [Title("The environment variables used in your solution and default values.")]
         [Description("A key/value pair of environment variables used in your solution and their defaults.")]
-        public Dictionary<string, string>? Variables { get; set; }
+        public Dictionary<string, string>? Variables { get; internal set; }
 
         [Title("Definitions for run-time environments.")]
         [Description("Definitions for the name, variables and other pertinent information pertaining to run-time environments.")]
         [AdditionalProperties(false)]
-        public List<Environment>? Environments { get; set; }
+        public List<Environment>? Environments { get; internal set; }
 
         [AdditionalProperties(false)]
-        public VersionControl? VersionControl { get; set; }
+        public VersionControl? VersionControl { get; internal set; }
 
         [AdditionalProperties(false)]
-        public List<Team>? Team { get; set; }
+        public List<Team>? Team { get; internal set; }
 
         [AdditionalProperties(false)]
-        public Domain? Domain { get; set; }
+        public Domain? Domain { get; internal set; }
 
         [AdditionalProperties(false)]
-        public Infrastructure? Infrastructure { get; set; }
+        public Infrastructure? Infrastructure { get; internal set; }
         
         [AdditionalProperties(false)]
-        public Application? Application { get; set; }
+        public Application? Application { get; internal set; }
 
     }
 }

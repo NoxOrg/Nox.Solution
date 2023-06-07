@@ -58,6 +58,31 @@ application:
               returnColumn: Name
             targetAttribute: GeoRegion
       target:
-        name: ???
-        dataConnection:
-          name: Nox #This points to Nox entity store
+        name: Country
+        dataConnection: Nox
+
+infrastructure: 
+  persistence: 
+    databaseServer: 
+      name: NoxEntityStore
+      serverUri: localhost
+      provider: sqlServer
+      user: sa
+      password: Developer*123
+    
+  messaging: 
+    domainEventServer: 
+      name: SampleDomainEventServer
+      provider: rabbitMQ
+      serverUri: localhost
+      
+    integrationEventServer: 
+      name: SampleIntegrationEventServer
+      provider: rabbitMQ
+      
+  dependencies:
+    dataConnections:
+      - name: Nox
+        provider: sqlServer
+      - name: CountryJsonData
+        provider: jsonFile

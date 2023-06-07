@@ -38,10 +38,10 @@
     },
     "provider": {
       "enum": [
-        "sqlServer",
-        "postgres",
-        "mySql",
-        "sqlLite"
+        "SqlServer",
+        "Postgres",
+        "MySql",
+        "SqlLite"
       ]
     }
   },

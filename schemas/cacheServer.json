@@ -38,10 +38,10 @@
     },
     "provider": {
       "enum": [
-        "amazonElasticache",
-        "azureRedis",
-        "memcached",
-        "redis"
+        "AmazonElasticCache",
+        "AzureRedis",
+        "Memcached",
+        "Redis"
       ],
       "additionalProperties": false
     }

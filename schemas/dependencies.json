@@ -86,18 +86,18 @@
           },
           "provider": {
             "enum": [
-              "amazonSqs",
-              "azureServiceBus",
-              "csvFile",
-              "excelFile",
-              "jsonFile",
-              "mySql",
-              "parquetFile",
-              "postgres",
-              "rabbitMq",
-              "sqlServer",
-              "webApi",
-              "xmlFile"
+              "AmazonSqs",
+              "AzureServiceBus",
+              "CsvFile",
+              "ExcelFile",
+              "JsonFile",
+              "MySql",
+              "ParquetFile",
+              "Postgres",
+              "RabbitMq",
+              "SqlServer",
+              "WebApi",
+              "XmlFile"
             ]
           }
         },
@@ -150,8 +150,8 @@
             },
             "provider": {
               "enum": [
-                "sendGrid",
-                "mailchimp"
+                "SendGrid",
+                "Mailchimp"
               ],
               "additionalProperties": false
             }
@@ -201,8 +201,8 @@
             },
             "provider": {
               "enum": [
-                "twilio",
-                "clickSend"
+                "Twilio",
+                "ClickSend"
               ],
               "additionalProperties": false
             }
@@ -251,8 +251,8 @@
             },
             "provider": {
               "enum": [
-                "whatsApp",
-                "telegram"
+                "WhatsApp",
+                "Telegram"
               ],
               "additionalProperties": false
             }
@@ -353,9 +353,9 @@
                 },
                 "provider": {
                   "enum": [
-                    "awsKeyManagementService",
-                    "azureKeyVault",
-                    "hashiCorpVault"
+                    "AwsKeyManagementService",
+                    "AzureKeyVault",
+                    "HashicorpVault"
                   ]
                 }
               },

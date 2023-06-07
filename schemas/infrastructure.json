@@ -48,10 +48,10 @@
             },
             "provider": {
               "enum": [
-                "sqlServer",
-                "postgres",
-                "mySql",
-                "sqlLite"
+                "SqlServer",
+                "Postgres",
+                "MySql",
+                "SqlLite"
               ]
             }
           },
@@ -100,10 +100,10 @@
             },
             "provider": {
               "enum": [
-                "amazonElasticache",
-                "azureRedis",
-                "memcached",
-                "redis"
+                "AmazonElasticCache",
+                "AzureRedis",
+                "Memcached",
+                "Redis"
               ],
               "additionalProperties": false
             }
@@ -153,7 +153,7 @@
             },
             "provider": {
               "enum": [
-                "elasticSearch"
+                "ElasticSearch"
               ]
             }
           },
@@ -202,7 +202,7 @@
             },
             "provider": {
               "enum": [
-                "eventStoreDb"
+                "EventStoreDb"
               ]
             }
           },
@@ -260,10 +260,10 @@
             },
             "provider": {
               "enum": [
-                "mediatR",
-                "rabbitMQ",
-                "azureServiceBus",
-                "amazonSQS"
+                "MediatR",
+                "RabbitMq",
+                "AzureServiceBus",
+                "AmazonSqs"
               ],
               "additionalProperties": false
             }
@@ -313,10 +313,10 @@
             },
             "provider": {
               "enum": [
-                "mediatR",
-                "rabbitMQ",
-                "azureServiceBus",
-                "amazonSQS"
+                "MediatR",
+                "RabbitMq",
+                "AzureServiceBus",
+                "AmazonSqs"
               ],
               "additionalProperties": false
             }
@@ -513,18 +513,18 @@
               },
               "provider": {
                 "enum": [
-                  "amazonSqs",
-                  "azureServiceBus",
-                  "csvFile",
-                  "excelFile",
-                  "jsonFile",
-                  "mySql",
-                  "parquetFile",
-                  "postgres",
-                  "rabbitMq",
-                  "sqlServer",
-                  "webApi",
-                  "xmlFile"
+                  "AmazonSqs",
+                  "AzureServiceBus",
+                  "CsvFile",
+                  "ExcelFile",
+                  "JsonFile",
+                  "MySql",
+                  "ParquetFile",
+                  "Postgres",
+                  "RabbitMq",
+                  "SqlServer",
+                  "WebApi",
+                  "XmlFile"
                 ]
               }
             },
@@ -577,8 +577,8 @@
                 },
                 "provider": {
                   "enum": [
-                    "sendGrid",
-                    "mailchimp"
+                    "SendGrid",
+                    "Mailchimp"
                   ],
                   "additionalProperties": false
                 }
@@ -628,8 +628,8 @@
                 },
                 "provider": {
                   "enum": [
-                    "twilio",
-                    "clickSend"
+                    "Twilio",
+                    "ClickSend"
                   ],
                   "additionalProperties": false
                 }
@@ -678,8 +678,8 @@
                 },
                 "provider": {
                   "enum": [
-                    "whatsApp",
-                    "telegram"
+                    "WhatsApp",
+                    "Telegram"
                   ],
                   "additionalProperties": false
                 }
@@ -780,9 +780,9 @@
                     },
                     "provider": {
                       "enum": [
-                        "awsKeyManagementService",
-                        "azureKeyVault",
-                        "hashiCorpVault"
+                        "AwsKeyManagementService",
+                        "AzureKeyVault",
+                        "HashicorpVault"
                       ]
                     }
                   },

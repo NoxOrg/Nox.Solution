@@ -41,10 +41,10 @@
         },
         "provider": {
           "enum": [
-            "sqlServer",
-            "postgres",
-            "mySql",
-            "sqlLite"
+            "SqlServer",
+            "Postgres",
+            "MySql",
+            "SqlLite"
           ]
         }
       },
@@ -93,10 +93,10 @@
         },
         "provider": {
           "enum": [
-            "amazonElasticache",
-            "azureRedis",
-            "memcached",
-            "redis"
+            "AmazonElasticCache",
+            "AzureRedis",
+            "Memcached",
+            "Redis"
           ],
           "additionalProperties": false
         }
@@ -146,7 +146,7 @@
         },
         "provider": {
           "enum": [
-            "elasticSearch"
+            "ElasticSearch"
           ]
         }
       },
@@ -195,7 +195,7 @@
         },
         "provider": {
           "enum": [
-            "eventStoreDb"
+            "EventStoreDb"
           ]
         }
       },

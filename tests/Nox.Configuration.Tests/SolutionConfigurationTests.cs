@@ -82,7 +82,7 @@ public class SolutionConfigurationTests
         Assert.NotNull(noxConfig.Solution);
         Assert.NotNull(noxConfig.Solution.Domain);
         Assert.NotNull(noxConfig.Solution.Domain.Entities);
-        Assert.Equal(2, noxConfig.Solution.Domain.Entities.Count);
+        Assert.Equal(4, noxConfig.Solution.Domain.Entities.Count);
         
         var country = noxConfig.Solution.Domain.Entities[0];
         Assert.Equal("Country", country.Name);
@@ -234,7 +234,7 @@ public class SolutionConfigurationTests
         Assert.Equal("GeoRegion", noxConfig.Solution!.Application.Integration[0].Transform!.Lookup![0].TargetAttribute);
         
         Assert.NotNull(noxConfig.Solution!.Application.Integration[0].Target);
-        Assert.Equal("???", noxConfig.Solution!.Application.Integration[0].Target!.Name);
+        Assert.Equal("Country", noxConfig.Solution!.Application.Integration[0].Target!.Name);
         Assert.NotNull(noxConfig.Solution!.Application.Integration[0].Target!.DataConnection);
         Assert.Equal("Nox", noxConfig.Solution!.Application.Integration[0].Target!.DataConnection);
     }

@@ -6,10 +6,12 @@ namespace Nox
     [AdditionalProperties(false)]
     public class EtlMapping
     {
-        [Required] public string? SourceColumn { get; set; }
+        [Required] 
+        public string? SourceColumn { get; internal set; }
 
-        public EtlMappingConverter? Converter { get; set; }
+        public EtlMappingConverter? Converter { get; internal set; }
 
-        [Required] public string? TargetAttribute { get; set; }
+        [Required] 
+        public string? TargetAttribute { get; internal set; }
     }
 }

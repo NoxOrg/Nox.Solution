@@ -5,10 +5,10 @@ namespace Nox
 {
 
     [AdditionalProperties(false)]
-    public class Application
+    public class Application: DefinitionBase
     {
-        [AdditionalProperties(false)] public List<Integration>? Integration { get; set; }
+        [AdditionalProperties(false)] public List<Integration>? Integration { get; internal set; }
 
-        [AdditionalProperties(false)] public List<DataTransferObject>? DataTransferObjects { get; set; }
+        [AdditionalProperties(false)] public List<DataTransferObject>? DataTransferObjects { get; internal set; }
     }
 }

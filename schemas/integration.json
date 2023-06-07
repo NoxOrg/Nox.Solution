@@ -1,0 +1,201 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "title": "The name of the etl. Contains no spaces.",
+      "description": "The name of the etl. It should be a commonly used singular noun and be unique within a solution.",
+      "pattern": "^[^\\s]*$"
+    },
+    "description": {
+      "type": "string",
+      "title": "A phrase describing the etl.",
+      "description": "A description of the etl."
+    },
+    "source": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "title": "The name of the etl source. Contains no spaces.",
+          "description": "The name of the etl source. It should be a commonly used singular noun and be unique within a solution.",
+          "pattern": "^[^\\s]*$"
+        },
+        "description": {
+          "type": "string",
+          "title": "A phrase describing the etl source.",
+          "description": "A description of the etl source."
+        },
+        "schedule": {
+          "type": "object",
+          "properties": {
+            "start": {
+              "type": "string"
+            },
+            "retry": {
+              "type": "object",
+              "properties": {
+                "limit": {
+                  "type": [
+                    "integer",
+                    "null"
+                  ]
+                },
+                "delaySeconds": {
+                  "type": [
+                    "integer",
+                    "null"
+                  ]
+                },
+                "doubleDelayLimit": {
+                  "type": [
+                    "integer",
+                    "null"
+                  ]
+                }
+              },
+              "additionalProperties": false
+            },
+            "runOnStartup": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            }
+          },
+          "required": [
+            "start"
+          ],
+          "additionalProperties": false
+        },
+        "dataConnection": {
+          "type": "string",
+          "additionalProperties": false
+        },
+        "watermark": {
+          "type": "object",
+          "properties": {
+            "dateColumns": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "sequentialKeyColumn": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "name",
+        "dataConnection"
+      ],
+      "additionalProperties": false
+    },
+    "transform": {
+      "type": "object",
+      "properties": {
+        "map": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "sourceColumn": {
+                "type": "string"
+              },
+              "converter": {
+                "enum": [
+                  "UpperCase",
+                  "LowerCase"
+                ]
+              },
+              "targetAttribute": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "sourceColumn",
+              "targetAttribute"
+            ],
+            "additionalProperties": false
+          },
+          "additionalProperties": false
+        },
+        "lookup": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "sourceColumn": {
+                "type": "string"
+              },
+              "match": {
+                "type": "object",
+                "properties": {
+                  "table": {
+                    "type": "string"
+                  },
+                  "lookupColumn": {
+                    "type": "string"
+                  },
+                  "returnColumn": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "table",
+                  "lookupColumn",
+                  "returnColumn"
+                ],
+                "additionalProperties": false
+              },
+              "targetAttribute": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "sourceColumn",
+              "match",
+              "targetAttribute"
+            ],
+            "additionalProperties": false
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "target": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "title": "The name of the etl target. Contains no spaces.",
+          "description": "The name of the etl target. It should be a commonly used singular noun and be unique within a solution.",
+          "pattern": "^[^\\s]*$"
+        },
+        "description": {
+          "type": "string",
+          "title": "A phrase describing the etl target.",
+          "description": "A description of the etl target."
+        },
+        "dataConnection": {
+          "type": "string",
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "name",
+        "dataConnection"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "name"
+  ],
+  "additionalProperties": false
+}

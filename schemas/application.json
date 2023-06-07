@@ -2,6 +2,10 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "type": "object",
   "properties": {
+    "$ref": {
+      "type": "string",
+      "format": "uri"
+    },
     "integration": {
       "type": "array",
       "items": {
@@ -113,8 +117,8 @@
                     },
                     "converter": {
                       "enum": [
-                        "upperCase",
-                        "lowerCase"
+                        "UpperCase",
+                        "LowerCase"
                       ]
                     },
                     "targetAttribute": {
@@ -163,6 +167,7 @@
                   },
                   "required": [
                     "sourceColumn",
+                    "match",
                     "targetAttribute"
                   ],
                   "additionalProperties": false
@@ -187,62 +192,7 @@
                 "description": "A description of the etl target."
               },
               "dataConnection": {
-                "type": "object",
-                "properties": {
-                  "name": {
-                    "type": "string",
-                    "pattern": "^[^\\s]*$",
-                    "title": "The unique name of this server component in the solution.",
-                    "description": "The name of this server component in the solution. The name must be unique in the solution configuration"
-                  },
-                  "serverUri": {
-                    "type": "string",
-                    "title": "Hostname, IP address or URI.",
-                    "description": "The name, address, URI or IP of the server to connect to."
-                  },
-                  "port": {
-                    "type": [
-                      "integer",
-                      "null"
-                    ],
-                    "title": "Server port",
-                    "description": "The port to connect to."
-                  },
-                  "user": {
-                    "type": "string",
-                    "title": "Username.",
-                    "description": "The username to use when connecting to this server."
-                  },
-                  "password": {
-                    "type": "string",
-                    "title": "Password.",
-                    "description": "The password to use when connecting to this server."
-                  },
-                  "options": {
-                    "type": "string",
-                    "title": "Additional options.",
-                    "description": "A list of additional options to set when connecting to this server."
-                  },
-                  "provider": {
-                    "enum": [
-                      "amazonSqs",
-                      "azureServiceBus",
-                      "csvFile",
-                      "excelFile",
-                      "jsonFile",
-                      "mySql",
-                      "parquetFile",
-                      "postgres",
-                      "rabbitMq",
-                      "sqlServer",
-                      "webApi",
-                      "xmlFile"
-                    ]
-                  }
-                },
-                "required": [
-                  "name"
-                ],
+                "type": "string",
                 "additionalProperties": false
               }
             },
@@ -381,9 +331,15 @@
                     },
                     "characterCasing": {
                       "enum": [
-                        "normal",
-                        "lower",
-                        "upper"
+                        "Normal",
+                        "Lower",
+                        "Upper"
+                      ]
+                    },
+                    "isMultiline": {
+                      "type": [
+                        "boolean",
+                        "null"
                       ]
                     }
                   },
@@ -392,10 +348,6 @@
                 "numberTypeOptions": {
                   "type": "object",
                   "properties": {
-                    "$ref": {
-                      "type": "string",
-                      "format": "uri"
-                    },
                     "decimalDigits": {
                       "type": [
                         "integer",
@@ -413,6 +365,10 @@
                     },
                     "maxValue": {
                       "type": "number"
+                    },
+                    "$ref": {
+                      "type": "string",
+                      "format": "uri"
                     }
                   },
                   "additionalProperties": false
@@ -648,23 +604,29 @@
                     },
                     "widget": {
                       "enum": [
-                        "textInput",
-                        "textArea",
-                        "numberInput",
-                        "numberSlider",
-                        "fileUpload",
-                        "datePicker",
-                        "dateRangePicker",
-                        "timePicker",
-                        "timeRangePicker",
-                        "radio",
-                        "select",
-                        "checkbox",
-                        "switch"
+                        "TextInput",
+                        "TextArea",
+                        "NumberInput",
+                        "NumberSlider",
+                        "FileUpload",
+                        "DatePicker",
+                        "DateRangePicker",
+                        "TimePicker",
+                        "TimeRangePicker",
+                        "Radio",
+                        "Select",
+                        "Checkbox",
+                        "Switch"
                       ]
                     },
                     "icon": {
                       "type": "string"
+                    },
+                    "iconPosition": {
+                      "enum": [
+                        "Begin",
+                        "End"
+                      ]
                     },
                     "inputMask": {
                       "type": "string"
@@ -686,9 +648,21 @@
                         "integer",
                         "null"
                       ]
+                    },
+                    "helpHint": {
+                      "type": "string"
+                    },
+                    "errorMessage": {
+                      "type": "string"
                     }
                   },
                   "additionalProperties": false
+                },
+                "isReadonly": {
+                  "type": [
+                    "boolean",
+                    "null"
+                  ]
                 }
               },
               "required": [
@@ -701,7 +675,8 @@
           }
         },
         "required": [
-          "name"
+          "name",
+          "attributes"
         ],
         "additionalProperties": false
       },

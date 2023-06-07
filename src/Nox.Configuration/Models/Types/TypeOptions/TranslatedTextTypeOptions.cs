@@ -6,10 +6,10 @@ namespace Nox
     [AdditionalProperties(false)]
     public class TranslatedTextTypeOptions : DefinitionBase
     {
-        public int MinLength { get; set; } = 0;
+        public int MinLength { get; internal set; } = 0;
 
-        public int MaxLength { get; set; } = 511;
+        public int MaxLength { get; internal set; } = 511;
 
-        public TextTypeCasing CharacterCasing { get; set; } = TextTypeCasing.normal;
+        public TextTypeCasing CharacterCasing { get; internal set; } = TextTypeCasing.Normal;
     }
 }

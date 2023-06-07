@@ -17,10 +17,10 @@ namespace Nox
         [Description("A description of the etl.")]
         public string? Description { get; set; }
 
-        [AdditionalProperties(false)] public EtlSource? Source { get; set; }
+        [AdditionalProperties(false)] public EtlSource? Source { get; internal set; }
 
-        [AdditionalProperties(false)] public EtlTransform? Transform { get; set; }
+        [AdditionalProperties(false)] public EtlTransform? Transform { get; internal set; }
 
-        [AdditionalProperties(false)] public EtlTarget? Target { get; set; }
+        [AdditionalProperties(false)] public EtlTarget? Target { get; internal set; }
     }
 }

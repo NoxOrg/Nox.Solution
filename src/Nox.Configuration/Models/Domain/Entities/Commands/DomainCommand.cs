@@ -9,6 +9,6 @@ namespace Nox
     [AdditionalProperties(false)]
     public class DomainCommand : NoxComplexTypeDefinition
     {
-        public List<string>? EmitEvents { get; set; }
+        public List<string>? EmitEvents { get; internal set; }
     }
 }

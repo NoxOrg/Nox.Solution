@@ -8,10 +8,10 @@ namespace Nox
     {
         [Required]
         [AdditionalProperties(false)]
-        public  MessagingServer? DomainEventServer { get; set; }
+        public  MessagingServer? DomainEventServer { get; internal set; }
 
         [Required]
         [AdditionalProperties(false)]
-        public  MessagingServer? IntegrationEventServer { get; set; }
+        public  MessagingServer? IntegrationEventServer { get; internal set; }
     }
 }

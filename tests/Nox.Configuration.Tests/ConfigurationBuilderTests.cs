@@ -2,22 +2,25 @@ using Nox.Exceptions;
 
 namespace Nox.Configuration.Tests;
 
-public class NoxConfigurationBuilderTests
+public class ConfigurationBuilderTests
 {
     [Fact]
     public void Can_create_configuration_from_set_yaml_file()
     {
         var noxConfig = new NoxConfigurationBuilder()
-            .WithYamlFile("./files/minimal.solution.nox.yaml")
+            .UseYamlFile("./files/minimal.solution.nox.yaml")
             .Build();
-        Assert.False(noxConfig == null);
+        Assert.NotNull(noxConfig);
+        Assert.NotNull(noxConfig.Solution);
+        Assert.Equal("MinimalService", noxConfig.Solution.Name);
+        Assert.Equal("Minimal yaml file for tests", noxConfig.Solution.Description);
     }
 
     [Fact]
     public void Error_if_set_yaml_file_does_not_exist()
     {
         var noxConfigBuilder = new NoxConfigurationBuilder()
-            .WithYamlFile("./files/missing.solution.nox.yaml");
+            .UseYamlFile("./files/missing.solution.nox.yaml");
         Assert.Throws<NoxConfigurationException>(() => noxConfigBuilder.Build());
     }
 

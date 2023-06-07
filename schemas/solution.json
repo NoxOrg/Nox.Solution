@@ -450,7 +450,7 @@
                     },
                     "description": {
                       "type": "string",
-                      "title": "A phrase describing the realtionship with the target entity.",
+                      "title": "A phrase describing the relationship with the target entity.",
                       "description": "A phrase that describes the relationship of the form \u003Centity\u003E \u003Cphrase\u003E \u003CtargetEntity\u003E. Eg. \u0022has capital\u0022 like in \u003CCountry\u003E \u003Chas capital\u003E \u003CCity\u003E."
                     },
                     "requestInput": {
@@ -558,9 +558,15 @@
                               },
                               "characterCasing": {
                                 "enum": [
-                                  "normal",
-                                  "lower",
-                                  "upper"
+                                  "Normal",
+                                  "Lower",
+                                  "Upper"
+                                ]
+                              },
+                              "isMultiline": {
+                                "type": [
+                                  "boolean",
+                                  "null"
                                 ]
                               }
                             },
@@ -569,10 +575,6 @@
                           "numberTypeOptions": {
                             "type": "object",
                             "properties": {
-                              "$ref": {
-                                "type": "string",
-                                "format": "uri"
-                              },
                               "decimalDigits": {
                                 "type": [
                                   "integer",
@@ -590,6 +592,10 @@
                               },
                               "maxValue": {
                                 "type": "number"
+                              },
+                              "$ref": {
+                                "type": "string",
+                                "format": "uri"
                               }
                             },
                             "additionalProperties": false
@@ -825,23 +831,29 @@
                               },
                               "widget": {
                                 "enum": [
-                                  "textInput",
-                                  "textArea",
-                                  "numberInput",
-                                  "numberSlider",
-                                  "fileUpload",
-                                  "datePicker",
-                                  "dateRangePicker",
-                                  "timePicker",
-                                  "timeRangePicker",
-                                  "radio",
-                                  "select",
-                                  "checkbox",
-                                  "switch"
+                                  "TextInput",
+                                  "TextArea",
+                                  "NumberInput",
+                                  "NumberSlider",
+                                  "FileUpload",
+                                  "DatePicker",
+                                  "DateRangePicker",
+                                  "TimePicker",
+                                  "TimeRangePicker",
+                                  "Radio",
+                                  "Select",
+                                  "Checkbox",
+                                  "Switch"
                                 ]
                               },
                               "icon": {
                                 "type": "string"
+                              },
+                              "iconPosition": {
+                                "enum": [
+                                  "Begin",
+                                  "End"
+                                ]
                               },
                               "inputMask": {
                                 "type": "string"
@@ -863,9 +875,21 @@
                                   "integer",
                                   "null"
                                 ]
+                              },
+                              "helpHint": {
+                                "type": "string"
+                              },
+                              "errorMessage": {
+                                "type": "string"
                               }
                             },
                             "additionalProperties": false
+                          },
+                          "isReadonly": {
+                            "type": [
+                              "boolean",
+                              "null"
+                            ]
                           },
                           "objectTypeOptions": {
                             "type": "object",
@@ -979,9 +1003,15 @@
                                         },
                                         "characterCasing": {
                                           "enum": [
-                                            "normal",
-                                            "lower",
-                                            "upper"
+                                            "Normal",
+                                            "Lower",
+                                            "Upper"
+                                          ]
+                                        },
+                                        "isMultiline": {
+                                          "type": [
+                                            "boolean",
+                                            "null"
                                           ]
                                         }
                                       },
@@ -990,10 +1020,6 @@
                                     "numberTypeOptions": {
                                       "type": "object",
                                       "properties": {
-                                        "$ref": {
-                                          "type": "string",
-                                          "format": "uri"
-                                        },
                                         "decimalDigits": {
                                           "type": [
                                             "integer",
@@ -1011,6 +1037,10 @@
                                         },
                                         "maxValue": {
                                           "type": "number"
+                                        },
+                                        "$ref": {
+                                          "type": "string",
+                                          "format": "uri"
                                         }
                                       },
                                       "additionalProperties": false
@@ -1246,23 +1276,29 @@
                                         },
                                         "widget": {
                                           "enum": [
-                                            "textInput",
-                                            "textArea",
-                                            "numberInput",
-                                            "numberSlider",
-                                            "fileUpload",
-                                            "datePicker",
-                                            "dateRangePicker",
-                                            "timePicker",
-                                            "timeRangePicker",
-                                            "radio",
-                                            "select",
-                                            "checkbox",
-                                            "switch"
+                                            "TextInput",
+                                            "TextArea",
+                                            "NumberInput",
+                                            "NumberSlider",
+                                            "FileUpload",
+                                            "DatePicker",
+                                            "DateRangePicker",
+                                            "TimePicker",
+                                            "TimeRangePicker",
+                                            "Radio",
+                                            "Select",
+                                            "Checkbox",
+                                            "Switch"
                                           ]
                                         },
                                         "icon": {
                                           "type": "string"
+                                        },
+                                        "iconPosition": {
+                                          "enum": [
+                                            "Begin",
+                                            "End"
+                                          ]
                                         },
                                         "inputMask": {
                                           "type": "string"
@@ -1284,9 +1320,21 @@
                                             "integer",
                                             "null"
                                           ]
+                                        },
+                                        "helpHint": {
+                                          "type": "string"
+                                        },
+                                        "errorMessage": {
+                                          "type": "string"
                                         }
                                       },
                                       "additionalProperties": false
+                                    },
+                                    "isReadonly": {
+                                      "type": [
+                                        "boolean",
+                                        "null"
+                                      ]
                                     }
                                   },
                                   "required": [
@@ -1403,9 +1451,15 @@
                                   },
                                   "characterCasing": {
                                     "enum": [
-                                      "normal",
-                                      "lower",
-                                      "upper"
+                                      "Normal",
+                                      "Lower",
+                                      "Upper"
+                                    ]
+                                  },
+                                  "isMultiline": {
+                                    "type": [
+                                      "boolean",
+                                      "null"
                                     ]
                                   }
                                 },
@@ -1414,10 +1468,6 @@
                               "numberTypeOptions": {
                                 "type": "object",
                                 "properties": {
-                                  "$ref": {
-                                    "type": "string",
-                                    "format": "uri"
-                                  },
                                   "decimalDigits": {
                                     "type": [
                                       "integer",
@@ -1435,6 +1485,10 @@
                                   },
                                   "maxValue": {
                                     "type": "number"
+                                  },
+                                  "$ref": {
+                                    "type": "string",
+                                    "format": "uri"
                                   }
                                 },
                                 "additionalProperties": false
@@ -1670,23 +1724,29 @@
                                   },
                                   "widget": {
                                     "enum": [
-                                      "textInput",
-                                      "textArea",
-                                      "numberInput",
-                                      "numberSlider",
-                                      "fileUpload",
-                                      "datePicker",
-                                      "dateRangePicker",
-                                      "timePicker",
-                                      "timeRangePicker",
-                                      "radio",
-                                      "select",
-                                      "checkbox",
-                                      "switch"
+                                      "TextInput",
+                                      "TextArea",
+                                      "NumberInput",
+                                      "NumberSlider",
+                                      "FileUpload",
+                                      "DatePicker",
+                                      "DateRangePicker",
+                                      "TimePicker",
+                                      "TimeRangePicker",
+                                      "Radio",
+                                      "Select",
+                                      "Checkbox",
+                                      "Switch"
                                     ]
                                   },
                                   "icon": {
                                     "type": "string"
+                                  },
+                                  "iconPosition": {
+                                    "enum": [
+                                      "Begin",
+                                      "End"
+                                    ]
                                   },
                                   "inputMask": {
                                     "type": "string"
@@ -1708,9 +1768,21 @@
                                       "integer",
                                       "null"
                                     ]
+                                  },
+                                  "helpHint": {
+                                    "type": "string"
+                                  },
+                                  "errorMessage": {
+                                    "type": "string"
                                   }
                                 },
                                 "additionalProperties": false
+                              },
+                              "isReadonly": {
+                                "type": [
+                                  "boolean",
+                                  "null"
+                                ]
                               },
                               "objectTypeOptions": {
                                 "type": "object",
@@ -1824,9 +1896,15 @@
                                             },
                                             "characterCasing": {
                                               "enum": [
-                                                "normal",
-                                                "lower",
-                                                "upper"
+                                                "Normal",
+                                                "Lower",
+                                                "Upper"
+                                              ]
+                                            },
+                                            "isMultiline": {
+                                              "type": [
+                                                "boolean",
+                                                "null"
                                               ]
                                             }
                                           },
@@ -1835,10 +1913,6 @@
                                         "numberTypeOptions": {
                                           "type": "object",
                                           "properties": {
-                                            "$ref": {
-                                              "type": "string",
-                                              "format": "uri"
-                                            },
                                             "decimalDigits": {
                                               "type": [
                                                 "integer",
@@ -1856,6 +1930,10 @@
                                             },
                                             "maxValue": {
                                               "type": "number"
+                                            },
+                                            "$ref": {
+                                              "type": "string",
+                                              "format": "uri"
                                             }
                                           },
                                           "additionalProperties": false
@@ -2091,23 +2169,29 @@
                                             },
                                             "widget": {
                                               "enum": [
-                                                "textInput",
-                                                "textArea",
-                                                "numberInput",
-                                                "numberSlider",
-                                                "fileUpload",
-                                                "datePicker",
-                                                "dateRangePicker",
-                                                "timePicker",
-                                                "timeRangePicker",
-                                                "radio",
-                                                "select",
-                                                "checkbox",
-                                                "switch"
+                                                "TextInput",
+                                                "TextArea",
+                                                "NumberInput",
+                                                "NumberSlider",
+                                                "FileUpload",
+                                                "DatePicker",
+                                                "DateRangePicker",
+                                                "TimePicker",
+                                                "TimeRangePicker",
+                                                "Radio",
+                                                "Select",
+                                                "Checkbox",
+                                                "Switch"
                                               ]
                                             },
                                             "icon": {
                                               "type": "string"
+                                            },
+                                            "iconPosition": {
+                                              "enum": [
+                                                "Begin",
+                                                "End"
+                                              ]
                                             },
                                             "inputMask": {
                                               "type": "string"
@@ -2129,9 +2213,21 @@
                                                 "integer",
                                                 "null"
                                               ]
+                                            },
+                                            "helpHint": {
+                                              "type": "string"
+                                            },
+                                            "errorMessage": {
+                                              "type": "string"
                                             }
                                           },
                                           "additionalProperties": false
+                                        },
+                                        "isReadonly": {
+                                          "type": [
+                                            "boolean",
+                                            "null"
+                                          ]
                                         }
                                       },
                                       "required": [
@@ -2257,9 +2353,15 @@
                                   },
                                   "characterCasing": {
                                     "enum": [
-                                      "normal",
-                                      "lower",
-                                      "upper"
+                                      "Normal",
+                                      "Lower",
+                                      "Upper"
+                                    ]
+                                  },
+                                  "isMultiline": {
+                                    "type": [
+                                      "boolean",
+                                      "null"
                                     ]
                                   }
                                 },
@@ -2268,10 +2370,6 @@
                               "numberTypeOptions": {
                                 "type": "object",
                                 "properties": {
-                                  "$ref": {
-                                    "type": "string",
-                                    "format": "uri"
-                                  },
                                   "decimalDigits": {
                                     "type": [
                                       "integer",
@@ -2289,6 +2387,10 @@
                                   },
                                   "maxValue": {
                                     "type": "number"
+                                  },
+                                  "$ref": {
+                                    "type": "string",
+                                    "format": "uri"
                                   }
                                 },
                                 "additionalProperties": false
@@ -2524,23 +2626,29 @@
                                   },
                                   "widget": {
                                     "enum": [
-                                      "textInput",
-                                      "textArea",
-                                      "numberInput",
-                                      "numberSlider",
-                                      "fileUpload",
-                                      "datePicker",
-                                      "dateRangePicker",
-                                      "timePicker",
-                                      "timeRangePicker",
-                                      "radio",
-                                      "select",
-                                      "checkbox",
-                                      "switch"
+                                      "TextInput",
+                                      "TextArea",
+                                      "NumberInput",
+                                      "NumberSlider",
+                                      "FileUpload",
+                                      "DatePicker",
+                                      "DateRangePicker",
+                                      "TimePicker",
+                                      "TimeRangePicker",
+                                      "Radio",
+                                      "Select",
+                                      "Checkbox",
+                                      "Switch"
                                     ]
                                   },
                                   "icon": {
                                     "type": "string"
+                                  },
+                                  "iconPosition": {
+                                    "enum": [
+                                      "Begin",
+                                      "End"
+                                    ]
                                   },
                                   "inputMask": {
                                     "type": "string"
@@ -2562,9 +2670,21 @@
                                       "integer",
                                       "null"
                                     ]
+                                  },
+                                  "helpHint": {
+                                    "type": "string"
+                                  },
+                                  "errorMessage": {
+                                    "type": "string"
                                   }
                                 },
                                 "additionalProperties": false
+                              },
+                              "isReadonly": {
+                                "type": [
+                                  "boolean",
+                                  "null"
+                                ]
                               },
                               "objectTypeOptions": {
                                 "type": "object",
@@ -2678,9 +2798,15 @@
                                             },
                                             "characterCasing": {
                                               "enum": [
-                                                "normal",
-                                                "lower",
-                                                "upper"
+                                                "Normal",
+                                                "Lower",
+                                                "Upper"
+                                              ]
+                                            },
+                                            "isMultiline": {
+                                              "type": [
+                                                "boolean",
+                                                "null"
                                               ]
                                             }
                                           },
@@ -2689,10 +2815,6 @@
                                         "numberTypeOptions": {
                                           "type": "object",
                                           "properties": {
-                                            "$ref": {
-                                              "type": "string",
-                                              "format": "uri"
-                                            },
                                             "decimalDigits": {
                                               "type": [
                                                 "integer",
@@ -2710,6 +2832,10 @@
                                             },
                                             "maxValue": {
                                               "type": "number"
+                                            },
+                                            "$ref": {
+                                              "type": "string",
+                                              "format": "uri"
                                             }
                                           },
                                           "additionalProperties": false
@@ -2945,23 +3071,29 @@
                                             },
                                             "widget": {
                                               "enum": [
-                                                "textInput",
-                                                "textArea",
-                                                "numberInput",
-                                                "numberSlider",
-                                                "fileUpload",
-                                                "datePicker",
-                                                "dateRangePicker",
-                                                "timePicker",
-                                                "timeRangePicker",
-                                                "radio",
-                                                "select",
-                                                "checkbox",
-                                                "switch"
+                                                "TextInput",
+                                                "TextArea",
+                                                "NumberInput",
+                                                "NumberSlider",
+                                                "FileUpload",
+                                                "DatePicker",
+                                                "DateRangePicker",
+                                                "TimePicker",
+                                                "TimeRangePicker",
+                                                "Radio",
+                                                "Select",
+                                                "Checkbox",
+                                                "Switch"
                                               ]
                                             },
                                             "icon": {
                                               "type": "string"
+                                            },
+                                            "iconPosition": {
+                                              "enum": [
+                                                "Begin",
+                                                "End"
+                                              ]
                                             },
                                             "inputMask": {
                                               "type": "string"
@@ -2983,9 +3115,21 @@
                                                 "integer",
                                                 "null"
                                               ]
+                                            },
+                                            "helpHint": {
+                                              "type": "string"
+                                            },
+                                            "errorMessage": {
+                                              "type": "string"
                                             }
                                           },
                                           "additionalProperties": false
+                                        },
+                                        "isReadonly": {
+                                          "type": [
+                                            "boolean",
+                                            "null"
+                                          ]
                                         }
                                       },
                                       "required": [
@@ -3120,9 +3264,15 @@
                             },
                             "characterCasing": {
                               "enum": [
-                                "normal",
-                                "lower",
-                                "upper"
+                                "Normal",
+                                "Lower",
+                                "Upper"
+                              ]
+                            },
+                            "isMultiline": {
+                              "type": [
+                                "boolean",
+                                "null"
                               ]
                             }
                           },
@@ -3131,10 +3281,6 @@
                         "numberTypeOptions": {
                           "type": "object",
                           "properties": {
-                            "$ref": {
-                              "type": "string",
-                              "format": "uri"
-                            },
                             "decimalDigits": {
                               "type": [
                                 "integer",
@@ -3152,6 +3298,10 @@
                             },
                             "maxValue": {
                               "type": "number"
+                            },
+                            "$ref": {
+                              "type": "string",
+                              "format": "uri"
                             }
                           },
                           "additionalProperties": false
@@ -3387,23 +3537,29 @@
                             },
                             "widget": {
                               "enum": [
-                                "textInput",
-                                "textArea",
-                                "numberInput",
-                                "numberSlider",
-                                "fileUpload",
-                                "datePicker",
-                                "dateRangePicker",
-                                "timePicker",
-                                "timeRangePicker",
-                                "radio",
-                                "select",
-                                "checkbox",
-                                "switch"
+                                "TextInput",
+                                "TextArea",
+                                "NumberInput",
+                                "NumberSlider",
+                                "FileUpload",
+                                "DatePicker",
+                                "DateRangePicker",
+                                "TimePicker",
+                                "TimeRangePicker",
+                                "Radio",
+                                "Select",
+                                "Checkbox",
+                                "Switch"
                               ]
                             },
                             "icon": {
                               "type": "string"
+                            },
+                            "iconPosition": {
+                              "enum": [
+                                "Begin",
+                                "End"
+                              ]
                             },
                             "inputMask": {
                               "type": "string"
@@ -3425,9 +3581,21 @@
                                 "integer",
                                 "null"
                               ]
+                            },
+                            "helpHint": {
+                              "type": "string"
+                            },
+                            "errorMessage": {
+                              "type": "string"
                             }
                           },
                           "additionalProperties": false
+                        },
+                        "isReadonly": {
+                          "type": [
+                            "boolean",
+                            "null"
+                          ]
                         },
                         "objectTypeOptions": {
                           "type": "object",
@@ -3541,9 +3709,15 @@
                                       },
                                       "characterCasing": {
                                         "enum": [
-                                          "normal",
-                                          "lower",
-                                          "upper"
+                                          "Normal",
+                                          "Lower",
+                                          "Upper"
+                                        ]
+                                      },
+                                      "isMultiline": {
+                                        "type": [
+                                          "boolean",
+                                          "null"
                                         ]
                                       }
                                     },
@@ -3552,10 +3726,6 @@
                                   "numberTypeOptions": {
                                     "type": "object",
                                     "properties": {
-                                      "$ref": {
-                                        "type": "string",
-                                        "format": "uri"
-                                      },
                                       "decimalDigits": {
                                         "type": [
                                           "integer",
@@ -3573,6 +3743,10 @@
                                       },
                                       "maxValue": {
                                         "type": "number"
+                                      },
+                                      "$ref": {
+                                        "type": "string",
+                                        "format": "uri"
                                       }
                                     },
                                     "additionalProperties": false
@@ -3808,23 +3982,29 @@
                                       },
                                       "widget": {
                                         "enum": [
-                                          "textInput",
-                                          "textArea",
-                                          "numberInput",
-                                          "numberSlider",
-                                          "fileUpload",
-                                          "datePicker",
-                                          "dateRangePicker",
-                                          "timePicker",
-                                          "timeRangePicker",
-                                          "radio",
-                                          "select",
-                                          "checkbox",
-                                          "switch"
+                                          "TextInput",
+                                          "TextArea",
+                                          "NumberInput",
+                                          "NumberSlider",
+                                          "FileUpload",
+                                          "DatePicker",
+                                          "DateRangePicker",
+                                          "TimePicker",
+                                          "TimeRangePicker",
+                                          "Radio",
+                                          "Select",
+                                          "Checkbox",
+                                          "Switch"
                                         ]
                                       },
                                       "icon": {
                                         "type": "string"
+                                      },
+                                      "iconPosition": {
+                                        "enum": [
+                                          "Begin",
+                                          "End"
+                                        ]
                                       },
                                       "inputMask": {
                                         "type": "string"
@@ -3846,9 +4026,21 @@
                                           "integer",
                                           "null"
                                         ]
+                                      },
+                                      "helpHint": {
+                                        "type": "string"
+                                      },
+                                      "errorMessage": {
+                                        "type": "string"
                                       }
                                     },
                                     "additionalProperties": false
+                                  },
+                                  "isReadonly": {
+                                    "type": [
+                                      "boolean",
+                                      "null"
+                                    ]
                                   }
                                 },
                                 "required": [
@@ -3965,9 +4157,15 @@
                                 },
                                 "characterCasing": {
                                   "enum": [
-                                    "normal",
-                                    "lower",
-                                    "upper"
+                                    "Normal",
+                                    "Lower",
+                                    "Upper"
+                                  ]
+                                },
+                                "isMultiline": {
+                                  "type": [
+                                    "boolean",
+                                    "null"
                                   ]
                                 }
                               },
@@ -3976,10 +4174,6 @@
                             "numberTypeOptions": {
                               "type": "object",
                               "properties": {
-                                "$ref": {
-                                  "type": "string",
-                                  "format": "uri"
-                                },
                                 "decimalDigits": {
                                   "type": [
                                     "integer",
@@ -3997,6 +4191,10 @@
                                 },
                                 "maxValue": {
                                   "type": "number"
+                                },
+                                "$ref": {
+                                  "type": "string",
+                                  "format": "uri"
                                 }
                               },
                               "additionalProperties": false
@@ -4232,23 +4430,29 @@
                                 },
                                 "widget": {
                                   "enum": [
-                                    "textInput",
-                                    "textArea",
-                                    "numberInput",
-                                    "numberSlider",
-                                    "fileUpload",
-                                    "datePicker",
-                                    "dateRangePicker",
-                                    "timePicker",
-                                    "timeRangePicker",
-                                    "radio",
-                                    "select",
-                                    "checkbox",
-                                    "switch"
+                                    "TextInput",
+                                    "TextArea",
+                                    "NumberInput",
+                                    "NumberSlider",
+                                    "FileUpload",
+                                    "DatePicker",
+                                    "DateRangePicker",
+                                    "TimePicker",
+                                    "TimeRangePicker",
+                                    "Radio",
+                                    "Select",
+                                    "Checkbox",
+                                    "Switch"
                                   ]
                                 },
                                 "icon": {
                                   "type": "string"
+                                },
+                                "iconPosition": {
+                                  "enum": [
+                                    "Begin",
+                                    "End"
+                                  ]
                                 },
                                 "inputMask": {
                                   "type": "string"
@@ -4270,9 +4474,21 @@
                                     "integer",
                                     "null"
                                   ]
+                                },
+                                "helpHint": {
+                                  "type": "string"
+                                },
+                                "errorMessage": {
+                                  "type": "string"
                                 }
                               },
                               "additionalProperties": false
+                            },
+                            "isReadonly": {
+                              "type": [
+                                "boolean",
+                                "null"
+                              ]
                             },
                             "objectTypeOptions": {
                               "type": "object",
@@ -4386,9 +4602,15 @@
                                           },
                                           "characterCasing": {
                                             "enum": [
-                                              "normal",
-                                              "lower",
-                                              "upper"
+                                              "Normal",
+                                              "Lower",
+                                              "Upper"
+                                            ]
+                                          },
+                                          "isMultiline": {
+                                            "type": [
+                                              "boolean",
+                                              "null"
                                             ]
                                           }
                                         },
@@ -4397,10 +4619,6 @@
                                       "numberTypeOptions": {
                                         "type": "object",
                                         "properties": {
-                                          "$ref": {
-                                            "type": "string",
-                                            "format": "uri"
-                                          },
                                           "decimalDigits": {
                                             "type": [
                                               "integer",
@@ -4418,6 +4636,10 @@
                                           },
                                           "maxValue": {
                                             "type": "number"
+                                          },
+                                          "$ref": {
+                                            "type": "string",
+                                            "format": "uri"
                                           }
                                         },
                                         "additionalProperties": false
@@ -4653,23 +4875,29 @@
                                           },
                                           "widget": {
                                             "enum": [
-                                              "textInput",
-                                              "textArea",
-                                              "numberInput",
-                                              "numberSlider",
-                                              "fileUpload",
-                                              "datePicker",
-                                              "dateRangePicker",
-                                              "timePicker",
-                                              "timeRangePicker",
-                                              "radio",
-                                              "select",
-                                              "checkbox",
-                                              "switch"
+                                              "TextInput",
+                                              "TextArea",
+                                              "NumberInput",
+                                              "NumberSlider",
+                                              "FileUpload",
+                                              "DatePicker",
+                                              "DateRangePicker",
+                                              "TimePicker",
+                                              "TimeRangePicker",
+                                              "Radio",
+                                              "Select",
+                                              "Checkbox",
+                                              "Switch"
                                             ]
                                           },
                                           "icon": {
                                             "type": "string"
+                                          },
+                                          "iconPosition": {
+                                            "enum": [
+                                              "Begin",
+                                              "End"
+                                            ]
                                           },
                                           "inputMask": {
                                             "type": "string"
@@ -4691,9 +4919,21 @@
                                               "integer",
                                               "null"
                                             ]
+                                          },
+                                          "helpHint": {
+                                            "type": "string"
+                                          },
+                                          "errorMessage": {
+                                            "type": "string"
                                           }
                                         },
                                         "additionalProperties": false
+                                      },
+                                      "isReadonly": {
+                                        "type": [
+                                          "boolean",
+                                          "null"
+                                        ]
                                       }
                                     },
                                     "required": [
@@ -4819,9 +5059,15 @@
                                 },
                                 "characterCasing": {
                                   "enum": [
-                                    "normal",
-                                    "lower",
-                                    "upper"
+                                    "Normal",
+                                    "Lower",
+                                    "Upper"
+                                  ]
+                                },
+                                "isMultiline": {
+                                  "type": [
+                                    "boolean",
+                                    "null"
                                   ]
                                 }
                               },
@@ -4830,10 +5076,6 @@
                             "numberTypeOptions": {
                               "type": "object",
                               "properties": {
-                                "$ref": {
-                                  "type": "string",
-                                  "format": "uri"
-                                },
                                 "decimalDigits": {
                                   "type": [
                                     "integer",
@@ -4851,6 +5093,10 @@
                                 },
                                 "maxValue": {
                                   "type": "number"
+                                },
+                                "$ref": {
+                                  "type": "string",
+                                  "format": "uri"
                                 }
                               },
                               "additionalProperties": false
@@ -5086,23 +5332,29 @@
                                 },
                                 "widget": {
                                   "enum": [
-                                    "textInput",
-                                    "textArea",
-                                    "numberInput",
-                                    "numberSlider",
-                                    "fileUpload",
-                                    "datePicker",
-                                    "dateRangePicker",
-                                    "timePicker",
-                                    "timeRangePicker",
-                                    "radio",
-                                    "select",
-                                    "checkbox",
-                                    "switch"
+                                    "TextInput",
+                                    "TextArea",
+                                    "NumberInput",
+                                    "NumberSlider",
+                                    "FileUpload",
+                                    "DatePicker",
+                                    "DateRangePicker",
+                                    "TimePicker",
+                                    "TimeRangePicker",
+                                    "Radio",
+                                    "Select",
+                                    "Checkbox",
+                                    "Switch"
                                   ]
                                 },
                                 "icon": {
                                   "type": "string"
+                                },
+                                "iconPosition": {
+                                  "enum": [
+                                    "Begin",
+                                    "End"
+                                  ]
                                 },
                                 "inputMask": {
                                   "type": "string"
@@ -5124,9 +5376,21 @@
                                     "integer",
                                     "null"
                                   ]
+                                },
+                                "helpHint": {
+                                  "type": "string"
+                                },
+                                "errorMessage": {
+                                  "type": "string"
                                 }
                               },
                               "additionalProperties": false
+                            },
+                            "isReadonly": {
+                              "type": [
+                                "boolean",
+                                "null"
+                              ]
                             },
                             "objectTypeOptions": {
                               "type": "object",
@@ -5240,9 +5504,15 @@
                                           },
                                           "characterCasing": {
                                             "enum": [
-                                              "normal",
-                                              "lower",
-                                              "upper"
+                                              "Normal",
+                                              "Lower",
+                                              "Upper"
+                                            ]
+                                          },
+                                          "isMultiline": {
+                                            "type": [
+                                              "boolean",
+                                              "null"
                                             ]
                                           }
                                         },
@@ -5251,10 +5521,6 @@
                                       "numberTypeOptions": {
                                         "type": "object",
                                         "properties": {
-                                          "$ref": {
-                                            "type": "string",
-                                            "format": "uri"
-                                          },
                                           "decimalDigits": {
                                             "type": [
                                               "integer",
@@ -5272,6 +5538,10 @@
                                           },
                                           "maxValue": {
                                             "type": "number"
+                                          },
+                                          "$ref": {
+                                            "type": "string",
+                                            "format": "uri"
                                           }
                                         },
                                         "additionalProperties": false
@@ -5507,23 +5777,29 @@
                                           },
                                           "widget": {
                                             "enum": [
-                                              "textInput",
-                                              "textArea",
-                                              "numberInput",
-                                              "numberSlider",
-                                              "fileUpload",
-                                              "datePicker",
-                                              "dateRangePicker",
-                                              "timePicker",
-                                              "timeRangePicker",
-                                              "radio",
-                                              "select",
-                                              "checkbox",
-                                              "switch"
+                                              "TextInput",
+                                              "TextArea",
+                                              "NumberInput",
+                                              "NumberSlider",
+                                              "FileUpload",
+                                              "DatePicker",
+                                              "DateRangePicker",
+                                              "TimePicker",
+                                              "TimeRangePicker",
+                                              "Radio",
+                                              "Select",
+                                              "Checkbox",
+                                              "Switch"
                                             ]
                                           },
                                           "icon": {
                                             "type": "string"
+                                          },
+                                          "iconPosition": {
+                                            "enum": [
+                                              "Begin",
+                                              "End"
+                                            ]
                                           },
                                           "inputMask": {
                                             "type": "string"
@@ -5545,9 +5821,21 @@
                                               "integer",
                                               "null"
                                             ]
+                                          },
+                                          "helpHint": {
+                                            "type": "string"
+                                          },
+                                          "errorMessage": {
+                                            "type": "string"
                                           }
                                         },
                                         "additionalProperties": false
+                                      },
+                                      "isReadonly": {
+                                        "type": [
+                                          "boolean",
+                                          "null"
+                                        ]
                                       }
                                     },
                                     "required": [
@@ -5579,7 +5867,8 @@
                     }
                   },
                   "required": [
-                    "name"
+                    "name",
+                    "responseOutput"
                   ],
                   "title": "Defines queries for the domain.",
                   "description": "Defines queries for the domain that operates on this entity. Queries should have no side effects and not mutate the domain state.",
@@ -5694,9 +5983,15 @@
                         },
                         "characterCasing": {
                           "enum": [
-                            "normal",
-                            "lower",
-                            "upper"
+                            "Normal",
+                            "Lower",
+                            "Upper"
+                          ]
+                        },
+                        "isMultiline": {
+                          "type": [
+                            "boolean",
+                            "null"
                           ]
                         }
                       },
@@ -5705,10 +6000,6 @@
                     "numberTypeOptions": {
                       "type": "object",
                       "properties": {
-                        "$ref": {
-                          "type": "string",
-                          "format": "uri"
-                        },
                         "decimalDigits": {
                           "type": [
                             "integer",
@@ -5726,6 +6017,10 @@
                         },
                         "maxValue": {
                           "type": "number"
+                        },
+                        "$ref": {
+                          "type": "string",
+                          "format": "uri"
                         }
                       },
                       "additionalProperties": false
@@ -5961,23 +6256,29 @@
                         },
                         "widget": {
                           "enum": [
-                            "textInput",
-                            "textArea",
-                            "numberInput",
-                            "numberSlider",
-                            "fileUpload",
-                            "datePicker",
-                            "dateRangePicker",
-                            "timePicker",
-                            "timeRangePicker",
-                            "radio",
-                            "select",
-                            "checkbox",
-                            "switch"
+                            "TextInput",
+                            "TextArea",
+                            "NumberInput",
+                            "NumberSlider",
+                            "FileUpload",
+                            "DatePicker",
+                            "DateRangePicker",
+                            "TimePicker",
+                            "TimeRangePicker",
+                            "Radio",
+                            "Select",
+                            "Checkbox",
+                            "Switch"
                           ]
                         },
                         "icon": {
                           "type": "string"
+                        },
+                        "iconPosition": {
+                          "enum": [
+                            "Begin",
+                            "End"
+                          ]
                         },
                         "inputMask": {
                           "type": "string"
@@ -5999,9 +6300,21 @@
                             "integer",
                             "null"
                           ]
+                        },
+                        "helpHint": {
+                          "type": "string"
+                        },
+                        "errorMessage": {
+                          "type": "string"
                         }
                       },
                       "additionalProperties": false
+                    },
+                    "isReadonly": {
+                      "type": [
+                        "boolean",
+                        "null"
+                      ]
                     },
                     "objectTypeOptions": {
                       "type": "object",
@@ -6115,9 +6428,15 @@
                                   },
                                   "characterCasing": {
                                     "enum": [
-                                      "normal",
-                                      "lower",
-                                      "upper"
+                                      "Normal",
+                                      "Lower",
+                                      "Upper"
+                                    ]
+                                  },
+                                  "isMultiline": {
+                                    "type": [
+                                      "boolean",
+                                      "null"
                                     ]
                                   }
                                 },
@@ -6126,10 +6445,6 @@
                               "numberTypeOptions": {
                                 "type": "object",
                                 "properties": {
-                                  "$ref": {
-                                    "type": "string",
-                                    "format": "uri"
-                                  },
                                   "decimalDigits": {
                                     "type": [
                                       "integer",
@@ -6147,6 +6462,10 @@
                                   },
                                   "maxValue": {
                                     "type": "number"
+                                  },
+                                  "$ref": {
+                                    "type": "string",
+                                    "format": "uri"
                                   }
                                 },
                                 "additionalProperties": false
@@ -6382,23 +6701,29 @@
                                   },
                                   "widget": {
                                     "enum": [
-                                      "textInput",
-                                      "textArea",
-                                      "numberInput",
-                                      "numberSlider",
-                                      "fileUpload",
-                                      "datePicker",
-                                      "dateRangePicker",
-                                      "timePicker",
-                                      "timeRangePicker",
-                                      "radio",
-                                      "select",
-                                      "checkbox",
-                                      "switch"
+                                      "TextInput",
+                                      "TextArea",
+                                      "NumberInput",
+                                      "NumberSlider",
+                                      "FileUpload",
+                                      "DatePicker",
+                                      "DateRangePicker",
+                                      "TimePicker",
+                                      "TimeRangePicker",
+                                      "Radio",
+                                      "Select",
+                                      "Checkbox",
+                                      "Switch"
                                     ]
                                   },
                                   "icon": {
                                     "type": "string"
+                                  },
+                                  "iconPosition": {
+                                    "enum": [
+                                      "Begin",
+                                      "End"
+                                    ]
                                   },
                                   "inputMask": {
                                     "type": "string"
@@ -6420,9 +6745,21 @@
                                       "integer",
                                       "null"
                                     ]
+                                  },
+                                  "helpHint": {
+                                    "type": "string"
+                                  },
+                                  "errorMessage": {
+                                    "type": "string"
                                   }
                                 },
                                 "additionalProperties": false
+                              },
+                              "isReadonly": {
+                                "type": [
+                                  "boolean",
+                                  "null"
+                                ]
                               }
                             },
                             "required": [
@@ -6539,9 +6876,15 @@
                             },
                             "characterCasing": {
                               "enum": [
-                                "normal",
-                                "lower",
-                                "upper"
+                                "Normal",
+                                "Lower",
+                                "Upper"
+                              ]
+                            },
+                            "isMultiline": {
+                              "type": [
+                                "boolean",
+                                "null"
                               ]
                             }
                           },
@@ -6550,10 +6893,6 @@
                         "numberTypeOptions": {
                           "type": "object",
                           "properties": {
-                            "$ref": {
-                              "type": "string",
-                              "format": "uri"
-                            },
                             "decimalDigits": {
                               "type": [
                                 "integer",
@@ -6571,6 +6910,10 @@
                             },
                             "maxValue": {
                               "type": "number"
+                            },
+                            "$ref": {
+                              "type": "string",
+                              "format": "uri"
                             }
                           },
                           "additionalProperties": false
@@ -6806,23 +7149,29 @@
                             },
                             "widget": {
                               "enum": [
-                                "textInput",
-                                "textArea",
-                                "numberInput",
-                                "numberSlider",
-                                "fileUpload",
-                                "datePicker",
-                                "dateRangePicker",
-                                "timePicker",
-                                "timeRangePicker",
-                                "radio",
-                                "select",
-                                "checkbox",
-                                "switch"
+                                "TextInput",
+                                "TextArea",
+                                "NumberInput",
+                                "NumberSlider",
+                                "FileUpload",
+                                "DatePicker",
+                                "DateRangePicker",
+                                "TimePicker",
+                                "TimeRangePicker",
+                                "Radio",
+                                "Select",
+                                "Checkbox",
+                                "Switch"
                               ]
                             },
                             "icon": {
                               "type": "string"
+                            },
+                            "iconPosition": {
+                              "enum": [
+                                "Begin",
+                                "End"
+                              ]
                             },
                             "inputMask": {
                               "type": "string"
@@ -6844,9 +7193,21 @@
                                 "integer",
                                 "null"
                               ]
+                            },
+                            "helpHint": {
+                              "type": "string"
+                            },
+                            "errorMessage": {
+                              "type": "string"
                             }
                           },
                           "additionalProperties": false
+                        },
+                        "isReadonly": {
+                          "type": [
+                            "boolean",
+                            "null"
+                          ]
                         },
                         "objectTypeOptions": {
                           "type": "object",
@@ -6960,9 +7321,15 @@
                                       },
                                       "characterCasing": {
                                         "enum": [
-                                          "normal",
-                                          "lower",
-                                          "upper"
+                                          "Normal",
+                                          "Lower",
+                                          "Upper"
+                                        ]
+                                      },
+                                      "isMultiline": {
+                                        "type": [
+                                          "boolean",
+                                          "null"
                                         ]
                                       }
                                     },
@@ -6971,10 +7338,6 @@
                                   "numberTypeOptions": {
                                     "type": "object",
                                     "properties": {
-                                      "$ref": {
-                                        "type": "string",
-                                        "format": "uri"
-                                      },
                                       "decimalDigits": {
                                         "type": [
                                           "integer",
@@ -6992,6 +7355,10 @@
                                       },
                                       "maxValue": {
                                         "type": "number"
+                                      },
+                                      "$ref": {
+                                        "type": "string",
+                                        "format": "uri"
                                       }
                                     },
                                     "additionalProperties": false
@@ -7227,23 +7594,29 @@
                                       },
                                       "widget": {
                                         "enum": [
-                                          "textInput",
-                                          "textArea",
-                                          "numberInput",
-                                          "numberSlider",
-                                          "fileUpload",
-                                          "datePicker",
-                                          "dateRangePicker",
-                                          "timePicker",
-                                          "timeRangePicker",
-                                          "radio",
-                                          "select",
-                                          "checkbox",
-                                          "switch"
+                                          "TextInput",
+                                          "TextArea",
+                                          "NumberInput",
+                                          "NumberSlider",
+                                          "FileUpload",
+                                          "DatePicker",
+                                          "DateRangePicker",
+                                          "TimePicker",
+                                          "TimeRangePicker",
+                                          "Radio",
+                                          "Select",
+                                          "Checkbox",
+                                          "Switch"
                                         ]
                                       },
                                       "icon": {
                                         "type": "string"
+                                      },
+                                      "iconPosition": {
+                                        "enum": [
+                                          "Begin",
+                                          "End"
+                                        ]
                                       },
                                       "inputMask": {
                                         "type": "string"
@@ -7265,9 +7638,21 @@
                                           "integer",
                                           "null"
                                         ]
+                                      },
+                                      "helpHint": {
+                                        "type": "string"
+                                      },
+                                      "errorMessage": {
+                                        "type": "string"
                                       }
                                     },
                                     "additionalProperties": false
+                                  },
+                                  "isReadonly": {
+                                    "type": [
+                                      "boolean",
+                                      "null"
+                                    ]
                                   }
                                 },
                                 "required": [
@@ -7393,9 +7778,15 @@
                             },
                             "characterCasing": {
                               "enum": [
-                                "normal",
-                                "lower",
-                                "upper"
+                                "Normal",
+                                "Lower",
+                                "Upper"
+                              ]
+                            },
+                            "isMultiline": {
+                              "type": [
+                                "boolean",
+                                "null"
                               ]
                             }
                           },
@@ -7404,10 +7795,6 @@
                         "numberTypeOptions": {
                           "type": "object",
                           "properties": {
-                            "$ref": {
-                              "type": "string",
-                              "format": "uri"
-                            },
                             "decimalDigits": {
                               "type": [
                                 "integer",
@@ -7425,6 +7812,10 @@
                             },
                             "maxValue": {
                               "type": "number"
+                            },
+                            "$ref": {
+                              "type": "string",
+                              "format": "uri"
                             }
                           },
                           "additionalProperties": false
@@ -7660,23 +8051,29 @@
                             },
                             "widget": {
                               "enum": [
-                                "textInput",
-                                "textArea",
-                                "numberInput",
-                                "numberSlider",
-                                "fileUpload",
-                                "datePicker",
-                                "dateRangePicker",
-                                "timePicker",
-                                "timeRangePicker",
-                                "radio",
-                                "select",
-                                "checkbox",
-                                "switch"
+                                "TextInput",
+                                "TextArea",
+                                "NumberInput",
+                                "NumberSlider",
+                                "FileUpload",
+                                "DatePicker",
+                                "DateRangePicker",
+                                "TimePicker",
+                                "TimeRangePicker",
+                                "Radio",
+                                "Select",
+                                "Checkbox",
+                                "Switch"
                               ]
                             },
                             "icon": {
                               "type": "string"
+                            },
+                            "iconPosition": {
+                              "enum": [
+                                "Begin",
+                                "End"
+                              ]
                             },
                             "inputMask": {
                               "type": "string"
@@ -7698,9 +8095,21 @@
                                 "integer",
                                 "null"
                               ]
+                            },
+                            "helpHint": {
+                              "type": "string"
+                            },
+                            "errorMessage": {
+                              "type": "string"
                             }
                           },
                           "additionalProperties": false
+                        },
+                        "isReadonly": {
+                          "type": [
+                            "boolean",
+                            "null"
+                          ]
                         },
                         "objectTypeOptions": {
                           "type": "object",
@@ -7814,9 +8223,15 @@
                                       },
                                       "characterCasing": {
                                         "enum": [
-                                          "normal",
-                                          "lower",
-                                          "upper"
+                                          "Normal",
+                                          "Lower",
+                                          "Upper"
+                                        ]
+                                      },
+                                      "isMultiline": {
+                                        "type": [
+                                          "boolean",
+                                          "null"
                                         ]
                                       }
                                     },
@@ -7825,10 +8240,6 @@
                                   "numberTypeOptions": {
                                     "type": "object",
                                     "properties": {
-                                      "$ref": {
-                                        "type": "string",
-                                        "format": "uri"
-                                      },
                                       "decimalDigits": {
                                         "type": [
                                           "integer",
@@ -7846,6 +8257,10 @@
                                       },
                                       "maxValue": {
                                         "type": "number"
+                                      },
+                                      "$ref": {
+                                        "type": "string",
+                                        "format": "uri"
                                       }
                                     },
                                     "additionalProperties": false
@@ -8081,23 +8496,29 @@
                                       },
                                       "widget": {
                                         "enum": [
-                                          "textInput",
-                                          "textArea",
-                                          "numberInput",
-                                          "numberSlider",
-                                          "fileUpload",
-                                          "datePicker",
-                                          "dateRangePicker",
-                                          "timePicker",
-                                          "timeRangePicker",
-                                          "radio",
-                                          "select",
-                                          "checkbox",
-                                          "switch"
+                                          "TextInput",
+                                          "TextArea",
+                                          "NumberInput",
+                                          "NumberSlider",
+                                          "FileUpload",
+                                          "DatePicker",
+                                          "DateRangePicker",
+                                          "TimePicker",
+                                          "TimeRangePicker",
+                                          "Radio",
+                                          "Select",
+                                          "Checkbox",
+                                          "Switch"
                                         ]
                                       },
                                       "icon": {
                                         "type": "string"
+                                      },
+                                      "iconPosition": {
+                                        "enum": [
+                                          "Begin",
+                                          "End"
+                                        ]
                                       },
                                       "inputMask": {
                                         "type": "string"
@@ -8119,9 +8540,21 @@
                                           "integer",
                                           "null"
                                         ]
+                                      },
+                                      "helpHint": {
+                                        "type": "string"
+                                      },
+                                      "errorMessage": {
+                                        "type": "string"
                                       }
                                     },
                                     "additionalProperties": false
+                                  },
+                                  "isReadonly": {
+                                    "type": [
+                                      "boolean",
+                                      "null"
+                                    ]
                                   }
                                 },
                                 "required": [
@@ -8268,9 +8701,15 @@
                         },
                         "characterCasing": {
                           "enum": [
-                            "normal",
-                            "lower",
-                            "upper"
+                            "Normal",
+                            "Lower",
+                            "Upper"
+                          ]
+                        },
+                        "isMultiline": {
+                          "type": [
+                            "boolean",
+                            "null"
                           ]
                         }
                       },
@@ -8279,10 +8718,6 @@
                     "numberTypeOptions": {
                       "type": "object",
                       "properties": {
-                        "$ref": {
-                          "type": "string",
-                          "format": "uri"
-                        },
                         "decimalDigits": {
                           "type": [
                             "integer",
@@ -8300,6 +8735,10 @@
                         },
                         "maxValue": {
                           "type": "number"
+                        },
+                        "$ref": {
+                          "type": "string",
+                          "format": "uri"
                         }
                       },
                       "additionalProperties": false
@@ -8535,23 +8974,29 @@
                         },
                         "widget": {
                           "enum": [
-                            "textInput",
-                            "textArea",
-                            "numberInput",
-                            "numberSlider",
-                            "fileUpload",
-                            "datePicker",
-                            "dateRangePicker",
-                            "timePicker",
-                            "timeRangePicker",
-                            "radio",
-                            "select",
-                            "checkbox",
-                            "switch"
+                            "TextInput",
+                            "TextArea",
+                            "NumberInput",
+                            "NumberSlider",
+                            "FileUpload",
+                            "DatePicker",
+                            "DateRangePicker",
+                            "TimePicker",
+                            "TimeRangePicker",
+                            "Radio",
+                            "Select",
+                            "Checkbox",
+                            "Switch"
                           ]
                         },
                         "icon": {
                           "type": "string"
+                        },
+                        "iconPosition": {
+                          "enum": [
+                            "Begin",
+                            "End"
+                          ]
                         },
                         "inputMask": {
                           "type": "string"
@@ -8573,9 +9018,21 @@
                             "integer",
                             "null"
                           ]
+                        },
+                        "helpHint": {
+                          "type": "string"
+                        },
+                        "errorMessage": {
+                          "type": "string"
                         }
                       },
                       "additionalProperties": false
+                    },
+                    "isReadonly": {
+                      "type": [
+                        "boolean",
+                        "null"
+                      ]
                     }
                   },
                   "required": [
@@ -8691,9 +9148,15 @@
                         },
                         "characterCasing": {
                           "enum": [
-                            "normal",
-                            "lower",
-                            "upper"
+                            "Normal",
+                            "Lower",
+                            "Upper"
+                          ]
+                        },
+                        "isMultiline": {
+                          "type": [
+                            "boolean",
+                            "null"
                           ]
                         }
                       },
@@ -8702,10 +9165,6 @@
                     "numberTypeOptions": {
                       "type": "object",
                       "properties": {
-                        "$ref": {
-                          "type": "string",
-                          "format": "uri"
-                        },
                         "decimalDigits": {
                           "type": [
                             "integer",
@@ -8723,6 +9182,10 @@
                         },
                         "maxValue": {
                           "type": "number"
+                        },
+                        "$ref": {
+                          "type": "string",
+                          "format": "uri"
                         }
                       },
                       "additionalProperties": false
@@ -8958,23 +9421,29 @@
                         },
                         "widget": {
                           "enum": [
-                            "textInput",
-                            "textArea",
-                            "numberInput",
-                            "numberSlider",
-                            "fileUpload",
-                            "datePicker",
-                            "dateRangePicker",
-                            "timePicker",
-                            "timeRangePicker",
-                            "radio",
-                            "select",
-                            "checkbox",
-                            "switch"
+                            "TextInput",
+                            "TextArea",
+                            "NumberInput",
+                            "NumberSlider",
+                            "FileUpload",
+                            "DatePicker",
+                            "DateRangePicker",
+                            "TimePicker",
+                            "TimeRangePicker",
+                            "Radio",
+                            "Select",
+                            "Checkbox",
+                            "Switch"
                           ]
                         },
                         "icon": {
                           "type": "string"
+                        },
+                        "iconPosition": {
+                          "enum": [
+                            "Begin",
+                            "End"
+                          ]
                         },
                         "inputMask": {
                           "type": "string"
@@ -8996,9 +9465,21 @@
                             "integer",
                             "null"
                           ]
+                        },
+                        "helpHint": {
+                          "type": "string"
+                        },
+                        "errorMessage": {
+                          "type": "string"
                         }
                       },
                       "additionalProperties": false
+                    },
+                    "isReadonly": {
+                      "type": [
+                        "boolean",
+                        "null"
+                      ]
                     }
                   },
                   "required": [
@@ -9076,10 +9557,10 @@
                 },
                 "provider": {
                   "enum": [
-                    "sqlServer",
-                    "postgres",
-                    "mySql",
-                    "sqlLite"
+                    "SqlServer",
+                    "Postgres",
+                    "MySql",
+                    "SqlLite"
                   ]
                 }
               },
@@ -9128,10 +9609,10 @@
                 },
                 "provider": {
                   "enum": [
-                    "amazonElasticache",
-                    "azureRedis",
-                    "memcached",
-                    "redis"
+                    "AmazonElasticCache",
+                    "AzureRedis",
+                    "Memcached",
+                    "Redis"
                   ],
                   "additionalProperties": false
                 }
@@ -9181,7 +9662,7 @@
                 },
                 "provider": {
                   "enum": [
-                    "elasticSearch"
+                    "ElasticSearch"
                   ]
                 }
               },
@@ -9230,7 +9711,7 @@
                 },
                 "provider": {
                   "enum": [
-                    "eventStoreDb"
+                    "EventStoreDb"
                   ]
                 }
               },
@@ -9288,10 +9769,10 @@
                 },
                 "provider": {
                   "enum": [
-                    "mediatR",
-                    "rabbitMQ",
-                    "azureServiceBus",
-                    "amazonSQS"
+                    "MediatR",
+                    "RabbitMq",
+                    "AzureServiceBus",
+                    "AmazonSqs"
                   ],
                   "additionalProperties": false
                 }
@@ -9341,10 +9822,10 @@
                 },
                 "provider": {
                   "enum": [
-                    "mediatR",
-                    "rabbitMQ",
-                    "azureServiceBus",
-                    "amazonSQS"
+                    "MediatR",
+                    "RabbitMq",
+                    "AzureServiceBus",
+                    "AmazonSqs"
                   ],
                   "additionalProperties": false
                 }
@@ -9541,18 +10022,18 @@
                   },
                   "provider": {
                     "enum": [
-                      "amazonSqs",
-                      "azureServiceBus",
-                      "csvFile",
-                      "excelFile",
-                      "jsonFile",
-                      "mySql",
-                      "parquetFile",
-                      "postgres",
-                      "rabbitMq",
-                      "sqlServer",
-                      "webApi",
-                      "xmlFile"
+                      "AmazonSqs",
+                      "AzureServiceBus",
+                      "CsvFile",
+                      "ExcelFile",
+                      "JsonFile",
+                      "MySql",
+                      "ParquetFile",
+                      "Postgres",
+                      "RabbitMq",
+                      "SqlServer",
+                      "WebApi",
+                      "XmlFile"
                     ]
                   }
                 },
@@ -9605,8 +10086,8 @@
                     },
                     "provider": {
                       "enum": [
-                        "sendGrid",
-                        "mailchimp"
+                        "SendGrid",
+                        "Mailchimp"
                       ],
                       "additionalProperties": false
                     }
@@ -9656,8 +10137,8 @@
                     },
                     "provider": {
                       "enum": [
-                        "twilio",
-                        "clickSend"
+                        "Twilio",
+                        "ClickSend"
                       ],
                       "additionalProperties": false
                     }
@@ -9706,8 +10187,8 @@
                     },
                     "provider": {
                       "enum": [
-                        "whatsApp",
-                        "telegram"
+                        "WhatsApp",
+                        "Telegram"
                       ],
                       "additionalProperties": false
                     }
@@ -9808,9 +10289,9 @@
                         },
                         "provider": {
                           "enum": [
-                            "awsKeyManagementService",
-                            "azureKeyVault",
-                            "hashiCorpVault"
+                            "AwsKeyManagementService",
+                            "AzureKeyVault",
+                            "HashicorpVault"
                           ]
                         }
                       },
@@ -9868,6 +10349,10 @@
     "application": {
       "type": "object",
       "properties": {
+        "$ref": {
+          "type": "string",
+          "format": "uri"
+        },
         "integration": {
           "type": "array",
           "items": {
@@ -9979,8 +10464,8 @@
                         },
                         "converter": {
                           "enum": [
-                            "upperCase",
-                            "lowerCase"
+                            "UpperCase",
+                            "LowerCase"
                           ]
                         },
                         "targetAttribute": {
@@ -10029,6 +10514,7 @@
                       },
                       "required": [
                         "sourceColumn",
+                        "match",
                         "targetAttribute"
                       ],
                       "additionalProperties": false
@@ -10053,62 +10539,7 @@
                     "description": "A description of the etl target."
                   },
                   "dataConnection": {
-                    "type": "object",
-                    "properties": {
-                      "name": {
-                        "type": "string",
-                        "pattern": "^[^\\s]*$",
-                        "title": "The unique name of this server component in the solution.",
-                        "description": "The name of this server component in the solution. The name must be unique in the solution configuration"
-                      },
-                      "serverUri": {
-                        "type": "string",
-                        "title": "Hostname, IP address or URI.",
-                        "description": "The name, address, URI or IP of the server to connect to."
-                      },
-                      "port": {
-                        "type": [
-                          "integer",
-                          "null"
-                        ],
-                        "title": "Server port",
-                        "description": "The port to connect to."
-                      },
-                      "user": {
-                        "type": "string",
-                        "title": "Username.",
-                        "description": "The username to use when connecting to this server."
-                      },
-                      "password": {
-                        "type": "string",
-                        "title": "Password.",
-                        "description": "The password to use when connecting to this server."
-                      },
-                      "options": {
-                        "type": "string",
-                        "title": "Additional options.",
-                        "description": "A list of additional options to set when connecting to this server."
-                      },
-                      "provider": {
-                        "enum": [
-                          "amazonSqs",
-                          "azureServiceBus",
-                          "csvFile",
-                          "excelFile",
-                          "jsonFile",
-                          "mySql",
-                          "parquetFile",
-                          "postgres",
-                          "rabbitMq",
-                          "sqlServer",
-                          "webApi",
-                          "xmlFile"
-                        ]
-                      }
-                    },
-                    "required": [
-                      "name"
-                    ],
+                    "type": "string",
                     "additionalProperties": false
                   }
                 },
@@ -10247,9 +10678,15 @@
                         },
                         "characterCasing": {
                           "enum": [
-                            "normal",
-                            "lower",
-                            "upper"
+                            "Normal",
+                            "Lower",
+                            "Upper"
+                          ]
+                        },
+                        "isMultiline": {
+                          "type": [
+                            "boolean",
+                            "null"
                           ]
                         }
                       },
@@ -10258,10 +10695,6 @@
                     "numberTypeOptions": {
                       "type": "object",
                       "properties": {
-                        "$ref": {
-                          "type": "string",
-                          "format": "uri"
-                        },
                         "decimalDigits": {
                           "type": [
                             "integer",
@@ -10279,6 +10712,10 @@
                         },
                         "maxValue": {
                           "type": "number"
+                        },
+                        "$ref": {
+                          "type": "string",
+                          "format": "uri"
                         }
                       },
                       "additionalProperties": false
@@ -10514,23 +10951,29 @@
                         },
                         "widget": {
                           "enum": [
-                            "textInput",
-                            "textArea",
-                            "numberInput",
-                            "numberSlider",
-                            "fileUpload",
-                            "datePicker",
-                            "dateRangePicker",
-                            "timePicker",
-                            "timeRangePicker",
-                            "radio",
-                            "select",
-                            "checkbox",
-                            "switch"
+                            "TextInput",
+                            "TextArea",
+                            "NumberInput",
+                            "NumberSlider",
+                            "FileUpload",
+                            "DatePicker",
+                            "DateRangePicker",
+                            "TimePicker",
+                            "TimeRangePicker",
+                            "Radio",
+                            "Select",
+                            "Checkbox",
+                            "Switch"
                           ]
                         },
                         "icon": {
                           "type": "string"
+                        },
+                        "iconPosition": {
+                          "enum": [
+                            "Begin",
+                            "End"
+                          ]
                         },
                         "inputMask": {
                           "type": "string"
@@ -10552,9 +10995,21 @@
                             "integer",
                             "null"
                           ]
+                        },
+                        "helpHint": {
+                          "type": "string"
+                        },
+                        "errorMessage": {
+                          "type": "string"
                         }
                       },
                       "additionalProperties": false
+                    },
+                    "isReadonly": {
+                      "type": [
+                        "boolean",
+                        "null"
+                      ]
                     }
                   },
                   "required": [
@@ -10567,7 +11022,8 @@
               }
             },
             "required": [
-              "name"
+              "name",
+              "attributes"
             ],
             "additionalProperties": false
           },

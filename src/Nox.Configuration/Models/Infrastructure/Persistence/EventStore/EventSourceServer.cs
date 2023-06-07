@@ -6,6 +6,6 @@ namespace Nox
     public class EventSourceServer: ServerBase
     {
         [Required]
-        public EventSourceServerProvider? Provider { get; set; }
+        public EventSourceServerProvider? Provider { get; internal set; }
     }
 }

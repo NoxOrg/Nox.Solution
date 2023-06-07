@@ -10,12 +10,12 @@ namespace Nox
     {
         [Required]
         [Pattern(@"^[^\s]*$")]
-        public string Name { get; set; } = string.Empty;
+        public string Name { get; internal set; } = string.Empty;
         
-        public string? Description { get; set; }
+        public string? Description { get; internal set; }
 
         [Required]
-        public NoxType? Type { get; set; }
+        public NoxType? Type { get; internal set; }
 
         #region TypeOptions
 
@@ -26,9 +26,11 @@ namespace Nox
 
         #endregion
 
-        public bool IsRequired { get; set; } = false;
+        public bool IsRequired { get; internal set; } = false;
 
-        public TypeUserInterface? UserInterface { get; set; }
+        public TypeUserInterface? UserInterface { get; internal set; }
+
+        public bool IsReadonly { get; internal set; } = false;
 
     }
 }

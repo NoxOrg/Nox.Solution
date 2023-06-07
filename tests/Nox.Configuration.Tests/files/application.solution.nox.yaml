@@ -1,0 +1,88 @@
+#
+# application.solution.nox.yaml
+#
+# yaml-language-server: $schema=../../../schemas/solution.json
+#
+
+
+name: TestService
+
+description: Yaml file for testing application
+
+application:
+  dataTransferObjects:
+    - name: CountryDto
+      description: Dto for country information
+      attributes:
+        - name: Id
+          description: The identity of the country, the Iso Alpha 2 code
+          type: text
+          textTypeOptions:
+            characterCasing: lower
+            maxLength: 2
+            minLength: 2
+
+  integration:
+    - name: SampleEtl
+      description: a Sample Etl
+      source:
+        name: SampleEtlDataSource
+        description: Sources Country data from a json file
+        dataConnection: CountryJsonData
+        schedule:
+          start: every day at 2am
+          retry:
+            limit: 5
+            delaySeconds: 5
+            doubleDelayLimit: 10
+          runOnStartup: true
+        watermark:
+          dateColumns:
+            - "CreateDate"
+            - "EditDate"
+          sequentialKeyColumn: CountryId
+      transform:
+        map:
+          - sourceColumn: IsoAlpha2Code
+            targetAttribute: Id
+            converter: upperCase
+          - sourceColumn: CountryName
+            targetAttribute: Name
+          - sourceColumn: CountryFullName
+            targetAttribute: FormalName
+        lookup:
+          - sourceColumn: RegionId
+            match:
+              table: GeoRegions
+              lookupColumn: Id
+              returnColumn: Name
+            targetAttribute: GeoRegion
+      target:
+        name: Country
+        dataConnection: Nox
+
+infrastructure: 
+  persistence: 
+    databaseServer: 
+      name: NoxEntityStore
+      serverUri: localhost
+      provider: sqlServer
+      user: sa
+      password: Developer*123
+    
+  messaging: 
+    domainEventServer: 
+      name: SampleDomainEventServer
+      provider: rabbitMQ
+      serverUri: localhost
+      
+    integrationEventServer: 
+      name: SampleIntegrationEventServer
+      provider: rabbitMQ
+      
+  dependencies:
+    dataConnections:
+      - name: Nox
+        provider: sqlServer
+      - name: CountryJsonData
+        provider: jsonFile

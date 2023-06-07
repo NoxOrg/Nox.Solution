@@ -10,17 +10,17 @@ namespace Nox
     {
         [Required]
         [AdditionalProperties(false)]
-        public Persistence? Persistence { get; set; }
+        public Persistence? Persistence { get; internal set; }
         
         [Required]
         [AdditionalProperties(false)]
-        public Messaging? Messaging { get; set; }
+        public Messaging? Messaging { get; internal set; }
         
 
         [AdditionalProperties(false)]
-        public Endpoints? Endpoints { get; set; }
+        public Endpoints? Endpoints { get; internal set; }
 
         [AdditionalProperties(false)]
-        public Dependencies? Dependencies { get; set; }
+        public Dependencies? Dependencies { get; internal set; }
     }
 }

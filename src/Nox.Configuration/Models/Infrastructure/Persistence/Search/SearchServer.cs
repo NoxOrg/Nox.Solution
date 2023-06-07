@@ -6,6 +6,6 @@ namespace Nox
     public class SearchServer: ServerBase
     {
         [Required]
-        public SearchServerProvider? Provider { get; set; }
+        public SearchServerProvider? Provider { get; internal set; }
     }
 }

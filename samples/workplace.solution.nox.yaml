@@ -365,8 +365,7 @@ application:
               targetAttribute: GeoRegion
       target:
         name: ???
-        dataConnection:
-          name: Nox #This points to Nox entity store
+        dataConnection: Nox #This points to Nox entity store
 
 infrastructure: 
 
@@ -404,6 +403,7 @@ infrastructure:
       
     eventSourceServer:
       name: SampleEvtSrc
+      serverUri: SampleEvt.iwgplc.com
       provider: eventStoreDb
       user: EvtUser
       password: EvtPassword
@@ -440,8 +440,8 @@ infrastructure:
         name: SampleEmailServer
         provider: sendGrid
         serverUri: sendgrid.igwplc.com
-        user: ElasticUser
-        password: ElasticPassword
+        user: SendGridUser
+        password: SendGridPassword
       smsServer:
         name: SampleSmsServer
         provider: twilio

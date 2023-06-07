@@ -7,6 +7,6 @@ namespace Nox
     [AdditionalProperties(false)]
     public class ArrayTypeOptions: NoxSimpleTypeDefinition 
     {
-        public ObjectTypeOptions? ObjectTypeOptions { get; set; }
+        public ObjectTypeOptions? ObjectTypeOptions { get; internal set; }
     }
 }

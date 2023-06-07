@@ -11,12 +11,14 @@ namespace Nox
         [Title("The name of the dto. Contains no spaces.")]
         [Description("The name of the dto. It should be a commonly used singular noun and be unique within a solution.")]
         [Pattern(@"^[^\s]*$")]
-        public string Name { get; set; } = string.Empty;
+        public string Name { get; internal set; } = string.Empty;
 
         [Title("A phrase describing the dto.")]
         [Description("A description of the dto and what it represents in the real world.")]
-        public string? Description { get; set; }
+        public string? Description { get; internal set; }
 
-        [AdditionalProperties(false)] public List<NoxSimpleTypeDefinition>? Attributes { get; set; }
+        [Required]
+        [AdditionalProperties(false)] 
+        public List<NoxSimpleTypeDefinition>? Attributes { get; internal set; }
     }
 }

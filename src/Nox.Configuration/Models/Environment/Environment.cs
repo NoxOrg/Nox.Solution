@@ -14,14 +14,14 @@ namespace Nox
         [Title("A short name for the environment. Contains no spaces.")]
         [Description("The name of the run-time environment. Each environment name should be unique within a solution.")]
         [Pattern(@"^[^\s]*$")]
-        public string Name { get; set; } = "dev";
+        public string Name { get; internal set; } = "dev";
 
         [Title("A short description of the run-time environment.")]
         [Description("The description of the run-time environment. Try to include the purpose or use of the environment.")]
-        public string? Description { get; set; }
+        public string? Description { get; internal set; }
 
         [Title("Whether this environment is a production environment (true) or not (false).")]
         [Description("Specifies which environment(s) are used for production or not. Affects how devops processes and the NOX runtime is configured.")]
-        public bool IsProduction { get; set; } = false;
+        public bool IsProduction { get; internal set; } = false;
     }
 }

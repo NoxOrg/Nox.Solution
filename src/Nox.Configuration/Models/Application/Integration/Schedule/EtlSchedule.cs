@@ -6,10 +6,12 @@ namespace Nox
     [AdditionalProperties(false)]
     public class EtlSchedule
     {
-        [Required] public string? Start { get; set; }
+        [Required] 
+        public string? Start { get; internal set; }
 
-        [AdditionalProperties(false)] public ScheduleRetryPolicy? Retry { get; set; }
+        [AdditionalProperties(false)] 
+        public ScheduleRetryPolicy? Retry { get; internal set; }
 
-        public bool? RunOnStartup { get; set; }
+        public bool? RunOnStartup { get; internal set; }
     }
 }

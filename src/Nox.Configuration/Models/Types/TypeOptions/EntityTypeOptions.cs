@@ -6,6 +6,6 @@ namespace Nox
     public class EntityTypeOptions : DefinitionBase
     {
         [Required]
-        public string? Entity { get; set; }
+        public string? Entity { get; internal set; }
     }
 }

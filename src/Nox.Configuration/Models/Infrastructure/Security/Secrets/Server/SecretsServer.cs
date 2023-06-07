@@ -6,6 +6,6 @@ namespace Nox
     [AdditionalProperties(false)]
     public class SecretsServer : ServerBase
     {
-        public SecretsProvider? Provider { get; set; }
+        public SecretsServerProvider? Provider { get; internal set; }
     }
 }

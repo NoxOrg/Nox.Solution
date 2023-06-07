@@ -7,6 +7,6 @@ namespace Nox
     {
         [Required]
         [AdditionalProperties(false)]
-        public CacheServerProvider? Provider { get; set; }
+        public CacheServerProvider? Provider { get; internal set; }
     }
 }

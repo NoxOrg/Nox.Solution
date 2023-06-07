@@ -6,12 +6,12 @@ namespace Nox
     public class Notifications
     {
         [AdditionalProperties(false)]
-        public EmailServer? EmailServer { get; set; }
+        public EmailServer? EmailServer { get; internal set; }
         
         [AdditionalProperties(false)]
-        public SmsServer? SmsServer { get; set; }
+        public SmsServer? SmsServer { get; internal set; }
         
         [AdditionalProperties(false)]
-        public ImServer? ImServer { get; set; }
+        public ImServer? ImServer { get; internal set; }
     }
 }

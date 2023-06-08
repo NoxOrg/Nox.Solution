@@ -45,7 +45,8 @@ namespace Nox
                 }    
             }
 
-            var config = new NoxConfiguration(_yamlFilePath);
+
+            var config = ResolveAndLoadConfiguration(_yamlFilePath);
             config.Validate();
 
             if (_mustInject)
@@ -53,6 +54,18 @@ namespace Nox
                 _services.AddSingleton(config);
             }
             
+            return config;
+        }
+
+        private NoxConfiguration ResolveAndLoadConfiguration(string yamlFilePath) 
+        {
+            var resolver = new YamlResolver(_yamlFilePath);
+            var yaml = resolver.ResolveReferences();
+            var deserializer = new DeserializerBuilder()
+                .WithNamingConvention(CamelCaseNamingConvention.Instance)
+                .Build();
+            var config = deserializer.Deserialize<NoxConfiguration>(yaml);
+            config.RootYamlFile = _yamlFilePath;
             return config;
         }
 

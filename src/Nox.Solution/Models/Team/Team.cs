@@ -22,6 +22,6 @@ namespace Nox.Solution
         [Title("Roles that a team member fulfills for this solution.")]
         [Description("The list of one or more roles that the user fulfills for this solution. At least one role is required")]
         [AdditionalProperties(false)]
-        public List<TeamRole>? Roles { get; internal set; }
+        public IReadOnlyList<TeamRole>? Roles { get; internal set; }
     }
 }

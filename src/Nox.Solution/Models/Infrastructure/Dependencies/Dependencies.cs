@@ -10,7 +10,7 @@ namespace Nox.Solution
         public Translations? Translations { get; internal set; }
         
         [AdditionalProperties(false)]
-        public List<DataConnection>? DataConnections { get; internal set; }
+        public IReadOnlyList<DataConnection>? DataConnections { get; internal set; }
         
         [AdditionalProperties(false)]
         public Notifications? Notifications { get; internal set; }

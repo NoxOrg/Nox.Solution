@@ -5,7 +5,7 @@ namespace Nox
 {
 
     [Title("A definition for a run-time environment.")]
-    [Description("A definition for the name, variables and other pertinent information pertaining to a run-time environment.")]
+    [Description("A definition for the name, production status and other pertinent information pertaining to a run-time environment.")]
     [AdditionalProperties(false)]
     public class Environment : DefinitionBase
     {

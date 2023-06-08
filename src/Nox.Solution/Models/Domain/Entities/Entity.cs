@@ -21,11 +21,13 @@ namespace Nox
         [Description("A description of the entity and what it represents in the real world.")]
         public string? Description { get; internal set; }
 
-        [Title("The pluraly name of the entity. Contains no spaces")]
+        [Title("The plural name of the entity. Contains no spaces")]
         [Description("The name for a set, group or collection of the entity. NOX will guess the plural if it is not supplied.")]
         [Pattern(@"^[^\s]*$")]
         public string PluralName { get; internal set; } = string.Empty;
 
+        [Title("Property reserved for future expansion to identify associated user interface component")]
+        [Description("This property provides information related to the entity's user interface implementation.")]
         public EntityUserInterface? UserInterface { get; internal set; }
       
         [Title("Specifies information on storing and retrieving entities")]

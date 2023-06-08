@@ -3,8 +3,8 @@ using System.Collections.Generic;
 
 namespace Nox
 {
-    [Title("Information about the team working on this solution.")]
-    [Description("Specify the members of the team working on the solution including their respective roles.")]
+    [Title("Information about the team member working on this solution.")]
+    [Description("Information of the team member including username and their respective role(s) of which their might me more than one.")]
     [AdditionalProperties(false)]
     public class Team : DefinitionBase
     {

@@ -39,6 +39,8 @@ namespace Nox
         [AdditionalProperties(false)]
         public VersionControl? VersionControl { get; internal set; }
 
+        [Title("Information about the team working on this solution.")]
+        [Description("Specify the members of the team working on the solution including their respective roles.")]
         [AdditionalProperties(false)]
         public List<Team>? Team { get; internal set; }
 

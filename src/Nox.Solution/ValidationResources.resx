@@ -249,4 +249,16 @@
     <data name="EntityPersistenceTableNameEmpty" xml:space="preserve">
         <value>The table name for persistence of entity '{0}' is not specified. All Nox entities must persist to a table.</value>
     </data>
+    <data name="ServerUriEmpty" xml:space="preserve">
+        <value>The server definition for {0} is missing a uri. All server definitions must have a hostname, IP address or URI specified in the ServerUri attribute.</value>
+    </data>
+    <data name="ServerUriInvalid" xml:space="preserve">
+        <value>The server definition for {0} has an invalid configuration. Unable to build a proper uri from the available attributes.</value>
+    </data>
+    <data name="ServerUriInvalidScheme" xml:space="preserve">
+        <value>The server definition for {0} has an invalid serverUri scheme, should be {1}. Unable to build a proper uri from the available attributes.</value>
+    </data>
+    <data name="IntegrationEventsServerDefaultsFalse" xml:space="preserve">
+        <value>Unable to apply defaults for infrastructure, messaging, integrationEventServer.</value>
+    </data>
 </root>

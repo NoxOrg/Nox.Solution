@@ -20,5 +20,18 @@ namespace Nox
                 .ToList();
             return string.Join(", ", list);
         }
+
+        public static string GetProviderScheme(MessagingServerProvider provider)
+        {
+            switch (provider)
+            {
+                case MessagingServerProvider.RabbitMq:
+                    return "rabbitmq";
+                case MessagingServerProvider.AzureServiceBus:
+                    return "sb";
+                default:
+                    return "";
+            }
+        }
     }
 }

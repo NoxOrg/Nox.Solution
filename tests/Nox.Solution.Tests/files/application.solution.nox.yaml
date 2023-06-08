@@ -71,18 +71,16 @@ infrastructure:
       password: Developer*123
     
   messaging: 
-    domainEventServer: 
-      name: SampleDomainEventServer
-      provider: rabbitMQ
-      serverUri: localhost
-      
     integrationEventServer: 
       name: SampleIntegrationEventServer
       provider: rabbitMQ
+      serverUri: rabbitmq://localhost/
       
   dependencies:
     dataConnections:
       - name: Nox
         provider: sqlServer
+        serverUri: Server=myServerAddress;Database=myDataBase;User Id=myUsername;Password=myPassword;
       - name: CountryJsonData
         provider: jsonFile
+        serverUri: file://foo/bar

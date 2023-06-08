@@ -49,6 +49,7 @@
       },
       "required": [
         "name",
+        "serverUri",
         "provider"
       ],
       "additionalProperties": false
@@ -99,7 +100,8 @@
         }
       },
       "required": [
-        "name"
+        "name",
+        "serverUri"
       ],
       "additionalProperties": false
     },
@@ -149,7 +151,8 @@
         }
       },
       "required": [
-        "name"
+        "name",
+        "serverUri"
       ],
       "additionalProperties": false
     }

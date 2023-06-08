@@ -1,7 +1,7 @@
 ﻿
 using Json.Schema.Generation;
 
-namespace Nox
+namespace Nox.Solution
 {
     [AdditionalProperties(false)]
     public class Messaging

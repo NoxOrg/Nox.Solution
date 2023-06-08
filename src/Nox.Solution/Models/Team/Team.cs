@@ -1,7 +1,7 @@
 ﻿using Json.Schema.Generation;
 using System.Collections.Generic;
 
-namespace Nox
+namespace Nox.Solution
 {
     [Title("Information about the team working on this solution.")]
     [Description("Specify the members of the team working on the solution including their respective roles.")]

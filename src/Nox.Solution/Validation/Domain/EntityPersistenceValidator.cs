@@ -1,6 +1,6 @@
 using FluentValidation;
 
-namespace Nox.Validation.Domain
+namespace Nox.Solution.Validation
 {
     public class EntityPersistenceValidator: AbstractValidator<EntityPersistence>
     {

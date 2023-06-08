@@ -5,7 +5,6 @@
     <LangVersion>10.0</LangVersion>
     <ImplicitUsings>disable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <RootNamespace>Nox</RootNamespace>
   </PropertyGroup>
 
   <PropertyGroup>
@@ -15,9 +14,9 @@
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <Copyright>Copyright (c) Andre Sharpe 2022</Copyright>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <AssemblyVersion>1.0.2.0</AssemblyVersion>
-    <FileVersion>1.0.2.0</FileVersion>
-    <PackageVersion>1.0.2</PackageVersion>
+    <AssemblyVersion>1.0.3.0</AssemblyVersion>
+    <FileVersion>1.0.3.0</FileVersion>
+    <PackageVersion>1.0.3</PackageVersion>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/NoxOrg/Nox</PackageProjectUrl>
     <RepositoryUrl>https://github.com/NoxOrg/Nox.Solution.git</RepositoryUrl>
@@ -38,6 +37,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="..\..\images\nox.png" Pack="true" PackagePath="" />
+  </ItemGroup>
+
+  <ItemGroup>
     <EmbeddedResource Update="ValidationResources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>ValidationResources.Designer.cs</LastGenOutput>
@@ -50,10 +53,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>ValidationResources.resx</DependentUpon>
     </Compile>
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="..\..\images\nox.png" Pack="true" PackagePath="" />
   </ItemGroup>
 
 </Project>

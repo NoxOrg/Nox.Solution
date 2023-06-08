@@ -2,13 +2,13 @@ using System.Collections.Generic;
 using System.Linq;
 using FluentValidation;
 
-namespace Nox.Validation.Team
+namespace Nox.Solution.Validation
 {
-    public class TeamValidator: AbstractValidator<Nox.Team>
+    public class TeamValidator: AbstractValidator<Team>
     {
-        private readonly IEnumerable<Nox.Team>? _members;
+        private readonly IEnumerable<Team>? _members;
         
-        public TeamValidator(IEnumerable<Nox.Team>? members)
+        public TeamValidator(IEnumerable<Team>? members)
         {
             if (members == null) return;
             _members = members;
@@ -25,7 +25,7 @@ namespace Nox.Validation.Team
                 .WithMessage(t => string.Format(ValidationResources.TeamUserNameDuplicate, t.UserName));
         }
         
-        private bool HaveUniqueUserName(Nox.Team toEvaluate, string userName)
+        private bool HaveUniqueUserName(Team toEvaluate, string userName)
         {
             return _members!.All(member => member.Equals(toEvaluate) || member.UserName != userName);
         }

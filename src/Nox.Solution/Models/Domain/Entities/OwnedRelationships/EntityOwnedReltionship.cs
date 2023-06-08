@@ -1,7 +1,7 @@
 ﻿using JetBrains.Annotations;
 using Json.Schema.Generation;
 
-namespace Nox
+namespace Nox.Solution
 {
     [Title("Defines a one way owned relationship to another entity.")]
     [Description("Defines a one way relationship to an owned entity. This automatically flags this entity as an aggregate root.")]

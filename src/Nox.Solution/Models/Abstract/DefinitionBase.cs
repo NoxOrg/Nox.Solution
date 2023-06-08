@@ -2,7 +2,7 @@
 using System.Text.Json.Serialization;
 using JetBrains.Annotations;
 
-namespace Nox
+namespace Nox.Solution
 {
 
     public abstract class DefinitionBase

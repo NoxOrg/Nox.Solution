@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using FluentValidation;
 
-namespace Nox.Validation.Base
+namespace Nox.Solution.Validation
 {
     public class ServerBaseValidator: AbstractValidator<ServerBase>
     {

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Humanizer;
 
-namespace Nox
+namespace Nox.Solution
 {
 
     [Title("Defines an entity or aggregate root")]

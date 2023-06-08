@@ -1,6 +1,6 @@
 ﻿using Json.Schema.Generation;
 
-namespace Nox
+namespace Nox.Solution
 {
 
     [Title("Specifies information on displaying the entity on a user interface")]

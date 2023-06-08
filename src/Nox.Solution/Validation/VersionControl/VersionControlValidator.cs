@@ -1,8 +1,8 @@
 using FluentValidation;
 
-namespace Nox.Validation.VersionControl
+namespace Nox.Solution.Validation
 {
-    public class VersionControlValidator: AbstractValidator<Nox.VersionControl>
+    public class VersionControlValidator: AbstractValidator<VersionControl>
     {
         public VersionControlValidator()
         {

@@ -1,6 +1,6 @@
 ﻿using Json.Schema.Generation;
 
-namespace Nox
+namespace Nox.Solution
 {
 
     [Title("Defines the request parameters for a domain query.")]

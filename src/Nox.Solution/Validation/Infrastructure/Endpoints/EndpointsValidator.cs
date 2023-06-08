@@ -1,10 +1,9 @@
 using System.Collections.Generic;
 using FluentValidation;
-using Nox.Validation.Base;
 
-namespace Nox.Validation.Infrastructure.Endpoints
+namespace Nox.Solution.Validation
 {
-    public class EndpointsValidator: AbstractValidator<Nox.Endpoints>
+    public class EndpointsValidator: AbstractValidator<Endpoints>
     {
         public EndpointsValidator(IEnumerable<ServerBase>? servers)
         {

@@ -1,7 +1,7 @@
 ﻿using Json.Schema.Generation;
 using System.Collections.Generic;
 
-namespace Nox
+namespace Nox.Solution
 {
 
     [Title("Information about the domain including entities and their relationships")]

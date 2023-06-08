@@ -6,7 +6,7 @@ using Nox.Utilities.Yaml;
 using YamlDotNet.Serialization;
 using YamlDotNet.Serialization.NamingConventions;
 
-namespace Nox
+namespace Nox.Solution
 {
     public class NoxSolutionBuilder
     {

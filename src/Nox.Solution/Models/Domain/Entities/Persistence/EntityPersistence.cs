@@ -1,7 +1,7 @@
 ﻿using JetBrains.Annotations;
 using Json.Schema.Generation;
 
-namespace Nox
+namespace Nox.Solution
 {
 
     [Title("Specifies information on storing and retrieving the entity")]

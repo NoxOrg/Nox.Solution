@@ -1,9 +1,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using FluentValidation;
-using Nox.Validation.Base;
 
-namespace Nox.Validation.Domain
+namespace Nox.Solution.Validation
 {
     public class EntityValidator: AbstractValidator<Entity>
     {

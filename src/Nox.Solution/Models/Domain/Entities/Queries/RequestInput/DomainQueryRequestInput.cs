@@ -2,7 +2,7 @@
 
 using Json.Schema.Generation;
 
-namespace Nox
+namespace Nox.Solution
 {
     public class DomainQueryRequestInput : NoxComplexTypeDefinition
     {

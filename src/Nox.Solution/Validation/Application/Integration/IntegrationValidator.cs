@@ -2,14 +2,14 @@ using System.Collections.Generic;
 using System.Linq;
 using FluentValidation;
 
-namespace Nox.Validation.Application.Integration
+namespace Nox.Solution.Validation
 {
-    public class IntegrationValidator: AbstractValidator<Nox.Integration>
+    public class IntegrationValidator: AbstractValidator<Integration>
     {
-        private readonly IEnumerable<Nox.Integration>? _integrations;
+        private readonly IEnumerable<Integration>? _integrations;
         private readonly IEnumerable<DataConnection>? _dataConnections;
 
-        public IntegrationValidator(IEnumerable<Nox.Integration>? integrations, IEnumerable<DataConnection>? dataConnections)
+        public IntegrationValidator(IEnumerable<Integration>? integrations, IEnumerable<DataConnection>? dataConnections)
         {
             if (integrations == null) return;
             _dataConnections = dataConnections;
@@ -40,7 +40,7 @@ namespace Nox.Validation.Application.Integration
                 .SetValidator(v => new EtlTargetValidator(v.Name, _dataConnections));
         }
         
-        private bool HaveUniqueName(Nox.Integration toEvaluate, string name)
+        private bool HaveUniqueName(Integration toEvaluate, string name)
         {
             return _integrations!.All(dto => dto.Equals(toEvaluate) || dto.Name != name);
         }

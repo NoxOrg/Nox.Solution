@@ -1,7 +1,7 @@
 ﻿using Json.Schema.Generation;
 using System;
 
-namespace Nox
+namespace Nox.Solution
 {
     [AdditionalProperties(false)]
     public enum VersionControlProvider

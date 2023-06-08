@@ -1,7 +1,7 @@
 using System;
 using Nox.Exceptions;
 
-namespace Nox.ServerUriBuilders;
+namespace Nox.Solution.Builders;
 
 public class NoxUriBuilder
 {

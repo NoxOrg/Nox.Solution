@@ -1,10 +1,9 @@
 using System.Collections.Generic;
 using FluentValidation;
-using Nox.Validation.Base;
 
-namespace Nox.Validation.Infrastructure.Dependencies
+namespace Nox.Solution.Validation
 {
-    public class DependenciesValidator: AbstractValidator<Nox.Dependencies>
+    public class DependenciesValidator: AbstractValidator<Dependencies>
     {
         public DependenciesValidator(IEnumerable<ServerBase>? servers)
         {

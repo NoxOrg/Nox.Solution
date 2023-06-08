@@ -348,6 +348,10 @@
                 "numberTypeOptions": {
                   "type": "object",
                   "properties": {
+                    "$ref": {
+                      "type": "string",
+                      "format": "uri"
+                    },
                     "decimalDigits": {
                       "type": [
                         "integer",
@@ -365,10 +369,6 @@
                     },
                     "maxValue": {
                       "type": "number"
-                    },
-                    "$ref": {
-                      "type": "string",
-                      "format": "uri"
                     }
                   },
                   "additionalProperties": false
@@ -571,12 +571,12 @@
                 "entityTypeOptions": {
                   "type": "object",
                   "properties": {
+                    "entity": {
+                      "type": "string"
+                    },
                     "$ref": {
                       "type": "string",
                       "format": "uri"
-                    },
-                    "entity": {
-                      "type": "string"
                     }
                   },
                   "required": [

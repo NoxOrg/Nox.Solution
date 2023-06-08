@@ -1,4 +1,4 @@
-namespace Nox
+namespace Nox.Solution
 {
     public class Endpoints
     {

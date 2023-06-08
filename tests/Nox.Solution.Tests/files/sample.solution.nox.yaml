@@ -407,10 +407,6 @@ infrastructure:
       password: EvtPassword
 
   messaging:
-    
-    domainEventServer:
-      name: MediatR
-      provider: mediatR
 
     integrationEventServer:
       name: IntegrationBus

@@ -57,6 +57,7 @@
           },
           "required": [
             "name",
+            "serverUri",
             "provider"
           ],
           "additionalProperties": false
@@ -110,6 +111,7 @@
           },
           "required": [
             "name",
+            "serverUri",
             "provider"
           ],
           "additionalProperties": false
@@ -159,6 +161,7 @@
           },
           "required": [
             "name",
+            "serverUri",
             "provider"
           ],
           "additionalProperties": false
@@ -208,6 +211,7 @@
           },
           "required": [
             "name",
+            "serverUri",
             "provider"
           ],
           "additionalProperties": false
@@ -221,59 +225,6 @@
     "messaging": {
       "type": "object",
       "properties": {
-        "domainEventServer": {
-          "type": "object",
-          "properties": {
-            "name": {
-              "type": "string",
-              "pattern": "^[^\\s]*$",
-              "title": "The unique name of this server component in the solution.",
-              "description": "The name of this server component in the solution. The name must be unique in the solution configuration"
-            },
-            "serverUri": {
-              "type": "string",
-              "title": "Hostname, IP address or URI.",
-              "description": "The name, address, URI or IP of the server to connect to."
-            },
-            "port": {
-              "type": [
-                "integer",
-                "null"
-              ],
-              "title": "Server port",
-              "description": "The port to connect to."
-            },
-            "user": {
-              "type": "string",
-              "title": "Username.",
-              "description": "The username to use when connecting to this server."
-            },
-            "password": {
-              "type": "string",
-              "title": "Password.",
-              "description": "The password to use when connecting to this server."
-            },
-            "options": {
-              "type": "string",
-              "title": "Additional options.",
-              "description": "A list of additional options to set when connecting to this server."
-            },
-            "provider": {
-              "enum": [
-                "MediatR",
-                "RabbitMq",
-                "AzureServiceBus",
-                "AmazonSqs"
-              ],
-              "additionalProperties": false
-            }
-          },
-          "required": [
-            "name",
-            "provider"
-          ],
-          "additionalProperties": false
-        },
         "integrationEventServer": {
           "type": "object",
           "properties": {
@@ -313,23 +264,23 @@
             },
             "provider": {
               "enum": [
-                "MediatR",
                 "RabbitMq",
                 "AzureServiceBus",
-                "AmazonSqs"
+                "AmazonSqs",
+                "InMemory"
               ],
               "additionalProperties": false
             }
           },
           "required": [
             "name",
+            "serverUri",
             "provider"
           ],
           "additionalProperties": false
         }
       },
       "required": [
-        "domainEventServer",
         "integrationEventServer"
       ],
       "additionalProperties": false
@@ -376,7 +327,8 @@
             }
           },
           "required": [
-            "name"
+            "name",
+            "serverUri"
           ],
           "additionalProperties": false
         },
@@ -419,7 +371,8 @@
             }
           },
           "required": [
-            "name"
+            "name",
+            "serverUri"
           ],
           "additionalProperties": false
         }
@@ -468,7 +421,8 @@
             }
           },
           "required": [
-            "name"
+            "name",
+            "serverUri"
           ],
           "additionalProperties": false
         },
@@ -529,7 +483,8 @@
               }
             },
             "required": [
-              "name"
+              "name",
+              "serverUri"
             ],
             "additionalProperties": false
           },
@@ -585,6 +540,7 @@
               },
               "required": [
                 "name",
+                "serverUri",
                 "provider"
               ],
               "additionalProperties": false
@@ -635,7 +591,8 @@
                 }
               },
               "required": [
-                "name"
+                "name",
+                "serverUri"
               ],
               "additionalProperties": false
             },
@@ -685,7 +642,8 @@
                 }
               },
               "required": [
-                "name"
+                "name",
+                "serverUri"
               ],
               "additionalProperties": false
             }
@@ -731,7 +689,8 @@
             }
           },
           "required": [
-            "name"
+            "name",
+            "serverUri"
           ],
           "additionalProperties": false
         },
@@ -787,7 +746,8 @@
                     }
                   },
                   "required": [
-                    "name"
+                    "name",
+                    "serverUri"
                   ],
                   "additionalProperties": false
                 },

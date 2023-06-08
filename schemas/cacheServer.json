@@ -48,6 +48,7 @@
   },
   "required": [
     "name",
+    "serverUri",
     "provider"
   ],
   "additionalProperties": false

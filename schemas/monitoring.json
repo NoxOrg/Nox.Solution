@@ -38,7 +38,8 @@
     }
   },
   "required": [
-    "name"
+    "name",
+    "serverUri"
   ],
   "additionalProperties": false
 }

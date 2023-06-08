@@ -16,7 +16,8 @@ namespace Nox
         RabbitMq,
         SqlServer,
         WebApi,
-        XmlFile
+        XmlFile,
+        InMemory
     }
     
     public static class DataConnectionProviderHelpers

@@ -41,7 +41,8 @@
         }
       },
       "required": [
-        "name"
+        "name",
+        "serverUri"
       ],
       "additionalProperties": false
     },
@@ -84,7 +85,8 @@
         }
       },
       "required": [
-        "name"
+        "name",
+        "serverUri"
       ],
       "additionalProperties": false
     }

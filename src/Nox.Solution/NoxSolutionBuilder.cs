@@ -63,6 +63,7 @@ namespace Nox.Solution
             var yaml = resolver.ResolveReferences();
             var deserializer = new DeserializerBuilder()
                 .WithNamingConvention(CamelCaseNamingConvention.Instance)
+                .WithNodeTypeResolver(new ReadOnlyCollectionNodeTypeResolver())
                 .Build();
             var config = deserializer.Deserialize<NoxSolution>(yaml);
             config.RootYamlFile = _yamlFilePath;

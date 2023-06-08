@@ -558,12 +558,12 @@
                       "entityTypeOptions": {
                         "type": "object",
                         "properties": {
-                          "entity": {
-                            "type": "string"
-                          },
                           "$ref": {
                             "type": "string",
                             "format": "uri"
+                          },
+                          "entity": {
+                            "type": "string"
                           }
                         },
                         "required": [
@@ -970,12 +970,12 @@
                                 "entityTypeOptions": {
                                   "type": "object",
                                   "properties": {
-                                    "entity": {
-                                      "type": "string"
-                                    },
                                     "$ref": {
                                       "type": "string",
                                       "format": "uri"
+                                    },
+                                    "entity": {
+                                      "type": "string"
                                     }
                                   },
                                   "required": [
@@ -1385,12 +1385,12 @@
                           "entityTypeOptions": {
                             "type": "object",
                             "properties": {
-                              "entity": {
-                                "type": "string"
-                              },
                               "$ref": {
                                 "type": "string",
                                 "format": "uri"
+                              },
+                              "entity": {
+                                "type": "string"
                               }
                             },
                             "required": [
@@ -1797,12 +1797,12 @@
                                     "entityTypeOptions": {
                                       "type": "object",
                                       "properties": {
-                                        "entity": {
-                                          "type": "string"
-                                        },
                                         "$ref": {
                                           "type": "string",
                                           "format": "uri"
+                                        },
+                                        "entity": {
+                                          "type": "string"
                                         }
                                       },
                                       "required": [
@@ -2221,12 +2221,12 @@
                           "entityTypeOptions": {
                             "type": "object",
                             "properties": {
-                              "entity": {
-                                "type": "string"
-                              },
                               "$ref": {
                                 "type": "string",
                                 "format": "uri"
+                              },
+                              "entity": {
+                                "type": "string"
                               }
                             },
                             "required": [
@@ -2633,12 +2633,12 @@
                                     "entityTypeOptions": {
                                       "type": "object",
                                       "properties": {
-                                        "entity": {
-                                          "type": "string"
-                                        },
                                         "$ref": {
                                           "type": "string",
                                           "format": "uri"
+                                        },
+                                        "entity": {
+                                          "type": "string"
                                         }
                                       },
                                       "required": [
@@ -3066,12 +3066,12 @@
                     "entityTypeOptions": {
                       "type": "object",
                       "properties": {
-                        "entity": {
-                          "type": "string"
-                        },
                         "$ref": {
                           "type": "string",
                           "format": "uri"
+                        },
+                        "entity": {
+                          "type": "string"
                         }
                       },
                       "required": [
@@ -3478,12 +3478,12 @@
                               "entityTypeOptions": {
                                 "type": "object",
                                 "properties": {
-                                  "entity": {
-                                    "type": "string"
-                                  },
                                   "$ref": {
                                     "type": "string",
                                     "format": "uri"
+                                  },
+                                  "entity": {
+                                    "type": "string"
                                   }
                                 },
                                 "required": [
@@ -3893,12 +3893,12 @@
                         "entityTypeOptions": {
                           "type": "object",
                           "properties": {
-                            "entity": {
-                              "type": "string"
-                            },
                             "$ref": {
                               "type": "string",
                               "format": "uri"
+                            },
+                            "entity": {
+                              "type": "string"
                             }
                           },
                           "required": [
@@ -4305,12 +4305,12 @@
                                   "entityTypeOptions": {
                                     "type": "object",
                                     "properties": {
-                                      "entity": {
-                                        "type": "string"
-                                      },
                                       "$ref": {
                                         "type": "string",
                                         "format": "uri"
+                                      },
+                                      "entity": {
+                                        "type": "string"
                                       }
                                     },
                                     "required": [
@@ -4729,12 +4729,12 @@
                         "entityTypeOptions": {
                           "type": "object",
                           "properties": {
-                            "entity": {
-                              "type": "string"
-                            },
                             "$ref": {
                               "type": "string",
                               "format": "uri"
+                            },
+                            "entity": {
+                              "type": "string"
                             }
                           },
                           "required": [
@@ -5141,12 +5141,12 @@
                                   "entityTypeOptions": {
                                     "type": "object",
                                     "properties": {
-                                      "entity": {
-                                        "type": "string"
-                                      },
                                       "$ref": {
                                         "type": "string",
                                         "format": "uri"
+                                      },
+                                      "entity": {
+                                        "type": "string"
                                       }
                                     },
                                     "required": [
@@ -5587,12 +5587,12 @@
                 "entityTypeOptions": {
                   "type": "object",
                   "properties": {
-                    "entity": {
-                      "type": "string"
-                    },
                     "$ref": {
                       "type": "string",
                       "format": "uri"
+                    },
+                    "entity": {
+                      "type": "string"
                     }
                   },
                   "required": [
@@ -5999,12 +5999,12 @@
                           "entityTypeOptions": {
                             "type": "object",
                             "properties": {
-                              "entity": {
-                                "type": "string"
-                              },
                               "$ref": {
                                 "type": "string",
                                 "format": "uri"
+                              },
+                              "entity": {
+                                "type": "string"
                               }
                             },
                             "required": [
@@ -6414,12 +6414,12 @@
                     "entityTypeOptions": {
                       "type": "object",
                       "properties": {
-                        "entity": {
-                          "type": "string"
-                        },
                         "$ref": {
                           "type": "string",
                           "format": "uri"
+                        },
+                        "entity": {
+                          "type": "string"
                         }
                       },
                       "required": [
@@ -6826,12 +6826,12 @@
                               "entityTypeOptions": {
                                 "type": "object",
                                 "properties": {
-                                  "entity": {
-                                    "type": "string"
-                                  },
                                   "$ref": {
                                     "type": "string",
                                     "format": "uri"
+                                  },
+                                  "entity": {
+                                    "type": "string"
                                   }
                                 },
                                 "required": [
@@ -7250,12 +7250,12 @@
                     "entityTypeOptions": {
                       "type": "object",
                       "properties": {
-                        "entity": {
-                          "type": "string"
-                        },
                         "$ref": {
                           "type": "string",
                           "format": "uri"
+                        },
+                        "entity": {
+                          "type": "string"
                         }
                       },
                       "required": [
@@ -7662,12 +7662,12 @@
                               "entityTypeOptions": {
                                 "type": "object",
                                 "properties": {
-                                  "entity": {
-                                    "type": "string"
-                                  },
                                   "$ref": {
                                     "type": "string",
                                     "format": "uri"
+                                  },
+                                  "entity": {
+                                    "type": "string"
                                   }
                                 },
                                 "required": [
@@ -8107,12 +8107,12 @@
                 "entityTypeOptions": {
                   "type": "object",
                   "properties": {
-                    "entity": {
-                      "type": "string"
-                    },
                     "$ref": {
                       "type": "string",
                       "format": "uri"
+                    },
+                    "entity": {
+                      "type": "string"
                     }
                   },
                   "required": [
@@ -8521,12 +8521,12 @@
                 "entityTypeOptions": {
                   "type": "object",
                   "properties": {
-                    "entity": {
-                      "type": "string"
-                    },
                     "$ref": {
                       "type": "string",
                       "format": "uri"
+                    },
+                    "entity": {
+                      "type": "string"
                     }
                   },
                   "required": [

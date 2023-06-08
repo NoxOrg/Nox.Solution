@@ -36,28 +36,28 @@ namespace Nox.Solution
         [Title("Defines relationships to other entities.")]
         [Description("Defines one way relationships to other entities. Remember to define the reverse relationship on the target entities.")]
         [AdditionalProperties(false)]
-        public List<EntityRelationship>? Relationships { get; internal set; }
+        public IReadOnlyList<EntityRelationship>? Relationships { get; internal set; }
 
         [Title("Defines owned relationships to another entity.")]
         [Description("Defines relationship to owned entities. This entity will be treated as an aggregate root.")]
         [AdditionalProperties(false)]
-        public List<EntityOwnedRelationship>? OwnedRelationships { get; internal set; }
+        public IReadOnlyList<EntityOwnedRelationship>? OwnedRelationships { get; internal set; }
 
         [Title("Defines queries for the domain.")]
         [Description("Defines queries for the domain that operates on this entity. Queries should have no side effects and not mutate the domain state.")]
         [AdditionalProperties(false)]
-        public List<DomainQuery>? Queries { get; internal set; }
+        public IReadOnlyList<DomainQuery>? Queries { get; internal set; }
 
         [Title("Defines commands for the domain.")]
         [Description("Defines commands for the domain that operates on this entity. Commands may have side effects and mutate the domain state.")]
         [AdditionalProperties(false)]
-        public List<DomainCommand>? Commands { get; internal set; }
+        public IReadOnlyList<DomainCommand>? Commands { get; internal set; }
 
         [AdditionalProperties(false)]
-        public List<NoxSimpleTypeDefinition>? Keys { get; internal set; }
+        public IReadOnlyList<NoxSimpleTypeDefinition>? Keys { get; internal set; }
         
         [AdditionalProperties(false)]
-        public List<NoxSimpleTypeDefinition>? Attributes { get; internal set; }
+        public IReadOnlyList<NoxSimpleTypeDefinition>? Attributes { get; internal set; }
 
         internal bool ApplyDefaults()
         {

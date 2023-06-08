@@ -29,18 +29,18 @@ namespace Nox.Solution
 
         [Title("The environment variables used in your solution and default values.")]
         [Description("A key/value pair of environment variables used in your solution and their defaults.")]
-        public Dictionary<string, string>? Variables { get; internal set; }
+        public IReadOnlyDictionary<string, string>? Variables { get; internal set; }
 
         [Title("Definitions for run-time environments.")]
         [Description("Definitions for the name, variables and other pertinent information pertaining to run-time environments.")]
         [AdditionalProperties(false)]
-        public List<Environment>? Environments { get; internal set; }
+        public IReadOnlyList<Environment>? Environments { get; internal set; }
 
         [AdditionalProperties(false)]
         public VersionControl? VersionControl { get; internal set; }
 
         [AdditionalProperties(false)]
-        public List<Team>? Team { get; internal set; }
+        public IReadOnlyList<Team>? Team { get; internal set; }
 
         [AdditionalProperties(false)]
         public Domain? Domain { get; internal set; }

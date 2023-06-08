@@ -19,7 +19,7 @@ namespace Nox.Solution
         public string? Description { get; internal set; }
 
         [AdditionalProperties(false)]
-        public List<DomainQueryRequestInput>? RequestInput { get; internal set; }
+        public IReadOnlyList<DomainQueryRequestInput>? RequestInput { get; internal set; }
 
         [Required]
         [AdditionalProperties(false)]

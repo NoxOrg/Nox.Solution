@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using FluentValidation;
 
-namespace Nox.Configuration.Validation
+namespace Nox
 {
-    public class TeamValidator: AbstractValidator<Team>
+    internal class TeamValidator: AbstractValidator<Team>
     {
         private readonly IEnumerable<Team>? _members;
         

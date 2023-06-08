@@ -1,8 +1,8 @@
 using FluentValidation;
 
-namespace Nox.Configuration.Validation
+namespace Nox
 {
-    public class SolutionValidator: AbstractValidator<Solution>
+    internal class SolutionValidator: AbstractValidator<Solution>
     {
         public SolutionValidator()
         {

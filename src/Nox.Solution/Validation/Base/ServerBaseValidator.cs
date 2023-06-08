@@ -2,9 +2,9 @@ using System.Collections.Generic;
 using System.Linq;
 using FluentValidation;
 
-namespace Nox.Configuration.Validation.Base
+namespace Nox
 {
-    public class ServerBaseValidator: AbstractValidator<ServerBase>
+    internal class ServerBaseValidator: AbstractValidator<ServerBase>
     {
         private readonly IEnumerable<ServerBase>? _servers;
 

@@ -2,9 +2,9 @@ using System.Collections.Generic;
 using System.Linq;
 using FluentValidation;
 
-namespace Nox.Configuration.Validation
+namespace Nox
 {
-    public class EtlTargetValidator: AbstractValidator<EtlTarget>
+    internal class EtlTargetValidator: AbstractValidator<EtlTarget>
     {
         private readonly IEnumerable<DataConnection>? _dataConnections;
 

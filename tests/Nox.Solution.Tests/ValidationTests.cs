@@ -1,6 +1,4 @@
-using Nox.Configuration.Validation;
-
-namespace Nox.Configuration.Tests;
+namespace Nox.SolutionConfig.Tests;
 
 public class ValidationTests
 {

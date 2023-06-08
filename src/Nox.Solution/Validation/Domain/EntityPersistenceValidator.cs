@@ -1,8 +1,8 @@
 using FluentValidation;
 
-namespace Nox.Configuration.Validation
+namespace Nox
 {
-    public class EntityPersistenceValidator: AbstractValidator<EntityPersistence>
+    internal class EntityPersistenceValidator: AbstractValidator<EntityPersistence>
     {
         public EntityPersistenceValidator(string entityName)
         {

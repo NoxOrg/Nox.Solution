@@ -1,8 +1,8 @@
 using FluentValidation;
 
-namespace Nox.Configuration.Validation
+namespace Nox
 {
-    public class EtlMatchValidator: AbstractValidator<EtlMatch>
+    internal class EtlMatchValidator: AbstractValidator<EtlMatch>
     {
         public EtlMatchValidator(string etlName)
         {

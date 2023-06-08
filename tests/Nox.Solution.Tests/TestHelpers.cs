@@ -1,4 +1,4 @@
-namespace Nox.Configuration.Tests;
+namespace Nox.SolutionConfig.Tests;
 
 public static class TestHelpers
 {

@@ -1,8 +1,8 @@
 using FluentValidation;
 
-namespace Nox.Configuration.Validation
+namespace Nox
 {
-    public class EtlScheduleValidator: AbstractValidator<EtlSchedule>
+    internal class EtlScheduleValidator: AbstractValidator<EtlSchedule>
     {
         public EtlScheduleValidator(string sourceName, string etlName)
         {

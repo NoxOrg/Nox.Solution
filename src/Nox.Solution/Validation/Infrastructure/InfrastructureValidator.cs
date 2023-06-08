@@ -2,9 +2,9 @@ using System.Collections.Generic;
 using System.Linq;
 using FluentValidation;
 
-namespace Nox.Configuration.Validation
+namespace Nox
 {
-    public class InfrastructureValidator: AbstractValidator<Infrastructure>
+    internal class InfrastructureValidator: AbstractValidator<Infrastructure>
     {
         private IEnumerable<ServerBase>? _servers;
 

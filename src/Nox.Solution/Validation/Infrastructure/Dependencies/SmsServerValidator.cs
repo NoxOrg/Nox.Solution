@@ -1,10 +1,9 @@
 using System.Collections.Generic;
 using FluentValidation;
-using Nox.Configuration.Validation.Base;
 
-namespace Nox.Configuration.Validation
+namespace Nox
 {
-    public class SmsServerValidator: AbstractValidator<SmsServer>
+    internal class SmsServerValidator: AbstractValidator<SmsServer>
     {
         public SmsServerValidator(IEnumerable<ServerBase>? servers)
         {

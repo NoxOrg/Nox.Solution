@@ -1,8 +1,8 @@
 using FluentValidation;
 
-namespace Nox.Configuration.Validation
+namespace Nox
 {
-    public class EtlLookupValidator: AbstractValidator<EtlLookup>
+    internal class EtlLookupValidator: AbstractValidator<EtlLookup>
     {
         public EtlLookupValidator(string etlName)
         {

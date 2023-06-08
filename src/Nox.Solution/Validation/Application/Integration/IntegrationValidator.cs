@@ -2,9 +2,9 @@ using System.Collections.Generic;
 using System.Linq;
 using FluentValidation;
 
-namespace Nox.Configuration.Validation
+namespace Nox
 {
-    public class IntegrationValidator: AbstractValidator<Integration>
+    internal class IntegrationValidator: AbstractValidator<Integration>
     {
         private readonly IEnumerable<Integration>? _integrations;
         private readonly IEnumerable<DataConnection>? _dataConnections;

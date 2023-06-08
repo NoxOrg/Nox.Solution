@@ -3,7 +3,7 @@ using Json.Schema;
 using Json.Schema.Generation;
 using System.Text.Json;
 
-namespace Nox.Configuration.Tests;
+namespace Nox.SolutionConfig.Tests;
 
 public class GenerateSchemasTests
 {

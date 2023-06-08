@@ -1,8 +1,8 @@
 using FluentValidation;
 
-namespace Nox.Configuration.Validation
+namespace Nox
 {
-    public class DomainValidator: AbstractValidator<Domain>
+    internal class DomainValidator: AbstractValidator<Domain>
     {
         public DomainValidator()
         {

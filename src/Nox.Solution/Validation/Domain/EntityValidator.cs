@@ -1,11 +1,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using FluentValidation;
-using Nox.Configuration.Validation.Base;
 
-namespace Nox.Configuration.Validation
+namespace Nox
 {
-    public class EntityValidator: AbstractValidator<Entity>
+    internal class EntityValidator: AbstractValidator<Entity>
     {
         private readonly IEnumerable<Entity>? _entities;
 

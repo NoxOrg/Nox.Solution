@@ -1,8 +1,8 @@
 using FluentValidation;
 
-namespace Nox.Configuration.Validation
+namespace Nox
 {
-    public class EtlTransformValidator: AbstractValidator<EtlTransform>
+    internal class EtlTransformValidator: AbstractValidator<EtlTransform>
     {
         public EtlTransformValidator(string etlName)
         {

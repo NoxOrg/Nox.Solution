@@ -1,10 +1,9 @@
 using System.Collections.Generic;
 using FluentValidation;
-using Nox.Configuration.Validation.Base;
 
-namespace Nox.Configuration.Validation
+namespace Nox
 {
-    public class PersistenceValidator: AbstractValidator<Persistence>
+    internal class PersistenceValidator: AbstractValidator<Persistence>
     {
         public PersistenceValidator(IEnumerable<ServerBase>? servers)
         {

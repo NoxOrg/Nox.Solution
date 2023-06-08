@@ -1,9 +1,9 @@
 using System.Collections.Generic;
 using FluentValidation;
 
-namespace Nox.Configuration.Validation
+namespace Nox
 {
-    public class SecurityValidator: AbstractValidator<Security>
+    internal class SecurityValidator: AbstractValidator<Security>
     {
         public SecurityValidator(IEnumerable<ServerBase>? servers)
         {

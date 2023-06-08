@@ -1,11 +1,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using FluentValidation;
-using Nox.Configuration.Validation.Base;
 
-namespace Nox.Configuration.Validation
+namespace Nox
 {
-    public class DataTransferObjectValidator: AbstractValidator<DataTransferObject>
+    internal class DataTransferObjectValidator: AbstractValidator<DataTransferObject>
     {
         private readonly IEnumerable<DataTransferObject>? _dtos;
 

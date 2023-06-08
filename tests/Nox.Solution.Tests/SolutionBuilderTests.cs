@@ -1,6 +1,6 @@
 using Nox.Exceptions;
 
-namespace Nox.Configuration.Tests;
+namespace Nox.SolutionConfig.Tests;
 
 public class SolutionBuilderTests
 {

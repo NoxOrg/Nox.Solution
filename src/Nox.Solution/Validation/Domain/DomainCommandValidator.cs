@@ -1,11 +1,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using FluentValidation;
-using Nox.Configuration.Validation.Base;
 
-namespace Nox.Configuration.Validation
+namespace Nox
 {
-    public class DomainCommandValidator: AbstractValidator<DomainCommand>
+    internal class DomainCommandValidator: AbstractValidator<DomainCommand>
     {
         private readonly IEnumerable<DomainCommand>? _commands;
 

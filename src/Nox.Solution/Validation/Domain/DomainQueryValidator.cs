@@ -2,9 +2,9 @@ using System.Collections.Generic;
 using System.Linq;
 using FluentValidation;
 
-namespace Nox.Configuration.Validation
+namespace Nox
 {
-    public class DomainQueryValidator: AbstractValidator<DomainQuery>
+    internal class DomainQueryValidator: AbstractValidator<DomainQuery>
     {
         private readonly IEnumerable<DomainQuery>? _queries;
 

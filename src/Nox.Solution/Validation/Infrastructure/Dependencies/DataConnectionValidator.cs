@@ -1,10 +1,9 @@
 using System.Collections.Generic;
 using FluentValidation;
-using Nox.Configuration.Validation.Base;
 
-namespace Nox.Configuration.Validation
+namespace Nox
 {
-    public class DataConnectionValidator: AbstractValidator<DataConnection>
+    internal class DataConnectionValidator: AbstractValidator<DataConnection>
     {
         public DataConnectionValidator(IEnumerable<ServerBase>? servers)
         {

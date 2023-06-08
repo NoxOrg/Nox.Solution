@@ -2,9 +2,9 @@ using System.Collections.Generic;
 using System.Linq;
 using FluentValidation;
 
-namespace Nox.Configuration.Validation
+namespace Nox
 {
-    public class EntityOwnedRelationshipValidator: AbstractValidator<EntityOwnedRelationship>
+    internal class EntityOwnedRelationshipValidator: AbstractValidator<EntityOwnedRelationship>
     {
 
         private readonly IEnumerable<EntityOwnedRelationship>? _relationships;

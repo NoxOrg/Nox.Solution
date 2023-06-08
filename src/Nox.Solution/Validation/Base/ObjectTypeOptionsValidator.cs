@@ -1,8 +1,8 @@
 using FluentValidation;
 
-namespace Nox.Configuration.Validation.Base
+namespace Nox
 {
-    public class ObjectTypeOptionsValidator: AbstractValidator<ObjectTypeOptions>
+    internal class ObjectTypeOptionsValidator: AbstractValidator<ObjectTypeOptions>
     {
         public ObjectTypeOptionsValidator(string description)
         {

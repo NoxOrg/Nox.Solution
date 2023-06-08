@@ -1,6 +1,6 @@
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Nox.Configuration.Tests;
+namespace Nox.SolutionConfig.Tests;
 
 public class SolutionDeserializationTests
 {

@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using FluentValidation;
 
-namespace Nox.Configuration.Validation
+namespace Nox
 {
-    public class EnvironmentValidator: AbstractValidator<Environment>
+    internal class EnvironmentValidator: AbstractValidator<Environment>
     {
         private readonly IEnumerable<Environment>? _environments;
         

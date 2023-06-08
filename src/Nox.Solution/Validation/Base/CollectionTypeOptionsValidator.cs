@@ -1,8 +1,8 @@
 using FluentValidation;
 
-namespace Nox.Configuration.Validation.Base
+namespace Nox
 {
-    public class CollectionTypeOptionsValidator: AbstractValidator<ArrayTypeOptions>
+    internal class CollectionTypeOptionsValidator: AbstractValidator<ArrayTypeOptions>
     {
         public CollectionTypeOptionsValidator(string description)
         {

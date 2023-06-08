@@ -8,7 +8,7 @@ public class ValidationTests
     public void Environment_names_are_unique()
     {
         var ex = Assert.Throws<FluentValidation.ValidationException>(() =>
-            _ = new NoxConfigurationBuilder()
+            _ = new NoxSolutionBuilder()
                 .UseYamlFile("./files/duplicate-environment-name.solution.nox.yaml")
                 .Build()
         );

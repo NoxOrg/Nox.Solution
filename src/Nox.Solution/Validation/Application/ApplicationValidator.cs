@@ -1,9 +1,11 @@
 using System.Collections.Generic;
 using FluentValidation;
+using Nox.Validation.Application.DataTransferObjects;
+using Nox.Validation.Application.Integration;
 
-namespace Nox.Configuration.Validation
+namespace Nox.Validation.Application
 {
-    public class ApplicationValidator: AbstractValidator<Application>
+    public class ApplicationValidator: AbstractValidator<Nox.Application>
     {
         public ApplicationValidator(IEnumerable<DataConnection>? dataConnections)
         {

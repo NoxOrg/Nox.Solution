@@ -9,18 +9,18 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <PackageId>Nox.Configuration</PackageId>
+    <PackageId>Nox.Solution</PackageId>
     <Authors>Andre Sharpe,Jan Schutte</Authors>
-    <Description>Nox configuration library</Description>
+    <Description>Nox solution configuration library</Description>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <Copyright>Copyright (c) Andre Sharpe 2022</Copyright>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <AssemblyVersion>1.0.1.0</AssemblyVersion>
-    <FileVersion>1.0.1.0</FileVersion>
-    <PackageVersion>1.0.1</PackageVersion>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <FileVersion>1.0.0.0</FileVersion>
+    <PackageVersion>1.0.0</PackageVersion>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/NoxOrg/Nox</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/NoxOrg/Nox.Configuration.git</RepositoryUrl>
+    <RepositoryUrl>https://github.com/NoxOrg/Nox.Solution.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageIcon>nox.png</PackageIcon>
   </PropertyGroup>

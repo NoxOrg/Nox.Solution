@@ -1,7 +1,7 @@
 using FluentValidation;
-using Nox.Configuration.Validation.Base;
+using Nox.Validation.Base;
 
-namespace Nox.Configuration.Validation
+namespace Nox.Validation.Domain
 {
     public class DomainQueryResponseOutputValidator: AbstractValidator<DomainQueryResponseOutput>
     {

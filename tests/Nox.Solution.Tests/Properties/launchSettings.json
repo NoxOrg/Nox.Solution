@@ -1,8 +1,0 @@
-{
-  "profiles": {
-    "Nox.Configuration.Tests": {
-      "commandName": "Project",
-      "workingDirectory": "$(SolutionDir)"
-    }
-  }
-}

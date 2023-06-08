@@ -1,6 +1,6 @@
 using FluentValidation;
 
-namespace Nox.Configuration.Validation.Base
+namespace Nox.Validation.Base
 {
     public class SimpleTypeValidator: AbstractValidator<NoxSimpleTypeDefinition>
     {

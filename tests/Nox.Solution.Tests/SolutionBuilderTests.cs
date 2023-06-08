@@ -1,6 +1,6 @@
 using Nox.Exceptions;
 
-namespace Nox.Configuration.Tests;
+namespace Nox.Solution.Tests;
 
 public class SolutionBuilderTests
 {
@@ -21,7 +21,7 @@ public class SolutionBuilderTests
     {
         var noxConfigBuilder = new NoxSolutionBuilder()
             .UseYamlFile("./files/missing.solution.nox.yaml");
-        Assert.Throws<NoxConfigurationException>(() => noxConfigBuilder.Build());
+        Assert.Throws<NoxSolutionConfigurationException>(() => noxConfigBuilder.Build());
     }
 
     [Fact]
@@ -37,7 +37,7 @@ public class SolutionBuilderTests
     {
         TestHelpers.RenameFilesInFolder("../../../../../.nox/design", "*.nox.yaml", "zaml");
         var noxConfigBuilder = new NoxSolutionBuilder();
-        Assert.Throws<NoxConfigurationException>(() => noxConfigBuilder.Build());
+        Assert.Throws<NoxSolutionConfigurationException>(() => noxConfigBuilder.Build());
         TestHelpers.RenameFilesInFolder("../../../../../.nox/design", "*.nox.zaml", "yaml");
     }
     

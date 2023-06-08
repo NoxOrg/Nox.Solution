@@ -338,10 +338,6 @@
                 "numberTypeOptions": {
                   "type": "object",
                   "properties": {
-                    "$ref": {
-                      "type": "string",
-                      "format": "uri"
-                    },
                     "decimalDigits": {
                       "type": "integer"
                     },
@@ -353,6 +349,10 @@
                     },
                     "maxValue": {
                       "type": "number"
+                    },
+                    "$ref": {
+                      "type": "string",
+                      "format": "uri"
                     }
                   },
                   "additionalProperties": false
@@ -750,10 +750,6 @@
                           "numberTypeOptions": {
                             "type": "object",
                             "properties": {
-                              "$ref": {
-                                "type": "string",
-                                "format": "uri"
-                              },
                               "decimalDigits": {
                                 "type": "integer"
                               },
@@ -765,6 +761,10 @@
                               },
                               "maxValue": {
                                 "type": "number"
+                              },
+                              "$ref": {
+                                "type": "string",
+                                "format": "uri"
                               }
                             },
                             "additionalProperties": false
@@ -1165,10 +1165,6 @@
                     "numberTypeOptions": {
                       "type": "object",
                       "properties": {
-                        "$ref": {
-                          "type": "string",
-                          "format": "uri"
-                        },
                         "decimalDigits": {
                           "type": "integer"
                         },
@@ -1180,6 +1176,10 @@
                         },
                         "maxValue": {
                           "type": "number"
+                        },
+                        "$ref": {
+                          "type": "string",
+                          "format": "uri"
                         }
                       },
                       "additionalProperties": false
@@ -1577,10 +1577,6 @@
                               "numberTypeOptions": {
                                 "type": "object",
                                 "properties": {
-                                  "$ref": {
-                                    "type": "string",
-                                    "format": "uri"
-                                  },
                                   "decimalDigits": {
                                     "type": "integer"
                                   },
@@ -1592,6 +1588,10 @@
                                   },
                                   "maxValue": {
                                     "type": "number"
+                                  },
+                                  "$ref": {
+                                    "type": "string",
+                                    "format": "uri"
                                   }
                                 },
                                 "additionalProperties": false
@@ -2001,10 +2001,6 @@
                     "numberTypeOptions": {
                       "type": "object",
                       "properties": {
-                        "$ref": {
-                          "type": "string",
-                          "format": "uri"
-                        },
                         "decimalDigits": {
                           "type": "integer"
                         },
@@ -2016,6 +2012,10 @@
                         },
                         "maxValue": {
                           "type": "number"
+                        },
+                        "$ref": {
+                          "type": "string",
+                          "format": "uri"
                         }
                       },
                       "additionalProperties": false
@@ -2413,10 +2413,6 @@
                               "numberTypeOptions": {
                                 "type": "object",
                                 "properties": {
-                                  "$ref": {
-                                    "type": "string",
-                                    "format": "uri"
-                                  },
                                   "decimalDigits": {
                                     "type": "integer"
                                   },
@@ -2428,6 +2424,10 @@
                                   },
                                   "maxValue": {
                                     "type": "number"
+                                  },
+                                  "$ref": {
+                                    "type": "string",
+                                    "format": "uri"
                                   }
                                 },
                                 "additionalProperties": false
@@ -2846,10 +2846,6 @@
               "numberTypeOptions": {
                 "type": "object",
                 "properties": {
-                  "$ref": {
-                    "type": "string",
-                    "format": "uri"
-                  },
                   "decimalDigits": {
                     "type": "integer"
                   },
@@ -2861,6 +2857,10 @@
                   },
                   "maxValue": {
                     "type": "number"
+                  },
+                  "$ref": {
+                    "type": "string",
+                    "format": "uri"
                   }
                 },
                 "additionalProperties": false
@@ -3258,10 +3258,6 @@
                         "numberTypeOptions": {
                           "type": "object",
                           "properties": {
-                            "$ref": {
-                              "type": "string",
-                              "format": "uri"
-                            },
                             "decimalDigits": {
                               "type": "integer"
                             },
@@ -3273,6 +3269,10 @@
                             },
                             "maxValue": {
                               "type": "number"
+                            },
+                            "$ref": {
+                              "type": "string",
+                              "format": "uri"
                             }
                           },
                           "additionalProperties": false
@@ -3673,10 +3673,6 @@
                   "numberTypeOptions": {
                     "type": "object",
                     "properties": {
-                      "$ref": {
-                        "type": "string",
-                        "format": "uri"
-                      },
                       "decimalDigits": {
                         "type": "integer"
                       },
@@ -3688,6 +3684,10 @@
                       },
                       "maxValue": {
                         "type": "number"
+                      },
+                      "$ref": {
+                        "type": "string",
+                        "format": "uri"
                       }
                     },
                     "additionalProperties": false
@@ -4085,10 +4085,6 @@
                             "numberTypeOptions": {
                               "type": "object",
                               "properties": {
-                                "$ref": {
-                                  "type": "string",
-                                  "format": "uri"
-                                },
                                 "decimalDigits": {
                                   "type": "integer"
                                 },
@@ -4100,6 +4096,10 @@
                                 },
                                 "maxValue": {
                                   "type": "number"
+                                },
+                                "$ref": {
+                                  "type": "string",
+                                  "format": "uri"
                                 }
                               },
                               "additionalProperties": false
@@ -4509,10 +4509,6 @@
                   "numberTypeOptions": {
                     "type": "object",
                     "properties": {
-                      "$ref": {
-                        "type": "string",
-                        "format": "uri"
-                      },
                       "decimalDigits": {
                         "type": "integer"
                       },
@@ -4524,6 +4520,10 @@
                       },
                       "maxValue": {
                         "type": "number"
+                      },
+                      "$ref": {
+                        "type": "string",
+                        "format": "uri"
                       }
                     },
                     "additionalProperties": false
@@ -4921,10 +4921,6 @@
                             "numberTypeOptions": {
                               "type": "object",
                               "properties": {
-                                "$ref": {
-                                  "type": "string",
-                                  "format": "uri"
-                                },
                                 "decimalDigits": {
                                   "type": "integer"
                                 },
@@ -4936,6 +4932,10 @@
                                 },
                                 "maxValue": {
                                   "type": "number"
+                                },
+                                "$ref": {
+                                  "type": "string",
+                                  "format": "uri"
                                 }
                               },
                               "additionalProperties": false
@@ -5367,10 +5367,6 @@
           "numberTypeOptions": {
             "type": "object",
             "properties": {
-              "$ref": {
-                "type": "string",
-                "format": "uri"
-              },
               "decimalDigits": {
                 "type": "integer"
               },
@@ -5382,6 +5378,10 @@
               },
               "maxValue": {
                 "type": "number"
+              },
+              "$ref": {
+                "type": "string",
+                "format": "uri"
               }
             },
             "additionalProperties": false
@@ -5779,10 +5779,6 @@
                     "numberTypeOptions": {
                       "type": "object",
                       "properties": {
-                        "$ref": {
-                          "type": "string",
-                          "format": "uri"
-                        },
                         "decimalDigits": {
                           "type": "integer"
                         },
@@ -5794,6 +5790,10 @@
                         },
                         "maxValue": {
                           "type": "number"
+                        },
+                        "$ref": {
+                          "type": "string",
+                          "format": "uri"
                         }
                       },
                       "additionalProperties": false
@@ -6194,10 +6194,6 @@
               "numberTypeOptions": {
                 "type": "object",
                 "properties": {
-                  "$ref": {
-                    "type": "string",
-                    "format": "uri"
-                  },
                   "decimalDigits": {
                     "type": "integer"
                   },
@@ -6209,6 +6205,10 @@
                   },
                   "maxValue": {
                     "type": "number"
+                  },
+                  "$ref": {
+                    "type": "string",
+                    "format": "uri"
                   }
                 },
                 "additionalProperties": false
@@ -6606,10 +6606,6 @@
                         "numberTypeOptions": {
                           "type": "object",
                           "properties": {
-                            "$ref": {
-                              "type": "string",
-                              "format": "uri"
-                            },
                             "decimalDigits": {
                               "type": "integer"
                             },
@@ -6621,6 +6617,10 @@
                             },
                             "maxValue": {
                               "type": "number"
+                            },
+                            "$ref": {
+                              "type": "string",
+                              "format": "uri"
                             }
                           },
                           "additionalProperties": false
@@ -7030,10 +7030,6 @@
               "numberTypeOptions": {
                 "type": "object",
                 "properties": {
-                  "$ref": {
-                    "type": "string",
-                    "format": "uri"
-                  },
                   "decimalDigits": {
                     "type": "integer"
                   },
@@ -7045,6 +7041,10 @@
                   },
                   "maxValue": {
                     "type": "number"
+                  },
+                  "$ref": {
+                    "type": "string",
+                    "format": "uri"
                   }
                 },
                 "additionalProperties": false
@@ -7442,10 +7442,6 @@
                         "numberTypeOptions": {
                           "type": "object",
                           "properties": {
-                            "$ref": {
-                              "type": "string",
-                              "format": "uri"
-                            },
                             "decimalDigits": {
                               "type": "integer"
                             },
@@ -7457,6 +7453,10 @@
                             },
                             "maxValue": {
                               "type": "number"
+                            },
+                            "$ref": {
+                              "type": "string",
+                              "format": "uri"
                             }
                           },
                           "additionalProperties": false
@@ -7887,10 +7887,6 @@
           "numberTypeOptions": {
             "type": "object",
             "properties": {
-              "$ref": {
-                "type": "string",
-                "format": "uri"
-              },
               "decimalDigits": {
                 "type": "integer"
               },
@@ -7902,6 +7898,10 @@
               },
               "maxValue": {
                 "type": "number"
+              },
+              "$ref": {
+                "type": "string",
+                "format": "uri"
               }
             },
             "additionalProperties": false
@@ -8301,10 +8301,6 @@
           "numberTypeOptions": {
             "type": "object",
             "properties": {
-              "$ref": {
-                "type": "string",
-                "format": "uri"
-              },
               "decimalDigits": {
                 "type": "integer"
               },
@@ -8316,6 +8312,10 @@
               },
               "maxValue": {
                 "type": "number"
+              },
+              "$ref": {
+                "type": "string",
+                "format": "uri"
               }
             },
             "additionalProperties": false

@@ -6,6 +6,6 @@ namespace Nox
     public class ObjectTypeOptions : DefinitionBase 
     {
         [Required]
-        public List<NoxSimpleTypeDefinition>? Attributes { get; internal set; }
+        public IReadOnlyList<NoxSimpleTypeDefinition>? Attributes { get; internal set; }
     }
 }

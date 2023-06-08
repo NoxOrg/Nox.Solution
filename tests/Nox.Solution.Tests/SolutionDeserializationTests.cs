@@ -11,7 +11,6 @@ public class SolutionDeserializationTests
             .UseYamlFile("./files/variables.solution.nox.yaml")
             .Build();
         Assert.NotNull(noxConfig);
-        Assert.NotNull(noxConfig);
         Assert.NotNull(noxConfig.Variables);
         Assert.Equal(2, noxConfig.Variables.Count);
         Assert.Equal("value1", noxConfig.Variables["VARIABLE1"]);
@@ -25,7 +24,6 @@ public class SolutionDeserializationTests
             .UseYamlFile("./files/environments.solution.nox.yaml")
             .Build();
         Assert.NotNull(noxConfig);
-        Assert.NotNull(noxConfig);
         Assert.NotNull(noxConfig.Environments);
         Assert.Equal(4, noxConfig.Environments.Count);
         Assert.Equal("dev", noxConfig.Environments[0].Name);
@@ -36,6 +34,7 @@ public class SolutionDeserializationTests
         Assert.Equal("For them end users to check it works", noxConfig.Environments[2].Description);
         Assert.Equal("prod", noxConfig.Environments[3].Name);
         Assert.Equal("Production environment used for, well - the real thing!", noxConfig.Environments[3].Description);
+
     }
     
     [Fact]
@@ -44,7 +43,6 @@ public class SolutionDeserializationTests
         var noxConfig = new NoxSolutionBuilder()
             .UseYamlFile("./files/version-control.solution.nox.yaml")
             .Build();
-        Assert.NotNull(noxConfig);
         Assert.NotNull(noxConfig);
         Assert.NotNull(noxConfig.VersionControl);
         Assert.Equal(VersionControlProvider.AzureDevops, noxConfig.VersionControl.Provider);
@@ -60,7 +58,6 @@ public class SolutionDeserializationTests
         var noxConfig = new NoxSolutionBuilder()
             .UseYamlFile("./files/team.solution.nox.yaml")
             .Build();
-        Assert.NotNull(noxConfig);
         Assert.NotNull(noxConfig);
         Assert.NotNull(noxConfig.Team);
         Assert.Equal(2, noxConfig.Team.Count);
@@ -78,7 +75,6 @@ public class SolutionDeserializationTests
         var noxConfig = new NoxSolutionBuilder()
             .UseYamlFile("./files/domain.solution.nox.yaml")
             .Build();
-        Assert.NotNull(noxConfig);
         Assert.NotNull(noxConfig);
         Assert.NotNull(noxConfig.Domain);
         Assert.NotNull(noxConfig.Domain.Entities);
@@ -173,7 +169,6 @@ public class SolutionDeserializationTests
             .Build();
         
         Assert.NotNull(noxConfig);
-        Assert.NotNull(noxConfig);
         Assert.NotNull(noxConfig!.Application);
         
         Assert.NotNull(noxConfig!.Application.DataTransferObjects);
@@ -245,7 +240,6 @@ public class SolutionDeserializationTests
         var noxConfig = new NoxSolutionBuilder()
             .UseYamlFile("./files/infrastructure.solution.nox.yaml")
             .Build();
-        Assert.NotNull(noxConfig);
         Assert.NotNull(noxConfig);
         Assert.NotNull(noxConfig!.Infrastructure);
         

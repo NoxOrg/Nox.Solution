@@ -11,7 +11,6 @@ public class SolutionBuilderTests
             .UseYamlFile("./files/minimal.solution.nox.yaml")
             .Build();
         Assert.NotNull(noxConfig);
-        Assert.NotNull(noxConfig);
         Assert.Equal("MinimalService", noxConfig.Name);
         Assert.Equal("Minimal yaml file for tests", noxConfig.Description);
     }

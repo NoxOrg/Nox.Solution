@@ -5,7 +5,7 @@ using System.Text.Json;
 
 namespace Nox.Configuration.Tests;
 
-public class NoxConfigurationSchemaTests
+public class GenerateSchemasTests
 {
     [Fact]
     public void Can_create_a_json_schema_for_yaml()

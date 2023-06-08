@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using FluentValidation;
 
-namespace Nox.Configuration.Validation
+namespace Nox.Validation.Infrastructure.Dependencies
 {
     public class SecurityValidator: AbstractValidator<Security>
     {

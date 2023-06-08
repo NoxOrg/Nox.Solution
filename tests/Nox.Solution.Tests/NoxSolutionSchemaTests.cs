@@ -1,11 +1,10 @@
-using Json.More;
+using System.Text.Json;
 using Json.Schema;
 using Json.Schema.Generation;
-using System.Text.Json;
 
-namespace Nox.Configuration.Tests;
+namespace Nox.Solution.Tests;
 
-public class NoxConfigurationSchemaTests
+public class NoxSolutionSchemaTests
 {
     [Fact]
     public void Can_create_a_json_schema_for_yaml()
@@ -35,7 +34,7 @@ public class NoxConfigurationSchemaTests
 //Solution        
         var solutionSchema = new JsonSchemaBuilder()
             .Schema(MetaSchemas.Draft7Id)
-            .FromType<Solution>(schemaConfig)
+            .FromType<NoxSolution>(schemaConfig)
             .Build();
 
         File.WriteAllText(Path.Combine(path, "solution.json"),

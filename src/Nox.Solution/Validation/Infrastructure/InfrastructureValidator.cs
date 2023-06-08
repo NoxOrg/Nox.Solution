@@ -1,10 +1,13 @@
 using System.Collections.Generic;
-using System.Linq;
 using FluentValidation;
+using Nox.Validation.Infrastructure.Dependencies;
+using Nox.Validation.Infrastructure.Endpoints;
+using Nox.Validation.Infrastructure.Messaging;
+using Nox.Validation.Infrastructure.Persistence;
 
-namespace Nox.Configuration.Validation
+namespace Nox.Validation.Infrastructure
 {
-    public class InfrastructureValidator: AbstractValidator<Infrastructure>
+    public class InfrastructureValidator: AbstractValidator<Nox.Infrastructure>
     {
         private IEnumerable<ServerBase>? _servers;
 
@@ -32,7 +35,7 @@ namespace Nox.Configuration.Validation
             
         }
 
-        private IEnumerable<ServerBase>? GetServerList(Infrastructure infra)
+        private IEnumerable<ServerBase>? GetServerList(Nox.Infrastructure infra)
         {
             if (_servers == null)
             {

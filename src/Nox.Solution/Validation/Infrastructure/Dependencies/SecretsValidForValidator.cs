@@ -1,6 +1,6 @@
 using FluentValidation;
 
-namespace Nox.Configuration.Validation
+namespace Nox.Validation.Infrastructure.Dependencies
 {
     public class SecretsValidForValidator: AbstractValidator<SecretsValidFor>
     {

@@ -1,4 +1,4 @@
-using Nox.UriBuilder;
+using Nox.ServerUriBuilders;
 
 namespace Nox.Solution.Tests.UriBuilders;
 

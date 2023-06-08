@@ -1,4 +1,5 @@
 ﻿using Json.Schema.Generation;
+using Nox.ServerUriBuilders;
 
 namespace Nox
 { 
@@ -8,5 +9,25 @@ namespace Nox
         [Required]
         [AdditionalProperties(false)]
         public MessagingServerProvider? Provider { get; internal set; }
+        
+        internal bool ApplyDefaults()
+        {
+            switch (Provider)
+            {
+                case MessagingServerProvider.RabbitMq:
+                case MessagingServerProvider.AzureServiceBus:
+                    var builder = new NoxUriBuilder(this, MessagingServerProviderHelpers.GetProviderScheme(Provider.Value), "infrastructure, messaging, integrationEventServer");
+                    ServerUri = builder.Uri!.ToString();
+                    break;
+                case MessagingServerProvider.AmazonSqs:
+                    // ServerUri must contain explicit arn e.g. arn:aws:sqs:region:account-id:queue-name
+                    break;
+                case MessagingServerProvider.InMemory:
+                    ServerUri = "inmemory";
+                    break;
+            }
+            
+            return true;
+        }
     }
 }

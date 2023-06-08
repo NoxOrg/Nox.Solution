@@ -10,6 +10,8 @@ namespace Nox.Validation.Infrastructure.Messaging
         {
             RuleFor(p => p.IntegrationEventServer!)
                 .SetValidator(v => new ServerBaseValidator("the infrastructure, messaging, integration event server", servers));
+            
+            
         }
     }
 }

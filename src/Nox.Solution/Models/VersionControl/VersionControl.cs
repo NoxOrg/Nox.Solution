@@ -17,7 +17,7 @@ namespace Nox
 
         [Required]
         [Title("The source code and repository provider or service.")]
-        [Description("The name of the provider or service for source code and version control.")]
+        [Description("The name of the provider or service for source code and version control")]
         [Pattern(@"^[^\s]*$")]
         public VersionControlProvider Provider { get; internal set; } = VersionControlProvider.AzureDevops;
 

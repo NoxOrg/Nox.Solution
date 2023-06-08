@@ -6,7 +6,7 @@ namespace Nox
 {
 
     [Title("Defines an entity or aggregate root")]
-    [Description("The declaration of an entity, it's attributes, commands and queries. See https://noxorg.dev for more.")]
+    [Description("The declaration of an entity, its attributes, commands and queries. See https://noxorg.dev for more.")]
     [AdditionalProperties(false)]
     public class Entity : DefinitionBase
     {

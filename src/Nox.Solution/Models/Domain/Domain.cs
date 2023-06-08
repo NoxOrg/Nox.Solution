@@ -12,7 +12,7 @@ namespace Nox
 
         [Required]
         [Title("The entities that describe the domain.")]
-        [Description("The collection of entities and their relationship(s) with each other.")]
+        [Description("The collection of entities and their relationships with each other.")]
         [AdditionalProperties(false)]
         public List<Entity>? Entities { get; internal set; }
 

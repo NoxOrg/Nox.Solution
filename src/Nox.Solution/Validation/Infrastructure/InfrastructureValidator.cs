@@ -51,7 +51,6 @@ namespace Nox.Validation.Infrastructure
 
                 if (infra.Messaging != null)
                 {
-                    if (infra.Messaging.DomainEventServer != null) servers.Add(infra.Messaging.DomainEventServer);
                     if (infra.Messaging.IntegrationEventServer != null) servers.Add(infra.Messaging.IntegrationEventServer);
                 }
 

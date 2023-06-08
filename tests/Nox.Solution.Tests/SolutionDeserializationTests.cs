@@ -280,9 +280,6 @@ public class SolutionDeserializationTests
         Assert.Equal("EvtPassword", noxConfig!.Infrastructure.Persistence.EventSourceServer.Password);
         
         Assert.NotNull(noxConfig!.Infrastructure.Messaging);
-        Assert.NotNull(noxConfig!.Infrastructure.Messaging.DomainEventServer);
-        Assert.Equal("MediatR", noxConfig!.Infrastructure.Messaging.DomainEventServer.Name);
-        Assert.Equal(MessagingServerProvider.MediatR, noxConfig!.Infrastructure.Messaging.DomainEventServer.Provider);
         
         Assert.NotNull(noxConfig!.Infrastructure.Messaging.IntegrationEventServer);
         Assert.Equal("IntegrationBus", noxConfig!.Infrastructure.Messaging.IntegrationEventServer.Name);

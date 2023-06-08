@@ -6,9 +6,10 @@ namespace Nox
     [AdditionalProperties(false)]
     public class Messaging
     {
-        [Required]
-        [AdditionalProperties(false)]
-        public  MessagingServer? DomainEventServer { get; internal set; }
+        //removed this as we will always create a domain event server internally using MassTransit Mediator
+        // [Required]
+        // [AdditionalProperties(false)]
+        // public  MessagingServer? DomainEventServer { get; internal set; }
 
         [Required]
         [AdditionalProperties(false)]

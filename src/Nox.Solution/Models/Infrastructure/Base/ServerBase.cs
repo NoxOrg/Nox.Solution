@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using static Humanizer.In;
 
-namespace Nox
+namespace Nox.Solution
 {
     [AdditionalProperties(false)]
     public class ServerBase

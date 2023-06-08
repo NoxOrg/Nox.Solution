@@ -98,7 +98,8 @@
               "RabbitMq",
               "SqlServer",
               "WebApi",
-              "XmlFile"
+              "XmlFile",
+              "InMemory"
             ]
           }
         },

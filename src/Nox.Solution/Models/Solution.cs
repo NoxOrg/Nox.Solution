@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Net.Mime;
 
-namespace Nox
+namespace Nox.Solution
 {
 
     [Title("Fully describes a NOX solution")]

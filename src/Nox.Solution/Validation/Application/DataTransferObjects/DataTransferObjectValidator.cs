@@ -1,9 +1,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using FluentValidation;
-using Nox.Validation.Base;
+using Nox.Solution;
 
-namespace Nox.Validation.Application.DataTransferObjects
+namespace Nox.Solution.Validation
 {
     public class DataTransferObjectValidator: AbstractValidator<DataTransferObject>
     {

@@ -1,6 +1,6 @@
 using FluentValidation;
 
-namespace Nox.Validation.VersionControl
+namespace Nox.Solution.Validation
 {
     public class VersionControlFoldersValidator: AbstractValidator<VersionControlFolders>
     {

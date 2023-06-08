@@ -1,10 +1,10 @@
 using FluentValidation;
+using Nox.Solution.Validation;
 using Nox.Utilities.Yaml;
-using Nox.Validation;
 using YamlDotNet.Serialization;
 using YamlDotNet.Serialization.NamingConventions;
 
-namespace Nox
+namespace Nox.Solution
 {
     public class NoxSolution : Solution
     {
@@ -13,7 +13,7 @@ namespace Nox
         internal void Validate()
         {
             var validator = new SolutionValidator();
-            validator.ValidateAndThrow<Solution>((Solution)this);
+            validator.ValidateAndThrow(this);
         }
     }
 }

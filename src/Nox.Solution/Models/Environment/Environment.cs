@@ -1,7 +1,7 @@
 ﻿using Json.Schema.Generation;
 using System.Collections.Generic;
 
-namespace Nox
+namespace Nox.Solution
 {
 
     [Title("A definition for a run-time environments.")]

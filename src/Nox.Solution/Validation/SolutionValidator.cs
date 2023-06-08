@@ -1,12 +1,6 @@
 using FluentValidation;
-using Nox.Validation.Application;
-using Nox.Validation.Domain;
-using Nox.Validation.Environments;
-using Nox.Validation.Infrastructure;
-using Nox.Validation.Team;
-using Nox.Validation.VersionControl;
 
-namespace Nox.Validation
+namespace Nox.Solution.Validation
 {
     public class SolutionValidator: AbstractValidator<Solution>
     {

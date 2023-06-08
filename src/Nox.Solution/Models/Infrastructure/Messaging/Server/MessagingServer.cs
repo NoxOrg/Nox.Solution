@@ -1,7 +1,7 @@
 ﻿using Json.Schema.Generation;
-using Nox.ServerUriBuilders;
+using Nox.Solution.Builders;
 
-namespace Nox
+namespace Nox.Solution
 { 
     [AdditionalProperties(false)]
     public class MessagingServer : ServerBase

@@ -7,11 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Nox {
+namespace Nox.Solution {
     using System;
     
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class ValidationResources {
@@ -28,7 +28,7 @@ namespace Nox {
         internal static System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.Equals(null, resourceMan)) {
-                    System.Resources.ResourceManager temp = new System.Resources.ResourceManager("Nox.ValidationResources", typeof(ValidationResources).Assembly);
+                    System.Resources.ResourceManager temp = new System.Resources.ResourceManager("Nox.Solution.ValidationResources", typeof(ValidationResources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -45,7 +45,7 @@ namespace Nox {
             }
         }
         
-        internal static string SolutionNameEmpty {
+                internal static string SolutionNameEmpty {
             get {
                 return ResourceManager.GetString("SolutionNameEmpty", resourceCulture);
             }

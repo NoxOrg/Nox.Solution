@@ -1,7 +1,7 @@
 ﻿using Json.Schema.Generation;
 using System.Collections.Generic;
 
-namespace Nox
+namespace Nox.Solution
 {
     [Title("Defines a query for the domain.")]
     [Description("Defines a query that operates on the domain. Queries should have no side effects and not mutate the domain state.")]

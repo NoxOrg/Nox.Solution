@@ -1,6 +1,6 @@
 ﻿using Json.Schema.Generation;
 
-namespace Nox
+namespace Nox.Solution
 {
     [Title("Defines a one way relationship to another entity.")]
     [Description("Defines a one way relationship to another entity. It is required to define the reverse relationship on the target entity.")]

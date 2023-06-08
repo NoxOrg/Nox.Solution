@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using FluentValidation;
 
-namespace Nox.Validation.Infrastructure.Dependencies
+namespace Nox.Solution.Validation
 {
     public class NotificationsValidator: AbstractValidator<Notifications>
     {

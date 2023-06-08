@@ -25,7 +25,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Nox.Configuration\Nox.Configuration.csproj" />
+    <ProjectReference Include="..\..\src\Nox.Solution\Nox.Solution.csproj" />
   </ItemGroup>
 
   <ItemGroup>

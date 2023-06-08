@@ -17,9 +17,9 @@ jobs:
           dotnet-version: ${{ matrix.dotnet-version }}
 
       - name: Build
-        run: dotnet build ./src/Nox.Configuration --warnaserror --configuration Release
+        run: dotnet build ./src/Nox.Solution --warnaserror --configuration Release
 
       - name: Pack Nox.Types
-        run: dotnet pack --no-build ./src/Nox.Configuration --configuration Release -o ./artifacts
+        run: dotnet pack --no-build ./src/Nox.Solution --configuration Release -o ./artifacts
       - name: Publish Nox.Lib
-        run: dotnet nuget push ./artifacts/Nox.Configuration.*.nupkg --api-key ${{secrets.NUGET_API_KEY}} --source https://api.nuget.org/v3/index.json
+        run: dotnet nuget push ./artifacts/Nox.Solution.*.nupkg --api-key ${{secrets.NUGET_API_KEY}} --source https://api.nuget.org/v3/index.json

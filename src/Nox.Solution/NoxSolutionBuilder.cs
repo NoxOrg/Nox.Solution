@@ -8,7 +8,7 @@ using YamlDotNet.Serialization.NamingConventions;
 
 namespace Nox
 {
-    public class NoxConfigurationBuilder
+    public class NoxSolutionBuilder
     {
         private const string DesignFolderBestPractice = "Best practice is to create a '.nox' folder in your solution folder and in there a 'design' folder which contains your <solution-name>.solution.nox.yaml";
 
@@ -16,20 +16,20 @@ namespace Nox
         private bool _mustInject = false;
         private IServiceCollection? _services;
 
-        public NoxConfigurationBuilder UseYamlFile(string yamlFilePath)
+        public NoxSolutionBuilder UseYamlFile(string yamlFilePath)
         {
             _yamlFilePath = Path.GetFullPath(yamlFilePath);
             return this;
         }
 
-        public NoxConfigurationBuilder UseDependencyInjection(IServiceCollection services)
+        public NoxSolutionBuilder UseDependencyInjection(IServiceCollection services)
         {
             _mustInject = true;
             _services = services;
             return this;
         }
         
-        public NoxConfiguration Build()
+        public NoxSolution Build()
         {
             //If a yaml root configuration has not been specified, search for one in the .nox/design folder in the solution root folder
             if (string.IsNullOrWhiteSpace(_yamlFilePath))
@@ -45,7 +45,8 @@ namespace Nox
                 }    
             }
 
-            var config = new NoxConfiguration(_yamlFilePath);
+
+            var config = ResolveAndLoadConfiguration(_yamlFilePath);
             config.Validate();
 
             if (_mustInject)
@@ -53,6 +54,18 @@ namespace Nox
                 _services.AddSingleton(config);
             }
             
+            return config;
+        }
+
+        private NoxSolution ResolveAndLoadConfiguration(string yamlFilePath) 
+        {
+            var resolver = new YamlResolver(_yamlFilePath);
+            var yaml = resolver.ResolveReferences();
+            var deserializer = new DeserializerBuilder()
+                .WithNamingConvention(CamelCaseNamingConvention.Instance)
+                .Build();
+            var config = deserializer.Deserialize<NoxSolution>(yaml);
+            config.RootYamlFile = _yamlFilePath;
             return config;
         }
 

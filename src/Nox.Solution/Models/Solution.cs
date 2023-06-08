@@ -32,7 +32,7 @@ namespace Nox
         public Dictionary<string, string>? Variables { get; internal set; }
 
         [Title("Definitions for run-time environments.")]
-        [Description("Definitions for the name, variables and other pertinent information pertaining to run-time environments.")]
+        [Description("Definitions for the name, production status and other pertinent information pertaining to run-time environments.")]
         [AdditionalProperties(false)]
         public List<Environment>? Environments { get; internal set; }
 

@@ -15,6 +15,10 @@ namespace Nox.Validation.Base
                 .NotEmpty()
                 .WithMessage(string.Format(ValidationResources.ServerNameEmpty, description));
 
+            RuleFor(p => p.ServerUri)
+                .NotEmpty()
+                .WithMessage(string.Format(ValidationResources.ServerUriEmpty, description));
+
             RuleFor(p => p.Name!)
                 .Must(HaveUniqueName)
                 .WithMessage(m => string.Format(ValidationResources.ServerNameDuplicate, m.Name, description));

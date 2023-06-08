@@ -524,5 +524,11 @@ namespace Nox {
                 return ResourceManager.GetString("ServerUriInvalidScheme", resourceCulture);
             }
         }
+        
+        internal static string IntegrationEventsServerDefaultsFalse {
+            get {
+                return ResourceManager.GetString("IntegrationEventsServerDefaultsFalse", resourceCulture);
+            }
+        }
     }
 }

@@ -235,7 +235,6 @@ public class SolutionDeserializationTests
         
         Assert.NotNull(noxConfig!.Application.Integration[0].Target);
         Assert.Equal("Country", noxConfig!.Application.Integration[0].Target!.Name);
-        Assert.NotNull(noxConfig!.Application.Integration[0].Target!.TargetType);
         Assert.Equal(EtlTargetType.Entity, noxConfig!.Application.Integration[0].Target!.TargetType);
     }
 

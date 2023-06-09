@@ -5,7 +5,6 @@ namespace Nox.Solution
     [AdditionalProperties(false)]
     public class SearchServer: ServerBase
     {
-        [Required]
-        public SearchServerProvider? Provider { get; internal set; }
+        [Required] public SearchServerProvider Provider { get; internal set; } = SearchServerProvider.ElasticSearch;
     }
 }

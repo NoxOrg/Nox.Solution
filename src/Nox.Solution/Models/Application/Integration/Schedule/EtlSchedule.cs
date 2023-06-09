@@ -7,7 +7,7 @@ namespace Nox.Solution
     public class EtlSchedule
     {
         [Required] 
-        public string? Start { get; internal set; }
+        public string Start { get; internal set; } = string.Empty;
 
         [AdditionalProperties(false)] 
         public ScheduleRetryPolicy? Retry { get; internal set; }

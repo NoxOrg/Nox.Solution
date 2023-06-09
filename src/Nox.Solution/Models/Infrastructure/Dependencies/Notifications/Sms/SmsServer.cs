@@ -5,7 +5,8 @@ namespace Nox.Solution
     [AdditionalProperties(false)]
     public class SmsServer: ServerBase
     {
+        [Required]
         [AdditionalProperties(false)]
-        public SmsServerProvider? Provider { get; internal set; }
+        public SmsServerProvider Provider { get; internal set; } = SmsServerProvider.ClickSend;
     }
 }

@@ -10,7 +10,7 @@ public class SearchServerValidator: AbstractValidator<SearchServer>
     {
         Include(new ServerBaseValidator("the infrastructure, persistence, search server", servers));
         RuleFor(p => p.Provider)
-            .NotEmpty()
+            .NotNull()
             .WithMessage(p => string.Format(ValidationResources.SearchServerProviderEmpty, p.Name, SearchServerProvider.ElasticSearch.ToNameList()));
     }
 }

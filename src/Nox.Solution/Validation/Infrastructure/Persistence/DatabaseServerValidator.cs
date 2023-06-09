@@ -10,7 +10,7 @@ public class DatabaseServerValidator: AbstractValidator<DatabaseServer>
     {
         Include(new ServerBaseValidator("the infrastructure, persistence, database server", servers));
         RuleFor(p => p.Provider)
-            .NotEmpty()
+            .NotNull()
             .WithMessage(p => string.Format(ValidationResources.DatabaseServerProviderEmpty, p.Name, DatabaseServerProvider.SqlServer.ToNameList()));
     }
 }

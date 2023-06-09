@@ -10,7 +10,7 @@ namespace Nox.Solution.Validation
         {
             Include(new ServerBaseValidator("the infrastructure, dependencies, security, secrets, secrets server", servers));
             RuleFor(p => p.Provider)
-                .NotEmpty()
+                .NotNull()
                 .WithMessage(p => string.Format(ValidationResources.SecretsServerProviderEmpty, p.Name, SecretsServerProvider.AzureKeyVault.ToNameList()));
         }
     }

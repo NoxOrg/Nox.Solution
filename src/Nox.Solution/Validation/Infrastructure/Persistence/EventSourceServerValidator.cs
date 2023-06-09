@@ -10,7 +10,7 @@ public class EventSourceServerValidator: AbstractValidator<EventSourceServer>
     {
         Include(new ServerBaseValidator("the infrastructure, persistence, event source server", servers));
         RuleFor(p => p.Provider)
-            .NotEmpty()
+            .NotNull()
             .WithMessage(p => string.Format(ValidationResources.EventSourceServerProviderEmpty, p.Name, EventSourceServerProvider.EventStoreDb.ToNameList()));
     }
 }

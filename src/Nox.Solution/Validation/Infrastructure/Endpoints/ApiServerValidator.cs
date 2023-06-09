@@ -10,7 +10,7 @@ public class ApiServerValidator: AbstractValidator<ApiServer>
     {
         Include(new ServerBaseValidator("the infrastructure, endpoints, API server", servers));
         RuleFor(p => p.Provider)
-            .NotEmpty()
+            .NotNull()
             .WithMessage(p => string.Format(ValidationResources.ApiServerProviderEmpty, p.Name, ApiServerProvider.OData.ToNameList()));
     }
 }

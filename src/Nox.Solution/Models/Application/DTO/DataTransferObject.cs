@@ -18,7 +18,7 @@ namespace Nox.Solution
         public string? Description { get; internal set; }
 
         [Required]
-        [AdditionalProperties(false)] 
-        public IReadOnlyList<NoxSimpleTypeDefinition>? Attributes { get; internal set; }
+        [AdditionalProperties(false)]
+        public IReadOnlyList<NoxSimpleTypeDefinition> Attributes { get; internal set; } = new List<NoxSimpleTypeDefinition>();
     }
 }

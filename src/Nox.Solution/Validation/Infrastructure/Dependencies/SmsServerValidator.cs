@@ -10,7 +10,7 @@ namespace Nox.Solution.Validation
         {
             Include(new ServerBaseValidator("the infrastructure, dependencies, notifications, sms server", servers));
             RuleFor(p => p.Provider)
-                .NotEmpty()
+                .NotNull()
                 .WithMessage(p => string.Format(ValidationResources.SmsServerProviderEmpty, p.Name, SmsServerProvider.Twilio.ToNameList()));
         }
     }

@@ -10,7 +10,7 @@ public class BffServerValidator: AbstractValidator<BffServer>
     {
         Include(new ServerBaseValidator("the infrastructure, endpoints, bff server", servers));
         RuleFor(p => p.Provider)
-            .NotEmpty()
+            .NotNull()
             .WithMessage(p => string.Format(ValidationResources.BffServerProviderEmpty, p.Name, BffServerProvider.Blazor.ToNameList()));
     }
 }

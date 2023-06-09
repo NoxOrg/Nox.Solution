@@ -7,6 +7,6 @@ namespace Nox.Solution
     {
         [Required]
         [AdditionalProperties(false)]
-        public BffServerProvider? Provider { get; internal set; }
+        public BffServerProvider Provider { get; internal set; } = BffServerProvider.Blazor;
     }
 }

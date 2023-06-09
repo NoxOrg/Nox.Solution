@@ -17,7 +17,7 @@
       "type": "string",
       "format": "uri",
       "title": "The URI for the host of the version control service.",
-      "description": "The URI for the person or organization\u0027s projects and reporitories. Usually https://dev.azure.com/\u003Corganization\u003E"
+      "description": "The URI for the person or organization\u0027s projects and repositories. Usually https://dev.azure.com/\u003Corganization\u003E"
     },
     "folders": {
       "type": "object",

@@ -7,11 +7,11 @@ namespace Nox.Solution
     public class EtlMapping
     {
         [Required] 
-        public string? SourceColumn { get; internal set; }
+        public string SourceColumn { get; internal set; } = string.Empty;
 
         public EtlMappingConverter? Converter { get; internal set; }
 
         [Required] 
-        public string? TargetAttribute { get; internal set; }
+        public string TargetAttribute { get; internal set; } = string.Empty;
     }
 }

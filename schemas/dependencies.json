@@ -213,7 +213,8 @@
           },
           "required": [
             "name",
-            "serverUri"
+            "serverUri",
+            "provider"
           ],
           "additionalProperties": false
         },
@@ -264,7 +265,8 @@
           },
           "required": [
             "name",
-            "serverUri"
+            "serverUri",
+            "provider"
           ],
           "additionalProperties": false
         }
@@ -307,11 +309,18 @@
           "type": "string",
           "title": "Additional options.",
           "description": "A list of additional options to set when connecting to this server."
+        },
+        "provider": {
+          "enum": [
+            "elasticApm"
+          ],
+          "additionalProperties": false
         }
       },
       "required": [
         "name",
-        "serverUri"
+        "serverUri",
+        "provider"
       ],
       "additionalProperties": false
     },

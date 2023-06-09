@@ -10,7 +10,7 @@ namespace Nox.Solution.Validation
         {
             Include(new ServerBaseValidator("an infrastructure, dependencies, data connection", servers));
             RuleFor(p => p.Provider)
-                .NotEmpty()
+                .NotNull()
                 .WithMessage(p => string.Format(ValidationResources.DataConnectionProviderEmpty, p.Name, DataConnectionProvider.InMemory.ToNameList()));
         }
     }

@@ -10,7 +10,7 @@ public class CacheServerValidator: AbstractValidator<CacheServer>
     {
         Include(new ServerBaseValidator("the infrastructure, persistence, cache server", servers));
         RuleFor(p => p.Provider)
-            .NotEmpty()
+            .NotNull()
             .WithMessage(p => string.Format(ValidationResources.CacheServerProviderEmpty, p.Name, CacheServerProvider.Memcached.ToNameList()));
     }
 }

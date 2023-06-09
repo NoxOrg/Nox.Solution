@@ -43,7 +43,7 @@ namespace Nox.Solution
         [Title("Defines owned relationships to another entity.")]
         [Description("Defines relationship to owned entities. This entity will be treated as an aggregate root.")]
         [AdditionalProperties(false)]
-        public IReadOnlyList<EntityOwnedRelationship>? OwnedRelationships { get; internal set; }
+        public IReadOnlyList<EntityRelationship>? OwnedRelationships { get; internal set; }
 
         [Title("Defines queries for the domain.")]
         [Description("Defines queries for the domain that operates on this entity. Queries should have no side effects and not mutate the domain state.")]
@@ -54,6 +54,9 @@ namespace Nox.Solution
         [Description("Defines commands for the domain that operates on this entity. Commands may have side effects and mutate the domain state.")]
         [AdditionalProperties(false)]
         public IReadOnlyList<DomainCommand>? Commands { get; internal set; }
+        
+        [AdditionalProperties(false)]
+        public IReadOnlyList<NoxSimpleTypeDefinition>? Events { get; internal set; }
 
         [AdditionalProperties(false)]
         public IReadOnlyList<NoxSimpleTypeDefinition>? Keys { get; internal set; }

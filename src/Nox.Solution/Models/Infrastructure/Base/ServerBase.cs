@@ -11,12 +11,12 @@ namespace Nox.Solution
         [Pattern(@"^[^\s]*$")]
         [Title("The unique name of this server component in the solution.")]
         [Description("The name of this server component in the solution. The name must be unique in the solution configuration")]
-        public string? Name { get; internal set; }
+        public string Name { get; internal set; } = string.Empty;
 
         [Required]
         [Title("Hostname, IP address or URI.")]
         [Description("The name, address, URI or IP of the server to connect to.")]
-        public string? ServerUri { get; internal set; }
+        public string ServerUri { get; internal set; } = string.Empty;
         
         [Title("Server port")]
         [Description("The port to connect to.")]

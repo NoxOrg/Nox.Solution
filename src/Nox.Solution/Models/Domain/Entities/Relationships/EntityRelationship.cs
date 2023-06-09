@@ -1,4 +1,5 @@
-﻿using Json.Schema.Generation;
+﻿using System;
+using Json.Schema.Generation;
 
 namespace Nox.Solution
 {
@@ -16,17 +17,19 @@ namespace Nox.Solution
         [Required]
         [Title("A phrase describing the relationship with the target entity.")]
         [Description("A phrase that describes the relationship of the form <entity> <phrase> <targetEntity>. Eg. \"has capital\" like in <Country> <has capital> <City>")]
-        public string? Description { get; internal set; }
+        public string Description { get; internal set; } = string.Empty;
 
         [Required]
         [Title("The type/cardinality of the relationship.")]
         [Description("The cardinality (type) of relationship with the target entity.")]
-        public EntityRelationshipType? Relationship { get; internal set; }
+        public EntityRelationshipType Relationship { get; internal set; } = new();
 
         [Required]
         [Title("The target entity that relates to this entity.")]
         [Description("The name of the target entity that this entity relates to.")]
-        public string? Entity { get; internal set; }
+        public string Entity { get; internal set; } = String.Empty;
+
+        public bool CanNavigate { get; internal set; } = true;
 
     }
 }

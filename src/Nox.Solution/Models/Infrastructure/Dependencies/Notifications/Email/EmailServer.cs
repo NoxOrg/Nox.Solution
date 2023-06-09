@@ -7,6 +7,6 @@ namespace Nox.Solution
     {
         [Required]
         [AdditionalProperties(false)]
-        public EmailServerProvider? Provider { get; internal set; }
+        public EmailServerProvider Provider { get; internal set; } = EmailServerProvider.SendGrid;
     }
 }

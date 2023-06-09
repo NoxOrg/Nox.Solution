@@ -15,11 +15,11 @@ namespace Nox.Solution
         [Title("A phrase describing the etl target.")]
         [Description("A description of the etl target.")]
         public string? Description { get; internal set; }
-        
+
         [Required]
         [Title("The type of target.")]
         [Description("The type of target.")]
-        public EtlTargetType? TargetType { get; internal set; }
+        public EtlTargetType TargetType { get; internal set; } = EtlTargetType.Database;
 
         [AdditionalProperties(false)]
         public string? DataConnection { get; internal set; }

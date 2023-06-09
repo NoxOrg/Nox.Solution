@@ -48,10 +48,10 @@
             },
             "provider": {
               "enum": [
-                "SqlServer",
-                "Postgres",
-                "MySql",
-                "SqlLite"
+                "sqlServer",
+                "postgres",
+                "mySql",
+                "sqlLite"
               ]
             }
           },
@@ -101,10 +101,10 @@
             },
             "provider": {
               "enum": [
-                "AmazonElasticCache",
-                "AzureRedis",
-                "Memcached",
-                "Redis"
+                "amazonElasticCache",
+                "azureRedis",
+                "memcached",
+                "redis"
               ],
               "additionalProperties": false
             }
@@ -155,7 +155,7 @@
             },
             "provider": {
               "enum": [
-                "ElasticSearch"
+                "elasticSearch"
               ]
             }
           },
@@ -205,7 +205,7 @@
             },
             "provider": {
               "enum": [
-                "EventStoreDb"
+                "eventStoreDb"
               ]
             }
           },
@@ -264,10 +264,10 @@
             },
             "provider": {
               "enum": [
-                "RabbitMq",
-                "AzureServiceBus",
-                "AmazonSqs",
-                "InMemory"
+                "rabbitMq",
+                "azureServiceBus",
+                "amazonSqs",
+                "inMemory"
               ],
               "additionalProperties": false
             }
@@ -484,19 +484,19 @@
               },
               "provider": {
                 "enum": [
-                  "AmazonSqs",
-                  "AzureServiceBus",
-                  "CsvFile",
-                  "ExcelFile",
-                  "JsonFile",
-                  "MySql",
-                  "ParquetFile",
-                  "Postgres",
-                  "RabbitMq",
-                  "SqlServer",
-                  "WebApi",
-                  "XmlFile",
-                  "InMemory"
+                  "amazonSqs",
+                  "azureServiceBus",
+                  "csvFile",
+                  "excelFile",
+                  "jsonFile",
+                  "mySql",
+                  "parquetFile",
+                  "postgres",
+                  "rabbitMq",
+                  "sqlServer",
+                  "webApi",
+                  "xmlFile",
+                  "inMemory"
                 ]
               }
             },
@@ -550,8 +550,8 @@
                 },
                 "provider": {
                   "enum": [
-                    "SendGrid",
-                    "Mailchimp"
+                    "sendGrid",
+                    "mailchimp"
                   ],
                   "additionalProperties": false
                 }
@@ -602,8 +602,8 @@
                 },
                 "provider": {
                   "enum": [
-                    "Twilio",
-                    "ClickSend"
+                    "twilio",
+                    "clickSend"
                   ],
                   "additionalProperties": false
                 }
@@ -653,8 +653,8 @@
                 },
                 "provider": {
                   "enum": [
-                    "WhatsApp",
-                    "Telegram"
+                    "whatsApp",
+                    "telegram"
                   ],
                   "additionalProperties": false
                 }
@@ -757,9 +757,9 @@
                     },
                     "provider": {
                       "enum": [
-                        "AwsKeyManagementService",
-                        "AzureKeyVault",
-                        "HashicorpVault"
+                        "awsKeyManagementService",
+                        "azureKeyVault",
+                        "hashicorpVault"
                       ]
                     }
                   },

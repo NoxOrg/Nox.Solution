@@ -38,7 +38,7 @@
     },
     "provider": {
       "enum": [
-        "ElasticSearch"
+        "elasticSearch"
       ]
     }
   },

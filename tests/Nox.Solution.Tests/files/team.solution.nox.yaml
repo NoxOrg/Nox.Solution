@@ -13,8 +13,8 @@ team:
 
   - name: Andre Sharpe
     userName: andre.sharpe@iwgplc.com
-    roles: [Architect, Owner, Administrator, Developer, Manager]
+    roles: [architect, owner, administrator, developer, manager]
 
   - name: Jan Schutte
     userName: jan.schutte@iwgplc.com
-    roles: [Architect, Administrator, Developer, DevOpsEngineer]
+    roles: [architect, administrator, developer, devOpsEngineer]

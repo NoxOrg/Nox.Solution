@@ -40,14 +40,14 @@ domain:
 
         - name: CountryAcceptsCurrency
           description: accepts as legal tender
-          relationship: OneOrMany
+          relationship: oneOrMany
           entity: Currency
 
       ownedRelationships:
 
         - name: CountryLocalNames
           description: is also know as
-          relationship: OneOrMany
+          relationship: oneOrMany
           entity: CountryLocalNames
 
       queries:
@@ -217,7 +217,7 @@ domain:
 
         - name: CurrencyIsLegalTenderForCountry
           description: is legal tender for
-          relationship: ZeroOrMany
+          relationship: zeroOrMany
           entity: Country
           
     - name: CountryLocalNames

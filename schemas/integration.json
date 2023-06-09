@@ -108,8 +108,8 @@
               },
               "converter": {
                 "enum": [
-                  "UpperCase",
-                  "LowerCase"
+                  "upperCase",
+                  "lowerCase"
                 ]
               },
               "targetAttribute": {

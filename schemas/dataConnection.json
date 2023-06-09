@@ -38,19 +38,19 @@
     },
     "provider": {
       "enum": [
-        "AmazonSqs",
-        "AzureServiceBus",
-        "CsvFile",
-        "ExcelFile",
-        "JsonFile",
-        "MySql",
-        "ParquetFile",
-        "Postgres",
-        "RabbitMq",
-        "SqlServer",
-        "WebApi",
-        "XmlFile",
-        "InMemory"
+        "amazonSqs",
+        "azureServiceBus",
+        "csvFile",
+        "excelFile",
+        "jsonFile",
+        "mySql",
+        "parquetFile",
+        "postgres",
+        "rabbitMq",
+        "sqlServer",
+        "webApi",
+        "xmlFile",
+        "inMemory"
       ]
     }
   },

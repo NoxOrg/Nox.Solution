@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using FluentValidation;
+using Nox.Solution.Extensions;
 
 namespace Nox.Solution.Validation;
 
@@ -9,7 +10,7 @@ public class EventSourceServerValidator: AbstractValidator<EventSourceServer>
     {
         Include(new ServerBaseValidator("the infrastructure, persistence, event source server", servers));
         RuleFor(p => p.Provider)
-            .NotEmpty()
-            .WithMessage(p => string.Format(ValidationResources.EventSourceServerProviderEmpty, p.Name, EventSourceServerProviderHelpers.NameList()));
+            .NotNull()
+            .WithMessage(p => string.Format(ValidationResources.EventSourceServerProviderEmpty, p.Name, EventSourceServerProvider.EventStoreDb.ToNameList()));
     }
 }

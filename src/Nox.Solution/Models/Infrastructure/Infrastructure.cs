@@ -1,8 +1,6 @@
 ﻿using Json.Schema.Generation;
 
-namespace Nox.Solution
-{
-
+namespace Nox.Solution;
     [Title("A definition for infrastructure components used in a solution.")]
     [Description("A definition for the persistence, messaging and other pertinent components pertaining to solution infrastructure.")]
     [AdditionalProperties(false)]
@@ -10,11 +8,11 @@ namespace Nox.Solution
     {
         [Required]
         [AdditionalProperties(false)]
-        public Persistence? Persistence { get; internal set; }
-        
+        public Persistence Persistence { get; internal set; } = new();
+
         [Required]
         [AdditionalProperties(false)]
-        public Messaging? Messaging { get; internal set; }
+        public Messaging Messaging { get; internal set; } = new();
         
 
         [AdditionalProperties(false)]
@@ -23,4 +21,3 @@ namespace Nox.Solution
         [AdditionalProperties(false)]
         public Dependencies? Dependencies { get; internal set; }
     }
-}

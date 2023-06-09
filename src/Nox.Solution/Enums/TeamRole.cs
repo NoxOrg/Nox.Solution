@@ -22,15 +22,5 @@ namespace Nox
         ReleaseEngineer,
         ProjectManager
     }
-    
-    public static class TeamRoleHelpers
-    {
-        public static string NameList()
-        {
-            var list = Enum.GetValues(typeof(TeamRole))
-                .Cast<TeamRole>()
-                .ToList();
-            return string.Join(", ", list);
-        }
-    }
+
 }

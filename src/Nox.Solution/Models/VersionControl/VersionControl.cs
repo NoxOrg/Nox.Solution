@@ -23,9 +23,9 @@ namespace Nox.Solution
 
         [Required]
         [Title("The URI for the host of the version control service.")]
-        [Description("The URI for the person or organization's projects and reporitories. Usually https://dev.azure.com/<organization>")]
+        [Description("The URI for the person or organization's projects and repositories. Usually https://dev.azure.com/<organization>")]
         [Pattern(@"^[^\s]*$")]
-        public Uri? Host { get; internal set; }
+        public Uri Host { get; internal set; } = new Uri("https://noxorg.dev");
 
         [AdditionalProperties(false)]
         public VersionControlFolders? Folders { get; internal set; }

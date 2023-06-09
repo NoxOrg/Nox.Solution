@@ -8,15 +8,4 @@ namespace Nox
         Begin,
         End
     }
-    
-    public static class IconPositionHelpers
-    {
-        public static string NameList()
-        {
-            var list = Enum.GetValues(typeof(IconPosition))
-                .Cast<IconPosition>()
-                .ToList();
-            return string.Join(", ", list);
-        }
-    }
 }

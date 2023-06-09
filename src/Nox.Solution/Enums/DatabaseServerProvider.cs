@@ -10,15 +10,4 @@ namespace Nox
         MySql,
         SqlLite,
     }
-    
-    public static class DatabaseServerProviderHelpers
-    {
-        public static string NameList()
-        {
-            var list = Enum.GetValues(typeof(DatabaseServerProvider))
-                .Cast<DatabaseServerProvider>()
-                .ToList();
-            return string.Join(", ", list);
-        }
-    }
 }

@@ -10,10 +10,10 @@ namespace Nox.Solution
         public string? SourceColumn { get; internal set; }
 
         [Required]
-        [AdditionalProperties(false)] 
-        public EtlMatch? Match { get; internal set; }
+        [AdditionalProperties(false)]
+        public EtlMatch Match { get; internal set; } = new();
 
         [Required] 
-        public string? TargetAttribute { get; internal set; }
+        public string TargetAttribute { get; internal set; } = string.Empty;
     }
 }

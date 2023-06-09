@@ -20,8 +20,9 @@ namespace Nox.Solution
 
         [Required]
         [AdditionalProperties(false)]
-        public string? DataConnection { get; internal set; }
+        public string DataConnection { get; internal set; } = string.Empty;
 
-        [AdditionalProperties(false)] public DatabaseWatermark? Watermark { get; internal set; }
+        [AdditionalProperties(false)] 
+        public DatabaseWatermark? Watermark { get; internal set; }
     }
 }

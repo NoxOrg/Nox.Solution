@@ -12,14 +12,4 @@ namespace Nox
         OneOrMany
     }
 
-    public static class EntityRelationshipTypeHelpers
-    {
-        public static string NameList()
-        {
-            var list = Enum.GetValues(typeof(EntityRelationshipType))
-                .Cast<EntityRelationshipType>()
-                .ToList();
-            return string.Join(", ", list);
-        }
-    }
 }

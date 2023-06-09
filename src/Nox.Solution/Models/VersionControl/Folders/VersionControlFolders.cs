@@ -13,7 +13,7 @@ namespace Nox.Solution
         [Required]
         [Title("The path or relative path to the source code root.")]
         [Description("The path or relative path that contains your source code. Allows auto-configuration of build pipelines.")]
-        public string? SourceCode { get; internal set; } = "/src";
+        public string SourceCode { get; internal set; } = "/src";
 
         [Title("The path or relative path to the solution tests.")]
         [Description("The path or relative path that contains your solution tests. Allows auto-configuration of build pipelines.")]
@@ -22,7 +22,7 @@ namespace Nox.Solution
         [Required]
         [Title("The path or relative path to the docker containers.")]
         [Description("The path or relative path that contains your solution docker containers.")]
-        public string? Containers { get; internal set; } = "/Dockerfile";
+        public string Containers { get; internal set; } = "/Dockerfile";
 
         [Title("The path or relative path to the samples folder.")]
         [Description("The path or relative path that contains your solution samples.")]

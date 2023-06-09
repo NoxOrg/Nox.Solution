@@ -455,6 +455,7 @@ infrastructure:
 
     monitoring:
       name: SampleObservabiity
+      provider: elasticApm
       serverUri: localhost
       port: 8200
 

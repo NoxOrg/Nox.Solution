@@ -6,7 +6,7 @@ namespace Nox.Solution
     [AdditionalProperties(false)]
     public class DatabaseServer : ServerBase
     {
-        [Required]
-        public DatabaseServerProvider? Provider { get; internal set; }
+        [Required] 
+        public DatabaseServerProvider Provider { get; internal set; } = DatabaseServerProvider.SqlServer;
     }
 }

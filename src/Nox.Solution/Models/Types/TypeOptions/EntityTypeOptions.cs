@@ -5,7 +5,7 @@ namespace Nox.Solution
 {
     public class EntityTypeOptions : DefinitionBase
     {
-        [Required]
-        public string? Entity { get; internal set; }
+        [Required] 
+        public string Entity { get; internal set; } = string.Empty;
     }
 }

@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using FluentValidation;
+using Nox.Solution.Extensions;
 
 namespace Nox.Solution.Validation
 {
@@ -9,8 +10,8 @@ namespace Nox.Solution.Validation
         {
             Include(new ServerBaseValidator("the infrastructure, dependencies, security, secrets, secrets server", servers));
             RuleFor(p => p.Provider)
-                .NotEmpty()
-                .WithMessage(p => string.Format(ValidationResources.SecretsServerProviderEmpty, p.Name, SecretsServerProviderHelpers.NameList()));
+                .NotNull()
+                .WithMessage(p => string.Format(ValidationResources.SecretsServerProviderEmpty, p.Name, SecretsServerProvider.AzureKeyVault.ToNameList()));
         }
     }
 }

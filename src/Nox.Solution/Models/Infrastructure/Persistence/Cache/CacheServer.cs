@@ -7,6 +7,6 @@ namespace Nox.Solution
     {
         [Required]
         [AdditionalProperties(false)]
-        public CacheServerProvider? Provider { get; internal set; }
+        public CacheServerProvider Provider { get; internal set; } = CacheServerProvider.Memcached;
     }
 }

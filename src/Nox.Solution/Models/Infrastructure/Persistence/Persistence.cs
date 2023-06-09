@@ -8,7 +8,7 @@ namespace Nox.Solution
     {
         [Required]
         [AdditionalProperties(false)]
-        public DatabaseServer? DatabaseServer { get; internal set; }
+        public DatabaseServer DatabaseServer { get; internal set; } = new();
         
         [AdditionalProperties(false)]
         public CacheServer? CacheServer { get; internal set; }

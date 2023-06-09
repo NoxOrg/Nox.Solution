@@ -9,15 +9,5 @@ namespace Nox
         Lower,
         Upper
     }
-    
-    public static class TextTypeCasingHelpers
-    {
-        public static string NameList()
-        {
-            var list = Enum.GetValues(typeof(TextTypeCasing))
-                .Cast<TextTypeCasing>()
-                .ToList();
-            return string.Join(", ", list);
-        }
-    }
+
 }

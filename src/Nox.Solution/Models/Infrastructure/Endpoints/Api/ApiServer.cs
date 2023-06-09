@@ -7,6 +7,6 @@ namespace Nox.Solution
     {
         [Required]
         [AdditionalProperties(false)]
-        public ApiServerProvider? Provider { get; internal set; }
+        public ApiServerProvider Provider { get; internal set; } = ApiServerProvider.OData;
     }
 }

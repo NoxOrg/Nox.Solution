@@ -11,14 +11,3 @@ public enum EtlTargetType
     WebApi,
     MessageQueue
 }
-
-public static class EtlTargetTypeHelpers
-{
-    public static string NameList()
-    {
-        var list = Enum.GetValues(typeof(EtlTargetType))
-            .Cast<EtlTargetType>()
-            .ToList();
-        return string.Join(", ", list);
-    }
-}

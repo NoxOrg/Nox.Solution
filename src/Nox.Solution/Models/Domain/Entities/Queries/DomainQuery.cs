@@ -23,6 +23,6 @@ namespace Nox.Solution
 
         [Required]
         [AdditionalProperties(false)]
-        public DomainQueryResponseOutput? ResponseOutput { get; internal set; }
+        public DomainQueryResponseOutput ResponseOutput { get; internal set; } = new();
     }
 }

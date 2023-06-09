@@ -8,7 +8,7 @@ namespace Nox.Solution
     {
         [Required]
         [AdditionalProperties(false)]
-        public MessagingServerProvider? Provider { get; internal set; }
+        public MessagingServerProvider Provider { get; internal set; } = MessagingServerProvider.InMemory;
         
         internal bool ApplyDefaults()
         {
@@ -16,7 +16,7 @@ namespace Nox.Solution
             {
                 case MessagingServerProvider.RabbitMq:
                 case MessagingServerProvider.AzureServiceBus:
-                    var builder = new NoxUriBuilder(this, MessagingServerProviderHelpers.GetProviderScheme(Provider.Value), "infrastructure, messaging, integrationEventServer");
+                    var builder = new NoxUriBuilder(this, MessagingServerProviderHelpers.GetProviderScheme(Provider), "infrastructure, messaging, integrationEventServer");
                     ServerUri = builder.Uri!.ToString();
                     break;
                 case MessagingServerProvider.AmazonSqs:

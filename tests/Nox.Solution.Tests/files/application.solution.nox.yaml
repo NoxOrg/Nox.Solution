@@ -59,7 +59,7 @@ application:
             targetAttribute: GeoRegion
       target:
         name: Country
-        dataConnection: Nox
+        targetType: entity
 
 infrastructure: 
   persistence: 

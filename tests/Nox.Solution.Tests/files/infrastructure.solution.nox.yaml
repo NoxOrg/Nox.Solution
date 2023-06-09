@@ -63,11 +63,13 @@ infrastructure:
     
     apiServer:
       name: SampleApiServer
+      provider: OData
       serverUri: workplace.iwgplc.com
       port: 8080
 
     bffServer:
       name: SampleBffServer
+      provider: Blazor
       serverUri: SampleBff.iwgplc.com
       port: 8080
 

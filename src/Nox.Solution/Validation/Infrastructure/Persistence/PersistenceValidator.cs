@@ -7,21 +7,17 @@ namespace Nox.Solution.Validation
     {
         public PersistenceValidator(IEnumerable<ServerBase>? servers)
         {
-            RuleFor(p => p.DatabaseServer)
-                .NotEmpty()
-                .WithMessage(ValidationResources.PersistenceDatabaseServerEmpty);
-
             RuleFor(p => p.DatabaseServer!)
-                .SetValidator(v => new ServerBaseValidator("the infrastructure, persistence, database server", servers));
-
+                .SetValidator(v => new DatabaseServerValidator(servers));
+            
             RuleFor(p => p.CacheServer!)
-                .SetValidator(v => new ServerBaseValidator("the infrastructure, cache server", servers));
+                .SetValidator(v => new CacheServerValidator(servers));
             
             RuleFor(p => p.SearchServer!)
-                .SetValidator(v => new ServerBaseValidator("the infrastructure, search server", servers));
+                .SetValidator(v => new SearchServerValidator(servers));
             
             RuleFor(p => p.EventSourceServer!)
-                .SetValidator(v => new ServerBaseValidator("the infrastructure, event source server", servers));
+                .SetValidator(v => new EventSourceServerValidator(servers));
         }
     }
 }

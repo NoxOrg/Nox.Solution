@@ -45,7 +45,7 @@ namespace Nox.Solution {
             }
         }
         
-                internal static string SolutionNameEmpty {
+        internal static string SolutionNameEmpty {
             get {
                 return ResourceManager.GetString("SolutionNameEmpty", resourceCulture);
             }
@@ -363,9 +363,9 @@ namespace Nox.Solution {
             }
         }
         
-        internal static string EtlTargetDataConnectionEmpty {
+        internal static string EtlTargetTypeEmpty {
             get {
-                return ResourceManager.GetString("EtlTargetDataConnectionEmpty", resourceCulture);
+                return ResourceManager.GetString("EtlTargetTypeEmpty", resourceCulture);
             }
         }
         
@@ -528,6 +528,42 @@ namespace Nox.Solution {
         internal static string IntegrationEventsServerDefaultsFalse {
             get {
                 return ResourceManager.GetString("IntegrationEventsServerDefaultsFalse", resourceCulture);
+            }
+        }
+        
+        internal static string DatabaseServerProviderEmpty {
+            get {
+                return ResourceManager.GetString("DatabaseServerProviderEmpty", resourceCulture);
+            }
+        }
+        
+        internal static string EventSourceServerProviderEmpty {
+            get {
+                return ResourceManager.GetString("EventSourceServerProviderEmpty", resourceCulture);
+            }
+        }
+        
+        internal static string CacheServerProviderEmpty {
+            get {
+                return ResourceManager.GetString("CacheServerProviderEmpty", resourceCulture);
+            }
+        }
+        
+        internal static string SearchServerProviderEmpty {
+            get {
+                return ResourceManager.GetString("SearchServerProviderEmpty", resourceCulture);
+            }
+        }
+        
+        internal static string ApiServerProviderEmpty {
+            get {
+                return ResourceManager.GetString("ApiServerProviderEmpty", resourceCulture);
+            }
+        }
+        
+        internal static string BffServerProviderEmpty {
+            get {
+                return ResourceManager.GetString("BffServerProviderEmpty", resourceCulture);
             }
         }
     }

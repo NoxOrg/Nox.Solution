@@ -22,7 +22,7 @@ environments:
     description: Used for development and testing
 
   - name: test
-    description: Test environment 
+    description: Test environment
 
   - name: uat
     description: For them end users to check it works
@@ -109,13 +109,13 @@ domain:
         - name: GetCountriesByContinent
           description: Returns a list of countries for a given continent
 
-          requestInput: 
+          requestInput:
             - name: continentName
               description: Africa, Europe, Asia, Australia, North America, or South America
               type: text
-              textTypeOptions: 
+              textTypeOptions:
                 isUnicode: false
-                
+          
           responseOutput:
             name: countriesByContinentDto
             type: collection
@@ -132,7 +132,7 @@ domain:
                   - name: CountryName
                     description: The country name
                     type: text
-        
+      
       commands:
 
         - name: UpdatePopulationStatistics
@@ -217,7 +217,7 @@ domain:
             maxLength: 63
 
         - name: AreaInSquareKilometres
-          description: Country area in square kilometers 
+          description: Country area in square kilometers
           type: number
           numberTypeOptions:
             minValue: 0
@@ -273,7 +273,7 @@ domain:
           description: is legal tender for
           relationship: zeroOrMany
           entity: Country
-      
+
     - name: CountryLocalNames
       description: The name of a country in other languages
 
@@ -297,21 +297,21 @@ domain:
 
       attributes:
 
-      - name: Amount
-        description: The amount
-        type: number
-        numberTypeOptions:
-          minValue: 0
-          decimalDigits: 4
-        isRequired: true
+        - name: Amount
+          description: The amount
+          type: number
+          numberTypeOptions:
+            minValue: 0
+            decimalDigits: 4
+          isRequired: true
 
-      - name: OperationLimit
-        description: The Operation Limit
-        type: number
-        numberTypeOptions:
-          minValue: 0
-          decimalDigits: 4
-        isRequired: false
+        - name: OperationLimit
+          description: The Operation Limit
+          type: number
+          numberTypeOptions:
+            minValue: 0
+            decimalDigits: 4
+          isRequired: false
 
 application:
   dataTransferObjects:
@@ -347,26 +347,26 @@ application:
           sequentialKeyColumn: CountryId
       transform:
         map:
-            - sourceColumn: IsoAlpha2Code
-              targetAttribute: Id
-              converter: upperCase
-            - sourceColumn: CountryName
-              targetAttribute: Name
-            - sourceColumn: CountryFullName
-              targetAttribute: FormalName
+          - sourceColumn: IsoAlpha2Code
+            targetAttribute: Id
+            converter: upperCase
+          - sourceColumn: CountryName
+            targetAttribute: Name
+          - sourceColumn: CountryFullName
+            targetAttribute: FormalName
         lookup:
-            - sourceColumn: RegionId
-              match:
-                table: GeoRegions
-                lookupColumn: Id
-                returnColumn: Name
-              targetAttribute: GeoRegion
+          - sourceColumn: RegionId
+            match:
+              table: GeoRegions
+              lookupColumn: Id
+              returnColumn: Name
+            targetAttribute: GeoRegion
       target:
-        name: ???
-        dataConnection: Nox #This points to Nox entity store
+        name: Country
+        targetType: entity
 
-infrastructure: 
-
+infrastructure:
+  
   persistence:
 
     databaseServer:
@@ -391,14 +391,14 @@ infrastructure:
       serverUri: redis.iwgplc.com
       user: RedisUser
       password: RedisPassword
-      
+    
     searchServer:
       name: SampleSearch
       provider: elasticSearch
       serverUri: elastic.igwplc.com
       user: ElasticUser
       password: ElasticPassword
-      
+    
     eventSourceServer:
       name: SampleEvtSrc
       serverUri: SampleEvt.iwgplc.com
@@ -420,11 +420,13 @@ infrastructure:
     
     apiServer:
       name: SampleApiServer
+      provider: oData
       serverUri: workplace.iwgplc.com
       port: 8080
-
+    
     bffServer:
       name: SampleBffServer
+      provider: blazor
       serverUri: SampleBff.iwgplc.com
       port: 8080
 
@@ -477,11 +479,5 @@ infrastructure:
         provider: jsonFile
         serverUri: file:///C:/my-data-files
         options: Source=File;Filename=country-data.json;
-        
-      - name: Nox
-        provider: sqlServer
-        serverUri: localhost
-        user: sa
-        password: Developer*123
 
 

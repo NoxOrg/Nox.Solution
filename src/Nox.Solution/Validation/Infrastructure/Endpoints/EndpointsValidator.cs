@@ -8,10 +8,10 @@ namespace Nox.Solution.Validation
         public EndpointsValidator(IEnumerable<ServerBase>? servers)
         {
             RuleFor(p => p.ApiServer!)
-                .SetValidator(v => new ServerBaseValidator("the infrastructure, endpoints, api server", servers));
+                .SetValidator(v => new ApiServerValidator(servers));
             
             RuleFor(p => p.BffServer!)
-                .SetValidator(v => new ServerBaseValidator("the infrastructure, endpoints, bff server", servers));
+                .SetValidator(v => new BffServerValidator(servers));
         }
     }
 }

@@ -11,7 +11,7 @@ description: Microservice for maintaining and finding places to work
 
 overview: https://regusit.atlassian.net/wiki/spaces/heimdall/pages/2616393814/Workplace+Services
 
-variables:
+variables: 
   DATABASE_PROVIDER: slqServer
   DATABASE_SERVER: localhost
   DATABASE_USER: sa
@@ -33,7 +33,7 @@ environments:
     description: Production environment used for, well - the real thing!
 
 versionControl:
-  provider: AzureDevops
+  provider: azureDevops
   host: https://dev.azure.com/iwgplc
   folders:
     sourceCode: /src
@@ -43,27 +43,27 @@ team:
 
   - name: Andre Sharpe
     userName: andre.sharpe@iwgplc.com
-    roles: [Architect, Owner, Administrator, Developer, Manager]
+    roles: [architect, owner, administrator, developer, manager]
 
   - name: Jan Schutte
     userName: jan.schutte@iwgplc.com
-    roles: [Architect, Administrator, Developer, DevOpsEngineer]
+    roles: [architect, administrator, developer, devOpsEngineer]
 
   - name: Anton Du Plessis
     userName: anton.duplessis@iwgplc.com
-    roles: [ProjectManager]
+    roles: [projectManager]
 
   - name: Morne Van Zyl
     userName: morne.vanzyl@iwgplc.com
-    roles: [TechnicalWriter]
+    roles: [technicalWriter]
 
   - name: Dmytro Dorodnykh
     userName: dmytro.dorodnykh@iwgplc.com
-    roles: [Developer]
+    roles: [developer]
 
   - name: Oleksandr Vlasenko
     userName: oleksandr.vlasenko@regus.com
-    roles: [Architect, Developer]
+    roles: [architect, developer]
 
 domain:
 
@@ -96,14 +96,14 @@ domain:
 
         - name: CountryAcceptsCurrency
           description: accepts as legal tender
-          relationship: OneOrMany
+          relationship: oneOrMany
           entity: Currency
 
       ownedRelationships:
 
         - name: CountryLocalNames
           description: is also know as
-          relationship: OneOrMany
+          relationship: oneOrMany
           entity: CountryLocalNames
 
       queries:
@@ -273,7 +273,7 @@ domain:
 
         - name: CurrencyIsLegalTenderForCountry
           description: is legal tender for
-          relationship: ZeroOrMany
+          relationship: zeroOrMany
           entity: Country
       
     - name: CountryLocalNames
@@ -364,8 +364,8 @@ application:
                 returnColumn: Name
               targetAttribute: GeoRegion
       target:
-        name: ???
-        dataConnection: Nox #This points to Nox entity store
+        name: Country
+        targetType: entity
 
 infrastructure: 
 
@@ -409,14 +409,10 @@ infrastructure:
       password: EvtPassword
 
   messaging:
-    
-    domainEventServer:
-      name: MediatR
-      provider: mediatR
 
     integrationEventServer:
       name: IntegrationBus
-      provider: rabbitMQ
+      provider: rabbitMq
       serverUri: rabbitmq://localhost
       port: 5672
       user: guest
@@ -426,11 +422,13 @@ infrastructure:
     
     apiServer:
       name: SampleApiServer
+      provider: oData
       serverUri: workplace.iwgplc.com
       port: 8080
-
+      
     bffServer:
       name: SampleBffServer
+      provider: blazor
       serverUri: SampleBff.iwgplc.com
       port: 8080
 

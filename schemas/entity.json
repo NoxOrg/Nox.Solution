@@ -19,7 +19,7 @@
     },
     "pluralName": {
       "type": "string",
-      "title": "The pluraly name of the entity. Contains no spaces",
+      "title": "The plural name of the entity. Contains no spaces",
       "description": "The name for a set, group or collection of the entity. NOX will guess the plural if it is not supplied.",
       "pattern": "^[^\\s]*$"
     },
@@ -38,8 +38,7 @@
         }
       },
       "title": "Specifies information on displaying the entity on a user interface",
-      "description": "Provides hints to rendering engines as to how this entity should be managed in the user interface.",
-      "additionalProperties": false
+      "description": "Provides hints to rendering engines as to how this entity should be managed in the user interface."
     },
     "persistence": {
       "type": "object",
@@ -8610,6 +8609,6 @@
     "name"
   ],
   "title": "Defines an entity or aggregate root",
-  "description": "The declaration of an entity, it\u0027s attributes, commands and queries. See https://noxorg.dev for more.",
+  "description": "The declaration of an entity, its attributes, commands and queries. See https://noxorg.dev for more.",
   "additionalProperties": false
 }

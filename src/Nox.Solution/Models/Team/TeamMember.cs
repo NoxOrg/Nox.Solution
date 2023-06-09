@@ -6,7 +6,7 @@ namespace Nox.Solution
     [Title("Information about the team member working on this solution.")]
     [Description("Information of the team member including username and their respective role(s) of which their might me more than one.")]
     [AdditionalProperties(false)]
-    public class Team : DefinitionBase
+    public class TeamMember : DefinitionBase
     {
 
         [Title("The name and surname of the team member.")]

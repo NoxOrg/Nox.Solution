@@ -4,11 +4,11 @@ using FluentValidation;
 
 namespace Nox.Solution.Validation
 {
-    public class TeamValidator: AbstractValidator<Team>
+    public class TeamValidator: AbstractValidator<TeamMember>
     {
-        private readonly IEnumerable<Team>? _members;
+        private readonly IEnumerable<TeamMember>? _members;
         
-        public TeamValidator(IEnumerable<Team>? members)
+        public TeamValidator(IEnumerable<TeamMember>? members)
         {
             if (members == null) return;
             _members = members;
@@ -25,7 +25,7 @@ namespace Nox.Solution.Validation
                 .WithMessage(t => string.Format(ValidationResources.TeamUserNameDuplicate, t.UserName));
         }
         
-        private bool HaveUniqueUserName(Team toEvaluate, string userName)
+        private bool HaveUniqueUserName(TeamMember toEvaluate, string userName)
         {
             return _members!.All(member => member.Equals(toEvaluate) || member.UserName != userName);
         }

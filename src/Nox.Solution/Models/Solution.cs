@@ -42,7 +42,7 @@ namespace Nox.Solution
         [Title("Information about the team working on this solution.")]
         [Description("Specify the members of the team working on the solution including their respective roles.")]
         [AdditionalProperties(false)]
-        public IReadOnlyList<Team>? Team { get; internal set; }
+        public IReadOnlyList<TeamMember>? Team { get; internal set; }
 
         [AdditionalProperties(false)]
         public Domain? Domain { get; internal set; }

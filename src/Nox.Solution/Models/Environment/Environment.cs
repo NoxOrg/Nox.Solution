@@ -4,8 +4,8 @@ using System.Collections.Generic;
 namespace Nox.Solution
 {
 
-    [Title("A definition for a run-time environments.")]
-    [Description("A definition for the name, variables and other pertinent information pertaining to a run-time environment.")]
+    [Title("A definition for a run-time environment.")]
+    [Description("A definition for the name, production status and other pertinent information pertaining to a run-time environment.")]
     [AdditionalProperties(false)]
     public class Environment : DefinitionBase
     {
@@ -21,7 +21,7 @@ namespace Nox.Solution
         public string? Description { get; internal set; }
 
         [Title("Whether this environment is a production environment (true) or not (false).")]
-        [Description("Specifies which environment(s) are used for production or not. Affects how devops processes and the NOX runtime is configured.")]
+        [Description("Specifies whether this environment is used for production or not. Affects how devops processes and the NOX runtime is configured.")]
         public bool IsProduction { get; internal set; } = false;
     }
 }

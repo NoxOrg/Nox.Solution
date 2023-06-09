@@ -32,13 +32,15 @@ namespace Nox.Solution
         public IReadOnlyDictionary<string, string>? Variables { get; internal set; }
 
         [Title("Definitions for run-time environments.")]
-        [Description("Definitions for the name, variables and other pertinent information pertaining to run-time environments.")]
+        [Description("Definitions for the name, production status and other pertinent information pertaining to run-time environments.")]
         [AdditionalProperties(false)]
         public IReadOnlyList<Environment>? Environments { get; internal set; }
 
         [AdditionalProperties(false)]
         public VersionControl? VersionControl { get; internal set; }
 
+        [Title("Information about the team working on this solution.")]
+        [Description("Specify the members of the team working on the solution including their respective roles.")]
         [AdditionalProperties(false)]
         public IReadOnlyList<Team>? Team { get; internal set; }
 

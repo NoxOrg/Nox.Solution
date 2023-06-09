@@ -11,8 +11,8 @@ namespace Nox.Solution
     {
 
         [Required]
-        [Title("The entities that describes the domain.")]
-        [Description("The collection of entitties and their relationships with each other.")]
+        [Title("The entities that describe the domain.")]
+        [Description("The collection of entities and their relationships with each other.")]
         [AdditionalProperties(false)]
         public IReadOnlyList<Entity>? Entities { get; internal set; }
 

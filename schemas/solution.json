@@ -1351,6 +1351,7 @@
                           "collectionTypeOptions": {
                             "type": "object",
                             "properties": {
+<<<<<<< HEAD
                               "$ref": {
                                 "type": "string",
                                 "format": "uri"
@@ -1784,6 +1785,8 @@
                                   "null"
                                 ]
                               },
+=======
+>>>>>>> origin/main
                               "objectTypeOptions": {
                                 "type": "object",
                                 "properties": {
@@ -2239,6 +2242,439 @@
                                 },
                                 "required": [
                                   "attributes"
+                                ]
+                              },
+                              "$ref": {
+                                "type": "string",
+                                "format": "uri"
+                              },
+                              "name": {
+                                "type": "string",
+                                "pattern": "^[^\\s]*$"
+                              },
+                              "description": {
+                                "type": "string"
+                              },
+                              "type": {
+                                "enum": [
+                                  "array",
+                                  "collection",
+                                  "object",
+                                  "area",
+                                  "autoNumber",
+                                  "boolean",
+                                  "color",
+                                  "colour",
+                                  "countryCode2",
+                                  "countryCode3",
+                                  "countryNumber",
+                                  "culture",
+                                  "currencyCode",
+                                  "currencyNumber",
+                                  "date",
+                                  "dateTime",
+                                  "dateTimeDuration",
+                                  "dateTimeRange",
+                                  "dateTimeSchedule",
+                                  "distance",
+                                  "email",
+                                  "encryptedText",
+                                  "entity",
+                                  "file",
+                                  "formula",
+                                  "guid",
+                                  "hashedText",
+                                  "html",
+                                  "image",
+                                  "imageJpg",
+                                  "imagePng",
+                                  "imageSvg",
+                                  "internetDomain",
+                                  "ipAddress",
+                                  "json",
+                                  "jwtToken",
+                                  "language",
+                                  "latlong",
+                                  "length",
+                                  "macAddress",
+                                  "markdown",
+                                  "money",
+                                  "nuid",
+                                  "number",
+                                  "password",
+                                  "percentage",
+                                  "phoneNumber",
+                                  "streetAddress",
+                                  "temperature",
+                                  "text",
+                                  "time",
+                                  "translatedText",
+                                  "uri",
+                                  "url",
+                                  "user",
+                                  "volume",
+                                  "weight",
+                                  "yaml"
+                                ]
+                              },
+                              "textTypeOptions": {
+                                "type": "object",
+                                "properties": {
+                                  "$ref": {
+                                    "type": "string",
+                                    "format": "uri"
+                                  },
+                                  "isUnicode": {
+                                    "type": [
+                                      "boolean",
+                                      "null"
+                                    ]
+                                  },
+                                  "minLength": {
+                                    "type": [
+                                      "integer",
+                                      "null"
+                                    ]
+                                  },
+                                  "maxLength": {
+                                    "type": [
+                                      "integer",
+                                      "null"
+                                    ]
+                                  },
+                                  "characterCasing": {
+                                    "enum": [
+                                      "Normal",
+                                      "Lower",
+                                      "Upper"
+                                    ]
+                                  },
+                                  "isMultiline": {
+                                    "type": [
+                                      "boolean",
+                                      "null"
+                                    ]
+                                  }
+                                },
+                                "additionalProperties": false
+                              },
+                              "numberTypeOptions": {
+                                "type": "object",
+                                "properties": {
+                                  "$ref": {
+                                    "type": "string",
+                                    "format": "uri"
+                                  },
+                                  "decimalDigits": {
+                                    "type": [
+                                      "integer",
+                                      "null"
+                                    ]
+                                  },
+                                  "integerDigits": {
+                                    "type": [
+                                      "integer",
+                                      "null"
+                                    ]
+                                  },
+                                  "minValue": {
+                                    "type": "number"
+                                  },
+                                  "maxValue": {
+                                    "type": "number"
+                                  }
+                                },
+                                "additionalProperties": false
+                              },
+                              "moneyTypeOptions": {
+                                "type": "object",
+                                "properties": {
+                                  "$ref": {
+                                    "type": "string",
+                                    "format": "uri"
+                                  },
+                                  "decimalDigits": {
+                                    "type": [
+                                      "integer",
+                                      "null"
+                                    ]
+                                  },
+                                  "integerDigits": {
+                                    "type": [
+                                      "integer",
+                                      "null"
+                                    ]
+                                  },
+                                  "minValue": {
+                                    "type": "number"
+                                  },
+                                  "maxValue": {
+                                    "type": "number"
+                                  },
+                                  "defaultCurrency": {
+                                    "enum": [
+                                      "AED",
+                                      "AFN",
+                                      "ALL",
+                                      "AMD",
+                                      "ANG",
+                                      "AOA",
+                                      "ARS",
+                                      "AUD",
+                                      "AWG",
+                                      "AZN",
+                                      "BAM",
+                                      "BBD",
+                                      "BDT",
+                                      "BGN",
+                                      "BHD",
+                                      "BIF",
+                                      "BMD",
+                                      "BND",
+                                      "BOB",
+                                      "BRL",
+                                      "BSD",
+                                      "BTC",
+                                      "BTN",
+                                      "BWP",
+                                      "BYR",
+                                      "BYN",
+                                      "BZD",
+                                      "CAD",
+                                      "CDF",
+                                      "CHF",
+                                      "CLP",
+                                      "CNY",
+                                      "COP",
+                                      "CRC",
+                                      "CUC",
+                                      "CUP",
+                                      "CVE",
+                                      "CZK",
+                                      "DJF",
+                                      "DKK",
+                                      "DOP",
+                                      "DZD",
+                                      "EGP",
+                                      "ERN",
+                                      "ETB",
+                                      "EUR",
+                                      "FJD",
+                                      "FKP",
+                                      "GBP",
+                                      "GEL",
+                                      "GHS",
+                                      "GIP",
+                                      "GMD",
+                                      "GNF",
+                                      "GTQ",
+                                      "GYD",
+                                      "HKD",
+                                      "HNL",
+                                      "HRK",
+                                      "HTG",
+                                      "HUF",
+                                      "IDR",
+                                      "ILS",
+                                      "INR",
+                                      "IQD",
+                                      "IRR",
+                                      "ISK",
+                                      "JMD",
+                                      "JOD",
+                                      "JPY",
+                                      "KES",
+                                      "KGS",
+                                      "KHR",
+                                      "KMF",
+                                      "KPW",
+                                      "KRW",
+                                      "KWD",
+                                      "KYD",
+                                      "KZT",
+                                      "LAK",
+                                      "LBP",
+                                      "LKR",
+                                      "LRD",
+                                      "LSL",
+                                      "LYD",
+                                      "MAD",
+                                      "MDL",
+                                      "MGA",
+                                      "MKD",
+                                      "MMK",
+                                      "MNT",
+                                      "MOP",
+                                      "MRO",
+                                      "MTL",
+                                      "MUR",
+                                      "MVR",
+                                      "MWK",
+                                      "MXN",
+                                      "MYR",
+                                      "MZN",
+                                      "NAD",
+                                      "NGN",
+                                      "NIO",
+                                      "NOK",
+                                      "NPR",
+                                      "NZD",
+                                      "OMR",
+                                      "PAB",
+                                      "PEN",
+                                      "PGK",
+                                      "PHP",
+                                      "PKR",
+                                      "PLN",
+                                      "PYG",
+                                      "QAR",
+                                      "RON",
+                                      "RSD",
+                                      "RUB",
+                                      "RWF",
+                                      "SAR",
+                                      "SBD",
+                                      "SCR",
+                                      "SDD",
+                                      "SDG",
+                                      "SEK",
+                                      "SGD",
+                                      "SHP",
+                                      "SLL",
+                                      "SOS",
+                                      "SRD",
+                                      "STD",
+                                      "SVC",
+                                      "SYP",
+                                      "SZL",
+                                      "THB",
+                                      "TJS",
+                                      "TMT",
+                                      "TND",
+                                      "TOP",
+                                      "TRY",
+                                      "TTD",
+                                      "TVD",
+                                      "TWD",
+                                      "TZS",
+                                      "UAH",
+                                      "UGX",
+                                      "USD",
+                                      "UYU",
+                                      "UZS",
+                                      "VEB",
+                                      "VEF",
+                                      "VND",
+                                      "VUV",
+                                      "WST",
+                                      "XAF",
+                                      "XCD",
+                                      "XBT",
+                                      "XOF",
+                                      "XPF",
+                                      "YER",
+                                      "ZAR",
+                                      "ZMW",
+                                      "WON"
+                                    ]
+                                  }
+                                },
+                                "additionalProperties": false
+                              },
+                              "entityTypeOptions": {
+                                "type": "object",
+                                "properties": {
+                                  "$ref": {
+                                    "type": "string",
+                                    "format": "uri"
+                                  },
+                                  "entity": {
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "entity"
+                                ]
+                              },
+                              "isRequired": {
+                                "type": [
+                                  "boolean",
+                                  "null"
+                                ]
+                              },
+                              "userInterface": {
+                                "type": "object",
+                                "properties": {
+                                  "$ref": {
+                                    "type": "string",
+                                    "format": "uri"
+                                  },
+                                  "label": {
+                                    "type": "string"
+                                  },
+                                  "translationId": {
+                                    "type": "string"
+                                  },
+                                  "widget": {
+                                    "enum": [
+                                      "TextInput",
+                                      "TextArea",
+                                      "NumberInput",
+                                      "NumberSlider",
+                                      "FileUpload",
+                                      "DatePicker",
+                                      "DateRangePicker",
+                                      "TimePicker",
+                                      "TimeRangePicker",
+                                      "Radio",
+                                      "Select",
+                                      "Checkbox",
+                                      "Switch"
+                                    ]
+                                  },
+                                  "icon": {
+                                    "type": "string"
+                                  },
+                                  "iconPosition": {
+                                    "enum": [
+                                      "Begin",
+                                      "End"
+                                    ]
+                                  },
+                                  "inputMask": {
+                                    "type": "string"
+                                  },
+                                  "outputMask": {
+                                    "type": "string"
+                                  },
+                                  "regex": {
+                                    "type": "string"
+                                  },
+                                  "pageGroup": {
+                                    "type": "string"
+                                  },
+                                  "fieldGroup": {
+                                    "type": "string"
+                                  },
+                                  "inputOrder": {
+                                    "type": [
+                                      "integer",
+                                      "null"
+                                    ]
+                                  },
+                                  "helpHint": {
+                                    "type": "string"
+                                  },
+                                  "errorMessage": {
+                                    "type": "string"
+                                  }
+                                },
+                                "additionalProperties": false
+                              },
+                              "isReadonly": {
+                                "type": [
+                                  "boolean",
+                                  "null"
                                 ]
                               }
                             },
@@ -2253,6 +2689,7 @@
                           "arrayTypeOptions": {
                             "type": "object",
                             "properties": {
+<<<<<<< HEAD
                               "$ref": {
                                 "type": "string",
                                 "format": "uri"
@@ -2686,6 +3123,8 @@
                                   "null"
                                 ]
                               },
+=======
+>>>>>>> origin/main
                               "objectTypeOptions": {
                                 "type": "object",
                                 "properties": {
@@ -3141,6 +3580,439 @@
                                 },
                                 "required": [
                                   "attributes"
+                                ]
+                              },
+                              "$ref": {
+                                "type": "string",
+                                "format": "uri"
+                              },
+                              "name": {
+                                "type": "string",
+                                "pattern": "^[^\\s]*$"
+                              },
+                              "description": {
+                                "type": "string"
+                              },
+                              "type": {
+                                "enum": [
+                                  "array",
+                                  "collection",
+                                  "object",
+                                  "area",
+                                  "autoNumber",
+                                  "boolean",
+                                  "color",
+                                  "colour",
+                                  "countryCode2",
+                                  "countryCode3",
+                                  "countryNumber",
+                                  "culture",
+                                  "currencyCode",
+                                  "currencyNumber",
+                                  "date",
+                                  "dateTime",
+                                  "dateTimeDuration",
+                                  "dateTimeRange",
+                                  "dateTimeSchedule",
+                                  "distance",
+                                  "email",
+                                  "encryptedText",
+                                  "entity",
+                                  "file",
+                                  "formula",
+                                  "guid",
+                                  "hashedText",
+                                  "html",
+                                  "image",
+                                  "imageJpg",
+                                  "imagePng",
+                                  "imageSvg",
+                                  "internetDomain",
+                                  "ipAddress",
+                                  "json",
+                                  "jwtToken",
+                                  "language",
+                                  "latlong",
+                                  "length",
+                                  "macAddress",
+                                  "markdown",
+                                  "money",
+                                  "nuid",
+                                  "number",
+                                  "password",
+                                  "percentage",
+                                  "phoneNumber",
+                                  "streetAddress",
+                                  "temperature",
+                                  "text",
+                                  "time",
+                                  "translatedText",
+                                  "uri",
+                                  "url",
+                                  "user",
+                                  "volume",
+                                  "weight",
+                                  "yaml"
+                                ]
+                              },
+                              "textTypeOptions": {
+                                "type": "object",
+                                "properties": {
+                                  "$ref": {
+                                    "type": "string",
+                                    "format": "uri"
+                                  },
+                                  "isUnicode": {
+                                    "type": [
+                                      "boolean",
+                                      "null"
+                                    ]
+                                  },
+                                  "minLength": {
+                                    "type": [
+                                      "integer",
+                                      "null"
+                                    ]
+                                  },
+                                  "maxLength": {
+                                    "type": [
+                                      "integer",
+                                      "null"
+                                    ]
+                                  },
+                                  "characterCasing": {
+                                    "enum": [
+                                      "Normal",
+                                      "Lower",
+                                      "Upper"
+                                    ]
+                                  },
+                                  "isMultiline": {
+                                    "type": [
+                                      "boolean",
+                                      "null"
+                                    ]
+                                  }
+                                },
+                                "additionalProperties": false
+                              },
+                              "numberTypeOptions": {
+                                "type": "object",
+                                "properties": {
+                                  "$ref": {
+                                    "type": "string",
+                                    "format": "uri"
+                                  },
+                                  "decimalDigits": {
+                                    "type": [
+                                      "integer",
+                                      "null"
+                                    ]
+                                  },
+                                  "integerDigits": {
+                                    "type": [
+                                      "integer",
+                                      "null"
+                                    ]
+                                  },
+                                  "minValue": {
+                                    "type": "number"
+                                  },
+                                  "maxValue": {
+                                    "type": "number"
+                                  }
+                                },
+                                "additionalProperties": false
+                              },
+                              "moneyTypeOptions": {
+                                "type": "object",
+                                "properties": {
+                                  "$ref": {
+                                    "type": "string",
+                                    "format": "uri"
+                                  },
+                                  "decimalDigits": {
+                                    "type": [
+                                      "integer",
+                                      "null"
+                                    ]
+                                  },
+                                  "integerDigits": {
+                                    "type": [
+                                      "integer",
+                                      "null"
+                                    ]
+                                  },
+                                  "minValue": {
+                                    "type": "number"
+                                  },
+                                  "maxValue": {
+                                    "type": "number"
+                                  },
+                                  "defaultCurrency": {
+                                    "enum": [
+                                      "AED",
+                                      "AFN",
+                                      "ALL",
+                                      "AMD",
+                                      "ANG",
+                                      "AOA",
+                                      "ARS",
+                                      "AUD",
+                                      "AWG",
+                                      "AZN",
+                                      "BAM",
+                                      "BBD",
+                                      "BDT",
+                                      "BGN",
+                                      "BHD",
+                                      "BIF",
+                                      "BMD",
+                                      "BND",
+                                      "BOB",
+                                      "BRL",
+                                      "BSD",
+                                      "BTC",
+                                      "BTN",
+                                      "BWP",
+                                      "BYR",
+                                      "BYN",
+                                      "BZD",
+                                      "CAD",
+                                      "CDF",
+                                      "CHF",
+                                      "CLP",
+                                      "CNY",
+                                      "COP",
+                                      "CRC",
+                                      "CUC",
+                                      "CUP",
+                                      "CVE",
+                                      "CZK",
+                                      "DJF",
+                                      "DKK",
+                                      "DOP",
+                                      "DZD",
+                                      "EGP",
+                                      "ERN",
+                                      "ETB",
+                                      "EUR",
+                                      "FJD",
+                                      "FKP",
+                                      "GBP",
+                                      "GEL",
+                                      "GHS",
+                                      "GIP",
+                                      "GMD",
+                                      "GNF",
+                                      "GTQ",
+                                      "GYD",
+                                      "HKD",
+                                      "HNL",
+                                      "HRK",
+                                      "HTG",
+                                      "HUF",
+                                      "IDR",
+                                      "ILS",
+                                      "INR",
+                                      "IQD",
+                                      "IRR",
+                                      "ISK",
+                                      "JMD",
+                                      "JOD",
+                                      "JPY",
+                                      "KES",
+                                      "KGS",
+                                      "KHR",
+                                      "KMF",
+                                      "KPW",
+                                      "KRW",
+                                      "KWD",
+                                      "KYD",
+                                      "KZT",
+                                      "LAK",
+                                      "LBP",
+                                      "LKR",
+                                      "LRD",
+                                      "LSL",
+                                      "LYD",
+                                      "MAD",
+                                      "MDL",
+                                      "MGA",
+                                      "MKD",
+                                      "MMK",
+                                      "MNT",
+                                      "MOP",
+                                      "MRO",
+                                      "MTL",
+                                      "MUR",
+                                      "MVR",
+                                      "MWK",
+                                      "MXN",
+                                      "MYR",
+                                      "MZN",
+                                      "NAD",
+                                      "NGN",
+                                      "NIO",
+                                      "NOK",
+                                      "NPR",
+                                      "NZD",
+                                      "OMR",
+                                      "PAB",
+                                      "PEN",
+                                      "PGK",
+                                      "PHP",
+                                      "PKR",
+                                      "PLN",
+                                      "PYG",
+                                      "QAR",
+                                      "RON",
+                                      "RSD",
+                                      "RUB",
+                                      "RWF",
+                                      "SAR",
+                                      "SBD",
+                                      "SCR",
+                                      "SDD",
+                                      "SDG",
+                                      "SEK",
+                                      "SGD",
+                                      "SHP",
+                                      "SLL",
+                                      "SOS",
+                                      "SRD",
+                                      "STD",
+                                      "SVC",
+                                      "SYP",
+                                      "SZL",
+                                      "THB",
+                                      "TJS",
+                                      "TMT",
+                                      "TND",
+                                      "TOP",
+                                      "TRY",
+                                      "TTD",
+                                      "TVD",
+                                      "TWD",
+                                      "TZS",
+                                      "UAH",
+                                      "UGX",
+                                      "USD",
+                                      "UYU",
+                                      "UZS",
+                                      "VEB",
+                                      "VEF",
+                                      "VND",
+                                      "VUV",
+                                      "WST",
+                                      "XAF",
+                                      "XCD",
+                                      "XBT",
+                                      "XOF",
+                                      "XPF",
+                                      "YER",
+                                      "ZAR",
+                                      "ZMW",
+                                      "WON"
+                                    ]
+                                  }
+                                },
+                                "additionalProperties": false
+                              },
+                              "entityTypeOptions": {
+                                "type": "object",
+                                "properties": {
+                                  "$ref": {
+                                    "type": "string",
+                                    "format": "uri"
+                                  },
+                                  "entity": {
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "entity"
+                                ]
+                              },
+                              "isRequired": {
+                                "type": [
+                                  "boolean",
+                                  "null"
+                                ]
+                              },
+                              "userInterface": {
+                                "type": "object",
+                                "properties": {
+                                  "$ref": {
+                                    "type": "string",
+                                    "format": "uri"
+                                  },
+                                  "label": {
+                                    "type": "string"
+                                  },
+                                  "translationId": {
+                                    "type": "string"
+                                  },
+                                  "widget": {
+                                    "enum": [
+                                      "TextInput",
+                                      "TextArea",
+                                      "NumberInput",
+                                      "NumberSlider",
+                                      "FileUpload",
+                                      "DatePicker",
+                                      "DateRangePicker",
+                                      "TimePicker",
+                                      "TimeRangePicker",
+                                      "Radio",
+                                      "Select",
+                                      "Checkbox",
+                                      "Switch"
+                                    ]
+                                  },
+                                  "icon": {
+                                    "type": "string"
+                                  },
+                                  "iconPosition": {
+                                    "enum": [
+                                      "Begin",
+                                      "End"
+                                    ]
+                                  },
+                                  "inputMask": {
+                                    "type": "string"
+                                  },
+                                  "outputMask": {
+                                    "type": "string"
+                                  },
+                                  "regex": {
+                                    "type": "string"
+                                  },
+                                  "pageGroup": {
+                                    "type": "string"
+                                  },
+                                  "fieldGroup": {
+                                    "type": "string"
+                                  },
+                                  "inputOrder": {
+                                    "type": [
+                                      "integer",
+                                      "null"
+                                    ]
+                                  },
+                                  "helpHint": {
+                                    "type": "string"
+                                  },
+                                  "errorMessage": {
+                                    "type": "string"
+                                  }
+                                },
+                                "additionalProperties": false
+                              },
+                              "isReadonly": {
+                                "type": [
+                                  "boolean",
+                                  "null"
                                 ]
                               }
                             },
@@ -4057,6 +4929,7 @@
                         "collectionTypeOptions": {
                           "type": "object",
                           "properties": {
+<<<<<<< HEAD
                             "$ref": {
                               "type": "string",
                               "format": "uri"
@@ -4490,6 +5363,8 @@
                                 "null"
                               ]
                             },
+=======
+>>>>>>> origin/main
                             "objectTypeOptions": {
                               "type": "object",
                               "properties": {
@@ -4945,6 +5820,439 @@
                               },
                               "required": [
                                 "attributes"
+                              ]
+                            },
+                            "$ref": {
+                              "type": "string",
+                              "format": "uri"
+                            },
+                            "name": {
+                              "type": "string",
+                              "pattern": "^[^\\s]*$"
+                            },
+                            "description": {
+                              "type": "string"
+                            },
+                            "type": {
+                              "enum": [
+                                "array",
+                                "collection",
+                                "object",
+                                "area",
+                                "autoNumber",
+                                "boolean",
+                                "color",
+                                "colour",
+                                "countryCode2",
+                                "countryCode3",
+                                "countryNumber",
+                                "culture",
+                                "currencyCode",
+                                "currencyNumber",
+                                "date",
+                                "dateTime",
+                                "dateTimeDuration",
+                                "dateTimeRange",
+                                "dateTimeSchedule",
+                                "distance",
+                                "email",
+                                "encryptedText",
+                                "entity",
+                                "file",
+                                "formula",
+                                "guid",
+                                "hashedText",
+                                "html",
+                                "image",
+                                "imageJpg",
+                                "imagePng",
+                                "imageSvg",
+                                "internetDomain",
+                                "ipAddress",
+                                "json",
+                                "jwtToken",
+                                "language",
+                                "latlong",
+                                "length",
+                                "macAddress",
+                                "markdown",
+                                "money",
+                                "nuid",
+                                "number",
+                                "password",
+                                "percentage",
+                                "phoneNumber",
+                                "streetAddress",
+                                "temperature",
+                                "text",
+                                "time",
+                                "translatedText",
+                                "uri",
+                                "url",
+                                "user",
+                                "volume",
+                                "weight",
+                                "yaml"
+                              ]
+                            },
+                            "textTypeOptions": {
+                              "type": "object",
+                              "properties": {
+                                "$ref": {
+                                  "type": "string",
+                                  "format": "uri"
+                                },
+                                "isUnicode": {
+                                  "type": [
+                                    "boolean",
+                                    "null"
+                                  ]
+                                },
+                                "minLength": {
+                                  "type": [
+                                    "integer",
+                                    "null"
+                                  ]
+                                },
+                                "maxLength": {
+                                  "type": [
+                                    "integer",
+                                    "null"
+                                  ]
+                                },
+                                "characterCasing": {
+                                  "enum": [
+                                    "Normal",
+                                    "Lower",
+                                    "Upper"
+                                  ]
+                                },
+                                "isMultiline": {
+                                  "type": [
+                                    "boolean",
+                                    "null"
+                                  ]
+                                }
+                              },
+                              "additionalProperties": false
+                            },
+                            "numberTypeOptions": {
+                              "type": "object",
+                              "properties": {
+                                "$ref": {
+                                  "type": "string",
+                                  "format": "uri"
+                                },
+                                "decimalDigits": {
+                                  "type": [
+                                    "integer",
+                                    "null"
+                                  ]
+                                },
+                                "integerDigits": {
+                                  "type": [
+                                    "integer",
+                                    "null"
+                                  ]
+                                },
+                                "minValue": {
+                                  "type": "number"
+                                },
+                                "maxValue": {
+                                  "type": "number"
+                                }
+                              },
+                              "additionalProperties": false
+                            },
+                            "moneyTypeOptions": {
+                              "type": "object",
+                              "properties": {
+                                "$ref": {
+                                  "type": "string",
+                                  "format": "uri"
+                                },
+                                "decimalDigits": {
+                                  "type": [
+                                    "integer",
+                                    "null"
+                                  ]
+                                },
+                                "integerDigits": {
+                                  "type": [
+                                    "integer",
+                                    "null"
+                                  ]
+                                },
+                                "minValue": {
+                                  "type": "number"
+                                },
+                                "maxValue": {
+                                  "type": "number"
+                                },
+                                "defaultCurrency": {
+                                  "enum": [
+                                    "AED",
+                                    "AFN",
+                                    "ALL",
+                                    "AMD",
+                                    "ANG",
+                                    "AOA",
+                                    "ARS",
+                                    "AUD",
+                                    "AWG",
+                                    "AZN",
+                                    "BAM",
+                                    "BBD",
+                                    "BDT",
+                                    "BGN",
+                                    "BHD",
+                                    "BIF",
+                                    "BMD",
+                                    "BND",
+                                    "BOB",
+                                    "BRL",
+                                    "BSD",
+                                    "BTC",
+                                    "BTN",
+                                    "BWP",
+                                    "BYR",
+                                    "BYN",
+                                    "BZD",
+                                    "CAD",
+                                    "CDF",
+                                    "CHF",
+                                    "CLP",
+                                    "CNY",
+                                    "COP",
+                                    "CRC",
+                                    "CUC",
+                                    "CUP",
+                                    "CVE",
+                                    "CZK",
+                                    "DJF",
+                                    "DKK",
+                                    "DOP",
+                                    "DZD",
+                                    "EGP",
+                                    "ERN",
+                                    "ETB",
+                                    "EUR",
+                                    "FJD",
+                                    "FKP",
+                                    "GBP",
+                                    "GEL",
+                                    "GHS",
+                                    "GIP",
+                                    "GMD",
+                                    "GNF",
+                                    "GTQ",
+                                    "GYD",
+                                    "HKD",
+                                    "HNL",
+                                    "HRK",
+                                    "HTG",
+                                    "HUF",
+                                    "IDR",
+                                    "ILS",
+                                    "INR",
+                                    "IQD",
+                                    "IRR",
+                                    "ISK",
+                                    "JMD",
+                                    "JOD",
+                                    "JPY",
+                                    "KES",
+                                    "KGS",
+                                    "KHR",
+                                    "KMF",
+                                    "KPW",
+                                    "KRW",
+                                    "KWD",
+                                    "KYD",
+                                    "KZT",
+                                    "LAK",
+                                    "LBP",
+                                    "LKR",
+                                    "LRD",
+                                    "LSL",
+                                    "LYD",
+                                    "MAD",
+                                    "MDL",
+                                    "MGA",
+                                    "MKD",
+                                    "MMK",
+                                    "MNT",
+                                    "MOP",
+                                    "MRO",
+                                    "MTL",
+                                    "MUR",
+                                    "MVR",
+                                    "MWK",
+                                    "MXN",
+                                    "MYR",
+                                    "MZN",
+                                    "NAD",
+                                    "NGN",
+                                    "NIO",
+                                    "NOK",
+                                    "NPR",
+                                    "NZD",
+                                    "OMR",
+                                    "PAB",
+                                    "PEN",
+                                    "PGK",
+                                    "PHP",
+                                    "PKR",
+                                    "PLN",
+                                    "PYG",
+                                    "QAR",
+                                    "RON",
+                                    "RSD",
+                                    "RUB",
+                                    "RWF",
+                                    "SAR",
+                                    "SBD",
+                                    "SCR",
+                                    "SDD",
+                                    "SDG",
+                                    "SEK",
+                                    "SGD",
+                                    "SHP",
+                                    "SLL",
+                                    "SOS",
+                                    "SRD",
+                                    "STD",
+                                    "SVC",
+                                    "SYP",
+                                    "SZL",
+                                    "THB",
+                                    "TJS",
+                                    "TMT",
+                                    "TND",
+                                    "TOP",
+                                    "TRY",
+                                    "TTD",
+                                    "TVD",
+                                    "TWD",
+                                    "TZS",
+                                    "UAH",
+                                    "UGX",
+                                    "USD",
+                                    "UYU",
+                                    "UZS",
+                                    "VEB",
+                                    "VEF",
+                                    "VND",
+                                    "VUV",
+                                    "WST",
+                                    "XAF",
+                                    "XCD",
+                                    "XBT",
+                                    "XOF",
+                                    "XPF",
+                                    "YER",
+                                    "ZAR",
+                                    "ZMW",
+                                    "WON"
+                                  ]
+                                }
+                              },
+                              "additionalProperties": false
+                            },
+                            "entityTypeOptions": {
+                              "type": "object",
+                              "properties": {
+                                "$ref": {
+                                  "type": "string",
+                                  "format": "uri"
+                                },
+                                "entity": {
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "entity"
+                              ]
+                            },
+                            "isRequired": {
+                              "type": [
+                                "boolean",
+                                "null"
+                              ]
+                            },
+                            "userInterface": {
+                              "type": "object",
+                              "properties": {
+                                "$ref": {
+                                  "type": "string",
+                                  "format": "uri"
+                                },
+                                "label": {
+                                  "type": "string"
+                                },
+                                "translationId": {
+                                  "type": "string"
+                                },
+                                "widget": {
+                                  "enum": [
+                                    "TextInput",
+                                    "TextArea",
+                                    "NumberInput",
+                                    "NumberSlider",
+                                    "FileUpload",
+                                    "DatePicker",
+                                    "DateRangePicker",
+                                    "TimePicker",
+                                    "TimeRangePicker",
+                                    "Radio",
+                                    "Select",
+                                    "Checkbox",
+                                    "Switch"
+                                  ]
+                                },
+                                "icon": {
+                                  "type": "string"
+                                },
+                                "iconPosition": {
+                                  "enum": [
+                                    "Begin",
+                                    "End"
+                                  ]
+                                },
+                                "inputMask": {
+                                  "type": "string"
+                                },
+                                "outputMask": {
+                                  "type": "string"
+                                },
+                                "regex": {
+                                  "type": "string"
+                                },
+                                "pageGroup": {
+                                  "type": "string"
+                                },
+                                "fieldGroup": {
+                                  "type": "string"
+                                },
+                                "inputOrder": {
+                                  "type": [
+                                    "integer",
+                                    "null"
+                                  ]
+                                },
+                                "helpHint": {
+                                  "type": "string"
+                                },
+                                "errorMessage": {
+                                  "type": "string"
+                                }
+                              },
+                              "additionalProperties": false
+                            },
+                            "isReadonly": {
+                              "type": [
+                                "boolean",
+                                "null"
                               ]
                             }
                           },
@@ -4959,6 +6267,7 @@
                         "arrayTypeOptions": {
                           "type": "object",
                           "properties": {
+<<<<<<< HEAD
                             "$ref": {
                               "type": "string",
                               "format": "uri"
@@ -5392,6 +6701,8 @@
                                 "null"
                               ]
                             },
+=======
+>>>>>>> origin/main
                             "objectTypeOptions": {
                               "type": "object",
                               "properties": {
@@ -5847,6 +7158,439 @@
                               },
                               "required": [
                                 "attributes"
+                              ]
+                            },
+                            "$ref": {
+                              "type": "string",
+                              "format": "uri"
+                            },
+                            "name": {
+                              "type": "string",
+                              "pattern": "^[^\\s]*$"
+                            },
+                            "description": {
+                              "type": "string"
+                            },
+                            "type": {
+                              "enum": [
+                                "array",
+                                "collection",
+                                "object",
+                                "area",
+                                "autoNumber",
+                                "boolean",
+                                "color",
+                                "colour",
+                                "countryCode2",
+                                "countryCode3",
+                                "countryNumber",
+                                "culture",
+                                "currencyCode",
+                                "currencyNumber",
+                                "date",
+                                "dateTime",
+                                "dateTimeDuration",
+                                "dateTimeRange",
+                                "dateTimeSchedule",
+                                "distance",
+                                "email",
+                                "encryptedText",
+                                "entity",
+                                "file",
+                                "formula",
+                                "guid",
+                                "hashedText",
+                                "html",
+                                "image",
+                                "imageJpg",
+                                "imagePng",
+                                "imageSvg",
+                                "internetDomain",
+                                "ipAddress",
+                                "json",
+                                "jwtToken",
+                                "language",
+                                "latlong",
+                                "length",
+                                "macAddress",
+                                "markdown",
+                                "money",
+                                "nuid",
+                                "number",
+                                "password",
+                                "percentage",
+                                "phoneNumber",
+                                "streetAddress",
+                                "temperature",
+                                "text",
+                                "time",
+                                "translatedText",
+                                "uri",
+                                "url",
+                                "user",
+                                "volume",
+                                "weight",
+                                "yaml"
+                              ]
+                            },
+                            "textTypeOptions": {
+                              "type": "object",
+                              "properties": {
+                                "$ref": {
+                                  "type": "string",
+                                  "format": "uri"
+                                },
+                                "isUnicode": {
+                                  "type": [
+                                    "boolean",
+                                    "null"
+                                  ]
+                                },
+                                "minLength": {
+                                  "type": [
+                                    "integer",
+                                    "null"
+                                  ]
+                                },
+                                "maxLength": {
+                                  "type": [
+                                    "integer",
+                                    "null"
+                                  ]
+                                },
+                                "characterCasing": {
+                                  "enum": [
+                                    "Normal",
+                                    "Lower",
+                                    "Upper"
+                                  ]
+                                },
+                                "isMultiline": {
+                                  "type": [
+                                    "boolean",
+                                    "null"
+                                  ]
+                                }
+                              },
+                              "additionalProperties": false
+                            },
+                            "numberTypeOptions": {
+                              "type": "object",
+                              "properties": {
+                                "$ref": {
+                                  "type": "string",
+                                  "format": "uri"
+                                },
+                                "decimalDigits": {
+                                  "type": [
+                                    "integer",
+                                    "null"
+                                  ]
+                                },
+                                "integerDigits": {
+                                  "type": [
+                                    "integer",
+                                    "null"
+                                  ]
+                                },
+                                "minValue": {
+                                  "type": "number"
+                                },
+                                "maxValue": {
+                                  "type": "number"
+                                }
+                              },
+                              "additionalProperties": false
+                            },
+                            "moneyTypeOptions": {
+                              "type": "object",
+                              "properties": {
+                                "$ref": {
+                                  "type": "string",
+                                  "format": "uri"
+                                },
+                                "decimalDigits": {
+                                  "type": [
+                                    "integer",
+                                    "null"
+                                  ]
+                                },
+                                "integerDigits": {
+                                  "type": [
+                                    "integer",
+                                    "null"
+                                  ]
+                                },
+                                "minValue": {
+                                  "type": "number"
+                                },
+                                "maxValue": {
+                                  "type": "number"
+                                },
+                                "defaultCurrency": {
+                                  "enum": [
+                                    "AED",
+                                    "AFN",
+                                    "ALL",
+                                    "AMD",
+                                    "ANG",
+                                    "AOA",
+                                    "ARS",
+                                    "AUD",
+                                    "AWG",
+                                    "AZN",
+                                    "BAM",
+                                    "BBD",
+                                    "BDT",
+                                    "BGN",
+                                    "BHD",
+                                    "BIF",
+                                    "BMD",
+                                    "BND",
+                                    "BOB",
+                                    "BRL",
+                                    "BSD",
+                                    "BTC",
+                                    "BTN",
+                                    "BWP",
+                                    "BYR",
+                                    "BYN",
+                                    "BZD",
+                                    "CAD",
+                                    "CDF",
+                                    "CHF",
+                                    "CLP",
+                                    "CNY",
+                                    "COP",
+                                    "CRC",
+                                    "CUC",
+                                    "CUP",
+                                    "CVE",
+                                    "CZK",
+                                    "DJF",
+                                    "DKK",
+                                    "DOP",
+                                    "DZD",
+                                    "EGP",
+                                    "ERN",
+                                    "ETB",
+                                    "EUR",
+                                    "FJD",
+                                    "FKP",
+                                    "GBP",
+                                    "GEL",
+                                    "GHS",
+                                    "GIP",
+                                    "GMD",
+                                    "GNF",
+                                    "GTQ",
+                                    "GYD",
+                                    "HKD",
+                                    "HNL",
+                                    "HRK",
+                                    "HTG",
+                                    "HUF",
+                                    "IDR",
+                                    "ILS",
+                                    "INR",
+                                    "IQD",
+                                    "IRR",
+                                    "ISK",
+                                    "JMD",
+                                    "JOD",
+                                    "JPY",
+                                    "KES",
+                                    "KGS",
+                                    "KHR",
+                                    "KMF",
+                                    "KPW",
+                                    "KRW",
+                                    "KWD",
+                                    "KYD",
+                                    "KZT",
+                                    "LAK",
+                                    "LBP",
+                                    "LKR",
+                                    "LRD",
+                                    "LSL",
+                                    "LYD",
+                                    "MAD",
+                                    "MDL",
+                                    "MGA",
+                                    "MKD",
+                                    "MMK",
+                                    "MNT",
+                                    "MOP",
+                                    "MRO",
+                                    "MTL",
+                                    "MUR",
+                                    "MVR",
+                                    "MWK",
+                                    "MXN",
+                                    "MYR",
+                                    "MZN",
+                                    "NAD",
+                                    "NGN",
+                                    "NIO",
+                                    "NOK",
+                                    "NPR",
+                                    "NZD",
+                                    "OMR",
+                                    "PAB",
+                                    "PEN",
+                                    "PGK",
+                                    "PHP",
+                                    "PKR",
+                                    "PLN",
+                                    "PYG",
+                                    "QAR",
+                                    "RON",
+                                    "RSD",
+                                    "RUB",
+                                    "RWF",
+                                    "SAR",
+                                    "SBD",
+                                    "SCR",
+                                    "SDD",
+                                    "SDG",
+                                    "SEK",
+                                    "SGD",
+                                    "SHP",
+                                    "SLL",
+                                    "SOS",
+                                    "SRD",
+                                    "STD",
+                                    "SVC",
+                                    "SYP",
+                                    "SZL",
+                                    "THB",
+                                    "TJS",
+                                    "TMT",
+                                    "TND",
+                                    "TOP",
+                                    "TRY",
+                                    "TTD",
+                                    "TVD",
+                                    "TWD",
+                                    "TZS",
+                                    "UAH",
+                                    "UGX",
+                                    "USD",
+                                    "UYU",
+                                    "UZS",
+                                    "VEB",
+                                    "VEF",
+                                    "VND",
+                                    "VUV",
+                                    "WST",
+                                    "XAF",
+                                    "XCD",
+                                    "XBT",
+                                    "XOF",
+                                    "XPF",
+                                    "YER",
+                                    "ZAR",
+                                    "ZMW",
+                                    "WON"
+                                  ]
+                                }
+                              },
+                              "additionalProperties": false
+                            },
+                            "entityTypeOptions": {
+                              "type": "object",
+                              "properties": {
+                                "$ref": {
+                                  "type": "string",
+                                  "format": "uri"
+                                },
+                                "entity": {
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "entity"
+                              ]
+                            },
+                            "isRequired": {
+                              "type": [
+                                "boolean",
+                                "null"
+                              ]
+                            },
+                            "userInterface": {
+                              "type": "object",
+                              "properties": {
+                                "$ref": {
+                                  "type": "string",
+                                  "format": "uri"
+                                },
+                                "label": {
+                                  "type": "string"
+                                },
+                                "translationId": {
+                                  "type": "string"
+                                },
+                                "widget": {
+                                  "enum": [
+                                    "TextInput",
+                                    "TextArea",
+                                    "NumberInput",
+                                    "NumberSlider",
+                                    "FileUpload",
+                                    "DatePicker",
+                                    "DateRangePicker",
+                                    "TimePicker",
+                                    "TimeRangePicker",
+                                    "Radio",
+                                    "Select",
+                                    "Checkbox",
+                                    "Switch"
+                                  ]
+                                },
+                                "icon": {
+                                  "type": "string"
+                                },
+                                "iconPosition": {
+                                  "enum": [
+                                    "Begin",
+                                    "End"
+                                  ]
+                                },
+                                "inputMask": {
+                                  "type": "string"
+                                },
+                                "outputMask": {
+                                  "type": "string"
+                                },
+                                "regex": {
+                                  "type": "string"
+                                },
+                                "pageGroup": {
+                                  "type": "string"
+                                },
+                                "fieldGroup": {
+                                  "type": "string"
+                                },
+                                "inputOrder": {
+                                  "type": [
+                                    "integer",
+                                    "null"
+                                  ]
+                                },
+                                "helpHint": {
+                                  "type": "string"
+                                },
+                                "errorMessage": {
+                                  "type": "string"
+                                }
+                              },
+                              "additionalProperties": false
+                            },
+                            "isReadonly": {
+                              "type": [
+                                "boolean",
+                                "null"
                               ]
                             }
                           },
@@ -6776,6 +8520,7 @@
                     "collectionTypeOptions": {
                       "type": "object",
                       "properties": {
+<<<<<<< HEAD
                         "$ref": {
                           "type": "string",
                           "format": "uri"
@@ -7209,6 +8954,8 @@
                             "null"
                           ]
                         },
+=======
+>>>>>>> origin/main
                         "objectTypeOptions": {
                           "type": "object",
                           "properties": {
@@ -7664,6 +9411,439 @@
                           },
                           "required": [
                             "attributes"
+                          ]
+                        },
+                        "$ref": {
+                          "type": "string",
+                          "format": "uri"
+                        },
+                        "name": {
+                          "type": "string",
+                          "pattern": "^[^\\s]*$"
+                        },
+                        "description": {
+                          "type": "string"
+                        },
+                        "type": {
+                          "enum": [
+                            "array",
+                            "collection",
+                            "object",
+                            "area",
+                            "autoNumber",
+                            "boolean",
+                            "color",
+                            "colour",
+                            "countryCode2",
+                            "countryCode3",
+                            "countryNumber",
+                            "culture",
+                            "currencyCode",
+                            "currencyNumber",
+                            "date",
+                            "dateTime",
+                            "dateTimeDuration",
+                            "dateTimeRange",
+                            "dateTimeSchedule",
+                            "distance",
+                            "email",
+                            "encryptedText",
+                            "entity",
+                            "file",
+                            "formula",
+                            "guid",
+                            "hashedText",
+                            "html",
+                            "image",
+                            "imageJpg",
+                            "imagePng",
+                            "imageSvg",
+                            "internetDomain",
+                            "ipAddress",
+                            "json",
+                            "jwtToken",
+                            "language",
+                            "latlong",
+                            "length",
+                            "macAddress",
+                            "markdown",
+                            "money",
+                            "nuid",
+                            "number",
+                            "password",
+                            "percentage",
+                            "phoneNumber",
+                            "streetAddress",
+                            "temperature",
+                            "text",
+                            "time",
+                            "translatedText",
+                            "uri",
+                            "url",
+                            "user",
+                            "volume",
+                            "weight",
+                            "yaml"
+                          ]
+                        },
+                        "textTypeOptions": {
+                          "type": "object",
+                          "properties": {
+                            "$ref": {
+                              "type": "string",
+                              "format": "uri"
+                            },
+                            "isUnicode": {
+                              "type": [
+                                "boolean",
+                                "null"
+                              ]
+                            },
+                            "minLength": {
+                              "type": [
+                                "integer",
+                                "null"
+                              ]
+                            },
+                            "maxLength": {
+                              "type": [
+                                "integer",
+                                "null"
+                              ]
+                            },
+                            "characterCasing": {
+                              "enum": [
+                                "Normal",
+                                "Lower",
+                                "Upper"
+                              ]
+                            },
+                            "isMultiline": {
+                              "type": [
+                                "boolean",
+                                "null"
+                              ]
+                            }
+                          },
+                          "additionalProperties": false
+                        },
+                        "numberTypeOptions": {
+                          "type": "object",
+                          "properties": {
+                            "$ref": {
+                              "type": "string",
+                              "format": "uri"
+                            },
+                            "decimalDigits": {
+                              "type": [
+                                "integer",
+                                "null"
+                              ]
+                            },
+                            "integerDigits": {
+                              "type": [
+                                "integer",
+                                "null"
+                              ]
+                            },
+                            "minValue": {
+                              "type": "number"
+                            },
+                            "maxValue": {
+                              "type": "number"
+                            }
+                          },
+                          "additionalProperties": false
+                        },
+                        "moneyTypeOptions": {
+                          "type": "object",
+                          "properties": {
+                            "$ref": {
+                              "type": "string",
+                              "format": "uri"
+                            },
+                            "decimalDigits": {
+                              "type": [
+                                "integer",
+                                "null"
+                              ]
+                            },
+                            "integerDigits": {
+                              "type": [
+                                "integer",
+                                "null"
+                              ]
+                            },
+                            "minValue": {
+                              "type": "number"
+                            },
+                            "maxValue": {
+                              "type": "number"
+                            },
+                            "defaultCurrency": {
+                              "enum": [
+                                "AED",
+                                "AFN",
+                                "ALL",
+                                "AMD",
+                                "ANG",
+                                "AOA",
+                                "ARS",
+                                "AUD",
+                                "AWG",
+                                "AZN",
+                                "BAM",
+                                "BBD",
+                                "BDT",
+                                "BGN",
+                                "BHD",
+                                "BIF",
+                                "BMD",
+                                "BND",
+                                "BOB",
+                                "BRL",
+                                "BSD",
+                                "BTC",
+                                "BTN",
+                                "BWP",
+                                "BYR",
+                                "BYN",
+                                "BZD",
+                                "CAD",
+                                "CDF",
+                                "CHF",
+                                "CLP",
+                                "CNY",
+                                "COP",
+                                "CRC",
+                                "CUC",
+                                "CUP",
+                                "CVE",
+                                "CZK",
+                                "DJF",
+                                "DKK",
+                                "DOP",
+                                "DZD",
+                                "EGP",
+                                "ERN",
+                                "ETB",
+                                "EUR",
+                                "FJD",
+                                "FKP",
+                                "GBP",
+                                "GEL",
+                                "GHS",
+                                "GIP",
+                                "GMD",
+                                "GNF",
+                                "GTQ",
+                                "GYD",
+                                "HKD",
+                                "HNL",
+                                "HRK",
+                                "HTG",
+                                "HUF",
+                                "IDR",
+                                "ILS",
+                                "INR",
+                                "IQD",
+                                "IRR",
+                                "ISK",
+                                "JMD",
+                                "JOD",
+                                "JPY",
+                                "KES",
+                                "KGS",
+                                "KHR",
+                                "KMF",
+                                "KPW",
+                                "KRW",
+                                "KWD",
+                                "KYD",
+                                "KZT",
+                                "LAK",
+                                "LBP",
+                                "LKR",
+                                "LRD",
+                                "LSL",
+                                "LYD",
+                                "MAD",
+                                "MDL",
+                                "MGA",
+                                "MKD",
+                                "MMK",
+                                "MNT",
+                                "MOP",
+                                "MRO",
+                                "MTL",
+                                "MUR",
+                                "MVR",
+                                "MWK",
+                                "MXN",
+                                "MYR",
+                                "MZN",
+                                "NAD",
+                                "NGN",
+                                "NIO",
+                                "NOK",
+                                "NPR",
+                                "NZD",
+                                "OMR",
+                                "PAB",
+                                "PEN",
+                                "PGK",
+                                "PHP",
+                                "PKR",
+                                "PLN",
+                                "PYG",
+                                "QAR",
+                                "RON",
+                                "RSD",
+                                "RUB",
+                                "RWF",
+                                "SAR",
+                                "SBD",
+                                "SCR",
+                                "SDD",
+                                "SDG",
+                                "SEK",
+                                "SGD",
+                                "SHP",
+                                "SLL",
+                                "SOS",
+                                "SRD",
+                                "STD",
+                                "SVC",
+                                "SYP",
+                                "SZL",
+                                "THB",
+                                "TJS",
+                                "TMT",
+                                "TND",
+                                "TOP",
+                                "TRY",
+                                "TTD",
+                                "TVD",
+                                "TWD",
+                                "TZS",
+                                "UAH",
+                                "UGX",
+                                "USD",
+                                "UYU",
+                                "UZS",
+                                "VEB",
+                                "VEF",
+                                "VND",
+                                "VUV",
+                                "WST",
+                                "XAF",
+                                "XCD",
+                                "XBT",
+                                "XOF",
+                                "XPF",
+                                "YER",
+                                "ZAR",
+                                "ZMW",
+                                "WON"
+                              ]
+                            }
+                          },
+                          "additionalProperties": false
+                        },
+                        "entityTypeOptions": {
+                          "type": "object",
+                          "properties": {
+                            "$ref": {
+                              "type": "string",
+                              "format": "uri"
+                            },
+                            "entity": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "entity"
+                          ]
+                        },
+                        "isRequired": {
+                          "type": [
+                            "boolean",
+                            "null"
+                          ]
+                        },
+                        "userInterface": {
+                          "type": "object",
+                          "properties": {
+                            "$ref": {
+                              "type": "string",
+                              "format": "uri"
+                            },
+                            "label": {
+                              "type": "string"
+                            },
+                            "translationId": {
+                              "type": "string"
+                            },
+                            "widget": {
+                              "enum": [
+                                "TextInput",
+                                "TextArea",
+                                "NumberInput",
+                                "NumberSlider",
+                                "FileUpload",
+                                "DatePicker",
+                                "DateRangePicker",
+                                "TimePicker",
+                                "TimeRangePicker",
+                                "Radio",
+                                "Select",
+                                "Checkbox",
+                                "Switch"
+                              ]
+                            },
+                            "icon": {
+                              "type": "string"
+                            },
+                            "iconPosition": {
+                              "enum": [
+                                "Begin",
+                                "End"
+                              ]
+                            },
+                            "inputMask": {
+                              "type": "string"
+                            },
+                            "outputMask": {
+                              "type": "string"
+                            },
+                            "regex": {
+                              "type": "string"
+                            },
+                            "pageGroup": {
+                              "type": "string"
+                            },
+                            "fieldGroup": {
+                              "type": "string"
+                            },
+                            "inputOrder": {
+                              "type": [
+                                "integer",
+                                "null"
+                              ]
+                            },
+                            "helpHint": {
+                              "type": "string"
+                            },
+                            "errorMessage": {
+                              "type": "string"
+                            }
+                          },
+                          "additionalProperties": false
+                        },
+                        "isReadonly": {
+                          "type": [
+                            "boolean",
+                            "null"
                           ]
                         }
                       },
@@ -7678,6 +9858,7 @@
                     "arrayTypeOptions": {
                       "type": "object",
                       "properties": {
+<<<<<<< HEAD
                         "$ref": {
                           "type": "string",
                           "format": "uri"
@@ -8111,6 +10292,8 @@
                             "null"
                           ]
                         },
+=======
+>>>>>>> origin/main
                         "objectTypeOptions": {
                           "type": "object",
                           "properties": {
@@ -8566,6 +10749,439 @@
                           },
                           "required": [
                             "attributes"
+                          ]
+                        },
+                        "$ref": {
+                          "type": "string",
+                          "format": "uri"
+                        },
+                        "name": {
+                          "type": "string",
+                          "pattern": "^[^\\s]*$"
+                        },
+                        "description": {
+                          "type": "string"
+                        },
+                        "type": {
+                          "enum": [
+                            "array",
+                            "collection",
+                            "object",
+                            "area",
+                            "autoNumber",
+                            "boolean",
+                            "color",
+                            "colour",
+                            "countryCode2",
+                            "countryCode3",
+                            "countryNumber",
+                            "culture",
+                            "currencyCode",
+                            "currencyNumber",
+                            "date",
+                            "dateTime",
+                            "dateTimeDuration",
+                            "dateTimeRange",
+                            "dateTimeSchedule",
+                            "distance",
+                            "email",
+                            "encryptedText",
+                            "entity",
+                            "file",
+                            "formula",
+                            "guid",
+                            "hashedText",
+                            "html",
+                            "image",
+                            "imageJpg",
+                            "imagePng",
+                            "imageSvg",
+                            "internetDomain",
+                            "ipAddress",
+                            "json",
+                            "jwtToken",
+                            "language",
+                            "latlong",
+                            "length",
+                            "macAddress",
+                            "markdown",
+                            "money",
+                            "nuid",
+                            "number",
+                            "password",
+                            "percentage",
+                            "phoneNumber",
+                            "streetAddress",
+                            "temperature",
+                            "text",
+                            "time",
+                            "translatedText",
+                            "uri",
+                            "url",
+                            "user",
+                            "volume",
+                            "weight",
+                            "yaml"
+                          ]
+                        },
+                        "textTypeOptions": {
+                          "type": "object",
+                          "properties": {
+                            "$ref": {
+                              "type": "string",
+                              "format": "uri"
+                            },
+                            "isUnicode": {
+                              "type": [
+                                "boolean",
+                                "null"
+                              ]
+                            },
+                            "minLength": {
+                              "type": [
+                                "integer",
+                                "null"
+                              ]
+                            },
+                            "maxLength": {
+                              "type": [
+                                "integer",
+                                "null"
+                              ]
+                            },
+                            "characterCasing": {
+                              "enum": [
+                                "Normal",
+                                "Lower",
+                                "Upper"
+                              ]
+                            },
+                            "isMultiline": {
+                              "type": [
+                                "boolean",
+                                "null"
+                              ]
+                            }
+                          },
+                          "additionalProperties": false
+                        },
+                        "numberTypeOptions": {
+                          "type": "object",
+                          "properties": {
+                            "$ref": {
+                              "type": "string",
+                              "format": "uri"
+                            },
+                            "decimalDigits": {
+                              "type": [
+                                "integer",
+                                "null"
+                              ]
+                            },
+                            "integerDigits": {
+                              "type": [
+                                "integer",
+                                "null"
+                              ]
+                            },
+                            "minValue": {
+                              "type": "number"
+                            },
+                            "maxValue": {
+                              "type": "number"
+                            }
+                          },
+                          "additionalProperties": false
+                        },
+                        "moneyTypeOptions": {
+                          "type": "object",
+                          "properties": {
+                            "$ref": {
+                              "type": "string",
+                              "format": "uri"
+                            },
+                            "decimalDigits": {
+                              "type": [
+                                "integer",
+                                "null"
+                              ]
+                            },
+                            "integerDigits": {
+                              "type": [
+                                "integer",
+                                "null"
+                              ]
+                            },
+                            "minValue": {
+                              "type": "number"
+                            },
+                            "maxValue": {
+                              "type": "number"
+                            },
+                            "defaultCurrency": {
+                              "enum": [
+                                "AED",
+                                "AFN",
+                                "ALL",
+                                "AMD",
+                                "ANG",
+                                "AOA",
+                                "ARS",
+                                "AUD",
+                                "AWG",
+                                "AZN",
+                                "BAM",
+                                "BBD",
+                                "BDT",
+                                "BGN",
+                                "BHD",
+                                "BIF",
+                                "BMD",
+                                "BND",
+                                "BOB",
+                                "BRL",
+                                "BSD",
+                                "BTC",
+                                "BTN",
+                                "BWP",
+                                "BYR",
+                                "BYN",
+                                "BZD",
+                                "CAD",
+                                "CDF",
+                                "CHF",
+                                "CLP",
+                                "CNY",
+                                "COP",
+                                "CRC",
+                                "CUC",
+                                "CUP",
+                                "CVE",
+                                "CZK",
+                                "DJF",
+                                "DKK",
+                                "DOP",
+                                "DZD",
+                                "EGP",
+                                "ERN",
+                                "ETB",
+                                "EUR",
+                                "FJD",
+                                "FKP",
+                                "GBP",
+                                "GEL",
+                                "GHS",
+                                "GIP",
+                                "GMD",
+                                "GNF",
+                                "GTQ",
+                                "GYD",
+                                "HKD",
+                                "HNL",
+                                "HRK",
+                                "HTG",
+                                "HUF",
+                                "IDR",
+                                "ILS",
+                                "INR",
+                                "IQD",
+                                "IRR",
+                                "ISK",
+                                "JMD",
+                                "JOD",
+                                "JPY",
+                                "KES",
+                                "KGS",
+                                "KHR",
+                                "KMF",
+                                "KPW",
+                                "KRW",
+                                "KWD",
+                                "KYD",
+                                "KZT",
+                                "LAK",
+                                "LBP",
+                                "LKR",
+                                "LRD",
+                                "LSL",
+                                "LYD",
+                                "MAD",
+                                "MDL",
+                                "MGA",
+                                "MKD",
+                                "MMK",
+                                "MNT",
+                                "MOP",
+                                "MRO",
+                                "MTL",
+                                "MUR",
+                                "MVR",
+                                "MWK",
+                                "MXN",
+                                "MYR",
+                                "MZN",
+                                "NAD",
+                                "NGN",
+                                "NIO",
+                                "NOK",
+                                "NPR",
+                                "NZD",
+                                "OMR",
+                                "PAB",
+                                "PEN",
+                                "PGK",
+                                "PHP",
+                                "PKR",
+                                "PLN",
+                                "PYG",
+                                "QAR",
+                                "RON",
+                                "RSD",
+                                "RUB",
+                                "RWF",
+                                "SAR",
+                                "SBD",
+                                "SCR",
+                                "SDD",
+                                "SDG",
+                                "SEK",
+                                "SGD",
+                                "SHP",
+                                "SLL",
+                                "SOS",
+                                "SRD",
+                                "STD",
+                                "SVC",
+                                "SYP",
+                                "SZL",
+                                "THB",
+                                "TJS",
+                                "TMT",
+                                "TND",
+                                "TOP",
+                                "TRY",
+                                "TTD",
+                                "TVD",
+                                "TWD",
+                                "TZS",
+                                "UAH",
+                                "UGX",
+                                "USD",
+                                "UYU",
+                                "UZS",
+                                "VEB",
+                                "VEF",
+                                "VND",
+                                "VUV",
+                                "WST",
+                                "XAF",
+                                "XCD",
+                                "XBT",
+                                "XOF",
+                                "XPF",
+                                "YER",
+                                "ZAR",
+                                "ZMW",
+                                "WON"
+                              ]
+                            }
+                          },
+                          "additionalProperties": false
+                        },
+                        "entityTypeOptions": {
+                          "type": "object",
+                          "properties": {
+                            "$ref": {
+                              "type": "string",
+                              "format": "uri"
+                            },
+                            "entity": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "entity"
+                          ]
+                        },
+                        "isRequired": {
+                          "type": [
+                            "boolean",
+                            "null"
+                          ]
+                        },
+                        "userInterface": {
+                          "type": "object",
+                          "properties": {
+                            "$ref": {
+                              "type": "string",
+                              "format": "uri"
+                            },
+                            "label": {
+                              "type": "string"
+                            },
+                            "translationId": {
+                              "type": "string"
+                            },
+                            "widget": {
+                              "enum": [
+                                "TextInput",
+                                "TextArea",
+                                "NumberInput",
+                                "NumberSlider",
+                                "FileUpload",
+                                "DatePicker",
+                                "DateRangePicker",
+                                "TimePicker",
+                                "TimeRangePicker",
+                                "Radio",
+                                "Select",
+                                "Checkbox",
+                                "Switch"
+                              ]
+                            },
+                            "icon": {
+                              "type": "string"
+                            },
+                            "iconPosition": {
+                              "enum": [
+                                "Begin",
+                                "End"
+                              ]
+                            },
+                            "inputMask": {
+                              "type": "string"
+                            },
+                            "outputMask": {
+                              "type": "string"
+                            },
+                            "regex": {
+                              "type": "string"
+                            },
+                            "pageGroup": {
+                              "type": "string"
+                            },
+                            "fieldGroup": {
+                              "type": "string"
+                            },
+                            "inputOrder": {
+                              "type": [
+                                "integer",
+                                "null"
+                              ]
+                            },
+                            "helpHint": {
+                              "type": "string"
+                            },
+                            "errorMessage": {
+                              "type": "string"
+                            }
+                          },
+                          "additionalProperties": false
+                        },
+                        "isReadonly": {
+                          "type": [
+                            "boolean",
+                            "null"
                           ]
                         }
                       },

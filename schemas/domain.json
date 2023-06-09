@@ -28,7 +28,7 @@
           },
           "pluralName": {
             "type": "string",
-            "title": "The pluraly name of the entity. Contains no spaces",
+            "title": "The plural name of the entity. Contains no spaces",
             "description": "The name for a set, group or collection of the entity. NOX will guess the plural if it is not supplied.",
             "pattern": "^[^\\s]*$"
           },
@@ -46,9 +46,8 @@
                 "pattern": "^[^\\s]*$"
               }
             },
-            "title": "Specifies information on displaying the entity on a user interface",
-            "description": "Provides hints to rendering engines as to how this entity should be managed in the user interface.",
-            "additionalProperties": false
+            "title": "Property reserved for future expansion to identify associated user interface component",
+            "description": "This property provides information related to the entity\u0027s user interface implementation."
           },
           "persistence": {
             "type": "object",
@@ -8618,12 +8617,12 @@
         "required": [
           "name"
         ],
-        "title": "The entities that describes the domain.",
-        "description": "The collection of entitties and their relationships with each other.",
+        "title": "The entities that describe the domain.",
+        "description": "The collection of entities and their relationships with each other.",
         "additionalProperties": false
       },
-      "title": "The entities that describes the domain.",
-      "description": "The collection of entitties and their relationships with each other.",
+      "title": "The entities that describe the domain.",
+      "description": "The collection of entities and their relationships with each other.",
       "additionalProperties": false
     }
   },

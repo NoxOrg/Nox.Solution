@@ -82,7 +82,7 @@ public class NoxSolutionSchemaTests
 //Team
         var teamSchema = new JsonSchemaBuilder()
             .Schema(MetaSchemas.Draft7Id)
-            .FromType<Team>(schemaConfig)
+            .FromType<TeamMember>(schemaConfig)
             .Build();
 
         File.WriteAllText(Path.Combine(path, "team.json"),

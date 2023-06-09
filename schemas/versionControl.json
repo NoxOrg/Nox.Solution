@@ -11,7 +11,7 @@
         "azureDevops"
       ],
       "title": "The source code and repository provider or service.",
-      "description": "The name of of the provider or service for source code and version control."
+      "description": "The name of the provider or service for source code and version control"
     },
     "host": {
       "type": "string",

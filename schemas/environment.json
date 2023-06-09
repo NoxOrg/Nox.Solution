@@ -20,13 +20,13 @@
     "isProduction": {
       "type": "boolean",
       "title": "Whether this environment is a production environment (true) or not (false).",
-      "description": "Specifies which environment(s) are used for production or not. Affects how devops processes and the NOX runtime is configured."
+      "description": "Specifies whether this environment is used for production or not. Affects how devops processes and the NOX runtime is configured."
     }
   },
   "required": [
     "name"
   ],
-  "title": "A definition for a run-time environments.",
-  "description": "A definition for the name, variables and other pertinent information pertaining to a run-time environment.",
+  "title": "A definition for a run-time environment.",
+  "description": "A definition for the name, production status and other pertinent information pertaining to a run-time environment.",
   "additionalProperties": false
 }

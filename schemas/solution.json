@@ -54,18 +54,18 @@
           "isProduction": {
             "type": "boolean",
             "title": "Whether this environment is a production environment (true) or not (false).",
-            "description": "Specifies which environment(s) are used for production or not. Affects how devops processes and the NOX runtime is configured."
+            "description": "Specifies whether this environment is used for production or not. Affects how devops processes and the NOX runtime is configured."
           }
         },
         "required": [
           "name"
         ],
         "title": "Definitions for run-time environments.",
-        "description": "Definitions for the name, variables and other pertinent information pertaining to run-time environments.",
+        "description": "Definitions for the name, production status and other pertinent information pertaining to run-time environments.",
         "additionalProperties": false
       },
       "title": "Definitions for run-time environments.",
-      "description": "Definitions for the name, variables and other pertinent information pertaining to run-time environments.",
+      "description": "Definitions for the name, production status and other pertinent information pertaining to run-time environments.",
       "additionalProperties": false
     },
     "versionControl": {
@@ -80,7 +80,7 @@
             "azureDevops"
           ],
           "title": "The source code and repository provider or service.",
-          "description": "The name of of the provider or service for source code and version control."
+          "description": "The name of the provider or service for source code and version control"
         },
         "host": {
           "type": "string",
@@ -187,8 +187,12 @@
         "required": [
           "userName"
         ],
+        "title": "Information about the team working on this solution.",
+        "description": "Specify the members of the team working on the solution including their respective roles.",
         "additionalProperties": false
       },
+      "title": "Information about the team working on this solution.",
+      "description": "Specify the members of the team working on the solution including their respective roles.",
       "additionalProperties": false
     },
     "domain": {
@@ -220,7 +224,7 @@
               },
               "pluralName": {
                 "type": "string",
-                "title": "The pluraly name of the entity. Contains no spaces",
+                "title": "The plural name of the entity. Contains no spaces",
                 "description": "The name for a set, group or collection of the entity. NOX will guess the plural if it is not supplied.",
                 "pattern": "^[^\\s]*$"
               },
@@ -238,9 +242,8 @@
                     "pattern": "^[^\\s]*$"
                   }
                 },
-                "title": "Specifies information on displaying the entity on a user interface",
-                "description": "Provides hints to rendering engines as to how this entity should be managed in the user interface.",
-                "additionalProperties": false
+                "title": "Property reserved for future expansion to identify associated user interface component",
+                "description": "This property provides information related to the entity\u0027s user interface implementation."
               },
               "persistence": {
                 "type": "object",
@@ -9494,12 +9497,12 @@
             "required": [
               "name"
             ],
-            "title": "The entities that describes the domain.",
-            "description": "The collection of entitties and their relationships with each other.",
+            "title": "The entities that describe the domain.",
+            "description": "The collection of entities and their relationships with each other.",
             "additionalProperties": false
           },
-          "title": "The entities that describes the domain.",
-          "description": "The collection of entitties and their relationships with each other.",
+          "title": "The entities that describe the domain.",
+          "description": "The collection of entities and their relationships with each other.",
           "additionalProperties": false
         }
       },

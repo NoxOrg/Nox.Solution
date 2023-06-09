@@ -38,7 +38,7 @@
     },
     "provider": {
       "enum": [
-        "Blazor"
+        "blazor"
       ],
       "additionalProperties": false
     }

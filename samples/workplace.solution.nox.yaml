@@ -33,7 +33,7 @@ environments:
     description: Production environment used for, well - the real thing!
 
 versionControl:
-  provider: AzureDevops
+  provider: azureDevops
   host: https://dev.azure.com/iwgplc
   folders:
     sourceCode: /src
@@ -43,27 +43,27 @@ team:
 
   - name: Andre Sharpe
     userName: andre.sharpe@iwgplc.com
-    roles: [Architect, Owner, Administrator, Developer, Manager]
+    roles: [architect, owner, administrator, developer, manager]
 
   - name: Jan Schutte
     userName: jan.schutte@iwgplc.com
-    roles: [Architect, Administrator, Developer, DevOpsEngineer]
+    roles: [architect, administrator, developer, devOpsEngineer]
 
   - name: Anton Du Plessis
     userName: anton.duplessis@iwgplc.com
-    roles: [ProjectManager]
+    roles: [projectManager]
 
   - name: Morne Van Zyl
     userName: morne.vanzyl@iwgplc.com
-    roles: [TechnicalWriter]
+    roles: [technicalWriter]
 
   - name: Dmytro Dorodnykh
     userName: dmytro.dorodnykh@iwgplc.com
-    roles: [Developer]
+    roles: [developer]
 
   - name: Oleksandr Vlasenko
     userName: oleksandr.vlasenko@regus.com
-    roles: [Architect, Developer]
+    roles: [architect, developer]
 
 domain:
 
@@ -96,14 +96,14 @@ domain:
 
         - name: CountryAcceptsCurrency
           description: accepts as legal tender
-          relationship: OneOrMany
+          relationship: oneOrMany
           entity: Currency
 
       ownedRelationships:
 
         - name: CountryLocalNames
           description: is also know as
-          relationship: OneOrMany
+          relationship: oneOrMany
           entity: CountryLocalNames
 
       queries:
@@ -273,7 +273,7 @@ domain:
 
         - name: CurrencyIsLegalTenderForCountry
           description: is legal tender for
-          relationship: ZeroOrMany
+          relationship: zeroOrMany
           entity: Country
       
     - name: CountryLocalNames
@@ -324,7 +324,7 @@ application:
           description: The identity of the country, the Iso Alpha 2 code
           type: text
           textTypeOptions:
-            characterCasing: Lower
+            characterCasing: lower
             maxLength: 2
             minLength: 2
 
@@ -351,7 +351,7 @@ application:
         map:
             - sourceColumn: IsoAlpha2Code
               targetAttribute: Id
-              converter: UpperCase
+              converter: upperCase
             - sourceColumn: CountryName
               targetAttribute: Name
             - sourceColumn: CountryFullName
@@ -365,7 +365,7 @@ application:
               targetAttribute: GeoRegion
       target:
         name: Country
-        targetType: Entity
+        targetType: entity
 
 infrastructure: 
 
@@ -376,7 +376,7 @@ infrastructure:
 
       # Sql Server
       serverUri: sqlserver.iwgplc.com
-      provider: SqlServer
+      provider: sqlServer
       port: 1433
       user: sqluser
       password: sqlpassword
@@ -389,14 +389,14 @@ infrastructure:
 
     cacheServer:
       name: SampleCache
-      provider: AzureRedis
+      provider: azureRedis
       serverUri: redis.iwgplc.com
       user: RedisUser
       password: RedisPassword
       
     searchServer:
       name: SampleSearch
-      provider: ElasticSearch
+      provider: elasticSearch
       serverUri: elastic.igwplc.com
       user: ElasticUser
       password: ElasticPassword
@@ -404,7 +404,7 @@ infrastructure:
     eventSourceServer:
       name: SampleEvtSrc
       serverUri: SampleEvt.iwgplc.com
-      provider: EventStoreDb
+      provider: eventStoreDb
       user: EvtUser
       password: EvtPassword
 
@@ -412,7 +412,7 @@ infrastructure:
 
     integrationEventServer:
       name: IntegrationBus
-      provider: RabbitMq
+      provider: rabbitMq
       serverUri: rabbitmq://localhost
       port: 5672
       user: guest
@@ -422,13 +422,13 @@ infrastructure:
     
     apiServer:
       name: SampleApiServer
-      provider: OData
+      provider: oData
       serverUri: workplace.iwgplc.com
       port: 8080
       
     bffServer:
       name: SampleBffServer
-      provider: Blazor
+      provider: blazor
       serverUri: SampleBff.iwgplc.com
       port: 8080
 
@@ -436,20 +436,20 @@ infrastructure:
     notifications:
       emailServer:
         name: SampleEmailServer
-        provider: SendGrid
+        provider: sendGrid
         serverUri: sendgrid.igwplc.com
         user: SendGridUser
         password: SendGridPassword
       smsServer:
         name: SampleSmsServer
-        provider: Twilio
+        provider: twilio
         serverUri: https://twilio.com
         port: 8080
         user: TwilioUser
         password: TwilioPassword
       imServer:
         name: SampleImServer
-        provider: WhatsApp
+        provider: whatsApp
         serverUri: https://whatsapp.com
         port: 8080
         user: whatsappUser
@@ -469,7 +469,7 @@ infrastructure:
       secrets:
         secretsServer:
           name: SampleSecretServer
-          provider: AzureKeyVault
+          provider: azureKeyVault
           serverUri: kv.iwgplc.com
           user: secrets@iwgplc.com
           password: SecretPassword
@@ -478,7 +478,7 @@ infrastructure:
 
     dataConnections:
       - name: CountryJsonData
-        provider: JsonFile
+        provider: jsonFile
         serverUri: file:///C:/my-data-files
         options: Source=File;Filename=country-data.json;
 

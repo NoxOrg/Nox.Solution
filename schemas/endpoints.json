@@ -41,10 +41,10 @@
         },
         "provider": {
           "enum": [
-            "AttributeRouting",
-            "OData",
-            "Grpc",
-            "GraphQl"
+            "attributeRouting",
+            "oData",
+            "grpc",
+            "graphQl"
           ],
           "additionalProperties": false
         }
@@ -95,7 +95,7 @@
         },
         "provider": {
           "enum": [
-            "Blazor"
+            "blazor"
           ],
           "additionalProperties": false
         }

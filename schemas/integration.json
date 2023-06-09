@@ -184,11 +184,11 @@
         },
         "targetType": {
           "enum": [
-            "Database",
-            "Entity",
-            "File",
-            "WebApi",
-            "MessageQueue"
+            "database",
+            "entity",
+            "file",
+            "webApi",
+            "messageQueue"
           ],
           "title": "The type of target.",
           "description": "The type of target."

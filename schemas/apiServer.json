@@ -38,10 +38,10 @@
     },
     "provider": {
       "enum": [
-        "AttributeRouting",
-        "OData",
-        "Grpc",
-        "GraphQl"
+        "attributeRouting",
+        "oData",
+        "grpc",
+        "graphQl"
       ],
       "additionalProperties": false
     }

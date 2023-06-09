@@ -9833,11 +9833,21 @@
                   "type": "string",
                   "title": "Additional options.",
                   "description": "A list of additional options to set when connecting to this server."
+                },
+                "provider": {
+                  "enum": [
+                    "attributeRouting",
+                    "oData",
+                    "grpc",
+                    "graphQl"
+                  ],
+                  "additionalProperties": false
                 }
               },
               "required": [
                 "name",
-                "serverUri"
+                "serverUri",
+                "provider"
               ],
               "additionalProperties": false
             },
@@ -9877,11 +9887,18 @@
                   "type": "string",
                   "title": "Additional options.",
                   "description": "A list of additional options to set when connecting to this server."
+                },
+                "provider": {
+                  "enum": [
+                    "blazor"
+                  ],
+                  "additionalProperties": false
                 }
               },
               "required": [
                 "name",
-                "serverUri"
+                "serverUri",
+                "provider"
               ],
               "additionalProperties": false
             }
@@ -10499,6 +10516,17 @@
                     "title": "A phrase describing the etl target.",
                     "description": "A description of the etl target."
                   },
+                  "targetType": {
+                    "enum": [
+                      "database",
+                      "entity",
+                      "file",
+                      "webApi",
+                      "messageQueue"
+                    ],
+                    "title": "The type of target.",
+                    "description": "The type of target."
+                  },
                   "dataConnection": {
                     "type": "string",
                     "additionalProperties": false
@@ -10506,7 +10534,7 @@
                 },
                 "required": [
                   "name",
-                  "dataConnection"
+                  "targetType"
                 ],
                 "additionalProperties": false
               }

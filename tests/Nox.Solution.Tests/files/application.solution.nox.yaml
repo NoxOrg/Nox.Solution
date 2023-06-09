@@ -59,7 +59,7 @@ application:
             targetAttribute: GeoRegion
       target:
         name: Country
-        targetType: Entity
+        targetType: entity
 
 infrastructure: 
   persistence: 

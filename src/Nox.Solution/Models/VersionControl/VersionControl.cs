@@ -6,7 +6,7 @@ namespace Nox.Solution
     [AdditionalProperties(false)]
     public enum VersionControlProvider
     {
-        AzureDevops
+        AzureDevops = 1
     }
 
     [Title("Source code repository and related info for the solution.")]
@@ -18,7 +18,7 @@ namespace Nox.Solution
         [Title("The source code and repository provider or service.")]
         [Description("The name of the provider or service for source code and version control")]
         [Pattern(@"^[^\s]*$")]
-        public VersionControlProvider Provider { get; internal set; } = VersionControlProvider.AzureDevops;
+        public VersionControlProvider? Provider { get; internal set; }
 
         [Required]
         [Title("The URI for the host of the version control service.")]

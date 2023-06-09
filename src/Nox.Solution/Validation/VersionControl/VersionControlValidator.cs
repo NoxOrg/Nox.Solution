@@ -10,6 +10,7 @@ namespace Nox.Solution.Validation
                 .NotNull()
                 .WithMessage(vc => string.Format(ValidationResources.VersionControlProviderEmpty));
 
+
             RuleFor(vc => vc.Host)
                 .NotEmpty()
                 .WithMessage(vc => string.Format(ValidationResources.VersionControlHostEmpty));

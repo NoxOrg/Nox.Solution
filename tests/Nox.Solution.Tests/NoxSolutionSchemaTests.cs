@@ -28,7 +28,7 @@ public class NoxSolutionSchemaTests
         {
             PropertyNamingMethod = PropertyNamingMethods.CamelCase,
             Nullability = Nullability.AllowForNullableValueTypes,
-            Refiners = { new EnumToCamelCaseRefiner() },
+            Refiners = { new EnumToCamelCaseRefiner( excludeTypes: new Type[] { typeof(CurrencyCode) } ) },
             Generators = { new ReadOnlyStringDictionarySchemaGenerator() },
             Optimize = false,
         };
@@ -340,9 +340,23 @@ public class NoxSolutionSchemaTests
 
     internal class EnumToCamelCaseRefiner : ISchemaRefiner
     {
+
+        private readonly Type[] _excludeTypes;
+
+        public EnumToCamelCaseRefiner() : this(Array.Empty<Type>()) {}
+
+        public EnumToCamelCaseRefiner(Type[] excludeTypes)
+        {
+            _excludeTypes = excludeTypes;
+        }
+
         public bool ShouldRun(SchemaGenerationContextBase context)
         {
             // we only want to run this if the generated schema has a `enum` keyword
+
+            if (_excludeTypes.Contains(context.Type))
+                return false;
+
             return context.Intents.OfType<EnumIntent>().Any();
         }
 

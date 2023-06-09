@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using FluentValidation;
+using Nox.Solution.Extensions;
 
 namespace Nox.Solution.Validation
 {
@@ -10,7 +11,7 @@ namespace Nox.Solution.Validation
             Include(new ServerBaseValidator("an infrastructure, dependencies, data connection", servers));
             RuleFor(p => p.Provider)
                 .NotEmpty()
-                .WithMessage(p => string.Format(ValidationResources.DataConnectionProviderEmpty, p.Name, DataConnectionProviderHelpers.NameList()));
+                .WithMessage(p => string.Format(ValidationResources.DataConnectionProviderEmpty, p.Name, DataConnectionProvider.InMemory.ToNameList()));
         }
     }
 }

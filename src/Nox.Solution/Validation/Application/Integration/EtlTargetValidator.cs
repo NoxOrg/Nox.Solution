@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using FluentValidation;
+using Nox.Solution.Extensions;
 
 namespace Nox.Solution.Validation
 {
@@ -18,7 +19,7 @@ namespace Nox.Solution.Validation
 
             RuleFor(p => p.TargetType)
                 .NotEmpty()
-                .WithMessage(p => string.Format(ValidationResources.EtlTargetTypeEmpty, p.Name, etlName, EtlTargetTypeHelpers.NameList()));
+                .WithMessage(p => string.Format(ValidationResources.EtlTargetTypeEmpty, p.Name, etlName, EtlTargetType.Entity.ToNameList()));
             
             RuleFor(p => p.DataConnection)
                 .Must(HaveValidDataConnection)

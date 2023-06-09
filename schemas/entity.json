@@ -37,8 +37,8 @@
           "pattern": "^[^\\s]*$"
         }
       },
-      "title": "Specifies information on displaying the entity on a user interface",
-      "description": "Provides hints to rendering engines as to how this entity should be managed in the user interface."
+      "title": "Property reserved for future expansion to identify associated user interface component",
+      "description": "This property provides information related to the entity\u0027s user interface implementation."
     },
     "persistence": {
       "type": "object",

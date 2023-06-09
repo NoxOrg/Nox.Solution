@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using FluentValidation;
+using Nox.Solution.Extensions;
 
 namespace Nox.Solution.Validation
 {
@@ -30,7 +31,7 @@ namespace Nox.Solution.Validation
             
             RuleFor(er => er.Relationship)
                 .NotEmpty()
-                .WithMessage(er => string.Format(ValidationResources.EntityOwnedRelationshipRelationshipEmpty, er.Name, entityName, EntityRelationshipTypeHelpers.NameList()));
+                .WithMessage(er => string.Format(ValidationResources.EntityOwnedRelationshipRelationshipEmpty, er.Name, entityName, EntityRelationshipType.ExactlyOne.ToNameList()));
             
             RuleFor(er => er.Entity)
                 .NotEmpty()

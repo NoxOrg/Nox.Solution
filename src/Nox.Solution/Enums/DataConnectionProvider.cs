@@ -19,15 +19,4 @@ namespace Nox
         XmlFile,
         InMemory
     }
-    
-    public static class DataConnectionProviderHelpers
-    {
-        public static string NameList()
-        {
-            var list = Enum.GetValues(typeof(DataConnectionProvider))
-                .Cast<DataConnectionProvider>()
-                .ToList();
-            return string.Join(", ", list);
-        }
-    }
 }

@@ -177,8 +177,8 @@
     <data name="EtlTargetNameEmpty" xml:space="preserve">
         <value>The target of integration '{0}' does not have a name specified. All integration targets must have a name.</value>
     </data>
-    <data name="EtlTargetDataConnectionEmpty" xml:space="preserve">
-        <value>The target '{0}' of integration '{1}' does not have a data connection specified. All integration targets must have a data connection specified in the Infrastructure section of your yaml definition.</value>
+    <data name="EtlTargetTypeEmpty" xml:space="preserve">
+        <value>The target '{0}' of integration '{1}' does not have a valid target type specified. Valid target types are one of {2}.</value>
     </data>
     <data name="EtlTargetDataConnectionMissing" xml:space="preserve">
         <value>The target '{0}' for integration '{1}' refers to a data connection '{2}' that is not defined. All data connections must be defined in the Infrastructure section of your yaml definition.</value>
@@ -208,10 +208,10 @@
         <value>a Lookup for integration '{0}' does not have a target attribute specified. All integration lookups must have a target attribute.</value>
     </data>
     <data name="InfrastructurePersistenceEmpty" xml:space="preserve">
-        <value>The persistence section of the infrastructure definition is missing. Infrastructure persistence is required in a Nox solution defnition.</value>
+        <value>The persistence section of the infrastructure definition is missing. Infrastructure persistence is required in a Nox solution definition.</value>
     </data>
     <data name="InfrastructureMessagingEmpty" xml:space="preserve">
-        <value>The messaging section of the infrastructure definition is missing. Infrastructure messaging is required in a Nox solution defnition.</value>
+        <value>The messaging section of the infrastructure definition is missing. Infrastructure messaging is required in a Nox solution definition.</value>
     </data>
     <data name="ServerNameEmpty" xml:space="preserve">
         <value>The server definition for {0} is missing a name. All server definitions must have a unique name in a Nox solution.</value>
@@ -260,5 +260,23 @@
     </data>
     <data name="IntegrationEventsServerDefaultsFalse" xml:space="preserve">
         <value>Unable to apply defaults for infrastructure, messaging, integrationEventServer.</value>
+    </data>
+    <data name="DatabaseServerProviderEmpty" xml:space="preserve">
+        <value>The infrastructure, persistence, database server '{0}' must have a valid provider specified. Valid providers are one of {1}</value>
+    </data>
+    <data name="EventSourceServerProviderEmpty" xml:space="preserve">
+        <value>The infrastructure, persistence, event source server '{0}' must have a valid provider specified. Valid providers are one of {1}</value>
+    </data>
+    <data name="CacheServerProviderEmpty" xml:space="preserve">
+        <value>The infrastructure, persistence, cache server '{0}' must have a valid provider specified. Valid providers are one of {1}</value>
+    </data>
+    <data name="SearchServerProviderEmpty" xml:space="preserve">
+        <value>The infrastructure, persistence, search server '{0}' must have a valid provider specified. Valid providers are one of {1}</value>
+    </data>
+    <data name="ApiServerProviderEmpty" xml:space="preserve">
+        <value>The infrastructure, endpoints, API server '{0}' must have a valid provider specified. Valid providers are one of {1}</value>
+    </data>
+    <data name="BffServerProviderEmpty" xml:space="preserve">
+        <value>The infrastructure, endpoints, bff server '{0}' must have a valid provider specified. Valid providers are one of {1}</value>
     </data>
 </root>

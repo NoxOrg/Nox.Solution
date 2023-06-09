@@ -11,7 +11,7 @@ description: Microservice for maintaining and finding places to work
 
 overview: https://regusit.atlassian.net/wiki/spaces/heimdall/pages/2616393814/Workplace+Services
 
-variables:
+variables: 
   DATABASE_PROVIDER: slqServer
   DATABASE_SERVER: localhost
   DATABASE_USER: sa
@@ -324,7 +324,7 @@ application:
           description: The identity of the country, the Iso Alpha 2 code
           type: text
           textTypeOptions:
-            characterCasing: lower
+            characterCasing: Lower
             maxLength: 2
             minLength: 2
 
@@ -351,7 +351,7 @@ application:
         map:
             - sourceColumn: IsoAlpha2Code
               targetAttribute: Id
-              converter: upperCase
+              converter: UpperCase
             - sourceColumn: CountryName
               targetAttribute: Name
             - sourceColumn: CountryFullName
@@ -364,8 +364,8 @@ application:
                 returnColumn: Name
               targetAttribute: GeoRegion
       target:
-        name: ???
-        dataConnection: Nox #This points to Nox entity store
+        name: Country
+        targetType: Entity
 
 infrastructure: 
 
@@ -376,7 +376,7 @@ infrastructure:
 
       # Sql Server
       serverUri: sqlserver.iwgplc.com
-      provider: sqlServer
+      provider: SqlServer
       port: 1433
       user: sqluser
       password: sqlpassword
@@ -389,14 +389,14 @@ infrastructure:
 
     cacheServer:
       name: SampleCache
-      provider: azureRedis
+      provider: AzureRedis
       serverUri: redis.iwgplc.com
       user: RedisUser
       password: RedisPassword
       
     searchServer:
       name: SampleSearch
-      provider: elasticSearch
+      provider: ElasticSearch
       serverUri: elastic.igwplc.com
       user: ElasticUser
       password: ElasticPassword
@@ -404,19 +404,15 @@ infrastructure:
     eventSourceServer:
       name: SampleEvtSrc
       serverUri: SampleEvt.iwgplc.com
-      provider: eventStoreDb
+      provider: EventStoreDb
       user: EvtUser
       password: EvtPassword
 
   messaging:
-    
-    domainEventServer:
-      name: MediatR
-      provider: mediatR
 
     integrationEventServer:
       name: IntegrationBus
-      provider: rabbitMQ
+      provider: RabbitMq
       serverUri: rabbitmq://localhost
       port: 5672
       user: guest
@@ -426,11 +422,13 @@ infrastructure:
     
     apiServer:
       name: SampleApiServer
+      provider: OData
       serverUri: workplace.iwgplc.com
       port: 8080
-
+      
     bffServer:
       name: SampleBffServer
+      provider: Blazor
       serverUri: SampleBff.iwgplc.com
       port: 8080
 
@@ -438,20 +436,20 @@ infrastructure:
     notifications:
       emailServer:
         name: SampleEmailServer
-        provider: sendGrid
+        provider: SendGrid
         serverUri: sendgrid.igwplc.com
         user: SendGridUser
         password: SendGridPassword
       smsServer:
         name: SampleSmsServer
-        provider: twilio
+        provider: Twilio
         serverUri: https://twilio.com
         port: 8080
         user: TwilioUser
         password: TwilioPassword
       imServer:
         name: SampleImServer
-        provider: whatsApp
+        provider: WhatsApp
         serverUri: https://whatsapp.com
         port: 8080
         user: whatsappUser
@@ -471,7 +469,7 @@ infrastructure:
       secrets:
         secretsServer:
           name: SampleSecretServer
-          provider: azureKeyVault
+          provider: AzureKeyVault
           serverUri: kv.iwgplc.com
           user: secrets@iwgplc.com
           password: SecretPassword
@@ -480,7 +478,7 @@ infrastructure:
 
     dataConnections:
       - name: CountryJsonData
-        provider: jsonFile
+        provider: JsonFile
         serverUri: file:///C:/my-data-files
         options: Source=File;Filename=country-data.json;
 

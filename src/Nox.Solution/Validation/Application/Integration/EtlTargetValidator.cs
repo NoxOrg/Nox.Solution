@@ -16,18 +16,23 @@ namespace Nox.Solution.Validation
                 .NotEmpty()
                 .WithMessage(m => string.Format(ValidationResources.EtlTargetNameEmpty, etlName));
 
-            RuleFor(p => p.DataConnection)
+            RuleFor(p => p.TargetType)
                 .NotEmpty()
-                .WithMessage(p => string.Format(ValidationResources.EtlTargetDataConnectionEmpty, p.Name, etlName));
+                .WithMessage(p => string.Format(ValidationResources.EtlTargetTypeEmpty, p.Name, etlName, EtlTargetTypeHelpers.NameList()));
             
-            RuleFor(p => p.DataConnection!)
+            RuleFor(p => p.DataConnection)
                 .Must(HaveValidDataConnection)
                 .WithMessage(m => string.Format(ValidationResources.EtlTargetDataConnectionMissing, m.Name, etlName, m.DataConnection));
         }
         
-        private bool HaveValidDataConnection(string dataConnectionName)
+        private bool HaveValidDataConnection(string? dataConnectionName)
         {
-            return _dataConnections!.Any(dc => dc.Name == dataConnectionName);
+            if (!string.IsNullOrWhiteSpace(dataConnectionName))
+            {
+                return _dataConnections!.Any(dc => dc.Name == dataConnectionName);    
+            }
+
+            return true;
         }
     }
 }

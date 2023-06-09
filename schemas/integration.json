@@ -182,6 +182,17 @@
           "title": "A phrase describing the etl target.",
           "description": "A description of the etl target."
         },
+        "targetType": {
+          "enum": [
+            "Database",
+            "Entity",
+            "File",
+            "WebApi",
+            "MessageQueue"
+          ],
+          "title": "The type of target.",
+          "description": "The type of target."
+        },
         "dataConnection": {
           "type": "string",
           "additionalProperties": false
@@ -189,7 +200,7 @@
       },
       "required": [
         "name",
-        "dataConnection"
+        "targetType"
       ],
       "additionalProperties": false
     }

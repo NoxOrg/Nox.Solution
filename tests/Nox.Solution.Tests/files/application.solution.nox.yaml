@@ -73,7 +73,7 @@ infrastructure:
   messaging: 
     integrationEventServer: 
       name: SampleIntegrationEventServer
-      provider: rabbitMQ
+      provider: rabbitMq
       serverUri: rabbitmq://localhost/
       
   dependencies:

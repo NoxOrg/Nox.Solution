@@ -31,7 +31,7 @@ environments:
     description: Production environment used for, well - the real thing!
 
 versionControl:
-  provider: AzureDevops
+  provider: azureDevops
   host: https://dev.azure.com/iwgplc
   folders:
     sourceCode: /src
@@ -41,27 +41,27 @@ team:
 
   - name: Andre Sharpe
     userName: andre.sharpe@iwgplc.com
-    roles: [Architect, Owner, Administrator, Developer, Manager]
+    roles: [architect, owner, administrator, developer, manager]
 
   - name: Jan Schutte
     userName: jan.schutte@iwgplc.com
-    roles: [Architect, Administrator, Developer, DevOpsEngineer]
+    roles: [architect, administrator, developer, devOpsEngineer]
 
   - name: Anton Du Plessis
     userName: anton.duplessis@iwgplc.com
-    roles: [ProjectManager]
+    roles: [projectManager]
 
   - name: Morne Van Zyl
     userName: morne.vanzyl@iwgplc.com
-    roles: [TechnicalWriter]
+    roles: [technicalWriter]
 
   - name: Dmytro Dorodnykh
     userName: dmytro.dorodnykh@iwgplc.com
-    roles: [Developer]
+    roles: [developer]
 
   - name: Oleksandr Vlasenko
     userName: oleksandr.vlasenko@regus.com
-    roles: [Architect, Developer]
+    roles: [architect, developer]
 
 domain:
 
@@ -94,14 +94,14 @@ domain:
 
         - name: CountryAcceptsCurrency
           description: accepts as legal tender
-          relationship: OneOrMany
+          relationship: oneOrMany
           entity: Currency
 
       ownedRelationships:
 
         - name: CountryLocalNames
           description: is also know as
-          relationship: OneOrMany
+          relationship: oneOrMany
           entity: CountryLocalNames
 
       queries:
@@ -271,7 +271,7 @@ domain:
 
         - name: CurrencyIsLegalTenderForCountry
           description: is legal tender for
-          relationship: ZeroOrMany
+          relationship: zeroOrMany
           entity: Country
       
     - name: CountryLocalNames
@@ -410,7 +410,7 @@ infrastructure:
 
     integrationEventServer:
       name: IntegrationBus
-      provider: rabbitMQ
+      provider: rabbitMq
       serverUri: rabbitmq://localhost
       port: 5672
       user: guest

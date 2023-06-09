@@ -1,6 +1,11 @@
+using System.Collections.Concurrent;
 using System.Text.Json;
 using Json.Schema;
 using Json.Schema.Generation;
+using Json.Schema.Generation.Generators;
+using Json.Schema.Generation.Intents;
+using YamlDotNet.Core.Events;
+using YamlDotNet.Serialization;
 
 namespace Nox.Solution.Tests;
 
@@ -23,6 +28,8 @@ public class NoxSolutionSchemaTests
         {
             PropertyNamingMethod = PropertyNamingMethods.CamelCase,
             Nullability = Nullability.AllowForNullableValueTypes,
+            Refiners = { new EnumToCamelCaseRefiner() },
+            Generators = { new ReadOnlyStringDictionarySchemaGenerator() },
             Optimize = false,
         };
 
@@ -327,5 +334,51 @@ public class NoxSolutionSchemaTests
         }
 
         return targetFolder;
+    }
+
+
+
+    internal class EnumToCamelCaseRefiner : ISchemaRefiner
+    {
+        public bool ShouldRun(SchemaGenerationContextBase context)
+        {
+            // we only want to run this if the generated schema has a `enum` keyword
+            return context.Intents.OfType<EnumIntent>().Any();
+        }
+
+        public void Run(SchemaGenerationContextBase context)
+        {
+            // find the enum keyword
+            var enumIntent = context.Intents.OfType<EnumIntent>().First();
+            enumIntent.Names = enumIntent.Names.Select( n => Char.ToLowerInvariant(n[0]) + n.Substring(1)).ToList();
+        }
+
+    }
+
+
+    internal class ReadOnlyStringDictionarySchemaGenerator : ISchemaGenerator
+    {
+    	public bool Handles(Type type)
+        {
+            if (!type.IsGenericType) return false;
+
+            var generic = type.GetGenericTypeDefinition();
+
+            if (generic != typeof(IReadOnlyDictionary<,>)) 
+                return false;
+
+            var keyType = type.GenericTypeArguments[0];
+            return keyType == typeof(string);
+        }
+
+        public void AddConstraints(SchemaGenerationContextBase context)
+        {
+            context.Intents.Add(new TypeIntent(SchemaValueType.Object));
+
+            var valueType = context.Type.GenericTypeArguments[1];
+            var valueContext = SchemaGenerationContextCache.Get(valueType);
+
+            context.Intents.Add(new AdditionalPropertiesIntent(valueContext));
+        }
     }
 }

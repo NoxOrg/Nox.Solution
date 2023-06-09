@@ -41,8 +41,8 @@
         },
         "provider": {
           "enum": [
-            "SendGrid",
-            "Mailchimp"
+            "sendGrid",
+            "mailchimp"
           ],
           "additionalProperties": false
         }
@@ -93,8 +93,8 @@
         },
         "provider": {
           "enum": [
-            "Twilio",
-            "ClickSend"
+            "twilio",
+            "clickSend"
           ],
           "additionalProperties": false
         }
@@ -144,8 +144,8 @@
         },
         "provider": {
           "enum": [
-            "WhatsApp",
-            "Telegram"
+            "whatsApp",
+            "telegram"
           ],
           "additionalProperties": false
         }

@@ -109,9 +109,9 @@
               },
               "characterCasing": {
                 "enum": [
-                  "Normal",
-                  "Lower",
-                  "Upper"
+                  "normal",
+                  "lower",
+                  "upper"
                 ]
               },
               "isMultiline": {
@@ -364,19 +364,19 @@
               },
               "widget": {
                 "enum": [
-                  "TextInput",
-                  "TextArea",
-                  "NumberInput",
-                  "NumberSlider",
-                  "FileUpload",
-                  "DatePicker",
-                  "DateRangePicker",
-                  "TimePicker",
-                  "TimeRangePicker",
-                  "Radio",
-                  "Select",
-                  "Checkbox",
-                  "Switch"
+                  "textInput",
+                  "textArea",
+                  "numberInput",
+                  "numberSlider",
+                  "fileUpload",
+                  "datePicker",
+                  "dateRangePicker",
+                  "timePicker",
+                  "timeRangePicker",
+                  "radio",
+                  "select",
+                  "checkbox",
+                  "switch"
                 ]
               },
               "icon": {
@@ -384,8 +384,8 @@
               },
               "iconPosition": {
                 "enum": [
-                  "Begin",
-                  "End"
+                  "begin",
+                  "end"
                 ]
               },
               "inputMask": {

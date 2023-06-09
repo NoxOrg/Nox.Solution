@@ -53,7 +53,7 @@ infrastructure:
   messaging:
     integrationEventServer:
       name: IntegrationBus
-      provider: rabbitMQ
+      provider: rabbitMq
       serverUri: rabbitmq://localhost
       port: 5672
       user: guest

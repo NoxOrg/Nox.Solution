@@ -44,9 +44,9 @@
             },
             "provider": {
               "enum": [
-                "AwsKeyManagementService",
-                "AzureKeyVault",
-                "HashicorpVault"
+                "awsKeyManagementService",
+                "azureKeyVault",
+                "hashicorpVault"
               ]
             }
           },

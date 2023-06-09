@@ -87,19 +87,19 @@
           },
           "provider": {
             "enum": [
-              "AmazonSqs",
-              "AzureServiceBus",
-              "CsvFile",
-              "ExcelFile",
-              "JsonFile",
-              "MySql",
-              "ParquetFile",
-              "Postgres",
-              "RabbitMq",
-              "SqlServer",
-              "WebApi",
-              "XmlFile",
-              "InMemory"
+              "amazonSqs",
+              "azureServiceBus",
+              "csvFile",
+              "excelFile",
+              "jsonFile",
+              "mySql",
+              "parquetFile",
+              "postgres",
+              "rabbitMq",
+              "sqlServer",
+              "webApi",
+              "xmlFile",
+              "inMemory"
             ]
           }
         },
@@ -153,8 +153,8 @@
             },
             "provider": {
               "enum": [
-                "SendGrid",
-                "Mailchimp"
+                "sendGrid",
+                "mailchimp"
               ],
               "additionalProperties": false
             }
@@ -205,8 +205,8 @@
             },
             "provider": {
               "enum": [
-                "Twilio",
-                "ClickSend"
+                "twilio",
+                "clickSend"
               ],
               "additionalProperties": false
             }
@@ -256,8 +256,8 @@
             },
             "provider": {
               "enum": [
-                "WhatsApp",
-                "Telegram"
+                "whatsApp",
+                "telegram"
               ],
               "additionalProperties": false
             }
@@ -360,9 +360,9 @@
                 },
                 "provider": {
                   "enum": [
-                    "AwsKeyManagementService",
-                    "AzureKeyVault",
-                    "HashicorpVault"
+                    "awsKeyManagementService",
+                    "azureKeyVault",
+                    "hashicorpVault"
                   ]
                 }
               },

@@ -45,7 +45,9 @@
             "postgres",
             "mySql",
             "sqlLite"
-          ]
+          ],
+          "title": "The database provider.",
+          "description": "The provider used for this database server. Examples include SqlServer, Postgres and others."
         }
       },
       "required": [
@@ -53,6 +55,8 @@
         "serverUri",
         "provider"
       ],
+      "title": "The definition namespace for the Database server used in a Nox solution.",
+      "description": "Specify properties pertinent to the solution Database server here. Examples include name, serverUri, Port and connection credentials",
       "additionalProperties": false
     },
     "cacheServer": {
@@ -99,6 +103,8 @@
             "memcached",
             "redis"
           ],
+          "title": "The cache server provider.",
+          "description": "The provider used for this cache server. Examples include AmazonElasticCache, AzureRedis, Memcached and Redis.",
           "additionalProperties": false
         }
       },
@@ -107,6 +113,8 @@
         "serverUri",
         "provider"
       ],
+      "title": "The definition namespace for the Cache server used in a Nox solution.",
+      "description": "Specify properties pertinent to the solution Cache server here. Examples include name, serverUri, Port and connection credentials",
       "additionalProperties": false
     },
     "searchServer": {
@@ -149,7 +157,9 @@
         "provider": {
           "enum": [
             "elasticSearch"
-          ]
+          ],
+          "title": "The search server provider.",
+          "description": "The provider used for this search server server. Examples include ElasticSearch."
         }
       },
       "required": [
@@ -157,6 +167,8 @@
         "serverUri",
         "provider"
       ],
+      "title": "The definition namespace for the Search server used in a Nox solution.",
+      "description": "Specify properties pertinent to the solution Search server here. Examples include name, serverUri, Port and connection credentials",
       "additionalProperties": false
     },
     "eventSourceServer": {
@@ -199,7 +211,9 @@
         "provider": {
           "enum": [
             "eventStoreDb"
-          ]
+          ],
+          "title": "The event source server provider.",
+          "description": "The provider used for this event source server. Examples include EventStoreDB."
         }
       },
       "required": [
@@ -207,6 +221,8 @@
         "serverUri",
         "provider"
       ],
+      "title": "The definition namespace for the Event Source server used in a Nox solution.",
+      "description": "Specify properties pertinent to the solution Event Source server here. Examples include name, serverUri, Port and connection credentials",
       "additionalProperties": false
     }
   },

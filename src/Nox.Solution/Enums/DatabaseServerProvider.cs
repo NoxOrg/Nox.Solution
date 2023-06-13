@@ -8,6 +8,6 @@ namespace Nox
         SqlServer,
         Postgres,
         MySql,
-        SqlLite,
+        SqLite,
     }
 }

@@ -14,6 +14,7 @@ namespace Nox
         ParquetFile,
         Postgres,
         RabbitMq,
+        SqLite,
         SqlServer,
         WebApi,
         XmlFile,

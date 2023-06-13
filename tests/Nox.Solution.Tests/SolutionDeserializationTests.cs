@@ -190,52 +190,52 @@ public class SolutionDeserializationTests
         Assert.Equal(2, noxConfig!.Application.DataTransferObjects[0].Attributes![0].TextTypeOptions!.MaxLength);
         Assert.Equal(2, noxConfig!.Application.DataTransferObjects[0].Attributes![0].TextTypeOptions!.MinLength);
         
-        Assert.NotNull(noxConfig!.Application.Integration);
-        Assert.Single(noxConfig!.Application.Integration);
-        Assert.Equal("SampleEtl", noxConfig!.Application.Integration[0].Name);
-        Assert.Equal("a Sample Etl", noxConfig!.Application.Integration[0].Description);
-        Assert.NotNull(noxConfig!.Application.Integration[0].Source);
-        Assert.Equal("SampleEtlDataSource", noxConfig!.Application.Integration[0].Source!.Name);
-        Assert.Equal("Sources Country data from a json file", noxConfig!.Application.Integration[0].Source!.Description);
-        Assert.Equal("CountryJsonData", noxConfig!.Application.Integration[0].Source!.DataConnection);
-        Assert.NotNull(noxConfig!.Application.Integration[0].Source!.Schedule);
-        Assert.Equal("every day at 2am", noxConfig!.Application.Integration[0].Source!.Schedule!.Start);
-        Assert.NotNull(noxConfig!.Application.Integration[0].Source!.Schedule!.Retry);
-        Assert.Equal(5, noxConfig!.Application.Integration[0].Source!.Schedule!.Retry!.Limit);
-        Assert.Equal(5, noxConfig!.Application.Integration[0].Source!.Schedule!.Retry!.DelaySeconds);
-        Assert.Equal(10, noxConfig!.Application.Integration[0].Source!.Schedule!.Retry!.DoubleDelayLimit);
-        Assert.True(noxConfig!.Application.Integration[0].Source!.Schedule!.RunOnStartup);
+        Assert.NotNull(noxConfig!.Application.Integrations);
+        Assert.Single(noxConfig!.Application.Integrations);
+        Assert.Equal("SampleEtl", noxConfig!.Application.Integrations[0].Name);
+        Assert.Equal("a Sample Etl", noxConfig!.Application.Integrations[0].Description);
+        Assert.NotNull(noxConfig!.Application.Integrations[0].Source);
+        Assert.Equal("SampleEtlDataSource", noxConfig!.Application.Integrations[0].Source!.Name);
+        Assert.Equal("Sources Country data from a json file", noxConfig!.Application.Integrations[0].Source!.Description);
+        Assert.Equal("CountryJsonData", noxConfig!.Application.Integrations[0].Source!.DataConnection);
+        Assert.NotNull(noxConfig!.Application.Integrations[0].Source!.Schedule);
+        Assert.Equal("every day at 2am", noxConfig!.Application.Integrations[0].Source!.Schedule!.Start);
+        Assert.NotNull(noxConfig!.Application.Integrations[0].Source!.Schedule!.Retry);
+        Assert.Equal(5, noxConfig!.Application.Integrations[0].Source!.Schedule!.Retry!.Limit);
+        Assert.Equal(5, noxConfig!.Application.Integrations[0].Source!.Schedule!.Retry!.DelaySeconds);
+        Assert.Equal(10, noxConfig!.Application.Integrations[0].Source!.Schedule!.Retry!.DoubleDelayLimit);
+        Assert.True(noxConfig!.Application.Integrations[0].Source!.Schedule!.RunOnStartup);
         
-        Assert.NotNull(noxConfig!.Application.Integration[0].Source!.Watermark);
-        Assert.NotNull(noxConfig!.Application.Integration[0].Source!.Watermark!.DateColumns);
-        Assert.Equal(2, noxConfig!.Application.Integration[0].Source!.Watermark!.DateColumns!.Length);
-        Assert.Equal("CreateDate", noxConfig!.Application.Integration[0].Source!.Watermark!.DateColumns![0]);
-        Assert.Equal("EditDate", noxConfig!.Application.Integration[0].Source!.Watermark!.DateColumns![1]);
-        Assert.Equal("CountryId", noxConfig!.Application.Integration[0].Source!.Watermark!.SequentialKeyColumn);
+        Assert.NotNull(noxConfig!.Application.Integrations[0].Source!.Watermark);
+        Assert.NotNull(noxConfig!.Application.Integrations[0].Source!.Watermark!.DateColumns);
+        Assert.Equal(2, noxConfig!.Application.Integrations[0].Source!.Watermark!.DateColumns!.Length);
+        Assert.Equal("CreateDate", noxConfig!.Application.Integrations[0].Source!.Watermark!.DateColumns![0]);
+        Assert.Equal("EditDate", noxConfig!.Application.Integrations[0].Source!.Watermark!.DateColumns![1]);
+        Assert.Equal("CountryId", noxConfig!.Application.Integrations[0].Source!.Watermark!.SequentialKeyColumn);
         
-        Assert.NotNull(noxConfig!.Application.Integration[0].Transform);
-        Assert.NotNull(noxConfig!.Application.Integration[0].Transform!.Map);
-        Assert.Equal(3, noxConfig!.Application.Integration[0].Transform!.Map!.Count);
-        Assert.Equal("IsoAlpha2Code", noxConfig!.Application.Integration[0].Transform!.Map![0].SourceColumn);
-        Assert.Equal("Id", noxConfig!.Application.Integration[0].Transform!.Map![0].TargetAttribute);
-        Assert.Equal(EtlMappingConverter.UpperCase, noxConfig!.Application.Integration[0].Transform!.Map![0].Converter);
-        Assert.Equal("CountryName", noxConfig!.Application.Integration[0].Transform!.Map![1].SourceColumn);
-        Assert.Equal("Name", noxConfig!.Application.Integration[0].Transform!.Map![1].TargetAttribute);
-        Assert.Equal("CountryFullName", noxConfig!.Application.Integration[0].Transform!.Map![2].SourceColumn);
-        Assert.Equal("FormalName", noxConfig!.Application.Integration[0].Transform!.Map![2].TargetAttribute);
+        Assert.NotNull(noxConfig!.Application.Integrations[0].Transform);
+        Assert.NotNull(noxConfig!.Application.Integrations[0].Transform!.Map);
+        Assert.Equal(3, noxConfig!.Application.Integrations[0].Transform!.Map!.Count);
+        Assert.Equal("IsoAlpha2Code", noxConfig!.Application.Integrations[0].Transform!.Map![0].SourceColumn);
+        Assert.Equal("Id", noxConfig!.Application.Integrations[0].Transform!.Map![0].TargetAttribute);
+        Assert.Equal(EtlMappingConverter.UpperCase, noxConfig!.Application.Integrations[0].Transform!.Map![0].Converter);
+        Assert.Equal("CountryName", noxConfig!.Application.Integrations[0].Transform!.Map![1].SourceColumn);
+        Assert.Equal("Name", noxConfig!.Application.Integrations[0].Transform!.Map![1].TargetAttribute);
+        Assert.Equal("CountryFullName", noxConfig!.Application.Integrations[0].Transform!.Map![2].SourceColumn);
+        Assert.Equal("FormalName", noxConfig!.Application.Integrations[0].Transform!.Map![2].TargetAttribute);
         
-        Assert.NotNull(noxConfig!.Application.Integration[0].Transform!.Lookup);
-        Assert.Single(noxConfig!.Application.Integration[0].Transform!.Lookup!);
-        Assert.Equal("RegionId", noxConfig!.Application.Integration[0].Transform!.Lookup![0].SourceColumn);
-        Assert.NotNull(noxConfig!.Application.Integration[0].Transform!.Lookup![0].Match);
-        Assert.Equal("GeoRegions", noxConfig!.Application.Integration[0].Transform!.Lookup![0].Match!.Table);
-        Assert.Equal("Id", noxConfig!.Application.Integration[0].Transform!.Lookup![0].Match!.LookupColumn);
-        Assert.Equal("Name", noxConfig!.Application.Integration[0].Transform!.Lookup![0].Match!.ReturnColumn);
-        Assert.Equal("GeoRegion", noxConfig!.Application.Integration[0].Transform!.Lookup![0].TargetAttribute);
+        Assert.NotNull(noxConfig!.Application.Integrations[0].Transform!.Lookup);
+        Assert.Single(noxConfig!.Application.Integrations[0].Transform!.Lookup!);
+        Assert.Equal("RegionId", noxConfig!.Application.Integrations[0].Transform!.Lookup![0].SourceColumn);
+        Assert.NotNull(noxConfig!.Application.Integrations[0].Transform!.Lookup![0].Match);
+        Assert.Equal("GeoRegions", noxConfig!.Application.Integrations[0].Transform!.Lookup![0].Match!.Table);
+        Assert.Equal("Id", noxConfig!.Application.Integrations[0].Transform!.Lookup![0].Match!.LookupColumn);
+        Assert.Equal("Name", noxConfig!.Application.Integrations[0].Transform!.Lookup![0].Match!.ReturnColumn);
+        Assert.Equal("GeoRegion", noxConfig!.Application.Integrations[0].Transform!.Lookup![0].TargetAttribute);
         
-        Assert.NotNull(noxConfig!.Application.Integration[0].Target);
-        Assert.Equal("Country", noxConfig!.Application.Integration[0].Target!.Name);
-        Assert.Equal(EtlTargetType.Entity, noxConfig!.Application.Integration[0].Target!.TargetType);
+        Assert.NotNull(noxConfig!.Application.Integrations[0].Target);
+        Assert.Equal("Country", noxConfig!.Application.Integrations[0].Target!.Name);
+        Assert.Equal(EtlTargetType.Entity, noxConfig!.Application.Integrations[0].Target!.TargetType);
     }
 
     [Fact]

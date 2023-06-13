@@ -7,7 +7,7 @@ namespace Nox.Solution
     [AdditionalProperties(false)]
     public class Application: DefinitionBase
     {
-        [AdditionalProperties(false)] public IReadOnlyList<Integration>? Integration { get; internal set; }
+        [AdditionalProperties(false)] public IReadOnlyList<Integration>? Integrations { get; internal set; }
 
         [AdditionalProperties(false)] public IReadOnlyList<DataTransferObject>? DataTransferObjects { get; internal set; }
     }

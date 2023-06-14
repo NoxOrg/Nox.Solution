@@ -47,12 +47,18 @@ namespace Nox.Solution
         [Description("Define one or more domain command(s) that operate on this entity. Commands may have side effects and mutate the domain state.")]
         [AdditionalProperties(false)]
         public IReadOnlyList<DomainCommand>? Commands { get; internal set; }
-        
+
+        [Title("Domain events for this entity.")]
+        [Description("Define one or more event(s) that may be raised when state change occurs on this entity.")]
         [AdditionalProperties(false)]
         public IReadOnlyList<NoxSimpleTypeDefinition>? Events { get; internal set; }
 
+        [Title("Keys for this entity.")]
+        [Description("Define one or more keys for this entity.")]
         public IReadOnlyList<NoxSimpleTypeDefinition>? Keys { get; internal set; }
-        
+
+        [Title("Attributes that describe this entity.")]
+        [Description("Define one or more attribute(s) that describes the composition of this domain entity.")]
         [AdditionalProperties(false)]
         public IReadOnlyList<NoxSimpleTypeDefinition>? Attributes { get; internal set; }
 

@@ -41,7 +41,7 @@
         "sqlServer",
         "postgres",
         "mySql",
-        "sqlLite"
+        "sqLite"
       ]
     }
   },

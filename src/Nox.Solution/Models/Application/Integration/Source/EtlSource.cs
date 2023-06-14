@@ -16,7 +16,8 @@ namespace Nox.Solution
         [Description("A description of the etl source.")]
         public string? Description { get; internal set; }
 
-        [AdditionalProperties(false)] public EtlSchedule? Schedule { get; internal set; }
+        [AdditionalProperties(false)] 
+        public EtlSchedule? Schedule { get; internal set; }
 
         [Required]
         [AdditionalProperties(false)]
@@ -24,5 +25,19 @@ namespace Nox.Solution
 
         [AdditionalProperties(false)] 
         public DatabaseWatermark? Watermark { get; internal set; }
+
+        [AdditionalProperties(false)] 
+        public SourceDatabaseQueryOptions? DatabaseOptions { get; set; }
+
+        [AdditionalProperties(false)] 
+        public SourceFileOptions? FileOptions { get; set; }
+
+        [AdditionalProperties(false)] 
+        public SourceMessageQueueOptions? MessageQueueOptions { get; set; }
+
+        [AdditionalProperties(false)] 
+        public SourceHttpOptions?
+            HttpOptions { get; set; }
+        
     }
 }

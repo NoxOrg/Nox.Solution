@@ -10022,7 +10022,7 @@
                     "sqlServer",
                     "postgres",
                     "mySql",
-                    "sqlLite"
+                    "sqLite"
                   ]
                 }
               },
@@ -10464,6 +10464,7 @@
                       "parquetFile",
                       "postgres",
                       "rabbitMq",
+                      "sqLite",
                       "sqlServer",
                       "webApi",
                       "xmlFile",
@@ -10802,7 +10803,7 @@
           "type": "string",
           "format": "uri"
         },
-        "integration": {
+        "integrations": {
           "type": "array",
           "items": {
             "type": "object",

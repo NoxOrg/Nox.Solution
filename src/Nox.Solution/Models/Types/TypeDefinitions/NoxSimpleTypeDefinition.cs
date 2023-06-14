@@ -15,7 +15,7 @@ namespace Nox.Solution
         public string? Description { get; internal set; }
 
         [Required] 
-        public NoxType Type { get; internal set; } = NoxType.@object;
+        public NoxType Type { get; internal set; } = NoxType.Object;
 
         #region TypeOptions
 

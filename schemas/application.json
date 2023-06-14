@@ -27,8 +27,8 @@
             "properties": {
               "name": {
                 "type": "string",
-                "title": "The name of the etl source. Contains no spaces.",
-                "description": "The name of the etl source. It should be a commonly used singular noun and be unique within a solution.",
+                "title": "The name of the integration source. Contains no spaces.",
+                "description": "The name of the data connection for this integration source. This must refer to an existing data connection in infrastructure, dependencies, dataConnections.",
                 "pattern": "^[^\\s]*$"
               },
               "description": {
@@ -78,10 +78,6 @@
                 ],
                 "additionalProperties": false
               },
-              "dataConnection": {
-                "type": "string",
-                "additionalProperties": false
-              },
               "watermark": {
                 "type": "object",
                 "properties": {
@@ -96,11 +92,79 @@
                   }
                 },
                 "additionalProperties": false
+              },
+              "databaseOptions": {
+                "type": "object",
+                "properties": {
+                  "query": {
+                    "type": "string",
+                    "title": "The query to execute.",
+                    "description": "The query that will be executed on the source database."
+                  },
+                  "minimumExpectedRecords": {
+                    "type": [
+                      "integer",
+                      "null"
+                    ]
+                  }
+                },
+                "required": [
+                  "query"
+                ],
+                "additionalProperties": false
+              },
+              "fileOptions": {
+                "type": "object",
+                "properties": {
+                  "filename": {
+                    "type": "string",
+                    "title": "The file name.",
+                    "description": "The name of the file that will be ingested."
+                  },
+                  "minimumExpectedRecords": {
+                    "type": [
+                      "integer",
+                      "null"
+                    ]
+                  }
+                },
+                "required": [
+                  "filename"
+                ],
+                "additionalProperties": false
+              },
+              "messageQueueOptions": {
+                "type": "object",
+                "properties": {
+                  "source": {
+                    "type": "string",
+                    "title": "The source name.",
+                    "description": "The name of the queue, topic or subscription from which messages will be consumed."
+                  }
+                },
+                "required": [
+                  "source"
+                ],
+                "additionalProperties": false
+              },
+              "httpOptions": {
+                "type": "object",
+                "properties": {
+                  "route": {
+                    "type": "string"
+                  },
+                  "format": {
+                    "type": "string"
+                  },
+                  "verb": {
+                    "type": "string"
+                  }
+                },
+                "additionalProperties": false
               }
             },
             "required": [
-              "name",
-              "dataConnection"
+              "name"
             ],
             "additionalProperties": false
           },

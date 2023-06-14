@@ -22,7 +22,7 @@ application:
             maxLength: 2
             minLength: 2
 
-  integration:
+  integrations:
     - name: SampleEtl
       description: a Sample Etl
       source:

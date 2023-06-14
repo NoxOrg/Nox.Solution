@@ -4,7 +4,7 @@ using Json.Schema.Generation;
 namespace Nox.Solution
 {
 
-    [Title("Specifies information on storing and retrieving the entity")]
+    [Title("Specifies information on storing and retrieving the entity.")]
     [Description("Provides hints to the database engine and API as to how this entity should be managed in the persistence store.")]
     [AdditionalProperties(false)]
     public class EntityPersistence : DefinitionBase
@@ -14,8 +14,12 @@ namespace Nox.Solution
         [Description("Indicates to the storage engine that all changes to this entity must be tracked over time. Usually used to time-travel, track or audit an entity's state changes.")]
         public bool IsVersioned { get; internal set; } = true;
 
+        [Title("Table name in the database to which this entity refers to.")]
+        [Description("Indicates to the storage engine which table in the database these entity persistence settings apply to.")]
         public string? TableName { get; internal set; }
 
+        [Title("Schema name in the database to which the Table Name applies to.")]
+        [Description("Indicates to the storage engine which schema in the database the entity TableName persistence settings apply to.")]
         public string Schema { get; internal set; } = "dbo";
 
         public EntityCreateSettings Create { get; internal set; } = new EntityCreateSettings();

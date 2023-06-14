@@ -29,6 +29,7 @@ environments:
 
   - name: prod
     description: Production environment used for, well - the real thing!
+    isProduction: true
 
 versionControl:
   provider: azureDevops
@@ -326,7 +327,7 @@ application:
             maxLength: 2
             minLength: 2
 
-  integration:
+  integrations:
     - name: SampleEtl
       description: a Sample Etl
       source:

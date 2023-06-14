@@ -6,7 +6,9 @@ namespace Nox.Solution
     [AdditionalProperties(false)]
     public class DatabaseServer : ServerBase
     {
-        [Required] 
+        [Required]
+        [Title("The database provider.")]
+        [Description("The provider used for this database server. Examples include SqlServer, Postgres and others.")]
         public DatabaseServerProvider Provider { get; internal set; } = DatabaseServerProvider.SqlServer;
     }
 }

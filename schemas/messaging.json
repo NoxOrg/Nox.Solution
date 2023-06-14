@@ -46,6 +46,8 @@
             "amazonSqs",
             "inMemory"
           ],
+          "title": "The messaging server provider.",
+          "description": "The provider used for this messaging server. Examples include RabbitMQ, Azure ServiceBus, Amazon SQS and InMemory.",
           "additionalProperties": false
         }
       },
@@ -54,6 +56,8 @@
         "serverUri",
         "provider"
       ],
+      "title": "Details pertaining to the IntegrationEventServer settings in a Nox solution.",
+      "description": "Defines settings pertinent to an IntegrationEventServer here. These include provider (RabbitMQ, Azure ServiceBus, Amazon SQS etc), connection details as well as internal default deployment settings.",
       "additionalProperties": false
     }
   },

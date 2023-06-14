@@ -26,33 +26,24 @@ namespace Nox.Solution
         [Pattern(@"^[^\s]*$")]
         public string PluralName { get; internal set; } = string.Empty;
 
-        [Title("Property reserved for future expansion to identify associated user interface component")]
-        [Description("This property provides information related to the entity's user interface implementation.")]
         public EntityUserInterface? UserInterface { get; internal set; }
-      
-        [Title("Specifies information on storing and retrieving entities")]
-        [Description("Provides hints to the database engine and API as to how this entity should be managed in the persistence store.")]
-        [AdditionalProperties(false)]
+
         public EntityPersistence? Persistence { get; internal set; }
 
         [Title("Defines relationships to other entities.")]
         [Description("Defines one way relationships to other entities. Remember to define the reverse relationship on the target entities.")]
-        [AdditionalProperties(false)]
         public IReadOnlyList<EntityRelationship>? Relationships { get; internal set; }
 
         [Title("Defines owned relationships to another entity.")]
         [Description("Defines relationship to owned entities. This entity will be treated as an aggregate root.")]
-        [AdditionalProperties(false)]
         public IReadOnlyList<EntityRelationship>? OwnedRelationships { get; internal set; }
 
         [Title("Defines queries for the domain.")]
         [Description("Defines queries for the domain that operates on this entity. Queries should have no side effects and not mutate the domain state.")]
-        [AdditionalProperties(false)]
         public IReadOnlyList<DomainQuery>? Queries { get; internal set; }
 
         [Title("Defines commands for the domain.")]
         [Description("Defines commands for the domain that operates on this entity. Commands may have side effects and mutate the domain state.")]
-        [AdditionalProperties(false)]
         public IReadOnlyList<DomainCommand>? Commands { get; internal set; }
         
         [AdditionalProperties(false)]

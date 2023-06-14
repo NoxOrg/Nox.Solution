@@ -52,7 +52,9 @@
                 "postgres",
                 "mySql",
                 "sqLite"
-              ]
+              ],
+              "title": "The database provider.",
+              "description": "The provider used for this database server. Examples include SqlServer, Postgres and others."
             }
           },
           "required": [
@@ -60,6 +62,8 @@
             "serverUri",
             "provider"
           ],
+          "title": "The definition namespace for the Database server used in a Nox solution.",
+          "description": "Specify properties pertinent to the solution Database server here. Examples include name, serverUri, Port and connection credentials",
           "additionalProperties": false
         },
         "cacheServer": {
@@ -106,6 +110,8 @@
                 "memcached",
                 "redis"
               ],
+              "title": "The cache server provider.",
+              "description": "The provider used for this cache server. Examples include AmazonElasticCache, AzureRedis, Memcached and Redis.",
               "additionalProperties": false
             }
           },
@@ -114,6 +120,8 @@
             "serverUri",
             "provider"
           ],
+          "title": "The definition namespace for the Cache server used in a Nox solution.",
+          "description": "Specify properties pertinent to the solution Cache server here. Examples include name, serverUri, Port and connection credentials",
           "additionalProperties": false
         },
         "searchServer": {
@@ -156,7 +164,9 @@
             "provider": {
               "enum": [
                 "elasticSearch"
-              ]
+              ],
+              "title": "The search server provider.",
+              "description": "The provider used for this search server server. Examples include ElasticSearch."
             }
           },
           "required": [
@@ -164,6 +174,8 @@
             "serverUri",
             "provider"
           ],
+          "title": "The definition namespace for the Search server used in a Nox solution.",
+          "description": "Specify properties pertinent to the solution Search server here. Examples include name, serverUri, Port and connection credentials",
           "additionalProperties": false
         },
         "eventSourceServer": {
@@ -206,7 +218,9 @@
             "provider": {
               "enum": [
                 "eventStoreDb"
-              ]
+              ],
+              "title": "The event source server provider.",
+              "description": "The provider used for this event source server. Examples include EventStoreDB."
             }
           },
           "required": [
@@ -214,12 +228,16 @@
             "serverUri",
             "provider"
           ],
+          "title": "The definition namespace for the Event Source server used in a Nox solution.",
+          "description": "Specify properties pertinent to the solution Event Source server here. Examples include name, serverUri, Port and connection credentials",
           "additionalProperties": false
         }
       },
       "required": [
         "databaseServer"
       ],
+      "title": "The definition namespace for persistance settings pertaining to a Nox solution.",
+      "description": "Defines settings pertinent to solution persistence here. These include database, event source, search and cache servers.",
       "additionalProperties": false
     },
     "messaging": {
@@ -269,6 +287,8 @@
                 "amazonSqs",
                 "inMemory"
               ],
+              "title": "The messaging server provider.",
+              "description": "The provider used for this messaging server. Examples include RabbitMQ, Azure ServiceBus, Amazon SQS and InMemory.",
               "additionalProperties": false
             }
           },
@@ -277,12 +297,16 @@
             "serverUri",
             "provider"
           ],
+          "title": "Details pertaining to the IntegrationEventServer settings in a Nox solution.",
+          "description": "Defines settings pertinent to an IntegrationEventServer here. These include provider (RabbitMQ, Azure ServiceBus, Amazon SQS etc), connection details as well as internal default deployment settings.",
           "additionalProperties": false
         }
       },
       "required": [
         "integrationEventServer"
       ],
+      "title": "The definition namespace for messaging settings pertaining to a Nox solution.",
+      "description": "Defines settings pertinent to solution messaging here. These include IntegrationEventServer provider (RabbitMQ, Azure ServiceBus, Amazon SQS etc) and additional server connection details.",
       "additionalProperties": false
     },
     "endpoints": {
@@ -332,6 +356,8 @@
                 "grpc",
                 "graphQl"
               ],
+              "title": "The API server provider.",
+              "description": "The provider used for this API server. Examples include OData, gRPC, GraphQL and others.",
               "additionalProperties": false
             }
           },
@@ -340,7 +366,8 @@
             "serverUri",
             "provider"
           ],
-          "additionalProperties": false
+          "title": "Details pertaining to the API server settings in a Nox solution.",
+          "description": "Defines settings pertinent to an API server here. These include name, serverUri, Port, connection credentials and provider (OData, gRPC, GraphQL and AttributeRouting."
         },
         "bffServer": {
           "type": "object",
@@ -383,6 +410,8 @@
               "enum": [
                 "blazor"
               ],
+              "title": "The BFF server provider.",
+              "description": "The provider used for this BFF (Backend for Frontend) server. Examples include Blazor.",
               "additionalProperties": false
             }
           },
@@ -391,10 +420,13 @@
             "serverUri",
             "provider"
           ],
-          "additionalProperties": false
+          "title": "Details pertaining to the BFF server settings in a Nox solution.",
+          "description": "Defines settings pertinent to a BFF (Backend for Frontend) server here. These include name, serverUri, Port, connection credentials and provider (Blazor)."
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "title": "The definition namespace for default endpoints pertaining to a Nox solution.",
+      "description": "Define default endpoints pertinent to a Nox solution here. These include endpoints for API and BFF servers."
     },
     "dependencies": {
       "type": "object",
@@ -823,7 +855,7 @@
     "persistence",
     "messaging"
   ],
-  "title": "A definition for infrastructure components used in a solution.",
-  "description": "A definition for the persistence, messaging and other pertinent components pertaining to solution infrastructure.",
+  "title": "The definition namespace for infrastructure components pertaining to a Nox solution.",
+  "description": "Define components pertinent to solution infrastructure here. Examples include persistence, messaging, dependencies and endpoints.",
   "additionalProperties": false
 }

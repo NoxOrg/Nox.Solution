@@ -22,13 +22,14 @@ application:
             maxLength: 2
             minLength: 2
 
-  integration:
+  integrations:
     - name: SampleEtl
       description: a Sample Etl
       source:
-        name: SampleEtlDataSource
+        name: CountryJsonData
         description: Sources Country data from a json file
-        dataConnection: CountryJsonData
+        fileOptions: 
+          filename: country-seed-data.json
         schedule:
           start: every day at 2am
           retry:

@@ -34,19 +34,19 @@ namespace Nox.Solution.Validation
                 .NotNull()
                 .WithMessage(source => string.Format(ValidationResources.IntegrationSourceFileOptionsEmpty, source!.Name, integrationName))
                 .SetValidator(source => new IntegrationSourceFileOptionsValidator(integrationName))
-                .When(_ => dataConnection.Provider is DataConnectionProvider.Postgres or DataConnectionProvider.MySql or DataConnectionProvider.SqLite or DataConnectionProvider.SqlServer);
+                .When(_ => dataConnection.Provider is DataConnectionProvider.CsvFile or DataConnectionProvider.ExcelFile or DataConnectionProvider.JsonFile or DataConnectionProvider.ParquetFile or DataConnectionProvider.XmlFile);
             
             RuleFor(source => source!.MessageQueueOptions)
                 .NotNull()
                 .WithMessage(source => string.Format(ValidationResources.IntegrationSourceMsgQueueOptionsEmpty, source!.Name, integrationName))
                 .SetValidator(source => new IntegrationSourceMessageQueueOptionsValidator(integrationName))
-                .When(_ => dataConnection.Provider is DataConnectionProvider.Postgres or DataConnectionProvider.MySql or DataConnectionProvider.SqLite or DataConnectionProvider.SqlServer);
+                .When(_ => dataConnection.Provider is DataConnectionProvider.AmazonSqs or DataConnectionProvider.RabbitMq or DataConnectionProvider.AzureServiceBus);
             
             RuleFor(source => source!.HttpOptions)
                 .NotNull()
                 .WithMessage(source => string.Format(ValidationResources.IntegrationSourceHttpOptionsEmpty, source!.Name, integrationName))
                 .SetValidator(source => new IntegrationSourceHttpOptionsValidator(integrationName))
-                .When(_ => dataConnection.Provider is DataConnectionProvider.Postgres or DataConnectionProvider.MySql or DataConnectionProvider.SqLite or DataConnectionProvider.SqlServer);
+                .When(_ => dataConnection.Provider is DataConnectionProvider.WebApi);
             
         }
         

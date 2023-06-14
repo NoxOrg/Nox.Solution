@@ -16,7 +16,7 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <AssemblyVersion>1.0.5.0</AssemblyVersion>
     <FileVersion>1.0.5.0</FileVersion>
-    <PackageVersion>1.0.5-BETA2</PackageVersion>
+    <PackageVersion>1.0.5</PackageVersion>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/NoxOrg/Nox</PackageProjectUrl>
     <RepositoryUrl>https://github.com/NoxOrg/Nox.Solution.git</RepositoryUrl>

@@ -2,7 +2,7 @@ using FluentValidation;
 
 namespace Nox.Solution.Validation;
 
-public class IntegrationSourceFileOptionsValidator: AbstractValidator<IntegrationSourceFileOptions>
+public class IntegrationSourceFileOptionsValidator: AbstractValidator<IntegrationSourceFileOptions?>
 {
     public IntegrationSourceFileOptionsValidator(string integrationName)
     {

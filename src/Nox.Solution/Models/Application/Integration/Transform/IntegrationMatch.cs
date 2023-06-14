@@ -3,7 +3,7 @@ using Json.Schema.Generation;
 namespace Nox.Solution
 {
     [AdditionalProperties(false)]
-    public class EtlMatch
+    public class IntegrationMatch
     {
         [Required] 
         public string Table { get; internal set; } = string.Empty;

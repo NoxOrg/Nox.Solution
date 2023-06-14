@@ -4,7 +4,7 @@ namespace Nox.Solution
 {
 
     [AdditionalProperties(false)]
-    public class EtlTarget
+    public class IntegrationTarget
     {
         [Required]
         [Title("The name of the etl target. Contains no spaces.")]

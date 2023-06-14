@@ -4,7 +4,7 @@ namespace Nox.Solution
 {
 
     [AdditionalProperties(false)]
-    public class ScheduleRetryPolicy
+    public class IntegrationScheduleRetryPolicy
     {
         public int? Limit { get; internal set; }
         public int? DelaySeconds { get; internal set; }

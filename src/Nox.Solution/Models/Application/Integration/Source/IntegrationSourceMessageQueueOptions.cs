@@ -2,7 +2,7 @@ using Json.Schema.Generation;
 
 namespace Nox.Solution;
 
-public class SourceMessageQueueOptions
+public class IntegrationSourceMessageQueueOptions
 {
     [Required] 
     [Title("The source name.")]

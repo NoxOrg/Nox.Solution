@@ -4,7 +4,7 @@ namespace Nox.Solution
 {
 
     [AdditionalProperties(false)]
-    public class DatabaseWatermark
+    public class IntegrationSourceDatabaseWatermark
     {
         public string[]? DateColumns { get; internal set; }
         public string? SequentialKeyColumn { get; internal set; }

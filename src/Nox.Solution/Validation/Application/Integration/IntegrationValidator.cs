@@ -7,37 +7,33 @@ namespace Nox.Solution.Validation
     public class IntegrationValidator: AbstractValidator<Integration>
     {
         private readonly IEnumerable<Integration>? _integrations;
-        private readonly IEnumerable<DataConnection>? _dataConnections;
 
         public IntegrationValidator(IEnumerable<Integration>? integrations, IEnumerable<DataConnection>? dataConnections)
         {
             if (integrations == null) return;
-            _dataConnections = dataConnections;
             _integrations = integrations;
             
             RuleFor(p => p.Name)
                 .NotEmpty()
-                .WithMessage(string.Format(ValidationResources.EtlNameEmpty));
+                .WithMessage(string.Format(ValidationResources.IntegrationNameEmpty));
 
             RuleFor(p => p.Name).Must(HaveUniqueName)
-                .WithMessage(m => string.Format(ValidationResources.EtlNameDuplicate, m.Name));
+                .WithMessage(m => string.Format(ValidationResources.IntegrationNameDuplicate, m.Name));
 
             RuleFor(p => p.Source)
                 .NotEmpty()
-                .WithMessage(m => string.Format(ValidationResources.EtlSourceMissing, m.Name));
-
-            RuleFor(p => p.Source!)
-                .SetValidator(v => new EtlSourceValidator(v.Name, _dataConnections));
+                .WithMessage(m => string.Format(ValidationResources.IntegrationSourceMissing, m.Name))
+                .SetValidator(v => new IntegrationSourceValidator(v.Name, dataConnections, v.Source!.Name));
 
             RuleFor(p => p.Transform!)
-                .SetValidator(v => new EtlTransformValidator(v.Name));
+                .SetValidator(v => new IntegrationTransformValidator(v.Name));
             
             RuleFor(p => p.Target)
                 .NotEmpty()
-                .WithMessage(m => string.Format(ValidationResources.EtlTargetMissing, m.Name));
+                .WithMessage(m => string.Format(ValidationResources.IntegrationTargetMissing, m.Name));
             
             RuleFor(p => p.Target!)
-                .SetValidator(v => new EtlTargetValidator(v.Name, _dataConnections));
+                .SetValidator(v => new IntegrationTargetValidator(v.Name, dataConnections));
         }
         
         private bool HaveUniqueName(Integration toEvaluate, string name)

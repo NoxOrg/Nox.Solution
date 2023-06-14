@@ -5,12 +5,12 @@ namespace Nox.Solution
 {
 
     [AdditionalProperties(false)]
-    public class EtlTransform
+    public class IntegrationTransform
     {
         [AdditionalProperties(false)] 
-        public IReadOnlyList<EtlMapping>? Map { get; internal set; }
+        public IReadOnlyList<IntegrationMapping>? Map { get; internal set; }
 
         [AdditionalProperties(false)] 
-        public IReadOnlyList<EtlLookup>? Lookup { get; internal set; }
+        public IReadOnlyList<IntegrationLookup>? Lookup { get; internal set; }
     }
 }

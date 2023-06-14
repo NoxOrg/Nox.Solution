@@ -150,61 +150,61 @@
     <data name="DtoNameDuplicate" xml:space="preserve">
         <value>a Data transfer object '{0}' has a duplicate name. All dtos must have a unique name in the solution.</value>
     </data>
-    <data name="EtlNameEmpty" xml:space="preserve">
+    <data name="IntegrationNameEmpty" xml:space="preserve">
         <value>an Integration in the application definition is missing a name. All integrations must have a unique name.</value>
     </data>
-    <data name="EtlNameDuplicate" xml:space="preserve">
+    <data name="IntegrationNameDuplicate" xml:space="preserve">
         <value>The integration '{0}' has a duplicate name. Integration names must be unique in the solution.</value>
     </data>
-    <data name="EtlSourceMissing" xml:space="preserve">
+    <data name="IntegrationSourceMissing" xml:space="preserve">
         <value>The integration '{0}' does not have a source specified. All integrations must have a source and target specified.</value>
     </data>
-    <data name="EtlTargetMissing" xml:space="preserve">
+    <data name="IntegrationTargetMissing" xml:space="preserve">
         <value>The integration '{0}' does not have a target specified. All integrations must have a source and target specified.</value>
     </data>
-    <data name="EtlSourceNameEmpty" xml:space="preserve">
+    <data name="IntegrationSourceNameEmpty" xml:space="preserve">
         <value>The source for integration '{0}' does not have a name specified. All integration sources must have a name specified.</value>
     </data>
-    <data name="EtlSourceDataConnectionEmpty" xml:space="preserve">
+    <data name="IntegrationSourceDataConnectionEmpty" xml:space="preserve">
         <value>The source '{0}' for integration '{1}' does not have a data connection specified. All integration sources must have a data connection specified in the Infrastructure section of your yaml definition..</value>
     </data>
-    <data name="EtlScheduleStartEmpty" xml:space="preserve">
+    <data name="IntegrationScheduleStartEmpty" xml:space="preserve">
         <value>The source '{0}' for integration '{1}' does not have a start specified for its schedule. All scheduled integrations must have a start defined.</value>
     </data>
-    <data name="EtlSourceDataConnectionMissing" xml:space="preserve">
-        <value>The source '{0}' for integration '{1}' refers to a data connection '{2}' that is not defined. All data connections must be defined in the Infrastructure section of your yaml definition.</value>
+    <data name="IntegrationSourceDataConnectionMissing" xml:space="preserve">
+        <value>The data connection for source '{0}' for integration '{1}' is not defined. All data connections must be defined in the Infrastructure section of your yaml definition.</value>
     </data>
-    <data name="EtlTargetNameEmpty" xml:space="preserve">
+    <data name="IntegrationTargetNameEmpty" xml:space="preserve">
         <value>The target of integration '{0}' does not have a name specified. All integration targets must have a name.</value>
     </data>
-    <data name="EtlTargetTypeEmpty" xml:space="preserve">
+    <data name="IntegrationTargetTypeEmpty" xml:space="preserve">
         <value>The target '{0}' of integration '{1}' does not have a valid target type specified. Valid target types are one of {2}.</value>
     </data>
-    <data name="EtlTargetDataConnectionMissing" xml:space="preserve">
+    <data name="IntegrationTargetDataConnectionMissing" xml:space="preserve">
         <value>The target '{0}' for integration '{1}' refers to a data connection '{2}' that is not defined. All data connections must be defined in the Infrastructure section of your yaml definition.</value>
     </data>
-    <data name="EtlMappingSourceColumnMissing" xml:space="preserve">
+    <data name="IntegrationMappingSourceColumnMissing" xml:space="preserve">
         <value>a Mapping for integration '{0}' does not have a source column specified. All integration mappings must have a source column.</value>
     </data>
-    <data name="EtlMappingTargetAttributeMissing" xml:space="preserve">
+    <data name="IntegrationMappingTargetAttributeMissing" xml:space="preserve">
         <value>a Mapping for integration '{0}' does not have a target attribute specified. All integration mappings must have a target attribute.</value>
     </data>
-    <data name="EtlMatchTableEmpty" xml:space="preserve">
+    <data name="IntegrationMatchTableEmpty" xml:space="preserve">
         <value>a Lookup for integration '{0}' does not have a table specified. All integration lookups must have a table.</value>
     </data>
-    <data name="EtlMatchLookupColumnEmpty" xml:space="preserve">
+    <data name="IntegrationMatchLookupColumnEmpty" xml:space="preserve">
         <value>a Lookup for integration '{0}' does not have a lookup column specified. All integration lookups must have a source column.</value>
     </data>
-    <data name="EtlMatchReturnColumnEmpty" xml:space="preserve">
+    <data name="IntegrationMatchReturnColumnEmpty" xml:space="preserve">
         <value>a Lookup for integration '{0}' does not have a return column specified. All integration lookups must have a return column.</value>
     </data>
-    <data name="EtlLookupSourceColumnEmpty" xml:space="preserve">
+    <data name="IntegrationLookupSourceColumnEmpty" xml:space="preserve">
         <value>a Lookup for integration '{0}' does not have a source column specified. All integration lookups must have a source column.</value>
     </data>
-    <data name="EtlLookupMatchEmpty" xml:space="preserve">
+    <data name="IntegrationLookupMatchEmpty" xml:space="preserve">
         <value>a Lookup for integration '{0}' does not have a match section specified. All integration lookups must have a match.</value>
     </data>
-    <data name="EtlLookupTargetAttributeEmpty" xml:space="preserve">
+    <data name="IntegrationLookupTargetAttributeEmpty" xml:space="preserve">
         <value>a Lookup for integration '{0}' does not have a target attribute specified. All integration lookups must have a target attribute.</value>
     </data>
     <data name="InfrastructurePersistenceEmpty" xml:space="preserve">
@@ -278,5 +278,14 @@
     </data>
     <data name="BffServerProviderEmpty" xml:space="preserve">
         <value>The infrastructure, endpoints, bff server '{0}' must have a valid provider specified. Valid providers are one of {1}</value>
+    </data>
+    <data name="IntegrationSourceDatabaseOptionsEmpty" xml:space="preserve">
+        <value>The source for integration {0} does not specify database options. When an integration sources data from a database, database options must be specified.</value>
+    </data>
+    <data name="IntegrationSourceDatabaseOptionsQueryEmpty" xml:space="preserve">
+        <value>The query in the database options of the source for integration {0} has not been specified. Database sources must have a query specified.</value>
+    </data>
+    <data name="IntegrationSourceDatabaseOptionsMinExptectedRecordsInvalid" xml:space="preserve">
+        <value>The database options for the source of integration {0} has an invalid MinimumExpectedRecords setting. MinimumExpectedRecords must be equal to or greater than 1.</value>
     </data>
 </root>

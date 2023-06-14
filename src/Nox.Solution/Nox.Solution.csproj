@@ -28,7 +28,7 @@
     <PackageReference Include="FluentValidation" Version="11.5.2" />
     <PackageReference Include="Humanizer.Core" Version="2.14.1" />
     <PackageReference Include="JsonSchema.Net.Generation" Version="3.3.0" />
-    <PackageReference Include="Nox.Types" Version="1.0.3" />
+    <PackageReference Include="Nox.Types" Version="1.0.4" />
     <PackageReference Include="Nox.Utilities" Version="1.0.5" />
   </ItemGroup>
 

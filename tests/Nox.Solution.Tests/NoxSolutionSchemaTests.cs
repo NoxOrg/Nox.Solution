@@ -4,6 +4,7 @@ using Json.Schema;
 using Json.Schema.Generation;
 using Json.Schema.Generation.Generators;
 using Json.Schema.Generation.Intents;
+using Nox.Types;
 using YamlDotNet.Core.Events;
 using YamlDotNet.Serialization;
 

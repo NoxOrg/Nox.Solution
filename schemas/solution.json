@@ -10021,7 +10021,7 @@
                     "sqlServer",
                     "postgres",
                     "mySql",
-                    "sqlLite"
+                    "sqLite"
                   ],
                   "title": "The database provider.",
                   "description": "The provider used for this database server. Examples include SqlServer, Postgres and others."
@@ -10495,6 +10495,7 @@
                       "parquetFile",
                       "postgres",
                       "rabbitMq",
+                      "sqLite",
                       "sqlServer",
                       "webApi",
                       "xmlFile",
@@ -10835,7 +10836,7 @@
           "type": "string",
           "format": "uri"
         },
-        "integration": {
+        "integrations": {
           "type": "array",
           "items": {
             "type": "object",

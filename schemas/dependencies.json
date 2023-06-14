@@ -96,6 +96,7 @@
               "parquetFile",
               "postgres",
               "rabbitMq",
+              "sqLite",
               "sqlServer",
               "webApi",
               "xmlFile",

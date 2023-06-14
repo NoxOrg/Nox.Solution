@@ -6,7 +6,7 @@
       "type": "string",
       "format": "uri"
     },
-    "integration": {
+    "integrations": {
       "type": "array",
       "items": {
         "type": "object",

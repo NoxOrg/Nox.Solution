@@ -3,7 +3,6 @@
 
 namespace Nox.Solution
 {
-    [AdditionalProperties(false)]
     public class DatabaseServer : ServerBase
     {
         [Required]

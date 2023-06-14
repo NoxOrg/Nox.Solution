@@ -56,6 +56,8 @@
         "sourceCode",
         "containers"
       ],
+      "title": "A list of well-known folders pertaining to version control for the solution.",
+      "description": "The relative path to source code, tests, containers and other well-known code assets.",
       "additionalProperties": false
     }
   },

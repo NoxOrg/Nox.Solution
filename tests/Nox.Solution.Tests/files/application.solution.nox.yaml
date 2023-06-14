@@ -22,7 +22,7 @@ application:
             maxLength: 2
             minLength: 2
 
-  integration:
+  integrations:
     - name: SampleEtl
       description: a Sample Etl
       source:
@@ -42,7 +42,7 @@ application:
             - "EditDate"
           sequentialKeyColumn: CountryId
       transform:
-        map:
+        mappings:
           - sourceColumn: IsoAlpha2Code
             targetAttribute: Id
             converter: upperCase
@@ -50,7 +50,7 @@ application:
             targetAttribute: Name
           - sourceColumn: CountryFullName
             targetAttribute: FormalName
-        lookup:
+        lookups:
           - sourceColumn: RegionId
             match:
               table: GeoRegions

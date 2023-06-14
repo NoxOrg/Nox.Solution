@@ -51,12 +51,18 @@
         "webApi",
         "xmlFile",
         "inMemory"
-      ]
+      ],
+      "title": "The data connection provider/format.",
+      "description": "The provider/format used for this data connection. Possible data formats include Json, Excel, CSV, XML and Parquet.",
+      "additionalProperties": false
     }
   },
   "required": [
     "name",
-    "serverUri"
+    "serverUri",
+    "provider"
   ],
+  "title": "The definition namespace for a data connection pertaining to a Nox solution.",
+  "description": "Configure properties pertinent to a data connection in a Nox solution here. Properties include name, serverUri, Port, connection credentials and provider.",
   "additionalProperties": false
 }

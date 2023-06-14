@@ -33,10 +33,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Models\Application\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Include="..\..\images\nox.png" Pack="true" PackagePath="" />
   </ItemGroup>
 

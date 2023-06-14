@@ -47,13 +47,19 @@
                 "awsKeyManagementService",
                 "azureKeyVault",
                 "hashicorpVault"
-              ]
+              ],
+              "title": "The secrets server provider.",
+              "description": "The provider used for this secrets server. Examples include AzureKeyVault, AwsKeyManagementService and HashicorpVault.",
+              "additionalProperties": false
             }
           },
           "required": [
             "name",
-            "serverUri"
+            "serverUri",
+            "provider"
           ],
+          "title": "The definition namespace for the secrets server used in a Nox solution.",
+          "description": "Specify properties pertinent to the secrets server here. Examples include name, serverUri, Port, connection credentials and provider",
           "additionalProperties": false
         },
         "validFor": {
@@ -84,10 +90,17 @@
               ]
             }
           },
+          "title": "The definition namespace for the validity period of secrets as defined in a Nox solution.",
+          "description": "Specify the validity period of secrets pertaining to the solution here. Possible units of measure include days, hours, minutes and seconds.",
           "additionalProperties": false
         }
       },
+      "title": "The definition namespace for secrets used in a Nox solution.",
+      "description": "Specify properties pertinent to secrets as configured within a Nox solution here. Examples include servers and validity period.",
       "additionalProperties": false
     }
-  }
+  },
+  "title": "The definition namespace for security settings pertaining to a Nox solution.",
+  "description": "Define security settings pertinent to a Nox solution here. These may include secrets among other.",
+  "additionalProperties": false
 }

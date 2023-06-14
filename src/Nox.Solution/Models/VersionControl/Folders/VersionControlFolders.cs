@@ -2,14 +2,8 @@
 
 namespace Nox.Solution
 {
-
-
-    [Title("A list of well-known folders for the solution.")]
-    [Description("The relative path to source code, tests, containers and other well known code assets.")]
-    [AdditionalProperties(false)]
     public class VersionControlFolders : DefinitionBase
     {
-
         [Required]
         [Title("The path or relative path to the source code root.")]
         [Description("The path or relative path that contains your source code. Allows auto-configuration of build pipelines.")]

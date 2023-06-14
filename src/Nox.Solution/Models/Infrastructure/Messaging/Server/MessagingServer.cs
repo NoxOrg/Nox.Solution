@@ -3,7 +3,6 @@ using Nox.Solution.Builders;
 
 namespace Nox.Solution
 { 
-    [AdditionalProperties(false)]
     public class MessagingServer : ServerBase
     {
         [Required]

@@ -16,9 +16,6 @@ namespace Nox.Solution.Validation
             RuleFor(p => p.Translations!)
                 .SetValidator(v => new ServerBaseValidator("the infrastructure, dependencies, translations server", servers));
 
-            RuleFor(p => p.Security!)
-                .SetValidator(v => new SecurityValidator(servers));
-
             RuleForEach(p => p.DataConnections)
                 .SetValidator(v => new DataConnectionValidator(servers));
         }

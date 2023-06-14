@@ -14,7 +14,6 @@ namespace Nox.Solution
     [AdditionalProperties(false)]
     public class VersionControl : DefinitionBase
     {
-
         [Required]
         [Title("The source code and repository provider or service.")]
         [Description("The name of the provider or service for source code and version control")]
@@ -27,6 +26,9 @@ namespace Nox.Solution
         [Pattern(@"^[^\s]*$")]
         public Uri Host { get; internal set; } = new Uri("https://noxorg.dev");
 
+        // These descriptors should be moved to the class when the generator is fixed
+        [Title("A list of well-known folders pertaining to version control for the solution.")]
+        [Description("The relative path to source code, tests, containers and other well-known code assets.")]
         [AdditionalProperties(false)]
         public VersionControlFolders? Folders { get; internal set; }
     }

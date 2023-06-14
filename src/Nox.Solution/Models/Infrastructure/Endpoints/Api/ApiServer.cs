@@ -2,6 +2,8 @@ using Json.Schema.Generation;
 
 namespace Nox.Solution
 {
+    [Title("Details pertaining to the API server settings in a Nox solution.")]
+    [Description("Defines settings pertinent to an API server here. These include name, serverUri, Port, connection credentials and provider (OData, gRPC, GraphQL and AttributeRouting.")]
     [AdditionalProperties(false)]
     public class ApiServer: ServerBase
     {

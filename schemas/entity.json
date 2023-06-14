@@ -72,7 +72,10 @@
             "raiseEvents": {
               "type": "boolean"
             }
-          }
+          },
+          "title": "Specifies persistence behaviour related to creating the entity.",
+          "description": "Provides behaviour related to the action of creating an entity, e.g. is the action enabled and whether events are raised when the action is triggered.",
+          "additionalProperties": false
         },
         "read": {
           "type": "object",
@@ -80,7 +83,10 @@
             "isEnabled": {
               "type": "boolean"
             }
-          }
+          },
+          "title": "Specifies persistence behaviour related to reading the entity.",
+          "description": "Provides behaviour related to the action of reading an entity, e.g. is the action enabled and whether events are raised when the action is triggered.",
+          "additionalProperties": false
         },
         "update": {
           "type": "object",
@@ -91,7 +97,10 @@
             "raiseEvents": {
               "type": "boolean"
             }
-          }
+          },
+          "title": "Specifies persistence behaviour related to updating the entity.",
+          "description": "Provides behaviour related to the action of updating an entity, e.g. is the action enabled and whether events are raised when the action is triggered.",
+          "additionalProperties": false
         },
         "delete": {
           "type": "object",
@@ -105,7 +114,10 @@
             "useSoftDelete": {
               "type": "boolean"
             }
-          }
+          },
+          "title": "Specifies persistence behaviour related to deleting the entity.",
+          "description": "Provides behaviour related to the action of deleting an entity, e.g. is the action enabled, whether events are raised when the action is triggered and soft deletes are used.",
+          "additionalProperties": false
         }
       },
       "title": "Specifies information on storing and retrieving the entity.",
@@ -140,7 +152,7 @@
               "oneOrMany"
             ],
             "title": "The type/cardinality of the relationship.",
-            "description": "The cardinality (type) of relationship with the target entity."
+            "description": "The cardinality (type) of relationship with the target entity, e.g. OneOrMany, ZeroOrOne, etc."
           },
           "entity": {
             "type": "string",
@@ -160,10 +172,12 @@
           "entity"
         ],
         "title": "Defines relationships to other entities.",
-        "description": "Defines one way relationships to other entities. Remember to define the reverse relationship on the target entities."
+        "description": "Defines one way relationships to other entities. Remember to define the reverse relationship on the target entities.",
+        "additionalProperties": false
       },
       "title": "Defines relationships to other entities.",
-      "description": "Defines one way relationships to other entities. Remember to define the reverse relationship on the target entities."
+      "description": "Defines one way relationships to other entities. Remember to define the reverse relationship on the target entities.",
+      "additionalProperties": false
     },
     "ownedRelationships": {
       "type": "array",
@@ -193,7 +207,7 @@
               "oneOrMany"
             ],
             "title": "The type/cardinality of the relationship.",
-            "description": "The cardinality (type) of relationship with the target entity."
+            "description": "The cardinality (type) of relationship with the target entity, e.g. OneOrMany, ZeroOrOne, etc."
           },
           "entity": {
             "type": "string",
@@ -213,10 +227,12 @@
           "entity"
         ],
         "title": "Defines owned relationships to another entity.",
-        "description": "Defines relationship to owned entities. This entity will be treated as an aggregate root."
+        "description": "Defines relationship to owned entities. This entity will be treated as an aggregate root.",
+        "additionalProperties": false
       },
       "title": "Defines owned relationships to another entity.",
-      "description": "Defines relationship to owned entities. This entity will be treated as an aggregate root."
+      "description": "Defines relationship to owned entities. This entity will be treated as an aggregate root.",
+      "additionalProperties": false
     },
     "queries": {
       "type": "array",
@@ -229,14 +245,14 @@
           },
           "name": {
             "type": "string",
-            "title": "The name of the relationship. Contains no spaces.",
-            "description": "The name of the query, usually in the format Get\u003Cx\u003Eby\u003Cy\u003E. Eg \u0022GetCapitalCitiesByContinent\u0022.",
+            "title": "The name of the query. Contains no spaces.",
+            "description": "A descriptive name for the query, usually in the format Get[Entity]by[Grouping]. Eg \u0022GetCountriesByContinent\u0022.",
             "pattern": "^[^\\s]*$"
           },
           "description": {
             "type": "string",
-            "title": "A phrase describing the relationship with the target entity.",
-            "description": "A phrase that describes the relationship of the form \u003Centity\u003E \u003Cphrase\u003E \u003CtargetEntity\u003E. Eg. \u0022has capital\u0022 like in \u003CCountry\u003E \u003Chas capital\u003E \u003CCity\u003E."
+            "title": "A phrase describing expected output from the domain query.",
+            "description": "A phrase that describes expected result from the query. Eg. \u0022Returns a list of countries for a given continent\u0022."
           },
           "requestInput": {
             "type": "array",
@@ -2744,8 +2760,12 @@
                 "name",
                 "type"
               ],
+              "title": "Defines the request input parameters for domain queries",
+              "description": "Specifies one or more domain query input parameter collections",
               "additionalProperties": false
             },
+            "title": "Defines the request input parameters for domain queries",
+            "description": "Specifies one or more domain query input parameter collections",
             "additionalProperties": false
           },
           "responseOutput": {
@@ -5252,6 +5272,8 @@
               "name",
               "type"
             ],
+            "title": "Defines the request input parameters for domain queries",
+            "description": "Specifies one or more domain query input parameter collections",
             "additionalProperties": false
           }
         },
@@ -5259,11 +5281,13 @@
           "name",
           "responseOutput"
         ],
-        "title": "Defines queries for the domain.",
-        "description": "Defines queries for the domain that operates on this entity. Queries should have no side effects and not mutate the domain state."
+        "title": "Domain queries for this entity.",
+        "description": "Define one or more domain querie(s) that operate on this entity. Queries should have no side effects and not mutate the domain state.",
+        "additionalProperties": false
       },
-      "title": "Defines queries for the domain.",
-      "description": "Defines queries for the domain that operates on this entity. Queries should have no side effects and not mutate the domain state."
+      "title": "Domain queries for this entity.",
+      "description": "Define one or more domain querie(s) that operate on this entity. Queries should have no side effects and not mutate the domain state.",
+      "additionalProperties": false
     },
     "commands": {
       "type": "array",
@@ -7777,11 +7801,13 @@
           "name",
           "type"
         ],
-        "title": "Defines commands for the domain.",
-        "description": "Defines commands for the domain that operates on this entity. Commands may have side effects and mutate the domain state."
+        "title": "Domain commands for this entity.",
+        "description": "Define one or more domain command(s) that operate on this entity. Commands may have side effects and mutate the domain state.",
+        "additionalProperties": false
       },
-      "title": "Defines commands for the domain.",
-      "description": "Defines commands for the domain that operates on this entity. Commands may have side effects and mutate the domain state."
+      "title": "Domain commands for this entity.",
+      "description": "Define one or more domain command(s) that operate on this entity. Commands may have side effects and mutate the domain state.",
+      "additionalProperties": false
     },
     "events": {
       "type": "array",
@@ -8606,10 +8632,8 @@
         "required": [
           "name",
           "type"
-        ],
-        "additionalProperties": false
-      },
-      "additionalProperties": false
+        ]
+      }
     },
     "attributes": {
       "type": "array",

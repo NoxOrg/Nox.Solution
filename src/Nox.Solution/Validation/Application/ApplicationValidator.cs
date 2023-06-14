@@ -10,8 +10,8 @@ namespace Nox.Solution.Validation
             RuleForEach(p => p.DataTransferObjects)
                 .SetValidator(v => new DataTransferObjectValidator(v.DataTransferObjects));
 
-            RuleForEach(p => p.Integration)
-                .SetValidator(v => new IntegrationValidator(v.Integration, dataConnections));
+            RuleForEach(p => p.Integrations)
+                .SetValidator(v => new IntegrationValidator(v.Integrations, dataConnections));
         }
     }
 }

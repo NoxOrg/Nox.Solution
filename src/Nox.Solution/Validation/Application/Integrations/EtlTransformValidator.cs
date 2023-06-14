@@ -6,10 +6,10 @@ namespace Nox.Solution.Validation
     {
         public EtlTransformValidator(string etlName)
         {
-            RuleForEach(p => p.Map)
+            RuleForEach(p => p.Mappings)
                 .SetValidator(v => new EtlMappingValidator(etlName));
 
-            RuleForEach(p => p.Lookup)
+            RuleForEach(p => p.Lookups)
                 .SetValidator(v => new EtlLookupValidator(etlName));
         }
     }

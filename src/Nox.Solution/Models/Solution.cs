@@ -36,9 +36,6 @@ namespace Nox.Solution
         [AdditionalProperties(false)]
         public IReadOnlyList<Environment>? Environments { get; internal set; }
 
-        [Title("Source code repository and related info for the solution.")]
-        [Description("Contains information about where source code is kept and the folders of the main components thereof.")]
-        [AdditionalProperties(false)]
         public VersionControl? VersionControl { get; internal set; }
 
         [Title("Information about the team working on this solution.")]
@@ -46,19 +43,10 @@ namespace Nox.Solution
         [AdditionalProperties(false)]
         public IReadOnlyList<TeamMember>? Team { get; internal set; }
 
-        [Title("Information about the domain including entities and their relationships")]
-        [Description("Contains definitions of entities, their attributes, events, commands and queries.")]
-        [AdditionalProperties(false)]
         public Domain? Domain { get; internal set; }
 
-        [Title("The definition namespace for infrastructure components pertaining to a Nox solution.")]
-        [Description("Define components pertinent to solution infrastructure here. Examples include persistence, messaging, dependencies and endpoints.")]
-        [AdditionalProperties(false)]
         public Infrastructure? Infrastructure { get; internal set; }
 
-        [Title("A definition for application components used in a Nox solution.")]
-        [Description("A definition for Integrations, DataTransferObjects and other pertinent components pertaining to a Nox solution application component.")]
-        [AdditionalProperties(false)]
         public Application? Application { get; internal set; }
 
     }

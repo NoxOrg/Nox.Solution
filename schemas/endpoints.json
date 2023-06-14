@@ -57,7 +57,8 @@
         "provider"
       ],
       "title": "Details pertaining to the API server settings in a Nox solution.",
-      "description": "Defines settings pertinent to an API server here. These include name, serverUri, Port, connection credentials and provider (OData, gRPC, GraphQL and AttributeRouting."
+      "description": "Defines settings pertinent to an API server here. These include name, serverUri, Port, connection credentials and provider (OData, gRPC, GraphQL and AttributeRouting.",
+      "additionalProperties": false
     },
     "bffServer": {
       "type": "object",
@@ -111,7 +112,11 @@
         "provider"
       ],
       "title": "Details pertaining to the BFF server settings in a Nox solution.",
-      "description": "Defines settings pertinent to a BFF (Backend for Frontend) server here. These include name, serverUri, Port, connection credentials and provider (Blazor)."
+      "description": "Defines settings pertinent to a BFF (Backend for Frontend) server here. These include name, serverUri, Port, connection credentials and provider (e.g. Blazor).",
+      "additionalProperties": false
     }
-  }
+  },
+  "title": "The definition namespace for default endpoints pertaining to a Nox solution.",
+  "description": "Define default endpoints pertinent to a Nox solution here. These include endpoints for API and BFF servers.",
+  "additionalProperties": false
 }

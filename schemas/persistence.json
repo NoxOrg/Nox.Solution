@@ -228,6 +228,5 @@
   },
   "required": [
     "databaseServer"
-  ],
-  "additionalProperties": false
+  ]
 }

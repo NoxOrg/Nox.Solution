@@ -143,7 +143,7 @@ public class NoxSolutionSchemaTests
 //Application/Integration
         var integrationSchema = new JsonSchemaBuilder()
             .Schema(MetaSchemas.Draft7Id)
-            .FromType<Integration>(schemaConfig)
+            .FromType<Integrations>(schemaConfig)
             .Build();
 
         File.WriteAllText(Path.Combine(path, "integration.json"),

@@ -50,5 +50,7 @@
     "serverUri",
     "provider"
   ],
+  "title": "Details pertaining to the BFF server settings in a Nox solution.",
+  "description": "Defines settings pertinent to a BFF (Backend for Frontend) server here. These include name, serverUri, Port, connection credentials and provider (e.g. Blazor).",
   "additionalProperties": false
 }

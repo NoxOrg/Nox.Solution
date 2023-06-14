@@ -97,7 +97,8 @@ domain:
           description: accepts as legal tender
           relationship: oneOrMany
           entity: Currency
-
+          canNavigate: true
+          
       ownedRelationships:
 
         - name: CountryLocalNames
@@ -327,7 +328,7 @@ application:
             maxLength: 2
             minLength: 2
 
-  integration:
+  integrations:
     - name: SampleEtl
       description: a Sample Etl
       source:
@@ -347,7 +348,7 @@ application:
             - "EditDate"
           sequentialKeyColumn: CountryId
       transform:
-        map:
+        mappings:
           - sourceColumn: IsoAlpha2Code
             targetAttribute: Id
             converter: upperCase
@@ -355,7 +356,7 @@ application:
             targetAttribute: Name
           - sourceColumn: CountryFullName
             targetAttribute: FormalName
-        lookup:
+        lookups:
           - sourceColumn: RegionId
             match:
               table: GeoRegions
@@ -465,21 +466,21 @@ infrastructure:
       serverUri: translator.iwgplc.com
       port: 443
 
-    security:
-      secrets:
-        secretsServer:
-          name: SampleSecretServer
-          provider: azureKeyVault
-          serverUri: kv.iwgplc.com
-          user: secrets@iwgplc.com
-          password: SecretPassword
-        validFor:
-          minutes: 10
-
     dataConnections:
       - name: CountryJsonData
         provider: jsonFile
         serverUri: file:///C:/my-data-files
         options: Source=File;Filename=country-data.json;
+
+  security:
+    secrets:
+      secretsServer:
+        name: SampleSecretServer
+        provider: azureKeyVault
+        serverUri: kv.iwgplc.com
+        user: secrets@iwgplc.com
+        password: SecretPassword
+      validFor:
+        minutes: 10
 
 

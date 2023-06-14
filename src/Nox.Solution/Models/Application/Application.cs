@@ -3,12 +3,19 @@ using Json.Schema.Generation;
 
 namespace Nox.Solution
 {
-
+    [Title("A definition for application components used in a Nox solution.")]
+    [Description("A definition for Integrations, DataTransferObjects and other pertinent components pertaining to a Nox solution application component.")]
     [AdditionalProperties(false)]
     public class Application: DefinitionBase
     {
-        [AdditionalProperties(false)] public IReadOnlyList<Integration>? Integration { get; internal set; }
+        [Title("The definition namespace for application ETL data integrations.")]
+        [Description("One or more solution data integrations with common ETL attributes including source, transform and target.")]
+        [AdditionalProperties(false)]
+        public IReadOnlyList<Integrations>? Integrations { get; internal set; }
 
-        [AdditionalProperties(false)] public IReadOnlyList<DataTransferObject>? DataTransferObjects { get; internal set; }
+        [Title("The definition namespace for application DTOs within a Nox solution.")]
+        [Description("One or more DTOs (Data Transfer Objects used to transfer data between processes in a Nox solution.")]
+        [AdditionalProperties(false)]
+        public IReadOnlyList<DataTransferObject>? DataTransferObjects { get; internal set; }
     }
 }

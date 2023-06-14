@@ -44,6 +44,8 @@
             "sendGrid",
             "mailchimp"
           ],
+          "title": "The email server provider.",
+          "description": "The provider used for this email server. Examples include SendGrid and MailChimp.",
           "additionalProperties": false
         }
       },
@@ -52,6 +54,8 @@
         "serverUri",
         "provider"
       ],
+      "title": "The definition namespace for the email server used in a Nox solution.",
+      "description": "Specify properties pertinent to the solution email server here. Examples include name, serverUri, Port, connection credentials and provider.",
       "additionalProperties": false
     },
     "smsServer": {
@@ -96,6 +100,8 @@
             "twilio",
             "clickSend"
           ],
+          "title": "The SMS server provider.",
+          "description": "The provider used for this SMS server. Examples include Twilio and ClickSend.",
           "additionalProperties": false
         }
       },
@@ -104,6 +110,8 @@
         "serverUri",
         "provider"
       ],
+      "title": "The definition namespace for the SMS server used in a Nox solution.",
+      "description": "Specify properties pertinent to the solution SMS server here. Examples include name, serverUri, Port, connection credentials and provider",
       "additionalProperties": false
     },
     "imServer": {
@@ -148,6 +156,8 @@
             "whatsApp",
             "telegram"
           ],
+          "title": "The IM server provider.",
+          "description": "The provider used for this IM server. Examples include WhatsApp and Telegram.",
           "additionalProperties": false
         }
       },
@@ -156,8 +166,12 @@
         "serverUri",
         "provider"
       ],
+      "title": "The definition namespace for the IM server used in a Nox solution.",
+      "description": "Specify properties pertinent to the solution IM (Instant Messaging) server here. Examples include name, serverUri, Port, connection credentials and provider",
       "additionalProperties": false
     }
   },
+  "title": "The definition namespace for notification server(s) used in a Nox solution.",
+  "description": "Specify properties pertinent to notification servers deployed within a Nox solution here. Examples include email, SMS and IM (Instant Messaging) servers.",
   "additionalProperties": false
 }

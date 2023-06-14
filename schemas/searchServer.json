@@ -49,5 +49,7 @@
     "serverUri",
     "provider"
   ],
+  "title": "The definition namespace for the Search server used in a Nox solution.",
+  "description": "Specify properties pertinent to the solution Search server here. Examples include name, serverUri, Port and connection credentials",
   "additionalProperties": false
 }

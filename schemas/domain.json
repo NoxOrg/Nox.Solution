@@ -41,13 +41,14 @@
               },
               "icon": {
                 "type": "string",
-                "title": "An icon that distinctly and visually represents the entity",
+                "title": "An icon that distinctly and visually represents the entity.",
                 "description": "An optional icon that represents the entity as a key or in SVG format. It can be a URI that points to a resource countaining the SVG data.",
                 "pattern": "^[^\\s]*$"
               }
             },
-            "title": "Property reserved for future expansion to identify associated user interface component",
-            "description": "This property provides information related to the entity\u0027s user interface implementation."
+            "title": "Specifies information on displaying the entity on a user interface.",
+            "description": "Provides hints to rendering engines as to how this entity should be managed in the user interface.",
+            "additionalProperties": false
           },
           "persistence": {
             "type": "object",
@@ -62,10 +63,14 @@
                 "description": "Indicates to the storage engine that all changes to this entity must be tracked over time. Usually used to time-travel, track or audit an entity\u0027s state changes."
               },
               "tableName": {
-                "type": "string"
+                "type": "string",
+                "title": "Table name in the database to which this entity refers to.",
+                "description": "Indicates to the storage engine which table in the database these entity persistence settings apply to."
               },
               "schema": {
-                "type": "string"
+                "type": "string",
+                "title": "Schema name in the database to which the Table Name applies to.",
+                "description": "Indicates to the storage engine which schema in the database the entity TableName persistence settings apply to."
               },
               "create": {
                 "type": "object",
@@ -112,7 +117,7 @@
                 }
               }
             },
-            "title": "Specifies information on storing and retrieving entities",
+            "title": "Specifies information on storing and retrieving the entity.",
             "description": "Provides hints to the database engine and API as to how this entity should be managed in the persistence store.",
             "additionalProperties": false
           },
@@ -152,7 +157,9 @@
                   "description": "The name of the target entity that this entity relates to."
                 },
                 "canNavigate": {
-                  "type": "boolean"
+                  "type": "boolean",
+                  "title": "Determines whether this side of the relationship is exposed in the generated code and ODATA endpoints.",
+                  "description": "This boolean controls whether this side of the relationship is exposed in the generated code and ODATA endpoints."
                 }
               },
               "required": [
@@ -162,12 +169,10 @@
                 "entity"
               ],
               "title": "Defines relationships to other entities.",
-              "description": "Defines one way relationships to other entities. Remember to define the reverse relationship on the target entities.",
-              "additionalProperties": false
+              "description": "Defines one way relationships to other entities. Remember to define the reverse relationship on the target entities."
             },
             "title": "Defines relationships to other entities.",
-            "description": "Defines one way relationships to other entities. Remember to define the reverse relationship on the target entities.",
-            "additionalProperties": false
+            "description": "Defines one way relationships to other entities. Remember to define the reverse relationship on the target entities."
           },
           "ownedRelationships": {
             "type": "array",
@@ -205,7 +210,9 @@
                   "description": "The name of the target entity that this entity relates to."
                 },
                 "canNavigate": {
-                  "type": "boolean"
+                  "type": "boolean",
+                  "title": "Determines whether this side of the relationship is exposed in the generated code and ODATA endpoints.",
+                  "description": "This boolean controls whether this side of the relationship is exposed in the generated code and ODATA endpoints."
                 }
               },
               "required": [
@@ -215,12 +222,10 @@
                 "entity"
               ],
               "title": "Defines owned relationships to another entity.",
-              "description": "Defines relationship to owned entities. This entity will be treated as an aggregate root.",
-              "additionalProperties": false
+              "description": "Defines relationship to owned entities. This entity will be treated as an aggregate root."
             },
             "title": "Defines owned relationships to another entity.",
-            "description": "Defines relationship to owned entities. This entity will be treated as an aggregate root.",
-            "additionalProperties": false
+            "description": "Defines relationship to owned entities. This entity will be treated as an aggregate root."
           },
           "queries": {
             "type": "array",
@@ -5264,12 +5269,10 @@
                 "responseOutput"
               ],
               "title": "Defines queries for the domain.",
-              "description": "Defines queries for the domain that operates on this entity. Queries should have no side effects and not mutate the domain state.",
-              "additionalProperties": false
+              "description": "Defines queries for the domain that operates on this entity. Queries should have no side effects and not mutate the domain state."
             },
             "title": "Defines queries for the domain.",
-            "description": "Defines queries for the domain that operates on this entity. Queries should have no side effects and not mutate the domain state.",
-            "additionalProperties": false
+            "description": "Defines queries for the domain that operates on this entity. Queries should have no side effects and not mutate the domain state."
           },
           "commands": {
             "type": "array",
@@ -7784,12 +7787,10 @@
                 "type"
               ],
               "title": "Defines commands for the domain.",
-              "description": "Defines commands for the domain that operates on this entity. Commands may have side effects and mutate the domain state.",
-              "additionalProperties": false
+              "description": "Defines commands for the domain that operates on this entity. Commands may have side effects and mutate the domain state."
             },
             "title": "Defines commands for the domain.",
-            "description": "Defines commands for the domain that operates on this entity. Commands may have side effects and mutate the domain state.",
-            "additionalProperties": false
+            "description": "Defines commands for the domain that operates on this entity. Commands may have side effects and mutate the domain state."
           },
           "events": {
             "type": "array",

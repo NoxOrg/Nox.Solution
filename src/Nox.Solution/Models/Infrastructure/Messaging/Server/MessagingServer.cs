@@ -7,6 +7,8 @@ namespace Nox.Solution
     public class MessagingServer : ServerBase
     {
         [Required]
+        [Title("The messaging server provider.")]
+        [Description("The provider used for this messaging server. Examples include RabbitMQ, Azure ServiceBus, Amazon SQS and InMemory.")]
         [AdditionalProperties(false)]
         public MessagingServerProvider Provider { get; internal set; } = MessagingServerProvider.InMemory;
         

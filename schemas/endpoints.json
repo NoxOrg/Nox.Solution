@@ -46,6 +46,8 @@
             "grpc",
             "graphQl"
           ],
+          "title": "The API server provider.",
+          "description": "The provider used for this API server. Examples include OData, gRPC, GraphQL and others.",
           "additionalProperties": false
         }
       },
@@ -54,7 +56,8 @@
         "serverUri",
         "provider"
       ],
-      "additionalProperties": false
+      "title": "Details pertaining to the API server settings in a Nox solution.",
+      "description": "Defines settings pertinent to an API server here. These include name, serverUri, Port, connection credentials and provider (OData, gRPC, GraphQL and AttributeRouting."
     },
     "bffServer": {
       "type": "object",
@@ -97,6 +100,8 @@
           "enum": [
             "blazor"
           ],
+          "title": "The BFF server provider.",
+          "description": "The provider used for this BFF (Backend for Frontend) server. Examples include Blazor.",
           "additionalProperties": false
         }
       },
@@ -105,7 +110,8 @@
         "serverUri",
         "provider"
       ],
-      "additionalProperties": false
+      "title": "Details pertaining to the BFF server settings in a Nox solution.",
+      "description": "Defines settings pertinent to a BFF (Backend for Frontend) server here. These include name, serverUri, Port, connection credentials and provider (Blazor)."
     }
   }
 }

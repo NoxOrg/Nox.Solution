@@ -40,6 +40,8 @@
       "enum": [
         "blazor"
       ],
+      "title": "The BFF server provider.",
+      "description": "The provider used for this BFF (Backend for Frontend) server. Examples include Blazor.",
       "additionalProperties": false
     }
   },

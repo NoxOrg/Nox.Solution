@@ -584,5 +584,59 @@ namespace Nox.Solution {
                 return ResourceManager.GetString("IntegrationSourceDatabaseOptionsMinExptectedRecordsInvalid", resourceCulture);
             }
         }
+        
+        internal static string IntegrationSourceFileOptionsEmpty {
+            get {
+                return ResourceManager.GetString("IntegrationSourceFileOptionsEmpty", resourceCulture);
+            }
+        }
+        
+        internal static string IntegrationSourceMsgQueueOptionsEmpty {
+            get {
+                return ResourceManager.GetString("IntegrationSourceMsgQueueOptionsEmpty", resourceCulture);
+            }
+        }
+        
+        internal static string IntegrationSourceHttpOptionsEmpty {
+            get {
+                return ResourceManager.GetString("IntegrationSourceHttpOptionsEmpty", resourceCulture);
+            }
+        }
+        
+        internal static string IntegrationSourceFileOptionsFilenameEmpty {
+            get {
+                return ResourceManager.GetString("IntegrationSourceFileOptionsFilenameEmpty", resourceCulture);
+            }
+        }
+        
+        internal static string IntegrationSourceFileOptionsMinExptectedRecordsInvalid {
+            get {
+                return ResourceManager.GetString("IntegrationSourceFileOptionsMinExptectedRecordsInvalid", resourceCulture);
+            }
+        }
+        
+        internal static string IntegrationSourceHttpOptionsRouteEmpty {
+            get {
+                return ResourceManager.GetString("IntegrationSourceHttpOptionsRouteEmpty", resourceCulture);
+            }
+        }
+        
+        internal static string IntegrationSourceHttpOptionsFormatEmpty {
+            get {
+                return ResourceManager.GetString("IntegrationSourceHttpOptionsFormatEmpty", resourceCulture);
+            }
+        }
+        
+        internal static string IntegrationSourceHttpOptionsVerbEmpty {
+            get {
+                return ResourceManager.GetString("IntegrationSourceHttpOptionsVerbEmpty", resourceCulture);
+            }
+        }
+        
+        internal static string IntegrationSourceMsgQueueOptionsSourceEmpty {
+            get {
+                return ResourceManager.GetString("IntegrationSourceMsgQueueOptionsSourceEmpty", resourceCulture);
+            }
+        }
     }
 }

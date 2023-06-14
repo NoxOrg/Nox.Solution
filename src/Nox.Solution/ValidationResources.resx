@@ -288,4 +288,31 @@
     <data name="IntegrationSourceDatabaseOptionsMinExptectedRecordsInvalid" xml:space="preserve">
         <value>The database options for the source of integration {0} has an invalid MinimumExpectedRecords setting. MinimumExpectedRecords must be equal to or greater than 1.</value>
     </data>
+    <data name="IntegrationSourceFileOptionsEmpty" xml:space="preserve">
+        <value>The source for integration {0} does not specify file options. When an integration sources data from a file, file options must be specified.</value>
+    </data>
+    <data name="IntegrationSourceMsgQueueOptionsEmpty" xml:space="preserve">
+        <value>The source for integration {0} does not specify message queue options. When an integration sources data from a message queue, message queue options must be specified.</value>
+    </data>
+    <data name="IntegrationSourceHttpOptionsEmpty" xml:space="preserve">
+        <value>The source for integration {0} does not specify Http options. When an integration sources data from an http endpoint, http options must be specified.</value>
+    </data>
+    <data name="IntegrationSourceFileOptionsFilenameEmpty" xml:space="preserve">
+        <value>The filename in the file options of the source for integration {0} has not been specified. File sources must have a filename specified.</value>
+    </data>
+    <data name="IntegrationSourceFileOptionsMinExptectedRecordsInvalid" xml:space="preserve">
+        <value>The file options for the source of integration {0} has an invalid MinimumExpectedRecords setting. MinimumExpectedRecords must be equal to or greater than 1.</value>
+    </data>
+    <data name="IntegrationSourceHttpOptionsRouteEmpty" xml:space="preserve">
+        <value>The route in the http options of the source for integration {0} has not been specified. Http sources must have a route specified.</value>
+    </data>
+    <data name="IntegrationSourceHttpOptionsFormatEmpty" xml:space="preserve">
+        <value>The format in the http options of the source for integration {0} has not been specified. Http sources must have a format specified.</value>
+    </data>
+    <data name="IntegrationSourceHttpOptionsVerbEmpty" xml:space="preserve">
+        <value>The verb in the http options of the source for integration {0} has not been specified. Http sources must have a verb specified.</value>
+    </data>
+    <data name="IntegrationSourceMsgQueueOptionsSourceEmpty" xml:space="preserve">
+        <value>The source in the message queue options of the source for integration {0} has not been specified. Message queue sources must have a source specified.</value>
+    </data>
 </root>

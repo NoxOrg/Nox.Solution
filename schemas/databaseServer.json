@@ -42,7 +42,9 @@
         "postgres",
         "mySql",
         "sqlLite"
-      ]
+      ],
+      "title": "The database provider.",
+      "description": "The provider used for this database server. Examples include SqlServer, Postgres and others."
     }
   },
   "required": [

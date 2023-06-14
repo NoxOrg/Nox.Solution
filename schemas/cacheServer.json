@@ -43,6 +43,8 @@
         "memcached",
         "redis"
       ],
+      "title": "The cache server provider.",
+      "description": "The provider used for this cache server. Examples include AmazonElasticCache, AzureRedis, Memcached and Redis.",
       "additionalProperties": false
     }
   },

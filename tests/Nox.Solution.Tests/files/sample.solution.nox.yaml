@@ -29,6 +29,7 @@ environments:
 
   - name: prod
     description: Production environment used for, well - the real thing!
+    isProduction: true
 
 versionControl:
   provider: azureDevops

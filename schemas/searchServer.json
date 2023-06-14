@@ -39,7 +39,9 @@
     "provider": {
       "enum": [
         "elasticSearch"
-      ]
+      ],
+      "title": "The search server provider.",
+      "description": "The provider used for this search server server. Examples include ElasticSearch."
     }
   },
   "required": [

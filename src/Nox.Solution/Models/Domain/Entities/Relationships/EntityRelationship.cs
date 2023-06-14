@@ -29,6 +29,8 @@ namespace Nox.Solution
         [Description("The name of the target entity that this entity relates to.")]
         public string Entity { get; internal set; } = String.Empty;
 
+        [Title("Determines whether this side of the relationship is exposed in the generated code and ODATA endpoints.")]
+        [Description("This boolean controls whether this side of the relationship is exposed in the generated code and ODATA endpoints.")]
         public bool CanNavigate { get; internal set; } = true;
 
     }

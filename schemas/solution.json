@@ -2,6 +2,9 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "type": "object",
   "properties": {
+    "rootYamlFile": {
+      "type": "string"
+    },
     "$ref": {
       "type": "string",
       "format": "uri"
@@ -568,11 +571,16 @@
                             ]
                           },
                           "textTypeOptions": {
-                            "type": "object",
+                            "type": [
+                              "object",
+                              "null"
+                            ],
                             "properties": {
-                              "$ref": {
-                                "type": "string",
-                                "format": "uri"
+                              "minLength": {
+                                "type": "integer"
+                              },
+                              "maxLength": {
+                                "type": "integer"
                               },
                               "isUnicode": {
                                 "type": [
@@ -580,61 +588,31 @@
                                   "null"
                                 ]
                               },
-                              "minLength": {
-                                "type": [
-                                  "integer",
-                                  "null"
-                                ]
-                              },
-                              "maxLength": {
-                                "type": [
-                                  "integer",
-                                  "null"
-                                ]
-                              },
-                              "characterCasing": {
+                              "casing": {
                                 "enum": [
                                   "normal",
                                   "lower",
                                   "upper"
                                 ]
-                              },
-                              "isMultiline": {
-                                "type": [
-                                  "boolean",
-                                  "null"
-                                ]
                               }
-                            },
-                            "additionalProperties": false
+                            }
                           },
                           "numberTypeOptions": {
-                            "type": "object",
+                            "type": [
+                              "object",
+                              "null"
+                            ],
                             "properties": {
-                              "$ref": {
-                                "type": "string",
-                                "format": "uri"
-                              },
-                              "decimalDigits": {
-                                "type": [
-                                  "integer",
-                                  "null"
-                                ]
-                              },
-                              "integerDigits": {
-                                "type": [
-                                  "integer",
-                                  "null"
-                                ]
-                              },
                               "minValue": {
                                 "type": "number"
                               },
                               "maxValue": {
                                 "type": "number"
+                              },
+                              "decimalDigits": {
+                                "type": "integer"
                               }
-                            },
-                            "additionalProperties": false
+                            }
                           },
                           "moneyTypeOptions": {
                             "type": "object",
@@ -1015,11 +993,16 @@
                                       ]
                                     },
                                     "textTypeOptions": {
-                                      "type": "object",
+                                      "type": [
+                                        "object",
+                                        "null"
+                                      ],
                                       "properties": {
-                                        "$ref": {
-                                          "type": "string",
-                                          "format": "uri"
+                                        "minLength": {
+                                          "type": "integer"
+                                        },
+                                        "maxLength": {
+                                          "type": "integer"
                                         },
                                         "isUnicode": {
                                           "type": [
@@ -1027,61 +1010,31 @@
                                             "null"
                                           ]
                                         },
-                                        "minLength": {
-                                          "type": [
-                                            "integer",
-                                            "null"
-                                          ]
-                                        },
-                                        "maxLength": {
-                                          "type": [
-                                            "integer",
-                                            "null"
-                                          ]
-                                        },
-                                        "characterCasing": {
+                                        "casing": {
                                           "enum": [
                                             "normal",
                                             "lower",
                                             "upper"
                                           ]
-                                        },
-                                        "isMultiline": {
-                                          "type": [
-                                            "boolean",
-                                            "null"
-                                          ]
                                         }
-                                      },
-                                      "additionalProperties": false
+                                      }
                                     },
                                     "numberTypeOptions": {
-                                      "type": "object",
+                                      "type": [
+                                        "object",
+                                        "null"
+                                      ],
                                       "properties": {
-                                        "$ref": {
-                                          "type": "string",
-                                          "format": "uri"
-                                        },
-                                        "decimalDigits": {
-                                          "type": [
-                                            "integer",
-                                            "null"
-                                          ]
-                                        },
-                                        "integerDigits": {
-                                          "type": [
-                                            "integer",
-                                            "null"
-                                          ]
-                                        },
                                         "minValue": {
                                           "type": "number"
                                         },
                                         "maxValue": {
                                           "type": "number"
+                                        },
+                                        "decimalDigits": {
+                                          "type": "integer"
                                         }
-                                      },
-                                      "additionalProperties": false
+                                      }
                                     },
                                     "moneyTypeOptions": {
                                       "type": "object",
@@ -1465,11 +1418,16 @@
                                 ]
                               },
                               "textTypeOptions": {
-                                "type": "object",
+                                "type": [
+                                  "object",
+                                  "null"
+                                ],
                                 "properties": {
-                                  "$ref": {
-                                    "type": "string",
-                                    "format": "uri"
+                                  "minLength": {
+                                    "type": "integer"
+                                  },
+                                  "maxLength": {
+                                    "type": "integer"
                                   },
                                   "isUnicode": {
                                     "type": [
@@ -1477,61 +1435,31 @@
                                       "null"
                                     ]
                                   },
-                                  "minLength": {
-                                    "type": [
-                                      "integer",
-                                      "null"
-                                    ]
-                                  },
-                                  "maxLength": {
-                                    "type": [
-                                      "integer",
-                                      "null"
-                                    ]
-                                  },
-                                  "characterCasing": {
+                                  "casing": {
                                     "enum": [
                                       "normal",
                                       "lower",
                                       "upper"
                                     ]
-                                  },
-                                  "isMultiline": {
-                                    "type": [
-                                      "boolean",
-                                      "null"
-                                    ]
                                   }
-                                },
-                                "additionalProperties": false
+                                }
                               },
                               "numberTypeOptions": {
-                                "type": "object",
+                                "type": [
+                                  "object",
+                                  "null"
+                                ],
                                 "properties": {
-                                  "$ref": {
-                                    "type": "string",
-                                    "format": "uri"
-                                  },
-                                  "decimalDigits": {
-                                    "type": [
-                                      "integer",
-                                      "null"
-                                    ]
-                                  },
-                                  "integerDigits": {
-                                    "type": [
-                                      "integer",
-                                      "null"
-                                    ]
-                                  },
                                   "minValue": {
                                     "type": "number"
                                   },
                                   "maxValue": {
                                     "type": "number"
+                                  },
+                                  "decimalDigits": {
+                                    "type": "integer"
                                   }
-                                },
-                                "additionalProperties": false
+                                }
                               },
                               "moneyTypeOptions": {
                                 "type": "object",
@@ -1912,11 +1840,16 @@
                                           ]
                                         },
                                         "textTypeOptions": {
-                                          "type": "object",
+                                          "type": [
+                                            "object",
+                                            "null"
+                                          ],
                                           "properties": {
-                                            "$ref": {
-                                              "type": "string",
-                                              "format": "uri"
+                                            "minLength": {
+                                              "type": "integer"
+                                            },
+                                            "maxLength": {
+                                              "type": "integer"
                                             },
                                             "isUnicode": {
                                               "type": [
@@ -1924,61 +1857,31 @@
                                                 "null"
                                               ]
                                             },
-                                            "minLength": {
-                                              "type": [
-                                                "integer",
-                                                "null"
-                                              ]
-                                            },
-                                            "maxLength": {
-                                              "type": [
-                                                "integer",
-                                                "null"
-                                              ]
-                                            },
-                                            "characterCasing": {
+                                            "casing": {
                                               "enum": [
                                                 "normal",
                                                 "lower",
                                                 "upper"
                                               ]
-                                            },
-                                            "isMultiline": {
-                                              "type": [
-                                                "boolean",
-                                                "null"
-                                              ]
                                             }
-                                          },
-                                          "additionalProperties": false
+                                          }
                                         },
                                         "numberTypeOptions": {
-                                          "type": "object",
+                                          "type": [
+                                            "object",
+                                            "null"
+                                          ],
                                           "properties": {
-                                            "$ref": {
-                                              "type": "string",
-                                              "format": "uri"
-                                            },
-                                            "decimalDigits": {
-                                              "type": [
-                                                "integer",
-                                                "null"
-                                              ]
-                                            },
-                                            "integerDigits": {
-                                              "type": [
-                                                "integer",
-                                                "null"
-                                              ]
-                                            },
                                             "minValue": {
                                               "type": "number"
                                             },
                                             "maxValue": {
                                               "type": "number"
+                                            },
+                                            "decimalDigits": {
+                                              "type": "integer"
                                             }
-                                          },
-                                          "additionalProperties": false
+                                          }
                                         },
                                         "moneyTypeOptions": {
                                           "type": "object",
@@ -2371,11 +2274,16 @@
                                 ]
                               },
                               "textTypeOptions": {
-                                "type": "object",
+                                "type": [
+                                  "object",
+                                  "null"
+                                ],
                                 "properties": {
-                                  "$ref": {
-                                    "type": "string",
-                                    "format": "uri"
+                                  "minLength": {
+                                    "type": "integer"
+                                  },
+                                  "maxLength": {
+                                    "type": "integer"
                                   },
                                   "isUnicode": {
                                     "type": [
@@ -2383,61 +2291,31 @@
                                       "null"
                                     ]
                                   },
-                                  "minLength": {
-                                    "type": [
-                                      "integer",
-                                      "null"
-                                    ]
-                                  },
-                                  "maxLength": {
-                                    "type": [
-                                      "integer",
-                                      "null"
-                                    ]
-                                  },
-                                  "characterCasing": {
+                                  "casing": {
                                     "enum": [
                                       "normal",
                                       "lower",
                                       "upper"
                                     ]
-                                  },
-                                  "isMultiline": {
-                                    "type": [
-                                      "boolean",
-                                      "null"
-                                    ]
                                   }
-                                },
-                                "additionalProperties": false
+                                }
                               },
                               "numberTypeOptions": {
-                                "type": "object",
+                                "type": [
+                                  "object",
+                                  "null"
+                                ],
                                 "properties": {
-                                  "$ref": {
-                                    "type": "string",
-                                    "format": "uri"
-                                  },
-                                  "decimalDigits": {
-                                    "type": [
-                                      "integer",
-                                      "null"
-                                    ]
-                                  },
-                                  "integerDigits": {
-                                    "type": [
-                                      "integer",
-                                      "null"
-                                    ]
-                                  },
                                   "minValue": {
                                     "type": "number"
                                   },
                                   "maxValue": {
                                     "type": "number"
+                                  },
+                                  "decimalDigits": {
+                                    "type": "integer"
                                   }
-                                },
-                                "additionalProperties": false
+                                }
                               },
                               "moneyTypeOptions": {
                                 "type": "object",
@@ -2818,11 +2696,16 @@
                                           ]
                                         },
                                         "textTypeOptions": {
-                                          "type": "object",
+                                          "type": [
+                                            "object",
+                                            "null"
+                                          ],
                                           "properties": {
-                                            "$ref": {
-                                              "type": "string",
-                                              "format": "uri"
+                                            "minLength": {
+                                              "type": "integer"
+                                            },
+                                            "maxLength": {
+                                              "type": "integer"
                                             },
                                             "isUnicode": {
                                               "type": [
@@ -2830,61 +2713,31 @@
                                                 "null"
                                               ]
                                             },
-                                            "minLength": {
-                                              "type": [
-                                                "integer",
-                                                "null"
-                                              ]
-                                            },
-                                            "maxLength": {
-                                              "type": [
-                                                "integer",
-                                                "null"
-                                              ]
-                                            },
-                                            "characterCasing": {
+                                            "casing": {
                                               "enum": [
                                                 "normal",
                                                 "lower",
                                                 "upper"
                                               ]
-                                            },
-                                            "isMultiline": {
-                                              "type": [
-                                                "boolean",
-                                                "null"
-                                              ]
                                             }
-                                          },
-                                          "additionalProperties": false
+                                          }
                                         },
                                         "numberTypeOptions": {
-                                          "type": "object",
+                                          "type": [
+                                            "object",
+                                            "null"
+                                          ],
                                           "properties": {
-                                            "$ref": {
-                                              "type": "string",
-                                              "format": "uri"
-                                            },
-                                            "decimalDigits": {
-                                              "type": [
-                                                "integer",
-                                                "null"
-                                              ]
-                                            },
-                                            "integerDigits": {
-                                              "type": [
-                                                "integer",
-                                                "null"
-                                              ]
-                                            },
                                             "minValue": {
                                               "type": "number"
                                             },
                                             "maxValue": {
                                               "type": "number"
+                                            },
+                                            "decimalDigits": {
+                                              "type": "integer"
                                             }
-                                          },
-                                          "additionalProperties": false
+                                          }
                                         },
                                         "moneyTypeOptions": {
                                           "type": "object",
@@ -3290,11 +3143,16 @@
                           ]
                         },
                         "textTypeOptions": {
-                          "type": "object",
+                          "type": [
+                            "object",
+                            "null"
+                          ],
                           "properties": {
-                            "$ref": {
-                              "type": "string",
-                              "format": "uri"
+                            "minLength": {
+                              "type": "integer"
+                            },
+                            "maxLength": {
+                              "type": "integer"
                             },
                             "isUnicode": {
                               "type": [
@@ -3302,61 +3160,31 @@
                                 "null"
                               ]
                             },
-                            "minLength": {
-                              "type": [
-                                "integer",
-                                "null"
-                              ]
-                            },
-                            "maxLength": {
-                              "type": [
-                                "integer",
-                                "null"
-                              ]
-                            },
-                            "characterCasing": {
+                            "casing": {
                               "enum": [
                                 "normal",
                                 "lower",
                                 "upper"
                               ]
-                            },
-                            "isMultiline": {
-                              "type": [
-                                "boolean",
-                                "null"
-                              ]
                             }
-                          },
-                          "additionalProperties": false
+                          }
                         },
                         "numberTypeOptions": {
-                          "type": "object",
+                          "type": [
+                            "object",
+                            "null"
+                          ],
                           "properties": {
-                            "$ref": {
-                              "type": "string",
-                              "format": "uri"
-                            },
-                            "decimalDigits": {
-                              "type": [
-                                "integer",
-                                "null"
-                              ]
-                            },
-                            "integerDigits": {
-                              "type": [
-                                "integer",
-                                "null"
-                              ]
-                            },
                             "minValue": {
                               "type": "number"
                             },
                             "maxValue": {
                               "type": "number"
+                            },
+                            "decimalDigits": {
+                              "type": "integer"
                             }
-                          },
-                          "additionalProperties": false
+                          }
                         },
                         "moneyTypeOptions": {
                           "type": "object",
@@ -3737,11 +3565,16 @@
                                     ]
                                   },
                                   "textTypeOptions": {
-                                    "type": "object",
+                                    "type": [
+                                      "object",
+                                      "null"
+                                    ],
                                     "properties": {
-                                      "$ref": {
-                                        "type": "string",
-                                        "format": "uri"
+                                      "minLength": {
+                                        "type": "integer"
+                                      },
+                                      "maxLength": {
+                                        "type": "integer"
                                       },
                                       "isUnicode": {
                                         "type": [
@@ -3749,61 +3582,31 @@
                                           "null"
                                         ]
                                       },
-                                      "minLength": {
-                                        "type": [
-                                          "integer",
-                                          "null"
-                                        ]
-                                      },
-                                      "maxLength": {
-                                        "type": [
-                                          "integer",
-                                          "null"
-                                        ]
-                                      },
-                                      "characterCasing": {
+                                      "casing": {
                                         "enum": [
                                           "normal",
                                           "lower",
                                           "upper"
                                         ]
-                                      },
-                                      "isMultiline": {
-                                        "type": [
-                                          "boolean",
-                                          "null"
-                                        ]
                                       }
-                                    },
-                                    "additionalProperties": false
+                                    }
                                   },
                                   "numberTypeOptions": {
-                                    "type": "object",
+                                    "type": [
+                                      "object",
+                                      "null"
+                                    ],
                                     "properties": {
-                                      "$ref": {
-                                        "type": "string",
-                                        "format": "uri"
-                                      },
-                                      "decimalDigits": {
-                                        "type": [
-                                          "integer",
-                                          "null"
-                                        ]
-                                      },
-                                      "integerDigits": {
-                                        "type": [
-                                          "integer",
-                                          "null"
-                                        ]
-                                      },
                                       "minValue": {
                                         "type": "number"
                                       },
                                       "maxValue": {
                                         "type": "number"
+                                      },
+                                      "decimalDigits": {
+                                        "type": "integer"
                                       }
-                                    },
-                                    "additionalProperties": false
+                                    }
                                   },
                                   "moneyTypeOptions": {
                                     "type": "object",
@@ -4187,11 +3990,16 @@
                               ]
                             },
                             "textTypeOptions": {
-                              "type": "object",
+                              "type": [
+                                "object",
+                                "null"
+                              ],
                               "properties": {
-                                "$ref": {
-                                  "type": "string",
-                                  "format": "uri"
+                                "minLength": {
+                                  "type": "integer"
+                                },
+                                "maxLength": {
+                                  "type": "integer"
                                 },
                                 "isUnicode": {
                                   "type": [
@@ -4199,61 +4007,31 @@
                                     "null"
                                   ]
                                 },
-                                "minLength": {
-                                  "type": [
-                                    "integer",
-                                    "null"
-                                  ]
-                                },
-                                "maxLength": {
-                                  "type": [
-                                    "integer",
-                                    "null"
-                                  ]
-                                },
-                                "characterCasing": {
+                                "casing": {
                                   "enum": [
                                     "normal",
                                     "lower",
                                     "upper"
                                   ]
-                                },
-                                "isMultiline": {
-                                  "type": [
-                                    "boolean",
-                                    "null"
-                                  ]
                                 }
-                              },
-                              "additionalProperties": false
+                              }
                             },
                             "numberTypeOptions": {
-                              "type": "object",
+                              "type": [
+                                "object",
+                                "null"
+                              ],
                               "properties": {
-                                "$ref": {
-                                  "type": "string",
-                                  "format": "uri"
-                                },
-                                "decimalDigits": {
-                                  "type": [
-                                    "integer",
-                                    "null"
-                                  ]
-                                },
-                                "integerDigits": {
-                                  "type": [
-                                    "integer",
-                                    "null"
-                                  ]
-                                },
                                 "minValue": {
                                   "type": "number"
                                 },
                                 "maxValue": {
                                   "type": "number"
+                                },
+                                "decimalDigits": {
+                                  "type": "integer"
                                 }
-                              },
-                              "additionalProperties": false
+                              }
                             },
                             "moneyTypeOptions": {
                               "type": "object",
@@ -4634,11 +4412,16 @@
                                         ]
                                       },
                                       "textTypeOptions": {
-                                        "type": "object",
+                                        "type": [
+                                          "object",
+                                          "null"
+                                        ],
                                         "properties": {
-                                          "$ref": {
-                                            "type": "string",
-                                            "format": "uri"
+                                          "minLength": {
+                                            "type": "integer"
+                                          },
+                                          "maxLength": {
+                                            "type": "integer"
                                           },
                                           "isUnicode": {
                                             "type": [
@@ -4646,61 +4429,31 @@
                                               "null"
                                             ]
                                           },
-                                          "minLength": {
-                                            "type": [
-                                              "integer",
-                                              "null"
-                                            ]
-                                          },
-                                          "maxLength": {
-                                            "type": [
-                                              "integer",
-                                              "null"
-                                            ]
-                                          },
-                                          "characterCasing": {
+                                          "casing": {
                                             "enum": [
                                               "normal",
                                               "lower",
                                               "upper"
                                             ]
-                                          },
-                                          "isMultiline": {
-                                            "type": [
-                                              "boolean",
-                                              "null"
-                                            ]
                                           }
-                                        },
-                                        "additionalProperties": false
+                                        }
                                       },
                                       "numberTypeOptions": {
-                                        "type": "object",
+                                        "type": [
+                                          "object",
+                                          "null"
+                                        ],
                                         "properties": {
-                                          "$ref": {
-                                            "type": "string",
-                                            "format": "uri"
-                                          },
-                                          "decimalDigits": {
-                                            "type": [
-                                              "integer",
-                                              "null"
-                                            ]
-                                          },
-                                          "integerDigits": {
-                                            "type": [
-                                              "integer",
-                                              "null"
-                                            ]
-                                          },
                                           "minValue": {
                                             "type": "number"
                                           },
                                           "maxValue": {
                                             "type": "number"
+                                          },
+                                          "decimalDigits": {
+                                            "type": "integer"
                                           }
-                                        },
-                                        "additionalProperties": false
+                                        }
                                       },
                                       "moneyTypeOptions": {
                                         "type": "object",
@@ -5093,11 +4846,16 @@
                               ]
                             },
                             "textTypeOptions": {
-                              "type": "object",
+                              "type": [
+                                "object",
+                                "null"
+                              ],
                               "properties": {
-                                "$ref": {
-                                  "type": "string",
-                                  "format": "uri"
+                                "minLength": {
+                                  "type": "integer"
+                                },
+                                "maxLength": {
+                                  "type": "integer"
                                 },
                                 "isUnicode": {
                                   "type": [
@@ -5105,61 +4863,31 @@
                                     "null"
                                   ]
                                 },
-                                "minLength": {
-                                  "type": [
-                                    "integer",
-                                    "null"
-                                  ]
-                                },
-                                "maxLength": {
-                                  "type": [
-                                    "integer",
-                                    "null"
-                                  ]
-                                },
-                                "characterCasing": {
+                                "casing": {
                                   "enum": [
                                     "normal",
                                     "lower",
                                     "upper"
                                   ]
-                                },
-                                "isMultiline": {
-                                  "type": [
-                                    "boolean",
-                                    "null"
-                                  ]
                                 }
-                              },
-                              "additionalProperties": false
+                              }
                             },
                             "numberTypeOptions": {
-                              "type": "object",
+                              "type": [
+                                "object",
+                                "null"
+                              ],
                               "properties": {
-                                "$ref": {
-                                  "type": "string",
-                                  "format": "uri"
-                                },
-                                "decimalDigits": {
-                                  "type": [
-                                    "integer",
-                                    "null"
-                                  ]
-                                },
-                                "integerDigits": {
-                                  "type": [
-                                    "integer",
-                                    "null"
-                                  ]
-                                },
                                 "minValue": {
                                   "type": "number"
                                 },
                                 "maxValue": {
                                   "type": "number"
+                                },
+                                "decimalDigits": {
+                                  "type": "integer"
                                 }
-                              },
-                              "additionalProperties": false
+                              }
                             },
                             "moneyTypeOptions": {
                               "type": "object",
@@ -5540,11 +5268,16 @@
                                         ]
                                       },
                                       "textTypeOptions": {
-                                        "type": "object",
+                                        "type": [
+                                          "object",
+                                          "null"
+                                        ],
                                         "properties": {
-                                          "$ref": {
-                                            "type": "string",
-                                            "format": "uri"
+                                          "minLength": {
+                                            "type": "integer"
+                                          },
+                                          "maxLength": {
+                                            "type": "integer"
                                           },
                                           "isUnicode": {
                                             "type": [
@@ -5552,61 +5285,31 @@
                                               "null"
                                             ]
                                           },
-                                          "minLength": {
-                                            "type": [
-                                              "integer",
-                                              "null"
-                                            ]
-                                          },
-                                          "maxLength": {
-                                            "type": [
-                                              "integer",
-                                              "null"
-                                            ]
-                                          },
-                                          "characterCasing": {
+                                          "casing": {
                                             "enum": [
                                               "normal",
                                               "lower",
                                               "upper"
                                             ]
-                                          },
-                                          "isMultiline": {
-                                            "type": [
-                                              "boolean",
-                                              "null"
-                                            ]
                                           }
-                                        },
-                                        "additionalProperties": false
+                                        }
                                       },
                                       "numberTypeOptions": {
-                                        "type": "object",
+                                        "type": [
+                                          "object",
+                                          "null"
+                                        ],
                                         "properties": {
-                                          "$ref": {
-                                            "type": "string",
-                                            "format": "uri"
-                                          },
-                                          "decimalDigits": {
-                                            "type": [
-                                              "integer",
-                                              "null"
-                                            ]
-                                          },
-                                          "integerDigits": {
-                                            "type": [
-                                              "integer",
-                                              "null"
-                                            ]
-                                          },
                                           "minValue": {
                                             "type": "number"
                                           },
                                           "maxValue": {
                                             "type": "number"
+                                          },
+                                          "decimalDigits": {
+                                            "type": "integer"
                                           }
-                                        },
-                                        "additionalProperties": false
+                                        }
                                       },
                                       "moneyTypeOptions": {
                                         "type": "object",
@@ -6023,11 +5726,16 @@
                       ]
                     },
                     "textTypeOptions": {
-                      "type": "object",
+                      "type": [
+                        "object",
+                        "null"
+                      ],
                       "properties": {
-                        "$ref": {
-                          "type": "string",
-                          "format": "uri"
+                        "minLength": {
+                          "type": "integer"
+                        },
+                        "maxLength": {
+                          "type": "integer"
                         },
                         "isUnicode": {
                           "type": [
@@ -6035,61 +5743,31 @@
                             "null"
                           ]
                         },
-                        "minLength": {
-                          "type": [
-                            "integer",
-                            "null"
-                          ]
-                        },
-                        "maxLength": {
-                          "type": [
-                            "integer",
-                            "null"
-                          ]
-                        },
-                        "characterCasing": {
+                        "casing": {
                           "enum": [
                             "normal",
                             "lower",
                             "upper"
                           ]
-                        },
-                        "isMultiline": {
-                          "type": [
-                            "boolean",
-                            "null"
-                          ]
                         }
-                      },
-                      "additionalProperties": false
+                      }
                     },
                     "numberTypeOptions": {
-                      "type": "object",
+                      "type": [
+                        "object",
+                        "null"
+                      ],
                       "properties": {
-                        "$ref": {
-                          "type": "string",
-                          "format": "uri"
-                        },
-                        "decimalDigits": {
-                          "type": [
-                            "integer",
-                            "null"
-                          ]
-                        },
-                        "integerDigits": {
-                          "type": [
-                            "integer",
-                            "null"
-                          ]
-                        },
                         "minValue": {
                           "type": "number"
                         },
                         "maxValue": {
                           "type": "number"
+                        },
+                        "decimalDigits": {
+                          "type": "integer"
                         }
-                      },
-                      "additionalProperties": false
+                      }
                     },
                     "moneyTypeOptions": {
                       "type": "object",
@@ -6470,11 +6148,16 @@
                                 ]
                               },
                               "textTypeOptions": {
-                                "type": "object",
+                                "type": [
+                                  "object",
+                                  "null"
+                                ],
                                 "properties": {
-                                  "$ref": {
-                                    "type": "string",
-                                    "format": "uri"
+                                  "minLength": {
+                                    "type": "integer"
+                                  },
+                                  "maxLength": {
+                                    "type": "integer"
                                   },
                                   "isUnicode": {
                                     "type": [
@@ -6482,61 +6165,31 @@
                                       "null"
                                     ]
                                   },
-                                  "minLength": {
-                                    "type": [
-                                      "integer",
-                                      "null"
-                                    ]
-                                  },
-                                  "maxLength": {
-                                    "type": [
-                                      "integer",
-                                      "null"
-                                    ]
-                                  },
-                                  "characterCasing": {
+                                  "casing": {
                                     "enum": [
                                       "normal",
                                       "lower",
                                       "upper"
                                     ]
-                                  },
-                                  "isMultiline": {
-                                    "type": [
-                                      "boolean",
-                                      "null"
-                                    ]
                                   }
-                                },
-                                "additionalProperties": false
+                                }
                               },
                               "numberTypeOptions": {
-                                "type": "object",
+                                "type": [
+                                  "object",
+                                  "null"
+                                ],
                                 "properties": {
-                                  "$ref": {
-                                    "type": "string",
-                                    "format": "uri"
-                                  },
-                                  "decimalDigits": {
-                                    "type": [
-                                      "integer",
-                                      "null"
-                                    ]
-                                  },
-                                  "integerDigits": {
-                                    "type": [
-                                      "integer",
-                                      "null"
-                                    ]
-                                  },
                                   "minValue": {
                                     "type": "number"
                                   },
                                   "maxValue": {
                                     "type": "number"
+                                  },
+                                  "decimalDigits": {
+                                    "type": "integer"
                                   }
-                                },
-                                "additionalProperties": false
+                                }
                               },
                               "moneyTypeOptions": {
                                 "type": "object",
@@ -6920,11 +6573,16 @@
                           ]
                         },
                         "textTypeOptions": {
-                          "type": "object",
+                          "type": [
+                            "object",
+                            "null"
+                          ],
                           "properties": {
-                            "$ref": {
-                              "type": "string",
-                              "format": "uri"
+                            "minLength": {
+                              "type": "integer"
+                            },
+                            "maxLength": {
+                              "type": "integer"
                             },
                             "isUnicode": {
                               "type": [
@@ -6932,61 +6590,31 @@
                                 "null"
                               ]
                             },
-                            "minLength": {
-                              "type": [
-                                "integer",
-                                "null"
-                              ]
-                            },
-                            "maxLength": {
-                              "type": [
-                                "integer",
-                                "null"
-                              ]
-                            },
-                            "characterCasing": {
+                            "casing": {
                               "enum": [
                                 "normal",
                                 "lower",
                                 "upper"
                               ]
-                            },
-                            "isMultiline": {
-                              "type": [
-                                "boolean",
-                                "null"
-                              ]
                             }
-                          },
-                          "additionalProperties": false
+                          }
                         },
                         "numberTypeOptions": {
-                          "type": "object",
+                          "type": [
+                            "object",
+                            "null"
+                          ],
                           "properties": {
-                            "$ref": {
-                              "type": "string",
-                              "format": "uri"
-                            },
-                            "decimalDigits": {
-                              "type": [
-                                "integer",
-                                "null"
-                              ]
-                            },
-                            "integerDigits": {
-                              "type": [
-                                "integer",
-                                "null"
-                              ]
-                            },
                             "minValue": {
                               "type": "number"
                             },
                             "maxValue": {
                               "type": "number"
+                            },
+                            "decimalDigits": {
+                              "type": "integer"
                             }
-                          },
-                          "additionalProperties": false
+                          }
                         },
                         "moneyTypeOptions": {
                           "type": "object",
@@ -7367,11 +6995,16 @@
                                     ]
                                   },
                                   "textTypeOptions": {
-                                    "type": "object",
+                                    "type": [
+                                      "object",
+                                      "null"
+                                    ],
                                     "properties": {
-                                      "$ref": {
-                                        "type": "string",
-                                        "format": "uri"
+                                      "minLength": {
+                                        "type": "integer"
+                                      },
+                                      "maxLength": {
+                                        "type": "integer"
                                       },
                                       "isUnicode": {
                                         "type": [
@@ -7379,61 +7012,31 @@
                                           "null"
                                         ]
                                       },
-                                      "minLength": {
-                                        "type": [
-                                          "integer",
-                                          "null"
-                                        ]
-                                      },
-                                      "maxLength": {
-                                        "type": [
-                                          "integer",
-                                          "null"
-                                        ]
-                                      },
-                                      "characterCasing": {
+                                      "casing": {
                                         "enum": [
                                           "normal",
                                           "lower",
                                           "upper"
                                         ]
-                                      },
-                                      "isMultiline": {
-                                        "type": [
-                                          "boolean",
-                                          "null"
-                                        ]
                                       }
-                                    },
-                                    "additionalProperties": false
+                                    }
                                   },
                                   "numberTypeOptions": {
-                                    "type": "object",
+                                    "type": [
+                                      "object",
+                                      "null"
+                                    ],
                                     "properties": {
-                                      "$ref": {
-                                        "type": "string",
-                                        "format": "uri"
-                                      },
-                                      "decimalDigits": {
-                                        "type": [
-                                          "integer",
-                                          "null"
-                                        ]
-                                      },
-                                      "integerDigits": {
-                                        "type": [
-                                          "integer",
-                                          "null"
-                                        ]
-                                      },
                                       "minValue": {
                                         "type": "number"
                                       },
                                       "maxValue": {
                                         "type": "number"
+                                      },
+                                      "decimalDigits": {
+                                        "type": "integer"
                                       }
-                                    },
-                                    "additionalProperties": false
+                                    }
                                   },
                                   "moneyTypeOptions": {
                                     "type": "object",
@@ -7826,11 +7429,16 @@
                           ]
                         },
                         "textTypeOptions": {
-                          "type": "object",
+                          "type": [
+                            "object",
+                            "null"
+                          ],
                           "properties": {
-                            "$ref": {
-                              "type": "string",
-                              "format": "uri"
+                            "minLength": {
+                              "type": "integer"
+                            },
+                            "maxLength": {
+                              "type": "integer"
                             },
                             "isUnicode": {
                               "type": [
@@ -7838,61 +7446,31 @@
                                 "null"
                               ]
                             },
-                            "minLength": {
-                              "type": [
-                                "integer",
-                                "null"
-                              ]
-                            },
-                            "maxLength": {
-                              "type": [
-                                "integer",
-                                "null"
-                              ]
-                            },
-                            "characterCasing": {
+                            "casing": {
                               "enum": [
                                 "normal",
                                 "lower",
                                 "upper"
                               ]
-                            },
-                            "isMultiline": {
-                              "type": [
-                                "boolean",
-                                "null"
-                              ]
                             }
-                          },
-                          "additionalProperties": false
+                          }
                         },
                         "numberTypeOptions": {
-                          "type": "object",
+                          "type": [
+                            "object",
+                            "null"
+                          ],
                           "properties": {
-                            "$ref": {
-                              "type": "string",
-                              "format": "uri"
-                            },
-                            "decimalDigits": {
-                              "type": [
-                                "integer",
-                                "null"
-                              ]
-                            },
-                            "integerDigits": {
-                              "type": [
-                                "integer",
-                                "null"
-                              ]
-                            },
                             "minValue": {
                               "type": "number"
                             },
                             "maxValue": {
                               "type": "number"
+                            },
+                            "decimalDigits": {
+                              "type": "integer"
                             }
-                          },
-                          "additionalProperties": false
+                          }
                         },
                         "moneyTypeOptions": {
                           "type": "object",
@@ -8273,11 +7851,16 @@
                                     ]
                                   },
                                   "textTypeOptions": {
-                                    "type": "object",
+                                    "type": [
+                                      "object",
+                                      "null"
+                                    ],
                                     "properties": {
-                                      "$ref": {
-                                        "type": "string",
-                                        "format": "uri"
+                                      "minLength": {
+                                        "type": "integer"
+                                      },
+                                      "maxLength": {
+                                        "type": "integer"
                                       },
                                       "isUnicode": {
                                         "type": [
@@ -8285,61 +7868,31 @@
                                           "null"
                                         ]
                                       },
-                                      "minLength": {
-                                        "type": [
-                                          "integer",
-                                          "null"
-                                        ]
-                                      },
-                                      "maxLength": {
-                                        "type": [
-                                          "integer",
-                                          "null"
-                                        ]
-                                      },
-                                      "characterCasing": {
+                                      "casing": {
                                         "enum": [
                                           "normal",
                                           "lower",
                                           "upper"
                                         ]
-                                      },
-                                      "isMultiline": {
-                                        "type": [
-                                          "boolean",
-                                          "null"
-                                        ]
                                       }
-                                    },
-                                    "additionalProperties": false
+                                    }
                                   },
                                   "numberTypeOptions": {
-                                    "type": "object",
+                                    "type": [
+                                      "object",
+                                      "null"
+                                    ],
                                     "properties": {
-                                      "$ref": {
-                                        "type": "string",
-                                        "format": "uri"
-                                      },
-                                      "decimalDigits": {
-                                        "type": [
-                                          "integer",
-                                          "null"
-                                        ]
-                                      },
-                                      "integerDigits": {
-                                        "type": [
-                                          "integer",
-                                          "null"
-                                        ]
-                                      },
                                       "minValue": {
                                         "type": "number"
                                       },
                                       "maxValue": {
                                         "type": "number"
+                                      },
+                                      "decimalDigits": {
+                                        "type": "integer"
                                       }
-                                    },
-                                    "additionalProperties": false
+                                    }
                                   },
                                   "moneyTypeOptions": {
                                     "type": "object",
@@ -8753,11 +8306,16 @@
                       ]
                     },
                     "textTypeOptions": {
-                      "type": "object",
+                      "type": [
+                        "object",
+                        "null"
+                      ],
                       "properties": {
-                        "$ref": {
-                          "type": "string",
-                          "format": "uri"
+                        "minLength": {
+                          "type": "integer"
+                        },
+                        "maxLength": {
+                          "type": "integer"
                         },
                         "isUnicode": {
                           "type": [
@@ -8765,61 +8323,31 @@
                             "null"
                           ]
                         },
-                        "minLength": {
-                          "type": [
-                            "integer",
-                            "null"
-                          ]
-                        },
-                        "maxLength": {
-                          "type": [
-                            "integer",
-                            "null"
-                          ]
-                        },
-                        "characterCasing": {
+                        "casing": {
                           "enum": [
                             "normal",
                             "lower",
                             "upper"
                           ]
-                        },
-                        "isMultiline": {
-                          "type": [
-                            "boolean",
-                            "null"
-                          ]
                         }
-                      },
-                      "additionalProperties": false
+                      }
                     },
                     "numberTypeOptions": {
-                      "type": "object",
+                      "type": [
+                        "object",
+                        "null"
+                      ],
                       "properties": {
-                        "$ref": {
-                          "type": "string",
-                          "format": "uri"
-                        },
-                        "decimalDigits": {
-                          "type": [
-                            "integer",
-                            "null"
-                          ]
-                        },
-                        "integerDigits": {
-                          "type": [
-                            "integer",
-                            "null"
-                          ]
-                        },
                         "minValue": {
                           "type": "number"
                         },
                         "maxValue": {
                           "type": "number"
+                        },
+                        "decimalDigits": {
+                          "type": "integer"
                         }
-                      },
-                      "additionalProperties": false
+                      }
                     },
                     "moneyTypeOptions": {
                       "type": "object",
@@ -9206,11 +8734,16 @@
                       ]
                     },
                     "textTypeOptions": {
-                      "type": "object",
+                      "type": [
+                        "object",
+                        "null"
+                      ],
                       "properties": {
-                        "$ref": {
-                          "type": "string",
-                          "format": "uri"
+                        "minLength": {
+                          "type": "integer"
+                        },
+                        "maxLength": {
+                          "type": "integer"
                         },
                         "isUnicode": {
                           "type": [
@@ -9218,61 +8751,31 @@
                             "null"
                           ]
                         },
-                        "minLength": {
-                          "type": [
-                            "integer",
-                            "null"
-                          ]
-                        },
-                        "maxLength": {
-                          "type": [
-                            "integer",
-                            "null"
-                          ]
-                        },
-                        "characterCasing": {
+                        "casing": {
                           "enum": [
                             "normal",
                             "lower",
                             "upper"
                           ]
-                        },
-                        "isMultiline": {
-                          "type": [
-                            "boolean",
-                            "null"
-                          ]
                         }
-                      },
-                      "additionalProperties": false
+                      }
                     },
                     "numberTypeOptions": {
-                      "type": "object",
+                      "type": [
+                        "object",
+                        "null"
+                      ],
                       "properties": {
-                        "$ref": {
-                          "type": "string",
-                          "format": "uri"
-                        },
-                        "decimalDigits": {
-                          "type": [
-                            "integer",
-                            "null"
-                          ]
-                        },
-                        "integerDigits": {
-                          "type": [
-                            "integer",
-                            "null"
-                          ]
-                        },
                         "minValue": {
                           "type": "number"
                         },
                         "maxValue": {
                           "type": "number"
+                        },
+                        "decimalDigits": {
+                          "type": "integer"
                         }
-                      },
-                      "additionalProperties": false
+                      }
                     },
                     "moneyTypeOptions": {
                       "type": "object",
@@ -9657,11 +9160,16 @@
                       ]
                     },
                     "textTypeOptions": {
-                      "type": "object",
+                      "type": [
+                        "object",
+                        "null"
+                      ],
                       "properties": {
-                        "$ref": {
-                          "type": "string",
-                          "format": "uri"
+                        "minLength": {
+                          "type": "integer"
+                        },
+                        "maxLength": {
+                          "type": "integer"
                         },
                         "isUnicode": {
                           "type": [
@@ -9669,61 +9177,31 @@
                             "null"
                           ]
                         },
-                        "minLength": {
-                          "type": [
-                            "integer",
-                            "null"
-                          ]
-                        },
-                        "maxLength": {
-                          "type": [
-                            "integer",
-                            "null"
-                          ]
-                        },
-                        "characterCasing": {
+                        "casing": {
                           "enum": [
                             "normal",
                             "lower",
                             "upper"
                           ]
-                        },
-                        "isMultiline": {
-                          "type": [
-                            "boolean",
-                            "null"
-                          ]
                         }
-                      },
-                      "additionalProperties": false
+                      }
                     },
                     "numberTypeOptions": {
-                      "type": "object",
+                      "type": [
+                        "object",
+                        "null"
+                      ],
                       "properties": {
-                        "$ref": {
-                          "type": "string",
-                          "format": "uri"
-                        },
-                        "decimalDigits": {
-                          "type": [
-                            "integer",
-                            "null"
-                          ]
-                        },
-                        "integerDigits": {
-                          "type": [
-                            "integer",
-                            "null"
-                          ]
-                        },
                         "minValue": {
                           "type": "number"
                         },
                         "maxValue": {
                           "type": "number"
+                        },
+                        "decimalDigits": {
+                          "type": "integer"
                         }
-                      },
-                      "additionalProperties": false
+                      }
                     },
                     "moneyTypeOptions": {
                       "type": "object",
@@ -11401,11 +10879,16 @@
                       ]
                     },
                     "textTypeOptions": {
-                      "type": "object",
+                      "type": [
+                        "object",
+                        "null"
+                      ],
                       "properties": {
-                        "$ref": {
-                          "type": "string",
-                          "format": "uri"
+                        "minLength": {
+                          "type": "integer"
+                        },
+                        "maxLength": {
+                          "type": "integer"
                         },
                         "isUnicode": {
                           "type": [
@@ -11413,61 +10896,31 @@
                             "null"
                           ]
                         },
-                        "minLength": {
-                          "type": [
-                            "integer",
-                            "null"
-                          ]
-                        },
-                        "maxLength": {
-                          "type": [
-                            "integer",
-                            "null"
-                          ]
-                        },
-                        "characterCasing": {
+                        "casing": {
                           "enum": [
                             "normal",
                             "lower",
                             "upper"
                           ]
-                        },
-                        "isMultiline": {
-                          "type": [
-                            "boolean",
-                            "null"
-                          ]
                         }
-                      },
-                      "additionalProperties": false
+                      }
                     },
                     "numberTypeOptions": {
-                      "type": "object",
+                      "type": [
+                        "object",
+                        "null"
+                      ],
                       "properties": {
-                        "$ref": {
-                          "type": "string",
-                          "format": "uri"
-                        },
-                        "decimalDigits": {
-                          "type": [
-                            "integer",
-                            "null"
-                          ]
-                        },
-                        "integerDigits": {
-                          "type": [
-                            "integer",
-                            "null"
-                          ]
-                        },
                         "minValue": {
                           "type": "number"
                         },
                         "maxValue": {
                           "type": "number"
+                        },
+                        "decimalDigits": {
+                          "type": "integer"
                         }
-                      },
-                      "additionalProperties": false
+                      }
                     },
                     "moneyTypeOptions": {
                       "type": "object",
@@ -11790,9 +11243,6 @@
       "title": "A definition for application components used in a Nox solution.",
       "description": "A definition for Integrations, DataTransferObjects and other pertinent components pertaining to a Nox solution application component.",
       "additionalProperties": false
-    },
-    "rootYamlFile": {
-      "type": "string"
     }
   },
   "required": [

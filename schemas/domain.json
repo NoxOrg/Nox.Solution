@@ -344,55 +344,45 @@
                         ]
                       },
                       "textTypeOptions": {
-                        "type": "object",
+                        "type": [
+                          "object",
+                          "null"
+                        ],
                         "properties": {
-                          "$ref": {
-                            "type": "string",
-                            "format": "uri"
-                          },
-                          "isUnicode": {
-                            "type": "boolean"
-                          },
                           "minLength": {
                             "type": "integer"
                           },
                           "maxLength": {
                             "type": "integer"
                           },
-                          "characterCasing": {
+                          "isUnicode": {
+                            "type": "boolean"
+                          },
+                          "casing": {
                             "enum": [
                               "normal",
                               "lower",
                               "upper"
                             ]
-                          },
-                          "isMultiline": {
-                            "type": "boolean"
                           }
-                        },
-                        "additionalProperties": false
+                        }
                       },
                       "numberTypeOptions": {
-                        "type": "object",
+                        "type": [
+                          "object",
+                          "null"
+                        ],
                         "properties": {
-                          "$ref": {
-                            "type": "string",
-                            "format": "uri"
-                          },
-                          "decimalDigits": {
-                            "type": "integer"
-                          },
-                          "integerDigits": {
-                            "type": "integer"
-                          },
                           "minValue": {
                             "type": "number"
                           },
                           "maxValue": {
                             "type": "number"
+                          },
+                          "decimalDigits": {
+                            "type": "integer"
                           }
-                        },
-                        "additionalProperties": false
+                        }
                       },
                       "moneyTypeOptions": {
                         "type": "object",
@@ -758,55 +748,45 @@
                                   ]
                                 },
                                 "textTypeOptions": {
-                                  "type": "object",
+                                  "type": [
+                                    "object",
+                                    "null"
+                                  ],
                                   "properties": {
-                                    "$ref": {
-                                      "type": "string",
-                                      "format": "uri"
-                                    },
-                                    "isUnicode": {
-                                      "type": "boolean"
-                                    },
                                     "minLength": {
                                       "type": "integer"
                                     },
                                     "maxLength": {
                                       "type": "integer"
                                     },
-                                    "characterCasing": {
+                                    "isUnicode": {
+                                      "type": "boolean"
+                                    },
+                                    "casing": {
                                       "enum": [
                                         "normal",
                                         "lower",
                                         "upper"
                                       ]
-                                    },
-                                    "isMultiline": {
-                                      "type": "boolean"
                                     }
-                                  },
-                                  "additionalProperties": false
+                                  }
                                 },
                                 "numberTypeOptions": {
-                                  "type": "object",
+                                  "type": [
+                                    "object",
+                                    "null"
+                                  ],
                                   "properties": {
-                                    "$ref": {
-                                      "type": "string",
-                                      "format": "uri"
-                                    },
-                                    "decimalDigits": {
-                                      "type": "integer"
-                                    },
-                                    "integerDigits": {
-                                      "type": "integer"
-                                    },
                                     "minValue": {
                                       "type": "number"
                                     },
                                     "maxValue": {
                                       "type": "number"
+                                    },
+                                    "decimalDigits": {
+                                      "type": "integer"
                                     }
-                                  },
-                                  "additionalProperties": false
+                                  }
                                 },
                                 "moneyTypeOptions": {
                                   "type": "object",
@@ -1175,55 +1155,45 @@
                             ]
                           },
                           "textTypeOptions": {
-                            "type": "object",
+                            "type": [
+                              "object",
+                              "null"
+                            ],
                             "properties": {
-                              "$ref": {
-                                "type": "string",
-                                "format": "uri"
-                              },
-                              "isUnicode": {
-                                "type": "boolean"
-                              },
                               "minLength": {
                                 "type": "integer"
                               },
                               "maxLength": {
                                 "type": "integer"
                               },
-                              "characterCasing": {
+                              "isUnicode": {
+                                "type": "boolean"
+                              },
+                              "casing": {
                                 "enum": [
                                   "normal",
                                   "lower",
                                   "upper"
                                 ]
-                              },
-                              "isMultiline": {
-                                "type": "boolean"
                               }
-                            },
-                            "additionalProperties": false
+                            }
                           },
                           "numberTypeOptions": {
-                            "type": "object",
+                            "type": [
+                              "object",
+                              "null"
+                            ],
                             "properties": {
-                              "$ref": {
-                                "type": "string",
-                                "format": "uri"
-                              },
-                              "decimalDigits": {
-                                "type": "integer"
-                              },
-                              "integerDigits": {
-                                "type": "integer"
-                              },
                               "minValue": {
                                 "type": "number"
                               },
                               "maxValue": {
                                 "type": "number"
+                              },
+                              "decimalDigits": {
+                                "type": "integer"
                               }
-                            },
-                            "additionalProperties": false
+                            }
                           },
                           "moneyTypeOptions": {
                             "type": "object",
@@ -1589,55 +1559,45 @@
                                       ]
                                     },
                                     "textTypeOptions": {
-                                      "type": "object",
+                                      "type": [
+                                        "object",
+                                        "null"
+                                      ],
                                       "properties": {
-                                        "$ref": {
-                                          "type": "string",
-                                          "format": "uri"
-                                        },
-                                        "isUnicode": {
-                                          "type": "boolean"
-                                        },
                                         "minLength": {
                                           "type": "integer"
                                         },
                                         "maxLength": {
                                           "type": "integer"
                                         },
-                                        "characterCasing": {
+                                        "isUnicode": {
+                                          "type": "boolean"
+                                        },
+                                        "casing": {
                                           "enum": [
                                             "normal",
                                             "lower",
                                             "upper"
                                           ]
-                                        },
-                                        "isMultiline": {
-                                          "type": "boolean"
                                         }
-                                      },
-                                      "additionalProperties": false
+                                      }
                                     },
                                     "numberTypeOptions": {
-                                      "type": "object",
+                                      "type": [
+                                        "object",
+                                        "null"
+                                      ],
                                       "properties": {
-                                        "$ref": {
-                                          "type": "string",
-                                          "format": "uri"
-                                        },
-                                        "decimalDigits": {
-                                          "type": "integer"
-                                        },
-                                        "integerDigits": {
-                                          "type": "integer"
-                                        },
                                         "minValue": {
                                           "type": "number"
                                         },
                                         "maxValue": {
                                           "type": "number"
+                                        },
+                                        "decimalDigits": {
+                                          "type": "integer"
                                         }
-                                      },
-                                      "additionalProperties": false
+                                      }
                                     },
                                     "moneyTypeOptions": {
                                       "type": "object",
@@ -2015,55 +1975,45 @@
                             ]
                           },
                           "textTypeOptions": {
-                            "type": "object",
+                            "type": [
+                              "object",
+                              "null"
+                            ],
                             "properties": {
-                              "$ref": {
-                                "type": "string",
-                                "format": "uri"
-                              },
-                              "isUnicode": {
-                                "type": "boolean"
-                              },
                               "minLength": {
                                 "type": "integer"
                               },
                               "maxLength": {
                                 "type": "integer"
                               },
-                              "characterCasing": {
+                              "isUnicode": {
+                                "type": "boolean"
+                              },
+                              "casing": {
                                 "enum": [
                                   "normal",
                                   "lower",
                                   "upper"
                                 ]
-                              },
-                              "isMultiline": {
-                                "type": "boolean"
                               }
-                            },
-                            "additionalProperties": false
+                            }
                           },
                           "numberTypeOptions": {
-                            "type": "object",
+                            "type": [
+                              "object",
+                              "null"
+                            ],
                             "properties": {
-                              "$ref": {
-                                "type": "string",
-                                "format": "uri"
-                              },
-                              "decimalDigits": {
-                                "type": "integer"
-                              },
-                              "integerDigits": {
-                                "type": "integer"
-                              },
                               "minValue": {
                                 "type": "number"
                               },
                               "maxValue": {
                                 "type": "number"
+                              },
+                              "decimalDigits": {
+                                "type": "integer"
                               }
-                            },
-                            "additionalProperties": false
+                            }
                           },
                           "moneyTypeOptions": {
                             "type": "object",
@@ -2429,55 +2379,45 @@
                                       ]
                                     },
                                     "textTypeOptions": {
-                                      "type": "object",
+                                      "type": [
+                                        "object",
+                                        "null"
+                                      ],
                                       "properties": {
-                                        "$ref": {
-                                          "type": "string",
-                                          "format": "uri"
-                                        },
-                                        "isUnicode": {
-                                          "type": "boolean"
-                                        },
                                         "minLength": {
                                           "type": "integer"
                                         },
                                         "maxLength": {
                                           "type": "integer"
                                         },
-                                        "characterCasing": {
+                                        "isUnicode": {
+                                          "type": "boolean"
+                                        },
+                                        "casing": {
                                           "enum": [
                                             "normal",
                                             "lower",
                                             "upper"
                                           ]
-                                        },
-                                        "isMultiline": {
-                                          "type": "boolean"
                                         }
-                                      },
-                                      "additionalProperties": false
+                                      }
                                     },
                                     "numberTypeOptions": {
-                                      "type": "object",
+                                      "type": [
+                                        "object",
+                                        "null"
+                                      ],
                                       "properties": {
-                                        "$ref": {
-                                          "type": "string",
-                                          "format": "uri"
-                                        },
-                                        "decimalDigits": {
-                                          "type": "integer"
-                                        },
-                                        "integerDigits": {
-                                          "type": "integer"
-                                        },
                                         "minValue": {
                                           "type": "number"
                                         },
                                         "maxValue": {
                                           "type": "number"
+                                        },
+                                        "decimalDigits": {
+                                          "type": "integer"
                                         }
-                                      },
-                                      "additionalProperties": false
+                                      }
                                     },
                                     "moneyTypeOptions": {
                                       "type": "object",
@@ -2868,55 +2808,45 @@
                       ]
                     },
                     "textTypeOptions": {
-                      "type": "object",
+                      "type": [
+                        "object",
+                        "null"
+                      ],
                       "properties": {
-                        "$ref": {
-                          "type": "string",
-                          "format": "uri"
-                        },
-                        "isUnicode": {
-                          "type": "boolean"
-                        },
                         "minLength": {
                           "type": "integer"
                         },
                         "maxLength": {
                           "type": "integer"
                         },
-                        "characterCasing": {
+                        "isUnicode": {
+                          "type": "boolean"
+                        },
+                        "casing": {
                           "enum": [
                             "normal",
                             "lower",
                             "upper"
                           ]
-                        },
-                        "isMultiline": {
-                          "type": "boolean"
                         }
-                      },
-                      "additionalProperties": false
+                      }
                     },
                     "numberTypeOptions": {
-                      "type": "object",
+                      "type": [
+                        "object",
+                        "null"
+                      ],
                       "properties": {
-                        "$ref": {
-                          "type": "string",
-                          "format": "uri"
-                        },
-                        "decimalDigits": {
-                          "type": "integer"
-                        },
-                        "integerDigits": {
-                          "type": "integer"
-                        },
                         "minValue": {
                           "type": "number"
                         },
                         "maxValue": {
                           "type": "number"
+                        },
+                        "decimalDigits": {
+                          "type": "integer"
                         }
-                      },
-                      "additionalProperties": false
+                      }
                     },
                     "moneyTypeOptions": {
                       "type": "object",
@@ -3282,55 +3212,45 @@
                                 ]
                               },
                               "textTypeOptions": {
-                                "type": "object",
+                                "type": [
+                                  "object",
+                                  "null"
+                                ],
                                 "properties": {
-                                  "$ref": {
-                                    "type": "string",
-                                    "format": "uri"
-                                  },
-                                  "isUnicode": {
-                                    "type": "boolean"
-                                  },
                                   "minLength": {
                                     "type": "integer"
                                   },
                                   "maxLength": {
                                     "type": "integer"
                                   },
-                                  "characterCasing": {
+                                  "isUnicode": {
+                                    "type": "boolean"
+                                  },
+                                  "casing": {
                                     "enum": [
                                       "normal",
                                       "lower",
                                       "upper"
                                     ]
-                                  },
-                                  "isMultiline": {
-                                    "type": "boolean"
                                   }
-                                },
-                                "additionalProperties": false
+                                }
                               },
                               "numberTypeOptions": {
-                                "type": "object",
+                                "type": [
+                                  "object",
+                                  "null"
+                                ],
                                 "properties": {
-                                  "$ref": {
-                                    "type": "string",
-                                    "format": "uri"
-                                  },
-                                  "decimalDigits": {
-                                    "type": "integer"
-                                  },
-                                  "integerDigits": {
-                                    "type": "integer"
-                                  },
                                   "minValue": {
                                     "type": "number"
                                   },
                                   "maxValue": {
                                     "type": "number"
+                                  },
+                                  "decimalDigits": {
+                                    "type": "integer"
                                   }
-                                },
-                                "additionalProperties": false
+                                }
                               },
                               "moneyTypeOptions": {
                                 "type": "object",
@@ -3699,55 +3619,45 @@
                           ]
                         },
                         "textTypeOptions": {
-                          "type": "object",
+                          "type": [
+                            "object",
+                            "null"
+                          ],
                           "properties": {
-                            "$ref": {
-                              "type": "string",
-                              "format": "uri"
-                            },
-                            "isUnicode": {
-                              "type": "boolean"
-                            },
                             "minLength": {
                               "type": "integer"
                             },
                             "maxLength": {
                               "type": "integer"
                             },
-                            "characterCasing": {
+                            "isUnicode": {
+                              "type": "boolean"
+                            },
+                            "casing": {
                               "enum": [
                                 "normal",
                                 "lower",
                                 "upper"
                               ]
-                            },
-                            "isMultiline": {
-                              "type": "boolean"
                             }
-                          },
-                          "additionalProperties": false
+                          }
                         },
                         "numberTypeOptions": {
-                          "type": "object",
+                          "type": [
+                            "object",
+                            "null"
+                          ],
                           "properties": {
-                            "$ref": {
-                              "type": "string",
-                              "format": "uri"
-                            },
-                            "decimalDigits": {
-                              "type": "integer"
-                            },
-                            "integerDigits": {
-                              "type": "integer"
-                            },
                             "minValue": {
                               "type": "number"
                             },
                             "maxValue": {
                               "type": "number"
+                            },
+                            "decimalDigits": {
+                              "type": "integer"
                             }
-                          },
-                          "additionalProperties": false
+                          }
                         },
                         "moneyTypeOptions": {
                           "type": "object",
@@ -4113,55 +4023,45 @@
                                     ]
                                   },
                                   "textTypeOptions": {
-                                    "type": "object",
+                                    "type": [
+                                      "object",
+                                      "null"
+                                    ],
                                     "properties": {
-                                      "$ref": {
-                                        "type": "string",
-                                        "format": "uri"
-                                      },
-                                      "isUnicode": {
-                                        "type": "boolean"
-                                      },
                                       "minLength": {
                                         "type": "integer"
                                       },
                                       "maxLength": {
                                         "type": "integer"
                                       },
-                                      "characterCasing": {
+                                      "isUnicode": {
+                                        "type": "boolean"
+                                      },
+                                      "casing": {
                                         "enum": [
                                           "normal",
                                           "lower",
                                           "upper"
                                         ]
-                                      },
-                                      "isMultiline": {
-                                        "type": "boolean"
                                       }
-                                    },
-                                    "additionalProperties": false
+                                    }
                                   },
                                   "numberTypeOptions": {
-                                    "type": "object",
+                                    "type": [
+                                      "object",
+                                      "null"
+                                    ],
                                     "properties": {
-                                      "$ref": {
-                                        "type": "string",
-                                        "format": "uri"
-                                      },
-                                      "decimalDigits": {
-                                        "type": "integer"
-                                      },
-                                      "integerDigits": {
-                                        "type": "integer"
-                                      },
                                       "minValue": {
                                         "type": "number"
                                       },
                                       "maxValue": {
                                         "type": "number"
+                                      },
+                                      "decimalDigits": {
+                                        "type": "integer"
                                       }
-                                    },
-                                    "additionalProperties": false
+                                    }
                                   },
                                   "moneyTypeOptions": {
                                     "type": "object",
@@ -4539,55 +4439,45 @@
                           ]
                         },
                         "textTypeOptions": {
-                          "type": "object",
+                          "type": [
+                            "object",
+                            "null"
+                          ],
                           "properties": {
-                            "$ref": {
-                              "type": "string",
-                              "format": "uri"
-                            },
-                            "isUnicode": {
-                              "type": "boolean"
-                            },
                             "minLength": {
                               "type": "integer"
                             },
                             "maxLength": {
                               "type": "integer"
                             },
-                            "characterCasing": {
+                            "isUnicode": {
+                              "type": "boolean"
+                            },
+                            "casing": {
                               "enum": [
                                 "normal",
                                 "lower",
                                 "upper"
                               ]
-                            },
-                            "isMultiline": {
-                              "type": "boolean"
                             }
-                          },
-                          "additionalProperties": false
+                          }
                         },
                         "numberTypeOptions": {
-                          "type": "object",
+                          "type": [
+                            "object",
+                            "null"
+                          ],
                           "properties": {
-                            "$ref": {
-                              "type": "string",
-                              "format": "uri"
-                            },
-                            "decimalDigits": {
-                              "type": "integer"
-                            },
-                            "integerDigits": {
-                              "type": "integer"
-                            },
                             "minValue": {
                               "type": "number"
                             },
                             "maxValue": {
                               "type": "number"
+                            },
+                            "decimalDigits": {
+                              "type": "integer"
                             }
-                          },
-                          "additionalProperties": false
+                          }
                         },
                         "moneyTypeOptions": {
                           "type": "object",
@@ -4953,55 +4843,45 @@
                                     ]
                                   },
                                   "textTypeOptions": {
-                                    "type": "object",
+                                    "type": [
+                                      "object",
+                                      "null"
+                                    ],
                                     "properties": {
-                                      "$ref": {
-                                        "type": "string",
-                                        "format": "uri"
-                                      },
-                                      "isUnicode": {
-                                        "type": "boolean"
-                                      },
                                       "minLength": {
                                         "type": "integer"
                                       },
                                       "maxLength": {
                                         "type": "integer"
                                       },
-                                      "characterCasing": {
+                                      "isUnicode": {
+                                        "type": "boolean"
+                                      },
+                                      "casing": {
                                         "enum": [
                                           "normal",
                                           "lower",
                                           "upper"
                                         ]
-                                      },
-                                      "isMultiline": {
-                                        "type": "boolean"
                                       }
-                                    },
-                                    "additionalProperties": false
+                                    }
                                   },
                                   "numberTypeOptions": {
-                                    "type": "object",
+                                    "type": [
+                                      "object",
+                                      "null"
+                                    ],
                                     "properties": {
-                                      "$ref": {
-                                        "type": "string",
-                                        "format": "uri"
-                                      },
-                                      "decimalDigits": {
-                                        "type": "integer"
-                                      },
-                                      "integerDigits": {
-                                        "type": "integer"
-                                      },
                                       "minValue": {
                                         "type": "number"
                                       },
                                       "maxValue": {
                                         "type": "number"
+                                      },
+                                      "decimalDigits": {
+                                        "type": "integer"
                                       }
-                                    },
-                                    "additionalProperties": false
+                                    }
                                   },
                                   "moneyTypeOptions": {
                                     "type": "object",
@@ -5403,55 +5283,45 @@
                   ]
                 },
                 "textTypeOptions": {
-                  "type": "object",
+                  "type": [
+                    "object",
+                    "null"
+                  ],
                   "properties": {
-                    "$ref": {
-                      "type": "string",
-                      "format": "uri"
-                    },
-                    "isUnicode": {
-                      "type": "boolean"
-                    },
                     "minLength": {
                       "type": "integer"
                     },
                     "maxLength": {
                       "type": "integer"
                     },
-                    "characterCasing": {
+                    "isUnicode": {
+                      "type": "boolean"
+                    },
+                    "casing": {
                       "enum": [
                         "normal",
                         "lower",
                         "upper"
                       ]
-                    },
-                    "isMultiline": {
-                      "type": "boolean"
                     }
-                  },
-                  "additionalProperties": false
+                  }
                 },
                 "numberTypeOptions": {
-                  "type": "object",
+                  "type": [
+                    "object",
+                    "null"
+                  ],
                   "properties": {
-                    "$ref": {
-                      "type": "string",
-                      "format": "uri"
-                    },
-                    "decimalDigits": {
-                      "type": "integer"
-                    },
-                    "integerDigits": {
-                      "type": "integer"
-                    },
                     "minValue": {
                       "type": "number"
                     },
                     "maxValue": {
                       "type": "number"
+                    },
+                    "decimalDigits": {
+                      "type": "integer"
                     }
-                  },
-                  "additionalProperties": false
+                  }
                 },
                 "moneyTypeOptions": {
                   "type": "object",
@@ -5817,55 +5687,45 @@
                             ]
                           },
                           "textTypeOptions": {
-                            "type": "object",
+                            "type": [
+                              "object",
+                              "null"
+                            ],
                             "properties": {
-                              "$ref": {
-                                "type": "string",
-                                "format": "uri"
-                              },
-                              "isUnicode": {
-                                "type": "boolean"
-                              },
                               "minLength": {
                                 "type": "integer"
                               },
                               "maxLength": {
                                 "type": "integer"
                               },
-                              "characterCasing": {
+                              "isUnicode": {
+                                "type": "boolean"
+                              },
+                              "casing": {
                                 "enum": [
                                   "normal",
                                   "lower",
                                   "upper"
                                 ]
-                              },
-                              "isMultiline": {
-                                "type": "boolean"
                               }
-                            },
-                            "additionalProperties": false
+                            }
                           },
                           "numberTypeOptions": {
-                            "type": "object",
+                            "type": [
+                              "object",
+                              "null"
+                            ],
                             "properties": {
-                              "$ref": {
-                                "type": "string",
-                                "format": "uri"
-                              },
-                              "decimalDigits": {
-                                "type": "integer"
-                              },
-                              "integerDigits": {
-                                "type": "integer"
-                              },
                               "minValue": {
                                 "type": "number"
                               },
                               "maxValue": {
                                 "type": "number"
+                              },
+                              "decimalDigits": {
+                                "type": "integer"
                               }
-                            },
-                            "additionalProperties": false
+                            }
                           },
                           "moneyTypeOptions": {
                             "type": "object",
@@ -6234,55 +6094,45 @@
                       ]
                     },
                     "textTypeOptions": {
-                      "type": "object",
+                      "type": [
+                        "object",
+                        "null"
+                      ],
                       "properties": {
-                        "$ref": {
-                          "type": "string",
-                          "format": "uri"
-                        },
-                        "isUnicode": {
-                          "type": "boolean"
-                        },
                         "minLength": {
                           "type": "integer"
                         },
                         "maxLength": {
                           "type": "integer"
                         },
-                        "characterCasing": {
+                        "isUnicode": {
+                          "type": "boolean"
+                        },
+                        "casing": {
                           "enum": [
                             "normal",
                             "lower",
                             "upper"
                           ]
-                        },
-                        "isMultiline": {
-                          "type": "boolean"
                         }
-                      },
-                      "additionalProperties": false
+                      }
                     },
                     "numberTypeOptions": {
-                      "type": "object",
+                      "type": [
+                        "object",
+                        "null"
+                      ],
                       "properties": {
-                        "$ref": {
-                          "type": "string",
-                          "format": "uri"
-                        },
-                        "decimalDigits": {
-                          "type": "integer"
-                        },
-                        "integerDigits": {
-                          "type": "integer"
-                        },
                         "minValue": {
                           "type": "number"
                         },
                         "maxValue": {
                           "type": "number"
+                        },
+                        "decimalDigits": {
+                          "type": "integer"
                         }
-                      },
-                      "additionalProperties": false
+                      }
                     },
                     "moneyTypeOptions": {
                       "type": "object",
@@ -6648,55 +6498,45 @@
                                 ]
                               },
                               "textTypeOptions": {
-                                "type": "object",
+                                "type": [
+                                  "object",
+                                  "null"
+                                ],
                                 "properties": {
-                                  "$ref": {
-                                    "type": "string",
-                                    "format": "uri"
-                                  },
-                                  "isUnicode": {
-                                    "type": "boolean"
-                                  },
                                   "minLength": {
                                     "type": "integer"
                                   },
                                   "maxLength": {
                                     "type": "integer"
                                   },
-                                  "characterCasing": {
+                                  "isUnicode": {
+                                    "type": "boolean"
+                                  },
+                                  "casing": {
                                     "enum": [
                                       "normal",
                                       "lower",
                                       "upper"
                                     ]
-                                  },
-                                  "isMultiline": {
-                                    "type": "boolean"
                                   }
-                                },
-                                "additionalProperties": false
+                                }
                               },
                               "numberTypeOptions": {
-                                "type": "object",
+                                "type": [
+                                  "object",
+                                  "null"
+                                ],
                                 "properties": {
-                                  "$ref": {
-                                    "type": "string",
-                                    "format": "uri"
-                                  },
-                                  "decimalDigits": {
-                                    "type": "integer"
-                                  },
-                                  "integerDigits": {
-                                    "type": "integer"
-                                  },
                                   "minValue": {
                                     "type": "number"
                                   },
                                   "maxValue": {
                                     "type": "number"
+                                  },
+                                  "decimalDigits": {
+                                    "type": "integer"
                                   }
-                                },
-                                "additionalProperties": false
+                                }
                               },
                               "moneyTypeOptions": {
                                 "type": "object",
@@ -7074,55 +6914,45 @@
                       ]
                     },
                     "textTypeOptions": {
-                      "type": "object",
+                      "type": [
+                        "object",
+                        "null"
+                      ],
                       "properties": {
-                        "$ref": {
-                          "type": "string",
-                          "format": "uri"
-                        },
-                        "isUnicode": {
-                          "type": "boolean"
-                        },
                         "minLength": {
                           "type": "integer"
                         },
                         "maxLength": {
                           "type": "integer"
                         },
-                        "characterCasing": {
+                        "isUnicode": {
+                          "type": "boolean"
+                        },
+                        "casing": {
                           "enum": [
                             "normal",
                             "lower",
                             "upper"
                           ]
-                        },
-                        "isMultiline": {
-                          "type": "boolean"
                         }
-                      },
-                      "additionalProperties": false
+                      }
                     },
                     "numberTypeOptions": {
-                      "type": "object",
+                      "type": [
+                        "object",
+                        "null"
+                      ],
                       "properties": {
-                        "$ref": {
-                          "type": "string",
-                          "format": "uri"
-                        },
-                        "decimalDigits": {
-                          "type": "integer"
-                        },
-                        "integerDigits": {
-                          "type": "integer"
-                        },
                         "minValue": {
                           "type": "number"
                         },
                         "maxValue": {
                           "type": "number"
+                        },
+                        "decimalDigits": {
+                          "type": "integer"
                         }
-                      },
-                      "additionalProperties": false
+                      }
                     },
                     "moneyTypeOptions": {
                       "type": "object",
@@ -7488,55 +7318,45 @@
                                 ]
                               },
                               "textTypeOptions": {
-                                "type": "object",
+                                "type": [
+                                  "object",
+                                  "null"
+                                ],
                                 "properties": {
-                                  "$ref": {
-                                    "type": "string",
-                                    "format": "uri"
-                                  },
-                                  "isUnicode": {
-                                    "type": "boolean"
-                                  },
                                   "minLength": {
                                     "type": "integer"
                                   },
                                   "maxLength": {
                                     "type": "integer"
                                   },
-                                  "characterCasing": {
+                                  "isUnicode": {
+                                    "type": "boolean"
+                                  },
+                                  "casing": {
                                     "enum": [
                                       "normal",
                                       "lower",
                                       "upper"
                                     ]
-                                  },
-                                  "isMultiline": {
-                                    "type": "boolean"
                                   }
-                                },
-                                "additionalProperties": false
+                                }
                               },
                               "numberTypeOptions": {
-                                "type": "object",
+                                "type": [
+                                  "object",
+                                  "null"
+                                ],
                                 "properties": {
-                                  "$ref": {
-                                    "type": "string",
-                                    "format": "uri"
-                                  },
-                                  "decimalDigits": {
-                                    "type": "integer"
-                                  },
-                                  "integerDigits": {
-                                    "type": "integer"
-                                  },
                                   "minValue": {
                                     "type": "number"
                                   },
                                   "maxValue": {
                                     "type": "number"
+                                  },
+                                  "decimalDigits": {
+                                    "type": "integer"
                                   }
-                                },
-                                "additionalProperties": false
+                                }
                               },
                               "moneyTypeOptions": {
                                 "type": "object",
@@ -7935,55 +7755,45 @@
                   ]
                 },
                 "textTypeOptions": {
-                  "type": "object",
+                  "type": [
+                    "object",
+                    "null"
+                  ],
                   "properties": {
-                    "$ref": {
-                      "type": "string",
-                      "format": "uri"
-                    },
-                    "isUnicode": {
-                      "type": "boolean"
-                    },
                     "minLength": {
                       "type": "integer"
                     },
                     "maxLength": {
                       "type": "integer"
                     },
-                    "characterCasing": {
+                    "isUnicode": {
+                      "type": "boolean"
+                    },
+                    "casing": {
                       "enum": [
                         "normal",
                         "lower",
                         "upper"
                       ]
-                    },
-                    "isMultiline": {
-                      "type": "boolean"
                     }
-                  },
-                  "additionalProperties": false
+                  }
                 },
                 "numberTypeOptions": {
-                  "type": "object",
+                  "type": [
+                    "object",
+                    "null"
+                  ],
                   "properties": {
-                    "$ref": {
-                      "type": "string",
-                      "format": "uri"
-                    },
-                    "decimalDigits": {
-                      "type": "integer"
-                    },
-                    "integerDigits": {
-                      "type": "integer"
-                    },
                     "minValue": {
                       "type": "number"
                     },
                     "maxValue": {
                       "type": "number"
+                    },
+                    "decimalDigits": {
+                      "type": "integer"
                     }
-                  },
-                  "additionalProperties": false
+                  }
                 },
                 "moneyTypeOptions": {
                   "type": "object",
@@ -8355,55 +8165,45 @@
                   ]
                 },
                 "textTypeOptions": {
-                  "type": "object",
+                  "type": [
+                    "object",
+                    "null"
+                  ],
                   "properties": {
-                    "$ref": {
-                      "type": "string",
-                      "format": "uri"
-                    },
-                    "isUnicode": {
-                      "type": "boolean"
-                    },
                     "minLength": {
                       "type": "integer"
                     },
                     "maxLength": {
                       "type": "integer"
                     },
-                    "characterCasing": {
+                    "isUnicode": {
+                      "type": "boolean"
+                    },
+                    "casing": {
                       "enum": [
                         "normal",
                         "lower",
                         "upper"
                       ]
-                    },
-                    "isMultiline": {
-                      "type": "boolean"
                     }
-                  },
-                  "additionalProperties": false
+                  }
                 },
                 "numberTypeOptions": {
-                  "type": "object",
+                  "type": [
+                    "object",
+                    "null"
+                  ],
                   "properties": {
-                    "$ref": {
-                      "type": "string",
-                      "format": "uri"
-                    },
-                    "decimalDigits": {
-                      "type": "integer"
-                    },
-                    "integerDigits": {
-                      "type": "integer"
-                    },
                     "minValue": {
                       "type": "number"
                     },
                     "maxValue": {
                       "type": "number"
+                    },
+                    "decimalDigits": {
+                      "type": "integer"
                     }
-                  },
-                  "additionalProperties": false
+                  }
                 },
                 "moneyTypeOptions": {
                   "type": "object",
@@ -8773,55 +8573,45 @@
                   ]
                 },
                 "textTypeOptions": {
-                  "type": "object",
+                  "type": [
+                    "object",
+                    "null"
+                  ],
                   "properties": {
-                    "$ref": {
-                      "type": "string",
-                      "format": "uri"
-                    },
-                    "isUnicode": {
-                      "type": "boolean"
-                    },
                     "minLength": {
                       "type": "integer"
                     },
                     "maxLength": {
                       "type": "integer"
                     },
-                    "characterCasing": {
+                    "isUnicode": {
+                      "type": "boolean"
+                    },
+                    "casing": {
                       "enum": [
                         "normal",
                         "lower",
                         "upper"
                       ]
-                    },
-                    "isMultiline": {
-                      "type": "boolean"
                     }
-                  },
-                  "additionalProperties": false
+                  }
                 },
                 "numberTypeOptions": {
-                  "type": "object",
+                  "type": [
+                    "object",
+                    "null"
+                  ],
                   "properties": {
-                    "$ref": {
-                      "type": "string",
-                      "format": "uri"
-                    },
-                    "decimalDigits": {
-                      "type": "integer"
-                    },
-                    "integerDigits": {
-                      "type": "integer"
-                    },
                     "minValue": {
                       "type": "number"
                     },
                     "maxValue": {
                       "type": "number"
+                    },
+                    "decimalDigits": {
+                      "type": "integer"
                     }
-                  },
-                  "additionalProperties": false
+                  }
                 },
                 "moneyTypeOptions": {
                   "type": "object",

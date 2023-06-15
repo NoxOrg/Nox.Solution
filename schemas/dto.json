@@ -46,6 +46,8 @@
               "currencyCode",
               "currencyNumber",
               "date",
+              "month",
+              "year",
               "dateTime",
               "dateTimeDuration",
               "dateTimeRange",

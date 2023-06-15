@@ -4,7 +4,7 @@ using Nox.Solution.Extensions;
 
 namespace Nox.Solution.Validation
 {
-    public class DataConnectionValidator: AbstractValidator<DataConnection>
+    internal class DataConnectionValidator: AbstractValidator<DataConnection>
     {
         public DataConnectionValidator(IEnumerable<ServerBase>? servers)
         {

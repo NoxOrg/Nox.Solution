@@ -4,7 +4,7 @@ using Nox.Solution.Extensions;
 
 namespace Nox.Solution.Validation
 {
-    public class EmailServerValidator: AbstractValidator<EmailServer>
+    internal class EmailServerValidator: AbstractValidator<EmailServer>
     {
         public EmailServerValidator(IEnumerable<ServerBase>? servers)
         {

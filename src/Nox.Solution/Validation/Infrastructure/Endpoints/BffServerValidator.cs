@@ -6,7 +6,7 @@ namespace Nox.Solution.Validation;
 
 public class BffServerValidator: AbstractValidator<BffServer>
 {
-    public BffServerValidator(IEnumerable<ServerBase>? servers)
+    internal BffServerValidator(IEnumerable<ServerBase>? servers)
     {
         Include(new ServerBaseValidator("the infrastructure, endpoints, bff server", servers));
         RuleFor(p => p.Provider)

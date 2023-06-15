@@ -2,7 +2,7 @@ using FluentValidation;
 
 namespace Nox.Solution.Validation
 {
-    public class EntityPersistenceValidator: AbstractValidator<EntityPersistence>
+    internal class EntityPersistenceValidator: AbstractValidator<EntityPersistence>
     {
         public EntityPersistenceValidator(string entityName)
         {

@@ -4,7 +4,7 @@ using FluentValidation;
 
 namespace Nox.Solution.Validation
 {
-    public class DomainQueryValidator: AbstractValidator<DomainQuery>
+    internal class DomainQueryValidator: AbstractValidator<DomainQuery>
     {
         private readonly IEnumerable<DomainQuery>? _queries;
 

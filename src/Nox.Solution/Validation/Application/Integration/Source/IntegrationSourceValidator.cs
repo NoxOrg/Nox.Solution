@@ -5,7 +5,7 @@ using FluentValidation;
 
 namespace Nox.Solution.Validation
 {
-    public class IntegrationSourceValidator: AbstractValidator<IntegrationSource?>
+    internal class IntegrationSourceValidator: AbstractValidator<IntegrationSource?>
     {
         private readonly IEnumerable<DataConnection>? _dataConnections;
         

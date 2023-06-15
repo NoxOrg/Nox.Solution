@@ -4,7 +4,7 @@ using FluentValidation;
 
 namespace Nox.Solution.Validation
 {
-    public class DomainCommandValidator: AbstractValidator<DomainCommand>
+    internal class DomainCommandValidator: AbstractValidator<DomainCommand>
     {
         private readonly IEnumerable<DomainCommand>? _commands;
 

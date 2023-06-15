@@ -4,7 +4,7 @@ using Nox.Solution.Extensions;
 
 namespace Nox.Solution.Validation
 {
-    public class SecretsServerValidator: AbstractValidator<SecretsServer>
+    internal class SecretsServerValidator: AbstractValidator<SecretsServer>
     {
         public SecretsServerValidator(IEnumerable<ServerBase>? servers)
         {

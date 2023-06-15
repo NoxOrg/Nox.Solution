@@ -2,7 +2,7 @@ using FluentValidation;
 
 namespace Nox.Solution.Validation
 {
-    public class SolutionValidator: AbstractValidator<Solution>
+    internal class SolutionValidator: AbstractValidator<Solution>
     {
         public SolutionValidator()
         {

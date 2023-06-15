@@ -2,7 +2,7 @@ using FluentValidation;
 
 namespace Nox.Solution.Validation
 {
-    public class SimpleTypeValidator: AbstractValidator<NoxSimpleTypeDefinition>
+    internal class SimpleTypeValidator: AbstractValidator<NoxSimpleTypeDefinition>
     {
         public SimpleTypeValidator(string description, string objectType)
         {

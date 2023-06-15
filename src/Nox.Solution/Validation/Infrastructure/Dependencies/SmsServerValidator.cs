@@ -4,7 +4,7 @@ using Nox.Solution.Extensions;
 
 namespace Nox.Solution.Validation
 {
-    public class SmsServerValidator: AbstractValidator<SmsServer>
+    internal class SmsServerValidator: AbstractValidator<SmsServer>
     {
         public SmsServerValidator(IEnumerable<ServerBase>? servers)
         {

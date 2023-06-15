@@ -3,7 +3,7 @@ using FluentValidation;
 
 namespace Nox.Solution.Validation
 {
-    public class PersistenceValidator: AbstractValidator<Persistence>
+    internal class PersistenceValidator: AbstractValidator<Persistence>
     {
         public PersistenceValidator(IEnumerable<ServerBase>? servers)
         {

@@ -3,7 +3,7 @@ using FluentValidation;
 
 namespace Nox.Solution.Validation
 {
-    public class ApplicationValidator: AbstractValidator<Nox.Solution.Application>
+    internal class ApplicationValidator: AbstractValidator<Nox.Solution.Application>
     {
         public ApplicationValidator(IEnumerable<DataConnection>? dataConnections)
         {

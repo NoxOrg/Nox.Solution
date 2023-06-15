@@ -4,7 +4,7 @@ using FluentValidation;
 
 namespace Nox.Solution.Validation
 {
-    public class ServerBaseValidator: AbstractValidator<ServerBase>
+    internal class ServerBaseValidator: AbstractValidator<ServerBase>
     {
         private readonly IEnumerable<ServerBase>? _servers;
 

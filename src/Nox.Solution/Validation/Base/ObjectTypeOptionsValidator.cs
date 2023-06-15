@@ -2,7 +2,7 @@ using FluentValidation;
 
 namespace Nox.Solution.Validation
 {
-    public class ObjectTypeOptionsValidator: AbstractValidator<ObjectTypeOptions>
+    internal class ObjectTypeOptionsValidator: AbstractValidator<ObjectTypeOptions>
     {
         public ObjectTypeOptionsValidator(string description)
         {

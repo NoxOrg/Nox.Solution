@@ -4,7 +4,7 @@ namespace Nox.Solution.Validation
 {
     public class IntegrationLookupValidator: AbstractValidator<IntegrationLookup>
     {
-        public IntegrationLookupValidator(string integrationName)
+        internal IntegrationLookupValidator(string integrationName)
         {
             RuleFor(p => p.SourceColumn)
                 .NotEmpty()

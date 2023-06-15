@@ -4,7 +4,7 @@ using Nox.Solution.Extensions;
 
 namespace Nox.Solution.Validation
 {
-    public class ImServerValidator: AbstractValidator<ImServer>
+    internal class ImServerValidator: AbstractValidator<ImServer>
     {
         public ImServerValidator(IEnumerable<ServerBase>? servers)
         {

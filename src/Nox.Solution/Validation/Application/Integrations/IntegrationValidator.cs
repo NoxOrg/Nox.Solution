@@ -4,7 +4,7 @@ using FluentValidation;
 
 namespace Nox.Solution.Validation
 {
-    public class IntegrationValidator : AbstractValidator<Integration>
+    internal class IntegrationValidator : AbstractValidator<Integration>
     {
         private readonly IEnumerable<Integration>? _integrations;
 

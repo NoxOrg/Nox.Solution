@@ -4,7 +4,7 @@ using Nox.Solution.Extensions;
 
 namespace Nox.Solution.Validation;
 
-public class ApiServerValidator: AbstractValidator<ApiServer>
+internal class ApiServerValidator: AbstractValidator<ApiServer>
 {
     public ApiServerValidator(IEnumerable<ServerBase>? servers)
     {

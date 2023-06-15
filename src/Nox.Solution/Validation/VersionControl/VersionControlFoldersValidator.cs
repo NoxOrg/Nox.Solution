@@ -2,7 +2,7 @@ using FluentValidation;
 
 namespace Nox.Solution.Validation
 {
-    public class VersionControlFoldersValidator: AbstractValidator<VersionControlFolders>
+    internal class VersionControlFoldersValidator: AbstractValidator<VersionControlFolders>
     {
         public VersionControlFoldersValidator()
         {

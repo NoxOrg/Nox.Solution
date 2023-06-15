@@ -23,7 +23,7 @@ namespace Nox.Solution.Validation
             RuleFor(p => p.Source)
                 .NotEmpty()
                 .WithMessage(m => string.Format(ValidationResources.IntegrationSourceMissing, m.Name))
-                .SetValidator(v => new IntegrationSourceValidator(v.Name, dataConnections, v.Source!.Name));
+                .SetValidator(v => new IntegrationSourceValidator(v.Name, dataConnections, v.Source!.DataConnection));
 
             RuleFor(p => p.Transform!)
                 .SetValidator(v => new IntegrationTransformValidator(v.Name));

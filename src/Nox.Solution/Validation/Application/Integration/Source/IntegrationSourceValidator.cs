@@ -12,10 +12,14 @@ namespace Nox.Solution.Validation
         public IntegrationSourceValidator(string integrationName, IEnumerable<DataConnection>? dataConnections, string dataConnectionName)
         {
             _dataConnections = dataConnections;
-            
+
             RuleFor(source => source!.Name)
                 .NotEmpty()
-                .WithMessage(string.Format(ValidationResources.IntegrationSourceNameEmpty, integrationName))
+                .WithMessage(string.Format(ValidationResources.IntegrationSourceNameEmpty, integrationName));
+
+            RuleFor(source => source!.DataConnection)
+                .NotEmpty()
+                .WithMessage(source => string.Format(ValidationResources.IntegrationSourceDataConnectionEmpty, source!.Name, integrationName))
                 .Must(HaveValidDataConnection)
                 .WithMessage(source => string.Format(ValidationResources.IntegrationSourceDataConnectionMissing, source!.Name, integrationName));
 

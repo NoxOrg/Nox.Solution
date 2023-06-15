@@ -18,7 +18,7 @@ application:
           description: The identity of the country, the Iso Alpha 2 code
           type: text
           textTypeOptions:
-            characterCasing: lower
+            casing: lower
             maxLength: 2
             minLength: 2
 
@@ -26,8 +26,9 @@ application:
     - name: SampleEtl
       description: a Sample Etl
       source:
-        name: CountryJsonData
+        name: CountryJsonSeed
         description: Sources Country data from a json file
+        dataConnection: CountryJsonData
         fileOptions: 
           filename: country-seed-data.json
         schedule:

@@ -4,14 +4,12 @@ namespace Nox.Solution
 {
 
     [AdditionalProperties(false)]
-    public class EtlLookup
+    public class IntegrationMapping
     {
         [Required] 
-        public string? SourceColumn { get; internal set; }
+        public string SourceColumn { get; internal set; } = string.Empty;
 
-        [Required]
-        [AdditionalProperties(false)]
-        public EtlMatch Match { get; internal set; } = new();
+        public EtlMappingConverter? Converter { get; internal set; }
 
         [Required] 
         public string TargetAttribute { get; internal set; } = string.Empty;

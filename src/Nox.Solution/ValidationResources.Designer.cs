@@ -309,117 +309,117 @@ namespace Nox.Solution {
             }
         }
         
-        internal static string EtlNameEmpty {
+        internal static string IntegrationNameEmpty {
             get {
-                return ResourceManager.GetString("EtlNameEmpty", resourceCulture);
+                return ResourceManager.GetString("IntegrationNameEmpty", resourceCulture);
             }
         }
         
-        internal static string EtlNameDuplicate {
+        internal static string IntegrationNameDuplicate {
             get {
-                return ResourceManager.GetString("EtlNameDuplicate", resourceCulture);
+                return ResourceManager.GetString("IntegrationNameDuplicate", resourceCulture);
             }
         }
         
-        internal static string EtlSourceMissing {
+        internal static string IntegrationSourceMissing {
             get {
-                return ResourceManager.GetString("EtlSourceMissing", resourceCulture);
+                return ResourceManager.GetString("IntegrationSourceMissing", resourceCulture);
             }
         }
         
-        internal static string EtlTargetMissing {
+        internal static string IntegrationTargetMissing {
             get {
-                return ResourceManager.GetString("EtlTargetMissing", resourceCulture);
+                return ResourceManager.GetString("IntegrationTargetMissing", resourceCulture);
             }
         }
         
-        internal static string EtlSourceNameEmpty {
+        internal static string IntegrationSourceNameEmpty {
             get {
-                return ResourceManager.GetString("EtlSourceNameEmpty", resourceCulture);
+                return ResourceManager.GetString("IntegrationSourceNameEmpty", resourceCulture);
             }
         }
         
-        internal static string EtlSourceDataConnectionEmpty {
+        internal static string IntegrationSourceDataConnectionEmpty {
             get {
-                return ResourceManager.GetString("EtlSourceDataConnectionEmpty", resourceCulture);
+                return ResourceManager.GetString("IntegrationSourceDataConnectionEmpty", resourceCulture);
             }
         }
         
-        internal static string EtlScheduleStartEmpty {
+        internal static string IntegrationScheduleStartEmpty {
             get {
-                return ResourceManager.GetString("EtlScheduleStartEmpty", resourceCulture);
+                return ResourceManager.GetString("IntegrationScheduleStartEmpty", resourceCulture);
             }
         }
         
-        internal static string EtlSourceDataConnectionMissing {
+        internal static string IntegrationSourceDataConnectionMissing {
             get {
-                return ResourceManager.GetString("EtlSourceDataConnectionMissing", resourceCulture);
+                return ResourceManager.GetString("IntegrationSourceDataConnectionMissing", resourceCulture);
             }
         }
         
-        internal static string EtlTargetNameEmpty {
+        internal static string IntegrationTargetNameEmpty {
             get {
-                return ResourceManager.GetString("EtlTargetNameEmpty", resourceCulture);
+                return ResourceManager.GetString("IntegrationTargetNameEmpty", resourceCulture);
             }
         }
         
-        internal static string EtlTargetTypeEmpty {
+        internal static string IntegrationTargetTypeEmpty {
             get {
-                return ResourceManager.GetString("EtlTargetTypeEmpty", resourceCulture);
+                return ResourceManager.GetString("IntegrationTargetTypeEmpty", resourceCulture);
             }
         }
         
-        internal static string EtlTargetDataConnectionMissing {
+        internal static string IntegrationTargetDataConnectionMissing {
             get {
-                return ResourceManager.GetString("EtlTargetDataConnectionMissing", resourceCulture);
+                return ResourceManager.GetString("IntegrationTargetDataConnectionMissing", resourceCulture);
             }
         }
         
-        internal static string EtlMappingSourceColumnMissing {
+        internal static string IntegrationMappingSourceColumnMissing {
             get {
-                return ResourceManager.GetString("EtlMappingSourceColumnMissing", resourceCulture);
+                return ResourceManager.GetString("IntegrationMappingSourceColumnMissing", resourceCulture);
             }
         }
         
-        internal static string EtlMappingTargetAttributeMissing {
+        internal static string IntegrationMappingTargetAttributeMissing {
             get {
-                return ResourceManager.GetString("EtlMappingTargetAttributeMissing", resourceCulture);
+                return ResourceManager.GetString("IntegrationMappingTargetAttributeMissing", resourceCulture);
             }
         }
         
-        internal static string EtlMatchTableEmpty {
+        internal static string IntegrationMatchTableEmpty {
             get {
-                return ResourceManager.GetString("EtlMatchTableEmpty", resourceCulture);
+                return ResourceManager.GetString("IntegrationMatchTableEmpty", resourceCulture);
             }
         }
         
-        internal static string EtlMatchLookupColumnEmpty {
+        internal static string IntegrationMatchLookupColumnEmpty {
             get {
-                return ResourceManager.GetString("EtlMatchLookupColumnEmpty", resourceCulture);
+                return ResourceManager.GetString("IntegrationMatchLookupColumnEmpty", resourceCulture);
             }
         }
         
-        internal static string EtlMatchReturnColumnEmpty {
+        internal static string IntegrationMatchReturnColumnEmpty {
             get {
-                return ResourceManager.GetString("EtlMatchReturnColumnEmpty", resourceCulture);
+                return ResourceManager.GetString("IntegrationMatchReturnColumnEmpty", resourceCulture);
             }
         }
         
-        internal static string EtlLookupSourceColumnEmpty {
+        internal static string IntegrationLookupSourceColumnEmpty {
             get {
-                return ResourceManager.GetString("EtlLookupSourceColumnEmpty", resourceCulture);
+                return ResourceManager.GetString("IntegrationLookupSourceColumnEmpty", resourceCulture);
             }
         }
         
-        internal static string EtlLookupMatchEmpty {
+        internal static string IntegrationLookupMatchEmpty {
             get {
-                return ResourceManager.GetString("EtlLookupMatchEmpty", resourceCulture);
+                return ResourceManager.GetString("IntegrationLookupMatchEmpty", resourceCulture);
             }
         }
         
-        internal static string EtlLookupTargetAttributeEmpty {
+        internal static string IntegrationLookupTargetAttributeEmpty {
             get {
-                return ResourceManager.GetString("EtlLookupTargetAttributeEmpty", resourceCulture);
+                return ResourceManager.GetString("IntegrationLookupTargetAttributeEmpty", resourceCulture);
             }
         }
         
@@ -564,6 +564,78 @@ namespace Nox.Solution {
         internal static string BffServerProviderEmpty {
             get {
                 return ResourceManager.GetString("BffServerProviderEmpty", resourceCulture);
+            }
+        }
+        
+        internal static string IntegrationSourceDatabaseOptionsEmpty {
+            get {
+                return ResourceManager.GetString("IntegrationSourceDatabaseOptionsEmpty", resourceCulture);
+            }
+        }
+        
+        internal static string IntegrationSourceDatabaseOptionsQueryEmpty {
+            get {
+                return ResourceManager.GetString("IntegrationSourceDatabaseOptionsQueryEmpty", resourceCulture);
+            }
+        }
+        
+        internal static string IntegrationSourceDatabaseOptionsMinExptectedRecordsInvalid {
+            get {
+                return ResourceManager.GetString("IntegrationSourceDatabaseOptionsMinExptectedRecordsInvalid", resourceCulture);
+            }
+        }
+        
+        internal static string IntegrationSourceFileOptionsEmpty {
+            get {
+                return ResourceManager.GetString("IntegrationSourceFileOptionsEmpty", resourceCulture);
+            }
+        }
+        
+        internal static string IntegrationSourceMsgQueueOptionsEmpty {
+            get {
+                return ResourceManager.GetString("IntegrationSourceMsgQueueOptionsEmpty", resourceCulture);
+            }
+        }
+        
+        internal static string IntegrationSourceHttpOptionsEmpty {
+            get {
+                return ResourceManager.GetString("IntegrationSourceHttpOptionsEmpty", resourceCulture);
+            }
+        }
+        
+        internal static string IntegrationSourceFileOptionsFilenameEmpty {
+            get {
+                return ResourceManager.GetString("IntegrationSourceFileOptionsFilenameEmpty", resourceCulture);
+            }
+        }
+        
+        internal static string IntegrationSourceFileOptionsMinExptectedRecordsInvalid {
+            get {
+                return ResourceManager.GetString("IntegrationSourceFileOptionsMinExptectedRecordsInvalid", resourceCulture);
+            }
+        }
+        
+        internal static string IntegrationSourceHttpOptionsRouteEmpty {
+            get {
+                return ResourceManager.GetString("IntegrationSourceHttpOptionsRouteEmpty", resourceCulture);
+            }
+        }
+        
+        internal static string IntegrationSourceHttpOptionsFormatEmpty {
+            get {
+                return ResourceManager.GetString("IntegrationSourceHttpOptionsFormatEmpty", resourceCulture);
+            }
+        }
+        
+        internal static string IntegrationSourceHttpOptionsVerbEmpty {
+            get {
+                return ResourceManager.GetString("IntegrationSourceHttpOptionsVerbEmpty", resourceCulture);
+            }
+        }
+        
+        internal static string IntegrationSourceMsgQueueOptionsSourceEmpty {
+            get {
+                return ResourceManager.GetString("IntegrationSourceMsgQueueOptionsSourceEmpty", resourceCulture);
             }
         }
     }

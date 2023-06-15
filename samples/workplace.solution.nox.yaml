@@ -332,9 +332,8 @@ application:
     - name: SampleEtl
       description: a Sample Etl
       source:
-        name: SampleEtlDataSource
+        name: CountryJsonData
         description: Sources Country data from a json file
-        dataConnection: CountryJsonData
         schedule:
           start: every day at 2am
           retry:

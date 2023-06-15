@@ -2,7 +2,7 @@ using FluentValidation;
 
 namespace Nox.Solution.Validation
 {
-    public class EtlScheduleValidator: AbstractValidator<EtlSchedule>
+    public class EtlScheduleValidator: AbstractValidator<IntegrationSchedule>
     {
         public EtlScheduleValidator(string sourceName, string etlName)
         {

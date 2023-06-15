@@ -18,10 +18,10 @@ namespace Nox.Solution
         [Description("A phrase describing the high-level objective of the ETL. A reference to data source and format is especially useful.")]
         public string? Description { get; set; }
 
-        public EtlSource? Source { get; internal set; }
+        public IntegrationSource? Source { get; internal set; }
 
-        public EtlTransform? Transform { get; internal set; }
+        public IntegrationTransform? Transform { get; internal set; }
 
-        public EtlTarget? Target { get; internal set; }
+        public IntegrationTarget? Target { get; internal set; }
     }
 }

@@ -2,7 +2,7 @@ using FluentValidation;
 
 namespace Nox.Solution.Validation
 {
-    public class EtlTransformValidator: AbstractValidator<EtlTransform>
+    public class EtlTransformValidator: AbstractValidator<IntegrationTransform>
     {
         public EtlTransformValidator(string etlName)
         {

@@ -4,7 +4,7 @@ using FluentValidation;
 
 namespace Nox.Solution.Validation
 {
-    public class EtlSourceValidator: AbstractValidator<EtlSource>
+    public class EtlSourceValidator: AbstractValidator<IntegrationSource>
     {
         private readonly IEnumerable<DataConnection>? _dataConnections;
         

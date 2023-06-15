@@ -5,7 +5,7 @@ using Nox.Solution.Extensions;
 
 namespace Nox.Solution.Validation
 {
-    public class EtlTargetValidator: AbstractValidator<EtlTarget>
+    public class EtlTargetValidator: AbstractValidator<IntegrationTarget>
     {
         private readonly IEnumerable<DataConnection>? _dataConnections;
 

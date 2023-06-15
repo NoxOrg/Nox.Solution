@@ -5,7 +5,7 @@ namespace Nox.Solution
     [Title("Definition namespace for attributes describing the source component of an ETL integration.")]
     [Description("This section details ETL source attributes like name, description, scheduling and watermark specifications.")]
     [AdditionalProperties(false)]
-    public class EtlSource
+    public class IntegrationSource
     {
         [Required]
         [Title("The name of the ETL source. Contains no spaces.")]
@@ -17,7 +17,7 @@ namespace Nox.Solution
         [Description("A phrase describing the source component of the ETL. Think about describing the what/where of this data source.")]
         public string? Description { get; internal set; }
 
-        public EtlSchedule? Schedule { get; internal set; }
+        public IntegrationSchedule? Schedule { get; internal set; }
 
         [Required]
         [Title("The name of the ETL source data connection. Contains no spaces.")]
@@ -26,6 +26,6 @@ namespace Nox.Solution
         [AdditionalProperties(false)]
         public string DataConnection { get; internal set; } = string.Empty;
 
-        public DatabaseWatermark? Watermark { get; internal set; }
+        public IntegrationSourceDatabaseWatermark? Watermark { get; internal set; }
     }
 }

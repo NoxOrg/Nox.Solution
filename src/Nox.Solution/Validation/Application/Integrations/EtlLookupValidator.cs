@@ -2,7 +2,7 @@ using FluentValidation;
 
 namespace Nox.Solution.Validation
 {
-    public class EtlLookupValidator: AbstractValidator<EtlLookup>
+    public class EtlLookupValidator: AbstractValidator<IntegrationLookup>
     {
         public EtlLookupValidator(string etlName)
         {

@@ -5,7 +5,7 @@ namespace Nox.Solution
     [Title("Definition namespace for attributes describing the target component of an ETL integration.")]
     [Description("This section details ETL target attributes like name, description and type among other.")]
     [AdditionalProperties(false)]
-    public class EtlTarget
+    public class IntegrationTarget
     {
         [Required]
         [Title("The name of the ETL target. Contains no spaces.")]

@@ -5,7 +5,7 @@ namespace Nox.Solution
     [Title("Mapping details of the ETL transform component.")]
     [Description("Specifies how columns are mapped between source and target in an ETL data integration.")]
     [AdditionalProperties(false)]
-    public class EtlMapping
+    public class IntegrationMapping
     {
         [Required]
         [Title("Column name to be mapped at the ETL data source.")]

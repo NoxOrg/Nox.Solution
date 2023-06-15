@@ -5,7 +5,7 @@ namespace Nox.Solution
     [Title("Details pertaining to a lookup performed during the ETL transform component.")]
     [Description("Specifies information related to a data lookup. Includes the source column and target attribute, as well as match directives like lookup table, column and return column name.")]
     [AdditionalProperties(false)]
-    public class EtlLookup
+    public class IntegrationLookup
     {
         [Required]
         [Title("Source column used as key for lookup.")]
@@ -17,7 +17,7 @@ namespace Nox.Solution
         [Title("Attributes related to source table used for the lookup.")]
         [Description("Specify information about the source lookup table. This includes table name, lookup column and return column.")]
         [AdditionalProperties(false)]
-        public EtlMatch Match { get; internal set; } = new();
+        public IntegrationMatch Match { get; internal set; } = new();
 
         [Required]
         [Title("Target attribute for lookup result.")]

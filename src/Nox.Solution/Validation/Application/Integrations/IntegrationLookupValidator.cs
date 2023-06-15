@@ -2,9 +2,9 @@ using FluentValidation;
 
 namespace Nox.Solution.Validation
 {
-    public class EtlLookupValidator: AbstractValidator<EtlLookup>
+    public class IntegrationLookupValidator: AbstractValidator<IntegrationLookup>
     {
-        public EtlLookupValidator(string etlName)
+        public IntegrationLookupValidator(string etlName)
         {
             RuleFor(p => p.SourceColumn)
                 .NotEmpty()
@@ -15,7 +15,7 @@ namespace Nox.Solution.Validation
                 .WithMessage(string.Format(ValidationResources.EtlLookupMatchEmpty, etlName));
 
             RuleFor(p => p.Match!)
-                .SetValidator(new EtlMatchValidator(etlName));
+                .SetValidator(new IntegrationMatchValidator(etlName));
             
             RuleFor(p => p.TargetAttribute)
                 .NotEmpty()

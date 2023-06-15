@@ -6,7 +6,7 @@ namespace Nox.Solution
     [Title("The definition namespace for an application ETL data integration.")]
     [Description("Details pertaining to a solution data integration. Includes common ETL attributes like source, transform and target.")]
     [AdditionalProperties(false)]
-    public class Integrations
+    public class Integration
     {
         [Required]
         [Title("The name of the ETL integration. Contains no spaces.")]
@@ -18,10 +18,10 @@ namespace Nox.Solution
         [Description("A phrase describing the high-level objective of the ETL. A reference to data source and format is especially useful.")]
         public string? Description { get; set; }
 
-        public EtlSource? Source { get; internal set; }
+        public IntegrationSource? Source { get; internal set; }
 
-        public EtlTransform? Transform { get; internal set; }
+        public IntegrationTransform? Transform { get; internal set; }
 
-        public EtlTarget? Target { get; internal set; }
+        public IntegrationTarget? Target { get; internal set; }
     }
 }

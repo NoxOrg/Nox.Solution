@@ -2,9 +2,9 @@ using FluentValidation;
 
 namespace Nox.Solution.Validation
 {
-    public class EtlMappingValidator: AbstractValidator<EtlMapping>
+    public class IntegrationMappingValidator: AbstractValidator<IntegrationMapping>
     {
-        public EtlMappingValidator(string etlName)
+        public IntegrationMappingValidator(string etlName)
         {
             RuleFor(p => p.SourceColumn)
                 .NotEmpty()

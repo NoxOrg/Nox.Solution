@@ -5,11 +5,11 @@ using Nox.Solution.Extensions;
 
 namespace Nox.Solution.Validation
 {
-    public class EtlTargetValidator: AbstractValidator<EtlTarget>
+    public class IntegrationTargetValidator: AbstractValidator<IntegrationTarget>
     {
         private readonly IEnumerable<DataConnection>? _dataConnections;
 
-        public EtlTargetValidator(string etlName, IEnumerable<DataConnection>? dataConnections)
+        public IntegrationTargetValidator(string etlName, IEnumerable<DataConnection>? dataConnections)
         {
             _dataConnections = dataConnections;
             

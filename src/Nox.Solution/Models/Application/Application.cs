@@ -11,7 +11,7 @@ namespace Nox.Solution
         [Title("The definition namespace for application ETL data integrations.")]
         [Description("One or more solution data integrations with common ETL attributes including source, transform and target.")]
         [AdditionalProperties(false)]
-        public IReadOnlyList<Integrations>? Integrations { get; internal set; }
+        public IReadOnlyList<Integration>? Integrations { get; internal set; }
 
         [Title("The definition namespace for application DTOs within a Nox solution.")]
         [Description("One or more DTOs (Data Transfer Objects used to transfer data between processes in a Nox solution.")]

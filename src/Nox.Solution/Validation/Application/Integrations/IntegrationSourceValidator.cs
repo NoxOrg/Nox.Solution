@@ -4,11 +4,11 @@ using FluentValidation;
 
 namespace Nox.Solution.Validation
 {
-    public class EtlSourceValidator: AbstractValidator<EtlSource>
+    public class IntegrationSourceValidator: AbstractValidator<IntegrationSource>
     {
         private readonly IEnumerable<DataConnection>? _dataConnections;
         
-        public EtlSourceValidator(string etlName, IEnumerable<DataConnection>? dataConnections)
+        public IntegrationSourceValidator(string etlName, IEnumerable<DataConnection>? dataConnections)
         {
             _dataConnections = dataConnections;
             
@@ -26,7 +26,7 @@ namespace Nox.Solution.Validation
                 
 
             RuleFor(p => p.Schedule!)
-                .SetValidator(v => new EtlScheduleValidator(v.Name, etlName));
+                .SetValidator(v => new IntegrationScheduleValidator(v.Name, etlName));
         }
         
         private bool HaveValidDataConnection(string dataConnectionName)

@@ -2,7 +2,7 @@ using Json.Schema.Generation;
 
 namespace Nox.Solution
 {
-    public class EtlMatch
+    public class IntegrationMatch
     {
         [Required]
         [Title("Name of the lookup table.")]

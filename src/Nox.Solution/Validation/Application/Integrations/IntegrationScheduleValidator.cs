@@ -2,9 +2,9 @@ using FluentValidation;
 
 namespace Nox.Solution.Validation
 {
-    public class EtlScheduleValidator: AbstractValidator<EtlSchedule>
+    public class IntegrationScheduleValidator: AbstractValidator<IntegrationSchedule>
     {
-        public EtlScheduleValidator(string sourceName, string etlName)
+        public IntegrationScheduleValidator(string sourceName, string etlName)
         {
             RuleFor(p => p.Start)
                 .NotEmpty()

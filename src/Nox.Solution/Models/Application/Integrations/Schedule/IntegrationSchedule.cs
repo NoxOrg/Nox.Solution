@@ -5,7 +5,7 @@ namespace Nox.Solution
     [Title("Scheduling of the ETL source.")]
     [Description("Specify when and how frequently the ETL source is checked for updates, as well as the retry policy in case of failure. Includes a switch to indicate whether update is triggered at application startup.")]
     [AdditionalProperties(false)]
-    public class EtlSchedule
+    public class IntegrationSchedule
     {
         [Required]
         [Title("Start time to check the ETL source for updates.")]
@@ -16,7 +16,7 @@ namespace Nox.Solution
         [Title("Retry policy applying to the ETL source updates.")]
         [Description("This outlines the retry configuration in the case of ETL engine being unable to connect to the ETL data source. Includes limit and delay before retry.")]
         [AdditionalProperties(false)]
-        public ScheduleRetryPolicy? Retry { get; internal set; }
+        public IntegrationScheduleRetryPolicy? Retry { get; internal set; }
 
         [Title("Check the ETL source for updates at appliation startup.")]
         [Description("Specify here whether the ETL source is checked for updates when the application starts.")]

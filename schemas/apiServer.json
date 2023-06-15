@@ -53,5 +53,7 @@
     "serverUri",
     "provider"
   ],
+  "title": "Details pertaining to the API server settings in a Nox solution.",
+  "description": "Defines settings pertinent to an API server here. These include name, serverUri, Port, connection credentials and provider (OData, gRPC, GraphQL and AttributeRouting.",
   "additionalProperties": false
 }

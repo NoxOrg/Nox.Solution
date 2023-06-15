@@ -214,24 +214,24 @@ public class SolutionDeserializationTests
         Assert.Equal("CountryId", noxConfig!.Application.Integrations[0].Source!.Watermark!.SequentialKeyColumn);
         
         Assert.NotNull(noxConfig!.Application.Integrations[0].Transform);
-        Assert.NotNull(noxConfig!.Application.Integrations[0].Transform!.Map);
-        Assert.Equal(3, noxConfig!.Application.Integrations[0].Transform!.Map!.Count);
-        Assert.Equal("IsoAlpha2Code", noxConfig!.Application.Integrations[0].Transform!.Map![0].SourceColumn);
-        Assert.Equal("Id", noxConfig!.Application.Integrations[0].Transform!.Map![0].TargetAttribute);
-        Assert.Equal(EtlMappingConverter.UpperCase, noxConfig!.Application.Integrations[0].Transform!.Map![0].Converter);
-        Assert.Equal("CountryName", noxConfig!.Application.Integrations[0].Transform!.Map![1].SourceColumn);
-        Assert.Equal("Name", noxConfig!.Application.Integrations[0].Transform!.Map![1].TargetAttribute);
-        Assert.Equal("CountryFullName", noxConfig!.Application.Integrations[0].Transform!.Map![2].SourceColumn);
-        Assert.Equal("FormalName", noxConfig!.Application.Integrations[0].Transform!.Map![2].TargetAttribute);
+        Assert.NotNull(noxConfig!.Application.Integrations[0].Transform!.Mappings);
+        Assert.Equal(3, noxConfig!.Application.Integrations[0].Transform!.Mappings!.Count);
+        Assert.Equal("IsoAlpha2Code", noxConfig!.Application.Integrations[0].Transform!.Mappings![0].SourceColumn);
+        Assert.Equal("Id", noxConfig!.Application.Integrations[0].Transform!.Mappings![0].TargetAttribute);
+        Assert.Equal(EtlMappingConverter.UpperCase, noxConfig!.Application.Integrations[0].Transform!.Mappings![0].Converter);
+        Assert.Equal("CountryName", noxConfig!.Application.Integrations[0].Transform!.Mappings![1].SourceColumn);
+        Assert.Equal("Name", noxConfig!.Application.Integrations[0].Transform!.Mappings![1].TargetAttribute);
+        Assert.Equal("CountryFullName", noxConfig!.Application.Integrations[0].Transform!.Mappings![2].SourceColumn);
+        Assert.Equal("FormalName", noxConfig!.Application.Integrations[0].Transform!.Mappings![2].TargetAttribute);
         
-        Assert.NotNull(noxConfig!.Application.Integrations[0].Transform!.Lookup);
-        Assert.Single(noxConfig!.Application.Integrations[0].Transform!.Lookup!);
-        Assert.Equal("RegionId", noxConfig!.Application.Integrations[0].Transform!.Lookup![0].SourceColumn);
-        Assert.NotNull(noxConfig!.Application.Integrations[0].Transform!.Lookup![0].Match);
-        Assert.Equal("GeoRegions", noxConfig!.Application.Integrations[0].Transform!.Lookup![0].Match!.Table);
-        Assert.Equal("Id", noxConfig!.Application.Integrations[0].Transform!.Lookup![0].Match!.LookupColumn);
-        Assert.Equal("Name", noxConfig!.Application.Integrations[0].Transform!.Lookup![0].Match!.ReturnColumn);
-        Assert.Equal("GeoRegion", noxConfig!.Application.Integrations[0].Transform!.Lookup![0].TargetAttribute);
+        Assert.NotNull(noxConfig!.Application.Integrations[0].Transform!.Lookups);
+        Assert.Single(noxConfig!.Application.Integrations[0].Transform!.Lookups!);
+        Assert.Equal("RegionId", noxConfig!.Application.Integrations[0].Transform!.Lookups![0].SourceColumn);
+        Assert.NotNull(noxConfig!.Application.Integrations[0].Transform!.Lookups![0].Match);
+        Assert.Equal("GeoRegions", noxConfig!.Application.Integrations[0].Transform!.Lookups![0].Match!.Table);
+        Assert.Equal("Id", noxConfig!.Application.Integrations[0].Transform!.Lookups![0].Match!.LookupColumn);
+        Assert.Equal("Name", noxConfig!.Application.Integrations[0].Transform!.Lookups![0].Match!.ReturnColumn);
+        Assert.Equal("GeoRegion", noxConfig!.Application.Integrations[0].Transform!.Lookups![0].TargetAttribute);
         
         Assert.NotNull(noxConfig!.Application.Integrations[0].Target);
         Assert.Equal("Country", noxConfig!.Application.Integrations[0].Target!.Name);
@@ -335,17 +335,17 @@ public class SolutionDeserializationTests
         Assert.Equal("translator.iwgplc.com", noxConfig!.Infrastructure.Dependencies.Translations!.ServerUri);
         Assert.Equal(443, noxConfig!.Infrastructure.Dependencies.Translations!.Port);
         
-        Assert.NotNull(noxConfig!.Infrastructure.Dependencies.Security);
-        Assert.NotNull(noxConfig!.Infrastructure.Dependencies.Security.Secrets);
-        Assert.NotNull(noxConfig!.Infrastructure.Dependencies.Security.Secrets!.SecretsServer);
-        Assert.Equal("SampleSecretServer", noxConfig!.Infrastructure.Dependencies.Security.Secrets!.SecretsServer!.Name);
-        Assert.Equal(SecretsServerProvider.AzureKeyVault, noxConfig!.Infrastructure.Dependencies.Security.Secrets!.SecretsServer!.Provider);
-        Assert.Equal("kv.iwgplc.com", noxConfig!.Infrastructure.Dependencies.Security.Secrets!.SecretsServer!.ServerUri);
-        Assert.Equal("secrets@iwgplc.com", noxConfig!.Infrastructure.Dependencies.Security.Secrets!.SecretsServer!.User);
-        Assert.Equal("SecretPassword", noxConfig!.Infrastructure.Dependencies.Security.Secrets!.SecretsServer!.Password);
+        Assert.NotNull(noxConfig!.Infrastructure.Security);
+        Assert.NotNull(noxConfig!.Infrastructure.Security.Secrets);
+        Assert.NotNull(noxConfig!.Infrastructure.Security.Secrets!.SecretsServer);
+        Assert.Equal("SampleSecretServer", noxConfig!.Infrastructure.Security.Secrets!.SecretsServer!.Name);
+        Assert.Equal(SecretsServerProvider.AzureKeyVault, noxConfig!.Infrastructure.Security.Secrets!.SecretsServer!.Provider);
+        Assert.Equal("kv.iwgplc.com", noxConfig!.Infrastructure.Security.Secrets!.SecretsServer!.ServerUri);
+        Assert.Equal("secrets@iwgplc.com", noxConfig!.Infrastructure.Security.Secrets!.SecretsServer!.User);
+        Assert.Equal("SecretPassword", noxConfig!.Infrastructure.Security.Secrets!.SecretsServer!.Password);
         
-        Assert.NotNull(noxConfig!.Infrastructure.Dependencies.Security.Secrets!.ValidFor);
-        Assert.Equal(10, noxConfig!.Infrastructure.Dependencies.Security.Secrets!.ValidFor!.Minutes);
+        Assert.NotNull(noxConfig!.Infrastructure.Security.Secrets!.ValidFor);
+        Assert.Equal(10, noxConfig!.Infrastructure.Security.Secrets!.ValidFor!.Minutes);
         
         
         Assert.NotNull(noxConfig!.Infrastructure.Dependencies.DataConnections);

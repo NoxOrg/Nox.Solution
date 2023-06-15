@@ -99,6 +99,7 @@ infrastructure:
     monitoring:
       name: SampleObservabiity
       serverUri: localhost
+      provider: elasticApm
       port: 8200
 
     translations:
@@ -106,19 +107,19 @@ infrastructure:
       serverUri: translator.iwgplc.com
       port: 443
 
-    security:
-      secrets:
-        secretsServer:
-          name: SampleSecretServer
-          provider: azureKeyVault
-          serverUri: kv.iwgplc.com
-          user: secrets@iwgplc.com
-          password: SecretPassword
-        validFor:
-          minutes: 10
-
     dataConnections:
       - name: CountryJsonData
         provider: jsonFile
         serverUri: file:///C:/my-data-files
         options: Source=File;Filename=country-data.json;
+
+  security:
+    secrets:
+      secretsServer:
+        name: SampleSecretServer
+        provider: azureKeyVault
+        serverUri: kv.iwgplc.com
+        user: secrets@iwgplc.com
+        password: SecretPassword
+      validFor:
+        minutes: 10

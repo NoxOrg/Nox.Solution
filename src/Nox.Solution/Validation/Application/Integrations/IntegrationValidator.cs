@@ -4,7 +4,7 @@ using FluentValidation;
 
 namespace Nox.Solution.Validation
 {
-    public class IntegrationValidator: AbstractValidator<Integration>
+    public class IntegrationValidator : AbstractValidator<Integration>
     {
         private readonly IEnumerable<Integration>? _integrations;
 
@@ -12,7 +12,7 @@ namespace Nox.Solution.Validation
         {
             if (integrations == null) return;
             _integrations = integrations;
-            
+
             RuleFor(p => p.Name)
                 .NotEmpty()
                 .WithMessage(string.Format(ValidationResources.IntegrationNameEmpty));
@@ -27,15 +27,15 @@ namespace Nox.Solution.Validation
 
             RuleFor(p => p.Transform!)
                 .SetValidator(v => new IntegrationTransformValidator(v.Name));
-            
+
             RuleFor(p => p.Target)
                 .NotEmpty()
                 .WithMessage(m => string.Format(ValidationResources.IntegrationTargetMissing, m.Name));
-            
+
             RuleFor(p => p.Target!)
                 .SetValidator(v => new IntegrationTargetValidator(v.Name, dataConnections));
         }
-        
+
         private bool HaveUniqueName(Integration toEvaluate, string name)
         {
             return _integrations!.All(dto => dto.Equals(toEvaluate) || dto.Name != name);

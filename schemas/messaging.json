@@ -63,6 +63,5 @@
   },
   "required": [
     "integrationEventServer"
-  ],
-  "additionalProperties": false
+  ]
 }

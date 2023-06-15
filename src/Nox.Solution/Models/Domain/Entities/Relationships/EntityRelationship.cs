@@ -21,7 +21,7 @@ namespace Nox.Solution
 
         [Required]
         [Title("The type/cardinality of the relationship.")]
-        [Description("The cardinality (type) of relationship with the target entity.")]
+        [Description("The cardinality (type) of relationship with the target entity, e.g. OneOrMany, ZeroOrOne, etc.")]
         public EntityRelationshipType Relationship { get; internal set; } = new();
 
         [Required]
@@ -32,6 +32,5 @@ namespace Nox.Solution
         [Title("Determines whether this side of the relationship is exposed in the generated code and ODATA endpoints.")]
         [Description("This boolean controls whether this side of the relationship is exposed in the generated code and ODATA endpoints.")]
         public bool CanNavigate { get; internal set; } = true;
-
     }
 }

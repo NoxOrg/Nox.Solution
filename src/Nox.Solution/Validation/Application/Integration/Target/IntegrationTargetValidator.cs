@@ -8,7 +8,6 @@ namespace Nox.Solution.Validation
     public class IntegrationTargetValidator: AbstractValidator<IntegrationTarget>
     {
         private readonly IEnumerable<DataConnection>? _dataConnections;
-
         public IntegrationTargetValidator(string integrationName, IEnumerable<DataConnection>? dataConnections)
         {
             _dataConnections = dataConnections;

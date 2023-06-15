@@ -4,13 +4,11 @@ using Humanizer;
 
 namespace Nox.Solution
 {
-
     [Title("Defines an entity or aggregate root")]
     [Description("The declaration of an entity, its attributes, commands and queries. See https://noxorg.dev for more.")]
     [AdditionalProperties(false)]
     public class Entity : DefinitionBase
     {
-
         [Required]
         [Title("The name of the entity. Contains no spaces.")]
         [Description("The name of the abstract or real-world entity. It should be a commonly used singular noun and be unique within a solution.")]
@@ -32,26 +30,35 @@ namespace Nox.Solution
 
         [Title("Defines relationships to other entities.")]
         [Description("Defines one way relationships to other entities. Remember to define the reverse relationship on the target entities.")]
+        [AdditionalProperties(false)]
         public IReadOnlyList<EntityRelationship>? Relationships { get; internal set; }
 
         [Title("Defines owned relationships to another entity.")]
         [Description("Defines relationship to owned entities. This entity will be treated as an aggregate root.")]
+        [AdditionalProperties(false)]
         public IReadOnlyList<EntityRelationship>? OwnedRelationships { get; internal set; }
 
-        [Title("Defines queries for the domain.")]
-        [Description("Defines queries for the domain that operates on this entity. Queries should have no side effects and not mutate the domain state.")]
+        [Title("Domain queries for this entity.")]
+        [Description("Define one or more domain querie(s) that operate on this entity. Queries should have no side effects and not mutate the domain state.")]
+        [AdditionalProperties(false)]
         public IReadOnlyList<DomainQuery>? Queries { get; internal set; }
 
-        [Title("Defines commands for the domain.")]
-        [Description("Defines commands for the domain that operates on this entity. Commands may have side effects and mutate the domain state.")]
+        [Title("Domain commands for this entity.")]
+        [Description("Define one or more domain command(s) that operate on this entity. Commands may have side effects and mutate the domain state.")]
+        [AdditionalProperties(false)]
         public IReadOnlyList<DomainCommand>? Commands { get; internal set; }
-        
+
+        [Title("Domain events for this entity.")]
+        [Description("Define one or more event(s) that may be raised when state change occurs on this entity.")]
         [AdditionalProperties(false)]
         public IReadOnlyList<NoxSimpleTypeDefinition>? Events { get; internal set; }
 
-        [AdditionalProperties(false)]
+        [Title("Keys for this entity.")]
+        [Description("Define one or more keys for this entity.")]
         public IReadOnlyList<NoxSimpleTypeDefinition>? Keys { get; internal set; }
-        
+
+        [Title("Attributes that describe this entity.")]
+        [Description("Define one or more attribute(s) that describes the composition of this domain entity.")]
         [AdditionalProperties(false)]
         public IReadOnlyList<NoxSimpleTypeDefinition>? Attributes { get; internal set; }
 

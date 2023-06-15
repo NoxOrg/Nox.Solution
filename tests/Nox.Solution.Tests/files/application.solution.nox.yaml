@@ -43,7 +43,7 @@ application:
             - "EditDate"
           sequentialKeyColumn: CountryId
       transform:
-        map:
+        mappings:
           - sourceColumn: IsoAlpha2Code
             targetAttribute: Id
             converter: upperCase
@@ -51,7 +51,7 @@ application:
             targetAttribute: Name
           - sourceColumn: CountryFullName
             targetAttribute: FormalName
-        lookup:
+        lookups:
           - sourceColumn: RegionId
             match:
               table: GeoRegions

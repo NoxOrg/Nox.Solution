@@ -2,7 +2,7 @@ using FluentValidation;
 
 namespace Nox.Solution.Validation
 {
-    public class CollectionTypeOptionsValidator: AbstractValidator<ArrayTypeOptions>
+    internal class CollectionTypeOptionsValidator: AbstractValidator<ArrayTypeOptions>
     {
         public CollectionTypeOptionsValidator(string description)
         {

@@ -5,7 +5,7 @@ using Nox.Solution.Extensions;
 
 namespace Nox.Solution.Validation
 {
-    public class EntityRelationshipValidator: AbstractValidator<EntityRelationship>
+    internal class EntityRelationshipValidator: AbstractValidator<EntityRelationship>
     {
         private readonly IEnumerable<EntityRelationship>? _relationships;
         private readonly IEnumerable<Entity>? _entities;

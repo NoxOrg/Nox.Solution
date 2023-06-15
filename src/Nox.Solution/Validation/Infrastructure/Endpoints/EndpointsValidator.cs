@@ -3,7 +3,7 @@ using FluentValidation;
 
 namespace Nox.Solution.Validation
 {
-    public class EndpointsValidator: AbstractValidator<Endpoints>
+    internal class EndpointsValidator: AbstractValidator<Endpoints>
     {
         public EndpointsValidator(IEnumerable<ServerBase>? servers)
         {

@@ -3,7 +3,7 @@ using FluentValidation;
 
 namespace Nox.Solution.Validation
 {
-    public class DependenciesValidator: AbstractValidator<Dependencies>
+    internal class DependenciesValidator: AbstractValidator<Dependencies>
     {
         public DependenciesValidator(IEnumerable<ServerBase>? servers)
         {

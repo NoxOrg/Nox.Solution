@@ -3,7 +3,7 @@ using FluentValidation;
 
 namespace Nox.Solution.Validation
 {
-    public class MessagingValidator: AbstractValidator<Messaging>
+    internal class MessagingValidator: AbstractValidator<Messaging>
     {
         public MessagingValidator(IEnumerable<ServerBase>? servers)
         {

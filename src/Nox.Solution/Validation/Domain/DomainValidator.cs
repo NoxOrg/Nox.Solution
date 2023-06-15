@@ -2,7 +2,7 @@ using FluentValidation;
 
 namespace Nox.Solution.Validation
 {
-    public class DomainValidator: AbstractValidator<Domain>
+    internal class DomainValidator: AbstractValidator<Domain>
     {
         public DomainValidator()
         {

@@ -2,7 +2,7 @@ using FluentValidation;
 
 namespace Nox.Solution.Validation
 {
-    public class DomainQueryResponseOutputValidator: AbstractValidator<DomainQueryResponseOutput>
+    internal class DomainQueryResponseOutputValidator: AbstractValidator<DomainQueryResponseOutput>
     {
         public DomainQueryResponseOutputValidator(string queryName)
         {

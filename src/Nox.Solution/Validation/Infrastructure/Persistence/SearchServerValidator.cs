@@ -4,7 +4,7 @@ using Nox.Solution.Extensions;
 
 namespace Nox.Solution.Validation;
 
-public class SearchServerValidator: AbstractValidator<SearchServer>
+internal class SearchServerValidator: AbstractValidator<SearchServer>
 {
     public SearchServerValidator(IEnumerable<ServerBase>? servers)
     {

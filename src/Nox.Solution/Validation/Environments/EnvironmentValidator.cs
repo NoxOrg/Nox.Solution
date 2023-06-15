@@ -4,7 +4,7 @@ using FluentValidation;
 
 namespace Nox.Solution.Validation
 {
-    public class EnvironmentValidator: AbstractValidator<Environment>
+    internal class EnvironmentValidator: AbstractValidator<Environment>
     {
         private readonly IEnumerable<Environment>? _environments;
         

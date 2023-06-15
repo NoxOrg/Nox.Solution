@@ -4,7 +4,7 @@ using FluentValidation;
 
 namespace Nox.Solution.Validation
 {
-    public class TeamValidator: AbstractValidator<TeamMember>
+    internal class TeamValidator: AbstractValidator<TeamMember>
     {
         private readonly IEnumerable<TeamMember>? _members;
         

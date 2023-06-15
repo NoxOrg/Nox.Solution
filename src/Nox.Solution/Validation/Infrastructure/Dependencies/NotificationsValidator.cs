@@ -3,7 +3,7 @@ using FluentValidation;
 
 namespace Nox.Solution.Validation
 {
-    public class NotificationsValidator: AbstractValidator<Notifications>
+    internal class NotificationsValidator: AbstractValidator<Notifications>
     {
         public NotificationsValidator(IEnumerable<ServerBase>? servers)
         {

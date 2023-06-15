@@ -4,7 +4,7 @@ using FluentValidation;
 
 namespace Nox.Solution.Validation
 {
-    public class EntityValidator: AbstractValidator<Entity>
+    internal class EntityValidator: AbstractValidator<Entity>
     {
         private readonly IEnumerable<Entity>? _entities;
 

@@ -2,7 +2,7 @@ using FluentValidation;
 
 namespace Nox.Solution.Validation
 {
-    public class IntegrationTransformValidator: AbstractValidator<IntegrationTransform>
+    internal class IntegrationTransformValidator: AbstractValidator<IntegrationTransform>
     {
         public IntegrationTransformValidator(string integrationName)
         {

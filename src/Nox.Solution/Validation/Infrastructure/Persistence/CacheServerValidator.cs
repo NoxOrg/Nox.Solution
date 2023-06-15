@@ -4,7 +4,7 @@ using Nox.Solution.Extensions;
 
 namespace Nox.Solution.Validation;
 
-public class CacheServerValidator: AbstractValidator<CacheServer>
+internal class CacheServerValidator: AbstractValidator<CacheServer>
 {
     public CacheServerValidator(IEnumerable<ServerBase>? servers)
     {

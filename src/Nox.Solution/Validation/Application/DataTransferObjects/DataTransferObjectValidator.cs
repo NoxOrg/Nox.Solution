@@ -5,7 +5,7 @@ using Nox.Solution;
 
 namespace Nox.Solution.Validation
 {
-    public class DataTransferObjectValidator: AbstractValidator<DataTransferObject>
+    internal class DataTransferObjectValidator: AbstractValidator<DataTransferObject>
     {
         private readonly IEnumerable<DataTransferObject>? _dtos;
 

@@ -4,7 +4,7 @@ using Nox.Solution.Extensions;
 
 namespace Nox.Solution.Validation;
 
-public class EventSourceServerValidator: AbstractValidator<EventSourceServer>
+internal class EventSourceServerValidator: AbstractValidator<EventSourceServer>
 {
     public EventSourceServerValidator(IEnumerable<ServerBase>? servers)
     {

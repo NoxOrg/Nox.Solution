@@ -2,7 +2,7 @@ using FluentValidation;
 
 namespace Nox.Solution.Validation;
 
-public class IntegrationSourceMessageQueueOptionsValidator: AbstractValidator<IntegrationSourceMessageQueueOptions?>
+internal class IntegrationSourceMessageQueueOptionsValidator: AbstractValidator<IntegrationSourceMessageQueueOptions?>
 {
     public IntegrationSourceMessageQueueOptionsValidator(string integrationName)
     {

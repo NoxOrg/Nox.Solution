@@ -4,7 +4,7 @@ namespace Nox.Solution.Validation;
 
 public class IntegrationSourceHttpOptionsValidator: AbstractValidator<IntegrationSourceHttpOptions?>
 {
-    public IntegrationSourceHttpOptionsValidator(string integrationName)
+    internal IntegrationSourceHttpOptionsValidator(string integrationName)
     {
         RuleFor(opt => opt!.Route)
             .NotEmpty()

@@ -8,16 +8,18 @@ namespace Nox.Solution
     public class DataTransferObject
     {
         [Required]
-        [Title("The name of the dto. Contains no spaces.")]
-        [Description("The name of the dto. It should be a commonly used singular noun and be unique within a solution.")]
+        [Title("The name of the DTO. Contains no spaces.")]
+        [Description("The name of the DTO. It should be a commonly used singular noun and be unique within a solution.")]
         [Pattern(@"^[^\s]*$")]
         public string Name { get; internal set; } = string.Empty;
 
-        [Title("A phrase describing the dto.")]
-        [Description("A description of the dto and what it represents in the real world.")]
+        [Title("The description of the DTO.")]
+        [Description("A phrase describing the DTO and what it represents in the real world.")]
         public string? Description { get; internal set; }
 
         [Required]
+        [Title("The attributes of which the DTO is comprised.")]
+        [Description("One or more attributes describing the composition of the DTO.")]
         [AdditionalProperties(false)]
         public IReadOnlyList<NoxSimpleTypeDefinition> Attributes { get; internal set; } = new List<NoxSimpleTypeDefinition>();
     }

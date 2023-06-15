@@ -40,6 +40,8 @@
       "enum": [
         "elasticApm"
       ],
+      "title": "The APM server provider.",
+      "description": "The provider used for this APM server. Examples include ElasticAPM.",
       "additionalProperties": false
     }
   },
@@ -48,5 +50,7 @@
     "serverUri",
     "provider"
   ],
+  "title": "The definition namespace for the APM (Application Performance Monitoring) server used in a Nox solution.",
+  "description": "Specify properties pertinent to the APM server here. Examples include name, serverUri, Port, provider and connection credentials.",
   "additionalProperties": false
 }

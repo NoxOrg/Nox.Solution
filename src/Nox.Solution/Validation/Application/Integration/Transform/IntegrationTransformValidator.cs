@@ -6,10 +6,10 @@ namespace Nox.Solution.Validation
     {
         public IntegrationTransformValidator(string integrationName)
         {
-            RuleForEach(p => p.Map)
+            RuleForEach(p => p.Mappings)
                 .SetValidator(v => new IntegrationMappingValidator(integrationName));
 
-            RuleForEach(p => p.Lookup)
+            RuleForEach(p => p.Lookups)
                 .SetValidator(v => new IntegrationLookupValidator(integrationName));
         }
     }

@@ -2,6 +2,8 @@ using Json.Schema.Generation;
 
 namespace Nox.Solution
 {
+    [Title("Details pertaining to the BFF server settings in a Nox solution.")]
+    [Description("Defines settings pertinent to a BFF (Backend for Frontend) server here. These include name, serverUri, Port, connection credentials and provider (e.g. Blazor).")]
     [AdditionalProperties(false)]
     public class BffServer: ServerBase
     {

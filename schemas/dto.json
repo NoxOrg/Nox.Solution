@@ -4,14 +4,14 @@
   "properties": {
     "name": {
       "type": "string",
-      "title": "The name of the dto. Contains no spaces.",
-      "description": "The name of the dto. It should be a commonly used singular noun and be unique within a solution.",
+      "title": "The name of the DTO. Contains no spaces.",
+      "description": "The name of the DTO. It should be a commonly used singular noun and be unique within a solution.",
       "pattern": "^[^\\s]*$"
     },
     "description": {
       "type": "string",
-      "title": "A phrase describing the dto.",
-      "description": "A description of the dto and what it represents in the real world."
+      "title": "The description of the DTO.",
+      "description": "A phrase describing the DTO and what it represents in the real world."
     },
     "attributes": {
       "type": "array",
@@ -425,8 +425,12 @@
           "name",
           "type"
         ],
+        "title": "The attributes of which the DTO is comprised.",
+        "description": "One or more attributes describing the composition of the DTO.",
         "additionalProperties": false
       },
+      "title": "The attributes of which the DTO is comprised.",
+      "description": "One or more attributes describing the composition of the DTO.",
       "additionalProperties": false
     }
   },

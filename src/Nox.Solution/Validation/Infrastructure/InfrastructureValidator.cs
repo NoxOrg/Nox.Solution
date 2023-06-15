@@ -28,7 +28,10 @@ namespace Nox.Solution.Validation
             
             RuleFor(p => p.Dependencies!)
                 .SetValidator(v => new DependenciesValidator(GetServerList(v)));
-            
+
+            RuleFor(p => p.Security!)
+                .SetValidator(v => new SecurityValidator(GetServerList(v)));
+
         }
 
         private IEnumerable<ServerBase>? GetServerList(Infrastructure infra)
@@ -69,11 +72,6 @@ namespace Nox.Solution.Validation
                     
                     if (infra.Dependencies.Translations != null) servers.Add(infra.Dependencies.Translations);
                     
-                    if (infra.Dependencies.Security != null)
-                    {
-                        if (infra.Dependencies.Security.Secrets is { SecretsServer: { } }) servers.Add(infra.Dependencies.Security.Secrets.SecretsServer);
-                    }
-                    
                     if (infra.Dependencies.DataConnections != null)
                     {
                         foreach (var dataConnection in infra.Dependencies.DataConnections)
@@ -83,7 +81,13 @@ namespace Nox.Solution.Validation
                     }
                         
                 }
-                
+
+
+                if (infra.Security != null)
+                {
+                    if (infra.Security.Secrets is { SecretsServer: { } }) servers.Add(infra.Security.Secrets.SecretsServer);
+                }
+
                 _servers = servers;
             }
             

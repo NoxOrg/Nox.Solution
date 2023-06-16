@@ -328,13 +328,14 @@ application:
             maxLength: 2
             minLength: 2
 
-  integration:
+  integrations:
     - name: SampleEtl
       description: a Sample Etl
       source:
-        name: CountryJsonData
+        name: CountryJsonSeed
         description: Sources Country data from a json file
-        schedule:
+        dataConnection: CountryJsonData
+        schedule: 
           start: every day at 2am
           retry:
             limit: 5
@@ -347,7 +348,7 @@ application:
             - "EditDate"
           sequentialKeyColumn: CountryId
       transform:
-        map:
+        mappings:
             - sourceColumn: IsoAlpha2Code
               targetAttribute: Id
               converter: upperCase
@@ -355,7 +356,7 @@ application:
               targetAttribute: Name
             - sourceColumn: CountryFullName
               targetAttribute: FormalName
-        lookup:
+        lookups:
             - sourceColumn: RegionId
               match:
                 table: GeoRegions
@@ -457,6 +458,7 @@ infrastructure:
     monitoring:
       name: SampleObservabiity
       serverUri: localhost
+      provider: elasticApm
       port: 8200
 
     translations:
@@ -464,7 +466,13 @@ infrastructure:
       serverUri: translator.iwgplc.com
       port: 443
 
-    security:
+    dataConnections:
+      - name: CountryJsonData
+        provider: jsonFile
+        serverUri: file:///C:/my-data-files
+        options: Source=File;Filename=country-data.json;
+
+  security:
       secrets:
         secretsServer:
           name: SampleSecretServer
@@ -474,11 +482,5 @@ infrastructure:
           password: SecretPassword
         validFor:
           minutes: 10
-
-    dataConnections:
-      - name: CountryJsonData
-        provider: jsonFile
-        serverUri: file:///C:/my-data-files
-        options: Source=File;Filename=country-data.json;
 
 

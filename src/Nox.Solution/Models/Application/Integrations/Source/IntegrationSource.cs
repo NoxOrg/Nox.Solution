@@ -20,27 +20,20 @@ namespace Nox.Solution
         public IntegrationSchedule? Schedule { get; internal set; }
 
         [Required]
-        [Title("The name of the ETL source data connection. Contains no spaces.")]
-        [Description("The name should be a commonly used singular noun and be unique within a solution.")]
+        [Title("The name of the integration source. Contains no spaces.")]
+        [Description("The name of the data connection for this integration source. This must refer to an existing data connection in infrastructure, dependencies, dataConnections.")]
         [Pattern(@"^[^\s]*$")]
         [AdditionalProperties(false)]
         public string DataConnection { get; internal set; } = string.Empty;
 
         public IntegrationSourceDatabaseWatermark? Watermark { get; internal set; }
-        [Title("The name of the integration source. Contains no spaces.")]
-        [Description("The name of the data connection for this integration source. This must refer to an existing data connection in infrastructure, dependencies, dataConnections.")]
-        [Pattern(@"^[^\s]*$")]
 
-        [AdditionalProperties(false)] 
         public IntegrationSourceDatabaseOptions? DatabaseOptions { get; set; }
 
-        [AdditionalProperties(false)] 
         public IntegrationSourceFileOptions? FileOptions { get; set; }
 
-        [AdditionalProperties(false)] 
         public IntegrationSourceMessageQueueOptions? MessageQueueOptions { get; set; }
 
-        [AdditionalProperties(false)] 
         public IntegrationSourceHttpOptions? HttpOptions { get; set; }
         
     }

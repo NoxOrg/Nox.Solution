@@ -37,6 +37,7 @@ application:
             delaySeconds: 5
             doubleDelayLimit: 10
           runOnStartup: true
+        dataConnection: CountryJsonData
         watermark:
           dateColumns:
             - "CreateDate"

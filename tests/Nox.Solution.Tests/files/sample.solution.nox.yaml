@@ -336,6 +336,7 @@ application:
         description: Sources Country data from a json file
         fileOptions: 
           filename: country-seed-data.json
+          minimumExpectedRecords: 100
         schedule:
           start: every day at 2am
           retry:
@@ -343,6 +344,7 @@ application:
             delaySeconds: 5
             doubleDelayLimit: 10
           runOnStartup: true
+        dataConnection: CountryJsonData
         watermark:
           dateColumns:
             - "CreateDate"

@@ -1,7 +1,6 @@
 ﻿using Json.Schema.Generation;
 using System;
 using System.Collections.Generic;
-using System.Net.Mime;
 
 namespace Nox.Solution
 {
@@ -11,7 +10,6 @@ namespace Nox.Solution
     [AdditionalProperties(false)]
     public class Solution : DefinitionBase
     {
-        
         [Required]
         [Title("The short name for the solution. Contains no spaces.")]
         [Description("The name of the NOX solution, application or service. This value is used extensively by the NOX tooling and libraries and should ideally be unique within an organisation.")]

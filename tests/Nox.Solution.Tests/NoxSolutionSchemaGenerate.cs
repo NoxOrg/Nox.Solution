@@ -10,7 +10,7 @@ using YamlDotNet.Serialization;
 
 namespace Nox.Solution.Tests;
 
-public class NoxSolutionSchemaTests
+public class NoxSolutionSchemaGenerate
 {
     [Fact]
     public void Can_create_a_json_schema_for_yaml()

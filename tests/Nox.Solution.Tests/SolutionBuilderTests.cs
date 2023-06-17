@@ -1,4 +1,4 @@
-using Nox.Exceptions;
+using Nox.Solution.Exceptions;
 
 namespace Nox.Solution.Tests;
 

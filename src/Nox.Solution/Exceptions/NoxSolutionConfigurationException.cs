@@ -1,18 +1,17 @@
 using System;
 
-namespace Nox.Exceptions
+namespace Nox.Solution.Exceptions;
+
+[Serializable]
+public class NoxSolutionConfigurationException: Exception
 {
-    [Serializable]
-    public class NoxSolutionConfigurationException: Exception
+    public NoxSolutionConfigurationException(string message): base(message)
     {
-        public NoxSolutionConfigurationException(string message): base(message)
-        {
-            
-        }
         
-        public NoxSolutionConfigurationException(string message, Exception innerException): base(message, innerException)
-        {
-        
-        }
+    }
+    
+    public NoxSolutionConfigurationException(string message, Exception innerException): base(message, innerException)
+    {
+    
     }
 }

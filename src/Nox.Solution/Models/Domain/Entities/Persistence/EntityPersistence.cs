@@ -1,5 +1,4 @@
-﻿using JetBrains.Annotations;
-using Json.Schema.Generation;
+﻿using Json.Schema.Generation;
 
 namespace Nox.Solution
 {

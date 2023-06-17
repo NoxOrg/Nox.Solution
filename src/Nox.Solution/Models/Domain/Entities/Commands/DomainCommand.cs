@@ -1,6 +1,5 @@
 ﻿using Json.Schema.Generation;
 using System.Collections.Generic;
-using JetBrains.Annotations;
 
 namespace Nox.Solution
 {

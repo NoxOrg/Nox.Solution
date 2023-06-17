@@ -1,8 +1,6 @@
 using System.IO;
 using System.Linq;
-using Microsoft.Extensions.DependencyInjection;
-using Nox.Exceptions;
-using Nox.Utilities.Yaml;
+using Nox.Solution.Exceptions;
 using YamlDotNet.Serialization;
 using YamlDotNet.Serialization.NamingConventions;
 
@@ -13,8 +11,6 @@ namespace Nox.Solution
         private const string DesignFolderBestPractice = "Best practice is to create a '.nox' folder in your solution folder and in there a 'design' folder which contains your <solution-name>.solution.nox.yaml";
 
         private string _yamlFilePath = string.Empty;
-        private bool _mustInject = false;
-        private IServiceCollection? _services;
 
         public NoxSolutionBuilder UseYamlFile(string yamlFilePath)
         {
@@ -22,13 +18,6 @@ namespace Nox.Solution
             return this;
         }
 
-        public NoxSolutionBuilder UseDependencyInjection(IServiceCollection services)
-        {
-            _mustInject = true;
-            _services = services;
-            return this;
-        }
-        
         public NoxSolution Build()
         {
             //If a yaml root configuration has not been specified, search for one in the .nox/design folder in the solution root folder
@@ -49,17 +38,12 @@ namespace Nox.Solution
             var config = ResolveAndLoadConfiguration(_yamlFilePath);
             config.Validate();
 
-            if (_mustInject)
-            {
-                _services.AddSingleton(config);
-            }
-            
             return config;
         }
 
         private NoxSolution ResolveAndLoadConfiguration(string yamlFilePath) 
         {
-            var resolver = new YamlResolver(_yamlFilePath);
+            var resolver = new YamlReferenceResolver(_yamlFilePath);
             var yaml = resolver.ResolveReferences();
             var deserializer = new DeserializerBuilder()
                 .WithNamingConvention(CamelCaseNamingConvention.Instance)

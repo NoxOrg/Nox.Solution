@@ -1,6 +1,6 @@
 using System;
 
-namespace Nox.Exceptions;
+namespace Nox.Solution.Exceptions;
 
 [Serializable]
 public class NoxUriBuilderException: Exception

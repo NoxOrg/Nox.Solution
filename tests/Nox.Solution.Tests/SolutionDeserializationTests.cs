@@ -366,17 +366,4 @@ public class SolutionDeserializationTests
         Assert.NotNull(noxConfig);
         
     }
-    
-    [Fact]
-    public void Can_a_full_solution_from_di()
-    {
-        var services = new ServiceCollection();
-        new NoxSolutionBuilder()
-            .UseYamlFile("./files/sample.solution.nox.yaml")
-            .UseDependencyInjection(services)
-            .Build();
-        var provider = services.BuildServiceProvider();
-        var config = provider.GetRequiredService<NoxSolution>();
-        Assert.NotNull(config);
-    }
 }

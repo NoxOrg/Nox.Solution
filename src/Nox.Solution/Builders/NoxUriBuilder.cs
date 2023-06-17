@@ -1,5 +1,5 @@
 using System;
-using Nox.Exceptions;
+using Nox.Solution.Exceptions;
 
 namespace Nox.Solution.Builders;
 

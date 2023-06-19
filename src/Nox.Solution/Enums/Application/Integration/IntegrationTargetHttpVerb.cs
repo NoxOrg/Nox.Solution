@@ -2,7 +2,7 @@ namespace Nox;
 
 public enum IntegrationTargetHttpVerb
 {
-    HttpPost,
-    HttpPut,
-    HttpPatch
+    Post,
+    Put,
+    Patch
 }

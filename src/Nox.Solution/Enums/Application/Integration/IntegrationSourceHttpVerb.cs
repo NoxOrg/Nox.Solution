@@ -2,6 +2,6 @@ namespace Nox;
 
 public enum IntegrationSourceHttpVerb
 {
-    HttpGet,
-    HttpPost
+    Get,
+    Post
 }

@@ -6,6 +6,8 @@ public class IntegrationSourceMessageQueueOptions
 {
     [Required] 
     [Title("The source name.")]
-    [Description("The name of the queue, topic or subscription from which messages will be consumed.")]
-    public string Source { get; set; } = string.Empty;
+    [Description("The name of the queue or topic subscription from which messages will be consumed.")]
+    public string SourceName { get; set; } = string.Empty;
+    
+    
 }

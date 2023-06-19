@@ -24,7 +24,7 @@ namespace Nox.Solution
         [Description("The name should be a commonly used singular noun and be unique within a solution.")]
         [Pattern(@"^[^\s]*$")]
         [AdditionalProperties(false)]
-        public string DataConnection { get; internal set; } = string.Empty;
+        public string DataConnectionName { get; internal set; } = string.Empty;
 
         public IntegrationSourceDatabaseWatermark? Watermark { get; internal set; }
         [Title("The name of the integration source. Contains no spaces.")]
@@ -41,7 +41,7 @@ namespace Nox.Solution
         public IntegrationSourceMessageQueueOptions? MessageQueueOptions { get; set; }
 
         [AdditionalProperties(false)] 
-        public IntegrationSourceHttpOptions? HttpOptions { get; set; }
+        public IntegrationSourceWebApiOptions? WebApiOptions { get; set; }
         
     }
 }

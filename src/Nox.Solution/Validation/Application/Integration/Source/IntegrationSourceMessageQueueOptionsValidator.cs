@@ -6,7 +6,7 @@ internal class IntegrationSourceMessageQueueOptionsValidator: AbstractValidator<
 {
     public IntegrationSourceMessageQueueOptionsValidator(string integrationName)
     {
-        RuleFor(opt => opt!.Source)
+        RuleFor(opt => opt!.SourceName)
             .NotEmpty()
             .WithMessage(opt => string.Format(ValidationResources.IntegrationSourceMsgQueueOptionsSourceEmpty, integrationName));
     }

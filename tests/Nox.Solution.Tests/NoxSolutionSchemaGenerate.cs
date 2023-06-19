@@ -42,7 +42,7 @@ public class NoxSolutionSchemaGenerate
 //Solution        
         var solutionSchema = new JsonSchemaBuilder()
             .Schema(MetaSchemas.Draft7Id)
-            .FromType<NoxSolution>(schemaConfig)
+            .FromType<Solution>(schemaConfig)
             .Build();
 
         File.WriteAllText(Path.Combine(path, "solution.json"),

@@ -17,7 +17,7 @@ namespace Nox.Solution.Validation
                 .NotEmpty()
                 .WithMessage(string.Format(ValidationResources.IntegrationSourceNameEmpty, integrationName));
 
-            RuleFor(source => source!.DataConnection)
+            RuleFor(source => source!.DataConnectionName)
                 .NotEmpty()
                 .WithMessage(source => string.Format(ValidationResources.IntegrationSourceDataConnectionEmpty, source!.Name, integrationName))
                 .Must(HaveValidDataConnection)
@@ -46,7 +46,7 @@ namespace Nox.Solution.Validation
                 .SetValidator(source => new IntegrationSourceMessageQueueOptionsValidator(integrationName))
                 .When(_ => dataConnection.Provider is DataConnectionProvider.AmazonSqs or DataConnectionProvider.RabbitMq or DataConnectionProvider.AzureServiceBus);
             
-            RuleFor(source => source!.HttpOptions)
+            RuleFor(source => source!.WebApiOptions)
                 .NotNull()
                 .WithMessage(source => string.Format(ValidationResources.IntegrationSourceHttpOptionsEmpty, source!.Name, integrationName))
                 .SetValidator(source => new IntegrationSourceHttpOptionsValidator(integrationName))

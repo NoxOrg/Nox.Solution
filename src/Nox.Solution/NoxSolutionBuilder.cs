@@ -1,8 +1,9 @@
 using System.IO;
 using System.Linq;
-using Nox.Solution.Exceptions;
 using YamlDotNet.Serialization;
 using YamlDotNet.Serialization.NamingConventions;
+using Nox.Solution.Exceptions;
+using Nox.Solution.Macros;
 
 namespace Nox.Solution
 {
@@ -11,10 +12,17 @@ namespace Nox.Solution
         private const string DesignFolderBestPractice = "Best practice is to create a '.nox' folder in your solution folder and in there a 'design' folder which contains your <solution-name>.solution.nox.yaml";
 
         private string _yamlFilePath = string.Empty;
+        private IMacroParser[]? _macroParsers;
 
         public NoxSolutionBuilder UseYamlFile(string yamlFilePath)
         {
             _yamlFilePath = Path.GetFullPath(yamlFilePath);
+            return this;
+        }
+
+        public NoxSolutionBuilder UseMacros(IMacroParser[] macroParsers)
+        {
+            _macroParsers = macroParsers;
             return this;
         }
 
@@ -35,16 +43,19 @@ namespace Nox.Solution
             }
 
 
-            var config = ResolveAndLoadConfiguration(_yamlFilePath);
+            var config = ResolveAndLoadConfiguration();
             config.Validate();
 
             return config;
         }
 
-        private NoxSolution ResolveAndLoadConfiguration(string yamlFilePath) 
+        private NoxSolution ResolveAndLoadConfiguration()
         {
             var resolver = new YamlReferenceResolver(_yamlFilePath);
             var yaml = resolver.ResolveReferences();
+
+            yaml = ExpandMacros(yaml);
+
             var deserializer = new DeserializerBuilder()
                 .WithNamingConvention(CamelCaseNamingConvention.Instance)
                 .WithNodeTypeResolver(new ReadOnlyCollectionNodeTypeResolver())
@@ -125,6 +136,19 @@ namespace Nox.Solution
             } else if (solutionYamlFiles.Length == 1) return solutionYamlFiles[0];
 
             return null;
+        }
+
+        private string ExpandMacros(string yaml)
+        {
+            if (_macroParsers != null)
+            {
+                for (var i = 0; i < _macroParsers.Length; i++)
+                {
+                    yaml = _macroParsers[i].Parse(yaml);
+                }
+            }
+
+            return yaml;
         }
     }
 }

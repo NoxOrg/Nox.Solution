@@ -14,7 +14,7 @@ namespace Nox.Solution
 
         [Title("Specify case conversion during source to target transform.")]
         [Description("Specifies whether any case conversion is performed during the ETL transform. Source data may be converted to lowercase or uppercase for example.")]
-        public EtlMappingConverter? Converter { get; internal set; }
+        public IntegrationMappingConverter? Converter { get; internal set; }
 
         [Required]
         [Title("Target attribute to which source column is to be mapped.")]

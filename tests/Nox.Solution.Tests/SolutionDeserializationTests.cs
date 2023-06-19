@@ -219,7 +219,7 @@ public class SolutionDeserializationTests
         Assert.Equal(3, noxConfig.Application.Integrations[0].Transform!.Mappings!.Count);
         Assert.Equal("IsoAlpha2Code", noxConfig.Application.Integrations[0].Transform!.Mappings![0].SourceColumn);
         Assert.Equal("Id", noxConfig.Application.Integrations[0].Transform!.Mappings![0].TargetAttribute);
-        Assert.Equal(EtlMappingConverter.UpperCase, noxConfig.Application.Integrations[0].Transform!.Mappings![0].Converter);
+        Assert.Equal(IntegrationMappingConverter.UpperCase, noxConfig.Application.Integrations[0].Transform!.Mappings![0].Converter);
         Assert.Equal("CountryName", noxConfig.Application.Integrations[0].Transform!.Mappings![1].SourceColumn);
         Assert.Equal("Name", noxConfig.Application.Integrations[0].Transform!.Mappings![1].TargetAttribute);
         Assert.Equal("CountryFullName", noxConfig.Application.Integrations[0].Transform!.Mappings![2].SourceColumn);
@@ -236,7 +236,7 @@ public class SolutionDeserializationTests
         
         Assert.NotNull(noxConfig.Application.Integrations[0].Target);
         Assert.Equal("Country", noxConfig.Application.Integrations[0].Target!.Name);
-        Assert.Equal(EtlTargetType.Entity, noxConfig.Application.Integrations[0].Target!.TargetType);
+        Assert.Equal(IntegrationTargetType.Entity, noxConfig.Application.Integrations[0].Target!.TargetType);
     }
 
     [Fact]

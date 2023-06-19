@@ -334,7 +334,7 @@ application:
       source:
         name: CountryJsonSeed
         description: Sources Country data from a json file
-        dataConnection: CountryJsonData
+        dataConnectionName: CountryJsonData
         schedule: 
           start: every day at 2am
           retry:

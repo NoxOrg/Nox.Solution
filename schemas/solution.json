@@ -2,6 +2,9 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "type": "object",
   "properties": {
+    "rootYamlFile": {
+      "type": "string"
+    },
     "$ref": {
       "type": "string",
       "format": "uri"
@@ -10515,7 +10518,7 @@
                     "description": "Specify when and how frequently the ETL source is checked for updates, as well as the retry policy in case of failure. Includes a switch to indicate whether update is triggered at application startup.",
                     "additionalProperties": false
                   },
-                  "dataConnection": {
+                  "dataConnectionName": {
                     "type": "string",
                     "title": "The name of the ETL source data connection. Contains no spaces.",
                     "description": "The name should be a commonly used singular noun and be unique within a solution.",
@@ -10607,11 +10610,17 @@
                       "route": {
                         "type": "string"
                       },
-                      "format": {
-                        "type": "string"
+                      "responseFormat": {
+                        "enum": [
+                          "json",
+                          "xml"
+                        ]
                       },
-                      "verb": {
-                        "type": "string"
+                      "httpVerb": {
+                        "enum": [
+                          "httpGet",
+                          "httpPost"
+                        ]
                       }
                     },
                     "additionalProperties": false
@@ -10619,7 +10628,7 @@
                 },
                 "required": [
                   "name",
-                  "dataConnection"
+                  "dataConnectionName"
                 ],
                 "title": "Definition namespace for attributes describing the source component of an ETL integration.",
                 "description": "This section details ETL source attributes like name, description, scheduling and watermark specifications.",
@@ -11240,9 +11249,6 @@
       "title": "A definition for application components used in a Nox solution.",
       "description": "A definition for Integrations, DataTransferObjects and other pertinent components pertaining to a Nox solution application component.",
       "additionalProperties": false
-    },
-    "rootYamlFile": {
-      "type": "string"
     }
   },
   "required": [

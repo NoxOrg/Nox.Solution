@@ -41,7 +41,7 @@ namespace Nox.Solution
         public IntegrationSourceMessageQueueOptions? MessageQueueOptions { get; set; }
 
         [AdditionalProperties(false)] 
-        public IntegrationSourceHttpOptions? HttpOptions { get; set; }
+        public IntegrationSourceWebApiOptions? WebApiOptions { get; set; }
         
     }
 }

@@ -196,9 +196,9 @@ public class SolutionDeserializationTests
         Assert.Equal("SampleEtl", noxConfig.Application.Integrations[0].Name);
         Assert.Equal("a Sample Etl", noxConfig.Application.Integrations[0].Description);
         Assert.NotNull(noxConfig.Application.Integrations[0].Source);
-        Assert.Equal("CountryJsonSeed", noxConfig.Application.Integrations[0].Source!.Name);
+        Assert.Equal("CountryJsonSource", noxConfig.Application.Integrations[0].Source!.Name);
         Assert.Equal("Sources Country data from a json file", noxConfig.Application.Integrations[0].Source!.Description);
-        Assert.Equal("CountryJsonData", noxConfig.Application.Integrations[0].Source!.DataConnection);
+        Assert.Equal("CountryJsonData", noxConfig.Application.Integrations[0].Source!.DataConnectionName);
         Assert.NotNull(noxConfig.Application.Integrations[0].Source!.Schedule);
         Assert.Equal("every day at 2am", noxConfig.Application.Integrations[0].Source!.Schedule!.Start);
         Assert.NotNull(noxConfig.Application.Integrations[0].Source!.Schedule!.Retry);

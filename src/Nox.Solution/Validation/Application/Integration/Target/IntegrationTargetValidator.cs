@@ -20,9 +20,9 @@ namespace Nox.Solution.Validation
                 .NotEmpty()
                 .WithMessage(p => string.Format(ValidationResources.IntegrationTargetTypeEmpty, p.Name, integrationName, IntegrationTargetType.Entity.ToNameList()));
             
-            RuleFor(p => p.DataConnection)
+            RuleFor(p => p.DataConnectionName)
                 .Must(HaveValidDataConnection)
-                .WithMessage(m => string.Format(ValidationResources.IntegrationTargetDataConnectionMissing, m.Name, integrationName, m.DataConnection));
+                .WithMessage(m => string.Format(ValidationResources.IntegrationTargetDataConnectionMissing, m.Name, integrationName, m.DataConnectionName));
         }
         
         private bool HaveValidDataConnection(string? dataConnectionName)

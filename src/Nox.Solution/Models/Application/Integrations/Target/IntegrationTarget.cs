@@ -26,6 +26,18 @@ namespace Nox.Solution
         [Description("The name should be a commonly used singular noun and be unique within a solution.")]
         [Pattern(@"^[^\s]*$")]
         [AdditionalProperties(false)]
-        public string? DataConnection { get; internal set; }
+        public string? DataConnectionName { get; internal set; }
+        
+        [AdditionalProperties(false)] 
+        public IntegrationTargetDatabaseOptions? DatabaseOptions { get; set; }
+        
+        [AdditionalProperties(false)] 
+        public IntegrationTargetFileOptions? FileOptions { get; set; }
+        
+        [AdditionalProperties(false)] 
+        public IntegrationTargetWebApiOptions? WebApiOptions { get; set; }
+        
+        [AdditionalProperties(false)] 
+        public IntegrationTargetMessageQueueOptions? MessageQueueOptions { get; set; }
     }
 }

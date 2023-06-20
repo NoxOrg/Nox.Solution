@@ -70,7 +70,7 @@
               "json",
               "jwtToken",
               "language",
-              "latlong",
+              "latLong",
               "length",
               "macAddress",
               "markdown",
@@ -94,10 +94,7 @@
             ]
           },
           "textTypeOptions": {
-            "type": [
-              "object",
-              "null"
-            ],
+            "type": "object",
             "properties": {
               "minLength": {
                 "type": "integer"
@@ -118,10 +115,7 @@
             }
           },
           "numberTypeOptions": {
-            "type": [
-              "object",
-              "null"
-            ],
+            "type": "object",
             "properties": {
               "minValue": {
                 "type": "number"

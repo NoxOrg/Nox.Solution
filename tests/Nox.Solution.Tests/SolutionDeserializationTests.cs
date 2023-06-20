@@ -120,7 +120,7 @@ public class SolutionDeserializationTests
         Assert.Equal("Africa, Europe, Asia, Australia, North America, or South America", country.Queries[0].RequestInput![0].Description);
         Assert.Equal(NoxType.Text, country.Queries[0].RequestInput![0].Type);
         Assert.NotNull(country.Queries[0].RequestInput![0].TextTypeOptions);
-        Assert.False(country.Queries[0].RequestInput![0].TextTypeOptions!.Value.IsUnicode);
+        Assert.False(country.Queries[0].RequestInput![0].TextTypeOptions!.IsUnicode);
         
         Assert.NotNull(country.Queries[0].ResponseOutput);
         Assert.Equal("countriesByContinentDto", country.Queries[0].ResponseOutput.Name);
@@ -157,9 +157,9 @@ public class SolutionDeserializationTests
         Assert.Equal("Id", country.Keys[0].Name);
         Assert.Equal(NoxType.Text, country.Keys[0].Type);
         Assert.NotNull(country.Keys[0].TextTypeOptions);
-        Assert.False(country.Keys[0].TextTypeOptions!.Value.IsUnicode);
-        Assert.Equal(2u, country.Keys[0].TextTypeOptions!.Value.MaxLength);
-        Assert.Equal(2u, country.Keys[0].TextTypeOptions!.Value.MinLength);
+        Assert.False(country.Keys[0].TextTypeOptions!.IsUnicode);
+        Assert.Equal(2u, country.Keys[0].TextTypeOptions!.MaxLength);
+        Assert.Equal(2u, country.Keys[0].TextTypeOptions!.MinLength);
         
         Assert.NotNull(country.Attributes);
         Assert.Equal(15, country.Attributes.Count);
@@ -187,9 +187,9 @@ public class SolutionDeserializationTests
         Assert.Equal("The identity of the country, the Iso Alpha 2 code", noxConfig.Application.DataTransferObjects[0].Attributes[0].Description);
         Assert.Equal(NoxType.Text, noxConfig.Application.DataTransferObjects[0].Attributes[0].Type);
         Assert.NotNull(noxConfig.Application.DataTransferObjects[0].Attributes[0].TextTypeOptions);
-        Assert.Equal(TextTypeCasing.Lower, noxConfig.Application.DataTransferObjects[0].Attributes[0].TextTypeOptions!.Value.Casing);
-        Assert.Equal(2u, noxConfig.Application.DataTransferObjects[0].Attributes[0].TextTypeOptions!.Value.MaxLength);
-        Assert.Equal(2u, noxConfig.Application.DataTransferObjects[0].Attributes[0].TextTypeOptions!.Value.MinLength);
+        Assert.Equal(TextTypeCasing.Lower, noxConfig.Application.DataTransferObjects[0].Attributes[0].TextTypeOptions!.Casing);
+        Assert.Equal(2u, noxConfig.Application.DataTransferObjects[0].Attributes[0].TextTypeOptions!.MaxLength);
+        Assert.Equal(2u, noxConfig.Application.DataTransferObjects[0].Attributes[0].TextTypeOptions!.MinLength);
         
         Assert.NotNull(noxConfig.Application.Integrations);
         Assert.Single(noxConfig.Application.Integrations);

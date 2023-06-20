@@ -54,4 +54,8 @@
     </Compile>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Models\Application\Events\" />
+  </ItemGroup>
+
 </Project>

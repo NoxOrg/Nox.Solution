@@ -15,7 +15,7 @@ namespace Nox.Solution.Validation
                 .WithMessage(m => string.Format(ValidationResources.DomainQueryResponseTypeEmpty, queryName));
 
             RuleFor(p => p.CollectionTypeOptions!)
-                .SetValidator(v => new CollectionTypeOptionsValidator($"response output of query '{queryName}'"));
+                .SetValidator(v => new CollectionTypeOptionsValidator($"response output of query '{queryName}'", "Response outputs"));
         }    
     }
 }

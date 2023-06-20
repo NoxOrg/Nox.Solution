@@ -1,6 +1,7 @@
 ﻿using Json.Schema.Generation;
 using System.Collections.Generic;
 using Humanizer;
+using Nox.Solution.Events;
 
 namespace Nox.Solution
 {
@@ -51,7 +52,7 @@ namespace Nox.Solution
         [Title("Domain events for this entity.")]
         [Description("Define one or more event(s) that may be raised when state change occurs on this entity.")]
         [AdditionalProperties(false)]
-        public IReadOnlyList<NoxSimpleTypeDefinition>? Events { get; internal set; }
+        public IReadOnlyList<DomainEvent>? Events { get; internal set; }
 
         [Title("Keys for this entity.")]
         [Description("Define one or more keys for this entity.")]

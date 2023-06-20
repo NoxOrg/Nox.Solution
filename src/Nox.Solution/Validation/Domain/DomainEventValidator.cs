@@ -1,16 +1,36 @@
-﻿using FluentValidation;
+﻿using System.Collections.Generic;
+using System.Linq;
+using FluentValidation;
+using Nox.Solution.Events;
 
 namespace Nox.Solution.Validation;
 
 public class DomainEventValidator: AbstractValidator<DomainEvent>
 {
-    public DomainEventValidator()
+    private readonly IEnumerable<DomainEvent>? _allEvents;
+
+    public DomainEventValidator(IEnumerable<DomainEvent>? allEvents, string entityName)
     {
-        RuleFor(de => de.Name)
+        if (_allEvents == null) return;
+        _allEvents = allEvents;
+
+        RuleFor(c => c.Name)
             .NotEmpty()
-            .WithMessage(de => string.Format(ValidationResources.DomainEventNameEmpty));
+            .WithMessage(m => string.Format(ValidationResources.DomainEventNameEmpty, entityName));
+            
+        RuleFor(c => c.Name).Must(HaveUniqueName)
+            .WithMessage(m => string.Format(ValidationResources.DomainEventNameDuplicate, m.Name, entityName));
+
+        RuleFor(c => c.Type)
+            .NotEmpty()
+            .WithMessage(m => string.Format(ValidationResources.DomainEventTypeEmpty, m.Name, entityName));
+
+        RuleFor(c => c.ObjectTypeOptions!)
+            .SetValidator(v => new ObjectTypeOptionsValidator($"domain event '{v.Name}' in entity '{entityName}'", "Domain events"));
+    }
         
-        RuleForEach(de => de.Attributes)
-            .SetValidator(de => new SimpleTypeValidator($"An Attribute of domain event '{de.Name}'", "domain event attributes"));
+    private bool HaveUniqueName(DomainEvent toEvaluate, string name)
+    {
+        return _allEvents!.All(q => q.Equals(toEvaluate) || q.Name != name);
     }
 }

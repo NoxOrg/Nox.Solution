@@ -168,11 +168,29 @@ namespace Nox.Solution {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to One of the events in the domain definition does not have a name specified. All domain events must have a unique name..
+        ///   Looks up a localized string similar to Domain event &apos;{0}&apos; for entity &apos;{1}&apos; has a duplicate name. Domain event names must be unique in the solution..
+        /// </summary>
+        internal static string DomainEventNameDuplicate {
+            get {
+                return ResourceManager.GetString("DomainEventNameDuplicate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to One of the events for entity {0} in the domain definition does not have a name specified. All domain events must have a unique name..
         /// </summary>
         internal static string DomainEventNameEmpty {
             get {
                 return ResourceManager.GetString("DomainEventNameEmpty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Domain event &apos;{0}&apos; for entity &apos;{1}&apos; is missing a type. Domain events must all have a type specified..
+        /// </summary>
+        internal static string DomainEventTypeEmpty {
+            get {
+                return ResourceManager.GetString("DomainEventTypeEmpty", resourceCulture);
             }
         }
         
@@ -780,7 +798,7 @@ namespace Nox.Solution {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The object type options attributes for {0} are missing. Object type options must have at least one attribute specified..
+        ///   Looks up a localized string similar to The attributes for {0} are missing. {1} must have at least one attribute specified..
         /// </summary>
         internal static string ObjectTypeOptionsAttributesEmpty {
             get {

@@ -12,9 +12,6 @@ namespace Nox.Solution.Validation
 
             RuleForEach(d => d.Entities)
                 .SetValidator(v => new EntityValidator(v.Entities));
-
-            RuleForEach(d => d.Events)
-                .SetValidator(v => new DomainEventValidator());
         }
     }
 }

@@ -21,6 +21,6 @@ namespace Nox.Solution
         [Title("The events that this application can raise.")]
         [Description("The collection of events that this application can raise to the outside world.")]
         [AdditionalProperties(false)]
-        public IReadOnlyList<ApplicationEvent>? Events { get; internal set; } = new List<ApplicationEvent>();
+        public IReadOnlyList<ApplicationEvent>? Events { get; internal set; }
     }
 }

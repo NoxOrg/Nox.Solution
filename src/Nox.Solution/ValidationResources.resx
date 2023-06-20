@@ -315,4 +315,10 @@
     <data name="IntegrationSourceMsgQueueOptionsSourceEmpty" xml:space="preserve">
         <value>The source in the message queue options of the source for integration {0} has not been specified. Message queue sources must have a source specified.</value>
     </data>
+    <data name="DomainEventNameEmpty" xml:space="preserve">
+        <value>One of the events in the domain definition does not have a name specified. All domain events must have a unique name.</value>
+    </data>
+    <data name="ApplicationEventNameEmpty" xml:space="preserve">
+        <value>One of the events in the application definition does not have a name specified. All application events must have a unique name.</value>
+    </data>
 </root>

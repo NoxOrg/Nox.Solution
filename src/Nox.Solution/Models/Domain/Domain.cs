@@ -14,5 +14,10 @@ namespace Nox.Solution
         [Description("The collection of entities and their relationships with each other.")]
         [AdditionalProperties(false)]
         public IReadOnlyList<Entity> Entities { get; internal set; } = new List<Entity>();
+        
+        [Title("The events that can be raised in the domain.")]
+        [Description("The collection of events that can be raised in the domain.")]
+        [AdditionalProperties(false)]
+        public IReadOnlyList<DomainEvent>? Events { get; internal set; } = new List<DomainEvent>();
     }
 }

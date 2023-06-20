@@ -9,7 +9,7 @@ namespace Nox.Solution.Validation
     {
         private readonly IList<Entity> _entities = new List<Entity>();
 
-        public EntityValidator(IEnumerable<Entity>? entities)
+        public EntityValidator(IEnumerable<Entity>? entities, Application? application)
         {
             if (entities == null) return;
             _entities = (IList<Entity>)entities;
@@ -36,22 +36,28 @@ namespace Nox.Solution.Validation
 
             RuleForEach(e => e.Commands)
                 .SetValidator(v => new DomainCommandValidator(v.Commands, v.Name));
-
+            
             RuleForEach(p => p.Keys)
                 .SetValidator(v => new SimpleTypeValidator($"One of the keys for entity {v.Name}", "keys"));
 
             RuleForEach(p => p.Attributes)
                 .SetValidator(v => new SimpleTypeValidator($"an Attribute of entity '{v.Name}'", "entity attributes"));
 
-            var allEvents = new List<DomainEvent>();
+            var domainEvents = new List<DomainEvent>();
             foreach (var entity in entities)
             {
                 if (entity.Events == null) continue;
-                allEvents.AddRange(entity.Events);
+                domainEvents.AddRange(entity.Events);
+            }
+
+            var appEvents = new List<ApplicationEvent>();
+            if (application != null || application!.Events != null && application.Events.Any())
+            {
+                appEvents.AddRange(application.Events!);
             }
             
             RuleForEach(e => e.Events)
-                .SetValidator(e => new DomainEventValidator(allEvents, e.Name));
+                .SetValidator(e => new DomainEventValidator(domainEvents, appEvents, e.Name));
         }
         
         private bool MustHaveUniqueName(Entity toEvaluate, string name)

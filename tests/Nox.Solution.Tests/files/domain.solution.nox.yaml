@@ -95,6 +95,7 @@ domain:
           
       events:
         - name: CountryNameUpdatedDomainEvent
+          description: Raised when the name of a country is changed
           type: object
           objectTypeOptions:
             attributes:

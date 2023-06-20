@@ -69,11 +69,29 @@ namespace Nox.Solution {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Application event &apos;{0}&apos; has a duplicate name. Application event names must be unique in the solution..
+        /// </summary>
+        internal static string ApplicationEventNameDuplicate {
+            get {
+                return ResourceManager.GetString("ApplicationEventNameDuplicate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to One of the events in the application definition does not have a name specified. All application events must have a unique name..
         /// </summary>
         internal static string ApplicationEventNameEmpty {
             get {
                 return ResourceManager.GetString("ApplicationEventNameEmpty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Application event &apos;{0}&apos; is missing a type. Application events must all have a type specified..
+        /// </summary>
+        internal static string ApplicationEventTypeEmpty {
+            get {
+                return ResourceManager.GetString("ApplicationEventTypeEmpty", resourceCulture);
             }
         }
         

@@ -327,4 +327,10 @@
     <data name="DomainEventTypeEmpty" xml:space="preserve">
         <value>Domain event '{0}' for entity '{1}' is missing a type. Domain events must all have a type specified.</value>
     </data>
+    <data name="ApplicationEventNameDuplicate" xml:space="preserve">
+        <value>Application event '{0}' has a duplicate name. Application event names must be unique in the solution.</value>
+    </data>
+    <data name="ApplicationEventTypeEmpty" xml:space="preserve">
+        <value>Application event '{0}' is missing a type. Application events must all have a type specified.</value>
+    </data>
 </root>

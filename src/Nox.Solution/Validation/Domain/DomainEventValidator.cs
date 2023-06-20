@@ -7,12 +7,14 @@ namespace Nox.Solution.Validation;
 
 public class DomainEventValidator: AbstractValidator<DomainEvent>
 {
-    private readonly IEnumerable<DomainEvent>? _allEvents;
+    private readonly IEnumerable<DomainEvent>? _domainEvents;
+    private readonly IEnumerable<ApplicationEvent>? _appEvents;
 
-    public DomainEventValidator(IEnumerable<DomainEvent>? allEvents, string entityName)
+    public DomainEventValidator(IEnumerable<DomainEvent>? domainEvents, IEnumerable<ApplicationEvent>? appEvents, string entityName)
     {
-        if (_allEvents == null) return;
-        _allEvents = allEvents;
+        if (domainEvents == null) return;
+        _domainEvents = domainEvents;
+        _appEvents = appEvents;
 
         RuleFor(c => c.Name)
             .NotEmpty()
@@ -31,6 +33,8 @@ public class DomainEventValidator: AbstractValidator<DomainEvent>
         
     private bool HaveUniqueName(DomainEvent toEvaluate, string name)
     {
-        return _allEvents!.All(q => q.Equals(toEvaluate) || q.Name != name);
+        var domainEventResult = _domainEvents!.All(de => de.Equals(toEvaluate) || de.Name != name);
+        if (domainEventResult == false || _appEvents == null || !_appEvents.Any()) return domainEventResult;
+        return _appEvents.All(ae => ae.Name != name);
     }
 }

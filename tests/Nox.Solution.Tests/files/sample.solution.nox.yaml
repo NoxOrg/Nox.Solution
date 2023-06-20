@@ -228,7 +228,7 @@ domain:
 
         - name: GeoCoord
           description: The the position of the workplace's point on the surface of the Earth
-          type: latlong
+          type: latLong
 
         - name: GeoRegion
           description: The region the country is in

@@ -68,7 +68,7 @@ namespace Nox.Solution.Validation
                 .WithNodeTypeResolver(new ReadOnlyCollectionNodeTypeResolver())
                 .Build();
 
-            var yamlObject = deserializer.Deserialize<T>(new StringReader(yaml));
+            var yamlObject = deserializer.Deserialize(new StringReader(yaml));
             var jsonDocument = JsonSerializer.SerializeToDocument(yamlObject, new JsonSerializerOptions
             {
             });

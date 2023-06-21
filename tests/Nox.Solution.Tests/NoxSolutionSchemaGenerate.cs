@@ -403,7 +403,7 @@ public class NoxSolutionSchemaGenerate
     [Fact]
     public void test_validation()
     {
-        var yaml = File.ReadAllText("./files/minimal.solution.nox.yaml");
+        var yaml = File.ReadAllText("./files/sample.solution.nox.yaml");
 
         var model = NoxValidationJsonConverter.Deserialize<NoxSolution>(yaml);
     }

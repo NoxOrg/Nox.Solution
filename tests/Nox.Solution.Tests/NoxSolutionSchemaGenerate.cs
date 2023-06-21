@@ -17,7 +17,7 @@ using System;
 using Json.Schema.Serialization;
 using Xunit.Abstractions;
 using FluentValidation;
-using Nox.Solution.Validation;
+using Nox.Solution.Resolvers;
 
 namespace Nox.Solution.Tests;
 
@@ -405,6 +405,6 @@ public class NoxSolutionSchemaGenerate
     {
         var yaml = File.ReadAllText("./files/sample.solution.nox.yaml");
 
-        var model = NoxValidationJsonConverter.Deserialize<NoxSolution>(yaml);
+        var model = NoxYamlSerializer.Deserialize<NoxSolution>(yaml);
     }
 }

@@ -1,6 +1,8 @@
+using System;
 using System.IO;
 using System.Linq;
 using Nox.Solution.Exceptions;
+using Nox.Solution.Resolvers;
 using YamlDotNet.Serialization;
 using YamlDotNet.Serialization.NamingConventions;
 
@@ -31,9 +33,8 @@ namespace Nox.Solution
                 if (!File.Exists(_yamlFilePath))
                 {
                     throw new NoxSolutionConfigurationException($"Nox root yaml configuration file ({_yamlFilePath}) not found! Have you created a Nox yaml configuration for your solution? {DesignFolderBestPractice}");
-                }    
+                }
             }
-
 
             var config = ResolveAndLoadConfiguration(_yamlFilePath);
             config.Validate();
@@ -41,22 +42,25 @@ namespace Nox.Solution
             return config;
         }
 
-        private NoxSolution ResolveAndLoadConfiguration(string yamlFilePath) 
+        private NoxSolution ResolveAndLoadConfiguration(string yamlFilePath)
         {
             var resolver = new YamlReferenceResolver(_yamlFilePath);
             var yaml = resolver.ResolveReferences();
-            var deserializer = new DeserializerBuilder()
-                .WithNamingConvention(CamelCaseNamingConvention.Instance)
-                .WithNodeTypeResolver(new ReadOnlyCollectionNodeTypeResolver())
-                .Build();
-            var config = deserializer.Deserialize<NoxSolution>(yaml);
+
+            var config = NoxYamlSerializer.Deserialize<NoxSolution>(yaml);
+
+            if (config == null)
+            {
+                throw new ApplicationException("Configuration file has not been parsed proprly");
+            }
+
             config.RootYamlFile = _yamlFilePath;
             return config;
         }
 
         private string? FindSolutionRoot()
         {
-            var path = new DirectoryInfo( Directory.GetCurrentDirectory() );
+            var path = new DirectoryInfo(Directory.GetCurrentDirectory());
 
             while (path != null)
             {
@@ -89,7 +93,7 @@ namespace Nox.Solution
             //look in the current folder
             var rootYaml = FindSolutionYamlFile("./");
             if (rootYaml != null) return rootYaml;
-            
+
             //look in .nox/design
             var designFolder = FindNoxDesignFolder("./");
             if (designFolder != null)
@@ -122,7 +126,8 @@ namespace Nox.Solution
             if (solutionYamlFiles.Length > 1)
             {
                 throw new NoxSolutionConfigurationException($"Found more than one *.solution.nox.yaml file in folder ({folder}). {DesignFolderBestPractice}");
-            } else if (solutionYamlFiles.Length == 1) return solutionYamlFiles[0];
+            }
+            else if (solutionYamlFiles.Length == 1) return solutionYamlFiles[0];
 
             return null;
         }

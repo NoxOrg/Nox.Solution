@@ -274,10 +274,14 @@
                       },
                       "name": {
                         "type": "string",
+                        "title": "The name of the attribute. Contains no spaces.",
+                        "description": "Assign a descriptive name to the attribute. Should be a singular noun and be unique within a collection of attributes. PascalCase recommended.",
                         "pattern": "^[^\\s]*$"
                       },
                       "description": {
-                        "type": "string"
+                        "type": "string",
+                        "title": "The description of the attribute.",
+                        "description": "A descriptive phrase that explains the nature and function of this attribute within a collection."
                       },
                       "type": {
                         "enum": [
@@ -341,7 +345,9 @@
                           "volume",
                           "weight",
                           "yaml"
-                        ]
+                        ],
+                        "title": "The Nox type of this attribute.",
+                        "description": "Select the Nox value object type that best represents this attribute and its functional requirements within the domain."
                       },
                       "textTypeOptions": {
                         "type": "object",
@@ -583,7 +589,9 @@
                         ]
                       },
                       "isRequired": {
-                        "type": "boolean"
+                        "type": "boolean",
+                        "title": "Is the attribute required? Boolean value.",
+                        "description": "Indicates whether this attribute is required within the collection. Defaults to false."
                       },
                       "userInterface": {
                         "type": "object",
@@ -593,10 +601,14 @@
                             "format": "uri"
                           },
                           "label": {
-                            "type": "string"
+                            "type": "string",
+                            "title": "A descriptive label for this attribute on the user interface.",
+                            "description": "The text label rendered on the user interface alongside the NoxTextInput component."
                           },
                           "translationId": {
-                            "type": "string"
+                            "type": "string",
+                            "title": "The multi-language translation identifier.",
+                            "description": "A unique string/key to reference the translations for this attribute for multi-language translations."
                           },
                           "widget": {
                             "enum": [
@@ -613,46 +625,72 @@
                               "select",
                               "checkbox",
                               "switch"
-                            ]
+                            ],
+                            "title": "Widget used to render this attribute on the user interface.",
+                            "description": "The user interface control type that is best suited to render the attribute on the screen."
                           },
                           "icon": {
-                            "type": "string"
+                            "type": "string",
+                            "title": "The icon representing the attribute on the user interface.",
+                            "description": "A reference URI to the attribute icon file. Could be a CSS or Mudblazor reference, e.g. \u0027@Icons.Material.Filled.Globe\u0027."
                           },
                           "iconPosition": {
                             "enum": [
                               "begin",
                               "end"
-                            ]
+                            ],
+                            "title": "The position of the attribute icon on the user interface.",
+                            "description": "The postition of the attribute icon relative to the text input area on the user interface, e.g. begin or end."
                           },
                           "inputMask": {
-                            "type": "string"
+                            "type": "string",
+                            "title": "A mask expression used to validate and control text input.",
+                            "description": "A string of characters that indicates the format of valid input values. For example \u0027(000) 000-0000\u0027 could be used for a seven digit phone number with mandatory area code."
                           },
                           "outputMask": {
-                            "type": "string"
+                            "type": "string",
+                            "title": "A mask expression used to validate and control a value\u0027s output.",
+                            "description": "A string of characters that indicates the format of valid output. Used to handle validation triggers for onSubmit and onChange events of the control."
                           },
                           "regex": {
-                            "type": "string"
+                            "type": "string",
+                            "title": "The regular expression against which input is validated.",
+                            "description": "A regex string that indicates the format of valid input. For example \u0027/^(\\([0-9]{3}\\) |[0-9]{3}-)[0-9]{3}-[0-9]{4}$/gm\u0027 could be used for a seven digit phone number with mandatory area code."
                           },
                           "pageGroup": {
-                            "type": "string"
+                            "type": "string",
+                            "title": "The user interface PageGroup identifier.",
+                            "description": "Used to associate component with a PageGroup identifier on the user interface."
                           },
                           "fieldGroup": {
-                            "type": "string"
+                            "type": "string",
+                            "title": "The user interface FieldGroup identifier.",
+                            "description": "Used to associate component with a FieldGroup identifier on the user interface."
                           },
                           "inputOrder": {
-                            "type": "integer"
+                            "type": "integer",
+                            "title": "Display/edit focus order within a FieldGroup on a user interface.",
+                            "description": "The order within a group of user interface components (FieldGroup) in which this attribute will receive focus for display or edit purpose."
                           },
                           "helpHint": {
-                            "type": "string"
+                            "type": "string",
+                            "title": "Helper text for this component.",
+                            "description": "The component default helper text used to aid the understanding of the component function to the user."
                           },
                           "errorMessage": {
-                            "type": "string"
+                            "type": "string",
+                            "title": "Validation error message.",
+                            "description": "The default error message displayed when text input validation fails."
                           }
                         },
+                        "title": "The user interface display options for this attribute.",
+                        "description": "Specify how this attribute is rendered on the user interface. Configuration options include label, icon, input/output masks, help hints among other.",
                         "additionalProperties": false
                       },
                       "isReadonly": {
-                        "type": "boolean"
+                        "type": "boolean",
+                        "title": "Is this attribute readonly? Boolean value.",
+                        "description": "Indicates whether this attribute is readonly. Defaults to false."
                       },
                       "objectTypeOptions": {
                         "type": "object",
@@ -672,10 +710,14 @@
                                 },
                                 "name": {
                                   "type": "string",
+                                  "title": "The name of the attribute. Contains no spaces.",
+                                  "description": "Assign a descriptive name to the attribute. Should be a singular noun and be unique within a collection of attributes. PascalCase recommended.",
                                   "pattern": "^[^\\s]*$"
                                 },
                                 "description": {
-                                  "type": "string"
+                                  "type": "string",
+                                  "title": "The description of the attribute.",
+                                  "description": "A descriptive phrase that explains the nature and function of this attribute within a collection."
                                 },
                                 "type": {
                                   "enum": [
@@ -739,7 +781,9 @@
                                     "volume",
                                     "weight",
                                     "yaml"
-                                  ]
+                                  ],
+                                  "title": "The Nox type of this attribute.",
+                                  "description": "Select the Nox value object type that best represents this attribute and its functional requirements within the domain."
                                 },
                                 "textTypeOptions": {
                                   "type": "object",
@@ -981,7 +1025,9 @@
                                   ]
                                 },
                                 "isRequired": {
-                                  "type": "boolean"
+                                  "type": "boolean",
+                                  "title": "Is the attribute required? Boolean value.",
+                                  "description": "Indicates whether this attribute is required within the collection. Defaults to false."
                                 },
                                 "userInterface": {
                                   "type": "object",
@@ -991,10 +1037,14 @@
                                       "format": "uri"
                                     },
                                     "label": {
-                                      "type": "string"
+                                      "type": "string",
+                                      "title": "A descriptive label for this attribute on the user interface.",
+                                      "description": "The text label rendered on the user interface alongside the NoxTextInput component."
                                     },
                                     "translationId": {
-                                      "type": "string"
+                                      "type": "string",
+                                      "title": "The multi-language translation identifier.",
+                                      "description": "A unique string/key to reference the translations for this attribute for multi-language translations."
                                     },
                                     "widget": {
                                       "enum": [
@@ -1011,46 +1061,72 @@
                                         "select",
                                         "checkbox",
                                         "switch"
-                                      ]
+                                      ],
+                                      "title": "Widget used to render this attribute on the user interface.",
+                                      "description": "The user interface control type that is best suited to render the attribute on the screen."
                                     },
                                     "icon": {
-                                      "type": "string"
+                                      "type": "string",
+                                      "title": "The icon representing the attribute on the user interface.",
+                                      "description": "A reference URI to the attribute icon file. Could be a CSS or Mudblazor reference, e.g. \u0027@Icons.Material.Filled.Globe\u0027."
                                     },
                                     "iconPosition": {
                                       "enum": [
                                         "begin",
                                         "end"
-                                      ]
+                                      ],
+                                      "title": "The position of the attribute icon on the user interface.",
+                                      "description": "The postition of the attribute icon relative to the text input area on the user interface, e.g. begin or end."
                                     },
                                     "inputMask": {
-                                      "type": "string"
+                                      "type": "string",
+                                      "title": "A mask expression used to validate and control text input.",
+                                      "description": "A string of characters that indicates the format of valid input values. For example \u0027(000) 000-0000\u0027 could be used for a seven digit phone number with mandatory area code."
                                     },
                                     "outputMask": {
-                                      "type": "string"
+                                      "type": "string",
+                                      "title": "A mask expression used to validate and control a value\u0027s output.",
+                                      "description": "A string of characters that indicates the format of valid output. Used to handle validation triggers for onSubmit and onChange events of the control."
                                     },
                                     "regex": {
-                                      "type": "string"
+                                      "type": "string",
+                                      "title": "The regular expression against which input is validated.",
+                                      "description": "A regex string that indicates the format of valid input. For example \u0027/^(\\([0-9]{3}\\) |[0-9]{3}-)[0-9]{3}-[0-9]{4}$/gm\u0027 could be used for a seven digit phone number with mandatory area code."
                                     },
                                     "pageGroup": {
-                                      "type": "string"
+                                      "type": "string",
+                                      "title": "The user interface PageGroup identifier.",
+                                      "description": "Used to associate component with a PageGroup identifier on the user interface."
                                     },
                                     "fieldGroup": {
-                                      "type": "string"
+                                      "type": "string",
+                                      "title": "The user interface FieldGroup identifier.",
+                                      "description": "Used to associate component with a FieldGroup identifier on the user interface."
                                     },
                                     "inputOrder": {
-                                      "type": "integer"
+                                      "type": "integer",
+                                      "title": "Display/edit focus order within a FieldGroup on a user interface.",
+                                      "description": "The order within a group of user interface components (FieldGroup) in which this attribute will receive focus for display or edit purpose."
                                     },
                                     "helpHint": {
-                                      "type": "string"
+                                      "type": "string",
+                                      "title": "Helper text for this component.",
+                                      "description": "The component default helper text used to aid the understanding of the component function to the user."
                                     },
                                     "errorMessage": {
-                                      "type": "string"
+                                      "type": "string",
+                                      "title": "Validation error message.",
+                                      "description": "The default error message displayed when text input validation fails."
                                     }
                                   },
+                                  "title": "The user interface display options for this attribute.",
+                                  "description": "Specify how this attribute is rendered on the user interface. Configuration options include label, icon, input/output masks, help hints among other.",
                                   "additionalProperties": false
                                 },
                                 "isReadonly": {
-                                  "type": "boolean"
+                                  "type": "boolean",
+                                  "title": "Is this attribute readonly? Boolean value.",
+                                  "description": "Indicates whether this attribute is readonly. Defaults to false."
                                 }
                               },
                               "required": [
@@ -1073,10 +1149,14 @@
                           },
                           "name": {
                             "type": "string",
+                            "title": "The name of the attribute. Contains no spaces.",
+                            "description": "Assign a descriptive name to the attribute. Should be a singular noun and be unique within a collection of attributes. PascalCase recommended.",
                             "pattern": "^[^\\s]*$"
                           },
                           "description": {
-                            "type": "string"
+                            "type": "string",
+                            "title": "The description of the attribute.",
+                            "description": "A descriptive phrase that explains the nature and function of this attribute within a collection."
                           },
                           "type": {
                             "enum": [
@@ -1140,7 +1220,9 @@
                               "volume",
                               "weight",
                               "yaml"
-                            ]
+                            ],
+                            "title": "The Nox type of this attribute.",
+                            "description": "Select the Nox value object type that best represents this attribute and its functional requirements within the domain."
                           },
                           "textTypeOptions": {
                             "type": "object",
@@ -1382,7 +1464,9 @@
                             ]
                           },
                           "isRequired": {
-                            "type": "boolean"
+                            "type": "boolean",
+                            "title": "Is the attribute required? Boolean value.",
+                            "description": "Indicates whether this attribute is required within the collection. Defaults to false."
                           },
                           "userInterface": {
                             "type": "object",
@@ -1392,10 +1476,14 @@
                                 "format": "uri"
                               },
                               "label": {
-                                "type": "string"
+                                "type": "string",
+                                "title": "A descriptive label for this attribute on the user interface.",
+                                "description": "The text label rendered on the user interface alongside the NoxTextInput component."
                               },
                               "translationId": {
-                                "type": "string"
+                                "type": "string",
+                                "title": "The multi-language translation identifier.",
+                                "description": "A unique string/key to reference the translations for this attribute for multi-language translations."
                               },
                               "widget": {
                                 "enum": [
@@ -1412,46 +1500,72 @@
                                   "select",
                                   "checkbox",
                                   "switch"
-                                ]
+                                ],
+                                "title": "Widget used to render this attribute on the user interface.",
+                                "description": "The user interface control type that is best suited to render the attribute on the screen."
                               },
                               "icon": {
-                                "type": "string"
+                                "type": "string",
+                                "title": "The icon representing the attribute on the user interface.",
+                                "description": "A reference URI to the attribute icon file. Could be a CSS or Mudblazor reference, e.g. \u0027@Icons.Material.Filled.Globe\u0027."
                               },
                               "iconPosition": {
                                 "enum": [
                                   "begin",
                                   "end"
-                                ]
+                                ],
+                                "title": "The position of the attribute icon on the user interface.",
+                                "description": "The postition of the attribute icon relative to the text input area on the user interface, e.g. begin or end."
                               },
                               "inputMask": {
-                                "type": "string"
+                                "type": "string",
+                                "title": "A mask expression used to validate and control text input.",
+                                "description": "A string of characters that indicates the format of valid input values. For example \u0027(000) 000-0000\u0027 could be used for a seven digit phone number with mandatory area code."
                               },
                               "outputMask": {
-                                "type": "string"
+                                "type": "string",
+                                "title": "A mask expression used to validate and control a value\u0027s output.",
+                                "description": "A string of characters that indicates the format of valid output. Used to handle validation triggers for onSubmit and onChange events of the control."
                               },
                               "regex": {
-                                "type": "string"
+                                "type": "string",
+                                "title": "The regular expression against which input is validated.",
+                                "description": "A regex string that indicates the format of valid input. For example \u0027/^(\\([0-9]{3}\\) |[0-9]{3}-)[0-9]{3}-[0-9]{4}$/gm\u0027 could be used for a seven digit phone number with mandatory area code."
                               },
                               "pageGroup": {
-                                "type": "string"
+                                "type": "string",
+                                "title": "The user interface PageGroup identifier.",
+                                "description": "Used to associate component with a PageGroup identifier on the user interface."
                               },
                               "fieldGroup": {
-                                "type": "string"
+                                "type": "string",
+                                "title": "The user interface FieldGroup identifier.",
+                                "description": "Used to associate component with a FieldGroup identifier on the user interface."
                               },
                               "inputOrder": {
-                                "type": "integer"
+                                "type": "integer",
+                                "title": "Display/edit focus order within a FieldGroup on a user interface.",
+                                "description": "The order within a group of user interface components (FieldGroup) in which this attribute will receive focus for display or edit purpose."
                               },
                               "helpHint": {
-                                "type": "string"
+                                "type": "string",
+                                "title": "Helper text for this component.",
+                                "description": "The component default helper text used to aid the understanding of the component function to the user."
                               },
                               "errorMessage": {
-                                "type": "string"
+                                "type": "string",
+                                "title": "Validation error message.",
+                                "description": "The default error message displayed when text input validation fails."
                               }
                             },
+                            "title": "The user interface display options for this attribute.",
+                            "description": "Specify how this attribute is rendered on the user interface. Configuration options include label, icon, input/output masks, help hints among other.",
                             "additionalProperties": false
                           },
                           "isReadonly": {
-                            "type": "boolean"
+                            "type": "boolean",
+                            "title": "Is this attribute readonly? Boolean value.",
+                            "description": "Indicates whether this attribute is readonly. Defaults to false."
                           },
                           "objectTypeOptions": {
                             "type": "object",
@@ -1471,10 +1585,14 @@
                                     },
                                     "name": {
                                       "type": "string",
+                                      "title": "The name of the attribute. Contains no spaces.",
+                                      "description": "Assign a descriptive name to the attribute. Should be a singular noun and be unique within a collection of attributes. PascalCase recommended.",
                                       "pattern": "^[^\\s]*$"
                                     },
                                     "description": {
-                                      "type": "string"
+                                      "type": "string",
+                                      "title": "The description of the attribute.",
+                                      "description": "A descriptive phrase that explains the nature and function of this attribute within a collection."
                                     },
                                     "type": {
                                       "enum": [
@@ -1538,7 +1656,9 @@
                                         "volume",
                                         "weight",
                                         "yaml"
-                                      ]
+                                      ],
+                                      "title": "The Nox type of this attribute.",
+                                      "description": "Select the Nox value object type that best represents this attribute and its functional requirements within the domain."
                                     },
                                     "textTypeOptions": {
                                       "type": "object",
@@ -1780,7 +1900,9 @@
                                       ]
                                     },
                                     "isRequired": {
-                                      "type": "boolean"
+                                      "type": "boolean",
+                                      "title": "Is the attribute required? Boolean value.",
+                                      "description": "Indicates whether this attribute is required within the collection. Defaults to false."
                                     },
                                     "userInterface": {
                                       "type": "object",
@@ -1790,10 +1912,14 @@
                                           "format": "uri"
                                         },
                                         "label": {
-                                          "type": "string"
+                                          "type": "string",
+                                          "title": "A descriptive label for this attribute on the user interface.",
+                                          "description": "The text label rendered on the user interface alongside the NoxTextInput component."
                                         },
                                         "translationId": {
-                                          "type": "string"
+                                          "type": "string",
+                                          "title": "The multi-language translation identifier.",
+                                          "description": "A unique string/key to reference the translations for this attribute for multi-language translations."
                                         },
                                         "widget": {
                                           "enum": [
@@ -1810,46 +1936,72 @@
                                             "select",
                                             "checkbox",
                                             "switch"
-                                          ]
+                                          ],
+                                          "title": "Widget used to render this attribute on the user interface.",
+                                          "description": "The user interface control type that is best suited to render the attribute on the screen."
                                         },
                                         "icon": {
-                                          "type": "string"
+                                          "type": "string",
+                                          "title": "The icon representing the attribute on the user interface.",
+                                          "description": "A reference URI to the attribute icon file. Could be a CSS or Mudblazor reference, e.g. \u0027@Icons.Material.Filled.Globe\u0027."
                                         },
                                         "iconPosition": {
                                           "enum": [
                                             "begin",
                                             "end"
-                                          ]
+                                          ],
+                                          "title": "The position of the attribute icon on the user interface.",
+                                          "description": "The postition of the attribute icon relative to the text input area on the user interface, e.g. begin or end."
                                         },
                                         "inputMask": {
-                                          "type": "string"
+                                          "type": "string",
+                                          "title": "A mask expression used to validate and control text input.",
+                                          "description": "A string of characters that indicates the format of valid input values. For example \u0027(000) 000-0000\u0027 could be used for a seven digit phone number with mandatory area code."
                                         },
                                         "outputMask": {
-                                          "type": "string"
+                                          "type": "string",
+                                          "title": "A mask expression used to validate and control a value\u0027s output.",
+                                          "description": "A string of characters that indicates the format of valid output. Used to handle validation triggers for onSubmit and onChange events of the control."
                                         },
                                         "regex": {
-                                          "type": "string"
+                                          "type": "string",
+                                          "title": "The regular expression against which input is validated.",
+                                          "description": "A regex string that indicates the format of valid input. For example \u0027/^(\\([0-9]{3}\\) |[0-9]{3}-)[0-9]{3}-[0-9]{4}$/gm\u0027 could be used for a seven digit phone number with mandatory area code."
                                         },
                                         "pageGroup": {
-                                          "type": "string"
+                                          "type": "string",
+                                          "title": "The user interface PageGroup identifier.",
+                                          "description": "Used to associate component with a PageGroup identifier on the user interface."
                                         },
                                         "fieldGroup": {
-                                          "type": "string"
+                                          "type": "string",
+                                          "title": "The user interface FieldGroup identifier.",
+                                          "description": "Used to associate component with a FieldGroup identifier on the user interface."
                                         },
                                         "inputOrder": {
-                                          "type": "integer"
+                                          "type": "integer",
+                                          "title": "Display/edit focus order within a FieldGroup on a user interface.",
+                                          "description": "The order within a group of user interface components (FieldGroup) in which this attribute will receive focus for display or edit purpose."
                                         },
                                         "helpHint": {
-                                          "type": "string"
+                                          "type": "string",
+                                          "title": "Helper text for this component.",
+                                          "description": "The component default helper text used to aid the understanding of the component function to the user."
                                         },
                                         "errorMessage": {
-                                          "type": "string"
+                                          "type": "string",
+                                          "title": "Validation error message.",
+                                          "description": "The default error message displayed when text input validation fails."
                                         }
                                       },
+                                      "title": "The user interface display options for this attribute.",
+                                      "description": "Specify how this attribute is rendered on the user interface. Configuration options include label, icon, input/output masks, help hints among other.",
                                       "additionalProperties": false
                                     },
                                     "isReadonly": {
-                                      "type": "boolean"
+                                      "type": "boolean",
+                                      "title": "Is this attribute readonly? Boolean value.",
+                                      "description": "Indicates whether this attribute is readonly. Defaults to false."
                                     }
                                   },
                                   "required": [
@@ -1868,8 +2020,8 @@
                           "name",
                           "type"
                         ],
-                        "title": "Defines the request parameters for a domain query.",
-                        "description": "The ordered parameters that is the input for the requested query. Can contain simple or complex types",
+                        "title": "Definition namespace for Nox simple types.",
+                        "description": "Nox simple types definition used throughout Nox.Solution project.",
                         "additionalProperties": false
                       },
                       "arrayTypeOptions": {
@@ -1881,10 +2033,14 @@
                           },
                           "name": {
                             "type": "string",
+                            "title": "The name of the attribute. Contains no spaces.",
+                            "description": "Assign a descriptive name to the attribute. Should be a singular noun and be unique within a collection of attributes. PascalCase recommended.",
                             "pattern": "^[^\\s]*$"
                           },
                           "description": {
-                            "type": "string"
+                            "type": "string",
+                            "title": "The description of the attribute.",
+                            "description": "A descriptive phrase that explains the nature and function of this attribute within a collection."
                           },
                           "type": {
                             "enum": [
@@ -1948,7 +2104,9 @@
                               "volume",
                               "weight",
                               "yaml"
-                            ]
+                            ],
+                            "title": "The Nox type of this attribute.",
+                            "description": "Select the Nox value object type that best represents this attribute and its functional requirements within the domain."
                           },
                           "textTypeOptions": {
                             "type": "object",
@@ -2190,7 +2348,9 @@
                             ]
                           },
                           "isRequired": {
-                            "type": "boolean"
+                            "type": "boolean",
+                            "title": "Is the attribute required? Boolean value.",
+                            "description": "Indicates whether this attribute is required within the collection. Defaults to false."
                           },
                           "userInterface": {
                             "type": "object",
@@ -2200,10 +2360,14 @@
                                 "format": "uri"
                               },
                               "label": {
-                                "type": "string"
+                                "type": "string",
+                                "title": "A descriptive label for this attribute on the user interface.",
+                                "description": "The text label rendered on the user interface alongside the NoxTextInput component."
                               },
                               "translationId": {
-                                "type": "string"
+                                "type": "string",
+                                "title": "The multi-language translation identifier.",
+                                "description": "A unique string/key to reference the translations for this attribute for multi-language translations."
                               },
                               "widget": {
                                 "enum": [
@@ -2220,46 +2384,72 @@
                                   "select",
                                   "checkbox",
                                   "switch"
-                                ]
+                                ],
+                                "title": "Widget used to render this attribute on the user interface.",
+                                "description": "The user interface control type that is best suited to render the attribute on the screen."
                               },
                               "icon": {
-                                "type": "string"
+                                "type": "string",
+                                "title": "The icon representing the attribute on the user interface.",
+                                "description": "A reference URI to the attribute icon file. Could be a CSS or Mudblazor reference, e.g. \u0027@Icons.Material.Filled.Globe\u0027."
                               },
                               "iconPosition": {
                                 "enum": [
                                   "begin",
                                   "end"
-                                ]
+                                ],
+                                "title": "The position of the attribute icon on the user interface.",
+                                "description": "The postition of the attribute icon relative to the text input area on the user interface, e.g. begin or end."
                               },
                               "inputMask": {
-                                "type": "string"
+                                "type": "string",
+                                "title": "A mask expression used to validate and control text input.",
+                                "description": "A string of characters that indicates the format of valid input values. For example \u0027(000) 000-0000\u0027 could be used for a seven digit phone number with mandatory area code."
                               },
                               "outputMask": {
-                                "type": "string"
+                                "type": "string",
+                                "title": "A mask expression used to validate and control a value\u0027s output.",
+                                "description": "A string of characters that indicates the format of valid output. Used to handle validation triggers for onSubmit and onChange events of the control."
                               },
                               "regex": {
-                                "type": "string"
+                                "type": "string",
+                                "title": "The regular expression against which input is validated.",
+                                "description": "A regex string that indicates the format of valid input. For example \u0027/^(\\([0-9]{3}\\) |[0-9]{3}-)[0-9]{3}-[0-9]{4}$/gm\u0027 could be used for a seven digit phone number with mandatory area code."
                               },
                               "pageGroup": {
-                                "type": "string"
+                                "type": "string",
+                                "title": "The user interface PageGroup identifier.",
+                                "description": "Used to associate component with a PageGroup identifier on the user interface."
                               },
                               "fieldGroup": {
-                                "type": "string"
+                                "type": "string",
+                                "title": "The user interface FieldGroup identifier.",
+                                "description": "Used to associate component with a FieldGroup identifier on the user interface."
                               },
                               "inputOrder": {
-                                "type": "integer"
+                                "type": "integer",
+                                "title": "Display/edit focus order within a FieldGroup on a user interface.",
+                                "description": "The order within a group of user interface components (FieldGroup) in which this attribute will receive focus for display or edit purpose."
                               },
                               "helpHint": {
-                                "type": "string"
+                                "type": "string",
+                                "title": "Helper text for this component.",
+                                "description": "The component default helper text used to aid the understanding of the component function to the user."
                               },
                               "errorMessage": {
-                                "type": "string"
+                                "type": "string",
+                                "title": "Validation error message.",
+                                "description": "The default error message displayed when text input validation fails."
                               }
                             },
+                            "title": "The user interface display options for this attribute.",
+                            "description": "Specify how this attribute is rendered on the user interface. Configuration options include label, icon, input/output masks, help hints among other.",
                             "additionalProperties": false
                           },
                           "isReadonly": {
-                            "type": "boolean"
+                            "type": "boolean",
+                            "title": "Is this attribute readonly? Boolean value.",
+                            "description": "Indicates whether this attribute is readonly. Defaults to false."
                           },
                           "objectTypeOptions": {
                             "type": "object",
@@ -2279,10 +2469,14 @@
                                     },
                                     "name": {
                                       "type": "string",
+                                      "title": "The name of the attribute. Contains no spaces.",
+                                      "description": "Assign a descriptive name to the attribute. Should be a singular noun and be unique within a collection of attributes. PascalCase recommended.",
                                       "pattern": "^[^\\s]*$"
                                     },
                                     "description": {
-                                      "type": "string"
+                                      "type": "string",
+                                      "title": "The description of the attribute.",
+                                      "description": "A descriptive phrase that explains the nature and function of this attribute within a collection."
                                     },
                                     "type": {
                                       "enum": [
@@ -2346,7 +2540,9 @@
                                         "volume",
                                         "weight",
                                         "yaml"
-                                      ]
+                                      ],
+                                      "title": "The Nox type of this attribute.",
+                                      "description": "Select the Nox value object type that best represents this attribute and its functional requirements within the domain."
                                     },
                                     "textTypeOptions": {
                                       "type": "object",
@@ -2588,7 +2784,9 @@
                                       ]
                                     },
                                     "isRequired": {
-                                      "type": "boolean"
+                                      "type": "boolean",
+                                      "title": "Is the attribute required? Boolean value.",
+                                      "description": "Indicates whether this attribute is required within the collection. Defaults to false."
                                     },
                                     "userInterface": {
                                       "type": "object",
@@ -2598,10 +2796,14 @@
                                           "format": "uri"
                                         },
                                         "label": {
-                                          "type": "string"
+                                          "type": "string",
+                                          "title": "A descriptive label for this attribute on the user interface.",
+                                          "description": "The text label rendered on the user interface alongside the NoxTextInput component."
                                         },
                                         "translationId": {
-                                          "type": "string"
+                                          "type": "string",
+                                          "title": "The multi-language translation identifier.",
+                                          "description": "A unique string/key to reference the translations for this attribute for multi-language translations."
                                         },
                                         "widget": {
                                           "enum": [
@@ -2618,46 +2820,72 @@
                                             "select",
                                             "checkbox",
                                             "switch"
-                                          ]
+                                          ],
+                                          "title": "Widget used to render this attribute on the user interface.",
+                                          "description": "The user interface control type that is best suited to render the attribute on the screen."
                                         },
                                         "icon": {
-                                          "type": "string"
+                                          "type": "string",
+                                          "title": "The icon representing the attribute on the user interface.",
+                                          "description": "A reference URI to the attribute icon file. Could be a CSS or Mudblazor reference, e.g. \u0027@Icons.Material.Filled.Globe\u0027."
                                         },
                                         "iconPosition": {
                                           "enum": [
                                             "begin",
                                             "end"
-                                          ]
+                                          ],
+                                          "title": "The position of the attribute icon on the user interface.",
+                                          "description": "The postition of the attribute icon relative to the text input area on the user interface, e.g. begin or end."
                                         },
                                         "inputMask": {
-                                          "type": "string"
+                                          "type": "string",
+                                          "title": "A mask expression used to validate and control text input.",
+                                          "description": "A string of characters that indicates the format of valid input values. For example \u0027(000) 000-0000\u0027 could be used for a seven digit phone number with mandatory area code."
                                         },
                                         "outputMask": {
-                                          "type": "string"
+                                          "type": "string",
+                                          "title": "A mask expression used to validate and control a value\u0027s output.",
+                                          "description": "A string of characters that indicates the format of valid output. Used to handle validation triggers for onSubmit and onChange events of the control."
                                         },
                                         "regex": {
-                                          "type": "string"
+                                          "type": "string",
+                                          "title": "The regular expression against which input is validated.",
+                                          "description": "A regex string that indicates the format of valid input. For example \u0027/^(\\([0-9]{3}\\) |[0-9]{3}-)[0-9]{3}-[0-9]{4}$/gm\u0027 could be used for a seven digit phone number with mandatory area code."
                                         },
                                         "pageGroup": {
-                                          "type": "string"
+                                          "type": "string",
+                                          "title": "The user interface PageGroup identifier.",
+                                          "description": "Used to associate component with a PageGroup identifier on the user interface."
                                         },
                                         "fieldGroup": {
-                                          "type": "string"
+                                          "type": "string",
+                                          "title": "The user interface FieldGroup identifier.",
+                                          "description": "Used to associate component with a FieldGroup identifier on the user interface."
                                         },
                                         "inputOrder": {
-                                          "type": "integer"
+                                          "type": "integer",
+                                          "title": "Display/edit focus order within a FieldGroup on a user interface.",
+                                          "description": "The order within a group of user interface components (FieldGroup) in which this attribute will receive focus for display or edit purpose."
                                         },
                                         "helpHint": {
-                                          "type": "string"
+                                          "type": "string",
+                                          "title": "Helper text for this component.",
+                                          "description": "The component default helper text used to aid the understanding of the component function to the user."
                                         },
                                         "errorMessage": {
-                                          "type": "string"
+                                          "type": "string",
+                                          "title": "Validation error message.",
+                                          "description": "The default error message displayed when text input validation fails."
                                         }
                                       },
+                                      "title": "The user interface display options for this attribute.",
+                                      "description": "Specify how this attribute is rendered on the user interface. Configuration options include label, icon, input/output masks, help hints among other.",
                                       "additionalProperties": false
                                     },
                                     "isReadonly": {
-                                      "type": "boolean"
+                                      "type": "boolean",
+                                      "title": "Is this attribute readonly? Boolean value.",
+                                      "description": "Indicates whether this attribute is readonly. Defaults to false."
                                     }
                                   },
                                   "required": [
@@ -2676,8 +2904,8 @@
                           "name",
                           "type"
                         ],
-                        "title": "Defines the request parameters for a domain query.",
-                        "description": "The ordered parameters that is the input for the requested query. Can contain simple or complex types",
+                        "title": "Definition namespace for Nox simple types.",
+                        "description": "Nox simple types definition used throughout Nox.Solution project.",
                         "additionalProperties": false
                       }
                     },
@@ -2702,10 +2930,14 @@
                     },
                     "name": {
                       "type": "string",
+                      "title": "The name of the attribute. Contains no spaces.",
+                      "description": "Assign a descriptive name to the attribute. Should be a singular noun and be unique within a collection of attributes. PascalCase recommended.",
                       "pattern": "^[^\\s]*$"
                     },
                     "description": {
-                      "type": "string"
+                      "type": "string",
+                      "title": "The description of the attribute.",
+                      "description": "A descriptive phrase that explains the nature and function of this attribute within a collection."
                     },
                     "type": {
                       "enum": [
@@ -2769,7 +3001,9 @@
                         "volume",
                         "weight",
                         "yaml"
-                      ]
+                      ],
+                      "title": "The Nox type of this attribute.",
+                      "description": "Select the Nox value object type that best represents this attribute and its functional requirements within the domain."
                     },
                     "textTypeOptions": {
                       "type": "object",
@@ -3011,7 +3245,9 @@
                       ]
                     },
                     "isRequired": {
-                      "type": "boolean"
+                      "type": "boolean",
+                      "title": "Is the attribute required? Boolean value.",
+                      "description": "Indicates whether this attribute is required within the collection. Defaults to false."
                     },
                     "userInterface": {
                       "type": "object",
@@ -3021,10 +3257,14 @@
                           "format": "uri"
                         },
                         "label": {
-                          "type": "string"
+                          "type": "string",
+                          "title": "A descriptive label for this attribute on the user interface.",
+                          "description": "The text label rendered on the user interface alongside the NoxTextInput component."
                         },
                         "translationId": {
-                          "type": "string"
+                          "type": "string",
+                          "title": "The multi-language translation identifier.",
+                          "description": "A unique string/key to reference the translations for this attribute for multi-language translations."
                         },
                         "widget": {
                           "enum": [
@@ -3041,46 +3281,72 @@
                             "select",
                             "checkbox",
                             "switch"
-                          ]
+                          ],
+                          "title": "Widget used to render this attribute on the user interface.",
+                          "description": "The user interface control type that is best suited to render the attribute on the screen."
                         },
                         "icon": {
-                          "type": "string"
+                          "type": "string",
+                          "title": "The icon representing the attribute on the user interface.",
+                          "description": "A reference URI to the attribute icon file. Could be a CSS or Mudblazor reference, e.g. \u0027@Icons.Material.Filled.Globe\u0027."
                         },
                         "iconPosition": {
                           "enum": [
                             "begin",
                             "end"
-                          ]
+                          ],
+                          "title": "The position of the attribute icon on the user interface.",
+                          "description": "The postition of the attribute icon relative to the text input area on the user interface, e.g. begin or end."
                         },
                         "inputMask": {
-                          "type": "string"
+                          "type": "string",
+                          "title": "A mask expression used to validate and control text input.",
+                          "description": "A string of characters that indicates the format of valid input values. For example \u0027(000) 000-0000\u0027 could be used for a seven digit phone number with mandatory area code."
                         },
                         "outputMask": {
-                          "type": "string"
+                          "type": "string",
+                          "title": "A mask expression used to validate and control a value\u0027s output.",
+                          "description": "A string of characters that indicates the format of valid output. Used to handle validation triggers for onSubmit and onChange events of the control."
                         },
                         "regex": {
-                          "type": "string"
+                          "type": "string",
+                          "title": "The regular expression against which input is validated.",
+                          "description": "A regex string that indicates the format of valid input. For example \u0027/^(\\([0-9]{3}\\) |[0-9]{3}-)[0-9]{3}-[0-9]{4}$/gm\u0027 could be used for a seven digit phone number with mandatory area code."
                         },
                         "pageGroup": {
-                          "type": "string"
+                          "type": "string",
+                          "title": "The user interface PageGroup identifier.",
+                          "description": "Used to associate component with a PageGroup identifier on the user interface."
                         },
                         "fieldGroup": {
-                          "type": "string"
+                          "type": "string",
+                          "title": "The user interface FieldGroup identifier.",
+                          "description": "Used to associate component with a FieldGroup identifier on the user interface."
                         },
                         "inputOrder": {
-                          "type": "integer"
+                          "type": "integer",
+                          "title": "Display/edit focus order within a FieldGroup on a user interface.",
+                          "description": "The order within a group of user interface components (FieldGroup) in which this attribute will receive focus for display or edit purpose."
                         },
                         "helpHint": {
-                          "type": "string"
+                          "type": "string",
+                          "title": "Helper text for this component.",
+                          "description": "The component default helper text used to aid the understanding of the component function to the user."
                         },
                         "errorMessage": {
-                          "type": "string"
+                          "type": "string",
+                          "title": "Validation error message.",
+                          "description": "The default error message displayed when text input validation fails."
                         }
                       },
+                      "title": "The user interface display options for this attribute.",
+                      "description": "Specify how this attribute is rendered on the user interface. Configuration options include label, icon, input/output masks, help hints among other.",
                       "additionalProperties": false
                     },
                     "isReadonly": {
-                      "type": "boolean"
+                      "type": "boolean",
+                      "title": "Is this attribute readonly? Boolean value.",
+                      "description": "Indicates whether this attribute is readonly. Defaults to false."
                     },
                     "objectTypeOptions": {
                       "type": "object",
@@ -3100,10 +3366,14 @@
                               },
                               "name": {
                                 "type": "string",
+                                "title": "The name of the attribute. Contains no spaces.",
+                                "description": "Assign a descriptive name to the attribute. Should be a singular noun and be unique within a collection of attributes. PascalCase recommended.",
                                 "pattern": "^[^\\s]*$"
                               },
                               "description": {
-                                "type": "string"
+                                "type": "string",
+                                "title": "The description of the attribute.",
+                                "description": "A descriptive phrase that explains the nature and function of this attribute within a collection."
                               },
                               "type": {
                                 "enum": [
@@ -3167,7 +3437,9 @@
                                   "volume",
                                   "weight",
                                   "yaml"
-                                ]
+                                ],
+                                "title": "The Nox type of this attribute.",
+                                "description": "Select the Nox value object type that best represents this attribute and its functional requirements within the domain."
                               },
                               "textTypeOptions": {
                                 "type": "object",
@@ -3409,7 +3681,9 @@
                                 ]
                               },
                               "isRequired": {
-                                "type": "boolean"
+                                "type": "boolean",
+                                "title": "Is the attribute required? Boolean value.",
+                                "description": "Indicates whether this attribute is required within the collection. Defaults to false."
                               },
                               "userInterface": {
                                 "type": "object",
@@ -3419,10 +3693,14 @@
                                     "format": "uri"
                                   },
                                   "label": {
-                                    "type": "string"
+                                    "type": "string",
+                                    "title": "A descriptive label for this attribute on the user interface.",
+                                    "description": "The text label rendered on the user interface alongside the NoxTextInput component."
                                   },
                                   "translationId": {
-                                    "type": "string"
+                                    "type": "string",
+                                    "title": "The multi-language translation identifier.",
+                                    "description": "A unique string/key to reference the translations for this attribute for multi-language translations."
                                   },
                                   "widget": {
                                     "enum": [
@@ -3439,46 +3717,72 @@
                                       "select",
                                       "checkbox",
                                       "switch"
-                                    ]
+                                    ],
+                                    "title": "Widget used to render this attribute on the user interface.",
+                                    "description": "The user interface control type that is best suited to render the attribute on the screen."
                                   },
                                   "icon": {
-                                    "type": "string"
+                                    "type": "string",
+                                    "title": "The icon representing the attribute on the user interface.",
+                                    "description": "A reference URI to the attribute icon file. Could be a CSS or Mudblazor reference, e.g. \u0027@Icons.Material.Filled.Globe\u0027."
                                   },
                                   "iconPosition": {
                                     "enum": [
                                       "begin",
                                       "end"
-                                    ]
+                                    ],
+                                    "title": "The position of the attribute icon on the user interface.",
+                                    "description": "The postition of the attribute icon relative to the text input area on the user interface, e.g. begin or end."
                                   },
                                   "inputMask": {
-                                    "type": "string"
+                                    "type": "string",
+                                    "title": "A mask expression used to validate and control text input.",
+                                    "description": "A string of characters that indicates the format of valid input values. For example \u0027(000) 000-0000\u0027 could be used for a seven digit phone number with mandatory area code."
                                   },
                                   "outputMask": {
-                                    "type": "string"
+                                    "type": "string",
+                                    "title": "A mask expression used to validate and control a value\u0027s output.",
+                                    "description": "A string of characters that indicates the format of valid output. Used to handle validation triggers for onSubmit and onChange events of the control."
                                   },
                                   "regex": {
-                                    "type": "string"
+                                    "type": "string",
+                                    "title": "The regular expression against which input is validated.",
+                                    "description": "A regex string that indicates the format of valid input. For example \u0027/^(\\([0-9]{3}\\) |[0-9]{3}-)[0-9]{3}-[0-9]{4}$/gm\u0027 could be used for a seven digit phone number with mandatory area code."
                                   },
                                   "pageGroup": {
-                                    "type": "string"
+                                    "type": "string",
+                                    "title": "The user interface PageGroup identifier.",
+                                    "description": "Used to associate component with a PageGroup identifier on the user interface."
                                   },
                                   "fieldGroup": {
-                                    "type": "string"
+                                    "type": "string",
+                                    "title": "The user interface FieldGroup identifier.",
+                                    "description": "Used to associate component with a FieldGroup identifier on the user interface."
                                   },
                                   "inputOrder": {
-                                    "type": "integer"
+                                    "type": "integer",
+                                    "title": "Display/edit focus order within a FieldGroup on a user interface.",
+                                    "description": "The order within a group of user interface components (FieldGroup) in which this attribute will receive focus for display or edit purpose."
                                   },
                                   "helpHint": {
-                                    "type": "string"
+                                    "type": "string",
+                                    "title": "Helper text for this component.",
+                                    "description": "The component default helper text used to aid the understanding of the component function to the user."
                                   },
                                   "errorMessage": {
-                                    "type": "string"
+                                    "type": "string",
+                                    "title": "Validation error message.",
+                                    "description": "The default error message displayed when text input validation fails."
                                   }
                                 },
+                                "title": "The user interface display options for this attribute.",
+                                "description": "Specify how this attribute is rendered on the user interface. Configuration options include label, icon, input/output masks, help hints among other.",
                                 "additionalProperties": false
                               },
                               "isReadonly": {
-                                "type": "boolean"
+                                "type": "boolean",
+                                "title": "Is this attribute readonly? Boolean value.",
+                                "description": "Indicates whether this attribute is readonly. Defaults to false."
                               }
                             },
                             "required": [
@@ -3501,10 +3805,14 @@
                         },
                         "name": {
                           "type": "string",
+                          "title": "The name of the attribute. Contains no spaces.",
+                          "description": "Assign a descriptive name to the attribute. Should be a singular noun and be unique within a collection of attributes. PascalCase recommended.",
                           "pattern": "^[^\\s]*$"
                         },
                         "description": {
-                          "type": "string"
+                          "type": "string",
+                          "title": "The description of the attribute.",
+                          "description": "A descriptive phrase that explains the nature and function of this attribute within a collection."
                         },
                         "type": {
                           "enum": [
@@ -3568,7 +3876,9 @@
                             "volume",
                             "weight",
                             "yaml"
-                          ]
+                          ],
+                          "title": "The Nox type of this attribute.",
+                          "description": "Select the Nox value object type that best represents this attribute and its functional requirements within the domain."
                         },
                         "textTypeOptions": {
                           "type": "object",
@@ -3810,7 +4120,9 @@
                           ]
                         },
                         "isRequired": {
-                          "type": "boolean"
+                          "type": "boolean",
+                          "title": "Is the attribute required? Boolean value.",
+                          "description": "Indicates whether this attribute is required within the collection. Defaults to false."
                         },
                         "userInterface": {
                           "type": "object",
@@ -3820,10 +4132,14 @@
                               "format": "uri"
                             },
                             "label": {
-                              "type": "string"
+                              "type": "string",
+                              "title": "A descriptive label for this attribute on the user interface.",
+                              "description": "The text label rendered on the user interface alongside the NoxTextInput component."
                             },
                             "translationId": {
-                              "type": "string"
+                              "type": "string",
+                              "title": "The multi-language translation identifier.",
+                              "description": "A unique string/key to reference the translations for this attribute for multi-language translations."
                             },
                             "widget": {
                               "enum": [
@@ -3840,46 +4156,72 @@
                                 "select",
                                 "checkbox",
                                 "switch"
-                              ]
+                              ],
+                              "title": "Widget used to render this attribute on the user interface.",
+                              "description": "The user interface control type that is best suited to render the attribute on the screen."
                             },
                             "icon": {
-                              "type": "string"
+                              "type": "string",
+                              "title": "The icon representing the attribute on the user interface.",
+                              "description": "A reference URI to the attribute icon file. Could be a CSS or Mudblazor reference, e.g. \u0027@Icons.Material.Filled.Globe\u0027."
                             },
                             "iconPosition": {
                               "enum": [
                                 "begin",
                                 "end"
-                              ]
+                              ],
+                              "title": "The position of the attribute icon on the user interface.",
+                              "description": "The postition of the attribute icon relative to the text input area on the user interface, e.g. begin or end."
                             },
                             "inputMask": {
-                              "type": "string"
+                              "type": "string",
+                              "title": "A mask expression used to validate and control text input.",
+                              "description": "A string of characters that indicates the format of valid input values. For example \u0027(000) 000-0000\u0027 could be used for a seven digit phone number with mandatory area code."
                             },
                             "outputMask": {
-                              "type": "string"
+                              "type": "string",
+                              "title": "A mask expression used to validate and control a value\u0027s output.",
+                              "description": "A string of characters that indicates the format of valid output. Used to handle validation triggers for onSubmit and onChange events of the control."
                             },
                             "regex": {
-                              "type": "string"
+                              "type": "string",
+                              "title": "The regular expression against which input is validated.",
+                              "description": "A regex string that indicates the format of valid input. For example \u0027/^(\\([0-9]{3}\\) |[0-9]{3}-)[0-9]{3}-[0-9]{4}$/gm\u0027 could be used for a seven digit phone number with mandatory area code."
                             },
                             "pageGroup": {
-                              "type": "string"
+                              "type": "string",
+                              "title": "The user interface PageGroup identifier.",
+                              "description": "Used to associate component with a PageGroup identifier on the user interface."
                             },
                             "fieldGroup": {
-                              "type": "string"
+                              "type": "string",
+                              "title": "The user interface FieldGroup identifier.",
+                              "description": "Used to associate component with a FieldGroup identifier on the user interface."
                             },
                             "inputOrder": {
-                              "type": "integer"
+                              "type": "integer",
+                              "title": "Display/edit focus order within a FieldGroup on a user interface.",
+                              "description": "The order within a group of user interface components (FieldGroup) in which this attribute will receive focus for display or edit purpose."
                             },
                             "helpHint": {
-                              "type": "string"
+                              "type": "string",
+                              "title": "Helper text for this component.",
+                              "description": "The component default helper text used to aid the understanding of the component function to the user."
                             },
                             "errorMessage": {
-                              "type": "string"
+                              "type": "string",
+                              "title": "Validation error message.",
+                              "description": "The default error message displayed when text input validation fails."
                             }
                           },
+                          "title": "The user interface display options for this attribute.",
+                          "description": "Specify how this attribute is rendered on the user interface. Configuration options include label, icon, input/output masks, help hints among other.",
                           "additionalProperties": false
                         },
                         "isReadonly": {
-                          "type": "boolean"
+                          "type": "boolean",
+                          "title": "Is this attribute readonly? Boolean value.",
+                          "description": "Indicates whether this attribute is readonly. Defaults to false."
                         },
                         "objectTypeOptions": {
                           "type": "object",
@@ -3899,10 +4241,14 @@
                                   },
                                   "name": {
                                     "type": "string",
+                                    "title": "The name of the attribute. Contains no spaces.",
+                                    "description": "Assign a descriptive name to the attribute. Should be a singular noun and be unique within a collection of attributes. PascalCase recommended.",
                                     "pattern": "^[^\\s]*$"
                                   },
                                   "description": {
-                                    "type": "string"
+                                    "type": "string",
+                                    "title": "The description of the attribute.",
+                                    "description": "A descriptive phrase that explains the nature and function of this attribute within a collection."
                                   },
                                   "type": {
                                     "enum": [
@@ -3966,7 +4312,9 @@
                                       "volume",
                                       "weight",
                                       "yaml"
-                                    ]
+                                    ],
+                                    "title": "The Nox type of this attribute.",
+                                    "description": "Select the Nox value object type that best represents this attribute and its functional requirements within the domain."
                                   },
                                   "textTypeOptions": {
                                     "type": "object",
@@ -4208,7 +4556,9 @@
                                     ]
                                   },
                                   "isRequired": {
-                                    "type": "boolean"
+                                    "type": "boolean",
+                                    "title": "Is the attribute required? Boolean value.",
+                                    "description": "Indicates whether this attribute is required within the collection. Defaults to false."
                                   },
                                   "userInterface": {
                                     "type": "object",
@@ -4218,10 +4568,14 @@
                                         "format": "uri"
                                       },
                                       "label": {
-                                        "type": "string"
+                                        "type": "string",
+                                        "title": "A descriptive label for this attribute on the user interface.",
+                                        "description": "The text label rendered on the user interface alongside the NoxTextInput component."
                                       },
                                       "translationId": {
-                                        "type": "string"
+                                        "type": "string",
+                                        "title": "The multi-language translation identifier.",
+                                        "description": "A unique string/key to reference the translations for this attribute for multi-language translations."
                                       },
                                       "widget": {
                                         "enum": [
@@ -4238,46 +4592,72 @@
                                           "select",
                                           "checkbox",
                                           "switch"
-                                        ]
+                                        ],
+                                        "title": "Widget used to render this attribute on the user interface.",
+                                        "description": "The user interface control type that is best suited to render the attribute on the screen."
                                       },
                                       "icon": {
-                                        "type": "string"
+                                        "type": "string",
+                                        "title": "The icon representing the attribute on the user interface.",
+                                        "description": "A reference URI to the attribute icon file. Could be a CSS or Mudblazor reference, e.g. \u0027@Icons.Material.Filled.Globe\u0027."
                                       },
                                       "iconPosition": {
                                         "enum": [
                                           "begin",
                                           "end"
-                                        ]
+                                        ],
+                                        "title": "The position of the attribute icon on the user interface.",
+                                        "description": "The postition of the attribute icon relative to the text input area on the user interface, e.g. begin or end."
                                       },
                                       "inputMask": {
-                                        "type": "string"
+                                        "type": "string",
+                                        "title": "A mask expression used to validate and control text input.",
+                                        "description": "A string of characters that indicates the format of valid input values. For example \u0027(000) 000-0000\u0027 could be used for a seven digit phone number with mandatory area code."
                                       },
                                       "outputMask": {
-                                        "type": "string"
+                                        "type": "string",
+                                        "title": "A mask expression used to validate and control a value\u0027s output.",
+                                        "description": "A string of characters that indicates the format of valid output. Used to handle validation triggers for onSubmit and onChange events of the control."
                                       },
                                       "regex": {
-                                        "type": "string"
+                                        "type": "string",
+                                        "title": "The regular expression against which input is validated.",
+                                        "description": "A regex string that indicates the format of valid input. For example \u0027/^(\\([0-9]{3}\\) |[0-9]{3}-)[0-9]{3}-[0-9]{4}$/gm\u0027 could be used for a seven digit phone number with mandatory area code."
                                       },
                                       "pageGroup": {
-                                        "type": "string"
+                                        "type": "string",
+                                        "title": "The user interface PageGroup identifier.",
+                                        "description": "Used to associate component with a PageGroup identifier on the user interface."
                                       },
                                       "fieldGroup": {
-                                        "type": "string"
+                                        "type": "string",
+                                        "title": "The user interface FieldGroup identifier.",
+                                        "description": "Used to associate component with a FieldGroup identifier on the user interface."
                                       },
                                       "inputOrder": {
-                                        "type": "integer"
+                                        "type": "integer",
+                                        "title": "Display/edit focus order within a FieldGroup on a user interface.",
+                                        "description": "The order within a group of user interface components (FieldGroup) in which this attribute will receive focus for display or edit purpose."
                                       },
                                       "helpHint": {
-                                        "type": "string"
+                                        "type": "string",
+                                        "title": "Helper text for this component.",
+                                        "description": "The component default helper text used to aid the understanding of the component function to the user."
                                       },
                                       "errorMessage": {
-                                        "type": "string"
+                                        "type": "string",
+                                        "title": "Validation error message.",
+                                        "description": "The default error message displayed when text input validation fails."
                                       }
                                     },
+                                    "title": "The user interface display options for this attribute.",
+                                    "description": "Specify how this attribute is rendered on the user interface. Configuration options include label, icon, input/output masks, help hints among other.",
                                     "additionalProperties": false
                                   },
                                   "isReadonly": {
-                                    "type": "boolean"
+                                    "type": "boolean",
+                                    "title": "Is this attribute readonly? Boolean value.",
+                                    "description": "Indicates whether this attribute is readonly. Defaults to false."
                                   }
                                 },
                                 "required": [
@@ -4296,8 +4676,8 @@
                         "name",
                         "type"
                       ],
-                      "title": "Defines the request parameters for a domain query.",
-                      "description": "The ordered parameters that is the input for the requested query. Can contain simple or complex types",
+                      "title": "Definition namespace for Nox simple types.",
+                      "description": "Nox simple types definition used throughout Nox.Solution project.",
                       "additionalProperties": false
                     },
                     "arrayTypeOptions": {
@@ -4309,10 +4689,14 @@
                         },
                         "name": {
                           "type": "string",
+                          "title": "The name of the attribute. Contains no spaces.",
+                          "description": "Assign a descriptive name to the attribute. Should be a singular noun and be unique within a collection of attributes. PascalCase recommended.",
                           "pattern": "^[^\\s]*$"
                         },
                         "description": {
-                          "type": "string"
+                          "type": "string",
+                          "title": "The description of the attribute.",
+                          "description": "A descriptive phrase that explains the nature and function of this attribute within a collection."
                         },
                         "type": {
                           "enum": [
@@ -4376,7 +4760,9 @@
                             "volume",
                             "weight",
                             "yaml"
-                          ]
+                          ],
+                          "title": "The Nox type of this attribute.",
+                          "description": "Select the Nox value object type that best represents this attribute and its functional requirements within the domain."
                         },
                         "textTypeOptions": {
                           "type": "object",
@@ -4618,7 +5004,9 @@
                           ]
                         },
                         "isRequired": {
-                          "type": "boolean"
+                          "type": "boolean",
+                          "title": "Is the attribute required? Boolean value.",
+                          "description": "Indicates whether this attribute is required within the collection. Defaults to false."
                         },
                         "userInterface": {
                           "type": "object",
@@ -4628,10 +5016,14 @@
                               "format": "uri"
                             },
                             "label": {
-                              "type": "string"
+                              "type": "string",
+                              "title": "A descriptive label for this attribute on the user interface.",
+                              "description": "The text label rendered on the user interface alongside the NoxTextInput component."
                             },
                             "translationId": {
-                              "type": "string"
+                              "type": "string",
+                              "title": "The multi-language translation identifier.",
+                              "description": "A unique string/key to reference the translations for this attribute for multi-language translations."
                             },
                             "widget": {
                               "enum": [
@@ -4648,46 +5040,72 @@
                                 "select",
                                 "checkbox",
                                 "switch"
-                              ]
+                              ],
+                              "title": "Widget used to render this attribute on the user interface.",
+                              "description": "The user interface control type that is best suited to render the attribute on the screen."
                             },
                             "icon": {
-                              "type": "string"
+                              "type": "string",
+                              "title": "The icon representing the attribute on the user interface.",
+                              "description": "A reference URI to the attribute icon file. Could be a CSS or Mudblazor reference, e.g. \u0027@Icons.Material.Filled.Globe\u0027."
                             },
                             "iconPosition": {
                               "enum": [
                                 "begin",
                                 "end"
-                              ]
+                              ],
+                              "title": "The position of the attribute icon on the user interface.",
+                              "description": "The postition of the attribute icon relative to the text input area on the user interface, e.g. begin or end."
                             },
                             "inputMask": {
-                              "type": "string"
+                              "type": "string",
+                              "title": "A mask expression used to validate and control text input.",
+                              "description": "A string of characters that indicates the format of valid input values. For example \u0027(000) 000-0000\u0027 could be used for a seven digit phone number with mandatory area code."
                             },
                             "outputMask": {
-                              "type": "string"
+                              "type": "string",
+                              "title": "A mask expression used to validate and control a value\u0027s output.",
+                              "description": "A string of characters that indicates the format of valid output. Used to handle validation triggers for onSubmit and onChange events of the control."
                             },
                             "regex": {
-                              "type": "string"
+                              "type": "string",
+                              "title": "The regular expression against which input is validated.",
+                              "description": "A regex string that indicates the format of valid input. For example \u0027/^(\\([0-9]{3}\\) |[0-9]{3}-)[0-9]{3}-[0-9]{4}$/gm\u0027 could be used for a seven digit phone number with mandatory area code."
                             },
                             "pageGroup": {
-                              "type": "string"
+                              "type": "string",
+                              "title": "The user interface PageGroup identifier.",
+                              "description": "Used to associate component with a PageGroup identifier on the user interface."
                             },
                             "fieldGroup": {
-                              "type": "string"
+                              "type": "string",
+                              "title": "The user interface FieldGroup identifier.",
+                              "description": "Used to associate component with a FieldGroup identifier on the user interface."
                             },
                             "inputOrder": {
-                              "type": "integer"
+                              "type": "integer",
+                              "title": "Display/edit focus order within a FieldGroup on a user interface.",
+                              "description": "The order within a group of user interface components (FieldGroup) in which this attribute will receive focus for display or edit purpose."
                             },
                             "helpHint": {
-                              "type": "string"
+                              "type": "string",
+                              "title": "Helper text for this component.",
+                              "description": "The component default helper text used to aid the understanding of the component function to the user."
                             },
                             "errorMessage": {
-                              "type": "string"
+                              "type": "string",
+                              "title": "Validation error message.",
+                              "description": "The default error message displayed when text input validation fails."
                             }
                           },
+                          "title": "The user interface display options for this attribute.",
+                          "description": "Specify how this attribute is rendered on the user interface. Configuration options include label, icon, input/output masks, help hints among other.",
                           "additionalProperties": false
                         },
                         "isReadonly": {
-                          "type": "boolean"
+                          "type": "boolean",
+                          "title": "Is this attribute readonly? Boolean value.",
+                          "description": "Indicates whether this attribute is readonly. Defaults to false."
                         },
                         "objectTypeOptions": {
                           "type": "object",
@@ -4707,10 +5125,14 @@
                                   },
                                   "name": {
                                     "type": "string",
+                                    "title": "The name of the attribute. Contains no spaces.",
+                                    "description": "Assign a descriptive name to the attribute. Should be a singular noun and be unique within a collection of attributes. PascalCase recommended.",
                                     "pattern": "^[^\\s]*$"
                                   },
                                   "description": {
-                                    "type": "string"
+                                    "type": "string",
+                                    "title": "The description of the attribute.",
+                                    "description": "A descriptive phrase that explains the nature and function of this attribute within a collection."
                                   },
                                   "type": {
                                     "enum": [
@@ -4774,7 +5196,9 @@
                                       "volume",
                                       "weight",
                                       "yaml"
-                                    ]
+                                    ],
+                                    "title": "The Nox type of this attribute.",
+                                    "description": "Select the Nox value object type that best represents this attribute and its functional requirements within the domain."
                                   },
                                   "textTypeOptions": {
                                     "type": "object",
@@ -5016,7 +5440,9 @@
                                     ]
                                   },
                                   "isRequired": {
-                                    "type": "boolean"
+                                    "type": "boolean",
+                                    "title": "Is the attribute required? Boolean value.",
+                                    "description": "Indicates whether this attribute is required within the collection. Defaults to false."
                                   },
                                   "userInterface": {
                                     "type": "object",
@@ -5026,10 +5452,14 @@
                                         "format": "uri"
                                       },
                                       "label": {
-                                        "type": "string"
+                                        "type": "string",
+                                        "title": "A descriptive label for this attribute on the user interface.",
+                                        "description": "The text label rendered on the user interface alongside the NoxTextInput component."
                                       },
                                       "translationId": {
-                                        "type": "string"
+                                        "type": "string",
+                                        "title": "The multi-language translation identifier.",
+                                        "description": "A unique string/key to reference the translations for this attribute for multi-language translations."
                                       },
                                       "widget": {
                                         "enum": [
@@ -5046,46 +5476,72 @@
                                           "select",
                                           "checkbox",
                                           "switch"
-                                        ]
+                                        ],
+                                        "title": "Widget used to render this attribute on the user interface.",
+                                        "description": "The user interface control type that is best suited to render the attribute on the screen."
                                       },
                                       "icon": {
-                                        "type": "string"
+                                        "type": "string",
+                                        "title": "The icon representing the attribute on the user interface.",
+                                        "description": "A reference URI to the attribute icon file. Could be a CSS or Mudblazor reference, e.g. \u0027@Icons.Material.Filled.Globe\u0027."
                                       },
                                       "iconPosition": {
                                         "enum": [
                                           "begin",
                                           "end"
-                                        ]
+                                        ],
+                                        "title": "The position of the attribute icon on the user interface.",
+                                        "description": "The postition of the attribute icon relative to the text input area on the user interface, e.g. begin or end."
                                       },
                                       "inputMask": {
-                                        "type": "string"
+                                        "type": "string",
+                                        "title": "A mask expression used to validate and control text input.",
+                                        "description": "A string of characters that indicates the format of valid input values. For example \u0027(000) 000-0000\u0027 could be used for a seven digit phone number with mandatory area code."
                                       },
                                       "outputMask": {
-                                        "type": "string"
+                                        "type": "string",
+                                        "title": "A mask expression used to validate and control a value\u0027s output.",
+                                        "description": "A string of characters that indicates the format of valid output. Used to handle validation triggers for onSubmit and onChange events of the control."
                                       },
                                       "regex": {
-                                        "type": "string"
+                                        "type": "string",
+                                        "title": "The regular expression against which input is validated.",
+                                        "description": "A regex string that indicates the format of valid input. For example \u0027/^(\\([0-9]{3}\\) |[0-9]{3}-)[0-9]{3}-[0-9]{4}$/gm\u0027 could be used for a seven digit phone number with mandatory area code."
                                       },
                                       "pageGroup": {
-                                        "type": "string"
+                                        "type": "string",
+                                        "title": "The user interface PageGroup identifier.",
+                                        "description": "Used to associate component with a PageGroup identifier on the user interface."
                                       },
                                       "fieldGroup": {
-                                        "type": "string"
+                                        "type": "string",
+                                        "title": "The user interface FieldGroup identifier.",
+                                        "description": "Used to associate component with a FieldGroup identifier on the user interface."
                                       },
                                       "inputOrder": {
-                                        "type": "integer"
+                                        "type": "integer",
+                                        "title": "Display/edit focus order within a FieldGroup on a user interface.",
+                                        "description": "The order within a group of user interface components (FieldGroup) in which this attribute will receive focus for display or edit purpose."
                                       },
                                       "helpHint": {
-                                        "type": "string"
+                                        "type": "string",
+                                        "title": "Helper text for this component.",
+                                        "description": "The component default helper text used to aid the understanding of the component function to the user."
                                       },
                                       "errorMessage": {
-                                        "type": "string"
+                                        "type": "string",
+                                        "title": "Validation error message.",
+                                        "description": "The default error message displayed when text input validation fails."
                                       }
                                     },
+                                    "title": "The user interface display options for this attribute.",
+                                    "description": "Specify how this attribute is rendered on the user interface. Configuration options include label, icon, input/output masks, help hints among other.",
                                     "additionalProperties": false
                                   },
                                   "isReadonly": {
-                                    "type": "boolean"
+                                    "type": "boolean",
+                                    "title": "Is this attribute readonly? Boolean value.",
+                                    "description": "Indicates whether this attribute is readonly. Defaults to false."
                                   }
                                 },
                                 "required": [
@@ -5104,8 +5560,8 @@
                         "name",
                         "type"
                       ],
-                      "title": "Defines the request parameters for a domain query.",
-                      "description": "The ordered parameters that is the input for the requested query. Can contain simple or complex types",
+                      "title": "Definition namespace for Nox simple types.",
+                      "description": "Nox simple types definition used throughout Nox.Solution project.",
                       "additionalProperties": false
                     }
                   },
@@ -5141,10 +5597,14 @@
                 },
                 "name": {
                   "type": "string",
+                  "title": "The name of the attribute. Contains no spaces.",
+                  "description": "Assign a descriptive name to the attribute. Should be a singular noun and be unique within a collection of attributes. PascalCase recommended.",
                   "pattern": "^[^\\s]*$"
                 },
                 "description": {
-                  "type": "string"
+                  "type": "string",
+                  "title": "The description of the attribute.",
+                  "description": "A descriptive phrase that explains the nature and function of this attribute within a collection."
                 },
                 "type": {
                   "enum": [
@@ -5208,7 +5668,9 @@
                     "volume",
                     "weight",
                     "yaml"
-                  ]
+                  ],
+                  "title": "The Nox type of this attribute.",
+                  "description": "Select the Nox value object type that best represents this attribute and its functional requirements within the domain."
                 },
                 "textTypeOptions": {
                   "type": "object",
@@ -5450,7 +5912,9 @@
                   ]
                 },
                 "isRequired": {
-                  "type": "boolean"
+                  "type": "boolean",
+                  "title": "Is the attribute required? Boolean value.",
+                  "description": "Indicates whether this attribute is required within the collection. Defaults to false."
                 },
                 "userInterface": {
                   "type": "object",
@@ -5460,10 +5924,14 @@
                       "format": "uri"
                     },
                     "label": {
-                      "type": "string"
+                      "type": "string",
+                      "title": "A descriptive label for this attribute on the user interface.",
+                      "description": "The text label rendered on the user interface alongside the NoxTextInput component."
                     },
                     "translationId": {
-                      "type": "string"
+                      "type": "string",
+                      "title": "The multi-language translation identifier.",
+                      "description": "A unique string/key to reference the translations for this attribute for multi-language translations."
                     },
                     "widget": {
                       "enum": [
@@ -5480,46 +5948,72 @@
                         "select",
                         "checkbox",
                         "switch"
-                      ]
+                      ],
+                      "title": "Widget used to render this attribute on the user interface.",
+                      "description": "The user interface control type that is best suited to render the attribute on the screen."
                     },
                     "icon": {
-                      "type": "string"
+                      "type": "string",
+                      "title": "The icon representing the attribute on the user interface.",
+                      "description": "A reference URI to the attribute icon file. Could be a CSS or Mudblazor reference, e.g. \u0027@Icons.Material.Filled.Globe\u0027."
                     },
                     "iconPosition": {
                       "enum": [
                         "begin",
                         "end"
-                      ]
+                      ],
+                      "title": "The position of the attribute icon on the user interface.",
+                      "description": "The postition of the attribute icon relative to the text input area on the user interface, e.g. begin or end."
                     },
                     "inputMask": {
-                      "type": "string"
+                      "type": "string",
+                      "title": "A mask expression used to validate and control text input.",
+                      "description": "A string of characters that indicates the format of valid input values. For example \u0027(000) 000-0000\u0027 could be used for a seven digit phone number with mandatory area code."
                     },
                     "outputMask": {
-                      "type": "string"
+                      "type": "string",
+                      "title": "A mask expression used to validate and control a value\u0027s output.",
+                      "description": "A string of characters that indicates the format of valid output. Used to handle validation triggers for onSubmit and onChange events of the control."
                     },
                     "regex": {
-                      "type": "string"
+                      "type": "string",
+                      "title": "The regular expression against which input is validated.",
+                      "description": "A regex string that indicates the format of valid input. For example \u0027/^(\\([0-9]{3}\\) |[0-9]{3}-)[0-9]{3}-[0-9]{4}$/gm\u0027 could be used for a seven digit phone number with mandatory area code."
                     },
                     "pageGroup": {
-                      "type": "string"
+                      "type": "string",
+                      "title": "The user interface PageGroup identifier.",
+                      "description": "Used to associate component with a PageGroup identifier on the user interface."
                     },
                     "fieldGroup": {
-                      "type": "string"
+                      "type": "string",
+                      "title": "The user interface FieldGroup identifier.",
+                      "description": "Used to associate component with a FieldGroup identifier on the user interface."
                     },
                     "inputOrder": {
-                      "type": "integer"
+                      "type": "integer",
+                      "title": "Display/edit focus order within a FieldGroup on a user interface.",
+                      "description": "The order within a group of user interface components (FieldGroup) in which this attribute will receive focus for display or edit purpose."
                     },
                     "helpHint": {
-                      "type": "string"
+                      "type": "string",
+                      "title": "Helper text for this component.",
+                      "description": "The component default helper text used to aid the understanding of the component function to the user."
                     },
                     "errorMessage": {
-                      "type": "string"
+                      "type": "string",
+                      "title": "Validation error message.",
+                      "description": "The default error message displayed when text input validation fails."
                     }
                   },
+                  "title": "The user interface display options for this attribute.",
+                  "description": "Specify how this attribute is rendered on the user interface. Configuration options include label, icon, input/output masks, help hints among other.",
                   "additionalProperties": false
                 },
                 "isReadonly": {
-                  "type": "boolean"
+                  "type": "boolean",
+                  "title": "Is this attribute readonly? Boolean value.",
+                  "description": "Indicates whether this attribute is readonly. Defaults to false."
                 },
                 "objectTypeOptions": {
                   "type": "object",
@@ -5539,10 +6033,14 @@
                           },
                           "name": {
                             "type": "string",
+                            "title": "The name of the attribute. Contains no spaces.",
+                            "description": "Assign a descriptive name to the attribute. Should be a singular noun and be unique within a collection of attributes. PascalCase recommended.",
                             "pattern": "^[^\\s]*$"
                           },
                           "description": {
-                            "type": "string"
+                            "type": "string",
+                            "title": "The description of the attribute.",
+                            "description": "A descriptive phrase that explains the nature and function of this attribute within a collection."
                           },
                           "type": {
                             "enum": [
@@ -5606,7 +6104,9 @@
                               "volume",
                               "weight",
                               "yaml"
-                            ]
+                            ],
+                            "title": "The Nox type of this attribute.",
+                            "description": "Select the Nox value object type that best represents this attribute and its functional requirements within the domain."
                           },
                           "textTypeOptions": {
                             "type": "object",
@@ -5848,7 +6348,9 @@
                             ]
                           },
                           "isRequired": {
-                            "type": "boolean"
+                            "type": "boolean",
+                            "title": "Is the attribute required? Boolean value.",
+                            "description": "Indicates whether this attribute is required within the collection. Defaults to false."
                           },
                           "userInterface": {
                             "type": "object",
@@ -5858,10 +6360,14 @@
                                 "format": "uri"
                               },
                               "label": {
-                                "type": "string"
+                                "type": "string",
+                                "title": "A descriptive label for this attribute on the user interface.",
+                                "description": "The text label rendered on the user interface alongside the NoxTextInput component."
                               },
                               "translationId": {
-                                "type": "string"
+                                "type": "string",
+                                "title": "The multi-language translation identifier.",
+                                "description": "A unique string/key to reference the translations for this attribute for multi-language translations."
                               },
                               "widget": {
                                 "enum": [
@@ -5878,46 +6384,72 @@
                                   "select",
                                   "checkbox",
                                   "switch"
-                                ]
+                                ],
+                                "title": "Widget used to render this attribute on the user interface.",
+                                "description": "The user interface control type that is best suited to render the attribute on the screen."
                               },
                               "icon": {
-                                "type": "string"
+                                "type": "string",
+                                "title": "The icon representing the attribute on the user interface.",
+                                "description": "A reference URI to the attribute icon file. Could be a CSS or Mudblazor reference, e.g. \u0027@Icons.Material.Filled.Globe\u0027."
                               },
                               "iconPosition": {
                                 "enum": [
                                   "begin",
                                   "end"
-                                ]
+                                ],
+                                "title": "The position of the attribute icon on the user interface.",
+                                "description": "The postition of the attribute icon relative to the text input area on the user interface, e.g. begin or end."
                               },
                               "inputMask": {
-                                "type": "string"
+                                "type": "string",
+                                "title": "A mask expression used to validate and control text input.",
+                                "description": "A string of characters that indicates the format of valid input values. For example \u0027(000) 000-0000\u0027 could be used for a seven digit phone number with mandatory area code."
                               },
                               "outputMask": {
-                                "type": "string"
+                                "type": "string",
+                                "title": "A mask expression used to validate and control a value\u0027s output.",
+                                "description": "A string of characters that indicates the format of valid output. Used to handle validation triggers for onSubmit and onChange events of the control."
                               },
                               "regex": {
-                                "type": "string"
+                                "type": "string",
+                                "title": "The regular expression against which input is validated.",
+                                "description": "A regex string that indicates the format of valid input. For example \u0027/^(\\([0-9]{3}\\) |[0-9]{3}-)[0-9]{3}-[0-9]{4}$/gm\u0027 could be used for a seven digit phone number with mandatory area code."
                               },
                               "pageGroup": {
-                                "type": "string"
+                                "type": "string",
+                                "title": "The user interface PageGroup identifier.",
+                                "description": "Used to associate component with a PageGroup identifier on the user interface."
                               },
                               "fieldGroup": {
-                                "type": "string"
+                                "type": "string",
+                                "title": "The user interface FieldGroup identifier.",
+                                "description": "Used to associate component with a FieldGroup identifier on the user interface."
                               },
                               "inputOrder": {
-                                "type": "integer"
+                                "type": "integer",
+                                "title": "Display/edit focus order within a FieldGroup on a user interface.",
+                                "description": "The order within a group of user interface components (FieldGroup) in which this attribute will receive focus for display or edit purpose."
                               },
                               "helpHint": {
-                                "type": "string"
+                                "type": "string",
+                                "title": "Helper text for this component.",
+                                "description": "The component default helper text used to aid the understanding of the component function to the user."
                               },
                               "errorMessage": {
-                                "type": "string"
+                                "type": "string",
+                                "title": "Validation error message.",
+                                "description": "The default error message displayed when text input validation fails."
                               }
                             },
+                            "title": "The user interface display options for this attribute.",
+                            "description": "Specify how this attribute is rendered on the user interface. Configuration options include label, icon, input/output masks, help hints among other.",
                             "additionalProperties": false
                           },
                           "isReadonly": {
-                            "type": "boolean"
+                            "type": "boolean",
+                            "title": "Is this attribute readonly? Boolean value.",
+                            "description": "Indicates whether this attribute is readonly. Defaults to false."
                           }
                         },
                         "required": [
@@ -5940,10 +6472,14 @@
                     },
                     "name": {
                       "type": "string",
+                      "title": "The name of the attribute. Contains no spaces.",
+                      "description": "Assign a descriptive name to the attribute. Should be a singular noun and be unique within a collection of attributes. PascalCase recommended.",
                       "pattern": "^[^\\s]*$"
                     },
                     "description": {
-                      "type": "string"
+                      "type": "string",
+                      "title": "The description of the attribute.",
+                      "description": "A descriptive phrase that explains the nature and function of this attribute within a collection."
                     },
                     "type": {
                       "enum": [
@@ -6007,7 +6543,9 @@
                         "volume",
                         "weight",
                         "yaml"
-                      ]
+                      ],
+                      "title": "The Nox type of this attribute.",
+                      "description": "Select the Nox value object type that best represents this attribute and its functional requirements within the domain."
                     },
                     "textTypeOptions": {
                       "type": "object",
@@ -6249,7 +6787,9 @@
                       ]
                     },
                     "isRequired": {
-                      "type": "boolean"
+                      "type": "boolean",
+                      "title": "Is the attribute required? Boolean value.",
+                      "description": "Indicates whether this attribute is required within the collection. Defaults to false."
                     },
                     "userInterface": {
                       "type": "object",
@@ -6259,10 +6799,14 @@
                           "format": "uri"
                         },
                         "label": {
-                          "type": "string"
+                          "type": "string",
+                          "title": "A descriptive label for this attribute on the user interface.",
+                          "description": "The text label rendered on the user interface alongside the NoxTextInput component."
                         },
                         "translationId": {
-                          "type": "string"
+                          "type": "string",
+                          "title": "The multi-language translation identifier.",
+                          "description": "A unique string/key to reference the translations for this attribute for multi-language translations."
                         },
                         "widget": {
                           "enum": [
@@ -6279,46 +6823,72 @@
                             "select",
                             "checkbox",
                             "switch"
-                          ]
+                          ],
+                          "title": "Widget used to render this attribute on the user interface.",
+                          "description": "The user interface control type that is best suited to render the attribute on the screen."
                         },
                         "icon": {
-                          "type": "string"
+                          "type": "string",
+                          "title": "The icon representing the attribute on the user interface.",
+                          "description": "A reference URI to the attribute icon file. Could be a CSS or Mudblazor reference, e.g. \u0027@Icons.Material.Filled.Globe\u0027."
                         },
                         "iconPosition": {
                           "enum": [
                             "begin",
                             "end"
-                          ]
+                          ],
+                          "title": "The position of the attribute icon on the user interface.",
+                          "description": "The postition of the attribute icon relative to the text input area on the user interface, e.g. begin or end."
                         },
                         "inputMask": {
-                          "type": "string"
+                          "type": "string",
+                          "title": "A mask expression used to validate and control text input.",
+                          "description": "A string of characters that indicates the format of valid input values. For example \u0027(000) 000-0000\u0027 could be used for a seven digit phone number with mandatory area code."
                         },
                         "outputMask": {
-                          "type": "string"
+                          "type": "string",
+                          "title": "A mask expression used to validate and control a value\u0027s output.",
+                          "description": "A string of characters that indicates the format of valid output. Used to handle validation triggers for onSubmit and onChange events of the control."
                         },
                         "regex": {
-                          "type": "string"
+                          "type": "string",
+                          "title": "The regular expression against which input is validated.",
+                          "description": "A regex string that indicates the format of valid input. For example \u0027/^(\\([0-9]{3}\\) |[0-9]{3}-)[0-9]{3}-[0-9]{4}$/gm\u0027 could be used for a seven digit phone number with mandatory area code."
                         },
                         "pageGroup": {
-                          "type": "string"
+                          "type": "string",
+                          "title": "The user interface PageGroup identifier.",
+                          "description": "Used to associate component with a PageGroup identifier on the user interface."
                         },
                         "fieldGroup": {
-                          "type": "string"
+                          "type": "string",
+                          "title": "The user interface FieldGroup identifier.",
+                          "description": "Used to associate component with a FieldGroup identifier on the user interface."
                         },
                         "inputOrder": {
-                          "type": "integer"
+                          "type": "integer",
+                          "title": "Display/edit focus order within a FieldGroup on a user interface.",
+                          "description": "The order within a group of user interface components (FieldGroup) in which this attribute will receive focus for display or edit purpose."
                         },
                         "helpHint": {
-                          "type": "string"
+                          "type": "string",
+                          "title": "Helper text for this component.",
+                          "description": "The component default helper text used to aid the understanding of the component function to the user."
                         },
                         "errorMessage": {
-                          "type": "string"
+                          "type": "string",
+                          "title": "Validation error message.",
+                          "description": "The default error message displayed when text input validation fails."
                         }
                       },
+                      "title": "The user interface display options for this attribute.",
+                      "description": "Specify how this attribute is rendered on the user interface. Configuration options include label, icon, input/output masks, help hints among other.",
                       "additionalProperties": false
                     },
                     "isReadonly": {
-                      "type": "boolean"
+                      "type": "boolean",
+                      "title": "Is this attribute readonly? Boolean value.",
+                      "description": "Indicates whether this attribute is readonly. Defaults to false."
                     },
                     "objectTypeOptions": {
                       "type": "object",
@@ -6338,10 +6908,14 @@
                               },
                               "name": {
                                 "type": "string",
+                                "title": "The name of the attribute. Contains no spaces.",
+                                "description": "Assign a descriptive name to the attribute. Should be a singular noun and be unique within a collection of attributes. PascalCase recommended.",
                                 "pattern": "^[^\\s]*$"
                               },
                               "description": {
-                                "type": "string"
+                                "type": "string",
+                                "title": "The description of the attribute.",
+                                "description": "A descriptive phrase that explains the nature and function of this attribute within a collection."
                               },
                               "type": {
                                 "enum": [
@@ -6405,7 +6979,9 @@
                                   "volume",
                                   "weight",
                                   "yaml"
-                                ]
+                                ],
+                                "title": "The Nox type of this attribute.",
+                                "description": "Select the Nox value object type that best represents this attribute and its functional requirements within the domain."
                               },
                               "textTypeOptions": {
                                 "type": "object",
@@ -6647,7 +7223,9 @@
                                 ]
                               },
                               "isRequired": {
-                                "type": "boolean"
+                                "type": "boolean",
+                                "title": "Is the attribute required? Boolean value.",
+                                "description": "Indicates whether this attribute is required within the collection. Defaults to false."
                               },
                               "userInterface": {
                                 "type": "object",
@@ -6657,10 +7235,14 @@
                                     "format": "uri"
                                   },
                                   "label": {
-                                    "type": "string"
+                                    "type": "string",
+                                    "title": "A descriptive label for this attribute on the user interface.",
+                                    "description": "The text label rendered on the user interface alongside the NoxTextInput component."
                                   },
                                   "translationId": {
-                                    "type": "string"
+                                    "type": "string",
+                                    "title": "The multi-language translation identifier.",
+                                    "description": "A unique string/key to reference the translations for this attribute for multi-language translations."
                                   },
                                   "widget": {
                                     "enum": [
@@ -6677,46 +7259,72 @@
                                       "select",
                                       "checkbox",
                                       "switch"
-                                    ]
+                                    ],
+                                    "title": "Widget used to render this attribute on the user interface.",
+                                    "description": "The user interface control type that is best suited to render the attribute on the screen."
                                   },
                                   "icon": {
-                                    "type": "string"
+                                    "type": "string",
+                                    "title": "The icon representing the attribute on the user interface.",
+                                    "description": "A reference URI to the attribute icon file. Could be a CSS or Mudblazor reference, e.g. \u0027@Icons.Material.Filled.Globe\u0027."
                                   },
                                   "iconPosition": {
                                     "enum": [
                                       "begin",
                                       "end"
-                                    ]
+                                    ],
+                                    "title": "The position of the attribute icon on the user interface.",
+                                    "description": "The postition of the attribute icon relative to the text input area on the user interface, e.g. begin or end."
                                   },
                                   "inputMask": {
-                                    "type": "string"
+                                    "type": "string",
+                                    "title": "A mask expression used to validate and control text input.",
+                                    "description": "A string of characters that indicates the format of valid input values. For example \u0027(000) 000-0000\u0027 could be used for a seven digit phone number with mandatory area code."
                                   },
                                   "outputMask": {
-                                    "type": "string"
+                                    "type": "string",
+                                    "title": "A mask expression used to validate and control a value\u0027s output.",
+                                    "description": "A string of characters that indicates the format of valid output. Used to handle validation triggers for onSubmit and onChange events of the control."
                                   },
                                   "regex": {
-                                    "type": "string"
+                                    "type": "string",
+                                    "title": "The regular expression against which input is validated.",
+                                    "description": "A regex string that indicates the format of valid input. For example \u0027/^(\\([0-9]{3}\\) |[0-9]{3}-)[0-9]{3}-[0-9]{4}$/gm\u0027 could be used for a seven digit phone number with mandatory area code."
                                   },
                                   "pageGroup": {
-                                    "type": "string"
+                                    "type": "string",
+                                    "title": "The user interface PageGroup identifier.",
+                                    "description": "Used to associate component with a PageGroup identifier on the user interface."
                                   },
                                   "fieldGroup": {
-                                    "type": "string"
+                                    "type": "string",
+                                    "title": "The user interface FieldGroup identifier.",
+                                    "description": "Used to associate component with a FieldGroup identifier on the user interface."
                                   },
                                   "inputOrder": {
-                                    "type": "integer"
+                                    "type": "integer",
+                                    "title": "Display/edit focus order within a FieldGroup on a user interface.",
+                                    "description": "The order within a group of user interface components (FieldGroup) in which this attribute will receive focus for display or edit purpose."
                                   },
                                   "helpHint": {
-                                    "type": "string"
+                                    "type": "string",
+                                    "title": "Helper text for this component.",
+                                    "description": "The component default helper text used to aid the understanding of the component function to the user."
                                   },
                                   "errorMessage": {
-                                    "type": "string"
+                                    "type": "string",
+                                    "title": "Validation error message.",
+                                    "description": "The default error message displayed when text input validation fails."
                                   }
                                 },
+                                "title": "The user interface display options for this attribute.",
+                                "description": "Specify how this attribute is rendered on the user interface. Configuration options include label, icon, input/output masks, help hints among other.",
                                 "additionalProperties": false
                               },
                               "isReadonly": {
-                                "type": "boolean"
+                                "type": "boolean",
+                                "title": "Is this attribute readonly? Boolean value.",
+                                "description": "Indicates whether this attribute is readonly. Defaults to false."
                               }
                             },
                             "required": [
@@ -6735,8 +7343,8 @@
                     "name",
                     "type"
                   ],
-                  "title": "Defines the request parameters for a domain query.",
-                  "description": "The ordered parameters that is the input for the requested query. Can contain simple or complex types",
+                  "title": "Definition namespace for Nox simple types.",
+                  "description": "Nox simple types definition used throughout Nox.Solution project.",
                   "additionalProperties": false
                 },
                 "arrayTypeOptions": {
@@ -6748,10 +7356,14 @@
                     },
                     "name": {
                       "type": "string",
+                      "title": "The name of the attribute. Contains no spaces.",
+                      "description": "Assign a descriptive name to the attribute. Should be a singular noun and be unique within a collection of attributes. PascalCase recommended.",
                       "pattern": "^[^\\s]*$"
                     },
                     "description": {
-                      "type": "string"
+                      "type": "string",
+                      "title": "The description of the attribute.",
+                      "description": "A descriptive phrase that explains the nature and function of this attribute within a collection."
                     },
                     "type": {
                       "enum": [
@@ -6815,7 +7427,9 @@
                         "volume",
                         "weight",
                         "yaml"
-                      ]
+                      ],
+                      "title": "The Nox type of this attribute.",
+                      "description": "Select the Nox value object type that best represents this attribute and its functional requirements within the domain."
                     },
                     "textTypeOptions": {
                       "type": "object",
@@ -7057,7 +7671,9 @@
                       ]
                     },
                     "isRequired": {
-                      "type": "boolean"
+                      "type": "boolean",
+                      "title": "Is the attribute required? Boolean value.",
+                      "description": "Indicates whether this attribute is required within the collection. Defaults to false."
                     },
                     "userInterface": {
                       "type": "object",
@@ -7067,10 +7683,14 @@
                           "format": "uri"
                         },
                         "label": {
-                          "type": "string"
+                          "type": "string",
+                          "title": "A descriptive label for this attribute on the user interface.",
+                          "description": "The text label rendered on the user interface alongside the NoxTextInput component."
                         },
                         "translationId": {
-                          "type": "string"
+                          "type": "string",
+                          "title": "The multi-language translation identifier.",
+                          "description": "A unique string/key to reference the translations for this attribute for multi-language translations."
                         },
                         "widget": {
                           "enum": [
@@ -7087,46 +7707,72 @@
                             "select",
                             "checkbox",
                             "switch"
-                          ]
+                          ],
+                          "title": "Widget used to render this attribute on the user interface.",
+                          "description": "The user interface control type that is best suited to render the attribute on the screen."
                         },
                         "icon": {
-                          "type": "string"
+                          "type": "string",
+                          "title": "The icon representing the attribute on the user interface.",
+                          "description": "A reference URI to the attribute icon file. Could be a CSS or Mudblazor reference, e.g. \u0027@Icons.Material.Filled.Globe\u0027."
                         },
                         "iconPosition": {
                           "enum": [
                             "begin",
                             "end"
-                          ]
+                          ],
+                          "title": "The position of the attribute icon on the user interface.",
+                          "description": "The postition of the attribute icon relative to the text input area on the user interface, e.g. begin or end."
                         },
                         "inputMask": {
-                          "type": "string"
+                          "type": "string",
+                          "title": "A mask expression used to validate and control text input.",
+                          "description": "A string of characters that indicates the format of valid input values. For example \u0027(000) 000-0000\u0027 could be used for a seven digit phone number with mandatory area code."
                         },
                         "outputMask": {
-                          "type": "string"
+                          "type": "string",
+                          "title": "A mask expression used to validate and control a value\u0027s output.",
+                          "description": "A string of characters that indicates the format of valid output. Used to handle validation triggers for onSubmit and onChange events of the control."
                         },
                         "regex": {
-                          "type": "string"
+                          "type": "string",
+                          "title": "The regular expression against which input is validated.",
+                          "description": "A regex string that indicates the format of valid input. For example \u0027/^(\\([0-9]{3}\\) |[0-9]{3}-)[0-9]{3}-[0-9]{4}$/gm\u0027 could be used for a seven digit phone number with mandatory area code."
                         },
                         "pageGroup": {
-                          "type": "string"
+                          "type": "string",
+                          "title": "The user interface PageGroup identifier.",
+                          "description": "Used to associate component with a PageGroup identifier on the user interface."
                         },
                         "fieldGroup": {
-                          "type": "string"
+                          "type": "string",
+                          "title": "The user interface FieldGroup identifier.",
+                          "description": "Used to associate component with a FieldGroup identifier on the user interface."
                         },
                         "inputOrder": {
-                          "type": "integer"
+                          "type": "integer",
+                          "title": "Display/edit focus order within a FieldGroup on a user interface.",
+                          "description": "The order within a group of user interface components (FieldGroup) in which this attribute will receive focus for display or edit purpose."
                         },
                         "helpHint": {
-                          "type": "string"
+                          "type": "string",
+                          "title": "Helper text for this component.",
+                          "description": "The component default helper text used to aid the understanding of the component function to the user."
                         },
                         "errorMessage": {
-                          "type": "string"
+                          "type": "string",
+                          "title": "Validation error message.",
+                          "description": "The default error message displayed when text input validation fails."
                         }
                       },
+                      "title": "The user interface display options for this attribute.",
+                      "description": "Specify how this attribute is rendered on the user interface. Configuration options include label, icon, input/output masks, help hints among other.",
                       "additionalProperties": false
                     },
                     "isReadonly": {
-                      "type": "boolean"
+                      "type": "boolean",
+                      "title": "Is this attribute readonly? Boolean value.",
+                      "description": "Indicates whether this attribute is readonly. Defaults to false."
                     },
                     "objectTypeOptions": {
                       "type": "object",
@@ -7146,10 +7792,14 @@
                               },
                               "name": {
                                 "type": "string",
+                                "title": "The name of the attribute. Contains no spaces.",
+                                "description": "Assign a descriptive name to the attribute. Should be a singular noun and be unique within a collection of attributes. PascalCase recommended.",
                                 "pattern": "^[^\\s]*$"
                               },
                               "description": {
-                                "type": "string"
+                                "type": "string",
+                                "title": "The description of the attribute.",
+                                "description": "A descriptive phrase that explains the nature and function of this attribute within a collection."
                               },
                               "type": {
                                 "enum": [
@@ -7213,7 +7863,9 @@
                                   "volume",
                                   "weight",
                                   "yaml"
-                                ]
+                                ],
+                                "title": "The Nox type of this attribute.",
+                                "description": "Select the Nox value object type that best represents this attribute and its functional requirements within the domain."
                               },
                               "textTypeOptions": {
                                 "type": "object",
@@ -7455,7 +8107,9 @@
                                 ]
                               },
                               "isRequired": {
-                                "type": "boolean"
+                                "type": "boolean",
+                                "title": "Is the attribute required? Boolean value.",
+                                "description": "Indicates whether this attribute is required within the collection. Defaults to false."
                               },
                               "userInterface": {
                                 "type": "object",
@@ -7465,10 +8119,14 @@
                                     "format": "uri"
                                   },
                                   "label": {
-                                    "type": "string"
+                                    "type": "string",
+                                    "title": "A descriptive label for this attribute on the user interface.",
+                                    "description": "The text label rendered on the user interface alongside the NoxTextInput component."
                                   },
                                   "translationId": {
-                                    "type": "string"
+                                    "type": "string",
+                                    "title": "The multi-language translation identifier.",
+                                    "description": "A unique string/key to reference the translations for this attribute for multi-language translations."
                                   },
                                   "widget": {
                                     "enum": [
@@ -7485,46 +8143,72 @@
                                       "select",
                                       "checkbox",
                                       "switch"
-                                    ]
+                                    ],
+                                    "title": "Widget used to render this attribute on the user interface.",
+                                    "description": "The user interface control type that is best suited to render the attribute on the screen."
                                   },
                                   "icon": {
-                                    "type": "string"
+                                    "type": "string",
+                                    "title": "The icon representing the attribute on the user interface.",
+                                    "description": "A reference URI to the attribute icon file. Could be a CSS or Mudblazor reference, e.g. \u0027@Icons.Material.Filled.Globe\u0027."
                                   },
                                   "iconPosition": {
                                     "enum": [
                                       "begin",
                                       "end"
-                                    ]
+                                    ],
+                                    "title": "The position of the attribute icon on the user interface.",
+                                    "description": "The postition of the attribute icon relative to the text input area on the user interface, e.g. begin or end."
                                   },
                                   "inputMask": {
-                                    "type": "string"
+                                    "type": "string",
+                                    "title": "A mask expression used to validate and control text input.",
+                                    "description": "A string of characters that indicates the format of valid input values. For example \u0027(000) 000-0000\u0027 could be used for a seven digit phone number with mandatory area code."
                                   },
                                   "outputMask": {
-                                    "type": "string"
+                                    "type": "string",
+                                    "title": "A mask expression used to validate and control a value\u0027s output.",
+                                    "description": "A string of characters that indicates the format of valid output. Used to handle validation triggers for onSubmit and onChange events of the control."
                                   },
                                   "regex": {
-                                    "type": "string"
+                                    "type": "string",
+                                    "title": "The regular expression against which input is validated.",
+                                    "description": "A regex string that indicates the format of valid input. For example \u0027/^(\\([0-9]{3}\\) |[0-9]{3}-)[0-9]{3}-[0-9]{4}$/gm\u0027 could be used for a seven digit phone number with mandatory area code."
                                   },
                                   "pageGroup": {
-                                    "type": "string"
+                                    "type": "string",
+                                    "title": "The user interface PageGroup identifier.",
+                                    "description": "Used to associate component with a PageGroup identifier on the user interface."
                                   },
                                   "fieldGroup": {
-                                    "type": "string"
+                                    "type": "string",
+                                    "title": "The user interface FieldGroup identifier.",
+                                    "description": "Used to associate component with a FieldGroup identifier on the user interface."
                                   },
                                   "inputOrder": {
-                                    "type": "integer"
+                                    "type": "integer",
+                                    "title": "Display/edit focus order within a FieldGroup on a user interface.",
+                                    "description": "The order within a group of user interface components (FieldGroup) in which this attribute will receive focus for display or edit purpose."
                                   },
                                   "helpHint": {
-                                    "type": "string"
+                                    "type": "string",
+                                    "title": "Helper text for this component.",
+                                    "description": "The component default helper text used to aid the understanding of the component function to the user."
                                   },
                                   "errorMessage": {
-                                    "type": "string"
+                                    "type": "string",
+                                    "title": "Validation error message.",
+                                    "description": "The default error message displayed when text input validation fails."
                                   }
                                 },
+                                "title": "The user interface display options for this attribute.",
+                                "description": "Specify how this attribute is rendered on the user interface. Configuration options include label, icon, input/output masks, help hints among other.",
                                 "additionalProperties": false
                               },
                               "isReadonly": {
-                                "type": "boolean"
+                                "type": "boolean",
+                                "title": "Is this attribute readonly? Boolean value.",
+                                "description": "Indicates whether this attribute is readonly. Defaults to false."
                               }
                             },
                             "required": [
@@ -7543,8 +8227,8 @@
                     "name",
                     "type"
                   ],
-                  "title": "Defines the request parameters for a domain query.",
-                  "description": "The ordered parameters that is the input for the requested query. Can contain simple or complex types",
+                  "title": "Definition namespace for Nox simple types.",
+                  "description": "Nox simple types definition used throughout Nox.Solution project.",
                   "additionalProperties": false
                 },
                 "emitEvents": {
@@ -7577,10 +8261,14 @@
                 },
                 "name": {
                   "type": "string",
+                  "title": "The name of the attribute. Contains no spaces.",
+                  "description": "Assign a descriptive name to the attribute. Should be a singular noun and be unique within a collection of attributes. PascalCase recommended.",
                   "pattern": "^[^\\s]*$"
                 },
                 "description": {
-                  "type": "string"
+                  "type": "string",
+                  "title": "The description of the attribute.",
+                  "description": "A descriptive phrase that explains the nature and function of this attribute within a collection."
                 },
                 "type": {
                   "enum": [
@@ -7644,7 +8332,9 @@
                     "volume",
                     "weight",
                     "yaml"
-                  ]
+                  ],
+                  "title": "The Nox type of this attribute.",
+                  "description": "Select the Nox value object type that best represents this attribute and its functional requirements within the domain."
                 },
                 "textTypeOptions": {
                   "type": "object",
@@ -7886,7 +8576,9 @@
                   ]
                 },
                 "isRequired": {
-                  "type": "boolean"
+                  "type": "boolean",
+                  "title": "Is the attribute required? Boolean value.",
+                  "description": "Indicates whether this attribute is required within the collection. Defaults to false."
                 },
                 "userInterface": {
                   "type": "object",
@@ -7896,10 +8588,14 @@
                       "format": "uri"
                     },
                     "label": {
-                      "type": "string"
+                      "type": "string",
+                      "title": "A descriptive label for this attribute on the user interface.",
+                      "description": "The text label rendered on the user interface alongside the NoxTextInput component."
                     },
                     "translationId": {
-                      "type": "string"
+                      "type": "string",
+                      "title": "The multi-language translation identifier.",
+                      "description": "A unique string/key to reference the translations for this attribute for multi-language translations."
                     },
                     "widget": {
                       "enum": [
@@ -7916,46 +8612,72 @@
                         "select",
                         "checkbox",
                         "switch"
-                      ]
+                      ],
+                      "title": "Widget used to render this attribute on the user interface.",
+                      "description": "The user interface control type that is best suited to render the attribute on the screen."
                     },
                     "icon": {
-                      "type": "string"
+                      "type": "string",
+                      "title": "The icon representing the attribute on the user interface.",
+                      "description": "A reference URI to the attribute icon file. Could be a CSS or Mudblazor reference, e.g. \u0027@Icons.Material.Filled.Globe\u0027."
                     },
                     "iconPosition": {
                       "enum": [
                         "begin",
                         "end"
-                      ]
+                      ],
+                      "title": "The position of the attribute icon on the user interface.",
+                      "description": "The postition of the attribute icon relative to the text input area on the user interface, e.g. begin or end."
                     },
                     "inputMask": {
-                      "type": "string"
+                      "type": "string",
+                      "title": "A mask expression used to validate and control text input.",
+                      "description": "A string of characters that indicates the format of valid input values. For example \u0027(000) 000-0000\u0027 could be used for a seven digit phone number with mandatory area code."
                     },
                     "outputMask": {
-                      "type": "string"
+                      "type": "string",
+                      "title": "A mask expression used to validate and control a value\u0027s output.",
+                      "description": "A string of characters that indicates the format of valid output. Used to handle validation triggers for onSubmit and onChange events of the control."
                     },
                     "regex": {
-                      "type": "string"
+                      "type": "string",
+                      "title": "The regular expression against which input is validated.",
+                      "description": "A regex string that indicates the format of valid input. For example \u0027/^(\\([0-9]{3}\\) |[0-9]{3}-)[0-9]{3}-[0-9]{4}$/gm\u0027 could be used for a seven digit phone number with mandatory area code."
                     },
                     "pageGroup": {
-                      "type": "string"
+                      "type": "string",
+                      "title": "The user interface PageGroup identifier.",
+                      "description": "Used to associate component with a PageGroup identifier on the user interface."
                     },
                     "fieldGroup": {
-                      "type": "string"
+                      "type": "string",
+                      "title": "The user interface FieldGroup identifier.",
+                      "description": "Used to associate component with a FieldGroup identifier on the user interface."
                     },
                     "inputOrder": {
-                      "type": "integer"
+                      "type": "integer",
+                      "title": "Display/edit focus order within a FieldGroup on a user interface.",
+                      "description": "The order within a group of user interface components (FieldGroup) in which this attribute will receive focus for display or edit purpose."
                     },
                     "helpHint": {
-                      "type": "string"
+                      "type": "string",
+                      "title": "Helper text for this component.",
+                      "description": "The component default helper text used to aid the understanding of the component function to the user."
                     },
                     "errorMessage": {
-                      "type": "string"
+                      "type": "string",
+                      "title": "Validation error message.",
+                      "description": "The default error message displayed when text input validation fails."
                     }
                   },
+                  "title": "The user interface display options for this attribute.",
+                  "description": "Specify how this attribute is rendered on the user interface. Configuration options include label, icon, input/output masks, help hints among other.",
                   "additionalProperties": false
                 },
                 "isReadonly": {
-                  "type": "boolean"
+                  "type": "boolean",
+                  "title": "Is this attribute readonly? Boolean value.",
+                  "description": "Indicates whether this attribute is readonly. Defaults to false."
                 }
               },
               "required": [
@@ -7981,10 +8703,14 @@
                 },
                 "name": {
                   "type": "string",
+                  "title": "The name of the attribute. Contains no spaces.",
+                  "description": "Assign a descriptive name to the attribute. Should be a singular noun and be unique within a collection of attributes. PascalCase recommended.",
                   "pattern": "^[^\\s]*$"
                 },
                 "description": {
-                  "type": "string"
+                  "type": "string",
+                  "title": "The description of the attribute.",
+                  "description": "A descriptive phrase that explains the nature and function of this attribute within a collection."
                 },
                 "type": {
                   "enum": [
@@ -8048,7 +8774,9 @@
                     "volume",
                     "weight",
                     "yaml"
-                  ]
+                  ],
+                  "title": "The Nox type of this attribute.",
+                  "description": "Select the Nox value object type that best represents this attribute and its functional requirements within the domain."
                 },
                 "textTypeOptions": {
                   "type": "object",
@@ -8290,7 +9018,9 @@
                   ]
                 },
                 "isRequired": {
-                  "type": "boolean"
+                  "type": "boolean",
+                  "title": "Is the attribute required? Boolean value.",
+                  "description": "Indicates whether this attribute is required within the collection. Defaults to false."
                 },
                 "userInterface": {
                   "type": "object",
@@ -8300,10 +9030,14 @@
                       "format": "uri"
                     },
                     "label": {
-                      "type": "string"
+                      "type": "string",
+                      "title": "A descriptive label for this attribute on the user interface.",
+                      "description": "The text label rendered on the user interface alongside the NoxTextInput component."
                     },
                     "translationId": {
-                      "type": "string"
+                      "type": "string",
+                      "title": "The multi-language translation identifier.",
+                      "description": "A unique string/key to reference the translations for this attribute for multi-language translations."
                     },
                     "widget": {
                       "enum": [
@@ -8320,46 +9054,72 @@
                         "select",
                         "checkbox",
                         "switch"
-                      ]
+                      ],
+                      "title": "Widget used to render this attribute on the user interface.",
+                      "description": "The user interface control type that is best suited to render the attribute on the screen."
                     },
                     "icon": {
-                      "type": "string"
+                      "type": "string",
+                      "title": "The icon representing the attribute on the user interface.",
+                      "description": "A reference URI to the attribute icon file. Could be a CSS or Mudblazor reference, e.g. \u0027@Icons.Material.Filled.Globe\u0027."
                     },
                     "iconPosition": {
                       "enum": [
                         "begin",
                         "end"
-                      ]
+                      ],
+                      "title": "The position of the attribute icon on the user interface.",
+                      "description": "The postition of the attribute icon relative to the text input area on the user interface, e.g. begin or end."
                     },
                     "inputMask": {
-                      "type": "string"
+                      "type": "string",
+                      "title": "A mask expression used to validate and control text input.",
+                      "description": "A string of characters that indicates the format of valid input values. For example \u0027(000) 000-0000\u0027 could be used for a seven digit phone number with mandatory area code."
                     },
                     "outputMask": {
-                      "type": "string"
+                      "type": "string",
+                      "title": "A mask expression used to validate and control a value\u0027s output.",
+                      "description": "A string of characters that indicates the format of valid output. Used to handle validation triggers for onSubmit and onChange events of the control."
                     },
                     "regex": {
-                      "type": "string"
+                      "type": "string",
+                      "title": "The regular expression against which input is validated.",
+                      "description": "A regex string that indicates the format of valid input. For example \u0027/^(\\([0-9]{3}\\) |[0-9]{3}-)[0-9]{3}-[0-9]{4}$/gm\u0027 could be used for a seven digit phone number with mandatory area code."
                     },
                     "pageGroup": {
-                      "type": "string"
+                      "type": "string",
+                      "title": "The user interface PageGroup identifier.",
+                      "description": "Used to associate component with a PageGroup identifier on the user interface."
                     },
                     "fieldGroup": {
-                      "type": "string"
+                      "type": "string",
+                      "title": "The user interface FieldGroup identifier.",
+                      "description": "Used to associate component with a FieldGroup identifier on the user interface."
                     },
                     "inputOrder": {
-                      "type": "integer"
+                      "type": "integer",
+                      "title": "Display/edit focus order within a FieldGroup on a user interface.",
+                      "description": "The order within a group of user interface components (FieldGroup) in which this attribute will receive focus for display or edit purpose."
                     },
                     "helpHint": {
-                      "type": "string"
+                      "type": "string",
+                      "title": "Helper text for this component.",
+                      "description": "The component default helper text used to aid the understanding of the component function to the user."
                     },
                     "errorMessage": {
-                      "type": "string"
+                      "type": "string",
+                      "title": "Validation error message.",
+                      "description": "The default error message displayed when text input validation fails."
                     }
                   },
+                  "title": "The user interface display options for this attribute.",
+                  "description": "Specify how this attribute is rendered on the user interface. Configuration options include label, icon, input/output masks, help hints among other.",
                   "additionalProperties": false
                 },
                 "isReadonly": {
-                  "type": "boolean"
+                  "type": "boolean",
+                  "title": "Is this attribute readonly? Boolean value.",
+                  "description": "Indicates whether this attribute is readonly. Defaults to false."
                 }
               },
               "required": [
@@ -8383,10 +9143,14 @@
                 },
                 "name": {
                   "type": "string",
+                  "title": "The name of the attribute. Contains no spaces.",
+                  "description": "Assign a descriptive name to the attribute. Should be a singular noun and be unique within a collection of attributes. PascalCase recommended.",
                   "pattern": "^[^\\s]*$"
                 },
                 "description": {
-                  "type": "string"
+                  "type": "string",
+                  "title": "The description of the attribute.",
+                  "description": "A descriptive phrase that explains the nature and function of this attribute within a collection."
                 },
                 "type": {
                   "enum": [
@@ -8450,7 +9214,9 @@
                     "volume",
                     "weight",
                     "yaml"
-                  ]
+                  ],
+                  "title": "The Nox type of this attribute.",
+                  "description": "Select the Nox value object type that best represents this attribute and its functional requirements within the domain."
                 },
                 "textTypeOptions": {
                   "type": "object",
@@ -8692,7 +9458,9 @@
                   ]
                 },
                 "isRequired": {
-                  "type": "boolean"
+                  "type": "boolean",
+                  "title": "Is the attribute required? Boolean value.",
+                  "description": "Indicates whether this attribute is required within the collection. Defaults to false."
                 },
                 "userInterface": {
                   "type": "object",
@@ -8702,10 +9470,14 @@
                       "format": "uri"
                     },
                     "label": {
-                      "type": "string"
+                      "type": "string",
+                      "title": "A descriptive label for this attribute on the user interface.",
+                      "description": "The text label rendered on the user interface alongside the NoxTextInput component."
                     },
                     "translationId": {
-                      "type": "string"
+                      "type": "string",
+                      "title": "The multi-language translation identifier.",
+                      "description": "A unique string/key to reference the translations for this attribute for multi-language translations."
                     },
                     "widget": {
                       "enum": [
@@ -8722,46 +9494,72 @@
                         "select",
                         "checkbox",
                         "switch"
-                      ]
+                      ],
+                      "title": "Widget used to render this attribute on the user interface.",
+                      "description": "The user interface control type that is best suited to render the attribute on the screen."
                     },
                     "icon": {
-                      "type": "string"
+                      "type": "string",
+                      "title": "The icon representing the attribute on the user interface.",
+                      "description": "A reference URI to the attribute icon file. Could be a CSS or Mudblazor reference, e.g. \u0027@Icons.Material.Filled.Globe\u0027."
                     },
                     "iconPosition": {
                       "enum": [
                         "begin",
                         "end"
-                      ]
+                      ],
+                      "title": "The position of the attribute icon on the user interface.",
+                      "description": "The postition of the attribute icon relative to the text input area on the user interface, e.g. begin or end."
                     },
                     "inputMask": {
-                      "type": "string"
+                      "type": "string",
+                      "title": "A mask expression used to validate and control text input.",
+                      "description": "A string of characters that indicates the format of valid input values. For example \u0027(000) 000-0000\u0027 could be used for a seven digit phone number with mandatory area code."
                     },
                     "outputMask": {
-                      "type": "string"
+                      "type": "string",
+                      "title": "A mask expression used to validate and control a value\u0027s output.",
+                      "description": "A string of characters that indicates the format of valid output. Used to handle validation triggers for onSubmit and onChange events of the control."
                     },
                     "regex": {
-                      "type": "string"
+                      "type": "string",
+                      "title": "The regular expression against which input is validated.",
+                      "description": "A regex string that indicates the format of valid input. For example \u0027/^(\\([0-9]{3}\\) |[0-9]{3}-)[0-9]{3}-[0-9]{4}$/gm\u0027 could be used for a seven digit phone number with mandatory area code."
                     },
                     "pageGroup": {
-                      "type": "string"
+                      "type": "string",
+                      "title": "The user interface PageGroup identifier.",
+                      "description": "Used to associate component with a PageGroup identifier on the user interface."
                     },
                     "fieldGroup": {
-                      "type": "string"
+                      "type": "string",
+                      "title": "The user interface FieldGroup identifier.",
+                      "description": "Used to associate component with a FieldGroup identifier on the user interface."
                     },
                     "inputOrder": {
-                      "type": "integer"
+                      "type": "integer",
+                      "title": "Display/edit focus order within a FieldGroup on a user interface.",
+                      "description": "The order within a group of user interface components (FieldGroup) in which this attribute will receive focus for display or edit purpose."
                     },
                     "helpHint": {
-                      "type": "string"
+                      "type": "string",
+                      "title": "Helper text for this component.",
+                      "description": "The component default helper text used to aid the understanding of the component function to the user."
                     },
                     "errorMessage": {
-                      "type": "string"
+                      "type": "string",
+                      "title": "Validation error message.",
+                      "description": "The default error message displayed when text input validation fails."
                     }
                   },
+                  "title": "The user interface display options for this attribute.",
+                  "description": "Specify how this attribute is rendered on the user interface. Configuration options include label, icon, input/output masks, help hints among other.",
                   "additionalProperties": false
                 },
                 "isReadonly": {
-                  "type": "boolean"
+                  "type": "boolean",
+                  "title": "Is this attribute readonly? Boolean value.",
+                  "description": "Indicates whether this attribute is readonly. Defaults to false."
                 }
               },
               "required": [

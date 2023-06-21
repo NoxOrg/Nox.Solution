@@ -79,8 +79,8 @@
         },
         "dataConnectionName": {
           "type": "string",
-          "title": "The name of the ETL source data connection. Contains no spaces.",
-          "description": "The name should be a commonly used singular noun and be unique within a solution.",
+          "title": "The name of the integration source. Contains no spaces.",
+          "description": "The name of the data connection for this integration source. This must refer to an existing data connection in infrastructure, dependencies, dataConnections.",
           "pattern": "^[^\\s]*$",
           "additionalProperties": false
         },
@@ -119,14 +119,16 @@
               "type": [
                 "integer",
                 "null"
-              ]
+              ],
+              "title": "The minimum expected record count.",
+              "description": "The minimum expected record count as a result of this data ingestion."
             }
           },
           "required": [
             "query"
           ],
-          "title": "The name of the integration source. Contains no spaces.",
-          "description": "The name of the data connection for this integration source. This must refer to an existing data connection in infrastructure, dependencies, dataConnections.",
+          "title": "Definition namespace for a database ETL source.",
+          "description": "This section specified attributes related to an ETL source of type Database. Attributes include the database query as well as minimumexpected records.",
           "additionalProperties": false
         },
         "fileOptions": {
@@ -141,12 +143,16 @@
               "type": [
                 "integer",
                 "null"
-              ]
+              ],
+              "title": "The minimum expected record count.",
+              "description": "The minimum expected record count as a result of this data ingestion."
             }
           },
           "required": [
             "filename"
           ],
+          "title": "Definition namespace for a file type ETL source.",
+          "description": "This section specified attributes related to an ETL source of type File. Attributes include the database query as well as minimumexpected records.",
           "additionalProperties": false
         },
         "messageQueueOptions": {
@@ -161,27 +167,37 @@
           "required": [
             "sourceName"
           ],
+          "title": "Definition namespace for a Message Queue ETL source.",
+          "description": "This section specified attributes related to an ETL source of type Message Queue. Attributes include the route, format and verb.",
           "additionalProperties": false
         },
         "webApiOptions": {
           "type": "object",
           "properties": {
             "route": {
-              "type": "string"
+              "type": "string",
+              "title": "The path component for the request URI.",
+              "description": "The path component for the request URI, e.g. \u0027/myPath\u0027 in http://localhost:8081/myPath?myParameter=123."
             },
             "responseFormat": {
               "enum": [
                 "json",
                 "xml"
-              ]
+              ],
+              "title": "The Http response format.",
+              "description": "The format of the Http response data papyload, eg. Json, XML."
             },
             "httpVerb": {
               "enum": [
                 "get",
                 "post"
-              ]
+              ],
+              "title": "The Http request verb.",
+              "description": "The relevant verb detailing the Http request type, i.e. GET, POST, etc."
             }
           },
+          "title": "Definition namespace for a web API ETL source.",
+          "description": "This section specified attributes related to an ETL source of type web API. Attributes include the route, response format and http verb.",
           "additionalProperties": false
         }
       },

@@ -17,6 +17,7 @@ using System;
 using Json.Schema.Serialization;
 using Xunit.Abstractions;
 using FluentValidation;
+using Nox.Solution.Validation;
 
 namespace Nox.Solution.Tests;
 
@@ -399,87 +400,11 @@ public class NoxSolutionSchemaGenerate
         }
     }
 
-    private readonly ITestOutputHelper output;
-
-    public NoxSolutionSchemaGenerate(ITestOutputHelper output)
-    {
-        this.output = output;
-    }
-
     [Fact]
     public void test_validation()
     {
-        var yaml = File.ReadAllText("./files/sample.solution.nox.yaml");
+        var yaml = File.ReadAllText("./files/minimal.solution.nox.yaml");
 
-        var model = ValidatingJsonConverter.Deserialize<NoxSolution>(yaml);
-    }
-
-    public class ValidatingJsonConverter
-    {
-        public static T? Deserialize<T>(string yaml)
-        {
-            var schemaConfig = new SchemaGeneratorConfiguration()
-            {
-                PropertyNamingMethod = PropertyNamingMethods.CamelCase,
-                Nullability = Nullability.AllowForNullableValueTypes,
-                Refiners = { new EnumToCamelCaseRefiner(excludeTypes: new Type[] { typeof(CurrencyCode) }) },
-                Generators = { new ReadOnlyStringDictionarySchemaGenerator() },
-                Optimize = false,
-            };
-
-            var schema = new JsonSchemaBuilder()
-               .Schema(MetaSchemas.Draft7Id)
-               .FromType<T>(schemaConfig)
-               .Build();
-
-            var deserializer = new DeserializerBuilder()
-                .WithNamingConvention(CamelCaseNamingConvention.Instance)
-                .WithNodeTypeResolver(new ReadOnlyCollectionNodeTypeResolver())
-                .Build();
-
-            var yamlObject = deserializer.Deserialize<T>(new StringReader(yaml));
-
-            var jsonDocument = JsonSerializer.SerializeToDocument(yamlObject);
-            var evaluateOptions = new EvaluationOptions
-            {
-                OutputFormat = OutputFormat.List,
-                RequireFormatValidation = true
-            };
-            var result = schema.Evaluate(jsonDocument, evaluateOptions);
-            if (result.IsValid)
-            {
-                // JSON is valid according to the schema
-                var opts = new JsonSerializerOptions
-                {
-                    PropertyNameCaseInsensitive = true,
-                    WriteIndented = true,
-                };
-
-                var obj = JsonSerializer.Deserialize<T>(jsonDocument, opts);
-                return obj;
-            }
-            else
-            {
-                var errors = new List<string>();
-                HandleErrorsRecursively(result, errors);
-
-                throw new Exception(string.Join("\n", errors));
-            }
-        }
-
-        private static void HandleErrorsRecursively(EvaluationResults results, List<string> errors)
-        {
-            if (results.Errors != null)
-            {
-                foreach (var error in results.Errors)
-                {
-                    errors.Add($"{results.EvaluationPath}: {error.Key} - {error.Value}");
-                }
-            }
-            foreach (var detail in results.Details)
-            {
-                HandleErrorsRecursively(detail, errors);
-            }
-        }
+        var model = NoxValidationJsonConverter.Deserialize<NoxSolution>(yaml);
     }
 }

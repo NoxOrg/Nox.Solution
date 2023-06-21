@@ -38,14 +38,26 @@ public class EnvironmentVariableMacroParserTest
     [Fact]
     public void When_Creating_NoxSolution_Uses_System_Environment_By_Default()
     {
-        var noxConfig = new NoxSolutionBuilder()
-            .UseYamlFile("./files/macros/envvar.solution.nox.yaml")
-            .Build();
+        try
+        {
+            System.Environment.SetEnvironmentVariable("MyTemp","MyTemp");
+            System.Environment.SetEnvironmentVariable("MyTempDir","MyTempDir");
 
-        Assert.NotNull(noxConfig);
+            var noxConfig = new NoxSolutionBuilder()
+                .UseYamlFile("./files/macros/envvar.solution.nox.yaml")
+                .Build();
 
-        Assert.Equal("EnvTestService", noxConfig.Name);
-        Assert.NotEqual("${{ env.TEMP }} ${{ env.TMPDIR }}", noxConfig.Description);
+            Assert.NotNull(noxConfig);
+
+            Assert.Equal("EnvTestService", noxConfig.Name);
+            Assert.NotEqual("${{ env.MyTemp }} ${{ env.MyTempDir }}", noxConfig.Description);
+        }
+        finally
+        {
+            System.Environment.SetEnvironmentVariable("MyTemp",null);
+            System.Environment.SetEnvironmentVariable("MyTempDir",null);
+        }
+
 
     }
 

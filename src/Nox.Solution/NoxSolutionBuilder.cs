@@ -47,12 +47,9 @@ namespace Nox.Solution
             var resolver = new YamlReferenceResolver(_yamlFilePath);
             var yaml = resolver.ResolveReferences();
 
-            var config = NoxYamlSerializer.Deserialize<NoxSolution>(yaml);
-
-            if (config == null)
-            {
-                throw new ApplicationException("Configuration file has not been parsed proprly");
-            }
+            var config =
+                NoxYamlSerializer.Deserialize<NoxSolution>(yaml)
+                ?? throw new NoxSolutionConfigurationException("Configuration file has not been parsed properly.");
 
             config.RootYamlFile = _yamlFilePath;
             return config;

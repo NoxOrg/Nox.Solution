@@ -4,7 +4,6 @@ using System.Collections.Generic;
 
 namespace Nox.Solution
 {
-
     [Title("Fully describes a NOX solution")]
     [Description("Contains all configuration, domain objects and infrastructure declarations that defines a NOX solution. See https://noxorg.dev for more.")]
     [AdditionalProperties(false)]
@@ -46,6 +45,5 @@ namespace Nox.Solution
         public Infrastructure? Infrastructure { get; internal set; }
 
         public Application? Application { get; internal set; }
-
     }
 }

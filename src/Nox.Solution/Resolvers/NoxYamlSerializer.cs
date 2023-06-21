@@ -8,6 +8,7 @@ using System.Text.Json;
 using Json.Schema;
 using Json.Schema.Generation;
 using Nox.Solution.Schema;
+using Nox.Solution.Exceptions;
 
 namespace Nox.Solution.Resolvers;
 
@@ -18,26 +19,15 @@ internal static class NoxYamlSerializer
 {
     public static T? Deserialize<T>(string yaml)
     {
-        var schemaConfig = new SchemaGeneratorConfiguration()
-        {
-            PropertyNamingMethod = PropertyNamingMethods.CamelCase,
-            Nullability = Nullability.AllowForNullableValueTypes,
-            Refiners = { new EnumToCamelCaseRefiner(excludeTypes: new Type[] { typeof(CurrencyCode) }) },
-            Generators = { new ReadOnlyStringDictionarySchemaGenerator() },
-            Optimize = false,
-        };
-
-        var schema = new JsonSchemaBuilder()
-           .Schema(MetaSchemas.Draft7Id)
-           .FromType<T>(schemaConfig)
-           .Build();
-
         var deserializer = new DeserializerBuilder()
             .WithNamingConvention(CamelCaseNamingConvention.Instance)
             .WithNodeTypeResolver(new ReadOnlyCollectionNodeTypeResolver())
             .Build();
 
-        var yamlObject = deserializer.Deserialize(new StringReader(yaml));
+        using var sr = new StringReader(yaml);
+        var yamlContent = sr.ReadToEnd();
+
+        var yamlObject = deserializer.Deserialize<object>(yamlContent);
         var jsonDocument = JsonSerializer.SerializeToDocument(yamlObject);
 
         var evaluateOptions = new EvaluationOptions
@@ -46,6 +36,7 @@ internal static class NoxYamlSerializer
             RequireFormatValidation = true
         };
 
+        var schema = SchemaGenerator.Generate<Solution>();
         var result = schema.Evaluate(jsonDocument, evaluateOptions);
 
         var errors = new List<string>();
@@ -53,13 +44,11 @@ internal static class NoxYamlSerializer
 
         if (errors.Count > 0)
         {
-            throw new ApplicationException(string.Join("\n", errors));
+            throw new NoxSolutionConfigurationException(string.Join("\n", errors));
         }
 
-        var obj = jsonDocument.Deserialize<T>(new JsonSerializerOptions
-        {
-            PropertyNameCaseInsensitive = true
-        });
+        var obj = deserializer.Deserialize<T>(yamlContent);
+
         return obj;
     }
 
@@ -73,7 +62,7 @@ internal static class NoxYamlSerializer
                 {
                     continue;
                 }
-                errors.Add($"{results.EvaluationPath}: {error.Key} - {error.Value}");
+                errors.Add($"Path: {results.EvaluationPath}. Error:  {error.Key} - {error.Value}");
             }
         }
         foreach (var detail in results.Details)

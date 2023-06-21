@@ -1,5 +1,6 @@
-using System.Collections.Concurrent;
 using System.Text.Json;
+using System.Text.Json.Nodes;
+using System.Text.Json.Serialization;
 using Json.Schema;
 using Json.Schema.Generation;
 using Json.Schema.Generation.Generators;
@@ -7,6 +8,15 @@ using Json.Schema.Generation.Intents;
 using Nox.Types;
 using YamlDotNet.Core.Events;
 using YamlDotNet.Serialization;
+using YamlDotNet.Serialization.NamingConventions;
+using static Nox.Solution.Tests.NoxSolutionSchemaGenerate;
+
+using System.Diagnostics;
+using Json.More;
+using System;
+using Json.Schema.Serialization;
+using Xunit.Abstractions;
+using FluentValidation;
 
 namespace Nox.Solution.Tests;
 
@@ -15,12 +25,11 @@ public class NoxSolutionSchemaGenerate
     [Fact]
     public void Can_create_a_json_schema_for_yaml()
     {
-
         /*
          * TODO: $ref support for arrays/lists
-         * 
+         *
          * TODO: make enum type strings too
-         * 
+         *
          */
 
         var path = FindOrCreateFolderInProjectRoot("schemas");
@@ -29,7 +38,7 @@ public class NoxSolutionSchemaGenerate
         {
             PropertyNamingMethod = PropertyNamingMethods.CamelCase,
             Nullability = Nullability.AllowForNullableValueTypes,
-            Refiners = { new EnumToCamelCaseRefiner( excludeTypes: new Type[] { typeof(CurrencyCode) } ) },
+            Refiners = { new EnumToCamelCaseRefiner(excludeTypes: new Type[] { typeof(CurrencyCode) }) },
             Generators = { new ReadOnlyStringDictionarySchemaGenerator() },
             Optimize = false,
         };
@@ -39,7 +48,7 @@ public class NoxSolutionSchemaGenerate
             WriteIndented = true,
         };
 
-//Solution        
+        //Solution
         var solutionSchema = new JsonSchemaBuilder()
             .Schema(MetaSchemas.Draft7Id)
             .FromType<NoxSolution>(schemaConfig)
@@ -48,8 +57,8 @@ public class NoxSolutionSchemaGenerate
         File.WriteAllText(Path.Combine(path, "solution.json"),
             JsonSerializer.Serialize(solutionSchema, jsonConfig)
         );
-        
-//Variables        
+
+        //Variables
         var variablesSchema = new JsonSchemaBuilder()
             .Schema(MetaSchemas.Draft7Id)
             .FromType<Dictionary<string, string>?>(schemaConfig)
@@ -59,7 +68,7 @@ public class NoxSolutionSchemaGenerate
             JsonSerializer.Serialize(variablesSchema, jsonConfig)
         );
 
-//Environments        
+        //Environments
         var environmentSchema = new JsonSchemaBuilder()
             .Schema(MetaSchemas.Draft7Id)
             .FromType<Environment>(schemaConfig)
@@ -68,19 +77,18 @@ public class NoxSolutionSchemaGenerate
         File.WriteAllText(Path.Combine(path, "environment.json"),
             JsonSerializer.Serialize(environmentSchema, jsonConfig)
         );
-        
-//Version Control        
+
+        //Version Control
         var versionControlSchema = new JsonSchemaBuilder()
             .Schema(MetaSchemas.Draft7Id)
             .FromType<VersionControl>(schemaConfig)
             .Build();
 
-
         File.WriteAllText(Path.Combine(path, "versionControl.json"),
             JsonSerializer.Serialize(versionControlSchema, jsonConfig)
         );
-        
-//Team
+
+        //Team
         var teamSchema = new JsonSchemaBuilder()
             .Schema(MetaSchemas.Draft7Id)
             .FromType<TeamMember>(schemaConfig)
@@ -89,8 +97,8 @@ public class NoxSolutionSchemaGenerate
         File.WriteAllText(Path.Combine(path, "team.json"),
             JsonSerializer.Serialize(teamSchema, jsonConfig)
         );
-        
-//Domain        
+
+        //Domain
         var domainSchema = new JsonSchemaBuilder()
             .Schema(MetaSchemas.Draft7Id)
             .FromType<Domain>(schemaConfig)
@@ -99,8 +107,8 @@ public class NoxSolutionSchemaGenerate
         File.WriteAllText(Path.Combine(path, "domain.json"),
             JsonSerializer.Serialize(domainSchema, jsonConfig)
         );
-        
-//Domain/Entity        
+
+        //Domain/Entity
         var entitySchema = new JsonSchemaBuilder()
             .Schema(MetaSchemas.Draft7Id)
             .FromType<Entity>(schemaConfig)
@@ -109,8 +117,8 @@ public class NoxSolutionSchemaGenerate
         File.WriteAllText(Path.Combine(path, "entity.json"),
             JsonSerializer.Serialize(entitySchema, jsonConfig)
         );
-        
-//Application        
+
+        //Application
         var applicationSchema = new JsonSchemaBuilder()
             .Schema(MetaSchemas.Draft7Id)
             .FromType<Application>(schemaConfig)
@@ -119,8 +127,8 @@ public class NoxSolutionSchemaGenerate
         File.WriteAllText(Path.Combine(path, "application.json"),
             JsonSerializer.Serialize(applicationSchema, jsonConfig)
         );
-        
-//Application/DataTransferObjects
+
+        //Application/DataTransferObjects
         var dtosSchema = new JsonSchemaBuilder()
             .Schema(MetaSchemas.Draft7Id)
             .FromType<List<DataTransferObject>>(schemaConfig)
@@ -129,8 +137,8 @@ public class NoxSolutionSchemaGenerate
         File.WriteAllText(Path.Combine(path, "dataTransferObjects.json"),
             JsonSerializer.Serialize(dtosSchema, jsonConfig)
         );
-        
-//Application/dto
+
+        //Application/dto
         var dtoSchema = new JsonSchemaBuilder()
             .Schema(MetaSchemas.Draft7Id)
             .FromType<DataTransferObject>(schemaConfig)
@@ -138,10 +146,9 @@ public class NoxSolutionSchemaGenerate
 
         File.WriteAllText(Path.Combine(path, "dto.json"),
             JsonSerializer.Serialize(dtoSchema, jsonConfig)
-        );        
+        );
 
-
-//Application/Integration
+        //Application/Integration
         var integrationSchema = new JsonSchemaBuilder()
             .Schema(MetaSchemas.Draft7Id)
             .FromType<Integration>(schemaConfig)
@@ -150,9 +157,8 @@ public class NoxSolutionSchemaGenerate
         File.WriteAllText(Path.Combine(path, "integration.json"),
             JsonSerializer.Serialize(integrationSchema, jsonConfig)
         );
-        
-        
-//Infrastructure        
+
+        //Infrastructure
         var infrastructureSchema = new JsonSchemaBuilder()
             .Schema(MetaSchemas.Draft7Id)
             .FromType<Infrastructure>(schemaConfig)
@@ -161,8 +167,8 @@ public class NoxSolutionSchemaGenerate
         File.WriteAllText(Path.Combine(path, "infrastructure.json"),
             JsonSerializer.Serialize(infrastructureSchema, jsonConfig)
         );
-        
-//Infrastructure/Persistence      
+
+        //Infrastructure/Persistence
         var persistenceSchema = new JsonSchemaBuilder()
             .Schema(MetaSchemas.Draft7Id)
             .FromType<Persistence>(schemaConfig)
@@ -170,9 +176,9 @@ public class NoxSolutionSchemaGenerate
 
         File.WriteAllText(Path.Combine(path, "persistence.json"),
             JsonSerializer.Serialize(persistenceSchema, jsonConfig)
-        );      
-        
-//Infrastructure/Persistence/DatabaseServer     
+        );
+
+        //Infrastructure/Persistence/DatabaseServer
         var dbServerSchema = new JsonSchemaBuilder()
             .Schema(MetaSchemas.Draft7Id)
             .FromType<DatabaseServer>(schemaConfig)
@@ -180,9 +186,9 @@ public class NoxSolutionSchemaGenerate
 
         File.WriteAllText(Path.Combine(path, "databaseServer.json"),
             JsonSerializer.Serialize(dbServerSchema, jsonConfig)
-        );         
-        
-//Infrastructure/Persistence/CacheServer     
+        );
+
+        //Infrastructure/Persistence/CacheServer
         var cacheServerSchema = new JsonSchemaBuilder()
             .Schema(MetaSchemas.Draft7Id)
             .FromType<CacheServer>(schemaConfig)
@@ -190,9 +196,9 @@ public class NoxSolutionSchemaGenerate
 
         File.WriteAllText(Path.Combine(path, "cacheServer.json"),
             JsonSerializer.Serialize(cacheServerSchema, jsonConfig)
-        );      
-        
-//Infrastructure/Persistence/SearchServer     
+        );
+
+        //Infrastructure/Persistence/SearchServer
         var searchServerSchema = new JsonSchemaBuilder()
             .Schema(MetaSchemas.Draft7Id)
             .FromType<SearchServer>(schemaConfig)
@@ -200,9 +206,9 @@ public class NoxSolutionSchemaGenerate
 
         File.WriteAllText(Path.Combine(path, "searchServer.json"),
             JsonSerializer.Serialize(searchServerSchema, jsonConfig)
-        );   
-        
-//Infrastructure/Persistence/EventSourceServer     
+        );
+
+        //Infrastructure/Persistence/EventSourceServer
         var eventSourceSchema = new JsonSchemaBuilder()
             .Schema(MetaSchemas.Draft7Id)
             .FromType<Infrastructure>(schemaConfig)
@@ -210,9 +216,9 @@ public class NoxSolutionSchemaGenerate
 
         File.WriteAllText(Path.Combine(path, "eventSourceServer.json"),
             JsonSerializer.Serialize(eventSourceSchema, jsonConfig)
-        );  
-        
-//Infrastructure/Messaging   
+        );
+
+        //Infrastructure/Messaging
         var messagingSchema = new JsonSchemaBuilder()
             .Schema(MetaSchemas.Draft7Id)
             .FromType<Messaging>(schemaConfig)
@@ -220,10 +226,9 @@ public class NoxSolutionSchemaGenerate
 
         File.WriteAllText(Path.Combine(path, "messaging.json"),
             JsonSerializer.Serialize(messagingSchema, jsonConfig)
-        );          
-        
-        
-//Infrastructure/Endpoints
+        );
+
+        //Infrastructure/Endpoints
         var endpointsSchema = new JsonSchemaBuilder()
             .Schema(MetaSchemas.Draft7Id)
             .FromType<Endpoints>(schemaConfig)
@@ -231,9 +236,9 @@ public class NoxSolutionSchemaGenerate
 
         File.WriteAllText(Path.Combine(path, "endpoints.json"),
             JsonSerializer.Serialize(endpointsSchema, jsonConfig)
-        );        
-        
-//Infrastructure/Endpoints/ApiServer
+        );
+
+        //Infrastructure/Endpoints/ApiServer
         var apiServerSchema = new JsonSchemaBuilder()
             .Schema(MetaSchemas.Draft7Id)
             .FromType<ApiServer>(schemaConfig)
@@ -241,9 +246,9 @@ public class NoxSolutionSchemaGenerate
 
         File.WriteAllText(Path.Combine(path, "apiServer.json"),
             JsonSerializer.Serialize(apiServerSchema, jsonConfig)
-        );  
-        
-//Infrastructure/Endpoints/BffServer
+        );
+
+        //Infrastructure/Endpoints/BffServer
         var bffServerSchema = new JsonSchemaBuilder()
             .Schema(MetaSchemas.Draft7Id)
             .FromType<BffServer>(schemaConfig)
@@ -251,9 +256,9 @@ public class NoxSolutionSchemaGenerate
 
         File.WriteAllText(Path.Combine(path, "bffServer.json"),
             JsonSerializer.Serialize(bffServerSchema, jsonConfig)
-        );          
-        
-//Infrastructure/Dependencies
+        );
+
+        //Infrastructure/Dependencies
         var dependenciesSchema = new JsonSchemaBuilder()
             .Schema(MetaSchemas.Draft7Id)
             .FromType<Dependencies>(schemaConfig)
@@ -261,9 +266,9 @@ public class NoxSolutionSchemaGenerate
 
         File.WriteAllText(Path.Combine(path, "dependencies.json"),
             JsonSerializer.Serialize(dependenciesSchema, jsonConfig)
-        );  
-        
-//Infrastructure/Dependencies/Notifications
+        );
+
+        //Infrastructure/Dependencies/Notifications
         var notificationsSchema = new JsonSchemaBuilder()
             .Schema(MetaSchemas.Draft7Id)
             .FromType<Notifications>(schemaConfig)
@@ -271,9 +276,9 @@ public class NoxSolutionSchemaGenerate
 
         File.WriteAllText(Path.Combine(path, "notifications.json"),
             JsonSerializer.Serialize(notificationsSchema, jsonConfig)
-        );   
-        
-//Infrastructure/Dependencies/Monitoring
+        );
+
+        //Infrastructure/Dependencies/Monitoring
         var monitoringSchema = new JsonSchemaBuilder()
             .Schema(MetaSchemas.Draft7Id)
             .FromType<Monitoring>(schemaConfig)
@@ -281,9 +286,9 @@ public class NoxSolutionSchemaGenerate
 
         File.WriteAllText(Path.Combine(path, "monitoring.json"),
             JsonSerializer.Serialize(monitoringSchema, jsonConfig)
-        );   
-        
-//Infrastructure/Dependencies/Translations
+        );
+
+        //Infrastructure/Dependencies/Translations
         var translationsSchema = new JsonSchemaBuilder()
             .Schema(MetaSchemas.Draft7Id)
             .FromType<Translations>(schemaConfig)
@@ -291,9 +296,9 @@ public class NoxSolutionSchemaGenerate
 
         File.WriteAllText(Path.Combine(path, "translations.json"),
             JsonSerializer.Serialize(translationsSchema, jsonConfig)
-        );   
-        
-//Infrastructure/Dependencies/Security
+        );
+
+        //Infrastructure/Dependencies/Security
         var securitySchema = new JsonSchemaBuilder()
             .Schema(MetaSchemas.Draft7Id)
             .FromType<Security>(schemaConfig)
@@ -301,9 +306,9 @@ public class NoxSolutionSchemaGenerate
 
         File.WriteAllText(Path.Combine(path, "security.json"),
             JsonSerializer.Serialize(securitySchema, jsonConfig)
-        );   
-        
-//Infrastructure/Dependencies/DataConnection
+        );
+
+        //Infrastructure/Dependencies/DataConnection
         var dataConnectionSchema = new JsonSchemaBuilder()
             .Schema(MetaSchemas.Draft7Id)
             .FromType<DataConnection>(schemaConfig)
@@ -311,15 +316,15 @@ public class NoxSolutionSchemaGenerate
 
         File.WriteAllText(Path.Combine(path, "dataConnection.json"),
             JsonSerializer.Serialize(dataConnectionSchema, jsonConfig)
-        );           
+        );
     }
 
     private static string FindOrCreateFolderInProjectRoot(string folderName)
     {
-        var path = new DirectoryInfo( Directory.GetCurrentDirectory() );
+        var path = new DirectoryInfo(Directory.GetCurrentDirectory());
         var targetFolder = string.Empty;
 
-        while (path != null) 
+        while (path != null)
         {
             if (path.GetDirectories(".git").Any())
             {
@@ -330,21 +335,20 @@ public class NoxSolutionSchemaGenerate
                 }
                 break;
             }
-            
+
             path = path.Parent;
         }
 
         return targetFolder;
     }
 
-
-
     internal class EnumToCamelCaseRefiner : ISchemaRefiner
     {
-
         private readonly Type[] _excludeTypes;
 
-        public EnumToCamelCaseRefiner() : this(Array.Empty<Type>()) {}
+        public EnumToCamelCaseRefiner() : this(Array.Empty<Type>())
+        {
+        }
 
         public EnumToCamelCaseRefiner(Type[] excludeTypes)
         {
@@ -365,21 +369,19 @@ public class NoxSolutionSchemaGenerate
         {
             // find the enum keyword
             var enumIntent = context.Intents.OfType<EnumIntent>().First();
-            enumIntent.Names = enumIntent.Names.Select( n => Char.ToLowerInvariant(n[0]) + n.Substring(1)).ToList();
+            enumIntent.Names = enumIntent.Names.Select(n => Char.ToLowerInvariant(n[0]) + n.Substring(1)).ToList();
         }
-
     }
-
 
     internal class ReadOnlyStringDictionarySchemaGenerator : ISchemaGenerator
     {
-    	public bool Handles(Type type)
+        public bool Handles(Type type)
         {
             if (!type.IsGenericType) return false;
 
             var generic = type.GetGenericTypeDefinition();
 
-            if (generic != typeof(IReadOnlyDictionary<,>)) 
+            if (generic != typeof(IReadOnlyDictionary<,>))
                 return false;
 
             var keyType = type.GenericTypeArguments[0];
@@ -394,6 +396,90 @@ public class NoxSolutionSchemaGenerate
             var valueContext = SchemaGenerationContextCache.Get(valueType);
 
             context.Intents.Add(new AdditionalPropertiesIntent(valueContext));
+        }
+    }
+
+    private readonly ITestOutputHelper output;
+
+    public NoxSolutionSchemaGenerate(ITestOutputHelper output)
+    {
+        this.output = output;
+    }
+
+    [Fact]
+    public void test_validation()
+    {
+        var yaml = File.ReadAllText("./files/sample.solution.nox.yaml");
+
+        var model = ValidatingJsonConverter.Deserialize<NoxSolution>(yaml);
+    }
+
+    public class ValidatingJsonConverter
+    {
+        public static T? Deserialize<T>(string yaml)
+        {
+            var schemaConfig = new SchemaGeneratorConfiguration()
+            {
+                PropertyNamingMethod = PropertyNamingMethods.CamelCase,
+                Nullability = Nullability.AllowForNullableValueTypes,
+                Refiners = { new EnumToCamelCaseRefiner(excludeTypes: new Type[] { typeof(CurrencyCode) }) },
+                Generators = { new ReadOnlyStringDictionarySchemaGenerator() },
+                Optimize = false,
+            };
+
+            var schema = new JsonSchemaBuilder()
+               .Schema(MetaSchemas.Draft7Id)
+               .FromType<T>(schemaConfig)
+               .Build();
+
+            var deserializer = new DeserializerBuilder()
+                .WithNamingConvention(CamelCaseNamingConvention.Instance)
+                .WithNodeTypeResolver(new ReadOnlyCollectionNodeTypeResolver())
+                .Build();
+
+            var yamlObject = deserializer.Deserialize<T>(new StringReader(yaml));
+
+            var jsonDocument = JsonSerializer.SerializeToDocument(yamlObject);
+            var evaluateOptions = new EvaluationOptions
+            {
+                OutputFormat = OutputFormat.List,
+                RequireFormatValidation = true
+            };
+            var result = schema.Evaluate(jsonDocument, evaluateOptions);
+            if (result.IsValid)
+            {
+                // JSON is valid according to the schema
+                var opts = new JsonSerializerOptions
+                {
+                    PropertyNameCaseInsensitive = true,
+                    WriteIndented = true,
+                };
+
+                var obj = JsonSerializer.Deserialize<T>(jsonDocument, opts);
+                return obj;
+            }
+            else
+            {
+                var errors = new List<string>();
+                HandleErrorsRecursively(result, errors);
+
+                throw new Exception(string.Join("\n", errors));
+            }
+        }
+
+        private static void HandleErrorsRecursively(EvaluationResults results, List<string> errors)
+        {
+            if (results.Errors != null)
+            {
+                foreach (var error in results.Errors)
+                {
+                    errors.Add($"{results.EvaluationPath}: {error.Key} - {error.Value}");
+                }
+            }
+            foreach (var detail in results.Details)
+            {
+                HandleErrorsRecursively(detail, errors);
+            }
         }
     }
 }

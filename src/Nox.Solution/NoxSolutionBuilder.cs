@@ -4,6 +4,7 @@ using YamlDotNet.Serialization;
 using YamlDotNet.Serialization.NamingConventions;
 using Nox.Solution.Exceptions;
 using Nox.Solution.Macros;
+using Nox.Solution.Utils;
 
 namespace Nox.Solution
 {
@@ -12,7 +13,8 @@ namespace Nox.Solution
         private const string DesignFolderBestPractice = "Best practice is to create a '.nox' folder in your solution folder and in there a 'design' folder which contains your <solution-name>.solution.nox.yaml";
 
         private string _yamlFilePath = string.Empty;
-        private IMacroParser[]? _macroParsers;
+
+        private IMacroParser _environmentVariableParser = new EnvironmentVariableMacroParser(new EnvironmentProvider());
 
         public NoxSolutionBuilder UseYamlFile(string yamlFilePath)
         {
@@ -20,9 +22,9 @@ namespace Nox.Solution
             return this;
         }
 
-        public NoxSolutionBuilder UseMacros(IMacroParser[] macroParsers)
+        public NoxSolutionBuilder UseEnvironmentMacroParser(EnvironmentVariableMacroParser parser)
         {
-            _macroParsers = macroParsers;
+            _environmentVariableParser = parser;
             return this;
         }
 
@@ -140,13 +142,7 @@ namespace Nox.Solution
 
         private string ExpandMacros(string yaml)
         {
-            if (_macroParsers != null)
-            {
-                for (var i = 0; i < _macroParsers.Length; i++)
-                {
-                    yaml = _macroParsers[i].Parse(yaml);
-                }
-            }
+            yaml = _environmentVariableParser.Parse(yaml);
 
             return yaml;
         }

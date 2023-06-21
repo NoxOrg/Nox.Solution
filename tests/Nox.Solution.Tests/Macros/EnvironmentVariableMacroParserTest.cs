@@ -6,6 +6,7 @@ namespace Nox.Solution.Tests.Macros;
 
 public class EnvironmentVariableMacroParserTest
 {
+
     [Fact]
     public void When_Parsing_Macros_Should_Replace_EnvironmentVariables()
     {
@@ -20,7 +21,7 @@ public class EnvironmentVariableMacroParserTest
 
         var noxConfig = new NoxSolutionBuilder()
             .UseYamlFile("./files/macros/sample.solution.nox.yaml")
-            .UseMacros(new IMacroParser[]{new EnvironmentVariableMacroParser(environmentProvider.Object)})
+            .UseEnvironmentMacroParser(new EnvironmentVariableMacroParser(environmentProvider.Object))
             .Build();
 
         Assert.NotNull(noxConfig);
@@ -33,4 +34,19 @@ public class EnvironmentVariableMacroParserTest
         Assert.Equal("secretpwd1",noxConfig.Infrastructure?.Security?.Secrets?.SecretsServer?.Password);
 
     }
+
+    [Fact]
+    public void When_Creating_NoxSolution_Uses_System_Environment_By_Default()
+    {
+        var noxConfig = new NoxSolutionBuilder()
+            .UseYamlFile("./files/macros/envvar.solution.nox.yaml")
+            .Build();
+
+        Assert.NotNull(noxConfig);
+
+        Assert.Equal("EnvTestService", noxConfig.Name);
+        Assert.NotEqual("${{ env.TEMP }} ${{ env.TMPDIR }}", noxConfig.Description);
+
+    }
+
 }

@@ -51,7 +51,7 @@ namespace Nox.Solution.Validation
             }
 
             var appEvents = new List<ApplicationEvent>();
-            if (application != null || application!.Events != null && application.Events.Any())
+            if (application is { Events: not null } && application.Events.Any())
             {
                 appEvents.AddRange(application.Events!);
             }

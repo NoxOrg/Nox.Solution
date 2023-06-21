@@ -1,8 +1,10 @@
 using System.IO;
 using System.Linq;
-using Nox.Solution.Exceptions;
 using YamlDotNet.Serialization;
 using YamlDotNet.Serialization.NamingConventions;
+using Nox.Solution.Exceptions;
+using Nox.Solution.Macros;
+using Nox.Solution.Utils;
 
 namespace Nox.Solution
 {
@@ -12,9 +14,17 @@ namespace Nox.Solution
 
         private string _yamlFilePath = string.Empty;
 
+        private IMacroParser _environmentVariableParser = new EnvironmentVariableMacroParser(new EnvironmentProvider());
+
         public NoxSolutionBuilder UseYamlFile(string yamlFilePath)
         {
             _yamlFilePath = Path.GetFullPath(yamlFilePath);
+            return this;
+        }
+
+        public NoxSolutionBuilder UseEnvironmentMacroParser(EnvironmentVariableMacroParser parser)
+        {
+            _environmentVariableParser = parser;
             return this;
         }
 
@@ -35,16 +45,19 @@ namespace Nox.Solution
             }
 
 
-            var config = ResolveAndLoadConfiguration(_yamlFilePath);
+            var config = ResolveAndLoadConfiguration();
             config.Validate();
 
             return config;
         }
 
-        private NoxSolution ResolveAndLoadConfiguration(string yamlFilePath) 
+        private NoxSolution ResolveAndLoadConfiguration()
         {
             var resolver = new YamlReferenceResolver(_yamlFilePath);
             var yaml = resolver.ResolveReferences();
+
+            yaml = ExpandMacros(yaml);
+
             var deserializer = new DeserializerBuilder()
                 .WithNamingConvention(CamelCaseNamingConvention.Instance)
                 .WithNodeTypeResolver(new ReadOnlyCollectionNodeTypeResolver())
@@ -125,6 +138,13 @@ namespace Nox.Solution
             } else if (solutionYamlFiles.Length == 1) return solutionYamlFiles[0];
 
             return null;
+        }
+
+        private string ExpandMacros(string yaml)
+        {
+            yaml = _environmentVariableParser.Parse(yaml);
+
+            return yaml;
         }
     }
 }

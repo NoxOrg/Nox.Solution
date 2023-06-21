@@ -21,6 +21,7 @@ public class EnvironmentVariableMacroParser: IMacroParser
             .WithNamingConvention(CamelCaseNamingConvention.Instance)
             .Build();
     }
+
     public string Parse(string text)
     {
         var parsed = text;

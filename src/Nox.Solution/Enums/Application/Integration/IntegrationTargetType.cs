@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace Nox;
 
-public enum EtlTargetType
+public enum IntegrationTargetType
 {
     Database,
     Entity,

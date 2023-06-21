@@ -17,5 +17,10 @@ namespace Nox.Solution
         [Description("One or more DTOs (Data Transfer Objects used to transfer data between processes in a Nox solution.")]
         [AdditionalProperties(false)]
         public IReadOnlyList<DataTransferObject>? DataTransferObjects { get; internal set; }
+        
+        [Title("The events that this application can raise.")]
+        [Description("The collection of events that this application can raise to the outside world.")]
+        [AdditionalProperties(false)]
+        public IReadOnlyList<ApplicationEvent>? Events { get; internal set; }
     }
 }

@@ -121,7 +121,7 @@
         <value>Collection type options for {0} does not have a type specified.</value>
     </data>
     <data name="ObjectTypeOptionsAttributesEmpty" xml:space="preserve">
-        <value>The object type options attributes for {0} are missing. Object type options must have at least one attribute specified.</value>
+        <value>The attributes for {0} are missing. {1} must have at least one attribute specified.</value>
     </data>
     <data name="DomainCommandNameEmpty" xml:space="preserve">
         <value>a Domain command for entity '{0}' does not have a name specified. All domain commands must have a unique name.</value>
@@ -314,5 +314,23 @@
     </data>
     <data name="IntegrationSourceMsgQueueOptionsSourceEmpty" xml:space="preserve">
         <value>The source in the message queue options of the source for integration {0} has not been specified. Message queue sources must have a source specified.</value>
+    </data>
+    <data name="DomainEventNameEmpty" xml:space="preserve">
+        <value>One of the events for entity {0} in the domain definition does not have a name specified. All domain events must have a unique name.</value>
+    </data>
+    <data name="ApplicationEventNameEmpty" xml:space="preserve">
+        <value>One of the events in the application definition does not have a name specified. All application events must have a unique name.</value>
+    </data>
+    <data name="DomainEventNameDuplicate" xml:space="preserve">
+        <value>Domain event '{0}' for entity '{1}' has a duplicate name. Domain event names must be unique in the solution.</value>
+    </data>
+    <data name="DomainEventTypeEmpty" xml:space="preserve">
+        <value>Domain event '{0}' for entity '{1}' is missing a type. Domain events must all have a type specified.</value>
+    </data>
+    <data name="ApplicationEventNameDuplicate" xml:space="preserve">
+        <value>Application event '{0}' has a duplicate name. Application event names must be unique in the solution.</value>
+    </data>
+    <data name="ApplicationEventTypeEmpty" xml:space="preserve">
+        <value>Application event '{0}' is missing a type. Application events must all have a type specified.</value>
     </data>
 </root>

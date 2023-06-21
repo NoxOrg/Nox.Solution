@@ -23,7 +23,7 @@ public class NoxSolutionSchemaGenerate
          */
 
         //Solution
-        GenerateFor<NoxSolution>("solution.json");
+        GenerateFor<Solution>("solution.json");
 
         //Variables
         GenerateFor<Dictionary<string, string>?>("variables.json");

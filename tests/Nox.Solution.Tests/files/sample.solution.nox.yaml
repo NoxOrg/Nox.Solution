@@ -144,7 +144,19 @@ domain:
             attributes:
               - name: CountryCode
                 type: countryCode2
-          emitEvents: [CountryUpdatedEvent]
+          emitEvents: [ CountryNameUpdatedDomainEvent ]
+            
+      events:
+        - name: CountryNameUpdatedDomainEvent
+          type: object
+          objectTypeOptions:
+            attributes:
+
+              - name: CountryId
+                type: countryCode2
+
+              - name: CountryName
+                type: text
 
       keys:
 
@@ -228,7 +240,7 @@ domain:
 
         - name: GeoCoord
           description: The the position of the workplace's point on the surface of the Earth
-          type: latlong
+          type: latLong
 
         - name: GeoRegion
           description: The region the country is in
@@ -332,9 +344,9 @@ application:
     - name: SampleEtl
       description: a Sample Etl
       source:
-        name: CountryJsonSeed
+        name: CountryJsonSource
         description: Sources Country data from a json file
-        dataConnection: CountryJsonData
+        dataConnectionName: CountryJsonData
         fileOptions: 
           filename: country-seed-data.json
         schedule:

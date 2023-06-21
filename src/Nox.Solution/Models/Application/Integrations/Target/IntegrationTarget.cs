@@ -20,12 +20,24 @@ namespace Nox.Solution
         [Required]
         [Title("The type of target.")]
         [Description("Specify the type of target. Options include entity, database, file, webAPI and message queue.")]
-        public EtlTargetType TargetType { get; internal set; } = EtlTargetType.Database;
+        public IntegrationTargetType TargetType { get; internal set; } = IntegrationTargetType.Database;
 
         [Title("The name of the ETL target data connection. Contains no spaces.")]
         [Description("The name should be a commonly used singular noun and be unique within a solution.")]
         [Pattern(@"^[^\s]*$")]
         [AdditionalProperties(false)]
-        public string? DataConnection { get; internal set; }
+        public string? DataConnectionName { get; internal set; }
+        
+        [AdditionalProperties(false)] 
+        public IntegrationTargetDatabaseOptions? DatabaseOptions { get; set; }
+        
+        [AdditionalProperties(false)] 
+        public IntegrationTargetFileOptions? FileOptions { get; set; }
+        
+        [AdditionalProperties(false)] 
+        public IntegrationTargetWebApiOptions? WebApiOptions { get; set; }
+        
+        [AdditionalProperties(false)] 
+        public IntegrationTargetMessageQueueOptions? MessageQueueOptions { get; set; }
     }
 }

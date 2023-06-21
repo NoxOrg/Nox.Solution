@@ -25,7 +25,7 @@ namespace Nox.Solution.Validation
                 .WithMessage(m => string.Format(ValidationResources.DomainCommandTypeEmpty, m.Name, entityName));
 
             RuleFor(c => c.ObjectTypeOptions!)
-                .SetValidator(v => new ObjectTypeOptionsValidator($"domain command '{v.Name}' in entity '{entityName}'"));
+                .SetValidator(v => new ObjectTypeOptionsValidator($"domain command '{v.Name}' in entity '{entityName}'", "Domain commands"));
         }
         
         private bool HaveUniqueName(DomainCommand toEvaluate, string name)

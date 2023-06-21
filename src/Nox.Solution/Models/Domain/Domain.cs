@@ -14,5 +14,6 @@ namespace Nox.Solution
         [Description("The collection of entities and their relationships with each other.")]
         [AdditionalProperties(false)]
         public IReadOnlyList<Entity> Entities { get; internal set; } = new List<Entity>();
+        
     }
 }

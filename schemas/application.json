@@ -86,10 +86,10 @@
                 "description": "Specify when and how frequently the ETL source is checked for updates, as well as the retry policy in case of failure. Includes a switch to indicate whether update is triggered at application startup.",
                 "additionalProperties": false
               },
-              "dataConnection": {
+              "dataConnectionName": {
                 "type": "string",
-                "title": "The name of the ETL source data connection. Contains no spaces.",
-                "description": "The name should be a commonly used singular noun and be unique within a solution.",
+                "title": "The name of the integration source. Contains no spaces.",
+                "description": "The name of the data connection for this integration source. This must refer to an existing data connection in infrastructure, dependencies, dataConnections.",
                 "pattern": "^[^\\s]*$",
                 "additionalProperties": false
               },
@@ -128,14 +128,16 @@
                     "type": [
                       "integer",
                       "null"
-                    ]
+                    ],
+                    "title": "The minimum expected record count.",
+                    "description": "The minimum expected record count as a result of this data ingestion."
                   }
                 },
                 "required": [
                   "query"
                 ],
-                "title": "The name of the integration source. Contains no spaces.",
-                "description": "The name of the data connection for this integration source. This must refer to an existing data connection in infrastructure, dependencies, dataConnections.",
+                "title": "Definition namespace for a database ETL source.",
+                "description": "This section specified attributes related to an ETL source of type Database. Attributes include the database query as well as minimumexpected records.",
                 "additionalProperties": false
               },
               "fileOptions": {
@@ -150,47 +152,67 @@
                     "type": [
                       "integer",
                       "null"
-                    ]
+                    ],
+                    "title": "The minimum expected record count.",
+                    "description": "The minimum expected record count as a result of this data ingestion."
                   }
                 },
                 "required": [
                   "filename"
                 ],
+                "title": "Definition namespace for a file type ETL source.",
+                "description": "This section specified attributes related to an ETL source of type File. Attributes include the database query as well as minimumexpected records.",
                 "additionalProperties": false
               },
               "messageQueueOptions": {
                 "type": "object",
                 "properties": {
-                  "source": {
+                  "sourceName": {
                     "type": "string",
                     "title": "The source name.",
-                    "description": "The name of the queue, topic or subscription from which messages will be consumed."
+                    "description": "The name of the queue or topic subscription from which messages will be consumed."
                   }
                 },
                 "required": [
-                  "source"
+                  "sourceName"
                 ],
+                "title": "Definition namespace for a Message Queue ETL source.",
+                "description": "This section specified attributes related to an ETL source of type Message Queue. Attributes include the route, format and verb.",
                 "additionalProperties": false
               },
-              "httpOptions": {
+              "webApiOptions": {
                 "type": "object",
                 "properties": {
                   "route": {
-                    "type": "string"
+                    "type": "string",
+                    "title": "The path component for the request URI.",
+                    "description": "The path component for the request URI, e.g. \u0027/myPath\u0027 in http://localhost:8081/myPath?myParameter=123."
                   },
-                  "format": {
-                    "type": "string"
+                  "responseFormat": {
+                    "enum": [
+                      "json",
+                      "xml"
+                    ],
+                    "title": "The Http response format.",
+                    "description": "The format of the Http response data papyload, eg. Json, XML."
                   },
-                  "verb": {
-                    "type": "string"
+                  "httpVerb": {
+                    "enum": [
+                      "get",
+                      "post"
+                    ],
+                    "title": "The Http request verb.",
+                    "description": "The relevant verb detailing the Http request type, i.e. GET, POST, etc."
                   }
                 },
+                "title": "Definition namespace for a web API ETL source.",
+                "description": "This section specified attributes related to an ETL source of type web API. Attributes include the route, response format and http verb.",
                 "additionalProperties": false
               }
             },
             "required": [
               "name",
-              "dataConnection"
+              "dataConnectionName"
             ],
             "title": "Definition namespace for attributes describing the source component of an ETL integration.",
             "description": "This section details ETL source attributes like name, description, scheduling and watermark specifications.",
@@ -322,11 +344,75 @@
                 "title": "The type of target.",
                 "description": "Specify the type of target. Options include entity, database, file, webAPI and message queue."
               },
-              "dataConnection": {
+              "dataConnectionName": {
                 "type": "string",
                 "title": "The name of the ETL target data connection. Contains no spaces.",
                 "description": "The name should be a commonly used singular noun and be unique within a solution.",
                 "pattern": "^[^\\s]*$",
+                "additionalProperties": false
+              },
+              "databaseOptions": {
+                "type": "object",
+                "properties": {
+                  "storedProcedure": {
+                    "type": "string",
+                    "title": "The stored procedure to execute.",
+                    "description": "The stored procedure that will be executed on the target database."
+                  }
+                },
+                "required": [
+                  "storedProcedure"
+                ],
+                "additionalProperties": false
+              },
+              "fileOptions": {
+                "type": "object",
+                "properties": {
+                  "filename": {
+                    "type": "string",
+                    "title": "The file name.",
+                    "description": "The name of the file that will be created."
+                  }
+                },
+                "required": [
+                  "filename"
+                ],
+                "additionalProperties": false
+              },
+              "webApiOptions": {
+                "type": "object",
+                "properties": {
+                  "route": {
+                    "type": "string"
+                  },
+                  "requestFormat": {
+                    "enum": [
+                      "json",
+                      "xml"
+                    ]
+                  },
+                  "httpVerb": {
+                    "enum": [
+                      "post",
+                      "put",
+                      "patch"
+                    ]
+                  }
+                },
+                "additionalProperties": false
+              },
+              "messageQueueOptions": {
+                "type": "object",
+                "properties": {
+                  "targetName": {
+                    "type": "string",
+                    "title": "The target name.",
+                    "description": "The name of the queue, topic or subscription to which messages will be sent."
+                  }
+                },
+                "required": [
+                  "targetName"
+                ],
                 "additionalProperties": false
               }
             },
@@ -377,16 +463,25 @@
                 },
                 "name": {
                   "type": "string",
+                  "title": "The name of the attribute. Contains no spaces.",
+                  "description": "Assign a descriptive name to the attribute. Should be a singular noun and be unique within a collection of attributes. PascalCase recommended.",
                   "pattern": "^[^\\s]*$"
                 },
                 "description": {
-                  "type": "string"
+                  "type": "string",
+                  "title": "The description of the attribute.",
+                  "description": "A descriptive phrase that explains the nature and function of this attribute within a collection."
                 },
                 "type": {
                   "enum": [
                     "array",
                     "collection",
                     "object",
+                    "entity",
+                    "latLong",
+                    "money",
+                    "streetAddress",
+                    "translatedText",
                     "area",
                     "autoNumber",
                     "boolean",
@@ -408,7 +503,6 @@
                     "distance",
                     "email",
                     "encryptedText",
-                    "entity",
                     "file",
                     "formula",
                     "guid",
@@ -423,34 +517,29 @@
                     "json",
                     "jwtToken",
                     "language",
-                    "latlong",
                     "length",
                     "macAddress",
                     "markdown",
-                    "money",
                     "nuid",
                     "number",
                     "password",
                     "percentage",
                     "phoneNumber",
-                    "streetAddress",
                     "temperature",
                     "text",
                     "time",
-                    "translatedText",
                     "uri",
                     "url",
                     "user",
                     "volume",
                     "weight",
                     "yaml"
-                  ]
+                  ],
+                  "title": "The Nox type of this attribute.",
+                  "description": "Select the Nox value object type that best represents this attribute and its functional requirements within the domain."
                 },
                 "textTypeOptions": {
-                  "type": [
-                    "object",
-                    "null"
-                  ],
+                  "type": "object",
                   "properties": {
                     "minLength": {
                       "type": "integer"
@@ -474,10 +563,7 @@
                   }
                 },
                 "numberTypeOptions": {
-                  "type": [
-                    "object",
-                    "null"
-                  ],
+                  "type": "object",
                   "properties": {
                     "minValue": {
                       "type": "number"
@@ -701,10 +787,9 @@
                   ]
                 },
                 "isRequired": {
-                  "type": [
-                    "boolean",
-                    "null"
-                  ]
+                  "type": "boolean",
+                  "title": "Is the attribute required? Boolean value.",
+                  "description": "Indicates whether this attribute is required within the collection. Defaults to false."
                 },
                 "userInterface": {
                   "type": "object",
@@ -714,10 +799,14 @@
                       "format": "uri"
                     },
                     "label": {
-                      "type": "string"
+                      "type": "string",
+                      "title": "A descriptive label for this attribute on the user interface.",
+                      "description": "The text label rendered on the user interface alongside the NoxTextInput component."
                     },
                     "translationId": {
-                      "type": "string"
+                      "type": "string",
+                      "title": "The multi-language translation identifier.",
+                      "description": "A unique string/key to reference the translations for this attribute for multi-language translations."
                     },
                     "widget": {
                       "enum": [
@@ -734,52 +823,72 @@
                         "select",
                         "checkbox",
                         "switch"
-                      ]
+                      ],
+                      "title": "Widget used to render this attribute on the user interface.",
+                      "description": "The user interface control type that is best suited to render the attribute on the screen."
                     },
                     "icon": {
-                      "type": "string"
+                      "type": "string",
+                      "title": "The icon representing the attribute on the user interface.",
+                      "description": "A reference URI to the attribute icon file. Could be a CSS or Mudblazor reference, e.g. \u0027@Icons.Material.Filled.Globe\u0027."
                     },
                     "iconPosition": {
                       "enum": [
                         "begin",
                         "end"
-                      ]
+                      ],
+                      "title": "The position of the attribute icon on the user interface.",
+                      "description": "The postition of the attribute icon relative to the text input area on the user interface, e.g. begin or end."
                     },
                     "inputMask": {
-                      "type": "string"
+                      "type": "string",
+                      "title": "A mask expression used to validate and control text input.",
+                      "description": "A string of characters that indicates the format of valid input values. For example \u0027(000) 000-0000\u0027 could be used for a seven digit phone number with mandatory area code."
                     },
                     "outputMask": {
-                      "type": "string"
+                      "type": "string",
+                      "title": "A mask expression used to validate and control a value\u0027s output.",
+                      "description": "A string of characters that indicates the format of valid output. Used to handle validation triggers for onSubmit and onChange events of the control."
                     },
                     "regex": {
-                      "type": "string"
+                      "type": "string",
+                      "title": "The regular expression against which input is validated.",
+                      "description": "A regex string that indicates the format of valid input. For example \u0027/^(\\([0-9]{3}\\) |[0-9]{3}-)[0-9]{3}-[0-9]{4}$/gm\u0027 could be used for a seven digit phone number with mandatory area code."
                     },
                     "pageGroup": {
-                      "type": "string"
+                      "type": "string",
+                      "title": "The user interface PageGroup identifier.",
+                      "description": "Used to associate component with a PageGroup identifier on the user interface."
                     },
                     "fieldGroup": {
-                      "type": "string"
+                      "type": "string",
+                      "title": "The user interface FieldGroup identifier.",
+                      "description": "Used to associate component with a FieldGroup identifier on the user interface."
                     },
                     "inputOrder": {
-                      "type": [
-                        "integer",
-                        "null"
-                      ]
+                      "type": "integer",
+                      "title": "Display/edit focus order within a FieldGroup on a user interface.",
+                      "description": "The order within a group of user interface components (FieldGroup) in which this attribute will receive focus for display or edit purpose."
                     },
                     "helpHint": {
-                      "type": "string"
+                      "type": "string",
+                      "title": "Helper text for this component.",
+                      "description": "The component default helper text used to aid the understanding of the component function to the user."
                     },
                     "errorMessage": {
-                      "type": "string"
+                      "type": "string",
+                      "title": "Validation error message.",
+                      "description": "The default error message displayed when text input validation fails."
                     }
                   },
+                  "title": "The user interface display options for this attribute.",
+                  "description": "Specify how this attribute is rendered on the user interface. Configuration options include label, icon, input/output masks, help hints among other.",
                   "additionalProperties": false
                 },
                 "isReadonly": {
-                  "type": [
-                    "boolean",
-                    "null"
-                  ]
+                  "type": "boolean",
+                  "title": "Is this attribute readonly? Boolean value.",
+                  "description": "Indicates whether this attribute is readonly. Defaults to false."
                 }
               },
               "required": [
@@ -805,6 +914,2727 @@
       },
       "title": "The definition namespace for application DTOs within a Nox solution.",
       "description": "One or more DTOs (Data Transfer Objects used to transfer data between processes in a Nox solution.",
+      "additionalProperties": false
+    },
+    "events": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "$ref": {
+            "type": "string",
+            "format": "uri"
+          },
+          "name": {
+            "type": "string",
+            "title": "The name of the attribute. Contains no spaces.",
+            "description": "Assign a descriptive name to the attribute. Should be a singular noun and be unique within a collection of attributes. PascalCase recommended.",
+            "pattern": "^[^\\s]*$"
+          },
+          "description": {
+            "type": "string",
+            "title": "The description of the attribute.",
+            "description": "A descriptive phrase that explains the nature and function of this attribute within a collection."
+          },
+          "type": {
+            "enum": [
+              "array",
+              "collection",
+              "object",
+              "entity",
+              "latLong",
+              "money",
+              "streetAddress",
+              "translatedText",
+              "area",
+              "autoNumber",
+              "boolean",
+              "color",
+              "colour",
+              "countryCode2",
+              "countryCode3",
+              "countryNumber",
+              "culture",
+              "currencyCode",
+              "currencyNumber",
+              "date",
+              "month",
+              "year",
+              "dateTime",
+              "dateTimeDuration",
+              "dateTimeRange",
+              "dateTimeSchedule",
+              "distance",
+              "email",
+              "encryptedText",
+              "file",
+              "formula",
+              "guid",
+              "hashedText",
+              "html",
+              "image",
+              "imageJpg",
+              "imagePng",
+              "imageSvg",
+              "internetDomain",
+              "ipAddress",
+              "json",
+              "jwtToken",
+              "language",
+              "length",
+              "macAddress",
+              "markdown",
+              "nuid",
+              "number",
+              "password",
+              "percentage",
+              "phoneNumber",
+              "temperature",
+              "text",
+              "time",
+              "uri",
+              "url",
+              "user",
+              "volume",
+              "weight",
+              "yaml"
+            ],
+            "title": "The Nox type of this attribute.",
+            "description": "Select the Nox value object type that best represents this attribute and its functional requirements within the domain."
+          },
+          "textTypeOptions": {
+            "type": "object",
+            "properties": {
+              "minLength": {
+                "type": "integer"
+              },
+              "maxLength": {
+                "type": "integer"
+              },
+              "isUnicode": {
+                "type": [
+                  "boolean",
+                  "null"
+                ]
+              },
+              "casing": {
+                "enum": [
+                  "normal",
+                  "lower",
+                  "upper"
+                ]
+              }
+            }
+          },
+          "numberTypeOptions": {
+            "type": "object",
+            "properties": {
+              "minValue": {
+                "type": "number"
+              },
+              "maxValue": {
+                "type": "number"
+              },
+              "decimalDigits": {
+                "type": "integer"
+              }
+            }
+          },
+          "moneyTypeOptions": {
+            "type": "object",
+            "properties": {
+              "$ref": {
+                "type": "string",
+                "format": "uri"
+              },
+              "decimalDigits": {
+                "type": [
+                  "integer",
+                  "null"
+                ]
+              },
+              "integerDigits": {
+                "type": [
+                  "integer",
+                  "null"
+                ]
+              },
+              "minValue": {
+                "type": "number"
+              },
+              "maxValue": {
+                "type": "number"
+              },
+              "defaultCurrency": {
+                "enum": [
+                  "AED",
+                  "AFN",
+                  "ALL",
+                  "AMD",
+                  "ANG",
+                  "AOA",
+                  "ARS",
+                  "AUD",
+                  "AWG",
+                  "AZN",
+                  "BAM",
+                  "BBD",
+                  "BDT",
+                  "BGN",
+                  "BHD",
+                  "BIF",
+                  "BMD",
+                  "BND",
+                  "BOB",
+                  "BRL",
+                  "BSD",
+                  "BTC",
+                  "BTN",
+                  "BWP",
+                  "BYR",
+                  "BYN",
+                  "BZD",
+                  "CAD",
+                  "CDF",
+                  "CHF",
+                  "CLP",
+                  "CNY",
+                  "COP",
+                  "CRC",
+                  "CUC",
+                  "CUP",
+                  "CVE",
+                  "CZK",
+                  "DJF",
+                  "DKK",
+                  "DOP",
+                  "DZD",
+                  "EGP",
+                  "ERN",
+                  "ETB",
+                  "EUR",
+                  "FJD",
+                  "FKP",
+                  "GBP",
+                  "GEL",
+                  "GHS",
+                  "GIP",
+                  "GMD",
+                  "GNF",
+                  "GTQ",
+                  "GYD",
+                  "HKD",
+                  "HNL",
+                  "HRK",
+                  "HTG",
+                  "HUF",
+                  "IDR",
+                  "ILS",
+                  "INR",
+                  "IQD",
+                  "IRR",
+                  "ISK",
+                  "JMD",
+                  "JOD",
+                  "JPY",
+                  "KES",
+                  "KGS",
+                  "KHR",
+                  "KMF",
+                  "KPW",
+                  "KRW",
+                  "KWD",
+                  "KYD",
+                  "KZT",
+                  "LAK",
+                  "LBP",
+                  "LKR",
+                  "LRD",
+                  "LSL",
+                  "LYD",
+                  "MAD",
+                  "MDL",
+                  "MGA",
+                  "MKD",
+                  "MMK",
+                  "MNT",
+                  "MOP",
+                  "MRO",
+                  "MTL",
+                  "MUR",
+                  "MVR",
+                  "MWK",
+                  "MXN",
+                  "MYR",
+                  "MZN",
+                  "NAD",
+                  "NGN",
+                  "NIO",
+                  "NOK",
+                  "NPR",
+                  "NZD",
+                  "OMR",
+                  "PAB",
+                  "PEN",
+                  "PGK",
+                  "PHP",
+                  "PKR",
+                  "PLN",
+                  "PYG",
+                  "QAR",
+                  "RON",
+                  "RSD",
+                  "RUB",
+                  "RWF",
+                  "SAR",
+                  "SBD",
+                  "SCR",
+                  "SDD",
+                  "SDG",
+                  "SEK",
+                  "SGD",
+                  "SHP",
+                  "SLL",
+                  "SOS",
+                  "SRD",
+                  "STD",
+                  "SVC",
+                  "SYP",
+                  "SZL",
+                  "THB",
+                  "TJS",
+                  "TMT",
+                  "TND",
+                  "TOP",
+                  "TRY",
+                  "TTD",
+                  "TVD",
+                  "TWD",
+                  "TZS",
+                  "UAH",
+                  "UGX",
+                  "USD",
+                  "UYU",
+                  "UZS",
+                  "VEB",
+                  "VEF",
+                  "VND",
+                  "VUV",
+                  "WST",
+                  "XAF",
+                  "XCD",
+                  "XBT",
+                  "XOF",
+                  "XPF",
+                  "YER",
+                  "ZAR",
+                  "ZMW",
+                  "WON"
+                ]
+              }
+            },
+            "additionalProperties": false
+          },
+          "entityTypeOptions": {
+            "type": "object",
+            "properties": {
+              "$ref": {
+                "type": "string",
+                "format": "uri"
+              },
+              "entity": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "entity"
+            ]
+          },
+          "isRequired": {
+            "type": "boolean",
+            "title": "Is the attribute required? Boolean value.",
+            "description": "Indicates whether this attribute is required within the collection. Defaults to false."
+          },
+          "userInterface": {
+            "type": "object",
+            "properties": {
+              "$ref": {
+                "type": "string",
+                "format": "uri"
+              },
+              "label": {
+                "type": "string",
+                "title": "A descriptive label for this attribute on the user interface.",
+                "description": "The text label rendered on the user interface alongside the NoxTextInput component."
+              },
+              "translationId": {
+                "type": "string",
+                "title": "The multi-language translation identifier.",
+                "description": "A unique string/key to reference the translations for this attribute for multi-language translations."
+              },
+              "widget": {
+                "enum": [
+                  "textInput",
+                  "textArea",
+                  "numberInput",
+                  "numberSlider",
+                  "fileUpload",
+                  "datePicker",
+                  "dateRangePicker",
+                  "timePicker",
+                  "timeRangePicker",
+                  "radio",
+                  "select",
+                  "checkbox",
+                  "switch"
+                ],
+                "title": "Widget used to render this attribute on the user interface.",
+                "description": "The user interface control type that is best suited to render the attribute on the screen."
+              },
+              "icon": {
+                "type": "string",
+                "title": "The icon representing the attribute on the user interface.",
+                "description": "A reference URI to the attribute icon file. Could be a CSS or Mudblazor reference, e.g. \u0027@Icons.Material.Filled.Globe\u0027."
+              },
+              "iconPosition": {
+                "enum": [
+                  "begin",
+                  "end"
+                ],
+                "title": "The position of the attribute icon on the user interface.",
+                "description": "The postition of the attribute icon relative to the text input area on the user interface, e.g. begin or end."
+              },
+              "inputMask": {
+                "type": "string",
+                "title": "A mask expression used to validate and control text input.",
+                "description": "A string of characters that indicates the format of valid input values. For example \u0027(000) 000-0000\u0027 could be used for a seven digit phone number with mandatory area code."
+              },
+              "outputMask": {
+                "type": "string",
+                "title": "A mask expression used to validate and control a value\u0027s output.",
+                "description": "A string of characters that indicates the format of valid output. Used to handle validation triggers for onSubmit and onChange events of the control."
+              },
+              "regex": {
+                "type": "string",
+                "title": "The regular expression against which input is validated.",
+                "description": "A regex string that indicates the format of valid input. For example \u0027/^(\\([0-9]{3}\\) |[0-9]{3}-)[0-9]{3}-[0-9]{4}$/gm\u0027 could be used for a seven digit phone number with mandatory area code."
+              },
+              "pageGroup": {
+                "type": "string",
+                "title": "The user interface PageGroup identifier.",
+                "description": "Used to associate component with a PageGroup identifier on the user interface."
+              },
+              "fieldGroup": {
+                "type": "string",
+                "title": "The user interface FieldGroup identifier.",
+                "description": "Used to associate component with a FieldGroup identifier on the user interface."
+              },
+              "inputOrder": {
+                "type": "integer",
+                "title": "Display/edit focus order within a FieldGroup on a user interface.",
+                "description": "The order within a group of user interface components (FieldGroup) in which this attribute will receive focus for display or edit purpose."
+              },
+              "helpHint": {
+                "type": "string",
+                "title": "Helper text for this component.",
+                "description": "The component default helper text used to aid the understanding of the component function to the user."
+              },
+              "errorMessage": {
+                "type": "string",
+                "title": "Validation error message.",
+                "description": "The default error message displayed when text input validation fails."
+              }
+            },
+            "title": "The user interface display options for this attribute.",
+            "description": "Specify how this attribute is rendered on the user interface. Configuration options include label, icon, input/output masks, help hints among other.",
+            "additionalProperties": false
+          },
+          "isReadonly": {
+            "type": "boolean",
+            "title": "Is this attribute readonly? Boolean value.",
+            "description": "Indicates whether this attribute is readonly. Defaults to false."
+          },
+          "objectTypeOptions": {
+            "type": "object",
+            "properties": {
+              "$ref": {
+                "type": "string",
+                "format": "uri"
+              },
+              "attributes": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "$ref": {
+                      "type": "string",
+                      "format": "uri"
+                    },
+                    "name": {
+                      "type": "string",
+                      "title": "The name of the attribute. Contains no spaces.",
+                      "description": "Assign a descriptive name to the attribute. Should be a singular noun and be unique within a collection of attributes. PascalCase recommended.",
+                      "pattern": "^[^\\s]*$"
+                    },
+                    "description": {
+                      "type": "string",
+                      "title": "The description of the attribute.",
+                      "description": "A descriptive phrase that explains the nature and function of this attribute within a collection."
+                    },
+                    "type": {
+                      "enum": [
+                        "array",
+                        "collection",
+                        "object",
+                        "entity",
+                        "latLong",
+                        "money",
+                        "streetAddress",
+                        "translatedText",
+                        "area",
+                        "autoNumber",
+                        "boolean",
+                        "color",
+                        "colour",
+                        "countryCode2",
+                        "countryCode3",
+                        "countryNumber",
+                        "culture",
+                        "currencyCode",
+                        "currencyNumber",
+                        "date",
+                        "month",
+                        "year",
+                        "dateTime",
+                        "dateTimeDuration",
+                        "dateTimeRange",
+                        "dateTimeSchedule",
+                        "distance",
+                        "email",
+                        "encryptedText",
+                        "file",
+                        "formula",
+                        "guid",
+                        "hashedText",
+                        "html",
+                        "image",
+                        "imageJpg",
+                        "imagePng",
+                        "imageSvg",
+                        "internetDomain",
+                        "ipAddress",
+                        "json",
+                        "jwtToken",
+                        "language",
+                        "length",
+                        "macAddress",
+                        "markdown",
+                        "nuid",
+                        "number",
+                        "password",
+                        "percentage",
+                        "phoneNumber",
+                        "temperature",
+                        "text",
+                        "time",
+                        "uri",
+                        "url",
+                        "user",
+                        "volume",
+                        "weight",
+                        "yaml"
+                      ],
+                      "title": "The Nox type of this attribute.",
+                      "description": "Select the Nox value object type that best represents this attribute and its functional requirements within the domain."
+                    },
+                    "textTypeOptions": {
+                      "type": "object",
+                      "properties": {
+                        "minLength": {
+                          "type": "integer"
+                        },
+                        "maxLength": {
+                          "type": "integer"
+                        },
+                        "isUnicode": {
+                          "type": [
+                            "boolean",
+                            "null"
+                          ]
+                        },
+                        "casing": {
+                          "enum": [
+                            "normal",
+                            "lower",
+                            "upper"
+                          ]
+                        }
+                      }
+                    },
+                    "numberTypeOptions": {
+                      "type": "object",
+                      "properties": {
+                        "minValue": {
+                          "type": "number"
+                        },
+                        "maxValue": {
+                          "type": "number"
+                        },
+                        "decimalDigits": {
+                          "type": "integer"
+                        }
+                      }
+                    },
+                    "moneyTypeOptions": {
+                      "type": "object",
+                      "properties": {
+                        "$ref": {
+                          "type": "string",
+                          "format": "uri"
+                        },
+                        "decimalDigits": {
+                          "type": [
+                            "integer",
+                            "null"
+                          ]
+                        },
+                        "integerDigits": {
+                          "type": [
+                            "integer",
+                            "null"
+                          ]
+                        },
+                        "minValue": {
+                          "type": "number"
+                        },
+                        "maxValue": {
+                          "type": "number"
+                        },
+                        "defaultCurrency": {
+                          "enum": [
+                            "AED",
+                            "AFN",
+                            "ALL",
+                            "AMD",
+                            "ANG",
+                            "AOA",
+                            "ARS",
+                            "AUD",
+                            "AWG",
+                            "AZN",
+                            "BAM",
+                            "BBD",
+                            "BDT",
+                            "BGN",
+                            "BHD",
+                            "BIF",
+                            "BMD",
+                            "BND",
+                            "BOB",
+                            "BRL",
+                            "BSD",
+                            "BTC",
+                            "BTN",
+                            "BWP",
+                            "BYR",
+                            "BYN",
+                            "BZD",
+                            "CAD",
+                            "CDF",
+                            "CHF",
+                            "CLP",
+                            "CNY",
+                            "COP",
+                            "CRC",
+                            "CUC",
+                            "CUP",
+                            "CVE",
+                            "CZK",
+                            "DJF",
+                            "DKK",
+                            "DOP",
+                            "DZD",
+                            "EGP",
+                            "ERN",
+                            "ETB",
+                            "EUR",
+                            "FJD",
+                            "FKP",
+                            "GBP",
+                            "GEL",
+                            "GHS",
+                            "GIP",
+                            "GMD",
+                            "GNF",
+                            "GTQ",
+                            "GYD",
+                            "HKD",
+                            "HNL",
+                            "HRK",
+                            "HTG",
+                            "HUF",
+                            "IDR",
+                            "ILS",
+                            "INR",
+                            "IQD",
+                            "IRR",
+                            "ISK",
+                            "JMD",
+                            "JOD",
+                            "JPY",
+                            "KES",
+                            "KGS",
+                            "KHR",
+                            "KMF",
+                            "KPW",
+                            "KRW",
+                            "KWD",
+                            "KYD",
+                            "KZT",
+                            "LAK",
+                            "LBP",
+                            "LKR",
+                            "LRD",
+                            "LSL",
+                            "LYD",
+                            "MAD",
+                            "MDL",
+                            "MGA",
+                            "MKD",
+                            "MMK",
+                            "MNT",
+                            "MOP",
+                            "MRO",
+                            "MTL",
+                            "MUR",
+                            "MVR",
+                            "MWK",
+                            "MXN",
+                            "MYR",
+                            "MZN",
+                            "NAD",
+                            "NGN",
+                            "NIO",
+                            "NOK",
+                            "NPR",
+                            "NZD",
+                            "OMR",
+                            "PAB",
+                            "PEN",
+                            "PGK",
+                            "PHP",
+                            "PKR",
+                            "PLN",
+                            "PYG",
+                            "QAR",
+                            "RON",
+                            "RSD",
+                            "RUB",
+                            "RWF",
+                            "SAR",
+                            "SBD",
+                            "SCR",
+                            "SDD",
+                            "SDG",
+                            "SEK",
+                            "SGD",
+                            "SHP",
+                            "SLL",
+                            "SOS",
+                            "SRD",
+                            "STD",
+                            "SVC",
+                            "SYP",
+                            "SZL",
+                            "THB",
+                            "TJS",
+                            "TMT",
+                            "TND",
+                            "TOP",
+                            "TRY",
+                            "TTD",
+                            "TVD",
+                            "TWD",
+                            "TZS",
+                            "UAH",
+                            "UGX",
+                            "USD",
+                            "UYU",
+                            "UZS",
+                            "VEB",
+                            "VEF",
+                            "VND",
+                            "VUV",
+                            "WST",
+                            "XAF",
+                            "XCD",
+                            "XBT",
+                            "XOF",
+                            "XPF",
+                            "YER",
+                            "ZAR",
+                            "ZMW",
+                            "WON"
+                          ]
+                        }
+                      },
+                      "additionalProperties": false
+                    },
+                    "entityTypeOptions": {
+                      "type": "object",
+                      "properties": {
+                        "$ref": {
+                          "type": "string",
+                          "format": "uri"
+                        },
+                        "entity": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "entity"
+                      ]
+                    },
+                    "isRequired": {
+                      "type": "boolean",
+                      "title": "Is the attribute required? Boolean value.",
+                      "description": "Indicates whether this attribute is required within the collection. Defaults to false."
+                    },
+                    "userInterface": {
+                      "type": "object",
+                      "properties": {
+                        "$ref": {
+                          "type": "string",
+                          "format": "uri"
+                        },
+                        "label": {
+                          "type": "string",
+                          "title": "A descriptive label for this attribute on the user interface.",
+                          "description": "The text label rendered on the user interface alongside the NoxTextInput component."
+                        },
+                        "translationId": {
+                          "type": "string",
+                          "title": "The multi-language translation identifier.",
+                          "description": "A unique string/key to reference the translations for this attribute for multi-language translations."
+                        },
+                        "widget": {
+                          "enum": [
+                            "textInput",
+                            "textArea",
+                            "numberInput",
+                            "numberSlider",
+                            "fileUpload",
+                            "datePicker",
+                            "dateRangePicker",
+                            "timePicker",
+                            "timeRangePicker",
+                            "radio",
+                            "select",
+                            "checkbox",
+                            "switch"
+                          ],
+                          "title": "Widget used to render this attribute on the user interface.",
+                          "description": "The user interface control type that is best suited to render the attribute on the screen."
+                        },
+                        "icon": {
+                          "type": "string",
+                          "title": "The icon representing the attribute on the user interface.",
+                          "description": "A reference URI to the attribute icon file. Could be a CSS or Mudblazor reference, e.g. \u0027@Icons.Material.Filled.Globe\u0027."
+                        },
+                        "iconPosition": {
+                          "enum": [
+                            "begin",
+                            "end"
+                          ],
+                          "title": "The position of the attribute icon on the user interface.",
+                          "description": "The postition of the attribute icon relative to the text input area on the user interface, e.g. begin or end."
+                        },
+                        "inputMask": {
+                          "type": "string",
+                          "title": "A mask expression used to validate and control text input.",
+                          "description": "A string of characters that indicates the format of valid input values. For example \u0027(000) 000-0000\u0027 could be used for a seven digit phone number with mandatory area code."
+                        },
+                        "outputMask": {
+                          "type": "string",
+                          "title": "A mask expression used to validate and control a value\u0027s output.",
+                          "description": "A string of characters that indicates the format of valid output. Used to handle validation triggers for onSubmit and onChange events of the control."
+                        },
+                        "regex": {
+                          "type": "string",
+                          "title": "The regular expression against which input is validated.",
+                          "description": "A regex string that indicates the format of valid input. For example \u0027/^(\\([0-9]{3}\\) |[0-9]{3}-)[0-9]{3}-[0-9]{4}$/gm\u0027 could be used for a seven digit phone number with mandatory area code."
+                        },
+                        "pageGroup": {
+                          "type": "string",
+                          "title": "The user interface PageGroup identifier.",
+                          "description": "Used to associate component with a PageGroup identifier on the user interface."
+                        },
+                        "fieldGroup": {
+                          "type": "string",
+                          "title": "The user interface FieldGroup identifier.",
+                          "description": "Used to associate component with a FieldGroup identifier on the user interface."
+                        },
+                        "inputOrder": {
+                          "type": "integer",
+                          "title": "Display/edit focus order within a FieldGroup on a user interface.",
+                          "description": "The order within a group of user interface components (FieldGroup) in which this attribute will receive focus for display or edit purpose."
+                        },
+                        "helpHint": {
+                          "type": "string",
+                          "title": "Helper text for this component.",
+                          "description": "The component default helper text used to aid the understanding of the component function to the user."
+                        },
+                        "errorMessage": {
+                          "type": "string",
+                          "title": "Validation error message.",
+                          "description": "The default error message displayed when text input validation fails."
+                        }
+                      },
+                      "title": "The user interface display options for this attribute.",
+                      "description": "Specify how this attribute is rendered on the user interface. Configuration options include label, icon, input/output masks, help hints among other.",
+                      "additionalProperties": false
+                    },
+                    "isReadonly": {
+                      "type": "boolean",
+                      "title": "Is this attribute readonly? Boolean value.",
+                      "description": "Indicates whether this attribute is readonly. Defaults to false."
+                    }
+                  },
+                  "required": [
+                    "name",
+                    "type"
+                  ],
+                  "title": "Definition namespace for Nox simple types.",
+                  "description": "Nox simple types definition used throughout Nox.Solution project.",
+                  "additionalProperties": false
+                }
+              }
+            },
+            "required": [
+              "attributes"
+            ]
+          },
+          "collectionTypeOptions": {
+            "type": "object",
+            "properties": {
+              "$ref": {
+                "type": "string",
+                "format": "uri"
+              },
+              "name": {
+                "type": "string",
+                "title": "The name of the attribute. Contains no spaces.",
+                "description": "Assign a descriptive name to the attribute. Should be a singular noun and be unique within a collection of attributes. PascalCase recommended.",
+                "pattern": "^[^\\s]*$"
+              },
+              "description": {
+                "type": "string",
+                "title": "The description of the attribute.",
+                "description": "A descriptive phrase that explains the nature and function of this attribute within a collection."
+              },
+              "type": {
+                "enum": [
+                  "array",
+                  "collection",
+                  "object",
+                  "entity",
+                  "latLong",
+                  "money",
+                  "streetAddress",
+                  "translatedText",
+                  "area",
+                  "autoNumber",
+                  "boolean",
+                  "color",
+                  "colour",
+                  "countryCode2",
+                  "countryCode3",
+                  "countryNumber",
+                  "culture",
+                  "currencyCode",
+                  "currencyNumber",
+                  "date",
+                  "month",
+                  "year",
+                  "dateTime",
+                  "dateTimeDuration",
+                  "dateTimeRange",
+                  "dateTimeSchedule",
+                  "distance",
+                  "email",
+                  "encryptedText",
+                  "file",
+                  "formula",
+                  "guid",
+                  "hashedText",
+                  "html",
+                  "image",
+                  "imageJpg",
+                  "imagePng",
+                  "imageSvg",
+                  "internetDomain",
+                  "ipAddress",
+                  "json",
+                  "jwtToken",
+                  "language",
+                  "length",
+                  "macAddress",
+                  "markdown",
+                  "nuid",
+                  "number",
+                  "password",
+                  "percentage",
+                  "phoneNumber",
+                  "temperature",
+                  "text",
+                  "time",
+                  "uri",
+                  "url",
+                  "user",
+                  "volume",
+                  "weight",
+                  "yaml"
+                ],
+                "title": "The Nox type of this attribute.",
+                "description": "Select the Nox value object type that best represents this attribute and its functional requirements within the domain."
+              },
+              "textTypeOptions": {
+                "type": "object",
+                "properties": {
+                  "minLength": {
+                    "type": "integer"
+                  },
+                  "maxLength": {
+                    "type": "integer"
+                  },
+                  "isUnicode": {
+                    "type": [
+                      "boolean",
+                      "null"
+                    ]
+                  },
+                  "casing": {
+                    "enum": [
+                      "normal",
+                      "lower",
+                      "upper"
+                    ]
+                  }
+                }
+              },
+              "numberTypeOptions": {
+                "type": "object",
+                "properties": {
+                  "minValue": {
+                    "type": "number"
+                  },
+                  "maxValue": {
+                    "type": "number"
+                  },
+                  "decimalDigits": {
+                    "type": "integer"
+                  }
+                }
+              },
+              "moneyTypeOptions": {
+                "type": "object",
+                "properties": {
+                  "$ref": {
+                    "type": "string",
+                    "format": "uri"
+                  },
+                  "decimalDigits": {
+                    "type": [
+                      "integer",
+                      "null"
+                    ]
+                  },
+                  "integerDigits": {
+                    "type": [
+                      "integer",
+                      "null"
+                    ]
+                  },
+                  "minValue": {
+                    "type": "number"
+                  },
+                  "maxValue": {
+                    "type": "number"
+                  },
+                  "defaultCurrency": {
+                    "enum": [
+                      "AED",
+                      "AFN",
+                      "ALL",
+                      "AMD",
+                      "ANG",
+                      "AOA",
+                      "ARS",
+                      "AUD",
+                      "AWG",
+                      "AZN",
+                      "BAM",
+                      "BBD",
+                      "BDT",
+                      "BGN",
+                      "BHD",
+                      "BIF",
+                      "BMD",
+                      "BND",
+                      "BOB",
+                      "BRL",
+                      "BSD",
+                      "BTC",
+                      "BTN",
+                      "BWP",
+                      "BYR",
+                      "BYN",
+                      "BZD",
+                      "CAD",
+                      "CDF",
+                      "CHF",
+                      "CLP",
+                      "CNY",
+                      "COP",
+                      "CRC",
+                      "CUC",
+                      "CUP",
+                      "CVE",
+                      "CZK",
+                      "DJF",
+                      "DKK",
+                      "DOP",
+                      "DZD",
+                      "EGP",
+                      "ERN",
+                      "ETB",
+                      "EUR",
+                      "FJD",
+                      "FKP",
+                      "GBP",
+                      "GEL",
+                      "GHS",
+                      "GIP",
+                      "GMD",
+                      "GNF",
+                      "GTQ",
+                      "GYD",
+                      "HKD",
+                      "HNL",
+                      "HRK",
+                      "HTG",
+                      "HUF",
+                      "IDR",
+                      "ILS",
+                      "INR",
+                      "IQD",
+                      "IRR",
+                      "ISK",
+                      "JMD",
+                      "JOD",
+                      "JPY",
+                      "KES",
+                      "KGS",
+                      "KHR",
+                      "KMF",
+                      "KPW",
+                      "KRW",
+                      "KWD",
+                      "KYD",
+                      "KZT",
+                      "LAK",
+                      "LBP",
+                      "LKR",
+                      "LRD",
+                      "LSL",
+                      "LYD",
+                      "MAD",
+                      "MDL",
+                      "MGA",
+                      "MKD",
+                      "MMK",
+                      "MNT",
+                      "MOP",
+                      "MRO",
+                      "MTL",
+                      "MUR",
+                      "MVR",
+                      "MWK",
+                      "MXN",
+                      "MYR",
+                      "MZN",
+                      "NAD",
+                      "NGN",
+                      "NIO",
+                      "NOK",
+                      "NPR",
+                      "NZD",
+                      "OMR",
+                      "PAB",
+                      "PEN",
+                      "PGK",
+                      "PHP",
+                      "PKR",
+                      "PLN",
+                      "PYG",
+                      "QAR",
+                      "RON",
+                      "RSD",
+                      "RUB",
+                      "RWF",
+                      "SAR",
+                      "SBD",
+                      "SCR",
+                      "SDD",
+                      "SDG",
+                      "SEK",
+                      "SGD",
+                      "SHP",
+                      "SLL",
+                      "SOS",
+                      "SRD",
+                      "STD",
+                      "SVC",
+                      "SYP",
+                      "SZL",
+                      "THB",
+                      "TJS",
+                      "TMT",
+                      "TND",
+                      "TOP",
+                      "TRY",
+                      "TTD",
+                      "TVD",
+                      "TWD",
+                      "TZS",
+                      "UAH",
+                      "UGX",
+                      "USD",
+                      "UYU",
+                      "UZS",
+                      "VEB",
+                      "VEF",
+                      "VND",
+                      "VUV",
+                      "WST",
+                      "XAF",
+                      "XCD",
+                      "XBT",
+                      "XOF",
+                      "XPF",
+                      "YER",
+                      "ZAR",
+                      "ZMW",
+                      "WON"
+                    ]
+                  }
+                },
+                "additionalProperties": false
+              },
+              "entityTypeOptions": {
+                "type": "object",
+                "properties": {
+                  "$ref": {
+                    "type": "string",
+                    "format": "uri"
+                  },
+                  "entity": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "entity"
+                ]
+              },
+              "isRequired": {
+                "type": "boolean",
+                "title": "Is the attribute required? Boolean value.",
+                "description": "Indicates whether this attribute is required within the collection. Defaults to false."
+              },
+              "userInterface": {
+                "type": "object",
+                "properties": {
+                  "$ref": {
+                    "type": "string",
+                    "format": "uri"
+                  },
+                  "label": {
+                    "type": "string",
+                    "title": "A descriptive label for this attribute on the user interface.",
+                    "description": "The text label rendered on the user interface alongside the NoxTextInput component."
+                  },
+                  "translationId": {
+                    "type": "string",
+                    "title": "The multi-language translation identifier.",
+                    "description": "A unique string/key to reference the translations for this attribute for multi-language translations."
+                  },
+                  "widget": {
+                    "enum": [
+                      "textInput",
+                      "textArea",
+                      "numberInput",
+                      "numberSlider",
+                      "fileUpload",
+                      "datePicker",
+                      "dateRangePicker",
+                      "timePicker",
+                      "timeRangePicker",
+                      "radio",
+                      "select",
+                      "checkbox",
+                      "switch"
+                    ],
+                    "title": "Widget used to render this attribute on the user interface.",
+                    "description": "The user interface control type that is best suited to render the attribute on the screen."
+                  },
+                  "icon": {
+                    "type": "string",
+                    "title": "The icon representing the attribute on the user interface.",
+                    "description": "A reference URI to the attribute icon file. Could be a CSS or Mudblazor reference, e.g. \u0027@Icons.Material.Filled.Globe\u0027."
+                  },
+                  "iconPosition": {
+                    "enum": [
+                      "begin",
+                      "end"
+                    ],
+                    "title": "The position of the attribute icon on the user interface.",
+                    "description": "The postition of the attribute icon relative to the text input area on the user interface, e.g. begin or end."
+                  },
+                  "inputMask": {
+                    "type": "string",
+                    "title": "A mask expression used to validate and control text input.",
+                    "description": "A string of characters that indicates the format of valid input values. For example \u0027(000) 000-0000\u0027 could be used for a seven digit phone number with mandatory area code."
+                  },
+                  "outputMask": {
+                    "type": "string",
+                    "title": "A mask expression used to validate and control a value\u0027s output.",
+                    "description": "A string of characters that indicates the format of valid output. Used to handle validation triggers for onSubmit and onChange events of the control."
+                  },
+                  "regex": {
+                    "type": "string",
+                    "title": "The regular expression against which input is validated.",
+                    "description": "A regex string that indicates the format of valid input. For example \u0027/^(\\([0-9]{3}\\) |[0-9]{3}-)[0-9]{3}-[0-9]{4}$/gm\u0027 could be used for a seven digit phone number with mandatory area code."
+                  },
+                  "pageGroup": {
+                    "type": "string",
+                    "title": "The user interface PageGroup identifier.",
+                    "description": "Used to associate component with a PageGroup identifier on the user interface."
+                  },
+                  "fieldGroup": {
+                    "type": "string",
+                    "title": "The user interface FieldGroup identifier.",
+                    "description": "Used to associate component with a FieldGroup identifier on the user interface."
+                  },
+                  "inputOrder": {
+                    "type": "integer",
+                    "title": "Display/edit focus order within a FieldGroup on a user interface.",
+                    "description": "The order within a group of user interface components (FieldGroup) in which this attribute will receive focus for display or edit purpose."
+                  },
+                  "helpHint": {
+                    "type": "string",
+                    "title": "Helper text for this component.",
+                    "description": "The component default helper text used to aid the understanding of the component function to the user."
+                  },
+                  "errorMessage": {
+                    "type": "string",
+                    "title": "Validation error message.",
+                    "description": "The default error message displayed when text input validation fails."
+                  }
+                },
+                "title": "The user interface display options for this attribute.",
+                "description": "Specify how this attribute is rendered on the user interface. Configuration options include label, icon, input/output masks, help hints among other.",
+                "additionalProperties": false
+              },
+              "isReadonly": {
+                "type": "boolean",
+                "title": "Is this attribute readonly? Boolean value.",
+                "description": "Indicates whether this attribute is readonly. Defaults to false."
+              },
+              "objectTypeOptions": {
+                "type": "object",
+                "properties": {
+                  "$ref": {
+                    "type": "string",
+                    "format": "uri"
+                  },
+                  "attributes": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "$ref": {
+                          "type": "string",
+                          "format": "uri"
+                        },
+                        "name": {
+                          "type": "string",
+                          "title": "The name of the attribute. Contains no spaces.",
+                          "description": "Assign a descriptive name to the attribute. Should be a singular noun and be unique within a collection of attributes. PascalCase recommended.",
+                          "pattern": "^[^\\s]*$"
+                        },
+                        "description": {
+                          "type": "string",
+                          "title": "The description of the attribute.",
+                          "description": "A descriptive phrase that explains the nature and function of this attribute within a collection."
+                        },
+                        "type": {
+                          "enum": [
+                            "array",
+                            "collection",
+                            "object",
+                            "entity",
+                            "latLong",
+                            "money",
+                            "streetAddress",
+                            "translatedText",
+                            "area",
+                            "autoNumber",
+                            "boolean",
+                            "color",
+                            "colour",
+                            "countryCode2",
+                            "countryCode3",
+                            "countryNumber",
+                            "culture",
+                            "currencyCode",
+                            "currencyNumber",
+                            "date",
+                            "month",
+                            "year",
+                            "dateTime",
+                            "dateTimeDuration",
+                            "dateTimeRange",
+                            "dateTimeSchedule",
+                            "distance",
+                            "email",
+                            "encryptedText",
+                            "file",
+                            "formula",
+                            "guid",
+                            "hashedText",
+                            "html",
+                            "image",
+                            "imageJpg",
+                            "imagePng",
+                            "imageSvg",
+                            "internetDomain",
+                            "ipAddress",
+                            "json",
+                            "jwtToken",
+                            "language",
+                            "length",
+                            "macAddress",
+                            "markdown",
+                            "nuid",
+                            "number",
+                            "password",
+                            "percentage",
+                            "phoneNumber",
+                            "temperature",
+                            "text",
+                            "time",
+                            "uri",
+                            "url",
+                            "user",
+                            "volume",
+                            "weight",
+                            "yaml"
+                          ],
+                          "title": "The Nox type of this attribute.",
+                          "description": "Select the Nox value object type that best represents this attribute and its functional requirements within the domain."
+                        },
+                        "textTypeOptions": {
+                          "type": "object",
+                          "properties": {
+                            "minLength": {
+                              "type": "integer"
+                            },
+                            "maxLength": {
+                              "type": "integer"
+                            },
+                            "isUnicode": {
+                              "type": [
+                                "boolean",
+                                "null"
+                              ]
+                            },
+                            "casing": {
+                              "enum": [
+                                "normal",
+                                "lower",
+                                "upper"
+                              ]
+                            }
+                          }
+                        },
+                        "numberTypeOptions": {
+                          "type": "object",
+                          "properties": {
+                            "minValue": {
+                              "type": "number"
+                            },
+                            "maxValue": {
+                              "type": "number"
+                            },
+                            "decimalDigits": {
+                              "type": "integer"
+                            }
+                          }
+                        },
+                        "moneyTypeOptions": {
+                          "type": "object",
+                          "properties": {
+                            "$ref": {
+                              "type": "string",
+                              "format": "uri"
+                            },
+                            "decimalDigits": {
+                              "type": [
+                                "integer",
+                                "null"
+                              ]
+                            },
+                            "integerDigits": {
+                              "type": [
+                                "integer",
+                                "null"
+                              ]
+                            },
+                            "minValue": {
+                              "type": "number"
+                            },
+                            "maxValue": {
+                              "type": "number"
+                            },
+                            "defaultCurrency": {
+                              "enum": [
+                                "AED",
+                                "AFN",
+                                "ALL",
+                                "AMD",
+                                "ANG",
+                                "AOA",
+                                "ARS",
+                                "AUD",
+                                "AWG",
+                                "AZN",
+                                "BAM",
+                                "BBD",
+                                "BDT",
+                                "BGN",
+                                "BHD",
+                                "BIF",
+                                "BMD",
+                                "BND",
+                                "BOB",
+                                "BRL",
+                                "BSD",
+                                "BTC",
+                                "BTN",
+                                "BWP",
+                                "BYR",
+                                "BYN",
+                                "BZD",
+                                "CAD",
+                                "CDF",
+                                "CHF",
+                                "CLP",
+                                "CNY",
+                                "COP",
+                                "CRC",
+                                "CUC",
+                                "CUP",
+                                "CVE",
+                                "CZK",
+                                "DJF",
+                                "DKK",
+                                "DOP",
+                                "DZD",
+                                "EGP",
+                                "ERN",
+                                "ETB",
+                                "EUR",
+                                "FJD",
+                                "FKP",
+                                "GBP",
+                                "GEL",
+                                "GHS",
+                                "GIP",
+                                "GMD",
+                                "GNF",
+                                "GTQ",
+                                "GYD",
+                                "HKD",
+                                "HNL",
+                                "HRK",
+                                "HTG",
+                                "HUF",
+                                "IDR",
+                                "ILS",
+                                "INR",
+                                "IQD",
+                                "IRR",
+                                "ISK",
+                                "JMD",
+                                "JOD",
+                                "JPY",
+                                "KES",
+                                "KGS",
+                                "KHR",
+                                "KMF",
+                                "KPW",
+                                "KRW",
+                                "KWD",
+                                "KYD",
+                                "KZT",
+                                "LAK",
+                                "LBP",
+                                "LKR",
+                                "LRD",
+                                "LSL",
+                                "LYD",
+                                "MAD",
+                                "MDL",
+                                "MGA",
+                                "MKD",
+                                "MMK",
+                                "MNT",
+                                "MOP",
+                                "MRO",
+                                "MTL",
+                                "MUR",
+                                "MVR",
+                                "MWK",
+                                "MXN",
+                                "MYR",
+                                "MZN",
+                                "NAD",
+                                "NGN",
+                                "NIO",
+                                "NOK",
+                                "NPR",
+                                "NZD",
+                                "OMR",
+                                "PAB",
+                                "PEN",
+                                "PGK",
+                                "PHP",
+                                "PKR",
+                                "PLN",
+                                "PYG",
+                                "QAR",
+                                "RON",
+                                "RSD",
+                                "RUB",
+                                "RWF",
+                                "SAR",
+                                "SBD",
+                                "SCR",
+                                "SDD",
+                                "SDG",
+                                "SEK",
+                                "SGD",
+                                "SHP",
+                                "SLL",
+                                "SOS",
+                                "SRD",
+                                "STD",
+                                "SVC",
+                                "SYP",
+                                "SZL",
+                                "THB",
+                                "TJS",
+                                "TMT",
+                                "TND",
+                                "TOP",
+                                "TRY",
+                                "TTD",
+                                "TVD",
+                                "TWD",
+                                "TZS",
+                                "UAH",
+                                "UGX",
+                                "USD",
+                                "UYU",
+                                "UZS",
+                                "VEB",
+                                "VEF",
+                                "VND",
+                                "VUV",
+                                "WST",
+                                "XAF",
+                                "XCD",
+                                "XBT",
+                                "XOF",
+                                "XPF",
+                                "YER",
+                                "ZAR",
+                                "ZMW",
+                                "WON"
+                              ]
+                            }
+                          },
+                          "additionalProperties": false
+                        },
+                        "entityTypeOptions": {
+                          "type": "object",
+                          "properties": {
+                            "$ref": {
+                              "type": "string",
+                              "format": "uri"
+                            },
+                            "entity": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "entity"
+                          ]
+                        },
+                        "isRequired": {
+                          "type": "boolean",
+                          "title": "Is the attribute required? Boolean value.",
+                          "description": "Indicates whether this attribute is required within the collection. Defaults to false."
+                        },
+                        "userInterface": {
+                          "type": "object",
+                          "properties": {
+                            "$ref": {
+                              "type": "string",
+                              "format": "uri"
+                            },
+                            "label": {
+                              "type": "string",
+                              "title": "A descriptive label for this attribute on the user interface.",
+                              "description": "The text label rendered on the user interface alongside the NoxTextInput component."
+                            },
+                            "translationId": {
+                              "type": "string",
+                              "title": "The multi-language translation identifier.",
+                              "description": "A unique string/key to reference the translations for this attribute for multi-language translations."
+                            },
+                            "widget": {
+                              "enum": [
+                                "textInput",
+                                "textArea",
+                                "numberInput",
+                                "numberSlider",
+                                "fileUpload",
+                                "datePicker",
+                                "dateRangePicker",
+                                "timePicker",
+                                "timeRangePicker",
+                                "radio",
+                                "select",
+                                "checkbox",
+                                "switch"
+                              ],
+                              "title": "Widget used to render this attribute on the user interface.",
+                              "description": "The user interface control type that is best suited to render the attribute on the screen."
+                            },
+                            "icon": {
+                              "type": "string",
+                              "title": "The icon representing the attribute on the user interface.",
+                              "description": "A reference URI to the attribute icon file. Could be a CSS or Mudblazor reference, e.g. \u0027@Icons.Material.Filled.Globe\u0027."
+                            },
+                            "iconPosition": {
+                              "enum": [
+                                "begin",
+                                "end"
+                              ],
+                              "title": "The position of the attribute icon on the user interface.",
+                              "description": "The postition of the attribute icon relative to the text input area on the user interface, e.g. begin or end."
+                            },
+                            "inputMask": {
+                              "type": "string",
+                              "title": "A mask expression used to validate and control text input.",
+                              "description": "A string of characters that indicates the format of valid input values. For example \u0027(000) 000-0000\u0027 could be used for a seven digit phone number with mandatory area code."
+                            },
+                            "outputMask": {
+                              "type": "string",
+                              "title": "A mask expression used to validate and control a value\u0027s output.",
+                              "description": "A string of characters that indicates the format of valid output. Used to handle validation triggers for onSubmit and onChange events of the control."
+                            },
+                            "regex": {
+                              "type": "string",
+                              "title": "The regular expression against which input is validated.",
+                              "description": "A regex string that indicates the format of valid input. For example \u0027/^(\\([0-9]{3}\\) |[0-9]{3}-)[0-9]{3}-[0-9]{4}$/gm\u0027 could be used for a seven digit phone number with mandatory area code."
+                            },
+                            "pageGroup": {
+                              "type": "string",
+                              "title": "The user interface PageGroup identifier.",
+                              "description": "Used to associate component with a PageGroup identifier on the user interface."
+                            },
+                            "fieldGroup": {
+                              "type": "string",
+                              "title": "The user interface FieldGroup identifier.",
+                              "description": "Used to associate component with a FieldGroup identifier on the user interface."
+                            },
+                            "inputOrder": {
+                              "type": "integer",
+                              "title": "Display/edit focus order within a FieldGroup on a user interface.",
+                              "description": "The order within a group of user interface components (FieldGroup) in which this attribute will receive focus for display or edit purpose."
+                            },
+                            "helpHint": {
+                              "type": "string",
+                              "title": "Helper text for this component.",
+                              "description": "The component default helper text used to aid the understanding of the component function to the user."
+                            },
+                            "errorMessage": {
+                              "type": "string",
+                              "title": "Validation error message.",
+                              "description": "The default error message displayed when text input validation fails."
+                            }
+                          },
+                          "title": "The user interface display options for this attribute.",
+                          "description": "Specify how this attribute is rendered on the user interface. Configuration options include label, icon, input/output masks, help hints among other.",
+                          "additionalProperties": false
+                        },
+                        "isReadonly": {
+                          "type": "boolean",
+                          "title": "Is this attribute readonly? Boolean value.",
+                          "description": "Indicates whether this attribute is readonly. Defaults to false."
+                        }
+                      },
+                      "required": [
+                        "name",
+                        "type"
+                      ],
+                      "title": "Definition namespace for Nox simple types.",
+                      "description": "Nox simple types definition used throughout Nox.Solution project.",
+                      "additionalProperties": false
+                    }
+                  }
+                },
+                "required": [
+                  "attributes"
+                ]
+              }
+            },
+            "required": [
+              "name",
+              "type"
+            ],
+            "title": "Definition namespace for Nox simple types.",
+            "description": "Nox simple types definition used throughout Nox.Solution project.",
+            "additionalProperties": false
+          },
+          "arrayTypeOptions": {
+            "type": "object",
+            "properties": {
+              "$ref": {
+                "type": "string",
+                "format": "uri"
+              },
+              "name": {
+                "type": "string",
+                "title": "The name of the attribute. Contains no spaces.",
+                "description": "Assign a descriptive name to the attribute. Should be a singular noun and be unique within a collection of attributes. PascalCase recommended.",
+                "pattern": "^[^\\s]*$"
+              },
+              "description": {
+                "type": "string",
+                "title": "The description of the attribute.",
+                "description": "A descriptive phrase that explains the nature and function of this attribute within a collection."
+              },
+              "type": {
+                "enum": [
+                  "array",
+                  "collection",
+                  "object",
+                  "entity",
+                  "latLong",
+                  "money",
+                  "streetAddress",
+                  "translatedText",
+                  "area",
+                  "autoNumber",
+                  "boolean",
+                  "color",
+                  "colour",
+                  "countryCode2",
+                  "countryCode3",
+                  "countryNumber",
+                  "culture",
+                  "currencyCode",
+                  "currencyNumber",
+                  "date",
+                  "month",
+                  "year",
+                  "dateTime",
+                  "dateTimeDuration",
+                  "dateTimeRange",
+                  "dateTimeSchedule",
+                  "distance",
+                  "email",
+                  "encryptedText",
+                  "file",
+                  "formula",
+                  "guid",
+                  "hashedText",
+                  "html",
+                  "image",
+                  "imageJpg",
+                  "imagePng",
+                  "imageSvg",
+                  "internetDomain",
+                  "ipAddress",
+                  "json",
+                  "jwtToken",
+                  "language",
+                  "length",
+                  "macAddress",
+                  "markdown",
+                  "nuid",
+                  "number",
+                  "password",
+                  "percentage",
+                  "phoneNumber",
+                  "temperature",
+                  "text",
+                  "time",
+                  "uri",
+                  "url",
+                  "user",
+                  "volume",
+                  "weight",
+                  "yaml"
+                ],
+                "title": "The Nox type of this attribute.",
+                "description": "Select the Nox value object type that best represents this attribute and its functional requirements within the domain."
+              },
+              "textTypeOptions": {
+                "type": "object",
+                "properties": {
+                  "minLength": {
+                    "type": "integer"
+                  },
+                  "maxLength": {
+                    "type": "integer"
+                  },
+                  "isUnicode": {
+                    "type": [
+                      "boolean",
+                      "null"
+                    ]
+                  },
+                  "casing": {
+                    "enum": [
+                      "normal",
+                      "lower",
+                      "upper"
+                    ]
+                  }
+                }
+              },
+              "numberTypeOptions": {
+                "type": "object",
+                "properties": {
+                  "minValue": {
+                    "type": "number"
+                  },
+                  "maxValue": {
+                    "type": "number"
+                  },
+                  "decimalDigits": {
+                    "type": "integer"
+                  }
+                }
+              },
+              "moneyTypeOptions": {
+                "type": "object",
+                "properties": {
+                  "$ref": {
+                    "type": "string",
+                    "format": "uri"
+                  },
+                  "decimalDigits": {
+                    "type": [
+                      "integer",
+                      "null"
+                    ]
+                  },
+                  "integerDigits": {
+                    "type": [
+                      "integer",
+                      "null"
+                    ]
+                  },
+                  "minValue": {
+                    "type": "number"
+                  },
+                  "maxValue": {
+                    "type": "number"
+                  },
+                  "defaultCurrency": {
+                    "enum": [
+                      "AED",
+                      "AFN",
+                      "ALL",
+                      "AMD",
+                      "ANG",
+                      "AOA",
+                      "ARS",
+                      "AUD",
+                      "AWG",
+                      "AZN",
+                      "BAM",
+                      "BBD",
+                      "BDT",
+                      "BGN",
+                      "BHD",
+                      "BIF",
+                      "BMD",
+                      "BND",
+                      "BOB",
+                      "BRL",
+                      "BSD",
+                      "BTC",
+                      "BTN",
+                      "BWP",
+                      "BYR",
+                      "BYN",
+                      "BZD",
+                      "CAD",
+                      "CDF",
+                      "CHF",
+                      "CLP",
+                      "CNY",
+                      "COP",
+                      "CRC",
+                      "CUC",
+                      "CUP",
+                      "CVE",
+                      "CZK",
+                      "DJF",
+                      "DKK",
+                      "DOP",
+                      "DZD",
+                      "EGP",
+                      "ERN",
+                      "ETB",
+                      "EUR",
+                      "FJD",
+                      "FKP",
+                      "GBP",
+                      "GEL",
+                      "GHS",
+                      "GIP",
+                      "GMD",
+                      "GNF",
+                      "GTQ",
+                      "GYD",
+                      "HKD",
+                      "HNL",
+                      "HRK",
+                      "HTG",
+                      "HUF",
+                      "IDR",
+                      "ILS",
+                      "INR",
+                      "IQD",
+                      "IRR",
+                      "ISK",
+                      "JMD",
+                      "JOD",
+                      "JPY",
+                      "KES",
+                      "KGS",
+                      "KHR",
+                      "KMF",
+                      "KPW",
+                      "KRW",
+                      "KWD",
+                      "KYD",
+                      "KZT",
+                      "LAK",
+                      "LBP",
+                      "LKR",
+                      "LRD",
+                      "LSL",
+                      "LYD",
+                      "MAD",
+                      "MDL",
+                      "MGA",
+                      "MKD",
+                      "MMK",
+                      "MNT",
+                      "MOP",
+                      "MRO",
+                      "MTL",
+                      "MUR",
+                      "MVR",
+                      "MWK",
+                      "MXN",
+                      "MYR",
+                      "MZN",
+                      "NAD",
+                      "NGN",
+                      "NIO",
+                      "NOK",
+                      "NPR",
+                      "NZD",
+                      "OMR",
+                      "PAB",
+                      "PEN",
+                      "PGK",
+                      "PHP",
+                      "PKR",
+                      "PLN",
+                      "PYG",
+                      "QAR",
+                      "RON",
+                      "RSD",
+                      "RUB",
+                      "RWF",
+                      "SAR",
+                      "SBD",
+                      "SCR",
+                      "SDD",
+                      "SDG",
+                      "SEK",
+                      "SGD",
+                      "SHP",
+                      "SLL",
+                      "SOS",
+                      "SRD",
+                      "STD",
+                      "SVC",
+                      "SYP",
+                      "SZL",
+                      "THB",
+                      "TJS",
+                      "TMT",
+                      "TND",
+                      "TOP",
+                      "TRY",
+                      "TTD",
+                      "TVD",
+                      "TWD",
+                      "TZS",
+                      "UAH",
+                      "UGX",
+                      "USD",
+                      "UYU",
+                      "UZS",
+                      "VEB",
+                      "VEF",
+                      "VND",
+                      "VUV",
+                      "WST",
+                      "XAF",
+                      "XCD",
+                      "XBT",
+                      "XOF",
+                      "XPF",
+                      "YER",
+                      "ZAR",
+                      "ZMW",
+                      "WON"
+                    ]
+                  }
+                },
+                "additionalProperties": false
+              },
+              "entityTypeOptions": {
+                "type": "object",
+                "properties": {
+                  "$ref": {
+                    "type": "string",
+                    "format": "uri"
+                  },
+                  "entity": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "entity"
+                ]
+              },
+              "isRequired": {
+                "type": "boolean",
+                "title": "Is the attribute required? Boolean value.",
+                "description": "Indicates whether this attribute is required within the collection. Defaults to false."
+              },
+              "userInterface": {
+                "type": "object",
+                "properties": {
+                  "$ref": {
+                    "type": "string",
+                    "format": "uri"
+                  },
+                  "label": {
+                    "type": "string",
+                    "title": "A descriptive label for this attribute on the user interface.",
+                    "description": "The text label rendered on the user interface alongside the NoxTextInput component."
+                  },
+                  "translationId": {
+                    "type": "string",
+                    "title": "The multi-language translation identifier.",
+                    "description": "A unique string/key to reference the translations for this attribute for multi-language translations."
+                  },
+                  "widget": {
+                    "enum": [
+                      "textInput",
+                      "textArea",
+                      "numberInput",
+                      "numberSlider",
+                      "fileUpload",
+                      "datePicker",
+                      "dateRangePicker",
+                      "timePicker",
+                      "timeRangePicker",
+                      "radio",
+                      "select",
+                      "checkbox",
+                      "switch"
+                    ],
+                    "title": "Widget used to render this attribute on the user interface.",
+                    "description": "The user interface control type that is best suited to render the attribute on the screen."
+                  },
+                  "icon": {
+                    "type": "string",
+                    "title": "The icon representing the attribute on the user interface.",
+                    "description": "A reference URI to the attribute icon file. Could be a CSS or Mudblazor reference, e.g. \u0027@Icons.Material.Filled.Globe\u0027."
+                  },
+                  "iconPosition": {
+                    "enum": [
+                      "begin",
+                      "end"
+                    ],
+                    "title": "The position of the attribute icon on the user interface.",
+                    "description": "The postition of the attribute icon relative to the text input area on the user interface, e.g. begin or end."
+                  },
+                  "inputMask": {
+                    "type": "string",
+                    "title": "A mask expression used to validate and control text input.",
+                    "description": "A string of characters that indicates the format of valid input values. For example \u0027(000) 000-0000\u0027 could be used for a seven digit phone number with mandatory area code."
+                  },
+                  "outputMask": {
+                    "type": "string",
+                    "title": "A mask expression used to validate and control a value\u0027s output.",
+                    "description": "A string of characters that indicates the format of valid output. Used to handle validation triggers for onSubmit and onChange events of the control."
+                  },
+                  "regex": {
+                    "type": "string",
+                    "title": "The regular expression against which input is validated.",
+                    "description": "A regex string that indicates the format of valid input. For example \u0027/^(\\([0-9]{3}\\) |[0-9]{3}-)[0-9]{3}-[0-9]{4}$/gm\u0027 could be used for a seven digit phone number with mandatory area code."
+                  },
+                  "pageGroup": {
+                    "type": "string",
+                    "title": "The user interface PageGroup identifier.",
+                    "description": "Used to associate component with a PageGroup identifier on the user interface."
+                  },
+                  "fieldGroup": {
+                    "type": "string",
+                    "title": "The user interface FieldGroup identifier.",
+                    "description": "Used to associate component with a FieldGroup identifier on the user interface."
+                  },
+                  "inputOrder": {
+                    "type": "integer",
+                    "title": "Display/edit focus order within a FieldGroup on a user interface.",
+                    "description": "The order within a group of user interface components (FieldGroup) in which this attribute will receive focus for display or edit purpose."
+                  },
+                  "helpHint": {
+                    "type": "string",
+                    "title": "Helper text for this component.",
+                    "description": "The component default helper text used to aid the understanding of the component function to the user."
+                  },
+                  "errorMessage": {
+                    "type": "string",
+                    "title": "Validation error message.",
+                    "description": "The default error message displayed when text input validation fails."
+                  }
+                },
+                "title": "The user interface display options for this attribute.",
+                "description": "Specify how this attribute is rendered on the user interface. Configuration options include label, icon, input/output masks, help hints among other.",
+                "additionalProperties": false
+              },
+              "isReadonly": {
+                "type": "boolean",
+                "title": "Is this attribute readonly? Boolean value.",
+                "description": "Indicates whether this attribute is readonly. Defaults to false."
+              },
+              "objectTypeOptions": {
+                "type": "object",
+                "properties": {
+                  "$ref": {
+                    "type": "string",
+                    "format": "uri"
+                  },
+                  "attributes": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "$ref": {
+                          "type": "string",
+                          "format": "uri"
+                        },
+                        "name": {
+                          "type": "string",
+                          "title": "The name of the attribute. Contains no spaces.",
+                          "description": "Assign a descriptive name to the attribute. Should be a singular noun and be unique within a collection of attributes. PascalCase recommended.",
+                          "pattern": "^[^\\s]*$"
+                        },
+                        "description": {
+                          "type": "string",
+                          "title": "The description of the attribute.",
+                          "description": "A descriptive phrase that explains the nature and function of this attribute within a collection."
+                        },
+                        "type": {
+                          "enum": [
+                            "array",
+                            "collection",
+                            "object",
+                            "entity",
+                            "latLong",
+                            "money",
+                            "streetAddress",
+                            "translatedText",
+                            "area",
+                            "autoNumber",
+                            "boolean",
+                            "color",
+                            "colour",
+                            "countryCode2",
+                            "countryCode3",
+                            "countryNumber",
+                            "culture",
+                            "currencyCode",
+                            "currencyNumber",
+                            "date",
+                            "month",
+                            "year",
+                            "dateTime",
+                            "dateTimeDuration",
+                            "dateTimeRange",
+                            "dateTimeSchedule",
+                            "distance",
+                            "email",
+                            "encryptedText",
+                            "file",
+                            "formula",
+                            "guid",
+                            "hashedText",
+                            "html",
+                            "image",
+                            "imageJpg",
+                            "imagePng",
+                            "imageSvg",
+                            "internetDomain",
+                            "ipAddress",
+                            "json",
+                            "jwtToken",
+                            "language",
+                            "length",
+                            "macAddress",
+                            "markdown",
+                            "nuid",
+                            "number",
+                            "password",
+                            "percentage",
+                            "phoneNumber",
+                            "temperature",
+                            "text",
+                            "time",
+                            "uri",
+                            "url",
+                            "user",
+                            "volume",
+                            "weight",
+                            "yaml"
+                          ],
+                          "title": "The Nox type of this attribute.",
+                          "description": "Select the Nox value object type that best represents this attribute and its functional requirements within the domain."
+                        },
+                        "textTypeOptions": {
+                          "type": "object",
+                          "properties": {
+                            "minLength": {
+                              "type": "integer"
+                            },
+                            "maxLength": {
+                              "type": "integer"
+                            },
+                            "isUnicode": {
+                              "type": [
+                                "boolean",
+                                "null"
+                              ]
+                            },
+                            "casing": {
+                              "enum": [
+                                "normal",
+                                "lower",
+                                "upper"
+                              ]
+                            }
+                          }
+                        },
+                        "numberTypeOptions": {
+                          "type": "object",
+                          "properties": {
+                            "minValue": {
+                              "type": "number"
+                            },
+                            "maxValue": {
+                              "type": "number"
+                            },
+                            "decimalDigits": {
+                              "type": "integer"
+                            }
+                          }
+                        },
+                        "moneyTypeOptions": {
+                          "type": "object",
+                          "properties": {
+                            "$ref": {
+                              "type": "string",
+                              "format": "uri"
+                            },
+                            "decimalDigits": {
+                              "type": [
+                                "integer",
+                                "null"
+                              ]
+                            },
+                            "integerDigits": {
+                              "type": [
+                                "integer",
+                                "null"
+                              ]
+                            },
+                            "minValue": {
+                              "type": "number"
+                            },
+                            "maxValue": {
+                              "type": "number"
+                            },
+                            "defaultCurrency": {
+                              "enum": [
+                                "AED",
+                                "AFN",
+                                "ALL",
+                                "AMD",
+                                "ANG",
+                                "AOA",
+                                "ARS",
+                                "AUD",
+                                "AWG",
+                                "AZN",
+                                "BAM",
+                                "BBD",
+                                "BDT",
+                                "BGN",
+                                "BHD",
+                                "BIF",
+                                "BMD",
+                                "BND",
+                                "BOB",
+                                "BRL",
+                                "BSD",
+                                "BTC",
+                                "BTN",
+                                "BWP",
+                                "BYR",
+                                "BYN",
+                                "BZD",
+                                "CAD",
+                                "CDF",
+                                "CHF",
+                                "CLP",
+                                "CNY",
+                                "COP",
+                                "CRC",
+                                "CUC",
+                                "CUP",
+                                "CVE",
+                                "CZK",
+                                "DJF",
+                                "DKK",
+                                "DOP",
+                                "DZD",
+                                "EGP",
+                                "ERN",
+                                "ETB",
+                                "EUR",
+                                "FJD",
+                                "FKP",
+                                "GBP",
+                                "GEL",
+                                "GHS",
+                                "GIP",
+                                "GMD",
+                                "GNF",
+                                "GTQ",
+                                "GYD",
+                                "HKD",
+                                "HNL",
+                                "HRK",
+                                "HTG",
+                                "HUF",
+                                "IDR",
+                                "ILS",
+                                "INR",
+                                "IQD",
+                                "IRR",
+                                "ISK",
+                                "JMD",
+                                "JOD",
+                                "JPY",
+                                "KES",
+                                "KGS",
+                                "KHR",
+                                "KMF",
+                                "KPW",
+                                "KRW",
+                                "KWD",
+                                "KYD",
+                                "KZT",
+                                "LAK",
+                                "LBP",
+                                "LKR",
+                                "LRD",
+                                "LSL",
+                                "LYD",
+                                "MAD",
+                                "MDL",
+                                "MGA",
+                                "MKD",
+                                "MMK",
+                                "MNT",
+                                "MOP",
+                                "MRO",
+                                "MTL",
+                                "MUR",
+                                "MVR",
+                                "MWK",
+                                "MXN",
+                                "MYR",
+                                "MZN",
+                                "NAD",
+                                "NGN",
+                                "NIO",
+                                "NOK",
+                                "NPR",
+                                "NZD",
+                                "OMR",
+                                "PAB",
+                                "PEN",
+                                "PGK",
+                                "PHP",
+                                "PKR",
+                                "PLN",
+                                "PYG",
+                                "QAR",
+                                "RON",
+                                "RSD",
+                                "RUB",
+                                "RWF",
+                                "SAR",
+                                "SBD",
+                                "SCR",
+                                "SDD",
+                                "SDG",
+                                "SEK",
+                                "SGD",
+                                "SHP",
+                                "SLL",
+                                "SOS",
+                                "SRD",
+                                "STD",
+                                "SVC",
+                                "SYP",
+                                "SZL",
+                                "THB",
+                                "TJS",
+                                "TMT",
+                                "TND",
+                                "TOP",
+                                "TRY",
+                                "TTD",
+                                "TVD",
+                                "TWD",
+                                "TZS",
+                                "UAH",
+                                "UGX",
+                                "USD",
+                                "UYU",
+                                "UZS",
+                                "VEB",
+                                "VEF",
+                                "VND",
+                                "VUV",
+                                "WST",
+                                "XAF",
+                                "XCD",
+                                "XBT",
+                                "XOF",
+                                "XPF",
+                                "YER",
+                                "ZAR",
+                                "ZMW",
+                                "WON"
+                              ]
+                            }
+                          },
+                          "additionalProperties": false
+                        },
+                        "entityTypeOptions": {
+                          "type": "object",
+                          "properties": {
+                            "$ref": {
+                              "type": "string",
+                              "format": "uri"
+                            },
+                            "entity": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "entity"
+                          ]
+                        },
+                        "isRequired": {
+                          "type": "boolean",
+                          "title": "Is the attribute required? Boolean value.",
+                          "description": "Indicates whether this attribute is required within the collection. Defaults to false."
+                        },
+                        "userInterface": {
+                          "type": "object",
+                          "properties": {
+                            "$ref": {
+                              "type": "string",
+                              "format": "uri"
+                            },
+                            "label": {
+                              "type": "string",
+                              "title": "A descriptive label for this attribute on the user interface.",
+                              "description": "The text label rendered on the user interface alongside the NoxTextInput component."
+                            },
+                            "translationId": {
+                              "type": "string",
+                              "title": "The multi-language translation identifier.",
+                              "description": "A unique string/key to reference the translations for this attribute for multi-language translations."
+                            },
+                            "widget": {
+                              "enum": [
+                                "textInput",
+                                "textArea",
+                                "numberInput",
+                                "numberSlider",
+                                "fileUpload",
+                                "datePicker",
+                                "dateRangePicker",
+                                "timePicker",
+                                "timeRangePicker",
+                                "radio",
+                                "select",
+                                "checkbox",
+                                "switch"
+                              ],
+                              "title": "Widget used to render this attribute on the user interface.",
+                              "description": "The user interface control type that is best suited to render the attribute on the screen."
+                            },
+                            "icon": {
+                              "type": "string",
+                              "title": "The icon representing the attribute on the user interface.",
+                              "description": "A reference URI to the attribute icon file. Could be a CSS or Mudblazor reference, e.g. \u0027@Icons.Material.Filled.Globe\u0027."
+                            },
+                            "iconPosition": {
+                              "enum": [
+                                "begin",
+                                "end"
+                              ],
+                              "title": "The position of the attribute icon on the user interface.",
+                              "description": "The postition of the attribute icon relative to the text input area on the user interface, e.g. begin or end."
+                            },
+                            "inputMask": {
+                              "type": "string",
+                              "title": "A mask expression used to validate and control text input.",
+                              "description": "A string of characters that indicates the format of valid input values. For example \u0027(000) 000-0000\u0027 could be used for a seven digit phone number with mandatory area code."
+                            },
+                            "outputMask": {
+                              "type": "string",
+                              "title": "A mask expression used to validate and control a value\u0027s output.",
+                              "description": "A string of characters that indicates the format of valid output. Used to handle validation triggers for onSubmit and onChange events of the control."
+                            },
+                            "regex": {
+                              "type": "string",
+                              "title": "The regular expression against which input is validated.",
+                              "description": "A regex string that indicates the format of valid input. For example \u0027/^(\\([0-9]{3}\\) |[0-9]{3}-)[0-9]{3}-[0-9]{4}$/gm\u0027 could be used for a seven digit phone number with mandatory area code."
+                            },
+                            "pageGroup": {
+                              "type": "string",
+                              "title": "The user interface PageGroup identifier.",
+                              "description": "Used to associate component with a PageGroup identifier on the user interface."
+                            },
+                            "fieldGroup": {
+                              "type": "string",
+                              "title": "The user interface FieldGroup identifier.",
+                              "description": "Used to associate component with a FieldGroup identifier on the user interface."
+                            },
+                            "inputOrder": {
+                              "type": "integer",
+                              "title": "Display/edit focus order within a FieldGroup on a user interface.",
+                              "description": "The order within a group of user interface components (FieldGroup) in which this attribute will receive focus for display or edit purpose."
+                            },
+                            "helpHint": {
+                              "type": "string",
+                              "title": "Helper text for this component.",
+                              "description": "The component default helper text used to aid the understanding of the component function to the user."
+                            },
+                            "errorMessage": {
+                              "type": "string",
+                              "title": "Validation error message.",
+                              "description": "The default error message displayed when text input validation fails."
+                            }
+                          },
+                          "title": "The user interface display options for this attribute.",
+                          "description": "Specify how this attribute is rendered on the user interface. Configuration options include label, icon, input/output masks, help hints among other.",
+                          "additionalProperties": false
+                        },
+                        "isReadonly": {
+                          "type": "boolean",
+                          "title": "Is this attribute readonly? Boolean value.",
+                          "description": "Indicates whether this attribute is readonly. Defaults to false."
+                        }
+                      },
+                      "required": [
+                        "name",
+                        "type"
+                      ],
+                      "title": "Definition namespace for Nox simple types.",
+                      "description": "Nox simple types definition used throughout Nox.Solution project.",
+                      "additionalProperties": false
+                    }
+                  }
+                },
+                "required": [
+                  "attributes"
+                ]
+              }
+            },
+            "required": [
+              "name",
+              "type"
+            ],
+            "title": "Definition namespace for Nox simple types.",
+            "description": "Nox simple types definition used throughout Nox.Solution project.",
+            "additionalProperties": false
+          }
+        },
+        "required": [
+          "name",
+          "type"
+        ],
+        "title": "The events that this application can raise.",
+        "description": "The collection of events that this application can raise to the outside world.",
+        "additionalProperties": false
+      },
+      "title": "The events that this application can raise.",
+      "description": "The collection of events that this application can raise to the outside world.",
       "additionalProperties": false
     }
   },

@@ -77,10 +77,10 @@
           "description": "Specify when and how frequently the ETL source is checked for updates, as well as the retry policy in case of failure. Includes a switch to indicate whether update is triggered at application startup.",
           "additionalProperties": false
         },
-        "dataConnection": {
+        "dataConnectionName": {
           "type": "string",
-          "title": "The name of the ETL source data connection. Contains no spaces.",
-          "description": "The name should be a commonly used singular noun and be unique within a solution.",
+          "title": "The name of the integration source. Contains no spaces.",
+          "description": "The name of the data connection for this integration source. This must refer to an existing data connection in infrastructure, dependencies, dataConnections.",
           "pattern": "^[^\\s]*$",
           "additionalProperties": false
         },
@@ -119,14 +119,16 @@
               "type": [
                 "integer",
                 "null"
-              ]
+              ],
+              "title": "The minimum expected record count.",
+              "description": "The minimum expected record count as a result of this data ingestion."
             }
           },
           "required": [
             "query"
           ],
-          "title": "The name of the integration source. Contains no spaces.",
-          "description": "The name of the data connection for this integration source. This must refer to an existing data connection in infrastructure, dependencies, dataConnections.",
+          "title": "Definition namespace for a database ETL source.",
+          "description": "This section specified attributes related to an ETL source of type Database. Attributes include the database query as well as minimumexpected records.",
           "additionalProperties": false
         },
         "fileOptions": {
@@ -141,47 +143,67 @@
               "type": [
                 "integer",
                 "null"
-              ]
+              ],
+              "title": "The minimum expected record count.",
+              "description": "The minimum expected record count as a result of this data ingestion."
             }
           },
           "required": [
             "filename"
           ],
+          "title": "Definition namespace for a file type ETL source.",
+          "description": "This section specified attributes related to an ETL source of type File. Attributes include the database query as well as minimumexpected records.",
           "additionalProperties": false
         },
         "messageQueueOptions": {
           "type": "object",
           "properties": {
-            "source": {
+            "sourceName": {
               "type": "string",
               "title": "The source name.",
-              "description": "The name of the queue, topic or subscription from which messages will be consumed."
+              "description": "The name of the queue or topic subscription from which messages will be consumed."
             }
           },
           "required": [
-            "source"
+            "sourceName"
           ],
+          "title": "Definition namespace for a Message Queue ETL source.",
+          "description": "This section specified attributes related to an ETL source of type Message Queue. Attributes include the route, format and verb.",
           "additionalProperties": false
         },
-        "httpOptions": {
+        "webApiOptions": {
           "type": "object",
           "properties": {
             "route": {
-              "type": "string"
+              "type": "string",
+              "title": "The path component for the request URI.",
+              "description": "The path component for the request URI, e.g. \u0027/myPath\u0027 in http://localhost:8081/myPath?myParameter=123."
             },
-            "format": {
-              "type": "string"
+            "responseFormat": {
+              "enum": [
+                "json",
+                "xml"
+              ],
+              "title": "The Http response format.",
+              "description": "The format of the Http response data papyload, eg. Json, XML."
             },
-            "verb": {
-              "type": "string"
+            "httpVerb": {
+              "enum": [
+                "get",
+                "post"
+              ],
+              "title": "The Http request verb.",
+              "description": "The relevant verb detailing the Http request type, i.e. GET, POST, etc."
             }
           },
+          "title": "Definition namespace for a web API ETL source.",
+          "description": "This section specified attributes related to an ETL source of type web API. Attributes include the route, response format and http verb.",
           "additionalProperties": false
         }
       },
       "required": [
         "name",
-        "dataConnection"
+        "dataConnectionName"
       ],
       "title": "Definition namespace for attributes describing the source component of an ETL integration.",
       "description": "This section details ETL source attributes like name, description, scheduling and watermark specifications.",
@@ -313,11 +335,75 @@
           "title": "The type of target.",
           "description": "Specify the type of target. Options include entity, database, file, webAPI and message queue."
         },
-        "dataConnection": {
+        "dataConnectionName": {
           "type": "string",
           "title": "The name of the ETL target data connection. Contains no spaces.",
           "description": "The name should be a commonly used singular noun and be unique within a solution.",
           "pattern": "^[^\\s]*$",
+          "additionalProperties": false
+        },
+        "databaseOptions": {
+          "type": "object",
+          "properties": {
+            "storedProcedure": {
+              "type": "string",
+              "title": "The stored procedure to execute.",
+              "description": "The stored procedure that will be executed on the target database."
+            }
+          },
+          "required": [
+            "storedProcedure"
+          ],
+          "additionalProperties": false
+        },
+        "fileOptions": {
+          "type": "object",
+          "properties": {
+            "filename": {
+              "type": "string",
+              "title": "The file name.",
+              "description": "The name of the file that will be created."
+            }
+          },
+          "required": [
+            "filename"
+          ],
+          "additionalProperties": false
+        },
+        "webApiOptions": {
+          "type": "object",
+          "properties": {
+            "route": {
+              "type": "string"
+            },
+            "requestFormat": {
+              "enum": [
+                "json",
+                "xml"
+              ]
+            },
+            "httpVerb": {
+              "enum": [
+                "post",
+                "put",
+                "patch"
+              ]
+            }
+          },
+          "additionalProperties": false
+        },
+        "messageQueueOptions": {
+          "type": "object",
+          "properties": {
+            "targetName": {
+              "type": "string",
+              "title": "The target name.",
+              "description": "The name of the queue, topic or subscription to which messages will be sent."
+            }
+          },
+          "required": [
+            "targetName"
+          ],
           "additionalProperties": false
         }
       },

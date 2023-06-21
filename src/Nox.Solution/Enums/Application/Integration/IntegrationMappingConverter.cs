@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace Nox
 {
-    public enum EtlMappingConverter
+    public enum IntegrationMappingConverter
     {
         UpperCase,
         LowerCase

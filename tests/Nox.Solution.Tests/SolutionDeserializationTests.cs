@@ -150,7 +150,20 @@ public class SolutionDeserializationTests
         Assert.Equal(NoxType.CountryCode2, country.Commands[0].ObjectTypeOptions!.Attributes[0].Type);
         Assert.NotNull(country.Commands[0].EmitEvents);
         Assert.Single(country.Commands[0].EmitEvents!);
-        Assert.Equal("CountryUpdatedEvent", country.Commands[0].EmitEvents![0]);
+        Assert.Equal("CountryNameUpdatedDomainEvent", country.Commands[0].EmitEvents![0]);
+        
+        Assert.NotNull(country.Events);
+        Assert.Single(country.Events);
+        Assert.Equal("CountryNameUpdatedDomainEvent", country.Events[0].Name);
+        Assert.Equal("Raised when the name of a country is changed", country.Events[0].Description);
+        Assert.Equal(NoxType.Object, country.Events[0].Type);
+        Assert.NotNull(country.Events[0].ObjectTypeOptions);
+        Assert.NotNull(country.Events[0].ObjectTypeOptions!.Attributes);
+        Assert.Equal(2, country.Events[0].ObjectTypeOptions!.Attributes.Count);
+        Assert.Equal("CountryId", country.Events[0].ObjectTypeOptions!.Attributes[0].Name);
+        Assert.Equal(NoxType.CountryCode2, country.Events[0].ObjectTypeOptions!.Attributes[0].Type);
+        Assert.Equal("CountryName", country.Events[0].ObjectTypeOptions!.Attributes[1].Name);
+        Assert.Equal(NoxType.Text, country.Events[0].ObjectTypeOptions!.Attributes[1].Type);
         
         Assert.NotNull(country.Keys);
         Assert.Single(country.Keys);

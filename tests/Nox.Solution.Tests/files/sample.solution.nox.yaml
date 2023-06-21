@@ -144,7 +144,19 @@ domain:
             attributes:
               - name: CountryCode
                 type: countryCode2
-          emitEvents: [CountryUpdatedEvent]
+          emitEvents: [ CountryNameUpdatedDomainEvent ]
+            
+      events:
+        - name: CountryNameUpdatedDomainEvent
+          type: object
+          objectTypeOptions:
+            attributes:
+
+              - name: CountryId
+                type: countryCode2
+
+              - name: CountryName
+                type: text
 
       keys:
 

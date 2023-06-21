@@ -1,3 +1,4 @@
+using System.Data.SqlTypes;
 using FluentValidation;
 
 namespace Nox.Solution.Validation
@@ -20,7 +21,7 @@ namespace Nox.Solution.Validation
                 .SetValidator(sln => new TeamValidator(sln.Team));
 
             RuleFor(sln => sln.Domain!)
-                .SetValidator(new DomainValidator());
+                .SetValidator(sln => new DomainValidator(sln.Application));
 
             RuleFor(sln => sln.Application!)
                 .SetValidator(sln => new ApplicationValidator(sln.Infrastructure?.Dependencies?.DataConnections));

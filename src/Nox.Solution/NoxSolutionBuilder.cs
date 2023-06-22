@@ -1,9 +1,6 @@
-using System;
 using System.IO;
 using System.Linq;
 using Nox.Solution.Resolvers;
-using YamlDotNet.Serialization;
-using YamlDotNet.Serialization.NamingConventions;
 using Nox.Solution.Exceptions;
 using Nox.Solution.Macros;
 using Nox.Solution.Utils;
@@ -55,7 +52,8 @@ namespace Nox.Solution
         private NoxSolution ResolveAndLoadConfiguration()
         {
             var resolver = new YamlReferenceResolver(_yamlFilePath);
-            var yaml = resolver.ResolveReferences();
+            var yamlRef = resolver.ResolveReferences();
+            var yaml = ExpandMacros(yamlRef);
 
             var config =
                 NoxYamlSerializer.Deserialize<NoxSolution>(yaml)

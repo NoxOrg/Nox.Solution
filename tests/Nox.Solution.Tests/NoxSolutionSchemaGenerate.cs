@@ -7,6 +7,7 @@ using Json.Schema.Generation.Intents;
 using Nox.Types;
 using YamlDotNet.Core.Events;
 using YamlDotNet.Serialization;
+using File = System.IO.File;
 
 namespace Nox.Solution.Tests;
 

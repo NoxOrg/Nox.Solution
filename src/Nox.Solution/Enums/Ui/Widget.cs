@@ -17,7 +17,9 @@ namespace Nox
         Radio,
         Select,
         Checkbox,
-        @Switch,
+        ToggleSwitch,
+        Camera,
+        Gps
     }
 
 }

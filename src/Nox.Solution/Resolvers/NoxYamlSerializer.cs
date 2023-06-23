@@ -28,11 +28,12 @@ internal static class NoxYamlSerializer
 
         using var sr = new StringReader(yaml);
         var yamlContent = sr.ReadToEnd();
-
+        object yamlStringObj;
         T yamlObject;
         try
         {
             yamlObject = deserializer.Deserialize<T>(yamlContent);
+            yamlStringObj = deserializer.Deserialize<object>(yamlContent);
         }
         catch (YamlException ex)
         {
@@ -51,20 +52,26 @@ internal static class NoxYamlSerializer
         opts.Converters.Add(enumConverter);
 
         var jsonDocument = JsonSerializer.SerializeToDocument(yamlObject, opts);
+        var jsonDocumentDict = JsonSerializer.SerializeToDocument(yamlStringObj, opts);
+
+        var jsonText = JsonSerializer.Serialize(jsonDocument);
+
+        var schema = SchemaGenerator.Generate<T>();
+        var schemaText = JsonSerializer.Serialize(schema);
 
         var evaluateOptions = new EvaluationOptions
         {
             OutputFormat = OutputFormat.Hierarchical,
             EvaluateAs = SpecVersion.Draft7
         };
-        var schema = SchemaGenerator.Generate<T>();
 
         var result = schema.Evaluate(jsonDocument, evaluateOptions);
-        var t = JsonSerializer.Serialize(result);
+        var result2 = schema.Evaluate(jsonDocumentDict, evaluateOptions);
+        var validationText = JsonSerializer.Serialize(result);
 
         var errors = new List<string>();
         HandleErrorsRecursively(result, errors);
-
+        HandleErrorsRecursively(result2, errors);
         if (errors.Count > 0)
         {
             throw new NoxSolutionConfigurationException(string.Join("\n", errors));

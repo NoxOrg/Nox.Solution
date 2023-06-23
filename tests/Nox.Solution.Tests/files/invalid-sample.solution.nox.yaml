@@ -144,7 +144,6 @@ domain:
       keys:
 
         - name: Id
-          type: text
           textTypeOptions:
             isUnicode: false
             minLength: 2

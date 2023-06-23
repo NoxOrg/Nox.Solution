@@ -11,7 +11,7 @@ namespace Nox.Solution
         [Title("The name of the ETL target. Contains no spaces.")]
         [Description("The name of the ETL target. It should be a commonly used singular noun and be unique within a solution.")]
         [Pattern(@"^[^\s]*$")]
-        public string Name { get; internal set; } = string.Empty;
+        public string Name { get; internal set; } = null!;
 
         [Title("The description of the ETL target.")]
         [Description("A phrase describing the ETL target.")]
@@ -27,17 +27,17 @@ namespace Nox.Solution
         [Pattern(@"^[^\s]*$")]
         [AdditionalProperties(false)]
         public string? DataConnectionName { get; internal set; }
-        
-        [AdditionalProperties(false)] 
+
+        [AdditionalProperties(false)]
         public IntegrationTargetDatabaseOptions? DatabaseOptions { get; set; }
-        
-        [AdditionalProperties(false)] 
+
+        [AdditionalProperties(false)]
         public IntegrationTargetFileOptions? FileOptions { get; set; }
-        
-        [AdditionalProperties(false)] 
+
+        [AdditionalProperties(false)]
         public IntegrationTargetWebApiOptions? WebApiOptions { get; set; }
-        
-        [AdditionalProperties(false)] 
+
+        [AdditionalProperties(false)]
         public IntegrationTargetMessageQueueOptions? MessageQueueOptions { get; set; }
     }
 }

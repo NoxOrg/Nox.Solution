@@ -12,7 +12,7 @@ namespace Nox.Solution
         [Title("The name of the attribute. Contains no spaces.")]
         [Description("Assign a descriptive name to the attribute. Should be a singular noun and be unique within a collection of attributes. PascalCase recommended.")]
         [Pattern(@"^[^\s]*$")]
-        public string Name { get; internal set; } = string.Empty;
+        public string Name { get; internal set; } = null!;
 
         [Title("The description of the attribute.")]
         [Description("A descriptive phrase that explains the nature and function of this attribute within a collection.")]
@@ -30,7 +30,7 @@ namespace Nox.Solution
         public MoneyTypeOptions? MoneyTypeOptions { get; set; }
         public EntityTypeOptions? EntityTypeOptions { get; set; }
 
-        #endregion
+        #endregion TypeOptions
 
         [Title("Is the attribute required? Boolean value.")]
         [Description("Indicates whether this attribute is required within the collection. Defaults to false.")]

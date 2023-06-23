@@ -12,7 +12,7 @@ namespace Nox.Solution
         [Title("The name of the ETL integration. Contains no spaces.")]
         [Description("The name of the ETL integration. It should be a commonly used singular noun and be unique within a solution.")]
         [Pattern(@"^[^\s]*$")]
-        public string Name { get; set; } = string.Empty;
+        public string Name { get; set; } = null!;
 
         [Title("A phrase describing the objective of the ETL data integration.")]
         [Description("A phrase describing the high-level objective of the ETL. A reference to data source and format is especially useful.")]

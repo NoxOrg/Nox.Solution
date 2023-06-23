@@ -5,7 +5,6 @@
 #
 
 
-
 description: Sample Nox solution yaml configuration
 
 variables:
@@ -20,8 +19,7 @@ environments:
   - name: dev
     description: Used for development and testing
 
-  - name: test
-    description: Test environment
+  - description: Test environment
 
   - name: uat
     description: For them end users to check it works
@@ -328,7 +326,7 @@ application:
       source:
         name: CountryJsonSeed
         description: Sources Country data from a json file
-        dataConnection: CountryJsonData
+        dataConnectionName: CountryJsonData
         fileOptions: 
           filename: country-seed-data.json
         schedule:

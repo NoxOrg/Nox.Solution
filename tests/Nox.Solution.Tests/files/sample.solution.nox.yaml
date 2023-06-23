@@ -32,7 +32,7 @@ environments:
     isProduction: true
 
 versionControl:
-  provider: azureDevops
+  provider: azureDevops1
   host: https://dev.azure.com/iwgplc
   folders:
     sourceCode: /src

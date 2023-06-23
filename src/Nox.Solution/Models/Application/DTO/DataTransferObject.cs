@@ -11,7 +11,7 @@ namespace Nox.Solution
         [Title("The name of the DTO. Contains no spaces.")]
         [Description("The name of the DTO. It should be a commonly used singular noun and be unique within a solution.")]
         [Pattern(@"^[^\s]*$")]
-        public string Name { get; internal set; } = string.Empty;
+        public string Name { get; internal set; } = null!;
 
         [Title("The description of the DTO.")]
         [Description("A phrase describing the DTO and what it represents in the real world.")]

@@ -24,7 +24,7 @@ public static class SchemaGenerator
             Nullability = Nullability.AllowForNullableValueTypes,
             Refiners = { new EnumToCamelCaseRefiner(excludeTypes: new Type[] { typeof(CurrencyCode) }) },
             Generators = { new ReadOnlyStringDictionarySchemaGenerator() },
-            Optimize = false,
+            Optimize = false
         };
 
         var schema = new JsonSchemaBuilder()

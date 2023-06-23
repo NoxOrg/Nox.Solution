@@ -9,6 +9,8 @@ using Json.Schema;
 using Json.Schema.Generation;
 using Nox.Solution.Schema;
 using Nox.Solution.Exceptions;
+using YamlDotNet.Core;
+using System.Text.Json.Serialization;
 
 namespace Nox.Solution.Resolvers;
 
@@ -27,17 +29,38 @@ internal static class NoxYamlSerializer
         using var sr = new StringReader(yaml);
         var yamlContent = sr.ReadToEnd();
 
-        var yamlObject = deserializer.Deserialize<object>(yamlContent);
-        var jsonDocument = JsonSerializer.SerializeToDocument(yamlObject);
+        T yamlObject;
+        try
+        {
+            yamlObject = deserializer.Deserialize<T>(yamlContent);
+        }
+        catch (YamlException ex)
+        {
+            var message = $"{ex.InnerException?.Message}. Line {ex.End.Line}, column {ex.End.Column}.";
+
+            throw new NoxSolutionConfigurationException(message, ex);
+        }
+
+        var enumConverter = new JsonStringEnumConverter(JsonNamingPolicy.CamelCase);
+        var opts = new JsonSerializerOptions
+        {
+            PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
+            DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull
+        };
+
+        opts.Converters.Add(enumConverter);
+
+        var jsonDocument = JsonSerializer.SerializeToDocument(yamlObject, opts);
 
         var evaluateOptions = new EvaluationOptions
         {
-            OutputFormat = OutputFormat.List,
-            RequireFormatValidation = true
+            OutputFormat = OutputFormat.Hierarchical,
+            EvaluateAs = SpecVersion.Draft7
         };
+        var schema = SchemaGenerator.Generate<T>();
 
-        var schema = SchemaGenerator.Generate<Solution>();
         var result = schema.Evaluate(jsonDocument, evaluateOptions);
+        var t = JsonSerializer.Serialize(result);
 
         var errors = new List<string>();
         HandleErrorsRecursively(result, errors);
@@ -58,11 +81,21 @@ internal static class NoxYamlSerializer
         {
             foreach (var error in results.Errors)
             {
-                if (error.Key == "type")
+                if (results.EvaluationPath.ToString().EndsWith("/$ref"))
                 {
                     continue;
                 }
-                errors.Add($"Path: {results.EvaluationPath}. Error:  {error.Key} - {error.Value}");
+                else if (error.Key == "type")
+                {
+                    continue;
+                }
+                else if (error.Key == "enum")
+                {
+                    continue;
+                }
+                var path = string.IsNullOrEmpty(results.EvaluationPath.ToString()) ? string.Empty : $"Path: {results.EvaluationPath}. ";
+
+                errors.Add($"{path}{error.Value} ({error.Key.ToUpper()}).");
             }
         }
         foreach (var detail in results.Details)

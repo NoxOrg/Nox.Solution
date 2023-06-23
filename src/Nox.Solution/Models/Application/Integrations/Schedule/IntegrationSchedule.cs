@@ -10,7 +10,7 @@ namespace Nox.Solution
         [Required]
         [Title("Start time to check the ETL source for updates.")]
         [Description("Specify the start time to check the ETL source for updates. This is a 'speak-friendly' phrase that comprises the trigger time as well as the frequency. Translated into a cron expression.")]
-        public string Start { get; internal set; } = string.Empty;
+        public string Start { get; internal set; } = null!;
 
         // These descriptors should be moved to the class when the generator is fixed
         [Title("Retry policy applying to the ETL source updates.")]

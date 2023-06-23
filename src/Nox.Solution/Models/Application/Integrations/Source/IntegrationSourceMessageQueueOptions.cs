@@ -7,9 +7,9 @@ namespace Nox.Solution
     [AdditionalProperties(false)]
     public class IntegrationSourceMessageQueueOptions
     {
-        [Required] 
+        [Required]
         [Title("The source name.")]
         [Description("The name of the queue or topic subscription from which messages will be consumed.")]
-        public string SourceName { get; set; } = string.Empty;
+        public string SourceName { get; set; } = null!;
     }
 }

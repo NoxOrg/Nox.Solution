@@ -12,7 +12,7 @@ namespace Nox.Solution
         [Title("The name of the query. Contains no spaces.")]
         [Description("A descriptive name for the query, usually in the format Get[Entity]by[Grouping]. Eg \"GetCountriesByContinent\".")]
         [Pattern(@"^[^\s]*$")]
-        public string Name { get; internal set; } = string.Empty;
+        public string Name { get; internal set; } = null!;
 
         [Title("A phrase describing expected output from the domain query.")]
         [Description("A phrase that describes expected result from the query. Eg. \"Returns a list of countries for a given continent\".")]

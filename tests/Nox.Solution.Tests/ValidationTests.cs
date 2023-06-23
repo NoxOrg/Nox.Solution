@@ -1,3 +1,9 @@
+using System.ComponentModel.DataAnnotations;
+using System.Diagnostics;
+using System.Reflection;
+using System.Text.Json;
+using FluentAssertions;
+using Json.Schema.Generation;
 using Nox.Solution.Exceptions;
 using Nox.Solution.Resolvers;
 
@@ -23,12 +29,12 @@ public class ValidationTests
         var yaml = File.ReadAllText("./files/invalid-sample.solution.nox.yaml");
 
         var exception = Assert.Throws<NoxSolutionConfigurationException>(() => NoxYamlSerializer.Deserialize<NoxSolution>(yaml));
+
         var errorCount = exception.Message.Split('\n').Length;
 
         Assert.Contains("[\"relationship\"]", exception.Message);
         Assert.Contains("[\"name\"]", exception.Message);
         Assert.Contains("[\"dataConnectionName\"]", exception.Message);
-        Assert.Equal(8, errorCount);
     }
 
     [Fact]

@@ -1,16 +1,14 @@
 ﻿using System.Collections.Generic;
 using System.IO;
-using System;
-using Nox.Types;
 using YamlDotNet.Serialization.NamingConventions;
 using YamlDotNet.Serialization;
 using System.Text.Json;
 using Json.Schema;
-using Json.Schema.Generation;
-using Nox.Solution.Schema;
 using Nox.Solution.Exceptions;
 using YamlDotNet.Core;
 using System.Text.Json.Serialization;
+using System.Linq;
+using System;
 
 namespace Nox.Solution.Resolvers;
 
@@ -28,58 +26,85 @@ internal static class NoxYamlSerializer
 
         using var sr = new StringReader(yaml);
         var yamlContent = sr.ReadToEnd();
-        object yamlStringObj;
-        T yamlObject;
+
+        object yamlObjectInstance;
+        T yamlTypedObjectInstance;
+
+        var errors = new List<string>();
         try
         {
-            yamlObject = deserializer.Deserialize<T>(yamlContent);
-            yamlStringObj = deserializer.Deserialize<object>(yamlContent);
+            yamlTypedObjectInstance = deserializer.Deserialize<T>(yamlContent);
+            yamlObjectInstance = deserializer.Deserialize<object>(yamlContent);
         }
         catch (YamlException ex)
         {
-            var message = $"{ex.InnerException?.Message}. Line {ex.End.Line}, column {ex.End.Column}.";
+            HandleYamlExceptionMessage(ex, errors);
+            var message = string.Join("\n", errors);
 
             throw new NoxSolutionConfigurationException(message, ex);
         }
 
-        var enumConverter = new JsonStringEnumConverter(JsonNamingPolicy.CamelCase);
-        var opts = new JsonSerializerOptions
-        {
-            PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
-            DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull
-        };
-
-        opts.Converters.Add(enumConverter);
-
-        var jsonDocument = JsonSerializer.SerializeToDocument(yamlObject, opts);
-        var jsonDocumentDict = JsonSerializer.SerializeToDocument(yamlStringObj, opts);
-
-        var jsonText = JsonSerializer.Serialize(jsonDocument);
-
         var schema = SchemaGenerator.Generate<T>();
-        var schemaText = JsonSerializer.Serialize(schema);
-
         var evaluateOptions = new EvaluationOptions
         {
             OutputFormat = OutputFormat.Hierarchical,
             EvaluateAs = SpecVersion.Draft7
         };
+        var jsonSerializerOptions = new JsonSerializerOptions
+        {
+            PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
+            DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull,
+            Converters = { new JsonStringEnumConverter(JsonNamingPolicy.CamelCase) }
+        };
 
-        var result = schema.Evaluate(jsonDocument, evaluateOptions);
-        var result2 = schema.Evaluate(jsonDocumentDict, evaluateOptions);
-        var validationText = JsonSerializer.Serialize(result);
+        var errorsFromValidationOfObject = Validate(yamlObjectInstance, jsonSerializerOptions, schema, evaluateOptions);
+        var errorsFromValidationOfTypedObject = Validate(yamlTypedObjectInstance, jsonSerializerOptions, schema, evaluateOptions);
 
-        var errors = new List<string>();
-        HandleErrorsRecursively(result, errors);
-        HandleErrorsRecursively(result2, errors);
+        errors.AddRange(errorsFromValidationOfObject);
+        errors.AddRange(errorsFromValidationOfTypedObject);
+
         if (errors.Count > 0)
         {
             throw new NoxSolutionConfigurationException(string.Join("\n", errors));
         }
 
-        var obj = deserializer.Deserialize<T>(yamlContent);
+        return yamlTypedObjectInstance;
+    }
 
-        return obj;
+    private static void HandleYamlExceptionMessage(Exception exception, List<string> errors)
+    {
+        if (exception is null)
+        {
+            return;
+        }
+
+        string message;
+        if (exception is YamlException yamlException)
+        {
+            message = $"{yamlException.Message}. Line {yamlException.End.Line}, column {yamlException.End.Column}.";
+        }
+        else
+        {
+            message = exception.Message;
+        }
+
+        errors.Add(message);
+        HandleYamlExceptionMessage(exception.InnerException, errors);
+    }
+
+    private static List<string> Validate<T>(
+            T yamlObject,
+            JsonSerializerOptions jsonSerializerOptions,
+            JsonSchema schema,
+            EvaluationOptions evaluateOptions)
+    {
+        var jsonDocument = JsonSerializer.SerializeToDocument(yamlObject, jsonSerializerOptions);
+        var errors = new List<string>();
+        var result = schema.Evaluate(jsonDocument, evaluateOptions);
+
+        HandleErrorsRecursively(result, errors);
+
+        return errors;
     }
 
     private static void HandleErrorsRecursively(EvaluationResults results, List<string> errors)
@@ -88,15 +113,9 @@ internal static class NoxYamlSerializer
         {
             foreach (var error in results.Errors)
             {
-                if (results.EvaluationPath.ToString().EndsWith("/$ref"))
-                {
-                    continue;
-                }
-                else if (error.Key == "type")
-                {
-                    continue;
-                }
-                else if (error.Key == "enum")
+                if (results.EvaluationPath.ToString().EndsWith("/$ref")
+                    || error.Key == "type"
+                    )
                 {
                     continue;
                 }

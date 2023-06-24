@@ -325,7 +325,7 @@ application:
       source:
         name: CountryJsonSeed
         description: Sources Country data from a json file
-        dataConnectionName: CountryJsonData
+        dataConnection: CountryJsonData
         fileOptions: 
           filename: country-seed-data.json
         schedule:
@@ -390,7 +390,6 @@ infrastructure:
     searchServer:
       name: SampleSearch
       provider: elasticSearch
-      serverUri: elastic.igwplc.com
       user: ElasticUser
       password: ElasticPassword
     

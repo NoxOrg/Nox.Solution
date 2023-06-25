@@ -34,7 +34,9 @@ public class ValidationTests
 
         Assert.Contains("[\"relationship\"]", exception.Message);
         Assert.Contains("[\"name\"]", exception.Message);
-        Assert.Contains("[\"dataConnectionName\"]", exception.Message);
+        Assert.Contains("[\"serverUri\"]", exception.Message);
+        Assert.Contains("dataConnection", exception.Message);
+        Assert.Equal(12, errorCount);
     }
 
     [Fact]

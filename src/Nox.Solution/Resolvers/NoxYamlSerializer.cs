@@ -27,24 +27,12 @@ internal static class NoxYamlSerializer
         using var sr = new StringReader(yaml);
         var yamlContent = sr.ReadToEnd();
 
-        object yamlObjectInstance;
-        T yamlTypedObjectInstance;
-
         var errors = new List<string>();
-        try
-        {
-            yamlTypedObjectInstance = deserializer.Deserialize<T>(yamlContent);
-            yamlObjectInstance = deserializer.Deserialize<object>(yamlContent);
-        }
-        catch (YamlException ex)
-        {
-            HandleYamlExceptionMessage(ex, errors);
-            var message = string.Join("\n", errors);
 
-            throw new NoxSolutionConfigurationException(message, ex);
-        }
+        var yamlObjectInstance = deserializer.Deserialize<object>(yamlContent);
 
         var schema = SchemaGenerator.Generate<T>();
+
         var evaluateOptions = new EvaluationOptions
         {
             OutputFormat = OutputFormat.Hierarchical,
@@ -57,11 +45,24 @@ internal static class NoxYamlSerializer
             Converters = { new JsonStringEnumConverter(JsonNamingPolicy.CamelCase) }
         };
 
-        var errorsFromValidationOfObject = Validate(yamlObjectInstance, jsonSerializerOptions, schema, evaluateOptions);
-        var errorsFromValidationOfTypedObject = Validate(yamlTypedObjectInstance, jsonSerializerOptions, schema, evaluateOptions);
+        var errorsFromObjectValidation = Validate(yamlObjectInstance, jsonSerializerOptions, schema, evaluateOptions);
+        errors.AddRange(errorsFromObjectValidation);
 
-        errors.AddRange(errorsFromValidationOfObject);
-        errors.AddRange(errorsFromValidationOfTypedObject);
+        T yamlTypedObjectInstance;
+        try
+        {
+            yamlTypedObjectInstance = deserializer.Deserialize<T>(yamlContent);
+        }
+        catch (YamlException ex)
+        {
+            HandleYamlExceptionMessage(ex, errors);
+            var message = string.Join("\n", errors);
+
+            throw new NoxSolutionConfigurationException(message, ex);
+        }
+
+        var errorsFromTypedObjectValidation = Validate(yamlTypedObjectInstance, jsonSerializerOptions, schema, evaluateOptions);
+        errors.AddRange(errorsFromTypedObjectValidation);
 
         if (errors.Count > 0)
         {
@@ -71,7 +72,7 @@ internal static class NoxYamlSerializer
         return yamlTypedObjectInstance;
     }
 
-    private static void HandleYamlExceptionMessage(Exception exception, List<string> errors)
+    private static void HandleYamlExceptionMessage(Exception? exception, List<string> errors)
     {
         if (exception is null)
         {

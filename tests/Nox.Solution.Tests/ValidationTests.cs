@@ -24,7 +24,7 @@ public class ValidationTests
     }
 
     [Fact]
-    public void Solution_DeserializeWithValidation_ShoouldThrow()
+    public void Deserialize_WithNoxYamlSerializer_ThrowsException()
     {
         var yaml = File.ReadAllText("./files/invalid-sample.solution.nox.yaml");
 

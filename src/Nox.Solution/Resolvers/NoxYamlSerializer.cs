@@ -130,13 +130,15 @@ internal static class NoxYamlSerializer
         {
             foreach (var error in results.Errors)
             {
-                if (results.EvaluationPath.ToString().EndsWith("/$ref")
-                    || error.Key == "type"
-                    )
+                if (results.EvaluationPath
+                    .ToString()
+                    .EndsWith("/$ref") || error.Key == "type")
                 {
                     continue;
                 }
-                var path = string.IsNullOrEmpty(results.EvaluationPath.ToString()) ? string.Empty : $"Path: {results.EvaluationPath}. ";
+
+                var evaluationPath = results.EvaluationPath.ToString();
+                var path = string.IsNullOrEmpty(evaluationPath) ? string.Empty : $"Path: {evaluationPath}. ";
 
                 errors.Add($"{path}{error.Value} ({error.Key.ToUpper()}).");
             }

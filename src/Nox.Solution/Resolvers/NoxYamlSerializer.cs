@@ -28,7 +28,7 @@ internal static class NoxYamlSerializer
     /// <param name="yaml">Yaml file string content.</param>
     /// <returns>Deserialized T instance.</returns>
     /// <exception cref="NoxSolutionConfigurationException">Exception bring error messages caught during validation.</exception>
-    public static T? Deserialize<T>(string yaml)
+    public static T Deserialize<T>(string yaml)
     {
         var deserializer = new DeserializerBuilder()
             .WithNamingConvention(CamelCaseNamingConvention.Instance)

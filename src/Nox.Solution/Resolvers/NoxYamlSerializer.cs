@@ -29,8 +29,6 @@ internal static class NoxYamlSerializer
 
         var errors = new List<string>();
 
-        var yamlObjectInstance = deserializer.Deserialize<object>(yamlContent);
-
         var schema = SchemaGenerator.Generate<T>();
 
         var evaluateOptions = new EvaluationOptions
@@ -44,19 +42,25 @@ internal static class NoxYamlSerializer
             DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull,
             Converters = { new JsonStringEnumConverter(JsonNamingPolicy.CamelCase) }
         };
-
+        // The purpose is to deserialize yaml to object is to validate content against json schema generated from properties annotations.
+        // If deserialize content to certain type then value-type properties will be initilized by default and will exist in
+        // futher json serialization during the validation.
+        // However, to handle a case when value-type properties are required it's neccessary to validate json where these properties are not involved.
+        var yamlObjectInstance = deserializer.Deserialize<object>(yamlContent);
         var errorsFromObjectValidation = Validate(yamlObjectInstance, jsonSerializerOptions, schema, evaluateOptions);
         errors.AddRange(errorsFromObjectValidation);
 
         T yamlTypedObjectInstance;
         try
         {
+            // Then when all required fields are validate it's neccessary to check whether all properties match T object properties.
+            // In case some field is missed it will throw an exception regarding to deserializtion error.
             yamlTypedObjectInstance = deserializer.Deserialize<T>(yamlContent);
         }
         catch (YamlException ex)
         {
             HandleYamlExceptionMessage(ex, errors);
-            var message = string.Join("\n", errors);
+            var message = string.Join("\n", errors.Distinct());
 
             throw new NoxSolutionConfigurationException(message, ex);
         }
@@ -66,7 +70,7 @@ internal static class NoxYamlSerializer
 
         if (errors.Count > 0)
         {
-            throw new NoxSolutionConfigurationException(string.Join("\n", errors));
+            throw new NoxSolutionConfigurationException(string.Join("\n", errors.Distinct()));
         }
 
         return yamlTypedObjectInstance;

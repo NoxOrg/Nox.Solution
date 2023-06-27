@@ -7,7 +7,7 @@ namespace Nox.Solution
         [Required]
         [Title("The path or relative path to the source code root.")]
         [Description("The path or relative path that contains your source code. Allows auto-configuration of build pipelines.")]
-        public string SourceCode { get; internal set; } = "/src";
+        public string SourceCode { get; internal set; } = null!;
 
         [Title("The path or relative path to the solution tests.")]
         [Description("The path or relative path that contains your solution tests. Allows auto-configuration of build pipelines.")]

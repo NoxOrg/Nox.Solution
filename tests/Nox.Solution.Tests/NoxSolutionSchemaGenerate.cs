@@ -1,326 +1,124 @@
-using System.Collections.Concurrent;
 using System.Text.Json;
-using Json.Schema;
-using Json.Schema.Generation;
-using Json.Schema.Generation.Generators;
-using Json.Schema.Generation.Intents;
-using Nox.Types;
-using YamlDotNet.Core.Events;
-using YamlDotNet.Serialization;
-using File = System.IO.File;
+using Nox.Solution.Resolvers;
 
 namespace Nox.Solution.Tests;
 
 public class NoxSolutionSchemaGenerate
 {
+    private readonly JsonSerializerOptions _jsonConfig = new()
+    {
+        WriteIndented = true,
+    };
+
+    private readonly string _path = FindOrCreateFolderInProjectRoot("schemas");
+
     [Fact]
     public void Can_create_a_json_schema_for_yaml()
     {
-
         /*
          * TODO: $ref support for arrays/lists
-         * 
+         *
          * TODO: make enum type strings too
-         * 
+         *
          */
 
-        var path = FindOrCreateFolderInProjectRoot("schemas");
+        //Solution
+        GenerateFor<Solution>("solution.json");
 
-        var schemaConfig = new SchemaGeneratorConfiguration()
-        {
-            PropertyNamingMethod = PropertyNamingMethods.CamelCase,
-            Nullability = Nullability.AllowForNullableValueTypes,
-            Refiners = { new EnumToCamelCaseRefiner( excludeTypes: new Type[] { typeof(CurrencyCode) } ) },
-            Generators = { new ReadOnlyStringDictionarySchemaGenerator() },
-            Optimize = false,
-        };
+        //Variables
+        GenerateFor<Dictionary<string, string>?>("variables.json");
 
-        var jsonConfig = new JsonSerializerOptions()
-        {
-            WriteIndented = true,
-        };
+        //Environments
+        GenerateFor<Environment>("environment.json");
 
-//Solution        
-        var solutionSchema = new JsonSchemaBuilder()
-            .Schema(MetaSchemas.Draft7Id)
-            .FromType<Solution>(schemaConfig)
-            .Build();
+        //Version Control
+        GenerateFor<VersionControl>("versionControl.json");
 
-        File.WriteAllText(Path.Combine(path, "solution.json"),
-            JsonSerializer.Serialize(solutionSchema, jsonConfig)
+        //Team
+        GenerateFor<TeamMember>("team.json");
+
+        //Domain
+        GenerateFor<Domain>("domain.json");
+
+        //Domain/Entity
+        GenerateFor<Entity>("entity.json");
+
+        //Application
+        GenerateFor<Application>("application.json");
+
+        //Application/DataTransferObjects
+        GenerateFor<List<DataTransferObject>>("dataTransferObjects.json");
+
+        //Application/dto
+        GenerateFor<DataTransferObject>("dto.json");
+
+        //Application/Integration
+        GenerateFor<Integration>("integration.json");
+
+        //Infrastructure
+        GenerateFor<Infrastructure>("infrastructure.json");
+
+        //Infrastructure/Persistence
+        GenerateFor<Persistence>("persistence.json");
+
+        //Infrastructure/Persistence/DatabaseServer
+        GenerateFor<DatabaseServer>("databaseServer.json");
+
+        //Infrastructure/Persistence/CacheServer
+        GenerateFor<CacheServer>("cacheServer.json");
+
+        //Infrastructure/Persistence/SearchServer
+        GenerateFor<SearchServer>("searchServer.json");
+
+        //Infrastructure/Persistence/EventSourceServer
+        GenerateFor<Infrastructure>("eventSourceServer.json");
+
+        //Infrastructure/Messaging
+        GenerateFor<Messaging>("messaging.json");
+
+        //Infrastructure/Endpoints
+        GenerateFor<Endpoints>("endpoints.json");
+
+        //Infrastructure/Endpoints/ApiServer
+        GenerateFor<ApiServer>("apiServer.json");
+
+        //Infrastructure/Endpoints/BffServer
+        GenerateFor<BffServer>("bffServer.json");
+
+        //Infrastructure/Dependencies
+        GenerateFor<Dependencies>("dependencies.json");
+
+        //Infrastructure/Dependencies/Notifications
+        GenerateFor<Notifications>("notifications.json");
+
+        //Infrastructure/Dependencies/Monitoring
+        GenerateFor<Monitoring>("monitoring.json");
+
+        //Infrastructure/Dependencies/Translations
+        GenerateFor<Translations>("translations.json");
+
+        //Infrastructure/Dependencies/Security
+        GenerateFor<Security>("security.json");
+
+        //Infrastructure/Dependencies/DataConnection
+        GenerateFor<DataConnection>("dataConnection.json");
+    }
+
+    private void GenerateFor<TType>(string fileName)
+    {
+        var solutionSchema = SchemaGenerator.Generate<TType>();
+
+        File.WriteAllText(Path.Combine(_path, fileName),
+            JsonSerializer.Serialize(solutionSchema, _jsonConfig)
         );
-        
-//Variables        
-        var variablesSchema = new JsonSchemaBuilder()
-            .Schema(MetaSchemas.Draft7Id)
-            .FromType<Dictionary<string, string>?>(schemaConfig)
-            .Build();
-
-        File.WriteAllText(Path.Combine(path, "variables.json"),
-            JsonSerializer.Serialize(variablesSchema, jsonConfig)
-        );
-
-//Environments        
-        var environmentSchema = new JsonSchemaBuilder()
-            .Schema(MetaSchemas.Draft7Id)
-            .FromType<Environment>(schemaConfig)
-            .Build();
-
-        File.WriteAllText(Path.Combine(path, "environment.json"),
-            JsonSerializer.Serialize(environmentSchema, jsonConfig)
-        );
-        
-//Version Control        
-        var versionControlSchema = new JsonSchemaBuilder()
-            .Schema(MetaSchemas.Draft7Id)
-            .FromType<VersionControl>(schemaConfig)
-            .Build();
-
-
-        File.WriteAllText(Path.Combine(path, "versionControl.json"),
-            JsonSerializer.Serialize(versionControlSchema, jsonConfig)
-        );
-        
-//Team
-        var teamSchema = new JsonSchemaBuilder()
-            .Schema(MetaSchemas.Draft7Id)
-            .FromType<TeamMember>(schemaConfig)
-            .Build();
-
-        File.WriteAllText(Path.Combine(path, "team.json"),
-            JsonSerializer.Serialize(teamSchema, jsonConfig)
-        );
-        
-//Domain        
-        var domainSchema = new JsonSchemaBuilder()
-            .Schema(MetaSchemas.Draft7Id)
-            .FromType<Domain>(schemaConfig)
-            .Build();
-
-        File.WriteAllText(Path.Combine(path, "domain.json"),
-            JsonSerializer.Serialize(domainSchema, jsonConfig)
-        );
-        
-//Domain/Entity        
-        var entitySchema = new JsonSchemaBuilder()
-            .Schema(MetaSchemas.Draft7Id)
-            .FromType<Entity>(schemaConfig)
-            .Build();
-
-        File.WriteAllText(Path.Combine(path, "entity.json"),
-            JsonSerializer.Serialize(entitySchema, jsonConfig)
-        );
-        
-//Application        
-        var applicationSchema = new JsonSchemaBuilder()
-            .Schema(MetaSchemas.Draft7Id)
-            .FromType<Application>(schemaConfig)
-            .Build();
-
-        File.WriteAllText(Path.Combine(path, "application.json"),
-            JsonSerializer.Serialize(applicationSchema, jsonConfig)
-        );
-        
-//Application/DataTransferObjects
-        var dtosSchema = new JsonSchemaBuilder()
-            .Schema(MetaSchemas.Draft7Id)
-            .FromType<List<DataTransferObject>>(schemaConfig)
-            .Build();
-
-        File.WriteAllText(Path.Combine(path, "dataTransferObjects.json"),
-            JsonSerializer.Serialize(dtosSchema, jsonConfig)
-        );
-        
-//Application/dto
-        var dtoSchema = new JsonSchemaBuilder()
-            .Schema(MetaSchemas.Draft7Id)
-            .FromType<DataTransferObject>(schemaConfig)
-            .Build();
-
-        File.WriteAllText(Path.Combine(path, "dto.json"),
-            JsonSerializer.Serialize(dtoSchema, jsonConfig)
-        );        
-
-
-//Application/Integration
-        var integrationSchema = new JsonSchemaBuilder()
-            .Schema(MetaSchemas.Draft7Id)
-            .FromType<Integration>(schemaConfig)
-            .Build();
-
-        File.WriteAllText(Path.Combine(path, "integration.json"),
-            JsonSerializer.Serialize(integrationSchema, jsonConfig)
-        );
-        
-        
-//Infrastructure        
-        var infrastructureSchema = new JsonSchemaBuilder()
-            .Schema(MetaSchemas.Draft7Id)
-            .FromType<Infrastructure>(schemaConfig)
-            .Build();
-
-        File.WriteAllText(Path.Combine(path, "infrastructure.json"),
-            JsonSerializer.Serialize(infrastructureSchema, jsonConfig)
-        );
-        
-//Infrastructure/Persistence      
-        var persistenceSchema = new JsonSchemaBuilder()
-            .Schema(MetaSchemas.Draft7Id)
-            .FromType<Persistence>(schemaConfig)
-            .Build();
-
-        File.WriteAllText(Path.Combine(path, "persistence.json"),
-            JsonSerializer.Serialize(persistenceSchema, jsonConfig)
-        );      
-        
-//Infrastructure/Persistence/DatabaseServer     
-        var dbServerSchema = new JsonSchemaBuilder()
-            .Schema(MetaSchemas.Draft7Id)
-            .FromType<DatabaseServer>(schemaConfig)
-            .Build();
-
-        File.WriteAllText(Path.Combine(path, "databaseServer.json"),
-            JsonSerializer.Serialize(dbServerSchema, jsonConfig)
-        );         
-        
-//Infrastructure/Persistence/CacheServer     
-        var cacheServerSchema = new JsonSchemaBuilder()
-            .Schema(MetaSchemas.Draft7Id)
-            .FromType<CacheServer>(schemaConfig)
-            .Build();
-
-        File.WriteAllText(Path.Combine(path, "cacheServer.json"),
-            JsonSerializer.Serialize(cacheServerSchema, jsonConfig)
-        );      
-        
-//Infrastructure/Persistence/SearchServer     
-        var searchServerSchema = new JsonSchemaBuilder()
-            .Schema(MetaSchemas.Draft7Id)
-            .FromType<SearchServer>(schemaConfig)
-            .Build();
-
-        File.WriteAllText(Path.Combine(path, "searchServer.json"),
-            JsonSerializer.Serialize(searchServerSchema, jsonConfig)
-        );   
-        
-//Infrastructure/Persistence/EventSourceServer     
-        var eventSourceSchema = new JsonSchemaBuilder()
-            .Schema(MetaSchemas.Draft7Id)
-            .FromType<Infrastructure>(schemaConfig)
-            .Build();
-
-        File.WriteAllText(Path.Combine(path, "eventSourceServer.json"),
-            JsonSerializer.Serialize(eventSourceSchema, jsonConfig)
-        );  
-        
-//Infrastructure/Messaging   
-        var messagingSchema = new JsonSchemaBuilder()
-            .Schema(MetaSchemas.Draft7Id)
-            .FromType<Messaging>(schemaConfig)
-            .Build();
-
-        File.WriteAllText(Path.Combine(path, "messaging.json"),
-            JsonSerializer.Serialize(messagingSchema, jsonConfig)
-        );          
-        
-        
-//Infrastructure/Endpoints
-        var endpointsSchema = new JsonSchemaBuilder()
-            .Schema(MetaSchemas.Draft7Id)
-            .FromType<Endpoints>(schemaConfig)
-            .Build();
-
-        File.WriteAllText(Path.Combine(path, "endpoints.json"),
-            JsonSerializer.Serialize(endpointsSchema, jsonConfig)
-        );        
-        
-//Infrastructure/Endpoints/ApiServer
-        var apiServerSchema = new JsonSchemaBuilder()
-            .Schema(MetaSchemas.Draft7Id)
-            .FromType<ApiServer>(schemaConfig)
-            .Build();
-
-        File.WriteAllText(Path.Combine(path, "apiServer.json"),
-            JsonSerializer.Serialize(apiServerSchema, jsonConfig)
-        );  
-        
-//Infrastructure/Endpoints/BffServer
-        var bffServerSchema = new JsonSchemaBuilder()
-            .Schema(MetaSchemas.Draft7Id)
-            .FromType<BffServer>(schemaConfig)
-            .Build();
-
-        File.WriteAllText(Path.Combine(path, "bffServer.json"),
-            JsonSerializer.Serialize(bffServerSchema, jsonConfig)
-        );          
-        
-//Infrastructure/Dependencies
-        var dependenciesSchema = new JsonSchemaBuilder()
-            .Schema(MetaSchemas.Draft7Id)
-            .FromType<Dependencies>(schemaConfig)
-            .Build();
-
-        File.WriteAllText(Path.Combine(path, "dependencies.json"),
-            JsonSerializer.Serialize(dependenciesSchema, jsonConfig)
-        );  
-        
-//Infrastructure/Dependencies/Notifications
-        var notificationsSchema = new JsonSchemaBuilder()
-            .Schema(MetaSchemas.Draft7Id)
-            .FromType<Notifications>(schemaConfig)
-            .Build();
-
-        File.WriteAllText(Path.Combine(path, "notifications.json"),
-            JsonSerializer.Serialize(notificationsSchema, jsonConfig)
-        );   
-        
-//Infrastructure/Dependencies/Monitoring
-        var monitoringSchema = new JsonSchemaBuilder()
-            .Schema(MetaSchemas.Draft7Id)
-            .FromType<Monitoring>(schemaConfig)
-            .Build();
-
-        File.WriteAllText(Path.Combine(path, "monitoring.json"),
-            JsonSerializer.Serialize(monitoringSchema, jsonConfig)
-        );   
-        
-//Infrastructure/Dependencies/Translations
-        var translationsSchema = new JsonSchemaBuilder()
-            .Schema(MetaSchemas.Draft7Id)
-            .FromType<Translations>(schemaConfig)
-            .Build();
-
-        File.WriteAllText(Path.Combine(path, "translations.json"),
-            JsonSerializer.Serialize(translationsSchema, jsonConfig)
-        );   
-        
-//Infrastructure/Dependencies/Security
-        var securitySchema = new JsonSchemaBuilder()
-            .Schema(MetaSchemas.Draft7Id)
-            .FromType<Security>(schemaConfig)
-            .Build();
-
-        File.WriteAllText(Path.Combine(path, "security.json"),
-            JsonSerializer.Serialize(securitySchema, jsonConfig)
-        );   
-        
-//Infrastructure/Dependencies/DataConnection
-        var dataConnectionSchema = new JsonSchemaBuilder()
-            .Schema(MetaSchemas.Draft7Id)
-            .FromType<DataConnection>(schemaConfig)
-            .Build();
-
-        File.WriteAllText(Path.Combine(path, "dataConnection.json"),
-            JsonSerializer.Serialize(dataConnectionSchema, jsonConfig)
-        );           
     }
 
     private static string FindOrCreateFolderInProjectRoot(string folderName)
     {
-        var path = new DirectoryInfo( Directory.GetCurrentDirectory() );
+        var path = new DirectoryInfo(Directory.GetCurrentDirectory());
         var targetFolder = string.Empty;
 
-        while (path != null) 
+        while (path != null)
         {
             if (path.GetDirectories(".git").Any())
             {
@@ -331,70 +129,10 @@ public class NoxSolutionSchemaGenerate
                 }
                 break;
             }
-            
+
             path = path.Parent;
         }
 
         return targetFolder;
-    }
-
-
-
-    internal class EnumToCamelCaseRefiner : ISchemaRefiner
-    {
-
-        private readonly Type[] _excludeTypes;
-
-        public EnumToCamelCaseRefiner() : this(Array.Empty<Type>()) {}
-
-        public EnumToCamelCaseRefiner(Type[] excludeTypes)
-        {
-            _excludeTypes = excludeTypes;
-        }
-
-        public bool ShouldRun(SchemaGenerationContextBase context)
-        {
-            // we only want to run this if the generated schema has a `enum` keyword
-
-            if (_excludeTypes.Contains(context.Type))
-                return false;
-
-            return context.Intents.OfType<EnumIntent>().Any();
-        }
-
-        public void Run(SchemaGenerationContextBase context)
-        {
-            // find the enum keyword
-            var enumIntent = context.Intents.OfType<EnumIntent>().First();
-            enumIntent.Names = enumIntent.Names.Select( n => Char.ToLowerInvariant(n[0]) + n.Substring(1)).ToList();
-        }
-
-    }
-
-
-    internal class ReadOnlyStringDictionarySchemaGenerator : ISchemaGenerator
-    {
-    	public bool Handles(Type type)
-        {
-            if (!type.IsGenericType) return false;
-
-            var generic = type.GetGenericTypeDefinition();
-
-            if (generic != typeof(IReadOnlyDictionary<,>)) 
-                return false;
-
-            var keyType = type.GenericTypeArguments[0];
-            return keyType == typeof(string);
-        }
-
-        public void AddConstraints(SchemaGenerationContextBase context)
-        {
-            context.Intents.Add(new TypeIntent(SchemaValueType.Object));
-
-            var valueType = context.Type.GenericTypeArguments[1];
-            var valueContext = SchemaGenerationContextCache.Get(valueType);
-
-            context.Intents.Add(new AdditionalPropertiesIntent(valueContext));
-        }
     }
 }

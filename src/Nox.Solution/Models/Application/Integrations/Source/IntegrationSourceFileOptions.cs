@@ -7,10 +7,10 @@ namespace Nox.Solution
     [AdditionalProperties(false)]
     public class IntegrationSourceFileOptions
     {
-        [Required] 
+        [Required]
         [Title("The file name.")]
         [Description("The name of the file that will be ingested.")]
-        public string Filename { get; set; } = string.Empty;
+        public string Filename { get; set; } = null!;
 
         [Title("The minimum expected record count.")]
         [Description("The minimum expected record count as a result of this data ingestion.")]

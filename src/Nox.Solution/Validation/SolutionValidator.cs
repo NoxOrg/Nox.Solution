@@ -1,16 +1,15 @@
-using System.Data.SqlTypes;
 using FluentValidation;
 
 namespace Nox.Solution.Validation
 {
-    internal class SolutionValidator: AbstractValidator<Solution>
+    internal class SolutionValidator : AbstractValidator<Solution>
     {
         public SolutionValidator()
         {
             RuleFor(solution => solution.Name)
                 .NotEmpty()
                 .WithMessage(solution => string.Format(ValidationResources.SolutionNameEmpty));
-            
+
             RuleForEach(sln => sln.Environments)
                 .SetValidator(sln => new EnvironmentValidator(sln.Environments));
 

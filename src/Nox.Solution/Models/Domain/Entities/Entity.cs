@@ -14,7 +14,7 @@ namespace Nox.Solution
         [Title("The name of the entity. Contains no spaces.")]
         [Description("The name of the abstract or real-world entity. It should be a commonly used singular noun and be unique within a solution.")]
         [Pattern(@"^[^\s]*$")]
-        public string Name { get; internal set; } = string.Empty;
+        public string Name { get; internal set; } = null!;
 
         [Title("A phrase describing the entity.")]
         [Description("A description of the entity and what it represents in the real world.")]

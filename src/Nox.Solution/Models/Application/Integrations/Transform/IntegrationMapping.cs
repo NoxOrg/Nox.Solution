@@ -10,7 +10,7 @@ namespace Nox.Solution
         [Required]
         [Title("Column name to be mapped at the ETL data source.")]
         [Description("Specifies the source column to be mapped during the ETL transform.")]
-        public string SourceColumn { get; internal set; } = string.Empty;
+        public string SourceColumn { get; internal set; } = null!;
 
         [Title("Specify case conversion during source to target transform.")]
         [Description("Specifies whether any case conversion is performed during the ETL transform. Source data may be converted to lowercase or uppercase for example.")]
@@ -19,6 +19,6 @@ namespace Nox.Solution
         [Required]
         [Title("Target attribute to which source column is to be mapped.")]
         [Description("Specifies the name of the target attribute to to which the source column is mapped during the ETL transform.")]
-        public string TargetAttribute { get; internal set; } = string.Empty;
+        public string TargetAttribute { get; internal set; } = null!;
     }
 }

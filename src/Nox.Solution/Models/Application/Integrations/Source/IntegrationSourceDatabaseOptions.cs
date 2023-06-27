@@ -10,7 +10,7 @@ namespace Nox.Solution
         [Required]
         [Title("The query to execute.")]
         [Description("The query that will be executed on the source database.")]
-        public string Query { get; set; } = string.Empty;
+        public string Query { get; set; } = null!;
 
         [Title("The minimum expected record count.")]
         [Description("The minimum expected record count as a result of this data ingestion.")]

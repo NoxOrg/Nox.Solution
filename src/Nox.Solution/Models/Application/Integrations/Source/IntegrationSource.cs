@@ -11,7 +11,7 @@ namespace Nox.Solution
         [Title("The name of the ETL source. Contains no spaces.")]
         [Description("The name should be a commonly used singular noun and be unique within a solution.")]
         [Pattern(@"^[^\s]*$")]
-        public string Name { get; internal set; } = string.Empty;
+        public string Name { get; internal set; } = null!;
 
         [Title("A description of the ETL source.")]
         [Description("A phrase describing the source component of the ETL. Think about describing the what/where of this data source.")]
@@ -24,7 +24,7 @@ namespace Nox.Solution
         [Description("The name of the data connection for this integration source. This must refer to an existing data connection in infrastructure, dependencies, dataConnections.")]
         [Pattern(@"^[^\s]*$")]
         [AdditionalProperties(false)]
-        public string DataConnectionName { get; internal set; } = string.Empty;
+        public string DataConnectionName { get; internal set; } = null!;
 
         public IntegrationSourceDatabaseWatermark? Watermark { get; internal set; }
 
@@ -35,6 +35,5 @@ namespace Nox.Solution
         public IntegrationSourceMessageQueueOptions? MessageQueueOptions { get; set; }
 
         public IntegrationSourceWebApiOptions? WebApiOptions { get; set; }
-        
     }
 }

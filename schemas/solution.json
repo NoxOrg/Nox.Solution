@@ -525,7 +525,7 @@
                               "countryCode2",
                               "countryCode3",
                               "countryNumber",
-                              "culture",
+                              "cultureCode",
                               "currencyCode",
                               "currencyNumber",
                               "date",
@@ -551,7 +551,7 @@
                               "ipAddress",
                               "json",
                               "jwtToken",
-                              "language",
+                              "languageCode",
                               "length",
                               "macAddress",
                               "markdown",
@@ -563,6 +563,7 @@
                               "temperature",
                               "text",
                               "time",
+                              "timeZoneCode",
                               "uri",
                               "url",
                               "user",
@@ -857,7 +858,9 @@
                                   "radio",
                                   "select",
                                   "checkbox",
-                                  "switch"
+                                  "toggleSwitch",
+                                  "camera",
+                                  "gps"
                                 ],
                                 "title": "Widget used to render this attribute on the user interface.",
                                 "description": "The user interface control type that is best suited to render the attribute on the screen."
@@ -928,10 +931,6 @@
                           "objectTypeOptions": {
                             "type": "object",
                             "properties": {
-                              "$ref": {
-                                "type": "string",
-                                "format": "uri"
-                              },
                               "attributes": {
                                 "type": "array",
                                 "items": {
@@ -970,7 +969,7 @@
                                         "countryCode2",
                                         "countryCode3",
                                         "countryNumber",
-                                        "culture",
+                                        "cultureCode",
                                         "currencyCode",
                                         "currencyNumber",
                                         "date",
@@ -996,7 +995,7 @@
                                         "ipAddress",
                                         "json",
                                         "jwtToken",
-                                        "language",
+                                        "languageCode",
                                         "length",
                                         "macAddress",
                                         "markdown",
@@ -1008,6 +1007,7 @@
                                         "temperature",
                                         "text",
                                         "time",
+                                        "timeZoneCode",
                                         "uri",
                                         "url",
                                         "user",
@@ -1302,7 +1302,9 @@
                                             "radio",
                                             "select",
                                             "checkbox",
-                                            "switch"
+                                            "toggleSwitch",
+                                            "camera",
+                                            "gps"
                                           ],
                                           "title": "Widget used to render this attribute on the user interface.",
                                           "description": "The user interface control type that is best suited to render the attribute on the screen."
@@ -1376,6 +1378,10 @@
                                     "type"
                                   ]
                                 }
+                              },
+                              "$ref": {
+                                "type": "string",
+                                "format": "uri"
                               }
                             },
                             "required": [
@@ -1418,7 +1424,7 @@
                                   "countryCode2",
                                   "countryCode3",
                                   "countryNumber",
-                                  "culture",
+                                  "cultureCode",
                                   "currencyCode",
                                   "currencyNumber",
                                   "date",
@@ -1444,7 +1450,7 @@
                                   "ipAddress",
                                   "json",
                                   "jwtToken",
-                                  "language",
+                                  "languageCode",
                                   "length",
                                   "macAddress",
                                   "markdown",
@@ -1456,6 +1462,7 @@
                                   "temperature",
                                   "text",
                                   "time",
+                                  "timeZoneCode",
                                   "uri",
                                   "url",
                                   "user",
@@ -1750,7 +1757,9 @@
                                       "radio",
                                       "select",
                                       "checkbox",
-                                      "switch"
+                                      "toggleSwitch",
+                                      "camera",
+                                      "gps"
                                     ],
                                     "title": "Widget used to render this attribute on the user interface.",
                                     "description": "The user interface control type that is best suited to render the attribute on the screen."
@@ -1821,10 +1830,6 @@
                               "objectTypeOptions": {
                                 "type": "object",
                                 "properties": {
-                                  "$ref": {
-                                    "type": "string",
-                                    "format": "uri"
-                                  },
                                   "attributes": {
                                     "type": "array",
                                     "items": {
@@ -1863,7 +1868,7 @@
                                             "countryCode2",
                                             "countryCode3",
                                             "countryNumber",
-                                            "culture",
+                                            "cultureCode",
                                             "currencyCode",
                                             "currencyNumber",
                                             "date",
@@ -1889,7 +1894,7 @@
                                             "ipAddress",
                                             "json",
                                             "jwtToken",
-                                            "language",
+                                            "languageCode",
                                             "length",
                                             "macAddress",
                                             "markdown",
@@ -1901,6 +1906,7 @@
                                             "temperature",
                                             "text",
                                             "time",
+                                            "timeZoneCode",
                                             "uri",
                                             "url",
                                             "user",
@@ -2195,7 +2201,9 @@
                                                 "radio",
                                                 "select",
                                                 "checkbox",
-                                                "switch"
+                                                "toggleSwitch",
+                                                "camera",
+                                                "gps"
                                               ],
                                               "title": "Widget used to render this attribute on the user interface.",
                                               "description": "The user interface control type that is best suited to render the attribute on the screen."
@@ -2269,6 +2277,10 @@
                                         "type"
                                       ]
                                     }
+                                  },
+                                  "$ref": {
+                                    "type": "string",
+                                    "format": "uri"
                                   }
                                 },
                                 "required": [
@@ -2320,7 +2332,7 @@
                                   "countryCode2",
                                   "countryCode3",
                                   "countryNumber",
-                                  "culture",
+                                  "cultureCode",
                                   "currencyCode",
                                   "currencyNumber",
                                   "date",
@@ -2346,7 +2358,7 @@
                                   "ipAddress",
                                   "json",
                                   "jwtToken",
-                                  "language",
+                                  "languageCode",
                                   "length",
                                   "macAddress",
                                   "markdown",
@@ -2358,6 +2370,7 @@
                                   "temperature",
                                   "text",
                                   "time",
+                                  "timeZoneCode",
                                   "uri",
                                   "url",
                                   "user",
@@ -2652,7 +2665,9 @@
                                       "radio",
                                       "select",
                                       "checkbox",
-                                      "switch"
+                                      "toggleSwitch",
+                                      "camera",
+                                      "gps"
                                     ],
                                     "title": "Widget used to render this attribute on the user interface.",
                                     "description": "The user interface control type that is best suited to render the attribute on the screen."
@@ -2723,10 +2738,6 @@
                               "objectTypeOptions": {
                                 "type": "object",
                                 "properties": {
-                                  "$ref": {
-                                    "type": "string",
-                                    "format": "uri"
-                                  },
                                   "attributes": {
                                     "type": "array",
                                     "items": {
@@ -2765,7 +2776,7 @@
                                             "countryCode2",
                                             "countryCode3",
                                             "countryNumber",
-                                            "culture",
+                                            "cultureCode",
                                             "currencyCode",
                                             "currencyNumber",
                                             "date",
@@ -2791,7 +2802,7 @@
                                             "ipAddress",
                                             "json",
                                             "jwtToken",
-                                            "language",
+                                            "languageCode",
                                             "length",
                                             "macAddress",
                                             "markdown",
@@ -2803,6 +2814,7 @@
                                             "temperature",
                                             "text",
                                             "time",
+                                            "timeZoneCode",
                                             "uri",
                                             "url",
                                             "user",
@@ -3097,7 +3109,9 @@
                                                 "radio",
                                                 "select",
                                                 "checkbox",
-                                                "switch"
+                                                "toggleSwitch",
+                                                "camera",
+                                                "gps"
                                               ],
                                               "title": "Widget used to render this attribute on the user interface.",
                                               "description": "The user interface control type that is best suited to render the attribute on the screen."
@@ -3171,6 +3185,10 @@
                                         "type"
                                       ]
                                     }
+                                  },
+                                  "$ref": {
+                                    "type": "string",
+                                    "format": "uri"
                                   }
                                 },
                                 "required": [
@@ -3235,7 +3253,7 @@
                             "countryCode2",
                             "countryCode3",
                             "countryNumber",
-                            "culture",
+                            "cultureCode",
                             "currencyCode",
                             "currencyNumber",
                             "date",
@@ -3261,7 +3279,7 @@
                             "ipAddress",
                             "json",
                             "jwtToken",
-                            "language",
+                            "languageCode",
                             "length",
                             "macAddress",
                             "markdown",
@@ -3273,6 +3291,7 @@
                             "temperature",
                             "text",
                             "time",
+                            "timeZoneCode",
                             "uri",
                             "url",
                             "user",
@@ -3567,7 +3586,9 @@
                                 "radio",
                                 "select",
                                 "checkbox",
-                                "switch"
+                                "toggleSwitch",
+                                "camera",
+                                "gps"
                               ],
                               "title": "Widget used to render this attribute on the user interface.",
                               "description": "The user interface control type that is best suited to render the attribute on the screen."
@@ -3638,10 +3659,6 @@
                         "objectTypeOptions": {
                           "type": "object",
                           "properties": {
-                            "$ref": {
-                              "type": "string",
-                              "format": "uri"
-                            },
                             "attributes": {
                               "type": "array",
                               "items": {
@@ -3680,7 +3697,7 @@
                                       "countryCode2",
                                       "countryCode3",
                                       "countryNumber",
-                                      "culture",
+                                      "cultureCode",
                                       "currencyCode",
                                       "currencyNumber",
                                       "date",
@@ -3706,7 +3723,7 @@
                                       "ipAddress",
                                       "json",
                                       "jwtToken",
-                                      "language",
+                                      "languageCode",
                                       "length",
                                       "macAddress",
                                       "markdown",
@@ -3718,6 +3735,7 @@
                                       "temperature",
                                       "text",
                                       "time",
+                                      "timeZoneCode",
                                       "uri",
                                       "url",
                                       "user",
@@ -4012,7 +4030,9 @@
                                           "radio",
                                           "select",
                                           "checkbox",
-                                          "switch"
+                                          "toggleSwitch",
+                                          "camera",
+                                          "gps"
                                         ],
                                         "title": "Widget used to render this attribute on the user interface.",
                                         "description": "The user interface control type that is best suited to render the attribute on the screen."
@@ -4086,6 +4106,10 @@
                                   "type"
                                 ]
                               }
+                            },
+                            "$ref": {
+                              "type": "string",
+                              "format": "uri"
                             }
                           },
                           "required": [
@@ -4128,7 +4152,7 @@
                                 "countryCode2",
                                 "countryCode3",
                                 "countryNumber",
-                                "culture",
+                                "cultureCode",
                                 "currencyCode",
                                 "currencyNumber",
                                 "date",
@@ -4154,7 +4178,7 @@
                                 "ipAddress",
                                 "json",
                                 "jwtToken",
-                                "language",
+                                "languageCode",
                                 "length",
                                 "macAddress",
                                 "markdown",
@@ -4166,6 +4190,7 @@
                                 "temperature",
                                 "text",
                                 "time",
+                                "timeZoneCode",
                                 "uri",
                                 "url",
                                 "user",
@@ -4460,7 +4485,9 @@
                                     "radio",
                                     "select",
                                     "checkbox",
-                                    "switch"
+                                    "toggleSwitch",
+                                    "camera",
+                                    "gps"
                                   ],
                                   "title": "Widget used to render this attribute on the user interface.",
                                   "description": "The user interface control type that is best suited to render the attribute on the screen."
@@ -4531,10 +4558,6 @@
                             "objectTypeOptions": {
                               "type": "object",
                               "properties": {
-                                "$ref": {
-                                  "type": "string",
-                                  "format": "uri"
-                                },
                                 "attributes": {
                                   "type": "array",
                                   "items": {
@@ -4573,7 +4596,7 @@
                                           "countryCode2",
                                           "countryCode3",
                                           "countryNumber",
-                                          "culture",
+                                          "cultureCode",
                                           "currencyCode",
                                           "currencyNumber",
                                           "date",
@@ -4599,7 +4622,7 @@
                                           "ipAddress",
                                           "json",
                                           "jwtToken",
-                                          "language",
+                                          "languageCode",
                                           "length",
                                           "macAddress",
                                           "markdown",
@@ -4611,6 +4634,7 @@
                                           "temperature",
                                           "text",
                                           "time",
+                                          "timeZoneCode",
                                           "uri",
                                           "url",
                                           "user",
@@ -4905,7 +4929,9 @@
                                               "radio",
                                               "select",
                                               "checkbox",
-                                              "switch"
+                                              "toggleSwitch",
+                                              "camera",
+                                              "gps"
                                             ],
                                             "title": "Widget used to render this attribute on the user interface.",
                                             "description": "The user interface control type that is best suited to render the attribute on the screen."
@@ -4979,6 +5005,10 @@
                                       "type"
                                     ]
                                   }
+                                },
+                                "$ref": {
+                                  "type": "string",
+                                  "format": "uri"
                                 }
                               },
                               "required": [
@@ -5030,7 +5060,7 @@
                                 "countryCode2",
                                 "countryCode3",
                                 "countryNumber",
-                                "culture",
+                                "cultureCode",
                                 "currencyCode",
                                 "currencyNumber",
                                 "date",
@@ -5056,7 +5086,7 @@
                                 "ipAddress",
                                 "json",
                                 "jwtToken",
-                                "language",
+                                "languageCode",
                                 "length",
                                 "macAddress",
                                 "markdown",
@@ -5068,6 +5098,7 @@
                                 "temperature",
                                 "text",
                                 "time",
+                                "timeZoneCode",
                                 "uri",
                                 "url",
                                 "user",
@@ -5362,7 +5393,9 @@
                                     "radio",
                                     "select",
                                     "checkbox",
-                                    "switch"
+                                    "toggleSwitch",
+                                    "camera",
+                                    "gps"
                                   ],
                                   "title": "Widget used to render this attribute on the user interface.",
                                   "description": "The user interface control type that is best suited to render the attribute on the screen."
@@ -5433,10 +5466,6 @@
                             "objectTypeOptions": {
                               "type": "object",
                               "properties": {
-                                "$ref": {
-                                  "type": "string",
-                                  "format": "uri"
-                                },
                                 "attributes": {
                                   "type": "array",
                                   "items": {
@@ -5475,7 +5504,7 @@
                                           "countryCode2",
                                           "countryCode3",
                                           "countryNumber",
-                                          "culture",
+                                          "cultureCode",
                                           "currencyCode",
                                           "currencyNumber",
                                           "date",
@@ -5501,7 +5530,7 @@
                                           "ipAddress",
                                           "json",
                                           "jwtToken",
-                                          "language",
+                                          "languageCode",
                                           "length",
                                           "macAddress",
                                           "markdown",
@@ -5513,6 +5542,7 @@
                                           "temperature",
                                           "text",
                                           "time",
+                                          "timeZoneCode",
                                           "uri",
                                           "url",
                                           "user",
@@ -5807,7 +5837,9 @@
                                               "radio",
                                               "select",
                                               "checkbox",
-                                              "switch"
+                                              "toggleSwitch",
+                                              "camera",
+                                              "gps"
                                             ],
                                             "title": "Widget used to render this attribute on the user interface.",
                                             "description": "The user interface control type that is best suited to render the attribute on the screen."
@@ -5881,6 +5913,10 @@
                                       "type"
                                     ]
                                   }
+                                },
+                                "$ref": {
+                                  "type": "string",
+                                  "format": "uri"
                                 }
                               },
                               "required": [
@@ -5956,7 +5992,7 @@
                         "countryCode2",
                         "countryCode3",
                         "countryNumber",
-                        "culture",
+                        "cultureCode",
                         "currencyCode",
                         "currencyNumber",
                         "date",
@@ -5982,7 +6018,7 @@
                         "ipAddress",
                         "json",
                         "jwtToken",
-                        "language",
+                        "languageCode",
                         "length",
                         "macAddress",
                         "markdown",
@@ -5994,6 +6030,7 @@
                         "temperature",
                         "text",
                         "time",
+                        "timeZoneCode",
                         "uri",
                         "url",
                         "user",
@@ -6288,7 +6325,9 @@
                             "radio",
                             "select",
                             "checkbox",
-                            "switch"
+                            "toggleSwitch",
+                            "camera",
+                            "gps"
                           ],
                           "title": "Widget used to render this attribute on the user interface.",
                           "description": "The user interface control type that is best suited to render the attribute on the screen."
@@ -6359,10 +6398,6 @@
                     "objectTypeOptions": {
                       "type": "object",
                       "properties": {
-                        "$ref": {
-                          "type": "string",
-                          "format": "uri"
-                        },
                         "attributes": {
                           "type": "array",
                           "items": {
@@ -6401,7 +6436,7 @@
                                   "countryCode2",
                                   "countryCode3",
                                   "countryNumber",
-                                  "culture",
+                                  "cultureCode",
                                   "currencyCode",
                                   "currencyNumber",
                                   "date",
@@ -6427,7 +6462,7 @@
                                   "ipAddress",
                                   "json",
                                   "jwtToken",
-                                  "language",
+                                  "languageCode",
                                   "length",
                                   "macAddress",
                                   "markdown",
@@ -6439,6 +6474,7 @@
                                   "temperature",
                                   "text",
                                   "time",
+                                  "timeZoneCode",
                                   "uri",
                                   "url",
                                   "user",
@@ -6733,7 +6769,9 @@
                                       "radio",
                                       "select",
                                       "checkbox",
-                                      "switch"
+                                      "toggleSwitch",
+                                      "camera",
+                                      "gps"
                                     ],
                                     "title": "Widget used to render this attribute on the user interface.",
                                     "description": "The user interface control type that is best suited to render the attribute on the screen."
@@ -6807,6 +6845,10 @@
                               "type"
                             ]
                           }
+                        },
+                        "$ref": {
+                          "type": "string",
+                          "format": "uri"
                         }
                       },
                       "required": [
@@ -6849,7 +6891,7 @@
                             "countryCode2",
                             "countryCode3",
                             "countryNumber",
-                            "culture",
+                            "cultureCode",
                             "currencyCode",
                             "currencyNumber",
                             "date",
@@ -6875,7 +6917,7 @@
                             "ipAddress",
                             "json",
                             "jwtToken",
-                            "language",
+                            "languageCode",
                             "length",
                             "macAddress",
                             "markdown",
@@ -6887,6 +6929,7 @@
                             "temperature",
                             "text",
                             "time",
+                            "timeZoneCode",
                             "uri",
                             "url",
                             "user",
@@ -7181,7 +7224,9 @@
                                 "radio",
                                 "select",
                                 "checkbox",
-                                "switch"
+                                "toggleSwitch",
+                                "camera",
+                                "gps"
                               ],
                               "title": "Widget used to render this attribute on the user interface.",
                               "description": "The user interface control type that is best suited to render the attribute on the screen."
@@ -7252,10 +7297,6 @@
                         "objectTypeOptions": {
                           "type": "object",
                           "properties": {
-                            "$ref": {
-                              "type": "string",
-                              "format": "uri"
-                            },
                             "attributes": {
                               "type": "array",
                               "items": {
@@ -7294,7 +7335,7 @@
                                       "countryCode2",
                                       "countryCode3",
                                       "countryNumber",
-                                      "culture",
+                                      "cultureCode",
                                       "currencyCode",
                                       "currencyNumber",
                                       "date",
@@ -7320,7 +7361,7 @@
                                       "ipAddress",
                                       "json",
                                       "jwtToken",
-                                      "language",
+                                      "languageCode",
                                       "length",
                                       "macAddress",
                                       "markdown",
@@ -7332,6 +7373,7 @@
                                       "temperature",
                                       "text",
                                       "time",
+                                      "timeZoneCode",
                                       "uri",
                                       "url",
                                       "user",
@@ -7626,7 +7668,9 @@
                                           "radio",
                                           "select",
                                           "checkbox",
-                                          "switch"
+                                          "toggleSwitch",
+                                          "camera",
+                                          "gps"
                                         ],
                                         "title": "Widget used to render this attribute on the user interface.",
                                         "description": "The user interface control type that is best suited to render the attribute on the screen."
@@ -7700,6 +7744,10 @@
                                   "type"
                                 ]
                               }
+                            },
+                            "$ref": {
+                              "type": "string",
+                              "format": "uri"
                             }
                           },
                           "required": [
@@ -7751,7 +7799,7 @@
                             "countryCode2",
                             "countryCode3",
                             "countryNumber",
-                            "culture",
+                            "cultureCode",
                             "currencyCode",
                             "currencyNumber",
                             "date",
@@ -7777,7 +7825,7 @@
                             "ipAddress",
                             "json",
                             "jwtToken",
-                            "language",
+                            "languageCode",
                             "length",
                             "macAddress",
                             "markdown",
@@ -7789,6 +7837,7 @@
                             "temperature",
                             "text",
                             "time",
+                            "timeZoneCode",
                             "uri",
                             "url",
                             "user",
@@ -8083,7 +8132,9 @@
                                 "radio",
                                 "select",
                                 "checkbox",
-                                "switch"
+                                "toggleSwitch",
+                                "camera",
+                                "gps"
                               ],
                               "title": "Widget used to render this attribute on the user interface.",
                               "description": "The user interface control type that is best suited to render the attribute on the screen."
@@ -8154,10 +8205,6 @@
                         "objectTypeOptions": {
                           "type": "object",
                           "properties": {
-                            "$ref": {
-                              "type": "string",
-                              "format": "uri"
-                            },
                             "attributes": {
                               "type": "array",
                               "items": {
@@ -8196,7 +8243,7 @@
                                       "countryCode2",
                                       "countryCode3",
                                       "countryNumber",
-                                      "culture",
+                                      "cultureCode",
                                       "currencyCode",
                                       "currencyNumber",
                                       "date",
@@ -8222,7 +8269,7 @@
                                       "ipAddress",
                                       "json",
                                       "jwtToken",
-                                      "language",
+                                      "languageCode",
                                       "length",
                                       "macAddress",
                                       "markdown",
@@ -8234,6 +8281,7 @@
                                       "temperature",
                                       "text",
                                       "time",
+                                      "timeZoneCode",
                                       "uri",
                                       "url",
                                       "user",
@@ -8528,7 +8576,9 @@
                                           "radio",
                                           "select",
                                           "checkbox",
-                                          "switch"
+                                          "toggleSwitch",
+                                          "camera",
+                                          "gps"
                                         ],
                                         "title": "Widget used to render this attribute on the user interface.",
                                         "description": "The user interface control type that is best suited to render the attribute on the screen."
@@ -8602,6 +8652,10 @@
                                   "type"
                                 ]
                               }
+                            },
+                            "$ref": {
+                              "type": "string",
+                              "format": "uri"
                             }
                           },
                           "required": [
@@ -8674,7 +8728,7 @@
                         "countryCode2",
                         "countryCode3",
                         "countryNumber",
-                        "culture",
+                        "cultureCode",
                         "currencyCode",
                         "currencyNumber",
                         "date",
@@ -8700,7 +8754,7 @@
                         "ipAddress",
                         "json",
                         "jwtToken",
-                        "language",
+                        "languageCode",
                         "length",
                         "macAddress",
                         "markdown",
@@ -8712,6 +8766,7 @@
                         "temperature",
                         "text",
                         "time",
+                        "timeZoneCode",
                         "uri",
                         "url",
                         "user",
@@ -9006,7 +9061,9 @@
                             "radio",
                             "select",
                             "checkbox",
-                            "switch"
+                            "toggleSwitch",
+                            "camera",
+                            "gps"
                           ],
                           "title": "Widget used to render this attribute on the user interface.",
                           "description": "The user interface control type that is best suited to render the attribute on the screen."
@@ -9077,10 +9134,6 @@
                     "objectTypeOptions": {
                       "type": "object",
                       "properties": {
-                        "$ref": {
-                          "type": "string",
-                          "format": "uri"
-                        },
                         "attributes": {
                           "type": "array",
                           "items": {
@@ -9119,7 +9172,7 @@
                                   "countryCode2",
                                   "countryCode3",
                                   "countryNumber",
-                                  "culture",
+                                  "cultureCode",
                                   "currencyCode",
                                   "currencyNumber",
                                   "date",
@@ -9145,7 +9198,7 @@
                                   "ipAddress",
                                   "json",
                                   "jwtToken",
-                                  "language",
+                                  "languageCode",
                                   "length",
                                   "macAddress",
                                   "markdown",
@@ -9157,6 +9210,7 @@
                                   "temperature",
                                   "text",
                                   "time",
+                                  "timeZoneCode",
                                   "uri",
                                   "url",
                                   "user",
@@ -9451,7 +9505,9 @@
                                       "radio",
                                       "select",
                                       "checkbox",
-                                      "switch"
+                                      "toggleSwitch",
+                                      "camera",
+                                      "gps"
                                     ],
                                     "title": "Widget used to render this attribute on the user interface.",
                                     "description": "The user interface control type that is best suited to render the attribute on the screen."
@@ -9525,6 +9581,10 @@
                               "type"
                             ]
                           }
+                        },
+                        "$ref": {
+                          "type": "string",
+                          "format": "uri"
                         }
                       },
                       "required": [
@@ -9567,7 +9627,7 @@
                             "countryCode2",
                             "countryCode3",
                             "countryNumber",
-                            "culture",
+                            "cultureCode",
                             "currencyCode",
                             "currencyNumber",
                             "date",
@@ -9593,7 +9653,7 @@
                             "ipAddress",
                             "json",
                             "jwtToken",
-                            "language",
+                            "languageCode",
                             "length",
                             "macAddress",
                             "markdown",
@@ -9605,6 +9665,7 @@
                             "temperature",
                             "text",
                             "time",
+                            "timeZoneCode",
                             "uri",
                             "url",
                             "user",
@@ -9899,7 +9960,9 @@
                                 "radio",
                                 "select",
                                 "checkbox",
-                                "switch"
+                                "toggleSwitch",
+                                "camera",
+                                "gps"
                               ],
                               "title": "Widget used to render this attribute on the user interface.",
                               "description": "The user interface control type that is best suited to render the attribute on the screen."
@@ -9970,10 +10033,6 @@
                         "objectTypeOptions": {
                           "type": "object",
                           "properties": {
-                            "$ref": {
-                              "type": "string",
-                              "format": "uri"
-                            },
                             "attributes": {
                               "type": "array",
                               "items": {
@@ -10012,7 +10071,7 @@
                                       "countryCode2",
                                       "countryCode3",
                                       "countryNumber",
-                                      "culture",
+                                      "cultureCode",
                                       "currencyCode",
                                       "currencyNumber",
                                       "date",
@@ -10038,7 +10097,7 @@
                                       "ipAddress",
                                       "json",
                                       "jwtToken",
-                                      "language",
+                                      "languageCode",
                                       "length",
                                       "macAddress",
                                       "markdown",
@@ -10050,6 +10109,7 @@
                                       "temperature",
                                       "text",
                                       "time",
+                                      "timeZoneCode",
                                       "uri",
                                       "url",
                                       "user",
@@ -10344,7 +10404,9 @@
                                           "radio",
                                           "select",
                                           "checkbox",
-                                          "switch"
+                                          "toggleSwitch",
+                                          "camera",
+                                          "gps"
                                         ],
                                         "title": "Widget used to render this attribute on the user interface.",
                                         "description": "The user interface control type that is best suited to render the attribute on the screen."
@@ -10418,6 +10480,10 @@
                                   "type"
                                 ]
                               }
+                            },
+                            "$ref": {
+                              "type": "string",
+                              "format": "uri"
                             }
                           },
                           "required": [
@@ -10469,7 +10535,7 @@
                             "countryCode2",
                             "countryCode3",
                             "countryNumber",
-                            "culture",
+                            "cultureCode",
                             "currencyCode",
                             "currencyNumber",
                             "date",
@@ -10495,7 +10561,7 @@
                             "ipAddress",
                             "json",
                             "jwtToken",
-                            "language",
+                            "languageCode",
                             "length",
                             "macAddress",
                             "markdown",
@@ -10507,6 +10573,7 @@
                             "temperature",
                             "text",
                             "time",
+                            "timeZoneCode",
                             "uri",
                             "url",
                             "user",
@@ -10801,7 +10868,9 @@
                                 "radio",
                                 "select",
                                 "checkbox",
-                                "switch"
+                                "toggleSwitch",
+                                "camera",
+                                "gps"
                               ],
                               "title": "Widget used to render this attribute on the user interface.",
                               "description": "The user interface control type that is best suited to render the attribute on the screen."
@@ -10872,10 +10941,6 @@
                         "objectTypeOptions": {
                           "type": "object",
                           "properties": {
-                            "$ref": {
-                              "type": "string",
-                              "format": "uri"
-                            },
                             "attributes": {
                               "type": "array",
                               "items": {
@@ -10914,7 +10979,7 @@
                                       "countryCode2",
                                       "countryCode3",
                                       "countryNumber",
-                                      "culture",
+                                      "cultureCode",
                                       "currencyCode",
                                       "currencyNumber",
                                       "date",
@@ -10940,7 +11005,7 @@
                                       "ipAddress",
                                       "json",
                                       "jwtToken",
-                                      "language",
+                                      "languageCode",
                                       "length",
                                       "macAddress",
                                       "markdown",
@@ -10952,6 +11017,7 @@
                                       "temperature",
                                       "text",
                                       "time",
+                                      "timeZoneCode",
                                       "uri",
                                       "url",
                                       "user",
@@ -11246,7 +11312,9 @@
                                           "radio",
                                           "select",
                                           "checkbox",
-                                          "switch"
+                                          "toggleSwitch",
+                                          "camera",
+                                          "gps"
                                         ],
                                         "title": "Widget used to render this attribute on the user interface.",
                                         "description": "The user interface control type that is best suited to render the attribute on the screen."
@@ -11320,6 +11388,10 @@
                                   "type"
                                 ]
                               }
+                            },
+                            "$ref": {
+                              "type": "string",
+                              "format": "uri"
                             }
                           },
                           "required": [
@@ -11386,7 +11458,7 @@
                         "countryCode2",
                         "countryCode3",
                         "countryNumber",
-                        "culture",
+                        "cultureCode",
                         "currencyCode",
                         "currencyNumber",
                         "date",
@@ -11412,7 +11484,7 @@
                         "ipAddress",
                         "json",
                         "jwtToken",
-                        "language",
+                        "languageCode",
                         "length",
                         "macAddress",
                         "markdown",
@@ -11424,6 +11496,7 @@
                         "temperature",
                         "text",
                         "time",
+                        "timeZoneCode",
                         "uri",
                         "url",
                         "user",
@@ -11718,7 +11791,9 @@
                             "radio",
                             "select",
                             "checkbox",
-                            "switch"
+                            "toggleSwitch",
+                            "camera",
+                            "gps"
                           ],
                           "title": "Widget used to render this attribute on the user interface.",
                           "description": "The user interface control type that is best suited to render the attribute on the screen."
@@ -11835,7 +11910,7 @@
                         "countryCode2",
                         "countryCode3",
                         "countryNumber",
-                        "culture",
+                        "cultureCode",
                         "currencyCode",
                         "currencyNumber",
                         "date",
@@ -11861,7 +11936,7 @@
                         "ipAddress",
                         "json",
                         "jwtToken",
-                        "language",
+                        "languageCode",
                         "length",
                         "macAddress",
                         "markdown",
@@ -11873,6 +11948,7 @@
                         "temperature",
                         "text",
                         "time",
+                        "timeZoneCode",
                         "uri",
                         "url",
                         "user",
@@ -12167,7 +12243,9 @@
                             "radio",
                             "select",
                             "checkbox",
-                            "switch"
+                            "toggleSwitch",
+                            "camera",
+                            "gps"
                           ],
                           "title": "Widget used to render this attribute on the user interface.",
                           "description": "The user interface control type that is best suited to render the attribute on the screen."
@@ -13663,7 +13741,7 @@
                         "countryCode2",
                         "countryCode3",
                         "countryNumber",
-                        "culture",
+                        "cultureCode",
                         "currencyCode",
                         "currencyNumber",
                         "date",
@@ -13689,7 +13767,7 @@
                         "ipAddress",
                         "json",
                         "jwtToken",
-                        "language",
+                        "languageCode",
                         "length",
                         "macAddress",
                         "markdown",
@@ -13701,6 +13779,7 @@
                         "temperature",
                         "text",
                         "time",
+                        "timeZoneCode",
                         "uri",
                         "url",
                         "user",
@@ -13995,7 +14074,9 @@
                             "radio",
                             "select",
                             "checkbox",
-                            "switch"
+                            "toggleSwitch",
+                            "camera",
+                            "gps"
                           ],
                           "title": "Widget used to render this attribute on the user interface.",
                           "description": "The user interface control type that is best suited to render the attribute on the screen."
@@ -14127,7 +14208,7 @@
                   "countryCode2",
                   "countryCode3",
                   "countryNumber",
-                  "culture",
+                  "cultureCode",
                   "currencyCode",
                   "currencyNumber",
                   "date",
@@ -14153,7 +14234,7 @@
                   "ipAddress",
                   "json",
                   "jwtToken",
-                  "language",
+                  "languageCode",
                   "length",
                   "macAddress",
                   "markdown",
@@ -14165,6 +14246,7 @@
                   "temperature",
                   "text",
                   "time",
+                  "timeZoneCode",
                   "uri",
                   "url",
                   "user",
@@ -14459,7 +14541,9 @@
                       "radio",
                       "select",
                       "checkbox",
-                      "switch"
+                      "toggleSwitch",
+                      "camera",
+                      "gps"
                     ],
                     "title": "Widget used to render this attribute on the user interface.",
                     "description": "The user interface control type that is best suited to render the attribute on the screen."
@@ -14530,10 +14614,6 @@
               "objectTypeOptions": {
                 "type": "object",
                 "properties": {
-                  "$ref": {
-                    "type": "string",
-                    "format": "uri"
-                  },
                   "attributes": {
                     "type": "array",
                     "items": {
@@ -14572,7 +14652,7 @@
                             "countryCode2",
                             "countryCode3",
                             "countryNumber",
-                            "culture",
+                            "cultureCode",
                             "currencyCode",
                             "currencyNumber",
                             "date",
@@ -14598,7 +14678,7 @@
                             "ipAddress",
                             "json",
                             "jwtToken",
-                            "language",
+                            "languageCode",
                             "length",
                             "macAddress",
                             "markdown",
@@ -14610,6 +14690,7 @@
                             "temperature",
                             "text",
                             "time",
+                            "timeZoneCode",
                             "uri",
                             "url",
                             "user",
@@ -14904,7 +14985,9 @@
                                 "radio",
                                 "select",
                                 "checkbox",
-                                "switch"
+                                "toggleSwitch",
+                                "camera",
+                                "gps"
                               ],
                               "title": "Widget used to render this attribute on the user interface.",
                               "description": "The user interface control type that is best suited to render the attribute on the screen."
@@ -14978,6 +15061,10 @@
                         "type"
                       ]
                     }
+                  },
+                  "$ref": {
+                    "type": "string",
+                    "format": "uri"
                   }
                 },
                 "required": [
@@ -15020,7 +15107,7 @@
                       "countryCode2",
                       "countryCode3",
                       "countryNumber",
-                      "culture",
+                      "cultureCode",
                       "currencyCode",
                       "currencyNumber",
                       "date",
@@ -15046,7 +15133,7 @@
                       "ipAddress",
                       "json",
                       "jwtToken",
-                      "language",
+                      "languageCode",
                       "length",
                       "macAddress",
                       "markdown",
@@ -15058,6 +15145,7 @@
                       "temperature",
                       "text",
                       "time",
+                      "timeZoneCode",
                       "uri",
                       "url",
                       "user",
@@ -15352,7 +15440,9 @@
                           "radio",
                           "select",
                           "checkbox",
-                          "switch"
+                          "toggleSwitch",
+                          "camera",
+                          "gps"
                         ],
                         "title": "Widget used to render this attribute on the user interface.",
                         "description": "The user interface control type that is best suited to render the attribute on the screen."
@@ -15423,10 +15513,6 @@
                   "objectTypeOptions": {
                     "type": "object",
                     "properties": {
-                      "$ref": {
-                        "type": "string",
-                        "format": "uri"
-                      },
                       "attributes": {
                         "type": "array",
                         "items": {
@@ -15465,7 +15551,7 @@
                                 "countryCode2",
                                 "countryCode3",
                                 "countryNumber",
-                                "culture",
+                                "cultureCode",
                                 "currencyCode",
                                 "currencyNumber",
                                 "date",
@@ -15491,7 +15577,7 @@
                                 "ipAddress",
                                 "json",
                                 "jwtToken",
-                                "language",
+                                "languageCode",
                                 "length",
                                 "macAddress",
                                 "markdown",
@@ -15503,6 +15589,7 @@
                                 "temperature",
                                 "text",
                                 "time",
+                                "timeZoneCode",
                                 "uri",
                                 "url",
                                 "user",
@@ -15797,7 +15884,9 @@
                                     "radio",
                                     "select",
                                     "checkbox",
-                                    "switch"
+                                    "toggleSwitch",
+                                    "camera",
+                                    "gps"
                                   ],
                                   "title": "Widget used to render this attribute on the user interface.",
                                   "description": "The user interface control type that is best suited to render the attribute on the screen."
@@ -15871,6 +15960,10 @@
                             "type"
                           ]
                         }
+                      },
+                      "$ref": {
+                        "type": "string",
+                        "format": "uri"
                       }
                     },
                     "required": [
@@ -15922,7 +16015,7 @@
                       "countryCode2",
                       "countryCode3",
                       "countryNumber",
-                      "culture",
+                      "cultureCode",
                       "currencyCode",
                       "currencyNumber",
                       "date",
@@ -15948,7 +16041,7 @@
                       "ipAddress",
                       "json",
                       "jwtToken",
-                      "language",
+                      "languageCode",
                       "length",
                       "macAddress",
                       "markdown",
@@ -15960,6 +16053,7 @@
                       "temperature",
                       "text",
                       "time",
+                      "timeZoneCode",
                       "uri",
                       "url",
                       "user",
@@ -16254,7 +16348,9 @@
                           "radio",
                           "select",
                           "checkbox",
-                          "switch"
+                          "toggleSwitch",
+                          "camera",
+                          "gps"
                         ],
                         "title": "Widget used to render this attribute on the user interface.",
                         "description": "The user interface control type that is best suited to render the attribute on the screen."
@@ -16325,10 +16421,6 @@
                   "objectTypeOptions": {
                     "type": "object",
                     "properties": {
-                      "$ref": {
-                        "type": "string",
-                        "format": "uri"
-                      },
                       "attributes": {
                         "type": "array",
                         "items": {
@@ -16367,7 +16459,7 @@
                                 "countryCode2",
                                 "countryCode3",
                                 "countryNumber",
-                                "culture",
+                                "cultureCode",
                                 "currencyCode",
                                 "currencyNumber",
                                 "date",
@@ -16393,7 +16485,7 @@
                                 "ipAddress",
                                 "json",
                                 "jwtToken",
-                                "language",
+                                "languageCode",
                                 "length",
                                 "macAddress",
                                 "markdown",
@@ -16405,6 +16497,7 @@
                                 "temperature",
                                 "text",
                                 "time",
+                                "timeZoneCode",
                                 "uri",
                                 "url",
                                 "user",
@@ -16699,7 +16792,9 @@
                                     "radio",
                                     "select",
                                     "checkbox",
-                                    "switch"
+                                    "toggleSwitch",
+                                    "camera",
+                                    "gps"
                                   ],
                                   "title": "Widget used to render this attribute on the user interface.",
                                   "description": "The user interface control type that is best suited to render the attribute on the screen."
@@ -16773,6 +16868,10 @@
                             "type"
                           ]
                         }
+                      },
+                      "$ref": {
+                        "type": "string",
+                        "format": "uri"
                       }
                     },
                     "required": [

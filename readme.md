@@ -1,3 +1,9 @@
+# Welcome
+
+:no_entry: [DEPRECATED] Active at https://github.com/NoxOrg/Nox.Generator
+
+deprecated / obsolete
+
 ## Environment Variables for Sensitive Data
 
 Do not commit or keep sensitive data on your yaml solution files.
